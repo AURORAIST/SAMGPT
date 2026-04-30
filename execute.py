@@ -256,6 +256,9 @@ parser.add_argument('--cluster_tau', type=float, default=0.2, help='temperature 
 parser.add_argument('--lambda_cross', type=float, default=0.1, help='weight for cross-domain prototype contrastive loss')
 parser.add_argument('--lambda_reg', type=float, default=0.01, help='weight for structure token to local prototype regularization')
 parser.add_argument('--lambda_proto', type=float, default=0.05, help='weight for local-shared prototype reconstruction loss')
+parser.add_argument('--cluster_conf_threshold', type=float, default=0.6, help='confidence threshold for cross-domain prototype matching')
+parser.add_argument('--prototype_ema_momentum', type=float, default=0.95, help='EMA momentum for shared prototypes update')
+parser.add_argument('--enable_similarity_plot', type=int, default=0, help='enable similarity density plot (1 enable / 0 disable)')
 parser.add_argument(
     '--downstream_cluster_method',
     type=str,
@@ -420,6 +423,8 @@ model = PrePrompt(
     lambda_cross=args.lambda_cross,
     lambda_reg=args.lambda_reg,
     lambda_proto=args.lambda_proto,
+    cluster_conf_threshold=args.cluster_conf_threshold,
+    prototype_ema_momentum=args.prototype_ema_momentum,
 ).cuda()
 
 test_idx_num = 100
@@ -526,13 +531,27 @@ except:
             ]
         )
         print(
-            'Loss:[{:.8f}] base:[{:.8f}] cluster:[{:.8f}] proto:[{:.8f}] cross:[{:.8f}] reg:[{:.8f}] clusters:[{}]'.format(
+            'Loss:[{:.8f}] base:[{:.8f}] cluster:[{:.8f}] proto:[{:.8f}] cross:[{:.8f}] reg:[{:.8f}] '
+            'doms:[{}] scale:[{:.4f}] ent:[{:.4f}] minr:[{:.4f}] maxr:[{:.4f}] '
+            'ari:[{:.4f}] gap:[{:.4f}] cov:[{:.4f}] pcoll:[{:.4f}] dgap:[{:.4f}] cstep:[{}] ctri:[{}] clusters:[{}]'.format(
                 float(loss.detach().item()),
                 float(loss_breakdown.get('base_loss', 0.0)),
                 float(loss_breakdown.get('cluster_loss', 0.0)),
                 float(loss_breakdown.get('loss_proto', 0.0)),
                 float(loss_breakdown.get('loss_cross', 0.0)),
                 float(loss_breakdown.get('loss_reg', 0.0)),
+                int(loss_breakdown.get('num_domains', 0)),
+                float(loss_breakdown.get('cluster_scale', 1.0)),
+                float(loss_breakdown.get('avg_assignment_entropy', 0.0)),
+                float(loss_breakdown.get('avg_min_cluster_ratio', 0.0)),
+                float(loss_breakdown.get('avg_max_cluster_ratio', 0.0)),
+                float(loss_breakdown.get('avg_cluster_ari', 0.0)),
+                float(loss_breakdown.get('cross_gap', 0.0)),
+                float(loss_breakdown.get('match_coverage', 0.0)),
+                float(loss_breakdown.get('proto_collapse', 0.0)),
+                float(loss_breakdown.get('domain_gap', 0.0)),
+                int(loss_breakdown.get('cluster_step', 0)),
+                int(loss_breakdown.get('cluster_triggered', 0)),
                 cluster_stats_str,
             )
         )
@@ -549,7 +568,7 @@ except:
         if cnt_wait == patience:
             print('Early stopping!')
             break
-        print('Loading {}th epoch'.format(best_t))
+        print('Best checkpoint epoch {}'.format(best_t))
 
 
 # ------------------- 下游评测准备 -------------------
@@ -699,38 +718,39 @@ def load_similarity_plot_inputs(dataset_name):
     return feature, adj, labels
 
 # 在每个预训练数据集上分别画真负例/假负例相似度密度图。
-for pretrain_dataset_name in pretrain_dataset_names:
-    dataset_index = pretrain_dataset_names.index(pretrain_dataset_name)
-    model.eval()
-    with torch.no_grad():
-        if len(features) > dataset_index and len(adjs) > dataset_index and len(pretrain_groundtruth_labels) > dataset_index:
-            plot_feature = features[dataset_index]
-            plot_adj = adjs[dataset_index]
-            plot_labels = pretrain_groundtruth_labels[dataset_index].cuda()
-        else:
-            plot_feature, plot_adj, plot_labels = load_similarity_plot_inputs(pretrain_dataset_name)
+if args.enable_similarity_plot:
+    for pretrain_dataset_name in pretrain_dataset_names:
+        dataset_index = pretrain_dataset_names.index(pretrain_dataset_name)
+        model.eval()
+        with torch.no_grad():
+            if len(features) > dataset_index and len(adjs) > dataset_index and len(pretrain_groundtruth_labels) > dataset_index:
+                plot_feature = features[dataset_index]
+                plot_adj = adjs[dataset_index]
+                plot_labels = pretrain_groundtruth_labels[dataset_index].cuda()
+            else:
+                plot_feature, plot_adj, plot_labels = load_similarity_plot_inputs(pretrain_dataset_name)
 
-        if plot_feature.dim() == 1:
-            raise ValueError(
-                f"Expected 2D node features for similarity plotting, got shape {tuple(plot_feature.shape)}"
-            )
+            if plot_feature.dim() == 1:
+                raise ValueError(
+                    f"Expected 2D node features for similarity plotting, got shape {tuple(plot_feature.shape)}"
+                )
 
-        pretrain_embeds, _ = model.embed(plot_feature, plot_adj, sparse, None)
-    false_negative_similarity, true_negative_similarity = collect_negative_similarity_distribution(
-        pretrain_embeds.squeeze(0),
-        plot_labels,
-    )
-    similarity_plot_path = os.path.join(
-        result_dir,
-        f'{set_name}_{pretrain_dataset_name.lower()}_false_true_negative_similarity_density.png',
-    )
-    plot_similarity_density(
-        false_negative_similarity,
-        true_negative_similarity,
-        similarity_plot_path,
-        f'{pretrain_dataset_name} pretrain: false vs true negative similarity density',
-    )
-    print(f'Similarity density plot saved to {similarity_plot_path}')
+            pretrain_embeds, _ = model.embed(plot_feature, plot_adj, sparse, None)
+        false_negative_similarity, true_negative_similarity = collect_negative_similarity_distribution(
+            pretrain_embeds.squeeze(0),
+            plot_labels,
+        )
+        similarity_plot_path = os.path.join(
+            result_dir,
+            f'{set_name}_{pretrain_dataset_name.lower()}_false_true_negative_similarity_density.png',
+        )
+        plot_similarity_density(
+            false_negative_similarity,
+            true_negative_similarity,
+            similarity_plot_path,
+            f'{pretrain_dataset_name} pretrain: false vs true negative similarity density',
+        )
+        print(f'Similarity density plot saved to {similarity_plot_path}')
 
 # model.embed 返回 embedding；embeds[0, idx] 是节点 idx 的表示
 embeds, _ = model.embed(downstream_features, adj, sparse, None)

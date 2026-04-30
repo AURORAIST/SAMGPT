@@ -65,15 +65,16 @@ class weighted_prompt(nn.Module):
         self.weight.data.uniform_(0, 1)
 
     def forward(self, graph_embedding):
-        # graph_embedding: List[Tensor]，长度必须等于 weightednum
-        # print("weight",self.weight)
-        # graph_embedding=torch.mm(self.weight, graph_embedding)
+        # graph_embedding: List[Tensor] 或 Tensor([K, ...])
         assert len(graph_embedding) == self.weight.shape[1], 'length must equal'
+
+        # 归一化融合权重，避免多域时权重和不受控导致尺度漂移。
+        norm_weight = torch.softmax(self.weight, dim=1)
 
         # 用第一个元素的形状创建累加器
         ans = torch.zeros_like(graph_embedding[0])
         for i in range(len(graph_embedding)):
-            ans += self.weight[0][i] * graph_embedding[i]
+            ans += norm_weight[0][i] * graph_embedding[i]
         return ans
 
 

@@ -110,7 +110,7 @@ class downstreamprompt(nn.Module):
         # fea-only 消融：
         # 约定：ablation_choice 末尾 'fo' 表示只用 open fea；'fc' 表示只用 composed fea
         if self.ablation_choice[-2:] == 'fo':
-            seq_fea == open_seq_fea
+            seq_fea = open_seq_fea
         elif self.ablation_choice[-2:] == 'fc':
             seq_fea = composed_seq_fea
 

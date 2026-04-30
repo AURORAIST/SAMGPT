@@ -7,6 +7,8 @@ import tqdm
 import numpy as np
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
+from sklearn.metrics import adjusted_rand_score
+from scipy.optimize import linear_sum_assignment
 from layers.prompt import *
 import copy
 
@@ -63,6 +65,8 @@ class PrePrompt(nn.Module):
         lambda_cross=0.1,
         lambda_reg=0.01,
         lambda_proto=0.05,
+        cluster_conf_threshold=0.6,
+        prototype_ema_momentum=0.95,
     ):
         super(PrePrompt, self).__init__()
 
@@ -114,13 +118,28 @@ class PrePrompt(nn.Module):
         self.lambda_cross = float(lambda_cross)
         self.lambda_reg = float(lambda_reg)
         self.lambda_proto = float(lambda_proto)
+        self.cluster_conf_threshold = float(cluster_conf_threshold)
+        self.prototype_ema_momentum = float(prototype_ema_momentum)
         self._cluster_step = 0
+        self._prev_cluster_ids = {}
         self.last_loss_breakdown = {
             'base_loss': 0.0,
             'cluster_loss': 0.0,
             'loss_proto': 0.0,
             'loss_cross': 0.0,
             'loss_reg': 0.0,
+            'num_domains': 0,
+            'cluster_scale': 1.0,
+            'avg_assignment_entropy': 0.0,
+            'avg_min_cluster_ratio': 0.0,
+            'avg_max_cluster_ratio': 0.0,
+            'avg_cluster_ari': 0.0,
+            'cross_gap': 0.0,
+            'proto_collapse': 0.0,
+            'domain_gap': 0.0,
+            'match_coverage': 0.0,
+            'cluster_step': 0,
+            'cluster_triggered': 0,
         }
         self.last_cluster_stats = []
 
@@ -253,6 +272,85 @@ class PrePrompt(nn.Module):
         centers = torch.as_tensor(clusterer.cluster_centers_, dtype=embedding.dtype, device=embedding.device)
         return cluster_ids, centers
 
+    def _matching_cross_domain_loss(self, domain_centers, domain_assignments):
+        """跨域原型匹配后再对齐，避免错误簇强行一一对齐。"""
+        if len(domain_centers) < 2:
+            zero = torch.tensor(0.0, device=self.shared_prototypes.device)
+            return zero, 0.0, 0.0
+
+        pair_losses = []
+        cross_gaps = []
+        coverage = []
+
+        for i in range(len(domain_centers)):
+            ci = F.normalize(domain_centers[i], p=2, dim=1)
+            conf_i = torch.max(domain_assignments[i], dim=1).values
+            for j in range(i + 1, len(domain_centers)):
+                cj = F.normalize(domain_centers[j], p=2, dim=1)
+                conf_j = torch.max(domain_assignments[j], dim=1).values
+
+                sim = torch.matmul(ci, cj.T)
+                if sim.numel() == 0:
+                    continue
+
+                # Hungarian 最大匹配（在相似度矩阵上做最大化）。
+                row_idx_np, col_idx_np = linear_sum_assignment((-sim.detach()).cpu().numpy())
+                row_idx = torch.as_tensor(row_idx_np, dtype=torch.long, device=sim.device)
+                col_idx = torch.as_tensor(col_idx_np, dtype=torch.long, device=sim.device)
+
+                pair_conf = torch.minimum(conf_i[row_idx], conf_j[col_idx])
+                valid = pair_conf > self.cluster_conf_threshold
+                if torch.sum(valid) == 0:
+                    continue
+
+                r_sel = row_idx[valid]
+                c_sel = col_idx[valid]
+                pos_sim = sim[r_sel, c_sel]
+
+                matched_mask = torch.zeros_like(sim, dtype=torch.bool)
+                matched_mask[r_sel, c_sel] = True
+                neg_sim = sim[~matched_mask]
+                if neg_sim.numel() == 0:
+                    neg_sim = sim.reshape(-1)
+
+                pos_mean = torch.mean(pos_sim)
+                neg_mean = torch.mean(neg_sim)
+                # gap 拉开：匹配相似度应明显高于非匹配相似度。
+                gap = pos_mean - neg_mean
+                loss_pair = F.relu(0.2 - gap)
+
+                pair_losses.append(loss_pair)
+                cross_gaps.append(float(gap.detach().item()))
+                coverage.append(float(torch.sum(valid).item() / max(1, len(row_idx_np))))
+
+        if len(pair_losses) == 0:
+            zero = torch.tensor(0.0, device=self.shared_prototypes.device)
+            return zero, 0.0, 0.0
+
+        return torch.mean(torch.stack(pair_losses)), float(np.mean(cross_gaps)), float(np.mean(coverage))
+
+    def _update_shared_prototypes_ema(self, domain_centers, domain_assignments):
+        """用域内中心对共享原型做 EMA 慢更新，减少抖动。"""
+        if len(domain_centers) == 0:
+            return
+
+        device = self.shared_prototypes.device
+        target_sum = torch.zeros_like(self.shared_prototypes.data, device=device)
+        weight_sum = torch.zeros((self.shared_prototypes_num, 1), dtype=self.shared_prototypes.dtype, device=device)
+
+        for centers, alpha in zip(domain_centers, domain_assignments):
+            centers_n = F.normalize(centers.detach(), p=2, dim=1)
+            alpha_n = alpha.detach()
+            target_sum = target_sum + torch.matmul(alpha_n.T, centers_n)
+            weight_sum = weight_sum + torch.sum(alpha_n, dim=0, keepdim=True).T
+
+        target = target_sum / torch.clamp(weight_sum, min=1e-6)
+        target = F.normalize(target, p=2, dim=1)
+
+        m = min(max(self.prototype_ema_momentum, 0.0), 0.999)
+        with torch.no_grad():
+            self.shared_prototypes.data.mul_(m).add_((1.0 - m) * target)
+
     def _cluster_enhance_loss(self, seq_list, adj_list, sparse=False):
         domain_embeds = self._build_domain_embeddings(seq_list, adj_list, sparse)
         if len(domain_embeds) == 0:
@@ -262,6 +360,16 @@ class PrePrompt(nn.Module):
                     'loss_proto': 0.0,
                     'loss_cross': 0.0,
                     'loss_reg': 0.0,
+                    'num_domains': 0,
+                    'cluster_scale': 1.0,
+                    'avg_assignment_entropy': 0.0,
+                    'avg_min_cluster_ratio': 0.0,
+                    'avg_max_cluster_ratio': 0.0,
+                    'avg_cluster_ari': 0.0,
+                    'cross_gap': 0.0,
+                    'proto_collapse': 0.0,
+                    'domain_gap': 0.0,
+                    'match_coverage': 0.0,
                 }
             )
             self.last_cluster_stats = []
@@ -273,9 +381,19 @@ class PrePrompt(nn.Module):
         domain_tildes = []
         domain_assignments = []
         domain_stats = []
+        ari_scores = []
 
         for domain_idx, emb in enumerate(domain_embeds):
             cluster_ids_np, centers = self._cluster_domain_centers(emb, seed=domain_idx + self._cluster_step)
+
+            prev_ids = self._prev_cluster_ids.get(domain_idx, None)
+            if prev_ids is not None and len(prev_ids) == len(cluster_ids_np):
+                try:
+                    ari_scores.append(float(adjusted_rand_score(prev_ids, cluster_ids_np)))
+                except Exception:
+                    pass
+            self._prev_cluster_ids[domain_idx] = cluster_ids_np.copy()
+
             centers_norm = F.normalize(centers, p=2, dim=1)
             sim = torch.matmul(centers_norm, shared.T) / self.cluster_tau
             alpha = F.softmax(sim, dim=-1)
@@ -283,6 +401,10 @@ class PrePrompt(nn.Module):
             proto_ids = torch.argmax(alpha, dim=-1)
             cluster_hist = np.bincount(cluster_ids_np, minlength=centers.shape[0]).tolist()
             proto_hist = np.bincount(proto_ids.detach().cpu().numpy(), minlength=self.shared_prototypes_num).tolist()
+            hist_sum = float(max(1, sum(cluster_hist)))
+            min_cluster_ratio = float(min(cluster_hist) / hist_sum) if len(cluster_hist) > 0 else 0.0
+            max_cluster_ratio = float(max(cluster_hist) / hist_sum) if len(cluster_hist) > 0 else 0.0
+            assignment_entropy = float((-(alpha * torch.log(alpha + 1e-12)).sum(dim=-1)).mean().detach().item())
 
             domain_cluster_ids.append(torch.as_tensor(cluster_ids_np, dtype=torch.long, device=emb.device))
             domain_centers.append(centers)
@@ -296,82 +418,99 @@ class PrePrompt(nn.Module):
                     'num_centers': int(centers.shape[0]),
                     'cluster_hist': cluster_hist,
                     'proto_hist': proto_hist,
+                    'min_cluster_ratio': min_cluster_ratio,
+                    'max_cluster_ratio': max_cluster_ratio,
+                    'assignment_entropy': assignment_entropy,
                 }
             )
 
+        domain_node_counts = torch.as_tensor(
+            [max(1, int(e.shape[0])) for e in domain_embeds],
+            dtype=torch.float32,
+            device=domain_embeds[0].device,
+        )
+        domain_weights = domain_node_counts / torch.clamp(domain_node_counts.sum(), min=1.0)
+
         # 1) Prototype alignment: domain centers align to shared-reconstructed centers.
-        loss_proto = torch.tensor(0.0, device=domain_embeds[0].device)
+        proto_terms = []
         for centers, centers_tilde in zip(domain_centers, domain_tildes):
-            loss_proto = loss_proto + F.mse_loss(centers, centers_tilde)
-        loss_proto = loss_proto / len(domain_centers)
+            proto_terms.append(F.mse_loss(centers, centers_tilde))
+        proto_terms = torch.stack(proto_terms)
+        loss_proto = torch.sum(domain_weights * proto_terms)
 
-        # 2) Community-level cross-domain contrastive:
-        #    anchors are local community centers, positives are cross-domain centers sharing
-        #    the same shared prototype id, and the assignment overlap provides a soft fallback.
-        loss_cross = torch.tensor(0.0, device=domain_embeds[0].device)
-        if len(domain_embeds) >= 2:
-            center_bank = []
-            center_domain_ids = []
-            center_proto_ids = []
-            for domain_idx, centers in enumerate(domain_centers):
-                hard_proto_ids = torch.argmax(domain_assignments[domain_idx], dim=-1)
-                for center_idx, center in enumerate(centers):
-                    center_bank.append(center)
-                    center_domain_ids.append(domain_idx)
-                    center_proto_ids.append(int(hard_proto_ids[center_idx].item()))
-
-            if len(center_bank) > 1:
-                center_bank = torch.stack(center_bank, dim=0)
-                center_bank = F.normalize(center_bank, p=2, dim=1)
-                sim_logits = torch.matmul(center_bank, center_bank.T) / self.cluster_tau
-
-                center_domain_ids = torch.as_tensor(center_domain_ids, dtype=torch.long, device=center_bank.device)
-                center_proto_ids = torch.as_tensor(center_proto_ids, dtype=torch.long, device=center_bank.device)
-                eye = torch.eye(center_bank.size(0), device=center_bank.device, dtype=torch.bool)
-                cross_domain_mask = center_domain_ids.unsqueeze(0) != center_domain_ids.unsqueeze(1)
-                same_proto_mask = center_proto_ids.unsqueeze(0) == center_proto_ids.unsqueeze(1)
-
-                pos_mask = cross_domain_mask & same_proto_mask & (~eye)
-                row_has_pos = pos_mask.any(dim=1)
-                if torch.any(~row_has_pos):
-                    soft_pos_mask = cross_domain_mask & (~eye)
-                    pos_mask = torch.where(row_has_pos.unsqueeze(1), pos_mask, soft_pos_mask)
-
-                assignment_bank = torch.cat(domain_assignments, dim=0)
-                pair_weights = torch.matmul(assignment_bank, assignment_bank.T)
-                exp_logits = torch.exp(sim_logits)
-
-                numerator = (exp_logits * pair_weights * pos_mask.float()).sum(dim=1)
-                denominator = (exp_logits * pair_weights * (~eye).float()).sum(dim=1)
-                valid = (numerator > 0) & (denominator > 0)
-                if torch.any(valid):
-                    loss_cross = (-torch.log((numerator[valid] + 1e-12) / (denominator[valid] + 1e-12))).mean()
+        # 2) Matching-based cross-domain alignment with confidence filtering.
+        loss_cross, cross_gap, match_coverage = self._matching_cross_domain_loss(
+            domain_centers=domain_centers,
+            domain_assignments=domain_assignments,
+        )
 
         # 3) Token-Prototype regularization: each structural token close to nearest local center.
-        loss_reg = torch.tensor(0.0, device=domain_embeds[0].device)
-        token_cnt = 0
+        per_domain_reg = []
         for domain_idx, centers in enumerate(domain_centers):
             if centers.shape[0] == 0:
+                per_domain_reg.append(torch.tensor(0.0, device=domain_embeds[0].device))
                 continue
+            domain_reg = torch.tensor(0.0, device=domain_embeds[0].device)
+            token_cnt = 0
             for token_layer in self.structure_prompt_layers[domain_idx]:
                 token = token_layer.weight
                 token = token.squeeze(0) if token.dim() > 1 else token
                 dists = torch.cdist(token.unsqueeze(0), centers)
                 nearest_idx = torch.argmin(dists, dim=1)
                 nearest_center = centers[nearest_idx].squeeze(0)
-                loss_reg = loss_reg + F.mse_loss(token, nearest_center)
+                domain_reg = domain_reg + F.mse_loss(token, nearest_center)
                 token_cnt += 1
-        if token_cnt > 0:
-            loss_reg = loss_reg / token_cnt
+            if token_cnt > 0:
+                domain_reg = domain_reg / token_cnt
+            per_domain_reg.append(domain_reg)
+        per_domain_reg = torch.stack(per_domain_reg)
+        loss_reg = torch.sum(domain_weights * per_domain_reg)
 
         cluster_loss = self.lambda_cross * loss_cross + self.lambda_reg * loss_reg + self.lambda_proto * loss_proto
+        # 多域时做温和缩放，避免域数增加后辅助约束过强压制主任务。
+        cluster_scale = float(1.0 / np.sqrt(max(1, len(domain_embeds))))
+        cluster_loss = cluster_loss * cluster_scale
+        self._update_shared_prototypes_ema(domain_centers, domain_assignments)
+
+        proto_norm = F.normalize(self.shared_prototypes, p=2, dim=1)
+        proto_sim = torch.matmul(proto_norm, proto_norm.T)
+        if proto_sim.shape[0] > 1:
+            eye = torch.eye(proto_sim.shape[0], device=proto_sim.device, dtype=torch.bool)
+            proto_collapse = float(torch.mean(proto_sim[~eye]).detach().item())
+        else:
+            proto_collapse = 1.0
+
+        domain_means = torch.stack([F.normalize(torch.mean(e, dim=0, keepdim=False), p=2, dim=0) for e in domain_embeds], dim=0)
+        if domain_means.shape[0] > 1:
+            gap_mat = torch.cdist(domain_means, domain_means, p=2)
+            eye = torch.eye(gap_mat.shape[0], device=gap_mat.device, dtype=torch.bool)
+            domain_gap = float(torch.mean(gap_mat[~eye]).detach().item())
+        else:
+            domain_gap = 0.0
+
         self.last_cluster_stats = domain_stats
+        avg_entropy = float(np.mean([s.get('assignment_entropy', 0.0) for s in domain_stats])) if len(domain_stats) > 0 else 0.0
+        avg_min_ratio = float(np.mean([s.get('min_cluster_ratio', 0.0) for s in domain_stats])) if len(domain_stats) > 0 else 0.0
+        avg_max_ratio = float(np.mean([s.get('max_cluster_ratio', 0.0) for s in domain_stats])) if len(domain_stats) > 0 else 0.0
+        avg_ari = float(np.mean(ari_scores)) if len(ari_scores) > 0 else 0.0
         self.last_loss_breakdown.update(
             {
                 'cluster_loss': float(cluster_loss.detach().item()),
                 'loss_proto': float(loss_proto.detach().item()),
                 'loss_cross': float(loss_cross.detach().item()),
                 'loss_reg': float(loss_reg.detach().item()),
+                'num_domains': int(len(domain_embeds)),
+                'cluster_scale': cluster_scale,
+                'avg_assignment_entropy': avg_entropy,
+                'avg_min_cluster_ratio': avg_min_ratio,
+                'avg_max_cluster_ratio': avg_max_ratio,
+                'avg_cluster_ari': avg_ari,
+                'cross_gap': cross_gap,
+                'proto_collapse': proto_collapse,
+                'domain_gap': domain_gap,
+                'match_coverage': match_coverage,
+                'cluster_step': int(self._cluster_step),
+                'cluster_triggered': 1,
             }
         )
         return cluster_loss
@@ -429,6 +568,18 @@ class PrePrompt(nn.Module):
                     'loss_proto': 0.0,
                     'loss_cross': 0.0,
                     'loss_reg': 0.0,
+                    'num_domains': len(seq_list),
+                    'cluster_scale': 1.0,
+                    'avg_assignment_entropy': 0.0,
+                    'avg_min_cluster_ratio': 0.0,
+                    'avg_max_cluster_ratio': 0.0,
+                    'avg_cluster_ari': 0.0,
+                    'cross_gap': 0.0,
+                    'proto_collapse': 0.0,
+                    'domain_gap': 0.0,
+                    'match_coverage': 0.0,
+                    'cluster_step': int(self._cluster_step),
+                    'cluster_triggered': 0,
                 }
             )
         self._cluster_step += 1
@@ -441,7 +592,15 @@ class PrePrompt(nn.Module):
 
 def pca_compression(seq, k):
     """PCA 降维到 k 维，并打印累计解释方差比例."""
-    pca = PCA(n_components=k)
+    seq = np.asarray(seq)
+    n_samples, n_features = seq.shape
+    use_k = int(min(k, n_samples, n_features))
+    if use_k <= 0:
+        raise ValueError(f'Invalid PCA target dim: requested {k}, data shape {seq.shape}')
+    if use_k != k:
+        print(f'Warning: reduce PCA components from {k} to {use_k} because of data shape {seq.shape}')
+
+    pca = PCA(n_components=use_k)
     seq = pca.fit_transform(seq)
 
     print(pca.explained_variance_ratio_.sum())
