@@ -8,7 +8,6 @@ import random
 
 from models import LogReg
 from preprompt import PrePrompt, pca_compression
-import preprompt
 import pdb
 import os
 import sys
@@ -232,7 +231,7 @@ parser.add_argument(
 )
 parser.add_argument('--downstream_task', type=str, default='node', help='node or graph')
 parser.add_argument('--gpu', type=int, default=0, help='gpu')
-parser.add_argument('--pretrain_method', type=str, default="GRAPHCL", help='GRAPHCL or LP or splitLP')
+parser.add_argument('--pretrain_method', type=str, default="GRAPHCL", choices=['GRAPHCL'], help='pretrain method')
 parser.add_argument('--aug_type', type=str, default="edge", help='aug type: mask or edge')
 parser.add_argument('--drop_percent', type=float, default=0.1, help='drop percent')
 parser.add_argument('--seed', type=int, default=39, help='seed')
@@ -240,7 +239,6 @@ parser.add_argument('--combinetype', type=str, default='mul', help='the type of 
 parser.add_argument('--graphId', nargs='+', type=int, default=[1], help="target graph's id in one dataset")
 parser.add_argument('--alpha', type=float, default=1.0, help='alpha of combines')
 parser.add_argument('--beta', type=float, default=1.0, help='beta of combines')
-parser.add_argument('--negative_samples_num', type=int, default=40, help='negative_samples_num')
 parser.add_argument('--skip_pretrain', type=int, default=1, help='try to use trained models')
 parser.add_argument('--ablation_pre', type=str, default='all', help='ablation_pre')
 parser.add_argument('--ablation_down', type=str, default='all', help='ablation_down')
@@ -250,6 +248,14 @@ parser.add_argument('--lr', type=float, default=0.001, help='learning rate')
 parser.add_argument('--hid_units', type=int, default=256, help='hid_units')
 parser.add_argument('--layers_num', type=int, default=3, help='layers_num')
 parser.add_argument('--backbone', type=str, default='gcn', help='backbone')
+parser.add_argument('--enable_cluster_enhance', type=int, default=0, help='enable clustering-enhanced prototype loss in pretraining')
+parser.add_argument('--intra_clusters', type=int, default=8, help='number of intra-domain clusters per domain')
+parser.add_argument('--shared_prototypes_num', type=int, default=16, help='number of shared prototypes across domains')
+parser.add_argument('--cluster_interval', type=int, default=1, help='apply cluster-enhance loss every N pretrain steps')
+parser.add_argument('--cluster_tau', type=float, default=0.2, help='temperature for cluster contrastive alignment')
+parser.add_argument('--lambda_cross', type=float, default=0.1, help='weight for cross-domain prototype contrastive loss')
+parser.add_argument('--lambda_reg', type=float, default=0.01, help='weight for structure token to local prototype regularization')
+parser.add_argument('--lambda_proto', type=float, default=0.05, help='weight for local-shared prototype reconstruction loss')
 parser.add_argument(
     '--downstream_cluster_method',
     type=str,
@@ -316,14 +322,14 @@ from utils import process
 from utils import aug
 
 # ------------------- 训练/模型超参 -------------------
-nb_epochs = 10000
+nb_epochs = 3000
+print("nb_epochs: ", nb_epochs)
 patience = 50
 lr = args.lr
 l2_coef = 0.0
 drop_prob = 0.0
 hid_units = args.hid_units
 sparse = True
-LP = (args.pretrain_method == 'LP')
 
 # 损失函数
 b_xent = nn.BCEWithLogitsLoss()
@@ -347,10 +353,8 @@ features = []
 adjs = []
 aug_adjs = []
 aug_features = []
-negetive_samples = []
 lbls = []
 pretrain_groundtruth_labels = []
-negetive_sample = torch.tensor(0.0)
 
 print(pretrain_dataset_names)
 
@@ -408,6 +412,14 @@ model = PrePrompt(
     backbone=args.backbone,
     alpha=args.alpha,
     ablation=args.ablation_pre,
+    enable_cluster_enhance=(args.enable_cluster_enhance == 1),
+    intra_clusters=args.intra_clusters,
+    shared_prototypes_num=args.shared_prototypes_num,
+    cluster_interval=args.cluster_interval,
+    cluster_tau=args.cluster_tau,
+    lambda_cross=args.lambda_cross,
+    lambda_reg=args.lambda_reg,
+    lambda_proto=args.lambda_proto,
 ).cuda()
 
 test_idx_num = 100
@@ -421,7 +433,7 @@ try:
     print(f'loading model from {save_name}')
     model.load_state_dict(load_state_dict_trusted(save_name))
 except:
-    # ------------------- 预训练数据准备（特征/邻接/增强/负采样）-------------------
+    # ------------------- 预训练数据准备（特征/邻接/增强）-------------------
     for step, datas in enumerate(zip(*pretrain_loaders)):
         print('step', step)
         # 只训练指定的图 id
@@ -447,44 +459,29 @@ except:
             pretrain_groundtruth_labels.append(data.y.detach().clone().view(-1))
 
             # ----------- GRAPHCL 方式：需要两份增强视图与对比标签 -----------
-            if args.pretrain_method == 'GRAPHCL':
-                if not (
-                    os.path.exists(f'{cache_dir}/{pretrain_dataset_name}_aug_feature.pt')
-                    and os.path.exists(f'{cache_dir}/{pretrain_dataset_name}_aug_adj.pt')
-                    and os.path.exists(f'{cache_dir}/{pretrain_dataset_name}_lbl.pt')
-                ):
-                    aug_feature, aug_adj, lbl = aug.build_aug(adj, feature, sparse, drop_percent)
-                    torch.save(aug_feature, f'{cache_dir}/{pretrain_dataset_name}_aug_feature.pt')
-                    torch.save(aug_adj, f'{cache_dir}/{pretrain_dataset_name}_aug_adj.pt')
-                    torch.save(lbl, f'{cache_dir}/{pretrain_dataset_name}_lbl.pt')
+            if not (
+                os.path.exists(f'{cache_dir}/{pretrain_dataset_name}_aug_feature.pt')
+                and os.path.exists(f'{cache_dir}/{pretrain_dataset_name}_aug_adj.pt')
+                and os.path.exists(f'{cache_dir}/{pretrain_dataset_name}_lbl.pt')
+            ):
+                aug_feature, aug_adj, lbl = aug.build_aug(adj, feature, sparse, drop_percent)
+                torch.save(aug_feature, f'{cache_dir}/{pretrain_dataset_name}_aug_feature.pt')
+                torch.save(aug_adj, f'{cache_dir}/{pretrain_dataset_name}_aug_adj.pt')
+                torch.save(lbl, f'{cache_dir}/{pretrain_dataset_name}_lbl.pt')
 
-                aug_feature, aug_adj, lbl = (
-                    torch_load_trusted(f'{cache_dir}/{pretrain_dataset_name}_aug_feature.pt'),
-                    torch_load_trusted(f'{cache_dir}/{pretrain_dataset_name}_aug_adj.pt'),
-                    torch_load_trusted(f'{cache_dir}/{pretrain_dataset_name}_lbl.pt'),
-                )
-                aug_features.append(aug_feature)
-                aug_adjs.append(aug_adj)
-                lbls.append(lbl)
-
-            # ----------- splitLP：每个数据集单独做负采样缓存 -----------
-            if args.pretrain_method == 'splitLP':
-                if not os.path.exists(f'{cache_dir}/{pretrain_dataset_name}_negetive_sample.pt'):
-                    negetive_sample = preprompt.prompt_pretrain_sample(adj, 50)
-                    torch.save(negetive_sample, f'{cache_dir}/{pretrain_dataset_name}_negetive_sample.pt')
-                negetive_sample = torch_load_trusted(f'{cache_dir}/{pretrain_dataset_name}_negetive_sample.pt')
-                negetive_samples.append(negetive_sample)
+            aug_feature, aug_adj, lbl = (
+                torch_load_trusted(f'{cache_dir}/{pretrain_dataset_name}_aug_feature.pt'),
+                torch_load_trusted(f'{cache_dir}/{pretrain_dataset_name}_aug_adj.pt'),
+                torch_load_trusted(f'{cache_dir}/{pretrain_dataset_name}_lbl.pt'),
+            )
+            aug_features.append(aug_feature)
+            aug_adjs.append(aug_adj)
+            lbls.append(lbl)
 
             # 邻接统一做归一化并缓存到列表
             adj = process.normalize_adj(adj + sp.eye(adj.shape[0]))
             features.append(feature)
             adjs.append(adj)
-
-        # ----------- LP：把多个预训练数据集合并成 block-diagonal 大图后做负采样 -----------
-        if args.pretrain_method == 'LP':
-            combinedadj = process.combine_dataset_list_sp(adjs)
-            print('combinedadj', combinedadj.shape)
-            negetive_sample = preprompt.prompt_pretrain_sample(combinedadj, args.negative_samples_num)
 
     # ------------------- 优化器 & 搬到 GPU -------------------
     optimiser = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=l2_coef)
@@ -500,11 +497,6 @@ except:
             for adj in adjs
         ]
         lbls = [tensors.cuda() for tensors in lbls]
-        negetive_samples = [tensors.cuda() for tensors in negetive_samples]
-
-        # LP 情况下 negetive_samples 可能为空，此时使用合并图上的 negetive_sample
-        if len(negetive_samples) == 0:
-            negetive_samples = negetive_sample.cuda()
         aug_adjs = [tensors.cuda() for tensors in aug_adjs]
         aug_features = [tensors.cuda() for tensors in aug_features]
 
@@ -520,17 +512,30 @@ except:
         optimiser.zero_grad()
 
         # GRAPHCL: 传入 (aug_features, aug_adjs, lbls)
-        if args.pretrain_method == 'GRAPHCL':
-            loss = model(aug_features, aug_adjs, sparse, None, None, None, lbls, None)
-
-        # LP / splitLP: 传入负采样 samples
-        if args.pretrain_method == 'LP' or args.pretrain_method == 'splitLP':
-            loss = model(features, adjs, sparse, None, None, None, None, samples=negetive_samples)
+        loss = model(aug_features, aug_adjs, sparse, None, None, None, lbls)
 
         loss.backward()
         optimiser.step()
 
-        print('Loss:[{:.8f}]'.format(loss))
+        loss_breakdown = getattr(model, 'last_loss_breakdown', {})
+        cluster_stats = getattr(model, 'last_cluster_stats', [])
+        cluster_stats_str = '; '.join(
+            [
+                f"d{stat.get('domain_idx', '?')}:k={stat.get('num_clusters', 0)}/c={stat.get('num_centers', 0)}/hist={stat.get('cluster_hist', [])}"
+                for stat in cluster_stats
+            ]
+        )
+        print(
+            'Loss:[{:.8f}] base:[{:.8f}] cluster:[{:.8f}] proto:[{:.8f}] cross:[{:.8f}] reg:[{:.8f}] clusters:[{}]'.format(
+                float(loss.detach().item()),
+                float(loss_breakdown.get('base_loss', 0.0)),
+                float(loss_breakdown.get('cluster_loss', 0.0)),
+                float(loss_breakdown.get('loss_proto', 0.0)),
+                float(loss_breakdown.get('loss_cross', 0.0)),
+                float(loss_breakdown.get('loss_reg', 0.0)),
+                cluster_stats_str,
+            )
+        )
         # 基于 loss 的 early stopping，并保存最优 checkpoint
         if loss < best:
             firstbest = 1
@@ -710,7 +715,7 @@ for pretrain_dataset_name in pretrain_dataset_names:
                 f"Expected 2D node features for similarity plotting, got shape {tuple(plot_feature.shape)}"
             )
 
-        pretrain_embeds, _ = model.embed(plot_feature, plot_adj, sparse, None, LP)
+        pretrain_embeds, _ = model.embed(plot_feature, plot_adj, sparse, None)
     false_negative_similarity, true_negative_similarity = collect_negative_similarity_distribution(
         pretrain_embeds.squeeze(0),
         plot_labels,
@@ -728,7 +733,7 @@ for pretrain_dataset_name in pretrain_dataset_names:
     print(f'Similarity density plot saved to {similarity_plot_path}')
 
 # model.embed 返回 embedding；embeds[0, idx] 是节点 idx 的表示
-embeds, _ = model.embed(downstream_features, adj, sparse, None, LP)
+embeds, _ = model.embed(downstream_features, adj, sparse, None)
 
 # 下游学习率列表（当前只尝试一个值）
 downstreamlrlist = [0.001]

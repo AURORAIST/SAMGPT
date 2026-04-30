@@ -1,11 +1,12 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from models import DGI, GraphCL, Lp, GcnLayers, MLP, GatLayers
+from models import DGI, GraphCL, GcnLayers, MLP, GatLayers
 from layers import AvgReadout 
 import tqdm
 import numpy as np
 from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
 from layers.prompt import *
 import copy
 
@@ -15,7 +16,6 @@ import copy
 # 该模块的要点：
 # 1) 预训练任务支持两类：
 #    - GRAPHCL：需要两份增强视图 + DGI/GraphCL 类对比损失（BCEWithLogitsLoss）
-#    - LP / splitLP：基于负采样 tuples 的对比损失 compareloss（自定义）
 #
 # 2) prompt 分为两种：
 #    - feature_prompt_layers：对输入特征 seq 做 add/mul 调制
@@ -55,11 +55,18 @@ class PrePrompt(nn.Module):
         backbone='gcn',
         alpha=1.0,
         ablation='all',
+        enable_cluster_enhance=False,
+        intra_clusters=8,
+        shared_prototypes_num=16,
+        cluster_interval=1,
+        cluster_tau=0.2,
+        lambda_cross=0.1,
+        lambda_reg=0.01,
+        lambda_proto=0.05,
     ):
         super(PrePrompt, self).__init__()
 
-        # 两类预训练目标的封装
-        self.lp = Lp(n_in, n_h)
+        # 预训练目标封装
         self.graphcledge = GraphCL(n_in, n_h, activation)
         self.graphclmask = GraphCL(n_in, n_h, activation)
 
@@ -98,6 +105,27 @@ class PrePrompt(nn.Module):
 
         self.ablation_choice = ablation
 
+        # Optional clustering-enhanced prototype module (disabled by default).
+        self.enable_cluster_enhance = bool(enable_cluster_enhance)
+        self.intra_clusters = int(intra_clusters)
+        self.shared_prototypes_num = int(shared_prototypes_num)
+        self.cluster_interval = max(1, int(cluster_interval))
+        self.cluster_tau = float(cluster_tau)
+        self.lambda_cross = float(lambda_cross)
+        self.lambda_reg = float(lambda_reg)
+        self.lambda_proto = float(lambda_proto)
+        self._cluster_step = 0
+        self.last_loss_breakdown = {
+            'base_loss': 0.0,
+            'cluster_loss': 0.0,
+            'loss_proto': 0.0,
+            'loss_cross': 0.0,
+            'loss_reg': 0.0,
+        }
+        self.last_cluster_stats = []
+
+        self.shared_prototypes = nn.Parameter(torch.randn(self.shared_prototypes_num, n_h) * 0.02)
+
     def ablation(self, fea_prelogits, str_prelogits):
         """根据 ablation_choice 组合 fea/str 两类 logits."""
         if self.ablation_choice == 'all':
@@ -108,22 +136,6 @@ class PrePrompt(nn.Module):
             return fea_prelogits
         else:
             return fea_prelogits + self.combine * str_prelogits
-
-    def compute_prelogits_LP(self, feature_prompt_layers, structure_prompt_layers, seq_list, adj_list, sparse=False):
-        """计算 LP/splitLP 预训练的 logits（逐数据集 yield）。
-
-        对每个预训练数据集：
-        - fea_prelogits：先对 seq 做 feature prompt，再做 LP 任务
-        - str_prelogits：把 structure prompt 传入 gcn（影响每层），再做 LP 任务
-        - 最终通过 ablation() 得到融合 logits
-        """
-        for fea_pretext, str_layers, seq, adj in zip(feature_prompt_layers, structure_prompt_layers, seq_list, adj_list):
-            if self.ablation_choice == 'None':
-                yield self.lp(self.gcn, seq, adj, sparse)
-            else:
-                fea_prelogits = self.lp(self.gcn, fea_pretext(seq), adj, sparse)
-                str_prelogits = self.lp(self.gcn, seq, adj, sparse, str_layers)
-                yield self.ablation(fea_prelogits, str_prelogits)
 
     def compute_prelogits_GRAPHCL(
         self,
@@ -204,12 +216,172 @@ class PrePrompt(nn.Module):
 
                 yield self.ablation(fea_prelogits, str_prelogits)
 
-    def embed(self, seq, adj, sparse, msk, LP):
+    def _domain_prompted_embedding(self, domain_idx, seq, adj, sparse=False):
+        """Build per-domain node embeddings with the same prompt composition used in pretraining."""
+        if self.ablation_choice == 'None':
+            emb = self.gcn(seq, adj, sparse, None)
+            return emb.squeeze(0) if emb.dim() == 3 else emb
+
+        fea_prompt = self.feature_prompt_layers[domain_idx]
+        str_prompt = self.structure_prompt_layers[domain_idx]
+
+        fea_emb = self.gcn(fea_prompt(seq), adj, sparse, None)
+        str_emb = self.gcn(seq, adj, sparse, None, str_prompt)
+        emb = self.ablation(fea_emb, str_emb)
+        return emb.squeeze(0) if emb.dim() == 3 else emb
+
+    def _build_domain_embeddings(self, seq_list, adj_list, sparse=False):
+        embeds = []
+        for domain_idx, (seq_item, adj_item) in enumerate(zip(seq_list, adj_list)):
+            # GRAPHCL passes stacked tensors, not Python lists:
+            # - seq_item: [4, N, F]
+            # - adj_item: [3, N, N]
+            # Use the base/original slice at index 0 so the clustering branch
+            # sees the same graph as the main encoder.
+            seq = seq_item[0] if torch.is_tensor(seq_item) and seq_item.dim() >= 3 else seq_item
+            adj = adj_item[0] if torch.is_tensor(adj_item) and adj_item.dim() >= 3 else adj_item
+            if torch.is_tensor(adj) and adj.dim() == 3:
+                adj = adj[0]
+            embeds.append(self._domain_prompted_embedding(domain_idx, seq, adj, sparse))
+        return embeds
+
+    def _cluster_domain_centers(self, embedding, seed):
+        k = max(1, min(self.intra_clusters, embedding.shape[0]))
+        x = F.normalize(embedding.detach(), p=2, dim=1).cpu().numpy()
+        clusterer = KMeans(n_clusters=k, random_state=int(seed), n_init=10)
+        cluster_ids = clusterer.fit_predict(x)
+        centers = torch.as_tensor(clusterer.cluster_centers_, dtype=embedding.dtype, device=embedding.device)
+        return cluster_ids, centers
+
+    def _cluster_enhance_loss(self, seq_list, adj_list, sparse=False):
+        domain_embeds = self._build_domain_embeddings(seq_list, adj_list, sparse)
+        if len(domain_embeds) == 0:
+            self.last_loss_breakdown.update(
+                {
+                    'cluster_loss': 0.0,
+                    'loss_proto': 0.0,
+                    'loss_cross': 0.0,
+                    'loss_reg': 0.0,
+                }
+            )
+            self.last_cluster_stats = []
+            return torch.tensor(0.0, device=self.shared_prototypes.device)
+
+        shared = F.normalize(self.shared_prototypes, p=2, dim=1)
+        domain_cluster_ids = []
+        domain_centers = []
+        domain_tildes = []
+        domain_assignments = []
+        domain_stats = []
+
+        for domain_idx, emb in enumerate(domain_embeds):
+            cluster_ids_np, centers = self._cluster_domain_centers(emb, seed=domain_idx + self._cluster_step)
+            centers_norm = F.normalize(centers, p=2, dim=1)
+            sim = torch.matmul(centers_norm, shared.T) / self.cluster_tau
+            alpha = F.softmax(sim, dim=-1)
+            centers_tilde = torch.matmul(alpha, self.shared_prototypes)
+            proto_ids = torch.argmax(alpha, dim=-1)
+            cluster_hist = np.bincount(cluster_ids_np, minlength=centers.shape[0]).tolist()
+            proto_hist = np.bincount(proto_ids.detach().cpu().numpy(), minlength=self.shared_prototypes_num).tolist()
+
+            domain_cluster_ids.append(torch.as_tensor(cluster_ids_np, dtype=torch.long, device=emb.device))
+            domain_centers.append(centers)
+            domain_tildes.append(centers_tilde)
+            domain_assignments.append(alpha)
+            domain_stats.append(
+                {
+                    'domain_idx': domain_idx,
+                    'num_nodes': int(emb.shape[0]),
+                    'num_clusters': int(centers.shape[0]),
+                    'num_centers': int(centers.shape[0]),
+                    'cluster_hist': cluster_hist,
+                    'proto_hist': proto_hist,
+                }
+            )
+
+        # 1) Prototype alignment: domain centers align to shared-reconstructed centers.
+        loss_proto = torch.tensor(0.0, device=domain_embeds[0].device)
+        for centers, centers_tilde in zip(domain_centers, domain_tildes):
+            loss_proto = loss_proto + F.mse_loss(centers, centers_tilde)
+        loss_proto = loss_proto / len(domain_centers)
+
+        # 2) Community-level cross-domain contrastive:
+        #    anchors are local community centers, positives are cross-domain centers sharing
+        #    the same shared prototype id, and the assignment overlap provides a soft fallback.
+        loss_cross = torch.tensor(0.0, device=domain_embeds[0].device)
+        if len(domain_embeds) >= 2:
+            center_bank = []
+            center_domain_ids = []
+            center_proto_ids = []
+            for domain_idx, centers in enumerate(domain_centers):
+                hard_proto_ids = torch.argmax(domain_assignments[domain_idx], dim=-1)
+                for center_idx, center in enumerate(centers):
+                    center_bank.append(center)
+                    center_domain_ids.append(domain_idx)
+                    center_proto_ids.append(int(hard_proto_ids[center_idx].item()))
+
+            if len(center_bank) > 1:
+                center_bank = torch.stack(center_bank, dim=0)
+                center_bank = F.normalize(center_bank, p=2, dim=1)
+                sim_logits = torch.matmul(center_bank, center_bank.T) / self.cluster_tau
+
+                center_domain_ids = torch.as_tensor(center_domain_ids, dtype=torch.long, device=center_bank.device)
+                center_proto_ids = torch.as_tensor(center_proto_ids, dtype=torch.long, device=center_bank.device)
+                eye = torch.eye(center_bank.size(0), device=center_bank.device, dtype=torch.bool)
+                cross_domain_mask = center_domain_ids.unsqueeze(0) != center_domain_ids.unsqueeze(1)
+                same_proto_mask = center_proto_ids.unsqueeze(0) == center_proto_ids.unsqueeze(1)
+
+                pos_mask = cross_domain_mask & same_proto_mask & (~eye)
+                row_has_pos = pos_mask.any(dim=1)
+                if torch.any(~row_has_pos):
+                    soft_pos_mask = cross_domain_mask & (~eye)
+                    pos_mask = torch.where(row_has_pos.unsqueeze(1), pos_mask, soft_pos_mask)
+
+                assignment_bank = torch.cat(domain_assignments, dim=0)
+                pair_weights = torch.matmul(assignment_bank, assignment_bank.T)
+                exp_logits = torch.exp(sim_logits)
+
+                numerator = (exp_logits * pair_weights * pos_mask.float()).sum(dim=1)
+                denominator = (exp_logits * pair_weights * (~eye).float()).sum(dim=1)
+                valid = (numerator > 0) & (denominator > 0)
+                if torch.any(valid):
+                    loss_cross = (-torch.log((numerator[valid] + 1e-12) / (denominator[valid] + 1e-12))).mean()
+
+        # 3) Token-Prototype regularization: each structural token close to nearest local center.
+        loss_reg = torch.tensor(0.0, device=domain_embeds[0].device)
+        token_cnt = 0
+        for domain_idx, centers in enumerate(domain_centers):
+            if centers.shape[0] == 0:
+                continue
+            for token_layer in self.structure_prompt_layers[domain_idx]:
+                token = token_layer.weight
+                token = token.squeeze(0) if token.dim() > 1 else token
+                dists = torch.cdist(token.unsqueeze(0), centers)
+                nearest_idx = torch.argmin(dists, dim=1)
+                nearest_center = centers[nearest_idx].squeeze(0)
+                loss_reg = loss_reg + F.mse_loss(token, nearest_center)
+                token_cnt += 1
+        if token_cnt > 0:
+            loss_reg = loss_reg / token_cnt
+
+        cluster_loss = self.lambda_cross * loss_cross + self.lambda_reg * loss_reg + self.lambda_proto * loss_proto
+        self.last_cluster_stats = domain_stats
+        self.last_loss_breakdown.update(
+            {
+                'cluster_loss': float(cluster_loss.detach().item()),
+                'loss_proto': float(loss_proto.detach().item()),
+                'loss_cross': float(loss_cross.detach().item()),
+                'loss_reg': float(loss_reg.detach().item()),
+            }
+        )
+        return cluster_loss
+
+    def embed(self, seq, adj, sparse, msk):
         """得到节点 embedding h_1 及图级向量 c（readout）。
 
         返回 detach 后的张量，通常用于下游评测（不反传梯度）。
         """
-        h_1 = self.gcn(seq, adj, sparse, LP)
+        h_1 = self.gcn(seq, adj, sparse, False)
         c = self.read(h_1, msk)
 
         return h_1.detach(), c.detach()
@@ -221,58 +393,47 @@ class PrePrompt(nn.Module):
         combines = [self.combine]
         return fea_pretext_weights, str_pretext_weights, combines
 
-    def forward(self, seq_list, adj_list, sparse, msk, samp_bias1, samp_bias2, lbl, samples=None):
-        """预训练 forward：根据是否提供 samples 来区分 GRAPHCL 与 LP。
+    def forward(self, seq_list, adj_list, sparse, msk, samp_bias1, samp_bias2, lbl):
+        """预训练 forward：GRAPHCL 路径。
 
         Args:
             seq_list/adj_list: 预训练数据列表（多数据集）
             lbl: GRAPHCL 的对比标签（list，与 seq_list 对齐）
-            samples: LP/splitLP 的负采样 tuples
         """
         total_loss = torch.tensor(0.0, dtype=torch.float32).to(seq_list[0].device)
 
-        # GRAPHCL 路径：samples==None
-        if samples == None:
-            logits = list(
-                self.compute_prelogits_GRAPHCL(
-                    self.feature_prompt_layers,
-                    self.structure_prompt_layers,
-                    seq_list,
-                    adj_list,
-                    sparse,
-                    msk,
-                    samp_bias1,
-                    samp_bias2,
-                )
+        logits = list(
+            self.compute_prelogits_GRAPHCL(
+                self.feature_prompt_layers,
+                self.structure_prompt_layers,
+                seq_list,
+                adj_list,
+                sparse,
+                msk,
+                samp_bias1,
+                samp_bias2,
             )
-            for i in range(len(logits)):
-                loss = self.loss(logits[i], lbl[i])
-                total_loss += loss
+        )
+        for i in range(len(logits)):
+            loss = self.loss(logits[i], lbl[i])
+            total_loss += loss
 
-        # LP / splitLP 路径
+        self.last_loss_breakdown['base_loss'] = float(total_loss.detach().item())
+
+        if self.enable_cluster_enhance and (self._cluster_step % self.cluster_interval == 0):
+            total_loss = total_loss + self._cluster_enhance_loss(seq_list, adj_list, sparse)
         else:
-            logits = list(
-                self.compute_prelogits_LP(
-                    self.feature_prompt_layers,
-                    self.structure_prompt_layers,
-                    seq_list,
-                    adj_list,
-                    sparse,
-                )
+            self.last_loss_breakdown.update(
+                {
+                    'cluster_loss': 0.0,
+                    'loss_proto': 0.0,
+                    'loss_cross': 0.0,
+                    'loss_reg': 0.0,
+                }
             )
+        self._cluster_step += 1
 
-            # splitLP：samples 是 list（每个数据集各自一份 tuples）
-            if type(samples) == list:
-                samples = [torch.tensor(sample, dtype=torch.int64).to(seq_list[0].device) for sample in samples]
-                for i in range(len(logits)):
-                    loss = compareloss(logits[i], samples[i], temperature=1)
-                    total_loss += loss
-
-            # LP：samples 是一个整体 tuples（来自合并图）
-            else:
-                samples = torch.tensor(samples, dtype=torch.int64).to(seq_list[0].device)
-                logits = torch.cat(logits, dim=0)
-                total_loss = compareloss(logits, samples, temperature=1)
+        self.last_loss_breakdown['total_loss'] = float(total_loss.detach().item())
 
         return total_loss
 
@@ -298,86 +459,3 @@ def svd_compression(seq, k):
     return res
 
 
-def mygather(feature, index):
-    """辅助函数：按 index 从 feature 中 gather，并保持 batch 结构。
-
-    Args:
-        feature: Tensor [N, F]
-        index: Tensor [B, K]（或可 reshape 成类似结构）
-
-    Returns:
-        Tensor [B, K, F]
-    """
-    input_size = index.size(0)
-    index = index.flatten()
-    index = index.reshape(len(index), 1)
-    index = torch.broadcast_to(index, (len(index), feature.size(1)))
-
-    res = torch.gather(feature, dim=0, index=index)
-    return res.reshape(input_size, -1, feature.size(1))
-
-
-def compareloss(feature, tuples, temperature):
-    """一个基于 cosine similarity 的对比损失（与 prompt_pretrain_sample 生成的 tuples 配套）。
-
-    tuples 的每行：
-        [pos, neg1, neg2, ...]
-    其中：
-        - h_i: anchor（按行号 i 取 feature[i]）
-        - h_tuples: 从 tuples 中 gather 的 pos/neg 表示
-    损失形式接近 InfoNCE：
-        -log( exp(sim(anchor,pos))/sum exp(sim(anchor,neg_j)) )
-
-    注意：实现里 exp(sim)/temperature 的写法与常见 exp(sim/temperature) 不同，保持原样不改。
-    """
-    h_tuples = mygather(feature, tuples)
-
-    temp = torch.arange(0, len(tuples)).to(feature.device)
-    temp = temp.reshape(-1, 1)
-    temp = torch.broadcast_to(temp, (temp.size(0), tuples.size(1)))
-    h_i = mygather(feature, temp)
-
-    sim = F.cosine_similarity(h_i, h_tuples, dim=2)
-    exp = torch.exp(sim) / temperature
-    exp = exp.permute(1, 0)
-
-    numerator = exp[0].reshape(-1, 1)
-    denominator = exp[1:exp.size(0)]
-    denominator = denominator.permute(1, 0)
-    denominator = denominator.sum(dim=1, keepdim=True)
-
-    res = -1 * torch.log(numerator / denominator)
-    return res.mean()
-
-
-def prompt_pretrain_sample(adj, n):
-    """为 LP/splitLP 生成负采样 tuples。
-
-    对每个节点 i：
-    - 从其非零邻居中随机取 1 个作为“正样本”(pos)
-      若无邻居则 pos=i
-    - 从其零邻居（非相连节点）中随机取 n 个作为负样本
-
-    Returns:
-        Tensor [N, 1+n]，每行 [pos, neg1..negn]
-
-    要求：adj 为 scipy.sparse.csr_matrix（使用 indices/indptr）。
-    """
-    nodenum = adj.shape[0]
-    indices = adj.indices
-    indptr = adj.indptr
-    res = np.zeros((nodenum, 1 + n))
-    whole = np.array(range(nodenum))
-
-    for i in range(nodenum):
-        nonzero_index_i_row = indices[indptr[i] : indptr[i + 1]]
-        zero_index_i_row = np.setdiff1d(whole, nonzero_index_i_row)
-        np.random.shuffle(nonzero_index_i_row)
-        np.random.shuffle(zero_index_i_row)
-        if np.size(nonzero_index_i_row) == 0:
-            res[i][0] = i
-        else:
-            res[i][0] = nonzero_index_i_row[0]
-        res[i][1 : 1 + n] = zero_index_i_row[0:n]
-
-    return torch.tensor(res.astype(int))
