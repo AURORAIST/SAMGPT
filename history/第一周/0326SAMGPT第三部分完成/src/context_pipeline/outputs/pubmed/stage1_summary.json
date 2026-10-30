@@ -1,0 +1,48 @@
+{
+  "dataset": "Pubmed",
+  "num_samples": 19717,
+  "max_subgraph_nodes": 64,
+  "subgraph_hop_n": 2,
+  "cluster_method": "gmm",
+  "encoding_mode": "raw9",
+  "cluster_feature_names": [
+    "num_nodes",
+    "num_edges",
+    "avg_degree",
+    "max_degree",
+    "var_degree",
+    "density",
+    "avg_clustering",
+    "triangles",
+    "diameter"
+  ],
+  "use_log1p": true,
+  "log1p_feature_names": [
+    "num_nodes",
+    "num_edges",
+    "max_degree",
+    "var_degree",
+    "triangles",
+    "diameter"
+  ],
+  "requested_num_clusters": 8,
+  "effective_num_clusters": 8,
+  "remove_selfloops": false,
+  "feature_means": [
+    3.369642707337036,
+    3.5909090881588512,
+    2.625153721200054,
+    2.9752589218117107,
+    2.6712118309149666,
+    0.12123565466024357,
+    0.1743611475201491,
+    1.8254714055655115,
+    1.3634481950342527
+  ],
+  "paths": {
+    "encodings_csv": "src/context_pipeline/outputs/pubmed/structural_encodings.csv",
+    "cluster_labels": "src/context_pipeline/outputs/pubmed/cluster_labels.npy",
+    "cluster_centers": "src/context_pipeline/outputs/pubmed/cluster_centers.npy",
+    "cluster_visualization": "src/context_pipeline/outputs/pubmed/stage1_cluster_visualization.png"
+  }
+}

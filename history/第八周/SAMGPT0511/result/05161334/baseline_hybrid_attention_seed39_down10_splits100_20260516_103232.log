@@ -1,0 +1,829 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, device='cpu', pretrain_method='USP', shots=[1], subgraph_hop=2, readout='prompt_weighted', query_mode='hybrid', prototype='attention', negative_sampling='domain_balanced', intra_neg_ratio=0.5, num_negatives=16, ss_loss_mode='sampled', ss_num_negatives=128, aug_mask_policy='original_anchor', source_batch_size=2, usp_lambda_ns=1.0, usp_lambda_ss=1.0, usp_lambda_align=1.0, usp_temperature=0.2, max_neighbors=64, compute_local_ns=False, time_profile=True, progress_detail=True, progress_blocks=False, neg_exclude_scope='self', neg_refresh_interval=5, use_structure_token=True, usp_epochs=0, usp_down_epochs=10, usp_down_log_interval=2, downstream_eval_interval=0, usp_eval_protocol='samgpt_standard', checkpoint_path=None, num_splits=100, split_start=0, align_type='none', structure_bucket='mixed', sanity_calibration=False, sanity_version='v2', sanity_epochs=[1, 10, 50], formal_batch1=False, query_objective_ablation=False, formal_seeds=[0, 1, 2], formal_epoch=50, overwrite_sanity_table=False, label_shuffle_seeds=[0, 1, 2], aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=1, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=128, layers_num=2, backbone='gcn', csr_readout=True, original_pretrain_method='USP')
+----------------------------------------------------------------------------------------------------
+7
+CUDA Available: False
+gpu: 0
+[EVAL] start downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 readout=prompt_weighted prototype=attention stage=baseline_epoch0
+[EVAL] representation_source=hybrid(node+subgraph)
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:   0%|          | 0/100 [00:00<?, ?it/s][EVAL] split=0 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=0] epoch 2/10 loss=0.329477 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL][baseline_epoch0][shot=1][split=0] epoch 4/10 loss=0.329344 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL][baseline_epoch0][shot=1][split=0] epoch 6/10 loss=0.329212 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL][baseline_epoch0][shot=1][split=0] epoch 8/10 loss=0.329080 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL][baseline_epoch0][shot=1][split=0] epoch 10/10 loss=0.328948 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL] split=1 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=1] epoch 2/10 loss=0.402539 support_acc=100.00 eval_acc=55.00 best_eval_acc=55.00@2
+[EVAL][baseline_epoch0][shot=1][split=1] epoch 4/10 loss=0.402324 support_acc=100.00 eval_acc=55.00 best_eval_acc=55.00@2
+[EVAL][baseline_epoch0][shot=1][split=1] epoch 6/10 loss=0.402110 support_acc=100.00 eval_acc=55.00 best_eval_acc=55.00@2
+[EVAL][baseline_epoch0][shot=1][split=1] epoch 8/10 loss=0.401896 support_acc=100.00 eval_acc=55.00 best_eval_acc=55.00@2
+[EVAL][baseline_epoch0][shot=1][split=1] epoch 10/10 loss=0.401682 support_acc=100.00 eval_acc=55.00 best_eval_acc=55.00@2
+[EVAL] split=2 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=2] epoch 2/10 loss=0.487195 support_acc=100.00 eval_acc=31.00 best_eval_acc=31.00@2
+[EVAL][baseline_epoch0][shot=1][split=2] epoch 4/10 loss=0.487022 support_acc=100.00 eval_acc=31.00 best_eval_acc=31.00@2
+[EVAL][baseline_epoch0][shot=1][split=2] epoch 6/10 loss=0.486849 support_acc=100.00 eval_acc=31.00 best_eval_acc=31.00@2
+[EVAL][baseline_epoch0][shot=1][split=2] epoch 8/10 loss=0.486676 support_acc=100.00 eval_acc=31.00 best_eval_acc=31.00@2
+[EVAL][baseline_epoch0][shot=1][split=2] epoch 10/10 loss=0.486503 support_acc=100.00 eval_acc=31.00 best_eval_acc=31.00@2
+[EVAL] split=3 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=3] epoch 2/10 loss=0.419133 support_acc=100.00 eval_acc=64.00 best_eval_acc=64.00@2
+[EVAL][baseline_epoch0][shot=1][split=3] epoch 4/10 loss=0.418874 support_acc=100.00 eval_acc=64.00 best_eval_acc=64.00@2
+[EVAL][baseline_epoch0][shot=1][split=3] epoch 6/10 loss=0.418614 support_acc=100.00 eval_acc=64.00 best_eval_acc=64.00@2
+[EVAL][baseline_epoch0][shot=1][split=3] epoch 8/10 loss=0.418355 support_acc=100.00 eval_acc=64.00 best_eval_acc=64.00@2
+[EVAL][baseline_epoch0][shot=1][split=3] epoch 10/10 loss=0.418096 support_acc=100.00 eval_acc=64.00 best_eval_acc=64.00@2
+[EVAL] split=4 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=4] epoch 2/10 loss=0.507959 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=4] epoch 4/10 loss=0.507620 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=4] epoch 6/10 loss=0.507282 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=4] epoch 8/10 loss=0.506943 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=4] epoch 10/10 loss=0.506605 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL] split=5 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=5] epoch 2/10 loss=0.327172 support_acc=100.00 eval_acc=54.00 best_eval_acc=54.00@2
+[EVAL][baseline_epoch0][shot=1][split=5] epoch 4/10 loss=0.326927 support_acc=100.00 eval_acc=55.00 best_eval_acc=55.00@4
+[EVAL][baseline_epoch0][shot=1][split=5] epoch 6/10 loss=0.326681 support_acc=100.00 eval_acc=55.00 best_eval_acc=55.00@4
+[EVAL][baseline_epoch0][shot=1][split=5] epoch 8/10 loss=0.326436 support_acc=100.00 eval_acc=55.00 best_eval_acc=55.00@4
+[EVAL][baseline_epoch0][shot=1][split=5] epoch 10/10 loss=0.326191 support_acc=100.00 eval_acc=55.00 best_eval_acc=55.00@4
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:   6%|▌         | 6/100 [00:00<00:01, 53.31it/s][EVAL] split=6 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=6] epoch 2/10 loss=0.458714 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL][baseline_epoch0][shot=1][split=6] epoch 4/10 loss=0.458429 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL][baseline_epoch0][shot=1][split=6] epoch 6/10 loss=0.458144 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL][baseline_epoch0][shot=1][split=6] epoch 8/10 loss=0.457860 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL][baseline_epoch0][shot=1][split=6] epoch 10/10 loss=0.457575 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL] split=7 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=7] epoch 2/10 loss=0.406950 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=7] epoch 4/10 loss=0.406770 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=7] epoch 6/10 loss=0.406590 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=7] epoch 8/10 loss=0.406411 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=7] epoch 10/10 loss=0.406231 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL] split=8 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=8] epoch 2/10 loss=0.295290 support_acc=100.00 eval_acc=30.00 best_eval_acc=30.00@2
+[EVAL][baseline_epoch0][shot=1][split=8] epoch 4/10 loss=0.295091 support_acc=100.00 eval_acc=30.00 best_eval_acc=30.00@2
+[EVAL][baseline_epoch0][shot=1][split=8] epoch 6/10 loss=0.294891 support_acc=100.00 eval_acc=30.00 best_eval_acc=30.00@2
+[EVAL][baseline_epoch0][shot=1][split=8] epoch 8/10 loss=0.294692 support_acc=100.00 eval_acc=30.00 best_eval_acc=30.00@2
+[EVAL][baseline_epoch0][shot=1][split=8] epoch 10/10 loss=0.294493 support_acc=100.00 eval_acc=30.00 best_eval_acc=30.00@2
+[EVAL] split=9 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=9] epoch 2/10 loss=0.350400 support_acc=100.00 eval_acc=26.00 best_eval_acc=26.00@2
+[EVAL][baseline_epoch0][shot=1][split=9] epoch 4/10 loss=0.350180 support_acc=100.00 eval_acc=26.00 best_eval_acc=26.00@2
+[EVAL][baseline_epoch0][shot=1][split=9] epoch 6/10 loss=0.349960 support_acc=100.00 eval_acc=26.00 best_eval_acc=26.00@2
+[EVAL][baseline_epoch0][shot=1][split=9] epoch 8/10 loss=0.349740 support_acc=100.00 eval_acc=26.00 best_eval_acc=26.00@2
+[EVAL][baseline_epoch0][shot=1][split=9] epoch 10/10 loss=0.349521 support_acc=100.00 eval_acc=26.00 best_eval_acc=26.00@2
+[EVAL] split=10 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=10] epoch 2/10 loss=0.284681 support_acc=100.00 eval_acc=56.00 best_eval_acc=56.00@2
+[EVAL][baseline_epoch0][shot=1][split=10] epoch 4/10 loss=0.284544 support_acc=100.00 eval_acc=56.00 best_eval_acc=56.00@2
+[EVAL][baseline_epoch0][shot=1][split=10] epoch 6/10 loss=0.284407 support_acc=100.00 eval_acc=56.00 best_eval_acc=56.00@2
+[EVAL][baseline_epoch0][shot=1][split=10] epoch 8/10 loss=0.284271 support_acc=100.00 eval_acc=56.00 best_eval_acc=56.00@2
+[EVAL][baseline_epoch0][shot=1][split=10] epoch 10/10 loss=0.284134 support_acc=100.00 eval_acc=56.00 best_eval_acc=56.00@2
+[EVAL] split=11 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=11] epoch 2/10 loss=0.232126 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=11] epoch 4/10 loss=0.232013 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=11] epoch 6/10 loss=0.231899 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=11] epoch 8/10 loss=0.231785 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=11] epoch 10/10 loss=0.231672 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  12%|█▏        | 12/100 [00:00<00:01, 53.98it/s][EVAL] split=12 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=12] epoch 2/10 loss=0.292212 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=12] epoch 4/10 loss=0.292100 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=12] epoch 6/10 loss=0.291989 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=12] epoch 8/10 loss=0.291878 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=12] epoch 10/10 loss=0.291766 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL] split=13 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=13] epoch 2/10 loss=0.391882 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=13] epoch 4/10 loss=0.391592 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=13] epoch 6/10 loss=0.391302 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=13] epoch 8/10 loss=0.391012 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=13] epoch 10/10 loss=0.390722 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL] split=14 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=14] epoch 2/10 loss=0.334331 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=14] epoch 4/10 loss=0.334145 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=14] epoch 6/10 loss=0.333960 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=14] epoch 8/10 loss=0.333775 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=14] epoch 10/10 loss=0.333589 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL] split=15 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=15] epoch 2/10 loss=0.318793 support_acc=100.00 eval_acc=38.00 best_eval_acc=38.00@2
+[EVAL][baseline_epoch0][shot=1][split=15] epoch 4/10 loss=0.318574 support_acc=100.00 eval_acc=38.00 best_eval_acc=38.00@2
+[EVAL][baseline_epoch0][shot=1][split=15] epoch 6/10 loss=0.318356 support_acc=100.00 eval_acc=38.00 best_eval_acc=38.00@2
+[EVAL][baseline_epoch0][shot=1][split=15] epoch 8/10 loss=0.318137 support_acc=100.00 eval_acc=38.00 best_eval_acc=38.00@2
+[EVAL][baseline_epoch0][shot=1][split=15] epoch 10/10 loss=0.317919 support_acc=100.00 eval_acc=38.00 best_eval_acc=38.00@2
+[EVAL] split=16 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=16] epoch 2/10 loss=0.398666 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL][baseline_epoch0][shot=1][split=16] epoch 4/10 loss=0.398406 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL][baseline_epoch0][shot=1][split=16] epoch 6/10 loss=0.398146 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL][baseline_epoch0][shot=1][split=16] epoch 8/10 loss=0.397886 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL][baseline_epoch0][shot=1][split=16] epoch 10/10 loss=0.397627 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL] split=17 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=17] epoch 2/10 loss=0.378856 support_acc=100.00 eval_acc=50.00 best_eval_acc=50.00@2
+[EVAL][baseline_epoch0][shot=1][split=17] epoch 4/10 loss=0.378661 support_acc=100.00 eval_acc=50.00 best_eval_acc=50.00@2
+[EVAL][baseline_epoch0][shot=1][split=17] epoch 6/10 loss=0.378465 support_acc=100.00 eval_acc=49.00 best_eval_acc=50.00@2
+[EVAL][baseline_epoch0][shot=1][split=17] epoch 8/10 loss=0.378269 support_acc=100.00 eval_acc=49.00 best_eval_acc=50.00@2
+[EVAL][baseline_epoch0][shot=1][split=17] epoch 10/10 loss=0.378073 support_acc=100.00 eval_acc=49.00 best_eval_acc=50.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  18%|█▊        | 18/100 [00:00<00:01, 54.27it/s][EVAL] split=18 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=18] epoch 2/10 loss=0.377634 support_acc=100.00 eval_acc=43.00 best_eval_acc=43.00@2
+[EVAL][baseline_epoch0][shot=1][split=18] epoch 4/10 loss=0.377503 support_acc=100.00 eval_acc=43.00 best_eval_acc=43.00@2
+[EVAL][baseline_epoch0][shot=1][split=18] epoch 6/10 loss=0.377372 support_acc=100.00 eval_acc=43.00 best_eval_acc=43.00@2
+[EVAL][baseline_epoch0][shot=1][split=18] epoch 8/10 loss=0.377240 support_acc=100.00 eval_acc=43.00 best_eval_acc=43.00@2
+[EVAL][baseline_epoch0][shot=1][split=18] epoch 10/10 loss=0.377109 support_acc=100.00 eval_acc=43.00 best_eval_acc=43.00@2
+[EVAL] split=19 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=19] epoch 2/10 loss=0.338463 support_acc=100.00 eval_acc=31.00 best_eval_acc=31.00@2
+[EVAL][baseline_epoch0][shot=1][split=19] epoch 4/10 loss=0.338285 support_acc=100.00 eval_acc=31.00 best_eval_acc=31.00@2
+[EVAL][baseline_epoch0][shot=1][split=19] epoch 6/10 loss=0.338108 support_acc=100.00 eval_acc=31.00 best_eval_acc=31.00@2
+[EVAL][baseline_epoch0][shot=1][split=19] epoch 8/10 loss=0.337930 support_acc=100.00 eval_acc=31.00 best_eval_acc=31.00@2
+[EVAL][baseline_epoch0][shot=1][split=19] epoch 10/10 loss=0.337752 support_acc=100.00 eval_acc=31.00 best_eval_acc=31.00@2
+[EVAL] split=20 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=20] epoch 2/10 loss=0.334585 support_acc=100.00 eval_acc=64.00 best_eval_acc=64.00@2
+[EVAL][baseline_epoch0][shot=1][split=20] epoch 4/10 loss=0.334442 support_acc=100.00 eval_acc=64.00 best_eval_acc=64.00@2
+[EVAL][baseline_epoch0][shot=1][split=20] epoch 6/10 loss=0.334299 support_acc=100.00 eval_acc=64.00 best_eval_acc=64.00@2
+[EVAL][baseline_epoch0][shot=1][split=20] epoch 8/10 loss=0.334156 support_acc=100.00 eval_acc=64.00 best_eval_acc=64.00@2
+[EVAL][baseline_epoch0][shot=1][split=20] epoch 10/10 loss=0.334014 support_acc=100.00 eval_acc=64.00 best_eval_acc=64.00@2
+[EVAL] split=21 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=21] epoch 2/10 loss=0.361797 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL][baseline_epoch0][shot=1][split=21] epoch 4/10 loss=0.361618 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL][baseline_epoch0][shot=1][split=21] epoch 6/10 loss=0.361438 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL][baseline_epoch0][shot=1][split=21] epoch 8/10 loss=0.361259 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL][baseline_epoch0][shot=1][split=21] epoch 10/10 loss=0.361079 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL] split=22 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=22] epoch 2/10 loss=0.457745 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=22] epoch 4/10 loss=0.457435 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=22] epoch 6/10 loss=0.457125 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=22] epoch 8/10 loss=0.456816 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=22] epoch 10/10 loss=0.456506 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL] split=23 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=23] epoch 2/10 loss=0.338816 support_acc=100.00 eval_acc=54.00 best_eval_acc=54.00@2
+[EVAL][baseline_epoch0][shot=1][split=23] epoch 4/10 loss=0.338599 support_acc=100.00 eval_acc=54.00 best_eval_acc=54.00@2
+[EVAL][baseline_epoch0][shot=1][split=23] epoch 6/10 loss=0.338381 support_acc=100.00 eval_acc=54.00 best_eval_acc=54.00@2
+[EVAL][baseline_epoch0][shot=1][split=23] epoch 8/10 loss=0.338164 support_acc=100.00 eval_acc=54.00 best_eval_acc=54.00@2
+[EVAL][baseline_epoch0][shot=1][split=23] epoch 10/10 loss=0.337947 support_acc=100.00 eval_acc=54.00 best_eval_acc=54.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  24%|██▍       | 24/100 [00:00<00:01, 54.31it/s][EVAL] split=24 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=24] epoch 2/10 loss=0.332031 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL][baseline_epoch0][shot=1][split=24] epoch 4/10 loss=0.331922 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL][baseline_epoch0][shot=1][split=24] epoch 6/10 loss=0.331814 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL][baseline_epoch0][shot=1][split=24] epoch 8/10 loss=0.331706 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL][baseline_epoch0][shot=1][split=24] epoch 10/10 loss=0.331597 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL] split=25 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=25] epoch 2/10 loss=0.337685 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=25] epoch 4/10 loss=0.337479 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=25] epoch 6/10 loss=0.337273 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=25] epoch 8/10 loss=0.337067 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=25] epoch 10/10 loss=0.336861 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL] split=26 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=26] epoch 2/10 loss=0.311573 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL][baseline_epoch0][shot=1][split=26] epoch 4/10 loss=0.311468 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL][baseline_epoch0][shot=1][split=26] epoch 6/10 loss=0.311363 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL][baseline_epoch0][shot=1][split=26] epoch 8/10 loss=0.311257 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL][baseline_epoch0][shot=1][split=26] epoch 10/10 loss=0.311152 support_acc=100.00 eval_acc=35.00 best_eval_acc=35.00@2
+[EVAL] split=27 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=27] epoch 2/10 loss=0.368099 support_acc=100.00 eval_acc=55.00 best_eval_acc=55.00@2
+[EVAL][baseline_epoch0][shot=1][split=27] epoch 4/10 loss=0.367877 support_acc=100.00 eval_acc=53.00 best_eval_acc=55.00@2
+[EVAL][baseline_epoch0][shot=1][split=27] epoch 6/10 loss=0.367655 support_acc=100.00 eval_acc=53.00 best_eval_acc=55.00@2
+[EVAL][baseline_epoch0][shot=1][split=27] epoch 8/10 loss=0.367434 support_acc=100.00 eval_acc=53.00 best_eval_acc=55.00@2
+[EVAL][baseline_epoch0][shot=1][split=27] epoch 10/10 loss=0.367212 support_acc=100.00 eval_acc=53.00 best_eval_acc=55.00@2
+[EVAL] split=28 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=28] epoch 2/10 loss=0.278595 support_acc=100.00 eval_acc=38.00 best_eval_acc=38.00@2
+[EVAL][baseline_epoch0][shot=1][split=28] epoch 4/10 loss=0.278529 support_acc=100.00 eval_acc=38.00 best_eval_acc=38.00@2
+[EVAL][baseline_epoch0][shot=1][split=28] epoch 6/10 loss=0.278463 support_acc=100.00 eval_acc=38.00 best_eval_acc=38.00@2
+[EVAL][baseline_epoch0][shot=1][split=28] epoch 8/10 loss=0.278397 support_acc=100.00 eval_acc=38.00 best_eval_acc=38.00@2
+[EVAL][baseline_epoch0][shot=1][split=28] epoch 10/10 loss=0.278331 support_acc=100.00 eval_acc=38.00 best_eval_acc=38.00@2
+[EVAL] split=29 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=29] epoch 2/10 loss=0.266569 support_acc=100.00 eval_acc=78.00 best_eval_acc=78.00@2
+[EVAL][baseline_epoch0][shot=1][split=29] epoch 4/10 loss=0.266436 support_acc=100.00 eval_acc=78.00 best_eval_acc=78.00@2
+[EVAL][baseline_epoch0][shot=1][split=29] epoch 6/10 loss=0.266302 support_acc=100.00 eval_acc=78.00 best_eval_acc=78.00@2
+[EVAL][baseline_epoch0][shot=1][split=29] epoch 8/10 loss=0.266170 support_acc=100.00 eval_acc=78.00 best_eval_acc=78.00@2
+[EVAL][baseline_epoch0][shot=1][split=29] epoch 10/10 loss=0.266037 support_acc=100.00 eval_acc=78.00 best_eval_acc=78.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  30%|███       | 30/100 [00:00<00:01, 54.37it/s][EVAL] split=30 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=30] epoch 2/10 loss=0.351768 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=30] epoch 4/10 loss=0.351570 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=30] epoch 6/10 loss=0.351372 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=30] epoch 8/10 loss=0.351175 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=30] epoch 10/10 loss=0.350978 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL] split=31 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=31] epoch 2/10 loss=0.279164 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=31] epoch 4/10 loss=0.279065 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=31] epoch 6/10 loss=0.278967 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=31] epoch 8/10 loss=0.278869 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=31] epoch 10/10 loss=0.278771 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL] split=32 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=32] epoch 2/10 loss=0.358717 support_acc=100.00 eval_acc=49.00 best_eval_acc=49.00@2
+[EVAL][baseline_epoch0][shot=1][split=32] epoch 4/10 loss=0.358530 support_acc=100.00 eval_acc=49.00 best_eval_acc=49.00@2
+[EVAL][baseline_epoch0][shot=1][split=32] epoch 6/10 loss=0.358343 support_acc=100.00 eval_acc=49.00 best_eval_acc=49.00@2
+[EVAL][baseline_epoch0][shot=1][split=32] epoch 8/10 loss=0.358156 support_acc=100.00 eval_acc=49.00 best_eval_acc=49.00@2
+[EVAL][baseline_epoch0][shot=1][split=32] epoch 10/10 loss=0.357969 support_acc=100.00 eval_acc=49.00 best_eval_acc=49.00@2
+[EVAL] split=33 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=33] epoch 2/10 loss=0.381352 support_acc=100.00 eval_acc=26.00 best_eval_acc=26.00@2
+[EVAL][baseline_epoch0][shot=1][split=33] epoch 4/10 loss=0.381122 support_acc=100.00 eval_acc=26.00 best_eval_acc=26.00@2
+[EVAL][baseline_epoch0][shot=1][split=33] epoch 6/10 loss=0.380891 support_acc=100.00 eval_acc=26.00 best_eval_acc=26.00@2
+[EVAL][baseline_epoch0][shot=1][split=33] epoch 8/10 loss=0.380661 support_acc=100.00 eval_acc=26.00 best_eval_acc=26.00@2
+[EVAL][baseline_epoch0][shot=1][split=33] epoch 10/10 loss=0.380431 support_acc=100.00 eval_acc=26.00 best_eval_acc=26.00@2
+[EVAL] split=34 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=34] epoch 2/10 loss=0.357422 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL][baseline_epoch0][shot=1][split=34] epoch 4/10 loss=0.357259 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL][baseline_epoch0][shot=1][split=34] epoch 6/10 loss=0.357095 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL][baseline_epoch0][shot=1][split=34] epoch 8/10 loss=0.356932 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL][baseline_epoch0][shot=1][split=34] epoch 10/10 loss=0.356768 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL] split=35 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=35] epoch 2/10 loss=0.277734 support_acc=100.00 eval_acc=72.00 best_eval_acc=72.00@2
+[EVAL][baseline_epoch0][shot=1][split=35] epoch 4/10 loss=0.277655 support_acc=100.00 eval_acc=72.00 best_eval_acc=72.00@2
+[EVAL][baseline_epoch0][shot=1][split=35] epoch 6/10 loss=0.277577 support_acc=100.00 eval_acc=72.00 best_eval_acc=72.00@2
+[EVAL][baseline_epoch0][shot=1][split=35] epoch 8/10 loss=0.277498 support_acc=100.00 eval_acc=72.00 best_eval_acc=72.00@2
+[EVAL][baseline_epoch0][shot=1][split=35] epoch 10/10 loss=0.277420 support_acc=100.00 eval_acc=72.00 best_eval_acc=72.00@2
+[EVAL] split=36 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=36] epoch 2/10 loss=0.343982 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=36] epoch 4/10 loss=0.343812 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=36] epoch 6/10 loss=0.343643 support_acc=100.00 eval_acc=62.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=36] epoch 8/10 loss=0.343473 support_acc=100.00 eval_acc=62.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=36] epoch 10/10 loss=0.343304 support_acc=100.00 eval_acc=62.00 best_eval_acc=63.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  37%|███▋      | 37/100 [00:00<00:01, 56.97it/s][EVAL] split=37 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=37] epoch 2/10 loss=0.265163 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=37] epoch 4/10 loss=0.265090 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=37] epoch 6/10 loss=0.265016 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=37] epoch 8/10 loss=0.264943 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL][baseline_epoch0][shot=1][split=37] epoch 10/10 loss=0.264870 support_acc=100.00 eval_acc=59.00 best_eval_acc=59.00@2
+[EVAL] split=38 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=38] epoch 2/10 loss=0.301516 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=38] epoch 4/10 loss=0.301343 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=38] epoch 6/10 loss=0.301171 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=38] epoch 8/10 loss=0.300998 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=38] epoch 10/10 loss=0.300826 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL] split=39 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=39] epoch 2/10 loss=0.404977 support_acc=100.00 eval_acc=50.00 best_eval_acc=50.00@2
+[EVAL][baseline_epoch0][shot=1][split=39] epoch 4/10 loss=0.404835 support_acc=100.00 eval_acc=50.00 best_eval_acc=50.00@2
+[EVAL][baseline_epoch0][shot=1][split=39] epoch 6/10 loss=0.404692 support_acc=100.00 eval_acc=50.00 best_eval_acc=50.00@2
+[EVAL][baseline_epoch0][shot=1][split=39] epoch 8/10 loss=0.404550 support_acc=100.00 eval_acc=50.00 best_eval_acc=50.00@2
+[EVAL][baseline_epoch0][shot=1][split=39] epoch 10/10 loss=0.404408 support_acc=100.00 eval_acc=50.00 best_eval_acc=50.00@2
+[EVAL] split=40 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=40] epoch 2/10 loss=0.323896 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=40] epoch 4/10 loss=0.323709 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=40] epoch 6/10 loss=0.323523 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=40] epoch 8/10 loss=0.323336 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=40] epoch 10/10 loss=0.323149 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL] split=41 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=41] epoch 2/10 loss=0.257945 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL][baseline_epoch0][shot=1][split=41] epoch 4/10 loss=0.257843 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL][baseline_epoch0][shot=1][split=41] epoch 6/10 loss=0.257741 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL][baseline_epoch0][shot=1][split=41] epoch 8/10 loss=0.257639 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL][baseline_epoch0][shot=1][split=41] epoch 10/10 loss=0.257536 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL] split=42 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=42] epoch 2/10 loss=0.427114 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL][baseline_epoch0][shot=1][split=42] epoch 4/10 loss=0.426796 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL][baseline_epoch0][shot=1][split=42] epoch 6/10 loss=0.426478 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL][baseline_epoch0][shot=1][split=42] epoch 8/10 loss=0.426161 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL][baseline_epoch0][shot=1][split=42] epoch 10/10 loss=0.425843 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL] split=43 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=43] epoch 2/10 loss=0.294278 support_acc=100.00 eval_acc=42.00 best_eval_acc=42.00@2
+[EVAL][baseline_epoch0][shot=1][split=43] epoch 4/10 loss=0.294190 support_acc=100.00 eval_acc=42.00 best_eval_acc=42.00@2
+[EVAL][baseline_epoch0][shot=1][split=43] epoch 6/10 loss=0.294101 support_acc=100.00 eval_acc=42.00 best_eval_acc=42.00@2
+[EVAL][baseline_epoch0][shot=1][split=43] epoch 8/10 loss=0.294013 support_acc=100.00 eval_acc=42.00 best_eval_acc=42.00@2
+[EVAL][baseline_epoch0][shot=1][split=43] epoch 10/10 loss=0.293924 support_acc=100.00 eval_acc=42.00 best_eval_acc=42.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  44%|████▍     | 44/100 [00:00<00:00, 58.49it/s][EVAL] split=44 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=44] epoch 2/10 loss=0.343992 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL][baseline_epoch0][shot=1][split=44] epoch 4/10 loss=0.343801 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL][baseline_epoch0][shot=1][split=44] epoch 6/10 loss=0.343611 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL][baseline_epoch0][shot=1][split=44] epoch 8/10 loss=0.343420 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL][baseline_epoch0][shot=1][split=44] epoch 10/10 loss=0.343230 support_acc=100.00 eval_acc=57.00 best_eval_acc=57.00@2
+[EVAL] split=45 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=45] epoch 2/10 loss=0.342093 support_acc=100.00 eval_acc=39.00 best_eval_acc=39.00@2
+[EVAL][baseline_epoch0][shot=1][split=45] epoch 4/10 loss=0.341858 support_acc=100.00 eval_acc=39.00 best_eval_acc=39.00@2
+[EVAL][baseline_epoch0][shot=1][split=45] epoch 6/10 loss=0.341623 support_acc=100.00 eval_acc=39.00 best_eval_acc=39.00@2
+[EVAL][baseline_epoch0][shot=1][split=45] epoch 8/10 loss=0.341389 support_acc=100.00 eval_acc=39.00 best_eval_acc=39.00@2
+[EVAL][baseline_epoch0][shot=1][split=45] epoch 10/10 loss=0.341154 support_acc=100.00 eval_acc=39.00 best_eval_acc=39.00@2
+[EVAL] split=46 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=46] epoch 2/10 loss=0.363413 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL][baseline_epoch0][shot=1][split=46] epoch 4/10 loss=0.363226 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL][baseline_epoch0][shot=1][split=46] epoch 6/10 loss=0.363039 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL][baseline_epoch0][shot=1][split=46] epoch 8/10 loss=0.362851 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL][baseline_epoch0][shot=1][split=46] epoch 10/10 loss=0.362664 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL] split=47 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=47] epoch 2/10 loss=0.482632 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL][baseline_epoch0][shot=1][split=47] epoch 4/10 loss=0.482374 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL][baseline_epoch0][shot=1][split=47] epoch 6/10 loss=0.482117 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL][baseline_epoch0][shot=1][split=47] epoch 8/10 loss=0.481859 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL][baseline_epoch0][shot=1][split=47] epoch 10/10 loss=0.481602 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL] split=48 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=48] epoch 2/10 loss=0.323791 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL][baseline_epoch0][shot=1][split=48] epoch 4/10 loss=0.323587 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL][baseline_epoch0][shot=1][split=48] epoch 6/10 loss=0.323383 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL][baseline_epoch0][shot=1][split=48] epoch 8/10 loss=0.323179 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL][baseline_epoch0][shot=1][split=48] epoch 10/10 loss=0.322976 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL] split=49 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=49] epoch 2/10 loss=0.378014 support_acc=100.00 eval_acc=42.00 best_eval_acc=42.00@2
+[EVAL][baseline_epoch0][shot=1][split=49] epoch 4/10 loss=0.377801 support_acc=100.00 eval_acc=42.00 best_eval_acc=42.00@2
+[EVAL][baseline_epoch0][shot=1][split=49] epoch 6/10 loss=0.377589 support_acc=100.00 eval_acc=42.00 best_eval_acc=42.00@2
+[EVAL][baseline_epoch0][shot=1][split=49] epoch 8/10 loss=0.377377 support_acc=100.00 eval_acc=42.00 best_eval_acc=42.00@2
+[EVAL][baseline_epoch0][shot=1][split=49] epoch 10/10 loss=0.377165 support_acc=100.00 eval_acc=42.00 best_eval_acc=42.00@2
+[EVAL] split=50 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=50] epoch 2/10 loss=0.414529 support_acc=100.00 eval_acc=50.00 best_eval_acc=50.00@2
+[EVAL][baseline_epoch0][shot=1][split=50] epoch 4/10 loss=0.414337 support_acc=100.00 eval_acc=50.00 best_eval_acc=50.00@2
+[EVAL][baseline_epoch0][shot=1][split=50] epoch 6/10 loss=0.414145 support_acc=100.00 eval_acc=50.00 best_eval_acc=50.00@2
+[EVAL][baseline_epoch0][shot=1][split=50] epoch 8/10 loss=0.413954 support_acc=100.00 eval_acc=50.00 best_eval_acc=50.00@2
+[EVAL][baseline_epoch0][shot=1][split=50] epoch 10/10 loss=0.413762 support_acc=100.00 eval_acc=50.00 best_eval_acc=50.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  51%|█████     | 51/100 [00:00<00:00, 59.60it/s][EVAL] split=51 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=51] epoch 2/10 loss=0.341099 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=51] epoch 4/10 loss=0.340807 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=51] epoch 6/10 loss=0.340516 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=51] epoch 8/10 loss=0.340225 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=51] epoch 10/10 loss=0.339934 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL] split=52 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=52] epoch 2/10 loss=0.285506 support_acc=100.00 eval_acc=62.00 best_eval_acc=62.00@2
+[EVAL][baseline_epoch0][shot=1][split=52] epoch 4/10 loss=0.285334 support_acc=100.00 eval_acc=62.00 best_eval_acc=62.00@2
+[EVAL][baseline_epoch0][shot=1][split=52] epoch 6/10 loss=0.285162 support_acc=100.00 eval_acc=62.00 best_eval_acc=62.00@2
+[EVAL][baseline_epoch0][shot=1][split=52] epoch 8/10 loss=0.284990 support_acc=100.00 eval_acc=62.00 best_eval_acc=62.00@2
+[EVAL][baseline_epoch0][shot=1][split=52] epoch 10/10 loss=0.284818 support_acc=100.00 eval_acc=62.00 best_eval_acc=62.00@2
+[EVAL] split=53 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=53] epoch 2/10 loss=0.342334 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=53] epoch 4/10 loss=0.342152 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=53] epoch 6/10 loss=0.341969 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=53] epoch 8/10 loss=0.341787 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=53] epoch 10/10 loss=0.341605 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL] split=54 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=54] epoch 2/10 loss=0.320728 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=54] epoch 4/10 loss=0.320578 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=54] epoch 6/10 loss=0.320428 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=54] epoch 8/10 loss=0.320277 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=54] epoch 10/10 loss=0.320127 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL] split=55 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=55] epoch 2/10 loss=0.283511 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL][baseline_epoch0][shot=1][split=55] epoch 4/10 loss=0.283375 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL][baseline_epoch0][shot=1][split=55] epoch 6/10 loss=0.283240 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL][baseline_epoch0][shot=1][split=55] epoch 8/10 loss=0.283104 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL][baseline_epoch0][shot=1][split=55] epoch 10/10 loss=0.282969 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL] split=56 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=56] epoch 2/10 loss=0.476294 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=56] epoch 4/10 loss=0.476028 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=56] epoch 6/10 loss=0.475761 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=56] epoch 8/10 loss=0.475494 support_acc=100.00 eval_acc=66.00 best_eval_acc=66.00@8
+[EVAL][baseline_epoch0][shot=1][split=56] epoch 10/10 loss=0.475228 support_acc=100.00 eval_acc=66.00 best_eval_acc=66.00@8
+[EVAL] split=57 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=57] epoch 2/10 loss=0.227053 support_acc=100.00 eval_acc=44.00 best_eval_acc=44.00@2
+[EVAL][baseline_epoch0][shot=1][split=57] epoch 4/10 loss=0.226990 support_acc=100.00 eval_acc=44.00 best_eval_acc=44.00@2
+[EVAL][baseline_epoch0][shot=1][split=57] epoch 6/10 loss=0.226928 support_acc=100.00 eval_acc=44.00 best_eval_acc=44.00@2
+[EVAL][baseline_epoch0][shot=1][split=57] epoch 8/10 loss=0.226866 support_acc=100.00 eval_acc=44.00 best_eval_acc=44.00@2
+[EVAL][baseline_epoch0][shot=1][split=57] epoch 10/10 loss=0.226803 support_acc=100.00 eval_acc=44.00 best_eval_acc=44.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  58%|█████▊    | 58/100 [00:01<00:00, 60.15it/s][EVAL] split=58 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=58] epoch 2/10 loss=0.326760 support_acc=100.00 eval_acc=58.00 best_eval_acc=58.00@2
+[EVAL][baseline_epoch0][shot=1][split=58] epoch 4/10 loss=0.326528 support_acc=100.00 eval_acc=58.00 best_eval_acc=58.00@2
+[EVAL][baseline_epoch0][shot=1][split=58] epoch 6/10 loss=0.326297 support_acc=100.00 eval_acc=58.00 best_eval_acc=58.00@2
+[EVAL][baseline_epoch0][shot=1][split=58] epoch 8/10 loss=0.326065 support_acc=100.00 eval_acc=58.00 best_eval_acc=58.00@2
+[EVAL][baseline_epoch0][shot=1][split=58] epoch 10/10 loss=0.325834 support_acc=100.00 eval_acc=58.00 best_eval_acc=58.00@2
+[EVAL] split=59 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=59] epoch 2/10 loss=0.402748 support_acc=100.00 eval_acc=76.00 best_eval_acc=76.00@2
+[EVAL][baseline_epoch0][shot=1][split=59] epoch 4/10 loss=0.402495 support_acc=100.00 eval_acc=76.00 best_eval_acc=76.00@2
+[EVAL][baseline_epoch0][shot=1][split=59] epoch 6/10 loss=0.402242 support_acc=100.00 eval_acc=76.00 best_eval_acc=76.00@2
+[EVAL][baseline_epoch0][shot=1][split=59] epoch 8/10 loss=0.401989 support_acc=100.00 eval_acc=76.00 best_eval_acc=76.00@2
+[EVAL][baseline_epoch0][shot=1][split=59] epoch 10/10 loss=0.401737 support_acc=100.00 eval_acc=76.00 best_eval_acc=76.00@2
+[EVAL] split=60 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=60] epoch 2/10 loss=0.396573 support_acc=100.00 eval_acc=53.00 best_eval_acc=53.00@2
+[EVAL][baseline_epoch0][shot=1][split=60] epoch 4/10 loss=0.396419 support_acc=100.00 eval_acc=53.00 best_eval_acc=53.00@2
+[EVAL][baseline_epoch0][shot=1][split=60] epoch 6/10 loss=0.396266 support_acc=100.00 eval_acc=53.00 best_eval_acc=53.00@2
+[EVAL][baseline_epoch0][shot=1][split=60] epoch 8/10 loss=0.396112 support_acc=100.00 eval_acc=53.00 best_eval_acc=53.00@2
+[EVAL][baseline_epoch0][shot=1][split=60] epoch 10/10 loss=0.395958 support_acc=100.00 eval_acc=53.00 best_eval_acc=53.00@2
+[EVAL] split=61 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=61] epoch 2/10 loss=0.317140 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=61] epoch 4/10 loss=0.316962 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=61] epoch 6/10 loss=0.316783 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=61] epoch 8/10 loss=0.316604 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=61] epoch 10/10 loss=0.316426 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL] split=62 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=62] epoch 2/10 loss=0.261420 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=62] epoch 4/10 loss=0.261324 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=62] epoch 6/10 loss=0.261229 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=62] epoch 8/10 loss=0.261133 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=62] epoch 10/10 loss=0.261037 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL] split=63 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=63] epoch 2/10 loss=0.303558 support_acc=100.00 eval_acc=74.00 best_eval_acc=74.00@2
+[EVAL][baseline_epoch0][shot=1][split=63] epoch 4/10 loss=0.303432 support_acc=100.00 eval_acc=74.00 best_eval_acc=74.00@2
+[EVAL][baseline_epoch0][shot=1][split=63] epoch 6/10 loss=0.303306 support_acc=100.00 eval_acc=74.00 best_eval_acc=74.00@2
+[EVAL][baseline_epoch0][shot=1][split=63] epoch 8/10 loss=0.303180 support_acc=100.00 eval_acc=74.00 best_eval_acc=74.00@2
+[EVAL][baseline_epoch0][shot=1][split=63] epoch 10/10 loss=0.303054 support_acc=100.00 eval_acc=74.00 best_eval_acc=74.00@2
+[EVAL] split=64 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=64] epoch 2/10 loss=0.331783 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL][baseline_epoch0][shot=1][split=64] epoch 4/10 loss=0.331663 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL][baseline_epoch0][shot=1][split=64] epoch 6/10 loss=0.331544 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL][baseline_epoch0][shot=1][split=64] epoch 8/10 loss=0.331425 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL][baseline_epoch0][shot=1][split=64] epoch 10/10 loss=0.331306 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  65%|██████▌   | 65/100 [00:01<00:00, 60.61it/s][EVAL] split=65 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=65] epoch 2/10 loss=0.307844 support_acc=100.00 eval_acc=33.00 best_eval_acc=33.00@2
+[EVAL][baseline_epoch0][shot=1][split=65] epoch 4/10 loss=0.307748 support_acc=100.00 eval_acc=33.00 best_eval_acc=33.00@2
+[EVAL][baseline_epoch0][shot=1][split=65] epoch 6/10 loss=0.307652 support_acc=100.00 eval_acc=33.00 best_eval_acc=33.00@2
+[EVAL][baseline_epoch0][shot=1][split=65] epoch 8/10 loss=0.307556 support_acc=100.00 eval_acc=33.00 best_eval_acc=33.00@2
+[EVAL][baseline_epoch0][shot=1][split=65] epoch 10/10 loss=0.307459 support_acc=100.00 eval_acc=33.00 best_eval_acc=33.00@2
+[EVAL] split=66 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=66] epoch 2/10 loss=0.388579 support_acc=100.00 eval_acc=60.00 best_eval_acc=60.00@2
+[EVAL][baseline_epoch0][shot=1][split=66] epoch 4/10 loss=0.388376 support_acc=100.00 eval_acc=60.00 best_eval_acc=60.00@2
+[EVAL][baseline_epoch0][shot=1][split=66] epoch 6/10 loss=0.388173 support_acc=100.00 eval_acc=60.00 best_eval_acc=60.00@2
+[EVAL][baseline_epoch0][shot=1][split=66] epoch 8/10 loss=0.387971 support_acc=100.00 eval_acc=60.00 best_eval_acc=60.00@2
+[EVAL][baseline_epoch0][shot=1][split=66] epoch 10/10 loss=0.387768 support_acc=100.00 eval_acc=60.00 best_eval_acc=60.00@2
+[EVAL] split=67 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=67] epoch 2/10 loss=0.343589 support_acc=100.00 eval_acc=39.00 best_eval_acc=39.00@2
+[EVAL][baseline_epoch0][shot=1][split=67] epoch 4/10 loss=0.343367 support_acc=100.00 eval_acc=39.00 best_eval_acc=39.00@2
+[EVAL][baseline_epoch0][shot=1][split=67] epoch 6/10 loss=0.343144 support_acc=100.00 eval_acc=39.00 best_eval_acc=39.00@2
+[EVAL][baseline_epoch0][shot=1][split=67] epoch 8/10 loss=0.342922 support_acc=100.00 eval_acc=39.00 best_eval_acc=39.00@2
+[EVAL][baseline_epoch0][shot=1][split=67] epoch 10/10 loss=0.342700 support_acc=100.00 eval_acc=39.00 best_eval_acc=39.00@2
+[EVAL] split=68 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=68] epoch 2/10 loss=0.385614 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=68] epoch 4/10 loss=0.385396 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=68] epoch 6/10 loss=0.385179 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=68] epoch 8/10 loss=0.384962 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=68] epoch 10/10 loss=0.384745 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL] split=69 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=69] epoch 2/10 loss=0.339461 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=69] epoch 4/10 loss=0.339228 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=69] epoch 6/10 loss=0.338995 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=69] epoch 8/10 loss=0.338762 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=69] epoch 10/10 loss=0.338530 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL] split=70 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=70] epoch 2/10 loss=0.460338 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL][baseline_epoch0][shot=1][split=70] epoch 4/10 loss=0.459981 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL][baseline_epoch0][shot=1][split=70] epoch 6/10 loss=0.459624 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL][baseline_epoch0][shot=1][split=70] epoch 8/10 loss=0.459267 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL][baseline_epoch0][shot=1][split=70] epoch 10/10 loss=0.458911 support_acc=100.00 eval_acc=34.00 best_eval_acc=34.00@2
+[EVAL] split=71 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=71] epoch 2/10 loss=0.270346 support_acc=100.00 eval_acc=32.00 best_eval_acc=32.00@2
+[EVAL][baseline_epoch0][shot=1][split=71] epoch 4/10 loss=0.270234 support_acc=100.00 eval_acc=32.00 best_eval_acc=32.00@2
+[EVAL][baseline_epoch0][shot=1][split=71] epoch 6/10 loss=0.270121 support_acc=100.00 eval_acc=32.00 best_eval_acc=32.00@2
+[EVAL][baseline_epoch0][shot=1][split=71] epoch 8/10 loss=0.270009 support_acc=100.00 eval_acc=32.00 best_eval_acc=32.00@2
+[EVAL][baseline_epoch0][shot=1][split=71] epoch 10/10 loss=0.269897 support_acc=100.00 eval_acc=32.00 best_eval_acc=32.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  72%|███████▏  | 72/100 [00:01<00:00, 60.89it/s][EVAL] split=72 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=72] epoch 2/10 loss=0.323188 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=72] epoch 4/10 loss=0.323067 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=72] epoch 6/10 loss=0.322947 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=72] epoch 8/10 loss=0.322827 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=72] epoch 10/10 loss=0.322706 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL] split=73 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=73] epoch 2/10 loss=0.239528 support_acc=100.00 eval_acc=56.00 best_eval_acc=56.00@2
+[EVAL][baseline_epoch0][shot=1][split=73] epoch 4/10 loss=0.239491 support_acc=100.00 eval_acc=56.00 best_eval_acc=56.00@2
+[EVAL][baseline_epoch0][shot=1][split=73] epoch 6/10 loss=0.239455 support_acc=100.00 eval_acc=56.00 best_eval_acc=56.00@2
+[EVAL][baseline_epoch0][shot=1][split=73] epoch 8/10 loss=0.239418 support_acc=100.00 eval_acc=56.00 best_eval_acc=56.00@2
+[EVAL][baseline_epoch0][shot=1][split=73] epoch 10/10 loss=0.239382 support_acc=100.00 eval_acc=56.00 best_eval_acc=56.00@2
+[EVAL] split=74 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=74] epoch 2/10 loss=0.304386 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=74] epoch 4/10 loss=0.304246 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=74] epoch 6/10 loss=0.304107 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=74] epoch 8/10 loss=0.303969 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=74] epoch 10/10 loss=0.303830 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL] split=75 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=75] epoch 2/10 loss=0.360806 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL][baseline_epoch0][shot=1][split=75] epoch 4/10 loss=0.360681 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL][baseline_epoch0][shot=1][split=75] epoch 6/10 loss=0.360555 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL][baseline_epoch0][shot=1][split=75] epoch 8/10 loss=0.360430 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL][baseline_epoch0][shot=1][split=75] epoch 10/10 loss=0.360304 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL] split=76 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=76] epoch 2/10 loss=0.413425 support_acc=100.00 eval_acc=25.00 best_eval_acc=25.00@2
+[EVAL][baseline_epoch0][shot=1][split=76] epoch 4/10 loss=0.413214 support_acc=100.00 eval_acc=25.00 best_eval_acc=25.00@2
+[EVAL][baseline_epoch0][shot=1][split=76] epoch 6/10 loss=0.413003 support_acc=100.00 eval_acc=25.00 best_eval_acc=25.00@2
+[EVAL][baseline_epoch0][shot=1][split=76] epoch 8/10 loss=0.412792 support_acc=100.00 eval_acc=25.00 best_eval_acc=25.00@2
+[EVAL][baseline_epoch0][shot=1][split=76] epoch 10/10 loss=0.412581 support_acc=100.00 eval_acc=25.00 best_eval_acc=25.00@2
+[EVAL] split=77 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=77] epoch 2/10 loss=0.275178 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=77] epoch 4/10 loss=0.275058 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=77] epoch 6/10 loss=0.274938 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=77] epoch 8/10 loss=0.274817 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL][baseline_epoch0][shot=1][split=77] epoch 10/10 loss=0.274697 support_acc=100.00 eval_acc=51.00 best_eval_acc=51.00@2
+[EVAL] split=78 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=78] epoch 2/10 loss=0.243242 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=78] epoch 4/10 loss=0.243147 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=78] epoch 6/10 loss=0.243051 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=78] epoch 8/10 loss=0.242956 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=78] epoch 10/10 loss=0.242860 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  79%|███████▉  | 79/100 [00:01<00:00, 61.14it/s][EVAL] split=79 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=79] epoch 2/10 loss=0.337061 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=79] epoch 4/10 loss=0.336834 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=79] epoch 6/10 loss=0.336607 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=79] epoch 8/10 loss=0.336381 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL][baseline_epoch0][shot=1][split=79] epoch 10/10 loss=0.336155 support_acc=100.00 eval_acc=48.00 best_eval_acc=48.00@2
+[EVAL] split=80 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=80] epoch 2/10 loss=0.332746 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL][baseline_epoch0][shot=1][split=80] epoch 4/10 loss=0.332664 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL][baseline_epoch0][shot=1][split=80] epoch 6/10 loss=0.332582 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL][baseline_epoch0][shot=1][split=80] epoch 8/10 loss=0.332500 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL][baseline_epoch0][shot=1][split=80] epoch 10/10 loss=0.332418 support_acc=100.00 eval_acc=41.00 best_eval_acc=41.00@2
+[EVAL] split=81 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=81] epoch 2/10 loss=0.339308 support_acc=100.00 eval_acc=54.00 best_eval_acc=54.00@2
+[EVAL][baseline_epoch0][shot=1][split=81] epoch 4/10 loss=0.339100 support_acc=100.00 eval_acc=54.00 best_eval_acc=54.00@2
+[EVAL][baseline_epoch0][shot=1][split=81] epoch 6/10 loss=0.338892 support_acc=100.00 eval_acc=54.00 best_eval_acc=54.00@2
+[EVAL][baseline_epoch0][shot=1][split=81] epoch 8/10 loss=0.338685 support_acc=100.00 eval_acc=54.00 best_eval_acc=54.00@2
+[EVAL][baseline_epoch0][shot=1][split=81] epoch 10/10 loss=0.338477 support_acc=100.00 eval_acc=54.00 best_eval_acc=54.00@2
+[EVAL] split=82 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=82] epoch 2/10 loss=0.287483 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=82] epoch 4/10 loss=0.287410 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=82] epoch 6/10 loss=0.287337 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=82] epoch 8/10 loss=0.287264 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=82] epoch 10/10 loss=0.287191 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL] split=83 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=83] epoch 2/10 loss=0.323111 support_acc=100.00 eval_acc=61.00 best_eval_acc=61.00@2
+[EVAL][baseline_epoch0][shot=1][split=83] epoch 4/10 loss=0.323001 support_acc=100.00 eval_acc=61.00 best_eval_acc=61.00@2
+[EVAL][baseline_epoch0][shot=1][split=83] epoch 6/10 loss=0.322891 support_acc=100.00 eval_acc=61.00 best_eval_acc=61.00@2
+[EVAL][baseline_epoch0][shot=1][split=83] epoch 8/10 loss=0.322781 support_acc=100.00 eval_acc=61.00 best_eval_acc=61.00@2
+[EVAL][baseline_epoch0][shot=1][split=83] epoch 10/10 loss=0.322671 support_acc=100.00 eval_acc=61.00 best_eval_acc=61.00@2
+[EVAL] split=84 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=84] epoch 2/10 loss=0.382009 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=84] epoch 4/10 loss=0.381810 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=84] epoch 6/10 loss=0.381612 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=84] epoch 8/10 loss=0.381413 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=84] epoch 10/10 loss=0.381214 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL] split=85 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=85] epoch 2/10 loss=0.286382 support_acc=100.00 eval_acc=60.00 best_eval_acc=60.00@2
+[EVAL][baseline_epoch0][shot=1][split=85] epoch 4/10 loss=0.286288 support_acc=100.00 eval_acc=60.00 best_eval_acc=60.00@2
+[EVAL][baseline_epoch0][shot=1][split=85] epoch 6/10 loss=0.286193 support_acc=100.00 eval_acc=60.00 best_eval_acc=60.00@2
+[EVAL][baseline_epoch0][shot=1][split=85] epoch 8/10 loss=0.286099 support_acc=100.00 eval_acc=60.00 best_eval_acc=60.00@2
+[EVAL][baseline_epoch0][shot=1][split=85] epoch 10/10 loss=0.286005 support_acc=100.00 eval_acc=60.00 best_eval_acc=60.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  86%|████████▌ | 86/100 [00:01<00:00, 61.30it/s][EVAL] split=86 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=86] epoch 2/10 loss=0.331548 support_acc=100.00 eval_acc=72.00 best_eval_acc=72.00@2
+[EVAL][baseline_epoch0][shot=1][split=86] epoch 4/10 loss=0.331413 support_acc=100.00 eval_acc=72.00 best_eval_acc=72.00@2
+[EVAL][baseline_epoch0][shot=1][split=86] epoch 6/10 loss=0.331279 support_acc=100.00 eval_acc=72.00 best_eval_acc=72.00@2
+[EVAL][baseline_epoch0][shot=1][split=86] epoch 8/10 loss=0.331144 support_acc=100.00 eval_acc=72.00 best_eval_acc=72.00@2
+[EVAL][baseline_epoch0][shot=1][split=86] epoch 10/10 loss=0.331009 support_acc=100.00 eval_acc=72.00 best_eval_acc=72.00@2
+[EVAL] split=87 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=87] epoch 2/10 loss=0.268732 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=87] epoch 4/10 loss=0.268606 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=87] epoch 6/10 loss=0.268481 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=87] epoch 8/10 loss=0.268356 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL][baseline_epoch0][shot=1][split=87] epoch 10/10 loss=0.268231 support_acc=100.00 eval_acc=52.00 best_eval_acc=52.00@2
+[EVAL] split=88 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=88] epoch 2/10 loss=0.278884 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=88] epoch 4/10 loss=0.278766 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=88] epoch 6/10 loss=0.278648 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=88] epoch 8/10 loss=0.278531 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL][baseline_epoch0][shot=1][split=88] epoch 10/10 loss=0.278413 support_acc=100.00 eval_acc=65.00 best_eval_acc=65.00@2
+[EVAL] split=89 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=89] epoch 2/10 loss=0.370928 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=89] epoch 4/10 loss=0.370771 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=89] epoch 6/10 loss=0.370614 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=89] epoch 8/10 loss=0.370458 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=89] epoch 10/10 loss=0.370301 support_acc=100.00 eval_acc=62.00 best_eval_acc=63.00@2
+[EVAL] split=90 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=90] epoch 2/10 loss=0.274639 support_acc=100.00 eval_acc=62.00 best_eval_acc=62.00@2
+[EVAL][baseline_epoch0][shot=1][split=90] epoch 4/10 loss=0.274490 support_acc=100.00 eval_acc=62.00 best_eval_acc=62.00@2
+[EVAL][baseline_epoch0][shot=1][split=90] epoch 6/10 loss=0.274341 support_acc=100.00 eval_acc=62.00 best_eval_acc=62.00@2
+[EVAL][baseline_epoch0][shot=1][split=90] epoch 8/10 loss=0.274193 support_acc=100.00 eval_acc=62.00 best_eval_acc=62.00@2
+[EVAL][baseline_epoch0][shot=1][split=90] epoch 10/10 loss=0.274044 support_acc=100.00 eval_acc=62.00 best_eval_acc=62.00@2
+[EVAL] split=91 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=91] epoch 2/10 loss=0.410860 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=91] epoch 4/10 loss=0.410618 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=91] epoch 6/10 loss=0.410377 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=91] epoch 8/10 loss=0.410135 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL][baseline_epoch0][shot=1][split=91] epoch 10/10 loss=0.409893 support_acc=100.00 eval_acc=36.00 best_eval_acc=36.00@2
+[EVAL] split=92 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=92] epoch 2/10 loss=0.320708 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=92] epoch 4/10 loss=0.320516 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=92] epoch 6/10 loss=0.320325 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=92] epoch 8/10 loss=0.320133 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+[EVAL][baseline_epoch0][shot=1][split=92] epoch 10/10 loss=0.319942 support_acc=100.00 eval_acc=63.00 best_eval_acc=63.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot:  93%|█████████▎| 93/100 [00:01<00:00, 61.47it/s][EVAL] split=93 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=93] epoch 2/10 loss=0.384125 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL][baseline_epoch0][shot=1][split=93] epoch 4/10 loss=0.383898 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL][baseline_epoch0][shot=1][split=93] epoch 6/10 loss=0.383671 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL][baseline_epoch0][shot=1][split=93] epoch 8/10 loss=0.383445 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL][baseline_epoch0][shot=1][split=93] epoch 10/10 loss=0.383218 support_acc=100.00 eval_acc=45.00 best_eval_acc=45.00@2
+[EVAL] split=94 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=94] epoch 2/10 loss=0.362749 support_acc=100.00 eval_acc=49.00 best_eval_acc=49.00@2
+[EVAL][baseline_epoch0][shot=1][split=94] epoch 4/10 loss=0.362575 support_acc=100.00 eval_acc=49.00 best_eval_acc=49.00@2
+[EVAL][baseline_epoch0][shot=1][split=94] epoch 6/10 loss=0.362402 support_acc=100.00 eval_acc=49.00 best_eval_acc=49.00@2
+[EVAL][baseline_epoch0][shot=1][split=94] epoch 8/10 loss=0.362228 support_acc=100.00 eval_acc=49.00 best_eval_acc=49.00@2
+[EVAL][baseline_epoch0][shot=1][split=94] epoch 10/10 loss=0.362055 support_acc=100.00 eval_acc=49.00 best_eval_acc=49.00@2
+[EVAL] split=95 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=95] epoch 2/10 loss=0.343432 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL][baseline_epoch0][shot=1][split=95] epoch 4/10 loss=0.343214 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL][baseline_epoch0][shot=1][split=95] epoch 6/10 loss=0.342995 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL][baseline_epoch0][shot=1][split=95] epoch 8/10 loss=0.342777 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL][baseline_epoch0][shot=1][split=95] epoch 10/10 loss=0.342559 support_acc=100.00 eval_acc=47.00 best_eval_acc=47.00@2
+[EVAL] split=96 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=96] epoch 2/10 loss=0.402884 support_acc=100.00 eval_acc=69.00 best_eval_acc=69.00@2
+[EVAL][baseline_epoch0][shot=1][split=96] epoch 4/10 loss=0.402687 support_acc=100.00 eval_acc=69.00 best_eval_acc=69.00@2
+[EVAL][baseline_epoch0][shot=1][split=96] epoch 6/10 loss=0.402489 support_acc=100.00 eval_acc=69.00 best_eval_acc=69.00@2
+[EVAL][baseline_epoch0][shot=1][split=96] epoch 8/10 loss=0.402291 support_acc=100.00 eval_acc=69.00 best_eval_acc=69.00@2
+[EVAL][baseline_epoch0][shot=1][split=96] epoch 10/10 loss=0.402093 support_acc=100.00 eval_acc=69.00 best_eval_acc=69.00@2
+[EVAL] split=97 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=97] epoch 2/10 loss=0.359938 support_acc=100.00 eval_acc=53.00 best_eval_acc=53.00@2
+[EVAL][baseline_epoch0][shot=1][split=97] epoch 4/10 loss=0.359742 support_acc=100.00 eval_acc=53.00 best_eval_acc=53.00@2
+[EVAL][baseline_epoch0][shot=1][split=97] epoch 6/10 loss=0.359547 support_acc=100.00 eval_acc=53.00 best_eval_acc=53.00@2
+[EVAL][baseline_epoch0][shot=1][split=97] epoch 8/10 loss=0.359352 support_acc=100.00 eval_acc=53.00 best_eval_acc=53.00@2
+[EVAL][baseline_epoch0][shot=1][split=97] epoch 10/10 loss=0.359156 support_acc=100.00 eval_acc=53.00 best_eval_acc=53.00@2
+[EVAL] split=98 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=98] epoch 2/10 loss=0.347724 support_acc=100.00 eval_acc=44.00 best_eval_acc=44.00@2
+[EVAL][baseline_epoch0][shot=1][split=98] epoch 4/10 loss=0.347572 support_acc=100.00 eval_acc=44.00 best_eval_acc=44.00@2
+[EVAL][baseline_epoch0][shot=1][split=98] epoch 6/10 loss=0.347419 support_acc=100.00 eval_acc=44.00 best_eval_acc=44.00@2
+[EVAL][baseline_epoch0][shot=1][split=98] epoch 8/10 loss=0.347267 support_acc=100.00 eval_acc=44.00 best_eval_acc=44.00@2
+[EVAL][baseline_epoch0][shot=1][split=98] epoch 10/10 loss=0.347115 support_acc=100.00 eval_acc=44.00 best_eval_acc=44.00@2
+[EVAL] split=99 shot=1 downstream_task=node query_mode=hybrid subgraph_hop=2 max_neighbors_per_node=64 stage=baseline_epoch0
+[EVAL] support_repr_shape=node(7, 128)+subgraph(7, 128)
+[EVAL] query_repr_shape=node(100, 128)+subgraph(100, 128)
+[EVAL][baseline_epoch0][shot=1][split=99] epoch 2/10 loss=0.483091 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL][baseline_epoch0][shot=1][split=99] epoch 4/10 loss=0.482770 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL][baseline_epoch0][shot=1][split=99] epoch 6/10 loss=0.482449 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL][baseline_epoch0][shot=1][split=99] epoch 8/10 loss=0.482128 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+[EVAL][baseline_epoch0][shot=1][split=99] epoch 10/10 loss=0.481807 support_acc=100.00 eval_acc=46.00 best_eval_acc=46.00@2
+
+USP baseline_epoch0 SAMGPT-standard 1-shot: 100%|██████████| 100/100 [00:01<00:00, 61.49it/s]
+USP baseline_epoch0 SAMGPT-standard 1-shot: 100%|██████████| 100/100 [00:01<00:00, 59.23it/s]
+[CURVE] saved loss plot: /home/ustc1958/lxy/graph/1/SAMGPT0511/result/figures/usp_downstream_loss_baseline_epoch0_shot1_splits0-99.png curves=100 n=1000 first_mean=0.345027 last_mean=0.344229 min=0.226803 max=0.508128
+USP result: {"method": "USP", "internal_pretrain_path": "USP@baseline_epoch0", "setting": "source_only", "eval_protocol": "samgpt_standard", "source_domains": ["Citeseer", "Pubmed", "Photo", "Computers", "FacebookPagePage", "LastFMAsia"], "target_domain": "Cora", "shot": 1, "seed": 39, "split": "0-99", "num_splits": 100, "test_nodes": 100, "adaptation_setting": "transductive", "target_unlabeled_used": true, "target_edges_used": true, "label_shuffle": false, "feature_permuted": false, "subgraph_hop": 2, "readout": "prompt_weighted", "query_mode": "hybrid", "prototype": "attention", "negative_sampling": "domain_balanced", "neg_exclude_scope": "self", "neg_refresh_interval": 5, "neg_refresh_count": 0, "neg_reuse_count": 0, "num_intra_neg": null, "num_inter_neg": null, "num_negatives_requested": 16, "num_negatives_effective": null, "intra_neg_ratio_requested": 0.5, "intra_neg_ratio_effective": null, "negative_fallback_reason": null, "negative_sampling_effective": null, "use_structure_token": true, "align_type": "none", "L_ns_final_epoch_mean": null, "L_ss_final_epoch_mean": null, "L_align_final_epoch_mean": null, "loss_stat_type": null, "train_time": 2.060792922973633, "acc": 50.12999960780144, "acc_std": 11.877875962683374, "macro_f1": 39.86473503414159, "macro_f1_std": 8.891637330659522, "micro_f1": 50.13, "micro_f1_std": 11.877876047254382, "margin": 0.04754591654986143, "margin_std": 0.2509416530305198, "compactness": 7.408005942011187e-09, "compactness_std": 3.370650848535871e-08, "separation": 0.5751390615105629, "separation_std": 0.0389293200231751}
+USP minimal logs saved to /home/ustc1958/lxy/graph/1/SAMGPT0511/result/usp_minimal_runs.jsonl

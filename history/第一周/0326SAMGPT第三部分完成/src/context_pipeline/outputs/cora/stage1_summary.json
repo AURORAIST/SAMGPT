@@ -1,0 +1,48 @@
+{
+  "dataset": "Cora",
+  "num_samples": 2708,
+  "max_subgraph_nodes": 64,
+  "subgraph_hop_n": 2,
+  "cluster_method": "gmm",
+  "encoding_mode": "raw9",
+  "cluster_feature_names": [
+    "num_nodes",
+    "num_edges",
+    "avg_degree",
+    "max_degree",
+    "var_degree",
+    "density",
+    "avg_clustering",
+    "triangles",
+    "diameter"
+  ],
+  "use_log1p": true,
+  "log1p_feature_names": [
+    "num_nodes",
+    "num_edges",
+    "max_degree",
+    "var_degree",
+    "triangles",
+    "diameter"
+  ],
+  "requested_num_clusters": 8,
+  "effective_num_clusters": 8,
+  "remove_selfloops": false,
+  "feature_means": [
+    2.92974036030626,
+    3.18807372013594,
+    2.705971189367339,
+    2.508676347380065,
+    1.9790706068127526,
+    0.252568818112254,
+    0.3290029129093634,
+    2.0111673745467455,
+    1.4248605052887588
+  ],
+  "paths": {
+    "encodings_csv": "src/context_pipeline/outputs/cora/structural_encodings.csv",
+    "cluster_labels": "src/context_pipeline/outputs/cora/cluster_labels.npy",
+    "cluster_centers": "src/context_pipeline/outputs/cora/cluster_centers.npy",
+    "cluster_visualization": "src/context_pipeline/outputs/cora/stage1_cluster_visualization.png"
+  }
+}

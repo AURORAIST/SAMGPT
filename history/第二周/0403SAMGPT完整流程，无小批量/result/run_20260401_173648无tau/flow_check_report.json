@@ -1,0 +1,47 @@
+{
+  "all_ok": true,
+  "pretrain_method": "EGRAPHCL",
+  "result_dir": "/home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260401_173648",
+  "checks": [
+    {
+      "name": "non_empty_aug_views",
+      "ok": true,
+      "detail": "aug_features=22430"
+    },
+    {
+      "name": "aug_list_length_consistency",
+      "ok": true,
+      "detail": "aug_features=22430, aug_adjs=22430, lbls=22430, bce_masks=22430"
+    },
+    {
+      "name": "sample_dataset_ids_alignment",
+      "ok": true,
+      "detail": "sample_dataset_ids=22430, aug_features=22430"
+    },
+    {
+      "name": "stage1_metrics_exist",
+      "ok": true,
+      "detail": "/home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260401_173648/stage_outputs/stage1/global_merged/stage1_metrics.json"
+    },
+    {
+      "name": "stage2_metrics_exist",
+      "ok": true,
+      "detail": "/home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260401_173648/stage_outputs/stage2/global_merged/stage2_metrics.json"
+    },
+    {
+      "name": "dataset_coverage",
+      "ok": true,
+      "detail": "unique_datasets=6, names=['Citeseer', 'Computers', 'FacebookPagePage', 'LastFMAsia', 'Photo', 'Pubmed']"
+    },
+    {
+      "name": "cluster_coverage",
+      "ok": true,
+      "detail": "unique_clusters=12, ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]"
+    },
+    {
+      "name": "online_pair_mode_min_samples",
+      "ok": true,
+      "detail": "aug_features=22430, online pair mask is built in model forward"
+    }
+  ]
+}

@@ -1,0 +1,1050 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='EGRAPHCL', drop_percent=0.1, seed=39, graphId=[1], skip_pretrain=0, shot_num=1, lr=0.0003, hid_units=256, layers_num=3, backbone='gcn', unify_dim=50, feature_align_method='pca', alpha=1.0, beta=1.0, combinetype='mul', ablation_pre='st', ablation_down='all', negative_samples_num=40, nb_epochs=10000, patience=50, grad_clip_norm=1.0, lr_scheduler_patience=20, lr_scheduler_factor=0.5, lr_scheduler_min_lr=1e-05, early_stop_min_delta=0.0001, epoch_log_every=5, egraphcl_tau=0.85, egraphcl_temperature=0.2, egraphcl_pair_chunk_size=256, egraphcl_candidate_pool=1024, egraphcl_soft_topk=10, egraphcl_max_negatives=512, egraphcl_batch_size=128, egraphcl_keep_data_on_cpu=1, egraphcl_epoch_chunk_graphs=128, egraphcl_mask_source='feature', egraphcl_adaptive_tau=1, egraphcl_target_mask_ratio=0.35, egraphcl_tau_min=0.82, egraphcl_tau_max=0.99, egraphcl_min_negatives_per_anchor=12, egraphcl_structure_min_negatives_per_anchor=8, egraphcl_max_mask_ratio=0.55, egraphcl_batch_max_domains=3, egraphcl_batch_max_domain_ratio=0.5, egraphcl_mask_log_every=5, subgraph_hop_n=2, max_subgraph_nodes=64, sample_progress_every=1000, encoder_filter_enable=1, encoder_filter_warmup_epochs=200, encoder_filter_method='gmm', encoder_filter_clusters=8, encoder_filter_top_m_per_cluster=8, encoder_filter_top_ratio=0.3, encoder_filter_score_alpha=1.0, encoder_filter_score_beta=1.0, encoder_filter_score_gamma=1.0, encoder_filter_force_rebuild=1, encoder_filter_visualize=1, encoder_filter_visualize_max_points=50000, encoder_filter_metric_max_points=12000, debug_trace_enable=1, result_subdir='run_20260405_102909', context_outputs_root='./result/run_20260405_102909/encoder_outputs')
+----------------------------------------------------------------------------------------------------
+[trace] 2026-04-05 10:29:12 config.pipeline: pretrain_method=EGRAPHCL, align_method=pca, ablation_pre=st, filter_method=gmm
+398572
+CUDA Available: True
+gpu: 0
+[result] run_subdir=run_20260405_102909
+[result] result_dir=/home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260405_102909
+[result] context_outputs_root=/home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260405_102909/encoder_outputs
+[trace] 2026-04-05 10:29:12 pretrain.pipeline.start
+[trace] 2026-04-05 10:29:12 pretrain.prepare.start: method=EGRAPHCL
+0.23041884531148052
+[trace] 2026-04-05 10:29:12 align.graph_done: dataset=Citeseer, graph_id=0, method=pca, in_dim=3703, out_dim=50, nodes=3327
+[trace] 2026-04-05 10:29:12 pool.sample_progress: dataset=Citeseer, graph_id=0, current=1, total=3327, sub_nodes=2
+[trace] 2026-04-05 10:29:13 pool.sample_progress: dataset=Citeseer, graph_id=0, current=1000, total=3327, sub_nodes=64
+[trace] 2026-04-05 10:29:13 pool.sample_progress: dataset=Citeseer, graph_id=0, current=2000, total=3327, sub_nodes=6
+[trace] 2026-04-05 10:29:13 pool.sample_progress: dataset=Citeseer, graph_id=0, current=3000, total=3327, sub_nodes=5
+[trace] 2026-04-05 10:29:13 pool.graph_done: dataset=Citeseer, graph_id=0, samples=3279
+[trace] 2026-04-05 10:29:13 pool.dataset_done: dataset=Citeseer, samples=3279
+0.3786603703078737
+[trace] 2026-04-05 10:29:13 align.graph_done: dataset=Pubmed, graph_id=0, method=pca, in_dim=500, out_dim=50, nodes=19717
+[trace] 2026-04-05 10:29:15 pool.sample_progress: dataset=Pubmed, graph_id=0, current=1, total=19717, sub_nodes=64
+[trace] 2026-04-05 10:29:15 pool.sample_progress: dataset=Pubmed, graph_id=0, current=1000, total=19717, sub_nodes=57
+[trace] 2026-04-05 10:29:16 pool.sample_progress: dataset=Pubmed, graph_id=0, current=2000, total=19717, sub_nodes=13
+[trace] 2026-04-05 10:29:16 pool.sample_progress: dataset=Pubmed, graph_id=0, current=3000, total=19717, sub_nodes=64
+[trace] 2026-04-05 10:29:16 pool.sample_progress: dataset=Pubmed, graph_id=0, current=4000, total=19717, sub_nodes=24
+[trace] 2026-04-05 10:29:16 pool.sample_progress: dataset=Pubmed, graph_id=0, current=5000, total=19717, sub_nodes=62
+[trace] 2026-04-05 10:29:16 pool.sample_progress: dataset=Pubmed, graph_id=0, current=6000, total=19717, sub_nodes=56
+[trace] 2026-04-05 10:29:16 pool.sample_progress: dataset=Pubmed, graph_id=0, current=7000, total=19717, sub_nodes=17
+[trace] 2026-04-05 10:29:16 pool.sample_progress: dataset=Pubmed, graph_id=0, current=8000, total=19717, sub_nodes=14
+[trace] 2026-04-05 10:29:17 pool.sample_progress: dataset=Pubmed, graph_id=0, current=9000, total=19717, sub_nodes=64
+[trace] 2026-04-05 10:29:17 pool.sample_progress: dataset=Pubmed, graph_id=0, current=10000, total=19717, sub_nodes=36
+[trace] 2026-04-05 10:29:17 pool.sample_progress: dataset=Pubmed, graph_id=0, current=11000, total=19717, sub_nodes=30
+[trace] 2026-04-05 10:29:17 pool.sample_progress: dataset=Pubmed, graph_id=0, current=12000, total=19717, sub_nodes=43
+[trace] 2026-04-05 10:29:17 pool.sample_progress: dataset=Pubmed, graph_id=0, current=13000, total=19717, sub_nodes=40
+[trace] 2026-04-05 10:29:17 pool.sample_progress: dataset=Pubmed, graph_id=0, current=14000, total=19717, sub_nodes=22
+[trace] 2026-04-05 10:29:18 pool.sample_progress: dataset=Pubmed, graph_id=0, current=15000, total=19717, sub_nodes=64
+[trace] 2026-04-05 10:29:18 pool.sample_progress: dataset=Pubmed, graph_id=0, current=16000, total=19717, sub_nodes=64
+[trace] 2026-04-05 10:29:18 pool.sample_progress: dataset=Pubmed, graph_id=0, current=17000, total=19717, sub_nodes=64
+[trace] 2026-04-05 10:29:18 pool.sample_progress: dataset=Pubmed, graph_id=0, current=18000, total=19717, sub_nodes=10
+[trace] 2026-04-05 10:29:18 pool.sample_progress: dataset=Pubmed, graph_id=0, current=19000, total=19717, sub_nodes=5
+[trace] 2026-04-05 10:29:18 pool.sample_progress: dataset=Pubmed, graph_id=0, current=19717, total=19717, sub_nodes=8
+[trace] 2026-04-05 10:29:18 pool.graph_done: dataset=Pubmed, graph_id=0, samples=19717
+[trace] 2026-04-05 10:29:18 pool.dataset_done: dataset=Pubmed, samples=19717
+0.4772969863431251
+[trace] 2026-04-05 10:29:19 align.graph_done: dataset=Photo, graph_id=0, method=pca, in_dim=745, out_dim=50, nodes=7650
+[trace] 2026-04-05 10:29:19 pool.sample_progress: dataset=Photo, graph_id=0, current=1, total=7650, sub_nodes=64
+[trace] 2026-04-05 10:29:20 pool.sample_progress: dataset=Photo, graph_id=0, current=1000, total=7650, sub_nodes=64
+[trace] 2026-04-05 10:29:21 pool.sample_progress: dataset=Photo, graph_id=0, current=2000, total=7650, sub_nodes=64
+[trace] 2026-04-05 10:29:22 pool.sample_progress: dataset=Photo, graph_id=0, current=3000, total=7650, sub_nodes=64
+[trace] 2026-04-05 10:29:22 pool.sample_progress: dataset=Photo, graph_id=0, current=4000, total=7650, sub_nodes=56
+[trace] 2026-04-05 10:29:23 pool.sample_progress: dataset=Photo, graph_id=0, current=5000, total=7650, sub_nodes=64
+[trace] 2026-04-05 10:29:24 pool.sample_progress: dataset=Photo, graph_id=0, current=6000, total=7650, sub_nodes=64
+[trace] 2026-04-05 10:29:24 pool.sample_progress: dataset=Photo, graph_id=0, current=7000, total=7650, sub_nodes=64
+[trace] 2026-04-05 10:29:25 pool.graph_done: dataset=Photo, graph_id=0, samples=7535
+[trace] 2026-04-05 10:29:25 pool.dataset_done: dataset=Photo, samples=7535
+0.46532959688876113
+[trace] 2026-04-05 10:29:25 align.graph_done: dataset=Computers, graph_id=0, method=pca, in_dim=767, out_dim=50, nodes=13752
+[trace] 2026-04-05 10:29:27 pool.sample_progress: dataset=Computers, graph_id=0, current=1, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:29 pool.sample_progress: dataset=Computers, graph_id=0, current=1000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:30 pool.sample_progress: dataset=Computers, graph_id=0, current=2000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:31 pool.sample_progress: dataset=Computers, graph_id=0, current=3000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:33 pool.sample_progress: dataset=Computers, graph_id=0, current=4000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:34 pool.sample_progress: dataset=Computers, graph_id=0, current=5000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:36 pool.sample_progress: dataset=Computers, graph_id=0, current=6000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:37 pool.sample_progress: dataset=Computers, graph_id=0, current=7000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:38 pool.sample_progress: dataset=Computers, graph_id=0, current=8000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:40 pool.sample_progress: dataset=Computers, graph_id=0, current=9000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:41 pool.sample_progress: dataset=Computers, graph_id=0, current=10000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:43 pool.sample_progress: dataset=Computers, graph_id=0, current=11000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:44 pool.sample_progress: dataset=Computers, graph_id=0, current=12000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:46 pool.sample_progress: dataset=Computers, graph_id=0, current=13000, total=13752, sub_nodes=64
+[trace] 2026-04-05 10:29:46 pool.graph_done: dataset=Computers, graph_id=0, samples=13471
+[trace] 2026-04-05 10:29:46 pool.dataset_done: dataset=Computers, samples=13471
+0.5713436769887664
+[trace] 2026-04-05 10:29:46 align.graph_done: dataset=FacebookPagePage, graph_id=0, method=pca, in_dim=128, out_dim=50, nodes=22470
+[trace] 2026-04-05 10:29:50 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=1, total=22470, sub_nodes=52
+[trace] 2026-04-05 10:29:50 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=1000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:50 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=2000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:51 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=3000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:51 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=4000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:51 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=5000, total=22470, sub_nodes=45
+[trace] 2026-04-05 10:29:52 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=6000, total=22470, sub_nodes=49
+[trace] 2026-04-05 10:29:52 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=7000, total=22470, sub_nodes=38
+[trace] 2026-04-05 10:29:53 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=8000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:53 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=9000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:53 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=10000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:54 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=11000, total=22470, sub_nodes=21
+[trace] 2026-04-05 10:29:54 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=12000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:54 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=13000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:55 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=14000, total=22470, sub_nodes=32
+[trace] 2026-04-05 10:29:55 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=15000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:56 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=16000, total=22470, sub_nodes=30
+[trace] 2026-04-05 10:29:56 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=17000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:56 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=18000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:57 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=19000, total=22470, sub_nodes=4
+[trace] 2026-04-05 10:29:57 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=20000, total=22470, sub_nodes=20
+[trace] 2026-04-05 10:29:57 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=21000, total=22470, sub_nodes=14
+[trace] 2026-04-05 10:29:58 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=22000, total=22470, sub_nodes=64
+[trace] 2026-04-05 10:29:58 pool.sample_progress: dataset=FacebookPagePage, graph_id=0, current=22470, total=22470, sub_nodes=17
+[trace] 2026-04-05 10:29:58 pool.graph_done: dataset=FacebookPagePage, graph_id=0, samples=22470
+[trace] 2026-04-05 10:29:58 pool.dataset_done: dataset=FacebookPagePage, samples=22470
+0.6984994213821206
+[trace] 2026-04-05 10:29:58 align.graph_done: dataset=LastFMAsia, graph_id=0, method=pca, in_dim=128, out_dim=50, nodes=7624
+[trace] 2026-04-05 10:29:58 pool.sample_progress: dataset=LastFMAsia, graph_id=0, current=1, total=7624, sub_nodes=9
+[trace] 2026-04-05 10:29:59 pool.sample_progress: dataset=LastFMAsia, graph_id=0, current=1000, total=7624, sub_nodes=64
+[trace] 2026-04-05 10:29:59 pool.sample_progress: dataset=LastFMAsia, graph_id=0, current=2000, total=7624, sub_nodes=64
+[trace] 2026-04-05 10:29:59 pool.sample_progress: dataset=LastFMAsia, graph_id=0, current=3000, total=7624, sub_nodes=11
+[trace] 2026-04-05 10:29:59 pool.sample_progress: dataset=LastFMAsia, graph_id=0, current=4000, total=7624, sub_nodes=40
+[trace] 2026-04-05 10:29:59 pool.sample_progress: dataset=LastFMAsia, graph_id=0, current=5000, total=7624, sub_nodes=64
+[trace] 2026-04-05 10:30:00 pool.sample_progress: dataset=LastFMAsia, graph_id=0, current=6000, total=7624, sub_nodes=8
+[trace] 2026-04-05 10:30:00 pool.sample_progress: dataset=LastFMAsia, graph_id=0, current=7000, total=7624, sub_nodes=64
+[trace] 2026-04-05 10:30:00 pool.sample_progress: dataset=LastFMAsia, graph_id=0, current=7624, total=7624, sub_nodes=64
+[trace] 2026-04-05 10:30:00 pool.graph_done: dataset=LastFMAsia, graph_id=0, samples=7624
+[trace] 2026-04-05 10:30:00 pool.dataset_done: dataset=LastFMAsia, samples=7624
+[pool] total_samples=74096, per_dataset={'Citeseer': 3279, 'Pubmed': 19717, 'Photo': 7535, 'Computers': 13471, 'FacebookPagePage': 22470, 'LastFMAsia': 7624}
+[trace] 2026-04-05 10:36:02 pretrain.prepare.done: total_samples=74096
+[egraphcl-data] keep_on_cpu=True, batch_size=128, total_samples=74096
+[trace] 2026-04-05 10:36:02 pretrain.cuda_batch.ready: samples=74096
+[trace] 2026-04-05 10:36:02 pretrain.phaseA.start: epochs=200, samples=74096
+Loss:[4.34418540]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.3892 masked=4838/12432 active_neg=7594
+Loss:[4.34052621]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.3922 masked=4876/12432 active_neg=7556
+Loss:[4.33989354]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.3937 masked=4894/12432 active_neg=7538
+Loss:[4.33634393]
+Loss:[4.33256211]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.3977 masked=4944/12432 active_neg=7488
+Loss:[4.32778154]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.4094 masked=5090/12432 active_neg=7342
+Loss:[4.31601743]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.4152 masked=5162/12432 active_neg=7270
+Loss:[4.30811029]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.4183 masked=5200/12432 active_neg=7232
+Loss:[4.29447126]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.4213 masked=5238/12432 active_neg=7194
+Loss:[4.27155714]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.4234 masked=5264/12432 active_neg=7168
+Loss:[4.21441342]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.4215 masked=5240/12432 active_neg=7192
+Loss:[3.90736996]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.4028 masked=5008/12432 active_neg=7424
+Loss:[3.27641045]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.3444 masked=4282/12432 active_neg=8150
+Loss:[2.82397040]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.3460 masked=4302/12432 active_neg=8130
+Loss:[2.54360902]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.3473 masked=4318/12432 active_neg=8114
+Loss:[2.42163235]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.2839 masked=3530/12432 active_neg=8902
+Loss:[2.45911696]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.2574 masked=3200/12432 active_neg=9232
+Loss:[2.46520735]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.2358 masked=2932/12432 active_neg=9500
+Loss:[2.44566335]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.2199 masked=2734/12432 active_neg=9698
+Loss:[2.45077166]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.2148 masked=2670/12432 active_neg=9762
+[train] lr reduced: 0.0003 -> 0.00015 (epoch=82)
+Loss:[2.44577658]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.2143 masked=2664/12432 active_neg=9768
+Loss:[2.43605626]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.2132 masked=2650/12432 active_neg=9782
+Loss:[2.43222475]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.2091 masked=2600/12432 active_neg=9832
+Loss:[2.42937127]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.2001 masked=2488/12432 active_neg=9944
+Loss:[2.43835737]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1985 masked=2468/12432 active_neg=9964
+Loss:[2.38765336]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1918 masked=2384/12432 active_neg=10048
+Loss:[2.39051808]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1908 masked=2372/12432 active_neg=10060
+Loss:[2.36610624]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1847 masked=2296/12432 active_neg=10136
+Loss:[2.35195377]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1818 masked=2260/12432 active_neg=10172
+Loss:[2.34733872]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1786 masked=2220/12432 active_neg=10212
+Loss:[2.34160876]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1757 masked=2184/12432 active_neg=10248
+Loss:[2.33987237]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1715 masked=2132/12432 active_neg=10300
+Loss:[2.33929397]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1673 masked=2080/12432 active_neg=10352
+Loss:[2.33620599]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1610 masked=2002/12432 active_neg=10430
+Loss:[2.33221329]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1554 masked=1932/12432 active_neg=10500
+Loss:[2.33165807]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1475 masked=1834/12432 active_neg=10598
+Loss:[2.32836362]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1433 masked=1782/12432 active_neg=10650
+Loss:[2.32638968]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1356 masked=1686/12432 active_neg=10746
+Loss:[2.32104150]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1295 masked=1610/12432 active_neg=10822
+Loss:[2.31716449]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1234 masked=1534/12432 active_neg=10898
+Loss:[2.31612550]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1202 masked=1494/12432 active_neg=10938
+Loss:[2.31203561]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1157 masked=1438/12432 active_neg=10994
+Loss:[2.30577445]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1155 masked=1436/12432 active_neg=10996
+Loss:[2.29742106]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.1112 masked=1382/12432 active_neg=11050
+[trace] 2026-04-05 12:51:53 pretrain.phaseA.done
+[trace] 2026-04-05 12:51:53 pretrain.filter.start: method=gmm
+[trace] 2026-04-05 12:51:53 filter.encode_progress: current=1, total=74096
+[trace] 2026-04-05 12:51:55 filter.encode_progress: current=1000, total=74096
+[trace] 2026-04-05 12:51:56 filter.encode_progress: current=2000, total=74096
+[trace] 2026-04-05 12:51:58 filter.encode_progress: current=3000, total=74096
+[trace] 2026-04-05 12:51:59 filter.encode_progress: current=4000, total=74096
+[trace] 2026-04-05 12:52:01 filter.encode_progress: current=5000, total=74096
+[trace] 2026-04-05 12:52:03 filter.encode_progress: current=6000, total=74096
+[trace] 2026-04-05 12:52:04 filter.encode_progress: current=7000, total=74096
+[trace] 2026-04-05 12:52:06 filter.encode_progress: current=8000, total=74096
+[trace] 2026-04-05 12:52:07 filter.encode_progress: current=9000, total=74096
+[trace] 2026-04-05 12:52:09 filter.encode_progress: current=10000, total=74096
+[trace] 2026-04-05 12:52:11 filter.encode_progress: current=11000, total=74096
+[trace] 2026-04-05 12:52:12 filter.encode_progress: current=12000, total=74096
+[trace] 2026-04-05 12:52:14 filter.encode_progress: current=13000, total=74096
+[trace] 2026-04-05 12:52:16 filter.encode_progress: current=14000, total=74096
+[trace] 2026-04-05 12:52:17 filter.encode_progress: current=15000, total=74096
+[trace] 2026-04-05 12:52:19 filter.encode_progress: current=16000, total=74096
+[trace] 2026-04-05 12:52:20 filter.encode_progress: current=17000, total=74096
+[trace] 2026-04-05 12:52:22 filter.encode_progress: current=18000, total=74096
+[trace] 2026-04-05 12:52:24 filter.encode_progress: current=19000, total=74096
+[trace] 2026-04-05 12:52:25 filter.encode_progress: current=20000, total=74096
+[trace] 2026-04-05 12:52:27 filter.encode_progress: current=21000, total=74096
+[trace] 2026-04-05 12:52:28 filter.encode_progress: current=22000, total=74096
+[trace] 2026-04-05 12:52:30 filter.encode_progress: current=23000, total=74096
+[trace] 2026-04-05 12:52:31 filter.encode_progress: current=24000, total=74096
+[trace] 2026-04-05 12:52:33 filter.encode_progress: current=25000, total=74096
+[trace] 2026-04-05 12:52:35 filter.encode_progress: current=26000, total=74096
+[trace] 2026-04-05 12:52:36 filter.encode_progress: current=27000, total=74096
+[trace] 2026-04-05 12:52:38 filter.encode_progress: current=28000, total=74096
+[trace] 2026-04-05 12:52:40 filter.encode_progress: current=29000, total=74096
+[trace] 2026-04-05 12:52:41 filter.encode_progress: current=30000, total=74096
+[trace] 2026-04-05 12:52:43 filter.encode_progress: current=31000, total=74096
+[trace] 2026-04-05 12:52:45 filter.encode_progress: current=32000, total=74096
+[trace] 2026-04-05 12:52:46 filter.encode_progress: current=33000, total=74096
+[trace] 2026-04-05 12:52:48 filter.encode_progress: current=34000, total=74096
+[trace] 2026-04-05 12:52:50 filter.encode_progress: current=35000, total=74096
+[trace] 2026-04-05 12:52:51 filter.encode_progress: current=36000, total=74096
+[trace] 2026-04-05 12:52:53 filter.encode_progress: current=37000, total=74096
+[trace] 2026-04-05 12:52:55 filter.encode_progress: current=38000, total=74096
+[trace] 2026-04-05 12:52:56 filter.encode_progress: current=39000, total=74096
+[trace] 2026-04-05 12:52:58 filter.encode_progress: current=40000, total=74096
+[trace] 2026-04-05 12:52:59 filter.encode_progress: current=41000, total=74096
+[trace] 2026-04-05 12:53:01 filter.encode_progress: current=42000, total=74096
+[trace] 2026-04-05 12:53:03 filter.encode_progress: current=43000, total=74096
+[trace] 2026-04-05 12:53:04 filter.encode_progress: current=44000, total=74096
+[trace] 2026-04-05 12:53:06 filter.encode_progress: current=45000, total=74096
+[trace] 2026-04-05 12:53:08 filter.encode_progress: current=46000, total=74096
+[trace] 2026-04-05 12:53:09 filter.encode_progress: current=47000, total=74096
+[trace] 2026-04-05 12:53:11 filter.encode_progress: current=48000, total=74096
+[trace] 2026-04-05 12:53:13 filter.encode_progress: current=49000, total=74096
+[trace] 2026-04-05 12:53:14 filter.encode_progress: current=50000, total=74096
+[trace] 2026-04-05 12:53:16 filter.encode_progress: current=51000, total=74096
+[trace] 2026-04-05 12:53:17 filter.encode_progress: current=52000, total=74096
+[trace] 2026-04-05 12:53:19 filter.encode_progress: current=53000, total=74096
+[trace] 2026-04-05 12:53:21 filter.encode_progress: current=54000, total=74096
+[trace] 2026-04-05 12:53:22 filter.encode_progress: current=55000, total=74096
+[trace] 2026-04-05 12:53:24 filter.encode_progress: current=56000, total=74096
+[trace] 2026-04-05 12:53:25 filter.encode_progress: current=57000, total=74096
+[trace] 2026-04-05 12:53:27 filter.encode_progress: current=58000, total=74096
+[trace] 2026-04-05 12:53:29 filter.encode_progress: current=59000, total=74096
+[trace] 2026-04-05 12:53:30 filter.encode_progress: current=60000, total=74096
+[trace] 2026-04-05 12:53:32 filter.encode_progress: current=61000, total=74096
+[trace] 2026-04-05 12:53:34 filter.encode_progress: current=62000, total=74096
+[trace] 2026-04-05 12:53:35 filter.encode_progress: current=63000, total=74096
+[trace] 2026-04-05 12:53:37 filter.encode_progress: current=64000, total=74096
+[trace] 2026-04-05 12:53:38 filter.encode_progress: current=65000, total=74096
+[trace] 2026-04-05 12:53:40 filter.encode_progress: current=66000, total=74096
+[trace] 2026-04-05 12:53:42 filter.encode_progress: current=67000, total=74096
+[trace] 2026-04-05 12:53:43 filter.encode_progress: current=68000, total=74096
+[trace] 2026-04-05 12:53:45 filter.encode_progress: current=69000, total=74096
+[trace] 2026-04-05 12:53:47 filter.encode_progress: current=70000, total=74096
+[trace] 2026-04-05 12:53:48 filter.encode_progress: current=71000, total=74096
+[trace] 2026-04-05 12:53:50 filter.encode_progress: current=72000, total=74096
+[trace] 2026-04-05 12:53:51 filter.encode_progress: current=73000, total=74096
+[trace] 2026-04-05 12:53:53 filter.encode_progress: current=74000, total=74096
+[trace] 2026-04-05 12:53:53 filter.encode_progress: current=74096, total=74096
+[trace] 2026-04-05 12:54:08 filter.cluster_done: method=gmm, clusters=8, total=74096
+[trace] 2026-04-05 12:54:23 filter.visualization.saved: file=/home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260405_102909/encoder_outputs/encoder_filter/encoder_filter_clusters.png, before_file=/home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260405_102909/encoder_outputs/encoder_filter/encoder_filter_clusters_before.png, total_points=74096, selected_points=22274
+[filter-metrics] all sil=0.4145, dbi=1.3284, chi=3098.54, pc1/pc2=1.6767
+[filter-metrics] selected sil=0.3398, dbi=1.2277, chi=2760.06, pc1/pc2=1.3894
+[filter-metrics] assessment status=warn, summary=cluster quality is usable but has risks
+[filter] method=gmm, clusters=8, selected=22274/74096, stage1=64, stage2=22210
+[filter-stage2] top_ratio=0.3000, weights(alpha,beta,gamma)=(1.0000, 1.0000, 1.0000)
+[trace] 2026-04-05 12:54:25 pretrain.filter.done: selected=22274, total=74096
+[trace] 2026-04-05 12:56:20 pretrain.phaseB.start: start_epoch=200, end_epoch=10000, samples=22274
+Loss:[1.92157306]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.91466970]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.92743012]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.89844273]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.87942280]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.85423277]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.82915410]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.79652241]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.75682141]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.69939379]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.62524956]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.62906712]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.60345581]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.57848914]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.56793766]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.56392225]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.55678973]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.56264463]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.57011607]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.56301400]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.59117986]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.59505669]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.57933104]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.57394700]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.57957122]
+[train] lr reduced: 0.00015 -> 7.5e-05 (epoch=325)
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.56766060]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.56934748]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.55615780]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.55686601]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+[train] lr reduced: 7.5e-05 -> 3.75e-05 (epoch=348)
+Loss:[1.54036725]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.56001107]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.54508482]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.54358121]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.54024459]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.54003914]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53739710]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53994925]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.54121537]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53999545]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53682179]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53865048]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53608082]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53746481]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53590372]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53616212]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53516663]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53444941]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53356164]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53452994]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53320800]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53315965]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53253132]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53330249]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53231388]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53237041]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53127332]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53238458]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53147335]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53204078]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53098706]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53205805]
+[train] lr reduced: 3.75e-05 -> 1.875e-05 (epoch=505)
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53285520]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.53195917]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52850519]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52743004]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52653047]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52638242]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52597244]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52596335]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52566992]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52611613]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52485799]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52526882]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52545441]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52423985]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52393538]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52451651]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52416957]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52305162]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52224312]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52461735]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52425975]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52199672]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52165613]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52342564]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52237590]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52133570]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52103185]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52072852]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52024362]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52031001]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51977367]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52040440]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51998243]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51877966]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51842306]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.52024844]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51998195]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51752848]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51752850]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51815192]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51768716]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+[train] lr reduced: 1.875e-05 -> 1e-05 (epoch=713)
+Loss:[1.51643113]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51625576]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51601441]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51588924]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51509900]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51484741]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51417096]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51362335]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51307035]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51286279]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51223908]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51132252]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51089172]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.51012186]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50944270]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50874859]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50816867]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50751982]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50732692]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50697024]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50620671]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50557782]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50608065]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50533474]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50498994]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50470230]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50420326]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50352577]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50343261]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50313996]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50286204]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50252634]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50243012]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50215321]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50143994]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50094572]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50113535]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.50069099]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49970802]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49908969]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49949308]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49881687]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49830032]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49805081]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49803806]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49746364]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49726671]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49674832]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49651709]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49629323]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49577639]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49535597]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49561410]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49525625]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49462286]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49439928]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49469131]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49446774]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49342401]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49327919]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49347766]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49284387]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49264641]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49229989]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49257581]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49219520]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49154722]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49127742]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49124119]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49072816]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.49041589]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48991379]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48988400]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48947520]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48891603]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48838977]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48857473]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48800866]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48729961]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48704483]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48674959]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48636490]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48617902]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48576158]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48533333]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48491597]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48452968]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48412303]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48418363]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48365440]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48302583]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48270138]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48253626]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48213146]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48156200]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48120552]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48145427]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.48090128]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47993782]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47925995]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47949749]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47864641]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47748270]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47699880]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47718923]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47654701]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47607485]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47566550]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47559865]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47514777]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47463265]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47401615]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47383619]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47355918]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47307676]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47268585]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47281880]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47233055]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47170104]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47130116]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47139776]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47110106]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47078732]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47032157]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47037684]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.47010460]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46975901]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46930888]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46942141]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46901103]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46849590]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46813508]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46809904]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46757915]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46709325]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46689569]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46711647]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46685165]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46665885]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46636286]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46647563]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46624180]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46583641]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46554886]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46561200]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46526234]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46491822]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46481179]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46496090]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46461710]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46431793]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46412113]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46393471]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46397167]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46383112]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46364861]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46350212]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46343951]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46327340]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46320514]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46305254]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46303557]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46290206]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46281067]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46285572]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46212165]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46192280]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46153738]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46134727]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46101092]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46078061]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.46021986]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45963555]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45915146]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45901924]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45852765]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45816167]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45756159]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45752116]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45720315]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45686525]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45606672]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45632944]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45572364]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45522873]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45455003]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45456386]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45414143]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45351588]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45285900]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45287778]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45231530]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45189425]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45113318]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.45070660]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.44970407]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.44872154]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.44747044]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.44681303]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.44552625]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.44459195]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.44351651]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.44270068]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.44146435]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.44065499]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.43955972]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.43845492]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.43736527]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.43621540]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.43495374]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.43397631]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.43257669]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.43114432]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.42984036]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.42878491]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.42734587]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.42614472]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.42465978]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.42389306]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.42270889]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.42124748]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.42091634]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41997301]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41839338]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41767392]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41749399]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41691452]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41593672]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41578150]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41497175]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41446134]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41400870]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41313453]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41236609]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41184452]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41149989]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41115304]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41084432]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41032532]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.41031998]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40981632]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40991791]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40957381]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40868809]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40828763]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40886229]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40861206]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40802596]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40791914]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40723623]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40693722]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40692609]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40690809]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40643020]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40642321]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40670810]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40671410]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40661844]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40630651]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40694562]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40681372]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40660245]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40643176]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Loss:[1.40694395]
+[egraphcl-mask] branch=single_streaming source=encoded_similarity batch=128 avg_domains=1.00 domain_top3=d5:1.00 tau=0.8500 mask_ratio=0.0000 masked=0/2 active_neg=2
+Early stopping at epoch=2031, patience=50
+[trace] 2026-04-05 19:04:27 pretrain.phaseB.done: best_epoch=1981, best_loss=1.4063224976403372
+[trace] 2026-04-05 19:04:27 pretrain.pipeline.done: checkpoint=/home/ustc1958/lxy/graph/1/SAMGPT/checkpoints/model_node_EGRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_st_all_50_pca_256_0.0003_gcn_encf_1_gmm8_m8_r0.30.pkl
+##################################################
+PreTrain datasets are  ['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+Downastream dataset is  Cora
+DataBatch(x=[2708, 1433], edge_index=[2, 10556], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], batch=[2708], ptr=[2])
+process done
+0.3029434648493707
+nb_classes 7
+loading model from /home/ustc1958/lxy/graph/1/SAMGPT/checkpoints/model_node_EGRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_st_all_50_pca_256_0.0003_gcn_encf_1_gmm8_m8_r0.30.pkl
+----------------------------------------------------------------------------------------------------
+shotnum 1
+----------------------------------------------------------------------------------------------------
+Average accuracy:[0.4525]
+Mean:[45.2500]
+Std :[11.5797]
+----------------------------------------------------------------------------------------------------

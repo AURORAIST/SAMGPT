@@ -1,0 +1,338 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='EGRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.0003, grad_clip_norm=1.0, lr_scheduler_patience=20, lr_scheduler_factor=0.5, lr_scheduler_min_lr=1e-05, early_stop_min_delta=0.0001, hid_units=256, layers_num=3, backbone='gcn', max_subgraph_nodes=64, stage2_top_ratio=0.9, context_outputs_root='./result/run_20260403_115420/stage_outputs', result_subdir='run_20260403_115420', flow_check_only=0, flow_report_name='flow_check_report.json', stage1_num_clusters=8, stage1_cluster_method='gmm', stage1_subgraph_hop_n=2, stage1_encoding_mode='raw9', stage1_use_log1p=1, stage1_remove_selfloops=1, stage2_top_m_per_cluster=8, stage2_alpha=1.0, stage2_beta=1.0, stage2_gamma=1.0, global_pool_svd_rank=9, egraphcl_tau=0.99, egraphcl_temperature=0.2, egraphcl_pair_chunk_size=256, egraphcl_candidate_pool=1024, egraphcl_soft_topk=10, egraphcl_max_negatives=512, egraphcl_batch_size=128, egraphcl_mask_source='structure', egraphcl_min_negatives_per_anchor=1, egraphcl_structure_min_negatives_per_anchor=8, egraphcl_max_mask_ratio=0.95, egraphcl_curve_log_every=0, egraphcl_curve_bins=200, egraphcl_curve_chunk_rows=512, egraphcl_curve_save_plot=0, global_subgraph_pool=1, force_rebuild_global_pool=1, sample_progress_every=1000, egraphcl_mask_log_every=5, epoch_log_every=5, log_cuda_peak_mem=1)
+----------------------------------------------------------------------------------------------------
+[context] flags: stage2_filter=on, struct_contrastive=on, global_subgraph_pool=1, skip_pretrain=0
+243032
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+[result] run_subdir=run_20260403_115420
+[result] result_dir=/home/ustc1958/lxy/graph/1/SAMGPTSVD/result/run_20260403_115420
+0
+[trace] 2026-04-03 11:54:23 pretrain.prepare.start: pretrain_method=EGRAPHCL, global_subgraph_pool=1, target_graph_id=[1]
+[trace] 2026-04-03 11:54:23 global_pool.start: datasets=6, target_graph_ids=[0], force_rebuild_global_pool=1, stage1_num_clusters=8, stage1_cluster_method=gmm, stage2_top_ratio=0.9
+[trace] 2026-04-03 11:54:25 global_pool.graph.done: dataset=Citeseer, graph_id=0, subgraphs=3327, newly_added=3327, total_samples=3327
+[trace] 2026-04-03 11:54:25 global_pool.dataset.done: dataset=Citeseer, dataset_total_subgraphs=3327
+[trace] 2026-04-03 11:54:47 global_pool.graph.done: dataset=Pubmed, graph_id=0, subgraphs=19717, newly_added=19717, total_samples=23044
+[trace] 2026-04-03 11:54:47 global_pool.dataset.done: dataset=Pubmed, dataset_total_subgraphs=19717
+[trace] 2026-04-03 11:55:26 global_pool.graph.done: dataset=Photo, graph_id=0, subgraphs=7650, newly_added=7650, total_samples=30694
+[trace] 2026-04-03 11:55:26 global_pool.dataset.done: dataset=Photo, dataset_total_subgraphs=7650
+[trace] 2026-04-03 11:56:36 global_pool.graph.done: dataset=Computers, graph_id=0, subgraphs=13752, newly_added=13752, total_samples=44446
+[trace] 2026-04-03 11:56:36 global_pool.dataset.done: dataset=Computers, dataset_total_subgraphs=13752
+[trace] 2026-04-03 11:57:51 global_pool.graph.done: dataset=FacebookPagePage, graph_id=0, subgraphs=22470, newly_added=22470, total_samples=66916
+[trace] 2026-04-03 11:57:51 global_pool.dataset.done: dataset=FacebookPagePage, dataset_total_subgraphs=22470
+[trace] 2026-04-03 11:58:08 global_pool.graph.done: dataset=LastFMAsia, graph_id=0, subgraphs=7624, newly_added=7624, total_samples=74540
+[trace] 2026-04-03 11:58:08 global_pool.dataset.done: dataset=LastFMAsia, dataset_total_subgraphs=7624
+[debug] subgraph build done: total_subgraphs=74540, per_dataset={'Citeseer': 3327, 'Pubmed': 19717, 'Photo': 7650, 'Computers': 13752, 'FacebookPagePage': 22470, 'LastFMAsia': 7624}
+[trace] 2026-04-03 11:58:08 global_pool.clustering.start: total_subgraphs=74540
+[debug] clustering done: clusters=8, cluster_counts={0: 31224, 1: 4168, 2: 2857, 3: 10026, 4: 9238, 5: 10772, 6: 444, 7: 5811}
+[trace] 2026-04-03 11:58:11 global_pool.representative_pool.start: feature_dims=9
+[trace] 2026-04-03 11:58:24 global_pool.representative_pool.done: representative_pool=64, learnability_ranked=74540
+[debug] sample pool done: stage1_selected=64, stage2_selected=67029, selected_total=67093, top_ratio=0.9000
+[debug] rank cluster diversity: rank_selected=67029, unique_clusters=8
+[debug] stage1_cluster_count={'0': 8, '1': 8, '2': 8, '3': 8, '4': 8, '5': 8, '6': 8, '7': 8}
+[debug] stage2_cluster_count={'0': 23769, '1': 4160, '2': 2849, '3': 10018, '4': 9230, '5': 10764, '6': 436, '7': 5803}
+[debug] selected_total_cluster_count={'0': 23777, '1': 4168, '2': 2857, '3': 10026, '4': 9238, '5': 10772, '6': 444, '7': 5811}
+[debug] stage1_cluster_ratio={'0': 0.125, '1': 0.125, '2': 0.125, '3': 0.125, '4': 0.125, '5': 0.125, '6': 0.125, '7': 0.125}
+[debug] stage2_cluster_ratio={'0': 0.35460770711184714, '1': 0.06206268928374286, '2': 0.042503990809947934, '3': 0.14945769741455192, '4': 0.13770159184830447, '5': 0.16058720852168465, '6': 0.006504647242238434, '7': 0.08657446776768264}
+[debug] selected_total_cluster_ratio={'0': 0.35438868436349547, '1': 0.06212272517252172, '2': 0.0425826837374987, '3': 0.14943436722161776, '4': 0.13768947580224464, '5': 0.1605532618902121, '6': 0.006617679936804137, '7': 0.0866111218756055}
+[trace] 2026-04-03 11:58:24 global_pool.svd_payload: rank=9, shape=(67093, 67093)
+[stage1-metrics] global_merged: /home/ustc1958/lxy/graph/1/SAMGPTSVD/result/run_20260403_115420/stage_outputs/stage1/global_merged/stage1_metrics.json
+[stage1-metrics] global_merged_selected: /home/ustc1958/lxy/graph/1/SAMGPTSVD/result/run_20260403_115420/stage_outputs/stage1/global_merged_selected/stage1_metrics_cluster_pca.png
+[stage2-metrics] global_merged: /home/ustc1958/lxy/graph/1/SAMGPTSVD/result/run_20260403_115420/stage_outputs/stage2/global_merged/stage2_metrics.json
+[global_pool] total_subgraphs=74540, stage1_pool=64, stage2_pool=67029, selected=67093, top_ratio=0.9000
+[trace] 2026-04-03 11:59:05 global_pool.select.done: total_subgraphs=74540, representative_pool=67093, selected=67093
+[global_pool] saved cache: /home/ustc1958/lxy/graph/1/SAMGPTSVD/cache/global_pool/global_subgraph_pool.pt
+[global_pool] saved cache: /home/ustc1958/lxy/graph/1/SAMGPTSVD/result/run_20260403_115420/stage_outputs/global_subgraph_pool.pt
+[trace] 2026-04-03 11:59:06 global_pool.done
+[trace] 2026-04-03 11:59:07 pretrain.prepare.global_pool.loaded: selected_samples=67093, similarity_shape=(67093, 67093)
+[egraphcl] online pair mode enabled: tau=0.9900, pair mask is built from prompt-conditioned sample embeddings in model forward (fixed tau; no scheduling).
+[trace] 2026-04-03 11:59:07 pretrain.prepare.sample_progress: current=1, total=67093, dataset=Citeseer, dataset_idx=0, graph_id=0, cluster_id=2, nodes=2
+[trace] 2026-04-03 11:59:46 pretrain.prepare.sample_progress: current=1000, total=67093, dataset=Citeseer, dataset_idx=0, graph_id=0, cluster_id=2, nodes=3
+[trace] 2026-04-03 12:00:23 pretrain.prepare.sample_progress: current=2000, total=67093, dataset=Citeseer, dataset_idx=0, graph_id=0, cluster_id=3, nodes=63
+[trace] 2026-04-03 12:00:29 pretrain.prepare.sample_progress: current=3000, total=67093, dataset=Citeseer, dataset_idx=0, graph_id=0, cluster_id=2, nodes=2
+[trace] 2026-04-03 12:00:53 pretrain.prepare.sample_progress: current=4000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=3, nodes=13
+[trace] 2026-04-03 12:01:26 pretrain.prepare.sample_progress: current=5000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:01:59 pretrain.prepare.sample_progress: current=6000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=7, nodes=20
+[trace] 2026-04-03 12:02:35 pretrain.prepare.sample_progress: current=7000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=3, nodes=19
+[trace] 2026-04-03 12:03:08 pretrain.prepare.sample_progress: current=8000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=7, nodes=19
+[trace] 2026-04-03 12:03:41 pretrain.prepare.sample_progress: current=9000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=29
+[trace] 2026-04-03 12:04:16 pretrain.prepare.sample_progress: current=10000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:04:49 pretrain.prepare.sample_progress: current=11000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=12
+[trace] 2026-04-03 12:05:21 pretrain.prepare.sample_progress: current=12000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=34
+[trace] 2026-04-03 12:05:54 pretrain.prepare.sample_progress: current=13000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=3, nodes=44
+[trace] 2026-04-03 12:06:28 pretrain.prepare.sample_progress: current=14000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=3, nodes=27
+[trace] 2026-04-03 12:07:01 pretrain.prepare.sample_progress: current=15000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=21
+[trace] 2026-04-03 12:07:34 pretrain.prepare.sample_progress: current=16000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=3, nodes=63
+[trace] 2026-04-03 12:08:04 pretrain.prepare.sample_progress: current=17000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=32
+[trace] 2026-04-03 12:08:35 pretrain.prepare.sample_progress: current=18000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:09:05 pretrain.prepare.sample_progress: current=19000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=26
+[trace] 2026-04-03 12:09:39 pretrain.prepare.sample_progress: current=20000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=22
+[trace] 2026-04-03 12:10:12 pretrain.prepare.sample_progress: current=21000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=11
+[trace] 2026-04-03 12:10:44 pretrain.prepare.sample_progress: current=22000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=8
+[trace] 2026-04-03 12:11:16 pretrain.prepare.sample_progress: current=23000, total=67093, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=13
+[trace] 2026-04-03 12:12:03 pretrain.prepare.sample_progress: current=24000, total=67093, dataset=Photo, dataset_idx=2, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:12:52 pretrain.prepare.sample_progress: current=25000, total=67093, dataset=Photo, dataset_idx=2, graph_id=0, cluster_id=5, nodes=64
+[trace] 2026-04-03 12:13:38 pretrain.prepare.sample_progress: current=26000, total=67093, dataset=Photo, dataset_idx=2, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:14:26 pretrain.prepare.sample_progress: current=27000, total=67093, dataset=Photo, dataset_idx=2, graph_id=0, cluster_id=1, nodes=57
+[trace] 2026-04-03 12:15:13 pretrain.prepare.sample_progress: current=28000, total=67093, dataset=Photo, dataset_idx=2, graph_id=0, cluster_id=5, nodes=64
+[trace] 2026-04-03 12:15:58 pretrain.prepare.sample_progress: current=29000, total=67093, dataset=Photo, dataset_idx=2, graph_id=0, cluster_id=6, nodes=1
+[trace] 2026-04-03 12:16:41 pretrain.prepare.sample_progress: current=30000, total=67093, dataset=Computers, dataset_idx=3, graph_id=0, cluster_id=5, nodes=64
+[trace] 2026-04-03 12:17:30 pretrain.prepare.sample_progress: current=31000, total=67093, dataset=Computers, dataset_idx=3, graph_id=0, cluster_id=5, nodes=64
+[trace] 2026-04-03 12:18:17 pretrain.prepare.sample_progress: current=32000, total=67093, dataset=Computers, dataset_idx=3, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:19:06 pretrain.prepare.sample_progress: current=33000, total=67093, dataset=Computers, dataset_idx=3, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:19:54 pretrain.prepare.sample_progress: current=34000, total=67093, dataset=Computers, dataset_idx=3, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:20:42 pretrain.prepare.sample_progress: current=35000, total=67093, dataset=Computers, dataset_idx=3, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:21:30 pretrain.prepare.sample_progress: current=36000, total=67093, dataset=Computers, dataset_idx=3, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:22:17 pretrain.prepare.sample_progress: current=37000, total=67093, dataset=Computers, dataset_idx=3, graph_id=0, cluster_id=5, nodes=64
+[trace] 2026-04-03 12:23:05 pretrain.prepare.sample_progress: current=38000, total=67093, dataset=Computers, dataset_idx=3, graph_id=0, cluster_id=5, nodes=64
+[trace] 2026-04-03 12:23:53 pretrain.prepare.sample_progress: current=39000, total=67093, dataset=Computers, dataset_idx=3, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:24:42 pretrain.prepare.sample_progress: current=40000, total=67093, dataset=Computers, dataset_idx=3, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:25:10 pretrain.prepare.sample_progress: current=41000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=7, nodes=23
+[trace] 2026-04-03 12:25:50 pretrain.prepare.sample_progress: current=42000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=7, nodes=5
+[trace] 2026-04-03 12:26:33 pretrain.prepare.sample_progress: current=43000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:27:11 pretrain.prepare.sample_progress: current=44000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:27:51 pretrain.prepare.sample_progress: current=45000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=3, nodes=57
+[trace] 2026-04-03 12:28:33 pretrain.prepare.sample_progress: current=46000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:29:06 pretrain.prepare.sample_progress: current=47000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=5, nodes=64
+[trace] 2026-04-03 12:29:49 pretrain.prepare.sample_progress: current=48000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:30:27 pretrain.prepare.sample_progress: current=49000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=3, nodes=22
+[trace] 2026-04-03 12:31:06 pretrain.prepare.sample_progress: current=50000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=3, nodes=34
+[trace] 2026-04-03 12:31:49 pretrain.prepare.sample_progress: current=51000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=1, nodes=31
+[trace] 2026-04-03 12:32:27 pretrain.prepare.sample_progress: current=52000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:33:06 pretrain.prepare.sample_progress: current=53000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=1, nodes=58
+[trace] 2026-04-03 12:33:46 pretrain.prepare.sample_progress: current=54000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:34:27 pretrain.prepare.sample_progress: current=55000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=7, nodes=5
+[trace] 2026-04-03 12:35:08 pretrain.prepare.sample_progress: current=56000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:35:50 pretrain.prepare.sample_progress: current=57000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=1, nodes=57
+[trace] 2026-04-03 12:36:32 pretrain.prepare.sample_progress: current=58000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=3, nodes=45
+[trace] 2026-04-03 12:37:16 pretrain.prepare.sample_progress: current=59000, total=67093, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:37:57 pretrain.prepare.sample_progress: current=60000, total=67093, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=2, nodes=3
+[trace] 2026-04-03 12:38:33 pretrain.prepare.sample_progress: current=61000, total=67093, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:39:08 pretrain.prepare.sample_progress: current=62000, total=67093, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:39:44 pretrain.prepare.sample_progress: current=63000, total=67093, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=3, nodes=45
+[trace] 2026-04-03 12:40:21 pretrain.prepare.sample_progress: current=64000, total=67093, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-03 12:40:56 pretrain.prepare.sample_progress: current=65000, total=67093, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=3, nodes=51
+[trace] 2026-04-03 12:41:34 pretrain.prepare.sample_progress: current=66000, total=67093, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=5, nodes=64
+[trace] 2026-04-03 12:42:10 pretrain.prepare.sample_progress: current=67000, total=67093, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=3, nodes=20
+[trace] 2026-04-03 12:42:13 pretrain.prepare.sample_progress: current=67093, total=67093, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=7, nodes=31
+[trace] 2026-04-03 12:42:13 pretrain.prepare.global_pool.done: features=67093, adjs=67093, aug_features=67093, lbls=67093, bce_masks=67093
+[egraphcl] strict sample-level online mode: samples=67093, tau=0.9900
+[trace] 2026-04-03 12:42:13 flow_check.start: aug_features=67093, selected_samples=67093
+[flow-check] PASS non_empty_aug_views: aug_features=67093
+[flow-check] PASS aug_list_length_consistency: aug_features=67093, aug_adjs=67093, lbls=67093, bce_masks=67093
+[flow-check] PASS sample_dataset_ids_alignment: sample_dataset_ids=67093, aug_features=67093
+[flow-check] PASS stage1_metrics_exist: /home/ustc1958/lxy/graph/1/SAMGPTSVD/result/run_20260403_115420/stage_outputs/stage1/global_merged/stage1_metrics.json
+[flow-check] PASS stage2_metrics_exist: /home/ustc1958/lxy/graph/1/SAMGPTSVD/result/run_20260403_115420/stage_outputs/stage2/global_merged/stage2_metrics.json
+[flow-check] PASS dataset_coverage: unique_datasets=6, names=['Citeseer', 'Computers', 'FacebookPagePage', 'LastFMAsia', 'Photo', 'Pubmed']
+[flow-check] PASS cluster_coverage: unique_clusters=8, ids=[0, 1, 2, 3, 4, 5, 6, 7]
+[flow-check] PASS online_pair_mode_min_samples: aug_features=67093, online pair mask is built in model forward
+[flow-check] saved report: /home/ustc1958/lxy/graph/1/SAMGPTSVD/result/run_20260403_115420/flow_check_report.json
+[trace] 2026-04-03 12:42:13 flow_check.done: ok=True, report=/home/ustc1958/lxy/graph/1/SAMGPTSVD/result/run_20260403_115420/flow_check_report.json
+Using CUDA
+[trace] 2026-04-03 12:42:13 train_loop.start: nb_epochs=10000, patience=50, lr=0.0003, pretrain_method=EGRAPHCL
+Start training...
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.9082 masked=7736248/8518564 active_neg=782316
+Loss:[2.40650654]
+[mem] epoch=1 peak_alloc=0.13GB peak_reserved=0.21GB
+Current epoch: 1
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.9032 masked=7694262/8518564 active_neg=824302
+Loss:[2.41341567]
+[mem] epoch=2 peak_alloc=0.13GB peak_reserved=0.21GB
+Current epoch: 2
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.9001 masked=7667154/8518564 active_neg=851410
+Loss:[2.40840650]
+[mem] epoch=3 peak_alloc=0.14GB peak_reserved=0.21GB
+Current epoch: 3
+Loss:[2.39244795]
+[mem] epoch=4 peak_alloc=0.14GB peak_reserved=0.21GB
+Current epoch: 4
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.8975 masked=7645304/8518564 active_neg=873260
+Loss:[2.37183762]
+[mem] epoch=5 peak_alloc=0.13GB peak_reserved=0.21GB
+Current epoch: 5
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.8958 masked=7631270/8518564 active_neg=887294
+Loss:[2.31230426]
+[mem] epoch=10 peak_alloc=0.14GB peak_reserved=0.21GB
+Current epoch: 10
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.8958 masked=7630882/8518564 active_neg=887682
+Loss:[2.29909492]
+[mem] epoch=15 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 15
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.8958 masked=7630868/8518564 active_neg=887696
+Loss:[2.29431200]
+[mem] epoch=20 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 20
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.8958 masked=7630868/8518564 active_neg=887696
+Loss:[2.27950621]
+[mem] epoch=25 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 25
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.5919 masked=5042328/8518564 active_neg=3476236
+Loss:[3.77705622]
+[mem] epoch=30 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 30
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.4093 masked=3486506/8518564 active_neg=5032058
+Loss:[3.86808228]
+[mem] epoch=35 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 35
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.4040 masked=3441146/8518564 active_neg=5077418
+Loss:[2.68012476]
+[mem] epoch=40 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 40
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2198 masked=1872500/8518564 active_neg=6646064
+Loss:[2.70147085]
+[mem] epoch=45 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 45
+[train] lr reduced: 0.0003 -> 0.00015 (epoch=47)
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2201 masked=1874934/8518564 active_neg=6643630
+Loss:[2.30548358]
+[mem] epoch=50 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 50
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2199 masked=1873570/8518564 active_neg=6644994
+Loss:[2.03466439]
+[mem] epoch=55 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 55
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2196 masked=1870790/8518564 active_neg=6647774
+Loss:[1.67187774]
+[mem] epoch=60 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 60
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2190 masked=1865730/8518564 active_neg=6652834
+Loss:[1.09925961]
+[mem] epoch=65 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 65
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2190 masked=1865364/8518564 active_neg=6653200
+Loss:[0.85125667]
+[mem] epoch=70 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 70
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2183 masked=1859670/8518564 active_neg=6658894
+Loss:[0.50717038]
+[mem] epoch=75 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 75
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2189 masked=1864960/8518564 active_neg=6653604
+Loss:[0.60758293]
+[mem] epoch=80 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 80
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2189 masked=1864800/8518564 active_neg=6653764
+Loss:[0.42144343]
+[mem] epoch=85 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 85
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2189 masked=1864604/8518564 active_neg=6653960
+Loss:[0.53793865]
+[mem] epoch=90 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 90
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2185 masked=1860990/8518564 active_neg=6657574
+Loss:[0.50106275]
+[mem] epoch=95 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 95
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2189 masked=1864810/8518564 active_neg=6653754
+Loss:[0.48295444]
+[mem] epoch=100 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 100
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2187 masked=1862982/8518564 active_neg=6655582
+Loss:[0.41469130]
+[mem] epoch=105 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 105
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2190 masked=1865882/8518564 active_neg=6652682
+Loss:[0.41694662]
+[mem] epoch=110 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 110
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2188 masked=1863488/8518564 active_neg=6655076
+Loss:[0.42065036]
+[mem] epoch=115 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 115
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2185 masked=1861314/8518564 active_neg=6657250
+Loss:[0.41067356]
+[mem] epoch=120 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 120
+[train] lr reduced: 0.00015 -> 7.5e-05 (epoch=123)
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2190 masked=1865760/8518564 active_neg=6652804
+Loss:[0.39413181]
+[mem] epoch=125 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 125
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2188 masked=1864068/8518564 active_neg=6654496
+Loss:[0.39138749]
+[mem] epoch=130 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 130
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2186 masked=1862474/8518564 active_neg=6656090
+Loss:[0.39748037]
+[mem] epoch=135 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 135
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2188 masked=1863470/8518564 active_neg=6655094
+Loss:[0.39420792]
+[mem] epoch=140 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 140
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2184 masked=1860820/8518564 active_neg=6657744
+Loss:[0.39553884]
+[mem] epoch=145 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 145
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2185 masked=1861618/8518564 active_neg=6656946
+Loss:[0.39454001]
+[mem] epoch=150 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 150
+[train] lr reduced: 7.5e-05 -> 3.75e-05 (epoch=151)
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2185 masked=1861298/8518564 active_neg=6657266
+Loss:[0.39377436]
+[mem] epoch=155 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 155
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2190 masked=1865272/8518564 active_neg=6653292
+Loss:[0.39272469]
+[mem] epoch=160 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 160
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2188 masked=1863766/8518564 active_neg=6654798
+Loss:[0.39089587]
+[mem] epoch=165 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 165
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2188 masked=1864206/8518564 active_neg=6654358
+Loss:[0.39033067]
+[mem] epoch=170 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 170
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2188 masked=1863764/8518564 active_neg=6654800
+Loss:[0.39190128]
+[mem] epoch=175 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 175
+[train] lr reduced: 3.75e-05 -> 1.875e-05 (epoch=179)
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2187 masked=1863030/8518564 active_neg=6655534
+Loss:[0.39224264]
+[mem] epoch=180 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 180
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2186 masked=1862466/8518564 active_neg=6656098
+Loss:[0.39035800]
+[mem] epoch=185 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 185
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2183 masked=1859406/8518564 active_neg=6659158
+Loss:[0.38970876]
+[mem] epoch=190 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 190
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2186 masked=1862418/8518564 active_neg=6656146
+Loss:[0.39020386]
+[mem] epoch=195 peak_alloc=0.13GB peak_reserved=0.22GB
+Current epoch: 195
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2184 masked=1860380/8518564 active_neg=6658184
+Loss:[0.39154130]
+[mem] epoch=200 peak_alloc=0.14GB peak_reserved=0.22GB
+[train] lr reduced: 1.875e-05 -> 1e-05 (epoch=200)
+Current epoch: 200
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2189 masked=1864840/8518564 active_neg=6653724
+Loss:[0.39350772]
+[mem] epoch=205 peak_alloc=0.14GB peak_reserved=0.22GB
+Current epoch: 205
+Early stopping!
+Patience: 50
+Best epoch: 158, Best loss: 0.38883099
+##################################################
+PreTrain datasets are  ['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+Downastream dataset is  Cora
+Cora()
+DataBatch(x=[2708, 1433], edge_index=[2, 10556], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], batch=[2708], ptr=[2])
+process done
+0.30293843150324323
+nb_classes 7
+loading model from /home/ustc1958/lxy/graph/1/SAMGPTSVD/checkpoints/model_node_EGRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.0003_gcn_ctx_s2_0.90_s3.pkl
+----------------------------------------------------------------------------------------------------
+shotnum 1
+  0%|          | 0/100 [00:00<?, ?it/s]  1%|          | 1/100 [00:07<12:28,  7.56s/it]  2%|▏         | 2/100 [00:15<12:20,  7.55s/it]  3%|▎         | 3/100 [00:22<12:11,  7.54s/it]  4%|▍         | 4/100 [00:30<12:03,  7.54s/it]  5%|▌         | 5/100 [00:37<11:56,  7.54s/it]  6%|▌         | 6/100 [00:45<11:48,  7.54s/it]  7%|▋         | 7/100 [00:52<11:41,  7.54s/it]  8%|▊         | 8/100 [01:00<11:33,  7.54s/it]  9%|▉         | 9/100 [01:07<11:25,  7.54s/it] 10%|█         | 10/100 [01:15<11:18,  7.54s/it] 11%|█         | 11/100 [01:22<11:10,  7.54s/it] 12%|█▏        | 12/100 [01:30<11:03,  7.54s/it] 13%|█▎        | 13/100 [01:38<10:55,  7.54s/it] 14%|█▍        | 14/100 [01:45<10:48,  7.54s/it] 15%|█▌        | 15/100 [01:53<10:40,  7.54s/it] 16%|█▌        | 16/100 [02:00<10:33,  7.54s/it] 17%|█▋        | 17/100 [02:08<10:25,  7.54s/it] 18%|█▊        | 18/100 [02:15<10:18,  7.54s/it] 19%|█▉        | 19/100 [02:23<10:10,  7.54s/it] 20%|██        | 20/100 [02:30<10:03,  7.54s/it] 21%|██        | 21/100 [02:38<09:55,  7.54s/it] 22%|██▏       | 22/100 [02:45<09:48,  7.54s/it] 23%|██▎       | 23/100 [02:53<09:40,  7.54s/it] 24%|██▍       | 24/100 [03:00<09:33,  7.55s/it] 25%|██▌       | 25/100 [03:08<09:26,  7.55s/it] 26%|██▌       | 26/100 [03:16<09:18,  7.55s/it] 27%|██▋       | 27/100 [03:23<09:11,  7.55s/it] 28%|██▊       | 28/100 [03:31<09:03,  7.55s/it] 29%|██▉       | 29/100 [03:38<08:55,  7.55s/it] 30%|███       | 30/100 [03:46<08:48,  7.55s/it] 31%|███       | 31/100 [03:53<08:40,  7.55s/it] 32%|███▏      | 32/100 [04:01<08:33,  7.55s/it] 33%|███▎      | 33/100 [04:08<08:26,  7.55s/it] 34%|███▍      | 34/100 [04:16<08:18,  7.56s/it] 35%|███▌      | 35/100 [04:24<08:11,  7.56s/it] 36%|███▌      | 36/100 [04:31<08:04,  7.56s/it] 37%|███▋      | 37/100 [04:39<07:56,  7.56s/it] 38%|███▊      | 38/100 [04:46<07:49,  7.56s/it] 39%|███▉      | 39/100 [04:54<07:41,  7.56s/it] 40%|████      | 40/100 [05:01<07:33,  7.56s/it] 41%|████      | 41/100 [05:09<07:26,  7.56s/it] 42%|████▏     | 42/100 [05:17<07:18,  7.56s/it] 43%|████▎     | 43/100 [05:24<07:10,  7.55s/it] 44%|████▍     | 44/100 [05:31<06:59,  7.49s/it] 45%|████▌     | 45/100 [05:39<06:49,  7.44s/it] 46%|████▌     | 46/100 [05:46<06:40,  7.41s/it] 47%|████▋     | 47/100 [05:53<06:31,  7.39s/it] 48%|████▊     | 48/100 [06:01<06:24,  7.40s/it] 49%|████▉     | 49/100 [06:08<06:20,  7.46s/it] 50%|█████     | 50/100 [06:16<06:13,  7.48s/it] 51%|█████     | 51/100 [06:23<06:06,  7.49s/it] 52%|█████▏    | 52/100 [06:31<06:00,  7.50s/it] 53%|█████▎    | 53/100 [06:39<05:53,  7.51s/it] 54%|█████▍    | 54/100 [06:46<05:45,  7.52s/it] 55%|█████▌    | 55/100 [06:54<05:38,  7.53s/it] 56%|█████▌    | 56/100 [07:01<05:31,  7.54s/it] 57%|█████▋    | 57/100 [07:09<05:24,  7.54s/it] 58%|█████▊    | 58/100 [07:16<05:17,  7.55s/it] 59%|█████▉    | 59/100 [07:24<05:10,  7.56s/it] 60%|██████    | 60/100 [07:31<05:02,  7.57s/it] 61%|██████    | 61/100 [07:39<04:55,  7.58s/it] 62%|██████▏   | 62/100 [07:47<04:48,  7.58s/it] 63%|██████▎   | 63/100 [07:54<04:40,  7.58s/it] 64%|██████▍   | 64/100 [08:02<04:33,  7.59s/it] 65%|██████▌   | 65/100 [08:09<04:25,  7.59s/it] 66%|██████▌   | 66/100 [08:17<04:18,  7.59s/it] 67%|██████▋   | 67/100 [08:25<04:10,  7.59s/it] 68%|██████▊   | 68/100 [08:32<04:02,  7.59s/it] 69%|██████▉   | 69/100 [08:40<03:55,  7.59s/it] 70%|███████   | 70/100 [08:47<03:47,  7.59s/it] 71%|███████   | 71/100 [08:55<03:39,  7.59s/it] 72%|███████▏  | 72/100 [09:03<03:32,  7.58s/it] 73%|███████▎  | 73/100 [09:10<03:24,  7.58s/it] 74%|███████▍  | 74/100 [09:18<03:16,  7.57s/it] 75%|███████▌  | 75/100 [09:25<03:09,  7.57s/it] 76%|███████▌  | 76/100 [09:33<03:01,  7.57s/it] 77%|███████▋  | 77/100 [09:40<02:54,  7.57s/it] 78%|███████▊  | 78/100 [09:48<02:46,  7.57s/it] 79%|███████▉  | 79/100 [09:55<02:38,  7.57s/it] 80%|████████  | 80/100 [10:03<02:31,  7.57s/it] 81%|████████  | 81/100 [10:11<02:23,  7.57s/it] 82%|████████▏ | 82/100 [10:18<02:16,  7.57s/it] 83%|████████▎ | 83/100 [10:26<02:08,  7.57s/it] 84%|████████▍ | 84/100 [10:33<02:01,  7.57s/it] 85%|████████▌ | 85/100 [10:41<01:53,  7.57s/it] 86%|████████▌ | 86/100 [10:48<01:45,  7.57s/it] 87%|████████▋ | 87/100 [10:56<01:38,  7.57s/it] 88%|████████▊ | 88/100 [11:04<01:30,  7.56s/it] 89%|████████▉ | 89/100 [11:11<01:23,  7.57s/it] 90%|█████████ | 90/100 [11:19<01:15,  7.57s/it] 91%|█████████ | 91/100 [11:26<01:08,  7.57s/it] 92%|█████████▏| 92/100 [11:34<01:00,  7.57s/it] 93%|█████████▎| 93/100 [11:41<00:53,  7.57s/it] 94%|█████████▍| 94/100 [11:49<00:45,  7.57s/it] 95%|█████████▌| 95/100 [11:57<00:37,  7.57s/it] 96%|█████████▌| 96/100 [12:04<00:30,  7.58s/it] 97%|█████████▋| 97/100 [12:12<00:22,  7.58s/it] 98%|█████████▊| 98/100 [12:19<00:15,  7.58s/it] 99%|█████████▉| 99/100 [12:27<00:07,  7.58s/it]100%|██████████| 100/100 [12:35<00:00,  7.58s/it]100%|██████████| 100/100 [12:35<00:00,  7.55s/it]
+----------------------------------------------------------------------------------------------------
+Average accuracy:[0.4366]
+Mean:[43.6600]
+Std :[11.6048]
+----------------------------------------------------------------------------------------------------

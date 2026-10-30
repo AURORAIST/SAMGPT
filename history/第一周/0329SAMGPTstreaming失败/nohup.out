@@ -1,0 +1,18 @@
+[run] log file: ./result/20260326_235105/ab_cora_raw9_20260326_235105.log
+[run] result dir: ./result/20260326_235105
+[run] stage cache dir: ./result/stage_outputs_shared
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', stage2_top_ratio=0.3, stage2_max_subgraph_nodes=64, struct_max_subgraph_nodes=64, graphcl_split_max_nodes=0, graphcl_split_shuffle_each_epoch=1, graphcl_online_subgraph=1, graphcl_online_max_subgraphs_per_dataset=800, graphcl_online_samples_per_dataset_per_epoch=0, graphcl_use_amp=1, streaming_grad_accum_steps=16, streaming_grad_clip_norm=1.0, pretrain_max_epochs=10000, pretrain_patience=150, context_outputs_root='./result/stage_outputs_shared', result_subdir='20260326_235105', force_rebuild_stage1=0, force_rebuild_stage2=0, stage1_num_clusters=8, stage1_subgraph_hop_n=2, stage1_encoding_mode='raw9', stage1_use_log1p=1, stage1_remove_selfloops=1, stage2_top_m_per_cluster=5, stage2_alpha=1.0, stage2_beta=1.0, stage2_gamma=1.0, egraphcl_tau=0.85, egraphcl_hard_negative_tau=0.35)
+----------------------------------------------------------------------------------------------------
+[context] flags: stage2_filter=on, struct_contrastive=on, skip_pretrain=0
+2850814
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+[result] run_subdir=20260326_235105
+[result] result_dir=/home/ustc1958/lxy/graph/1/SAMGPTstreaming/result/20260326_235105
+0
+step 0
+[stage2-online] Citeseer graph_id=0: pool_samples=40, rank_samples=999, sample_overlap=10, selected_subgraphs=1029, used_subgraphs=981, kept_subgraphs=800, training_nodes_total=16895, training_nodes_unique=2137, dup_ratio=7.9059
+[stage2-online] Pubmed graph_id=0: pool_samples=40, rank_samples=5916, sample_overlap=15, selected_subgraphs=5941, used_subgraphs=5941, kept_subgraphs=800, training_nodes_total=11948, training_nodes_unique=18605, dup_ratio=0.6422
+[stage2-online] Photo graph_id=0: pool_samples=40, rank_samples=2295, sample_overlap=20, selected_subgraphs=2315, used_subgraphs=2200, kept_subgraphs=800, training_nodes_total=39693, training_nodes_unique=6858, dup_ratio=5.7878

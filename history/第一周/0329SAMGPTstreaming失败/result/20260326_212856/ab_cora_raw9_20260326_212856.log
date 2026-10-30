@@ -1,0 +1,77 @@
+[run] log file: ./result/20260326_212856/ab_cora_raw9_20260326_212856.log
+[run] result dir: ./result/20260326_212856
+[run] stage cache dir: ./result/stage_outputs_shared
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', stage2_top_ratio=0.3, stage2_max_subgraph_nodes=64, struct_max_subgraph_nodes=64, graphcl_split_max_nodes=20000, graphcl_split_shuffle_each_epoch=1, context_outputs_root='./result/stage_outputs_shared', result_subdir='20260326_212856', force_rebuild_stage1=0, force_rebuild_stage2=0, stage1_num_clusters=8, stage1_subgraph_hop_n=2, stage1_encoding_mode='raw9', stage1_use_log1p=1, stage1_remove_selfloops=1, stage2_top_m_per_cluster=5, stage2_alpha=1.0, stage2_beta=1.0, stage2_gamma=1.0, egraphcl_tau=0.85)
+----------------------------------------------------------------------------------------------------
+[context] flags: stage2_filter=on, struct_contrastive=on, skip_pretrain=0
+2840086
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+[result] run_subdir=20260326_212856
+[result] result_dir=/home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_212856
+[context] Building stage1 for Citeseer -> /home/ustc1958/lxy/graph/1/SAMGPT/result/stage_outputs_shared/stage1/citeseer
+[context] Building stage2 for Citeseer -> /home/ustc1958/lxy/graph/1/SAMGPT/result/stage_outputs_shared/stage2/citeseer
+[context] Building stage1 for Pubmed -> /home/ustc1958/lxy/graph/1/SAMGPT/result/stage_outputs_shared/stage1/pubmed
+[context] Building stage2 for Pubmed -> /home/ustc1958/lxy/graph/1/SAMGPT/result/stage_outputs_shared/stage2/pubmed
+[context] Building stage1 for Photo -> /home/ustc1958/lxy/graph/1/SAMGPT/result/stage_outputs_shared/stage1/photo
+[context] Building stage2 for Photo -> /home/ustc1958/lxy/graph/1/SAMGPT/result/stage_outputs_shared/stage2/photo
+[context] Building stage1 for Computers -> /home/ustc1958/lxy/graph/1/SAMGPT/result/stage_outputs_shared/stage1/computers
+[context] Building stage2 for Computers -> /home/ustc1958/lxy/graph/1/SAMGPT/result/stage_outputs_shared/stage2/computers
+[context] Building stage1 for FacebookPagePage -> /home/ustc1958/lxy/graph/1/SAMGPT/result/stage_outputs_shared/stage1/facebookpagepage
+[context] Building stage2 for FacebookPagePage -> /home/ustc1958/lxy/graph/1/SAMGPT/result/stage_outputs_shared/stage2/facebookpagepage
+[context] Building stage1 for LastFMAsia -> /home/ustc1958/lxy/graph/1/SAMGPT/result/stage_outputs_shared/stage1/lastfmasia
+[context] Building stage2 for LastFMAsia -> /home/ustc1958/lxy/graph/1/SAMGPT/result/stage_outputs_shared/stage2/lastfmasia
+0
+step 0
+[stage2-subgraph] Citeseer graph_id=0: pool_samples=40, rank_samples=999, sample_overlap=10, selected_subgraphs=1029, used_subgraphs=981, training_nodes_total=19760, training_nodes_unique=2137, dup_ratio=9.2466
+[splitGRAPHCL] Citeseer: shards=1, max_nodes=20000
+[stage2-subgraph] Pubmed graph_id=0: pool_samples=40, rank_samples=5916, sample_overlap=15, selected_subgraphs=5941, used_subgraphs=5941, training_nodes_total=200568, training_nodes_unique=18605, dup_ratio=10.7803
+[splitGRAPHCL] Pubmed: shards=11, max_nodes=20000
+[stage2-subgraph] Photo graph_id=0: pool_samples=40, rank_samples=2295, sample_overlap=20, selected_subgraphs=2315, used_subgraphs=2200, training_nodes_total=122267, training_nodes_unique=6858, dup_ratio=17.8284
+[splitGRAPHCL] Photo: shards=7, max_nodes=20000
+[stage2-subgraph] Computers graph_id=0: pool_samples=40, rank_samples=4126, sample_overlap=20, selected_subgraphs=4146, used_subgraphs=3865, training_nodes_total=216728, training_nodes_unique=12369, dup_ratio=17.5219
+[splitGRAPHCL] Computers: shards=11, max_nodes=20000
+[stage2-subgraph] FacebookPagePage graph_id=0: pool_samples=40, rank_samples=6741, sample_overlap=0, selected_subgraphs=6781, used_subgraphs=6781, training_nodes_total=253791, training_nodes_unique=19235, dup_ratio=13.1942
+[splitGRAPHCL] FacebookPagePage: shards=13, max_nodes=20000
+[stage2-subgraph] LastFMAsia graph_id=0: pool_samples=40, rank_samples=2288, sample_overlap=5, selected_subgraphs=2323, used_subgraphs=2323, training_nodes_total=75223, training_nodes_unique=6864, dup_ratio=10.9591
+[splitGRAPHCL] LastFMAsia: shards=4, max_nodes=20000
+Using CUDA
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/./src/train/execute.py", line 806, in <module>
+    assert args.skip_pretrain == 1, 'try to use trained models'
+AssertionError: try to use trained models
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/./src/train/execute.py", line 1044, in <module>
+    loss_b = model(
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/src/train/preprompt.py", line 271, in forward
+    logits = list(
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/src/train/preprompt.py", line 223, in compute_prelogits_GRAPHCL
+    str_prelogits = graphcl_runner(
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/src/models/graphcl.py", line 49, in forward
+    h_2 = gcn(seq2, adj, sparse, prompt_layers)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/src/models/gcnlayers.py", line 50, in forward
+    graph_output = self.convs[i](input)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/src/layers/gcn.py", line 38, in forward
+    out = torch.spmm(adj, seq_fts)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 31.35 GiB of which 26.56 MiB is free. Including non-PyTorch memory, this process has 30.95 GiB memory in use. Of the allocated memory 30.17 GiB is allocated by PyTorch, and 183.08 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

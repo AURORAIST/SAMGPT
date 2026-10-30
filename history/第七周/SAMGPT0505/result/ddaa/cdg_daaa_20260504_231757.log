@@ -1,0 +1,230 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=1, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', nb_epochs=10000, use_scp=0, struct_feat_dim=3, struct_prompt_residual=1, struct_prompt_scale=0.05, random_struct=0, use_daaa=1, daaa_n_shared=8, daaa_n_domain=8, daaa_lambda_vert=0.01, daaa_lambda_res=0.1, daaa_lambda_hsic=0.001, daaa_lambda_gc=0.1, daaa_max_k_domain=24, daaa_use_sparse_coeff=0, daaa_init_from_data=1, daaa_monitor_interval=10, daaa_vis_interval=200, daaa_expand_interval=200, daaa_prune_interval=500)
+----------------------------------------------------------------------------------------------------
+1020890
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+[DA-AA] adaptive n_domain per domain: [('Citeseer', 8), ('Pubmed', 19), ('Photo', 12), ('Computers', 16), ('FacebookPagePage', 20), ('LastFMAsia', 12)]
+[DA-AA] enabled | K_s=8, K_d=[8, 19, 12, 16, 20, 12], lv=0.01, lr=0.1, lh=0.001, lg=0.1
+1
+loading model from /home/ustc1958/lxy/graph/1/SAMGPT0505/checkpoints/model_node_GRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.001_gcn.pkl
+##################################################
+PreTrain datasets are  ['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+Downastream dataset is  Cora
+Cora()
+DataBatch(x=[2708, 1433], edge_index=[2, 10556], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], batch=[2708], ptr=[2])
+process done
+0.3031178182672808
+nb_classes 7
+loading model from /home/ustc1958/lxy/graph/1/SAMGPT0505/checkpoints/model_node_GRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.001_gcn.pkl
+----------------------------------------------------------------------------------------------------
+shotnum 1
+  0%|          | 0/100 [00:00<?, ?it/s][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+  1%|          | 1/100 [00:08<14:47,  8.97s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+  2%|▏         | 2/100 [00:17<14:04,  8.62s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+  3%|▎         | 3/100 [00:25<13:50,  8.56s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+  4%|▍         | 4/100 [00:31<12:03,  7.54s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+  5%|▌         | 5/100 [00:38<11:34,  7.31s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+  6%|▌         | 6/100 [00:45<10:56,  6.98s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+  7%|▋         | 7/100 [00:51<10:43,  6.92s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+  8%|▊         | 8/100 [00:58<10:31,  6.87s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+  9%|▉         | 9/100 [01:05<10:20,  6.82s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 10%|█         | 10/100 [01:12<10:19,  6.89s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 11%|█         | 11/100 [01:18<10:01,  6.76s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 12%|█▏        | 12/100 [01:25<10:01,  6.84s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 13%|█▎        | 13/100 [01:32<09:45,  6.73s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 14%|█▍        | 14/100 [01:39<09:51,  6.87s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 15%|█▌        | 15/100 [01:45<09:30,  6.71s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 16%|█▌        | 16/100 [01:52<09:18,  6.65s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 17%|█▋        | 17/100 [01:59<09:31,  6.89s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 18%|█▊        | 18/100 [02:06<09:16,  6.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 19%|█▉        | 19/100 [02:13<09:14,  6.84s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 20%|██        | 20/100 [02:19<08:55,  6.69s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 21%|██        | 21/100 [02:25<08:38,  6.57s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 22%|██▏       | 22/100 [02:32<08:34,  6.59s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 23%|██▎       | 23/100 [02:38<08:15,  6.44s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 24%|██▍       | 24/100 [02:44<08:00,  6.33s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 25%|██▌       | 25/100 [02:51<07:53,  6.31s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 26%|██▌       | 26/100 [02:57<07:54,  6.42s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 27%|██▋       | 27/100 [03:03<07:46,  6.38s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 28%|██▊       | 28/100 [03:10<07:36,  6.34s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 29%|██▉       | 29/100 [03:17<07:41,  6.50s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 30%|███       | 30/100 [03:23<07:30,  6.43s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 31%|███       | 31/100 [03:29<07:24,  6.44s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 32%|███▏      | 32/100 [03:36<07:25,  6.56s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 33%|███▎      | 33/100 [03:42<07:13,  6.48s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 34%|███▍      | 34/100 [03:49<07:02,  6.40s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 35%|███▌      | 35/100 [03:55<07:00,  6.47s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 36%|███▌      | 36/100 [04:01<06:47,  6.37s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 37%|███▋      | 37/100 [04:08<06:37,  6.31s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 38%|███▊      | 38/100 [04:14<06:32,  6.33s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 39%|███▉      | 39/100 [04:21<06:34,  6.46s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 40%|████      | 40/100 [04:27<06:21,  6.36s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 41%|████      | 41/100 [04:33<06:10,  6.29s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 42%|████▏     | 42/100 [04:40<06:12,  6.42s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 43%|████▎     | 43/100 [04:46<06:01,  6.34s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 44%|████▍     | 44/100 [04:52<05:54,  6.34s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 45%|████▌     | 45/100 [04:59<05:48,  6.33s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 46%|████▌     | 46/100 [05:04<05:35,  6.22s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 47%|████▋     | 47/100 [05:11<05:38,  6.39s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 48%|████▊     | 48/100 [05:18<05:30,  6.35s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 49%|████▉     | 49/100 [05:24<05:24,  6.36s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 50%|█████     | 50/100 [05:30<05:18,  6.38s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 51%|█████     | 51/100 [05:37<05:16,  6.46s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 52%|█████▏    | 52/100 [05:43<05:04,  6.34s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 53%|█████▎    | 53/100 [05:49<04:57,  6.34s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 54%|█████▍    | 54/100 [05:56<04:56,  6.44s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 55%|█████▌    | 55/100 [06:02<04:47,  6.38s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 56%|█████▌    | 56/100 [06:09<04:38,  6.34s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 57%|█████▋    | 57/100 [06:15<04:38,  6.47s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 58%|█████▊    | 58/100 [06:22<04:29,  6.41s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 59%|█████▉    | 59/100 [06:28<04:22,  6.40s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 60%|██████    | 60/100 [06:35<04:20,  6.51s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 61%|██████    | 61/100 [06:41<04:12,  6.47s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 62%|██████▏   | 62/100 [06:47<04:00,  6.34s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 63%|██████▎   | 63/100 [06:52<03:41,  5.99s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 64%|██████▍   | 64/100 [06:57<03:26,  5.74s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 65%|██████▌   | 65/100 [07:03<03:14,  5.57s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 66%|██████▌   | 66/100 [07:08<03:05,  5.45s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 67%|██████▋   | 67/100 [07:13<02:57,  5.37s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 68%|██████▊   | 68/100 [07:18<02:49,  5.31s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 69%|██████▉   | 69/100 [07:23<02:43,  5.28s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 70%|███████   | 70/100 [07:36<03:42,  7.40s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 71%|███████   | 71/100 [08:05<06:44, 13.94s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 72%|███████▏  | 72/100 [08:33<08:31, 18.26s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 73%|███████▎  | 73/100 [09:02<09:35, 21.32s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 74%|███████▍  | 74/100 [09:31<10:15, 23.69s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 75%|███████▌  | 75/100 [09:59<10:25, 25.03s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 76%|███████▌  | 76/100 [10:28<10:27, 26.15s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 77%|███████▋  | 77/100 [10:58<10:26, 27.23s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 78%|███████▊  | 78/100 [11:26<10:07, 27.61s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 79%|███████▉  | 79/100 [11:55<09:48, 28.03s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 80%|████████  | 80/100 [12:24<09:28, 28.43s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 81%|████████  | 81/100 [12:54<09:04, 28.68s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 82%|████████▏ | 82/100 [13:22<08:36, 28.67s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 83%|████████▎ | 83/100 [13:51<08:08, 28.74s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 84%|████████▍ | 84/100 [14:21<07:44, 29.04s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 85%|████████▌ | 85/100 [14:50<07:13, 28.88s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 86%|████████▌ | 86/100 [15:19<06:44, 28.92s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 87%|████████▋ | 87/100 [15:47<06:15, 28.90s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 88%|████████▊ | 88/100 [16:15<05:43, 28.59s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 89%|████████▉ | 89/100 [16:44<05:16, 28.76s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 90%|█████████ | 90/100 [17:13<04:45, 28.57s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 91%|█████████ | 91/100 [17:41<04:17, 28.60s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 92%|█████████▏| 92/100 [18:11<03:51, 28.97s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 93%|█████████▎| 93/100 [18:40<03:22, 28.89s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 94%|█████████▍| 94/100 [19:09<02:53, 28.90s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 95%|█████████▌| 95/100 [19:38<02:25, 29.04s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 96%|█████████▌| 96/100 [20:07<01:56, 29.13s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 97%|█████████▋| 97/100 [20:36<01:26, 28.99s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 98%|█████████▊| 98/100 [21:05<00:57, 28.99s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+ 99%|█████████▉| 99/100 [21:35<00:29, 29.24s/it][DA-AA] init done: K_s=8, K_d=[8]
+[P3] DA-AA target domain adapted: Z_shared frozen, Z_dom initialized from Cora
+100%|██████████| 100/100 [21:56<00:00, 26.79s/it]100%|██████████| 100/100 [21:56<00:00, 13.16s/it]
+----------------------------------------------------------------------------------------------------
+Average accuracy:[0.4072]
+Mean:[40.7200]
+Std :[12.2269]
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:07<02:23,  7.53s/it] 10%|█         | 2/20 [00:28<04:36, 15.34s/it] 15%|█▌        | 3/20 [00:53<05:38, 19.92s/it] 20%|██        | 4/20 [01:19<05:56, 22.30s/it] 25%|██▌       | 5/20 [01:45<05:54, 23.66s/it] 30%|███       | 6/20 [02:12<05:44, 24.59s/it] 35%|███▌      | 7/20 [02:37<05:24, 24.97s/it] 40%|████      | 8/20 [03:03<05:02, 25.20s/it] 45%|████▌     | 9/20 [03:29<04:38, 25.34s/it] 50%|█████     | 10/20 [03:55<04:15, 25.51s/it] 55%|█████▌    | 11/20 [04:21<03:50, 25.67s/it] 60%|██████    | 12/20 [04:47<03:26, 25.76s/it] 65%|██████▌   | 13/20 [05:13<03:00, 25.84s/it] 70%|███████   | 14/20 [05:39<02:35, 25.89s/it] 75%|███████▌  | 15/20 [06:05<02:09, 25.92s/it] 80%|████████  | 16/20 [06:31<01:43, 25.95s/it] 85%|████████▌ | 17/20 [06:57<01:17, 25.96s/it] 90%|█████████ | 18/20 [07:23<00:51, 25.98s/it] 95%|█████████▌| 19/20 [07:49<00:25, 25.97s/it]100%|██████████| 20/20 [08:14<00:00, 25.89s/it]100%|██████████| 20/20 [08:14<00:00, 24.74s/it]
+[CDG] shared_only=37.250%  full=40.720%  CDG=+3.470%
+----------------------------------------------------------------------------------------------------

@@ -1,0 +1,1029 @@
+[run] log file: ./result/20260326_141934/ab_cora_raw9_20260326_141934.log
+[run] result dir: ./result/20260326_141934
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', stage2_top_ratio=0.3, stage2_max_subgraph_nodes=64, struct_max_subgraph_nodes=64, context_outputs_root='./result/20260326_141934/stage_outputs', result_subdir='20260326_141934', force_rebuild_stage1=1, force_rebuild_stage2=1, stage1_num_clusters=8, stage1_subgraph_hop_n=2, stage1_encoding_mode='raw9', stage1_use_log1p=1, stage1_remove_selfloops=1, stage2_top_m_per_cluster=5, stage2_alpha=1.0, stage2_beta=1.0, stage2_gamma=1.0, egraphcl_tau=0.85)
+----------------------------------------------------------------------------------------------------
+[context] flags: stage2_filter=on, struct_contrastive=on, skip_pretrain=0
+2786154
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+[result] run_subdir=20260326_141934
+[result] result_dir=/home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934
+[context] Building stage1 for Citeseer -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934/stage_outputs/stage1/citeseer
+[context] Building stage2 for Citeseer -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934/stage_outputs/stage2/citeseer
+[context] Building stage1 for Pubmed -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934/stage_outputs/stage1/pubmed
+[context] Building stage2 for Pubmed -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934/stage_outputs/stage2/pubmed
+[context] Building stage1 for Photo -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934/stage_outputs/stage1/photo
+[context] Building stage2 for Photo -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934/stage_outputs/stage2/photo
+[context] Building stage1 for Computers -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934/stage_outputs/stage1/computers
+[context] Building stage2 for Computers -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934/stage_outputs/stage2/computers
+[context] Building stage1 for FacebookPagePage -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934/stage_outputs/stage1/facebookpagepage
+[context] Building stage2 for FacebookPagePage -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934/stage_outputs/stage2/facebookpagepage
+[context] Building stage1 for LastFMAsia -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934/stage_outputs/stage1/lastfmasia
+[context] Building stage2 for LastFMAsia -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_141934/stage_outputs/stage2/lastfmasia
+0
+step 0
+[stage2] Citeseer graph_id=0: selected_subgraphs=1029, selected_nodes=2185
+[stage2] Pubmed graph_id=0: selected_subgraphs=5941, selected_nodes=18605
+[stage2] Photo graph_id=0: selected_subgraphs=2315, selected_nodes=6973
+[stage2] Computers graph_id=0: selected_subgraphs=4146, selected_nodes=12650
+[stage2] FacebookPagePage graph_id=0: selected_subgraphs=6781, selected_nodes=19235
+[stage2] LastFMAsia graph_id=0: selected_subgraphs=2323, selected_nodes=6864
+Using CUDA
+Loss:[5.47116661]
+Current epoch: 1
+Loss:[22.97892380]
+Current epoch: 2
+Loss:[22.76638412]
+Current epoch: 3
+Loss:[16.42634964]
+Current epoch: 4
+Loss:[9.20709229]
+Current epoch: 5
+Loss:[7.36757469]
+Current epoch: 6
+Loss:[10.38562965]
+Current epoch: 7
+Loss:[7.32032108]
+Current epoch: 8
+Loss:[6.38379908]
+Current epoch: 9
+Loss:[6.77695370]
+Current epoch: 10
+Loss:[6.98229218]
+Current epoch: 11
+Loss:[6.74464321]
+Current epoch: 12
+Loss:[6.14027071]
+Current epoch: 13
+Loss:[5.35889530]
+Current epoch: 14
+Loss:[4.60445309]
+Current epoch: 15
+Loss:[4.21751165]
+Current epoch: 16
+Loss:[4.49769068]
+Current epoch: 17
+Loss:[4.52069855]
+Current epoch: 18
+Loss:[4.05060768]
+Current epoch: 19
+Loss:[3.80069566]
+Current epoch: 20
+Loss:[3.87603259]
+Current epoch: 21
+Loss:[3.97003603]
+Current epoch: 22
+Loss:[3.93238306]
+Current epoch: 23
+Loss:[3.74919224]
+Current epoch: 24
+Loss:[3.53649068]
+Current epoch: 25
+Loss:[3.34314322]
+Current epoch: 26
+Loss:[3.22682405]
+Current epoch: 27
+Loss:[3.26457572]
+Current epoch: 28
+Loss:[3.29218984]
+Current epoch: 29
+Loss:[3.22487426]
+Current epoch: 30
+Loss:[3.09129667]
+Current epoch: 31
+Loss:[2.98983049]
+Current epoch: 32
+Loss:[2.95739031]
+Current epoch: 33
+Loss:[2.92300153]
+Current epoch: 34
+Loss:[2.88175392]
+Current epoch: 35
+Loss:[2.83187056]
+Current epoch: 36
+Loss:[2.76617742]
+Current epoch: 37
+Loss:[2.71896482]
+Current epoch: 38
+Loss:[2.65883756]
+Current epoch: 39
+Loss:[2.61235785]
+Current epoch: 40
+Loss:[2.54639554]
+Current epoch: 41
+Loss:[2.49571657]
+Current epoch: 42
+Loss:[2.45806170]
+Current epoch: 43
+Loss:[2.42279172]
+Current epoch: 44
+Loss:[2.36659360]
+Current epoch: 45
+Loss:[2.31403804]
+Current epoch: 46
+Loss:[2.27614021]
+Current epoch: 47
+Loss:[2.21770167]
+Current epoch: 48
+Loss:[2.18134546]
+Current epoch: 49
+Loss:[2.11094856]
+Current epoch: 50
+Loss:[2.05506134]
+Current epoch: 51
+Loss:[2.01850820]
+Current epoch: 52
+Loss:[1.96599078]
+Current epoch: 53
+Loss:[1.91182899]
+Current epoch: 54
+Loss:[1.88055408]
+Current epoch: 55
+Loss:[1.80478966]
+Current epoch: 56
+Loss:[1.76090777]
+Current epoch: 57
+Loss:[1.69671464]
+Current epoch: 58
+Loss:[1.65231884]
+Current epoch: 59
+Loss:[1.61781096]
+Current epoch: 60
+Loss:[1.57797194]
+Current epoch: 61
+Loss:[1.51672840]
+Current epoch: 62
+Loss:[1.46643412]
+Current epoch: 63
+Loss:[1.40627193]
+Current epoch: 64
+Loss:[1.36264133]
+Current epoch: 65
+Loss:[1.31542671]
+Current epoch: 66
+Loss:[1.28263056]
+Current epoch: 67
+Loss:[1.21950006]
+Current epoch: 68
+Loss:[1.16103947]
+Current epoch: 69
+Loss:[1.13149893]
+Current epoch: 70
+Loss:[1.08880556]
+Current epoch: 71
+Loss:[1.03125691]
+Current epoch: 72
+Loss:[1.00403488]
+Current epoch: 73
+Loss:[0.96237850]
+Current epoch: 74
+Loss:[0.92752910]
+Current epoch: 75
+Loss:[0.86389410]
+Current epoch: 76
+Loss:[0.82655585]
+Current epoch: 77
+Loss:[0.80035222]
+Current epoch: 78
+Loss:[0.76566762]
+Current epoch: 79
+Loss:[0.74857557]
+Current epoch: 80
+Loss:[0.69220877]
+Current epoch: 81
+Loss:[0.67512143]
+Current epoch: 82
+Loss:[0.63231504]
+Current epoch: 83
+Loss:[0.60370541]
+Current epoch: 84
+Loss:[0.58609843]
+Current epoch: 85
+Loss:[0.55032462]
+Current epoch: 86
+Loss:[0.52334583]
+Current epoch: 87
+Loss:[0.49794158]
+Current epoch: 88
+Loss:[0.47941053]
+Current epoch: 89
+Loss:[0.46127525]
+Current epoch: 90
+Loss:[0.43290156]
+Current epoch: 91
+Loss:[0.40583616]
+Current epoch: 92
+Loss:[0.39817485]
+Current epoch: 93
+Loss:[0.37790421]
+Current epoch: 94
+Loss:[0.35974279]
+Current epoch: 95
+Loss:[0.35540223]
+Current epoch: 96
+Loss:[0.32352528]
+Current epoch: 97
+Loss:[0.31141275]
+Current epoch: 98
+Loss:[0.30895397]
+Current epoch: 99
+Loss:[0.28912938]
+Current epoch: 100
+Loss:[0.28039449]
+Current epoch: 101
+Loss:[0.26193711]
+Current epoch: 102
+Loss:[0.24003556]
+Current epoch: 103
+Loss:[0.24684803]
+Current epoch: 104
+Loss:[0.24039316]
+Current epoch: 105
+Loss:[0.22932398]
+Current epoch: 106
+Loss:[0.21859515]
+Current epoch: 107
+Loss:[0.21160293]
+Current epoch: 108
+Loss:[0.20045888]
+Current epoch: 109
+Loss:[0.18994701]
+Current epoch: 110
+Loss:[0.18927892]
+Current epoch: 111
+Loss:[0.18203363]
+Current epoch: 112
+Loss:[0.17295150]
+Current epoch: 113
+Loss:[0.16792847]
+Current epoch: 114
+Loss:[0.17297851]
+Current epoch: 115
+Loss:[0.15989856]
+Current epoch: 116
+Loss:[0.15828270]
+Current epoch: 117
+Loss:[0.15561050]
+Current epoch: 118
+Loss:[0.15273684]
+Current epoch: 119
+Loss:[0.14289498]
+Current epoch: 120
+Loss:[0.13714701]
+Current epoch: 121
+Loss:[0.13151814]
+Current epoch: 122
+Loss:[0.12825833]
+Current epoch: 123
+Loss:[0.12060553]
+Current epoch: 124
+Loss:[0.12604105]
+Current epoch: 125
+Loss:[0.11420691]
+Current epoch: 126
+Loss:[0.11099051]
+Current epoch: 127
+Loss:[0.11690788]
+Current epoch: 128
+Loss:[0.10648052]
+Current epoch: 129
+Loss:[0.10666779]
+Current epoch: 130
+Loss:[0.10920193]
+Current epoch: 131
+Loss:[0.11065835]
+Current epoch: 132
+Loss:[0.09497328]
+Current epoch: 133
+Loss:[0.10107727]
+Current epoch: 134
+Loss:[0.10062815]
+Current epoch: 135
+Loss:[0.10253332]
+Current epoch: 136
+Loss:[0.08975957]
+Current epoch: 137
+Loss:[0.08545151]
+Current epoch: 138
+Loss:[0.08281870]
+Current epoch: 139
+Loss:[0.08244155]
+Current epoch: 140
+Loss:[0.08126549]
+Current epoch: 141
+Loss:[0.07532139]
+Current epoch: 142
+Loss:[0.08342870]
+Current epoch: 143
+Loss:[0.07138257]
+Current epoch: 144
+Loss:[0.07863028]
+Current epoch: 145
+Loss:[0.07597063]
+Current epoch: 146
+Loss:[0.07767105]
+Current epoch: 147
+Loss:[0.07583290]
+Current epoch: 148
+Loss:[0.06847083]
+Current epoch: 149
+Loss:[0.06558783]
+Current epoch: 150
+Loss:[0.07557098]
+Current epoch: 151
+Loss:[0.06509762]
+Current epoch: 152
+Loss:[0.07043351]
+Current epoch: 153
+Loss:[0.06847373]
+Current epoch: 154
+Loss:[0.06507449]
+Current epoch: 155
+Loss:[0.06079636]
+Current epoch: 156
+Loss:[0.06033618]
+Current epoch: 157
+Loss:[0.06975870]
+Current epoch: 158
+Loss:[0.06095493]
+Current epoch: 159
+Loss:[0.05654154]
+Current epoch: 160
+Loss:[0.05336814]
+Current epoch: 161
+Loss:[0.05943734]
+Current epoch: 162
+Loss:[0.05362116]
+Current epoch: 163
+Loss:[0.05405509]
+Current epoch: 164
+Loss:[0.05195574]
+Current epoch: 165
+Loss:[0.05358902]
+Current epoch: 166
+Loss:[0.04978815]
+Current epoch: 167
+Loss:[0.05041207]
+Current epoch: 168
+Loss:[0.05724544]
+Current epoch: 169
+Loss:[0.05316778]
+Current epoch: 170
+Loss:[0.04984133]
+Current epoch: 171
+Loss:[0.05125016]
+Current epoch: 172
+Loss:[0.04962206]
+Current epoch: 173
+Loss:[0.04888930]
+Current epoch: 174
+Loss:[0.05044184]
+Current epoch: 175
+Loss:[0.04313819]
+Current epoch: 176
+Loss:[0.04316290]
+Current epoch: 177
+Loss:[0.04362675]
+Current epoch: 178
+Loss:[0.04776095]
+Current epoch: 179
+Loss:[0.04700767]
+Current epoch: 180
+Loss:[0.04589706]
+Current epoch: 181
+Loss:[0.04133033]
+Current epoch: 182
+Loss:[0.04615632]
+Current epoch: 183
+Loss:[0.04334605]
+Current epoch: 184
+Loss:[0.03765164]
+Current epoch: 185
+Loss:[0.04031773]
+Current epoch: 186
+Loss:[0.03785133]
+Current epoch: 187
+Loss:[0.04109878]
+Current epoch: 188
+Loss:[0.03859024]
+Current epoch: 189
+Loss:[0.04416421]
+Current epoch: 190
+Loss:[0.03668089]
+Current epoch: 191
+Loss:[0.04269515]
+Current epoch: 192
+Loss:[0.03622099]
+Current epoch: 193
+Loss:[0.03514657]
+Current epoch: 194
+Loss:[0.03678075]
+Current epoch: 195
+Loss:[0.03532843]
+Current epoch: 196
+Loss:[0.03507765]
+Current epoch: 197
+Loss:[0.03580547]
+Current epoch: 198
+Loss:[0.03413523]
+Current epoch: 199
+Loss:[0.03230253]
+Current epoch: 200
+Loss:[0.03269086]
+Current epoch: 201
+Loss:[0.03645767]
+Current epoch: 202
+Loss:[0.03212479]
+Current epoch: 203
+Loss:[0.03131936]
+Current epoch: 204
+Loss:[0.03082261]
+Current epoch: 205
+Loss:[0.03212861]
+Current epoch: 206
+Loss:[0.03399259]
+Current epoch: 207
+Loss:[0.03449653]
+Current epoch: 208
+Loss:[0.02915308]
+Current epoch: 209
+Loss:[0.02679876]
+Current epoch: 210
+Loss:[0.02810596]
+Current epoch: 211
+Loss:[0.02761872]
+Current epoch: 212
+Loss:[0.02693338]
+Current epoch: 213
+Loss:[0.02840053]
+Current epoch: 214
+Loss:[0.03148934]
+Current epoch: 215
+Loss:[0.03301817]
+Current epoch: 216
+Loss:[0.03004948]
+Current epoch: 217
+Loss:[0.02886115]
+Current epoch: 218
+Loss:[0.02626309]
+Current epoch: 219
+Loss:[0.02643986]
+Current epoch: 220
+Loss:[0.02578553]
+Current epoch: 221
+Loss:[0.02529087]
+Current epoch: 222
+Loss:[0.02375217]
+Current epoch: 223
+Loss:[0.02216973]
+Current epoch: 224
+Loss:[0.02751472]
+Current epoch: 225
+Loss:[0.02306382]
+Current epoch: 226
+Loss:[0.02153366]
+Current epoch: 227
+Loss:[0.02549442]
+Current epoch: 228
+Loss:[0.02256501]
+Current epoch: 229
+Loss:[0.02527911]
+Current epoch: 230
+Loss:[0.02351223]
+Current epoch: 231
+Loss:[0.02456565]
+Current epoch: 232
+Loss:[0.02380722]
+Current epoch: 233
+Loss:[0.02483382]
+Current epoch: 234
+Loss:[0.02419965]
+Current epoch: 235
+Loss:[0.02125295]
+Current epoch: 236
+Loss:[0.02254238]
+Current epoch: 237
+Loss:[0.02459655]
+Current epoch: 238
+Loss:[0.02490393]
+Current epoch: 239
+Loss:[0.02394515]
+Current epoch: 240
+Loss:[0.02477953]
+Current epoch: 241
+Loss:[0.02218495]
+Current epoch: 242
+Loss:[0.02339232]
+Current epoch: 243
+Loss:[0.02097233]
+Current epoch: 244
+Loss:[0.02240730]
+Current epoch: 245
+Loss:[0.01871657]
+Current epoch: 246
+Loss:[0.02161875]
+Current epoch: 247
+Loss:[0.02166824]
+Current epoch: 248
+Loss:[0.02055328]
+Current epoch: 249
+Loss:[0.02067142]
+Current epoch: 250
+Loss:[0.02072336]
+Current epoch: 251
+Loss:[0.01787677]
+Current epoch: 252
+Loss:[0.01822004]
+Current epoch: 253
+Loss:[0.01869484]
+Current epoch: 254
+Loss:[0.01958070]
+Current epoch: 255
+Loss:[0.01929938]
+Current epoch: 256
+Loss:[0.01974829]
+Current epoch: 257
+Loss:[0.01689845]
+Current epoch: 258
+Loss:[0.01905541]
+Current epoch: 259
+Loss:[0.02009089]
+Current epoch: 260
+Loss:[0.01820326]
+Current epoch: 261
+Loss:[0.01745759]
+Current epoch: 262
+Loss:[0.01808593]
+Current epoch: 263
+Loss:[0.01653068]
+Current epoch: 264
+Loss:[0.01756981]
+Current epoch: 265
+Loss:[0.01700064]
+Current epoch: 266
+Loss:[0.01617546]
+Current epoch: 267
+Loss:[0.01729200]
+Current epoch: 268
+Loss:[0.01586563]
+Current epoch: 269
+Loss:[0.01568072]
+Current epoch: 270
+Loss:[0.01410234]
+Current epoch: 271
+Loss:[0.01784492]
+Current epoch: 272
+Loss:[0.01657942]
+Current epoch: 273
+Loss:[0.01608361]
+Current epoch: 274
+Loss:[0.01996301]
+Current epoch: 275
+Loss:[0.01785257]
+Current epoch: 276
+Loss:[0.01642521]
+Current epoch: 277
+Loss:[0.01525293]
+Current epoch: 278
+Loss:[0.01594750]
+Current epoch: 279
+Loss:[0.01619540]
+Current epoch: 280
+Loss:[0.01511301]
+Current epoch: 281
+Loss:[0.01632320]
+Current epoch: 282
+Loss:[0.01716685]
+Current epoch: 283
+Loss:[0.01594465]
+Current epoch: 284
+Loss:[0.01517797]
+Current epoch: 285
+Loss:[0.01412789]
+Current epoch: 286
+Loss:[0.01384249]
+Current epoch: 287
+Loss:[0.01717443]
+Current epoch: 288
+Loss:[0.01337092]
+Current epoch: 289
+Loss:[0.01563271]
+Current epoch: 290
+Loss:[0.01552183]
+Current epoch: 291
+Loss:[0.01596542]
+Current epoch: 292
+Loss:[0.01306779]
+Current epoch: 293
+Loss:[0.01288394]
+Current epoch: 294
+Loss:[0.01434131]
+Current epoch: 295
+Loss:[0.01537332]
+Current epoch: 296
+Loss:[0.01464115]
+Current epoch: 297
+Loss:[0.01453201]
+Current epoch: 298
+Loss:[0.01376127]
+Current epoch: 299
+Loss:[0.01417935]
+Current epoch: 300
+Loss:[0.01354716]
+Current epoch: 301
+Loss:[0.01346146]
+Current epoch: 302
+Loss:[0.01341747]
+Current epoch: 303
+Loss:[0.01301681]
+Current epoch: 304
+Loss:[0.01385095]
+Current epoch: 305
+Loss:[0.01272255]
+Current epoch: 306
+Loss:[0.01529684]
+Current epoch: 307
+Loss:[0.01378515]
+Current epoch: 308
+Loss:[0.01261420]
+Current epoch: 309
+Loss:[0.01246138]
+Current epoch: 310
+Loss:[0.01252185]
+Current epoch: 311
+Loss:[0.01340848]
+Current epoch: 312
+Loss:[0.01354595]
+Current epoch: 313
+Loss:[0.01153329]
+Current epoch: 314
+Loss:[0.01266373]
+Current epoch: 315
+Loss:[0.01233746]
+Current epoch: 316
+Loss:[0.01168420]
+Current epoch: 317
+Loss:[0.01244492]
+Current epoch: 318
+Loss:[0.01353046]
+Current epoch: 319
+Loss:[0.00965336]
+Current epoch: 320
+Loss:[0.01368639]
+Current epoch: 321
+Loss:[0.01929244]
+Current epoch: 322
+Loss:[0.01170853]
+Current epoch: 323
+Loss:[0.01069793]
+Current epoch: 324
+Loss:[0.01227425]
+Current epoch: 325
+Loss:[0.01019923]
+Current epoch: 326
+Loss:[0.00956137]
+Current epoch: 327
+Loss:[0.00990037]
+Current epoch: 328
+Loss:[0.01140212]
+Current epoch: 329
+Loss:[0.01151222]
+Current epoch: 330
+Loss:[0.01047274]
+Current epoch: 331
+Loss:[0.01038373]
+Current epoch: 332
+Loss:[0.01223865]
+Current epoch: 333
+Loss:[0.00927493]
+Current epoch: 334
+Loss:[0.01148008]
+Current epoch: 335
+Loss:[0.01128108]
+Current epoch: 336
+Loss:[0.01218678]
+Current epoch: 337
+Loss:[0.00964041]
+Current epoch: 338
+Loss:[0.01173797]
+Current epoch: 339
+Loss:[0.00899250]
+Current epoch: 340
+Loss:[0.01032973]
+Current epoch: 341
+Loss:[0.01067021]
+Current epoch: 342
+Loss:[0.00839307]
+Current epoch: 343
+Loss:[0.00901232]
+Current epoch: 344
+Loss:[0.01097548]
+Current epoch: 345
+Loss:[0.00913162]
+Current epoch: 346
+Loss:[0.01054314]
+Current epoch: 347
+Loss:[0.00825964]
+Current epoch: 348
+Loss:[0.01029159]
+Current epoch: 349
+Loss:[0.01072670]
+Current epoch: 350
+Loss:[0.01206415]
+Current epoch: 351
+Loss:[0.01114243]
+Current epoch: 352
+Loss:[0.01039282]
+Current epoch: 353
+Loss:[0.01008518]
+Current epoch: 354
+Loss:[0.00988637]
+Current epoch: 355
+Loss:[0.01077559]
+Current epoch: 356
+Loss:[0.01088294]
+Current epoch: 357
+Loss:[0.00930014]
+Current epoch: 358
+Loss:[0.00882578]
+Current epoch: 359
+Loss:[0.00902490]
+Current epoch: 360
+Loss:[0.00794508]
+Current epoch: 361
+Loss:[0.01297266]
+Current epoch: 362
+Loss:[0.00930341]
+Current epoch: 363
+Loss:[0.00814442]
+Current epoch: 364
+Loss:[0.00993185]
+Current epoch: 365
+Loss:[0.00863322]
+Current epoch: 366
+Loss:[0.01014454]
+Current epoch: 367
+Loss:[0.00949372]
+Current epoch: 368
+Loss:[0.00892885]
+Current epoch: 369
+Loss:[0.00854633]
+Current epoch: 370
+Loss:[0.00857749]
+Current epoch: 371
+Loss:[0.00823922]
+Current epoch: 372
+Loss:[0.01197169]
+Current epoch: 373
+Loss:[0.00841162]
+Current epoch: 374
+Loss:[0.00830635]
+Current epoch: 375
+Loss:[0.00828841]
+Current epoch: 376
+Loss:[0.00799660]
+Current epoch: 377
+Loss:[0.01070832]
+Current epoch: 378
+Loss:[0.00878684]
+Current epoch: 379
+Loss:[0.00699607]
+Current epoch: 380
+Loss:[0.00808078]
+Current epoch: 381
+Loss:[0.00883912]
+Current epoch: 382
+Loss:[0.00735798]
+Current epoch: 383
+Loss:[0.00815700]
+Current epoch: 384
+Loss:[0.00752316]
+Current epoch: 385
+Loss:[0.00971364]
+Current epoch: 386
+Loss:[0.00720223]
+Current epoch: 387
+Loss:[0.00816590]
+Current epoch: 388
+Loss:[0.00995510]
+Current epoch: 389
+Loss:[0.00857344]
+Current epoch: 390
+Loss:[0.00856517]
+Current epoch: 391
+Loss:[0.00688122]
+Current epoch: 392
+Loss:[0.00663681]
+Current epoch: 393
+Loss:[0.00834020]
+Current epoch: 394
+Loss:[0.00578185]
+Current epoch: 395
+Loss:[0.00879601]
+Current epoch: 396
+Loss:[0.00866559]
+Current epoch: 397
+Loss:[0.00610152]
+Current epoch: 398
+Loss:[0.00799431]
+Current epoch: 399
+Loss:[0.00566880]
+Current epoch: 400
+Loss:[0.00671281]
+Current epoch: 401
+Loss:[0.00645783]
+Current epoch: 402
+Loss:[0.00702299]
+Current epoch: 403
+Loss:[0.00560545]
+Current epoch: 404
+Loss:[0.00565704]
+Current epoch: 405
+Loss:[0.00890561]
+Current epoch: 406
+Loss:[0.00657245]
+Current epoch: 407
+Loss:[0.00673833]
+Current epoch: 408
+Loss:[0.00818890]
+Current epoch: 409
+Loss:[0.00902062]
+Current epoch: 410
+Loss:[0.00645149]
+Current epoch: 411
+Loss:[0.00667328]
+Current epoch: 412
+Loss:[0.00810684]
+Current epoch: 413
+Loss:[0.00885901]
+Current epoch: 414
+Loss:[0.00664074]
+Current epoch: 415
+Loss:[0.00655572]
+Current epoch: 416
+Loss:[0.00653003]
+Current epoch: 417
+Loss:[0.00707826]
+Current epoch: 418
+Loss:[0.00583365]
+Current epoch: 419
+Loss:[0.00553776]
+Current epoch: 420
+Loss:[0.00696274]
+Current epoch: 421
+Loss:[0.00784094]
+Current epoch: 422
+Loss:[0.00568825]
+Current epoch: 423
+Loss:[0.00706070]
+Current epoch: 424
+Loss:[0.00597559]
+Current epoch: 425
+Loss:[0.00725181]
+Current epoch: 426
+Loss:[0.00759071]
+Current epoch: 427
+Loss:[0.00617430]
+Current epoch: 428
+Loss:[0.00587029]
+Current epoch: 429
+Loss:[0.00636436]
+Current epoch: 430
+Loss:[0.00572494]
+Current epoch: 431
+Loss:[0.00720150]
+Current epoch: 432
+Loss:[0.00631764]
+Current epoch: 433
+Loss:[0.00834428]
+Current epoch: 434
+Loss:[0.00606490]
+Current epoch: 435
+Loss:[0.00638370]
+Current epoch: 436
+Loss:[0.00558340]
+Current epoch: 437
+Loss:[0.00698179]
+Current epoch: 438
+Loss:[0.00448691]
+Current epoch: 439
+Loss:[0.00478976]
+Current epoch: 440
+Loss:[0.00542931]
+Current epoch: 441
+Loss:[0.00769691]
+Current epoch: 442
+Loss:[0.00672213]
+Current epoch: 443
+Loss:[0.00615104]
+Current epoch: 444
+Loss:[0.00563874]
+Current epoch: 445
+Loss:[0.00531126]
+Current epoch: 446
+Loss:[0.00692574]
+Current epoch: 447
+Loss:[0.00575531]
+Current epoch: 448
+Loss:[0.00464364]
+Current epoch: 449
+Loss:[0.00582491]
+Current epoch: 450
+Loss:[0.00513176]
+Current epoch: 451
+Loss:[0.00612972]
+Current epoch: 452
+Loss:[0.00691775]
+Current epoch: 453
+Loss:[0.00563153]
+Current epoch: 454
+Loss:[0.00497211]
+Current epoch: 455
+Loss:[0.00567508]
+Current epoch: 456
+Loss:[0.00612146]
+Current epoch: 457
+Loss:[0.00735281]
+Current epoch: 458
+Loss:[0.00785508]
+Current epoch: 459
+Loss:[0.00627660]
+Current epoch: 460
+Loss:[0.00718379]
+Current epoch: 461
+Loss:[0.00802352]
+Current epoch: 462
+Loss:[0.00649573]
+Current epoch: 463
+Loss:[0.00492940]
+Current epoch: 464
+Loss:[0.00664051]
+Current epoch: 465
+Loss:[0.00627423]
+Current epoch: 466
+Loss:[0.00454009]
+Current epoch: 467
+Loss:[0.00571311]
+Current epoch: 468
+Loss:[0.00532910]
+Current epoch: 469
+Loss:[0.00573972]
+Current epoch: 470
+Loss:[0.00559257]
+Current epoch: 471
+Loss:[0.00504265]
+Current epoch: 472
+Loss:[0.00453324]
+Current epoch: 473
+Loss:[0.00515935]
+Current epoch: 474
+Loss:[0.00606048]
+Current epoch: 475
+Loss:[0.00501970]
+Current epoch: 476
+Loss:[0.00458061]
+Current epoch: 477
+Loss:[0.00509392]
+Current epoch: 478
+Loss:[0.00479335]
+Current epoch: 479
+Loss:[0.00742867]
+Current epoch: 480
+Loss:[0.00537583]
+Current epoch: 481
+Loss:[0.00585071]
+Current epoch: 482
+Loss:[0.00473534]
+Current epoch: 483
+Loss:[0.00501719]
+Current epoch: 484
+Loss:[0.00576721]
+Current epoch: 485
+Loss:[0.00513108]
+Current epoch: 486
+Loss:[0.00508429]
+Current epoch: 487
+Loss:[0.00457319]
+Current epoch: 488
+Loss:[0.00805348]
+Early stopping!
+Best epoch: 439, Best loss: 0.00448691
+##################################################
+PreTrain datasets are  ['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+Downastream dataset is  Cora
+Cora()
+DataBatch(x=[2708, 1433], edge_index=[2, 10556], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], batch=[2708], ptr=[2])
+process done
+0.30299406154443537
+nb_classes 7
+loading model from /home/ustc1958/lxy/graph/1/SAMGPT/checkpoints/model_node_GRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.001_gcn_ctx_s2_0.30_s3.pkl
+----------------------------------------------------------------------------------------------------
+shotnum 1
+  0%|          | 0/100 [00:00<?, ?it/s]  1%|          | 1/100 [00:06<10:33,  6.40s/it]  2%|▏         | 2/100 [00:14<11:56,  7.31s/it]  3%|▎         | 3/100 [00:22<12:16,  7.59s/it]  4%|▍         | 4/100 [00:30<12:28,  7.80s/it]  5%|▌         | 5/100 [00:38<12:34,  7.94s/it]  6%|▌         | 6/100 [00:46<12:34,  8.03s/it]  7%|▋         | 7/100 [00:54<12:31,  8.08s/it]  8%|▊         | 8/100 [01:03<12:26,  8.12s/it]  9%|▉         | 9/100 [01:11<12:20,  8.14s/it] 10%|█         | 10/100 [01:19<12:14,  8.16s/it] 11%|█         | 11/100 [01:27<12:06,  8.17s/it] 12%|█▏        | 12/100 [01:35<11:59,  8.17s/it] 13%|█▎        | 13/100 [01:44<11:51,  8.18s/it] 14%|█▍        | 14/100 [01:52<11:44,  8.19s/it] 15%|█▌        | 15/100 [02:00<11:35,  8.19s/it] 16%|█▌        | 16/100 [02:08<11:25,  8.16s/it] 17%|█▋        | 17/100 [02:16<11:16,  8.15s/it] 18%|█▊        | 18/100 [02:24<11:07,  8.13s/it] 19%|█▉        | 19/100 [02:32<10:53,  8.07s/it] 20%|██        | 20/100 [02:40<10:40,  8.01s/it] 21%|██        | 21/100 [02:48<10:29,  7.97s/it] 22%|██▏       | 22/100 [02:56<10:19,  7.94s/it] 23%|██▎       | 23/100 [03:04<10:11,  7.94s/it] 24%|██▍       | 24/100 [03:12<10:03,  7.93s/it] 25%|██▌       | 25/100 [03:20<09:54,  7.93s/it] 26%|██▌       | 26/100 [03:28<09:47,  7.93s/it] 27%|██▋       | 27/100 [03:36<09:39,  7.94s/it] 28%|██▊       | 28/100 [03:43<09:30,  7.93s/it] 29%|██▉       | 29/100 [03:51<09:20,  7.89s/it] 30%|███       | 30/100 [03:59<09:13,  7.91s/it] 31%|███       | 31/100 [04:07<09:06,  7.92s/it] 32%|███▏      | 32/100 [04:15<08:57,  7.91s/it] 33%|███▎      | 33/100 [04:23<08:49,  7.91s/it] 34%|███▍      | 34/100 [04:31<08:42,  7.92s/it] 35%|███▌      | 35/100 [04:39<08:34,  7.91s/it] 36%|███▌      | 36/100 [04:47<08:27,  7.92s/it] 37%|███▋      | 37/100 [04:55<08:19,  7.93s/it] 38%|███▊      | 38/100 [05:03<08:11,  7.93s/it] 39%|███▉      | 39/100 [05:11<08:04,  7.94s/it] 40%|████      | 40/100 [05:18<07:55,  7.92s/it] 41%|████      | 41/100 [05:26<07:47,  7.92s/it] 42%|████▏     | 42/100 [05:34<07:39,  7.92s/it] 43%|████▎     | 43/100 [05:42<07:30,  7.90s/it] 44%|████▍     | 44/100 [05:50<07:23,  7.91s/it] 45%|████▌     | 45/100 [05:58<07:15,  7.92s/it] 46%|████▌     | 46/100 [06:06<07:08,  7.93s/it] 47%|████▋     | 47/100 [06:14<06:59,  7.91s/it] 48%|████▊     | 48/100 [06:22<06:50,  7.89s/it] 49%|████▉     | 49/100 [06:30<06:42,  7.89s/it] 50%|█████     | 50/100 [06:37<06:34,  7.90s/it] 51%|█████     | 51/100 [06:45<06:27,  7.90s/it] 52%|█████▏    | 52/100 [06:53<06:19,  7.91s/it] 53%|█████▎    | 53/100 [07:01<06:12,  7.92s/it] 54%|█████▍    | 54/100 [07:09<06:04,  7.91s/it] 55%|█████▌    | 55/100 [07:17<05:57,  7.95s/it] 56%|█████▌    | 56/100 [07:25<05:53,  8.03s/it] 57%|█████▋    | 57/100 [07:34<05:47,  8.09s/it] 58%|█████▊    | 58/100 [07:42<05:41,  8.13s/it] 59%|█████▉    | 59/100 [07:50<05:34,  8.15s/it] 60%|██████    | 60/100 [07:58<05:26,  8.17s/it] 61%|██████    | 61/100 [08:06<05:18,  8.18s/it] 62%|██████▏   | 62/100 [08:15<05:11,  8.19s/it] 63%|██████▎   | 63/100 [08:23<05:03,  8.20s/it] 64%|██████▍   | 64/100 [08:31<04:54,  8.19s/it] 65%|██████▌   | 65/100 [08:39<04:46,  8.19s/it] 66%|██████▌   | 66/100 [08:47<04:38,  8.20s/it] 67%|██████▋   | 67/100 [08:55<04:28,  8.14s/it] 68%|██████▊   | 68/100 [09:03<04:18,  8.07s/it] 69%|██████▉   | 69/100 [09:11<04:08,  8.02s/it] 70%|███████   | 70/100 [09:19<03:59,  7.99s/it] 71%|███████   | 71/100 [09:27<03:51,  7.97s/it] 72%|███████▏  | 72/100 [09:35<03:42,  7.96s/it] 73%|███████▎  | 73/100 [09:43<03:35,  7.96s/it] 74%|███████▍  | 74/100 [09:51<03:27,  7.96s/it] 75%|███████▌  | 75/100 [09:59<03:19,  7.96s/it] 76%|███████▌  | 76/100 [10:07<03:10,  7.96s/it] 77%|███████▋  | 77/100 [10:15<03:02,  7.95s/it] 78%|███████▊  | 78/100 [10:23<02:54,  7.95s/it] 79%|███████▉  | 79/100 [10:31<02:46,  7.94s/it] 80%|████████  | 80/100 [10:39<02:38,  7.94s/it] 81%|████████  | 81/100 [10:47<02:32,  8.02s/it] 82%|████████▏ | 82/100 [10:55<02:25,  8.07s/it] 83%|████████▎ | 83/100 [11:03<02:17,  8.10s/it] 84%|████████▍ | 84/100 [11:11<02:09,  8.10s/it] 85%|████████▌ | 85/100 [11:20<02:01,  8.13s/it] 86%|████████▌ | 86/100 [11:28<01:53,  8.11s/it] 87%|████████▋ | 87/100 [11:36<01:45,  8.10s/it] 88%|████████▊ | 88/100 [11:44<01:37,  8.13s/it] 89%|████████▉ | 89/100 [11:52<01:29,  8.15s/it] 90%|█████████ | 90/100 [12:00<01:21,  8.16s/it] 91%|█████████ | 91/100 [12:08<01:13,  8.14s/it] 92%|█████████▏| 92/100 [12:16<01:05,  8.14s/it] 93%|█████████▎| 93/100 [12:25<00:57,  8.15s/it] 94%|█████████▍| 94/100 [12:33<00:48,  8.16s/it] 95%|█████████▌| 95/100 [12:41<00:40,  8.17s/it] 96%|█████████▌| 96/100 [12:49<00:32,  8.18s/it] 97%|█████████▋| 97/100 [12:57<00:24,  8.17s/it] 98%|█████████▊| 98/100 [13:06<00:16,  8.18s/it] 99%|█████████▉| 99/100 [13:14<00:08,  8.18s/it]100%|██████████| 100/100 [13:22<00:00,  8.18s/it]100%|██████████| 100/100 [13:22<00:00,  8.02s/it]
+----------------------------------------------------------------------------------------------------
+Average accuracy:[0.4798]
+Mean:[47.9800]
+Std :[12.4940]
+----------------------------------------------------------------------------------------------------

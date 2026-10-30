@@ -1,0 +1,599 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from models import GraphCL, Lp, GcnLayers, GatLayers
+from layers import AvgReadout
+import numpy as np
+from sklearn.decomposition import PCA
+from layers.prompt import textprompt
+import copy
+from train.egraphcl_pipeline import EGraphCLCore
+
+# ------------------------------------------------------------
+# preprompt.py：预训练阶段的核心模型 PrePrompt。
+#
+# 该模块的要点：
+# 1) 预训练任务支持两类：
+#    - GRAPHCL：需要两份增强视图 + DGI/GraphCL 类对比损失（BCEWithLogitsLoss）
+#    - LP / splitLP：基于负采样 tuples 的对比损失 compareloss（自定义）
+#
+# 2) prompt 分为两种：
+#    - feature_prompt_layers：对输入特征 seq 做 add/mul 调制
+#    - structure_prompt_layers：作为“层 prompt”传给 GNN 的每一层（num_layers_num 层）
+#
+# 3) 多数据集预训练：对每个 pretrain dataset 都有一套 prompt 参数（ModuleList 按数据集索引）。
+#
+# 4) ablation：控制仅使用 fea prompting / 仅使用 str prompting / 两者融合等。
+# ------------------------------------------------------------
+
+
+class PrePrompt(nn.Module):
+    """预训练 Prompt 模型。
+
+    Args:
+        n_in: 输入特征维度（PCA 后/统一维度 unify_dim）
+        n_h: 隐层维度（GNN 输出维度）
+        activation: 非线性（GraphCL/DGI 内部可能用到）
+        num_pretrain_dataset_num: 预训练数据集数量（或参与预训练的图数量）
+        num_layers_num: GNN 层数
+        dropout: GNN dropout
+        type_: prompt 的组合类型（'add'/'mul'），传给 textprompt
+        backbone: 'gcn' 或 'gat'
+        alpha: fea/str 融合系数（combine）
+        ablation: 消融选项（'all','ft','st','None',...）
+    """
+
+    def __init__(
+        self,
+        n_in,
+        n_h,
+        activation,
+        num_pretrain_dataset_num,
+        num_prototype_prompt_num,
+        num_layers_num,
+        dropout,
+        type_,
+        backbone='gcn',
+        alpha=1.0,
+        ablation='all',
+    ):
+        super(PrePrompt, self).__init__()
+
+        # 两类预训练目标的封装
+        self.lp = Lp(n_in, n_h)
+        self.graphcledge = GraphCL(n_in, n_h, activation)
+        self.graphclmask = GraphCL(n_in, n_h, activation)
+
+        # 图级 readout（平均池化）
+        self.read = AvgReadout()
+
+        self.prompttype = type_
+
+        # ------------------- prompt 参数（按数据集分组）-------------------
+        # 每个数据集一套 feature prompt（形状 [1, n_in]）
+        self.feature_prompt_layers = nn.ModuleList([textprompt(n_in, type_) for _ in range(num_pretrain_dataset_num)])
+
+        # 每个数据集一套 structure prompt：每层一个 textprompt（通常为 [1, n_h]）
+        self.structure_prompt_layers = nn.ModuleList(
+            [nn.ModuleList([textprompt(n_h, type_) for _ in range(num_layers_num)]) for _ in range(num_pretrain_dataset_num)]
+        )
+
+        proto_prompt_num = int(num_prototype_prompt_num) if num_prototype_prompt_num is not None else int(num_pretrain_dataset_num)
+        # 原型路由专用 prompt 参数（跨数据集共享结构原型字典）
+        self.prototype_feature_prompt_layers = nn.ModuleList([textprompt(n_in, type_) for _ in range(proto_prompt_num)])
+        self.prototype_structure_prompt_layers = nn.ModuleList(
+            [nn.ModuleList([textprompt(n_h, type_) for _ in range(num_layers_num)]) for _ in range(proto_prompt_num)]
+        )
+
+        # ------------------- 主干 GNN -------------------
+        # 默认使用 GCN；可选 GAT
+        self.gcn = GcnLayers(n_in, n_h, num_layers_num, dropout)
+        if backbone == 'gat':
+            self.gcn = GatLayers(n_in, n_h, num_layers_num, dropout)
+
+            # GAT 多头时，每层输出维度通常变成 n_h * heads（concat=True 的情形）
+            str_prompt = [textprompt(n_h * self.gcn.heads, type_) for _ in range(num_layers_num)]
+            # str_prompt.append(textprompt(n_h, type_))
+
+            # 重新构造 structure_prompt_layers：每个数据集拷贝一份同构 prompt 列表
+            self.structure_prompt_layers = nn.ModuleList([nn.ModuleList(copy.deepcopy(str_prompt)) for _ in range(num_pretrain_dataset_num)])
+            self.prototype_structure_prompt_layers = nn.ModuleList(
+                [nn.ModuleList(copy.deepcopy(str_prompt)) for _ in range(proto_prompt_num)]
+            )
+
+        # combine: 融合 fea/str 的系数（在 ablation('all') 下生效）
+        self.combine = alpha
+
+        # GRAPHCL/DGI 这类任务常用 BCEWithLogitsLoss
+        self.loss = nn.BCEWithLogitsLoss()
+        self.egraphcl_proj = nn.Sequential(
+            nn.Linear(n_h, n_h),
+            nn.ReLU(inplace=True),
+            nn.Linear(n_h, n_h),
+        )
+        self.egraphcl_temperature = 0.2
+        self.egraphcl_mask_tau = 0.8
+        self.egraphcl_mask_strategy = 'fixed'
+        self.egraphcl_mask_quantile = 0.9
+        self.egraphcl_mask_min_tau = 0.6
+        self.egraphcl_mask_max_tau = 0.98
+        self.egraphcl_negative_pair_mode = 'full'
+        self.egraphcl_negative_topk = 16
+        self.egraphcl_negative_random_ratio = 0.25
+        self.egraphcl_min_negatives_per_row = 1
+        self.egraphcl_encoder_mode = 'batched'
+        self.prompt_routing_mode = 'dataset'
+        self.prompt_id_split_base = 10000
+        self.downstream_prompt_bank_mode = 'auto'
+        self.use_prototype_soft_prompt = False
+        self.prototype_assign_tau = 0.2
+        self.prototype_consistency_loss_weight = 0.05
+        self.prototype_balance_loss_weight = 0.01
+        self.egraphcl_log_every = 20
+        self.egraphcl_batched_chunk_graphs = 32
+        self.latest_egraphcl_stats = {}
+        self.egraphcl_core = EGraphCLCore()
+
+        self.ablation_choice = ablation
+
+    @staticmethod
+    def masked_bce_with_logits(logits, target, bce_mask=None):
+        """BCE loss with ignore label support.
+
+        bce_mask==0 的位置不参与损失（用于软正例屏蔽）。
+        """
+        if bce_mask is None:
+            valid_mask = torch.ones_like(target, dtype=torch.bool)
+        else:
+            valid_mask = bce_mask > 0
+        if torch.sum(valid_mask).item() == 0:
+            return torch.tensor(0.0, device=logits.device, dtype=logits.dtype)
+        per_elem = F.binary_cross_entropy_with_logits(logits, target, reduction='none')
+        return per_elem[valid_mask].mean()
+
+    def ablation(self, fea_prelogits, str_prelogits):
+        """根据 ablation_choice 组合 fea/str 两类 logits."""
+        if self.ablation_choice == 'all':
+            return fea_prelogits + self.combine * str_prelogits
+        elif self.ablation_choice == 'st':
+            return str_prelogits
+        elif self.ablation_choice == 'ft':
+            return fea_prelogits
+        else:
+            return fea_prelogits + self.combine * str_prelogits
+
+    def pick_prompt_banks(self):
+        """Select prompt banks by routing mode.
+
+        - dataset: route by pretrain dataset id
+        - prototype: route by shared structure prototype id
+        """
+        if str(self.prompt_routing_mode).lower() == 'prototype':
+            return self.prototype_feature_prompt_layers, self.prototype_structure_prompt_layers
+        return self.feature_prompt_layers, self.structure_prompt_layers
+
+    def _resolve_route_id(self, sample_i, sample_dataset_ids, sample_prototype_ids):
+        """Build unified route id using split-base to avoid dataset/prototype id overlap."""
+        route_mode = str(self.prompt_routing_mode).lower()
+        split_base = int(self.prompt_id_split_base)
+        if route_mode == 'prototype':
+            raw_id = sample_i if sample_prototype_ids is None else int(sample_prototype_ids[sample_i])
+            return split_base + int(raw_id), route_mode
+        raw_id = sample_i if sample_dataset_ids is None else int(sample_dataset_ids[sample_i])
+        return int(raw_id), route_mode
+
+    def _resolve_prompt_index(self, route_id, route_mode, bank_size):
+        """Map unified route id back to bank index according to route mode and split-base."""
+        split_base = int(self.prompt_id_split_base)
+        if route_mode == 'prototype':
+            prompt_idx = int(route_id) - split_base
+        else:
+            prompt_idx = int(route_id)
+
+        if prompt_idx < 0 or prompt_idx >= int(bank_size):
+            raise IndexError(
+                f"route_id={route_id} -> prompt_idx={prompt_idx} out of range for prompt layers "
+                f"(size={bank_size}), mode={route_mode}, split_base={split_base}"
+            )
+        return prompt_idx
+
+    def compute_prelogits_LP(
+        self,
+        feature_prompt_layers,
+        structure_prompt_layers,
+        seq_list,
+        adj_list,
+        sparse=False,
+        sample_dataset_ids=None,
+        sample_prototype_ids=None,
+    ):
+        """计算 LP/splitLP 预训练的 logits（逐数据集 yield）。
+
+        对每个预训练数据集：
+        - fea_prelogits：先对 seq 做 feature prompt，再做 LP 任务
+        - str_prelogits：把 structure prompt 传入 gcn（影响每层），再做 LP 任务
+        - 最终通过 ablation() 得到融合 logits
+        """
+        if sample_dataset_ids is not None and torch.is_tensor(sample_dataset_ids):
+            sample_dataset_ids = sample_dataset_ids.detach().cpu().tolist()
+        if sample_prototype_ids is not None and torch.is_tensor(sample_prototype_ids):
+            sample_prototype_ids = sample_prototype_ids.detach().cpu().tolist()
+
+        for sample_i, (seq, adj) in enumerate(zip(seq_list, adj_list)):
+            route_id, route_mode = self._resolve_route_id(
+                sample_i,
+                sample_dataset_ids,
+                sample_prototype_ids,
+            )
+            prompt_idx = self._resolve_prompt_index(route_id, route_mode, len(feature_prompt_layers))
+
+            fea_pretext = feature_prompt_layers[prompt_idx]
+            str_layers = structure_prompt_layers[prompt_idx]
+            if self.ablation_choice == 'None':
+                yield self.lp(self.gcn, seq, adj, sparse)
+            else:
+                fea_prelogits = self.lp(self.gcn, fea_pretext(seq), adj, sparse)
+                str_prelogits = self.lp(self.gcn, seq, adj, sparse, str_layers)
+                yield self.ablation(fea_prelogits, str_prelogits)
+
+    def compute_prelogits_GRAPHCL(
+        self,
+        feature_prompt_layers,
+        structure_prompt_layers,
+        seq_list,
+        adj_list,
+        pretrain_method='GRAPHCL',
+        sparse=False,
+        msk=None,
+        samp_bias1=None,
+        samp_bias2=None,
+        sample_dataset_ids=None,
+        sample_prototype_ids=None,
+    ):
+        """计算 GRAPHCL 预训练 logits（逐数据集 yield）。
+
+        seq_list 中的每个 seq 预期是一个 list/stack：
+            [feature, shuf_fts, feature.detach(), feature.detach()]
+        adj_list 中每个 adj 预期是 stack：
+            [adj, aug_adj1, aug_adj2]
+        这些格式来自 utils/aug.py 的 build_aug()。
+
+        当 ablation_choice != 'None' 时，会分别计算：
+        - fea_prelogits：对 seq 的每个视图做 feature prompt 后喂入 GraphCL
+        - str_prelogits：将 structure prompt 传入 gcn，计算结构提示下的 GraphCL
+        """
+        # Keep a single GraphCL head; EGRAPHCL differences come from labels/masking.
+        graphcl_runner = self.graphcledge
+
+        if sample_dataset_ids is not None and torch.is_tensor(sample_dataset_ids):
+            sample_dataset_ids = sample_dataset_ids.detach().cpu().tolist()
+        if sample_prototype_ids is not None and torch.is_tensor(sample_prototype_ids):
+            sample_prototype_ids = sample_prototype_ids.detach().cpu().tolist()
+
+        for sample_i, (seq, adj) in enumerate(zip(seq_list, adj_list)):
+            route_id, route_mode = self._resolve_route_id(
+                sample_i,
+                sample_dataset_ids,
+                sample_prototype_ids,
+            )
+            prompt_idx = self._resolve_prompt_index(route_id, route_mode, len(feature_prompt_layers))
+
+            fea_pretext = feature_prompt_layers[prompt_idx]
+            str_layers = structure_prompt_layers[prompt_idx]
+            if self.ablation_choice == 'None':
+                yield graphcl_runner(
+                    self.gcn,
+                    seq[0],
+                    seq[1],
+                    seq[2],
+                    seq[3],
+                    adj[0],
+                    adj[1],
+                    adj[2],
+                    sparse,
+                    msk,
+                    samp_bias1,
+                    samp_bias2,
+                    'edge',
+                )
+            else:
+                # 对每个视图都应用 feature prompt
+                preseq_list = [fea_pretext(seq[i]) for i in range(len(seq))]
+                fea_prelogits = graphcl_runner(
+                    self.gcn,
+                    preseq_list[0],
+                    preseq_list[1],
+                    preseq_list[2],
+                    preseq_list[3],
+                    adj[0],
+                    adj[1],
+                    adj[2],
+                    sparse,
+                    msk,
+                    samp_bias1,
+                    samp_bias2,
+                    aug_type='edge',
+                )
+
+                # 结构 prompt：不改输入 seq，但把 prompt 列表传给 gcn
+                str_prelogits = graphcl_runner(
+                    self.gcn,
+                    seq[0],
+                    seq[1],
+                    seq[2],
+                    seq[3],
+                    adj[0],
+                    adj[1],
+                    adj[2],
+                    sparse,
+                    msk,
+                    samp_bias1,
+                    samp_bias2,
+                    'edge',
+                    str_layers,
+                )
+
+                yield self.ablation(fea_prelogits, str_prelogits)
+
+    def embed(self, seq, adj, sparse, msk, LP):
+        """得到节点 embedding h_1 及图级向量 c（readout）。
+
+        返回 detach 后的张量，通常用于下游评测（不反传梯度）。
+        """
+        h_1 = self.gcn(seq, adj, sparse, LP)
+        c = self.read(h_1, msk)
+
+        return h_1.detach(), c.detach()
+
+    def get_weights(self, export_bank_mode=None):
+        """导出 prompt 参数（detach）供下游 downprompt 使用。
+
+        export_bank_mode:
+            - auto: follow current prompt_routing_mode
+            - dataset: force dataset prompt bank
+            - prototype: force prototype prompt bank
+        """
+        mode = self.downstream_prompt_bank_mode if export_bank_mode is None else export_bank_mode
+        mode = str(mode).lower()
+        if mode == 'auto':
+            mode = str(self.prompt_routing_mode).lower()
+
+        if mode == 'prototype':
+            fea_layers = self.prototype_feature_prompt_layers
+            str_layers = self.prototype_structure_prompt_layers
+        else:
+            fea_layers = self.feature_prompt_layers
+            str_layers = self.structure_prompt_layers
+
+        fea_pretext_weights = [layer.weight.detach() for layer in fea_layers]
+        str_pretext_weights = [[layer.weight.detach() for layer in structure_prompt_layer] for structure_prompt_layer in str_layers]
+        combines = [self.combine]
+        return fea_pretext_weights, str_pretext_weights, combines
+
+    def forward(
+        self,
+        seq_list,
+        adj_list,
+        sparse,
+        msk,
+        samp_bias1,
+        samp_bias2,
+        lbl,
+        bce_mask=None,
+        samples=None,
+        pretrain_method='GRAPHCL',
+        sample_dataset_ids=None,
+        sample_prototype_ids=None,
+        sample_prototype_weights=None,
+        egraphcl_pair_soft_mask=None,
+    ):
+        """预训练 forward：根据是否提供 samples 来区分 GRAPHCL 与 LP。
+
+        Args:
+            seq_list/adj_list: 预训练数据列表（多数据集）
+            lbl: GRAPHCL 的对比标签（list，与 seq_list 对齐）
+            samples: LP/splitLP 的负采样 tuples
+        """
+        total_loss = torch.tensor(0.0, dtype=torch.float32).to(seq_list[0].device)
+
+        if samples is None and pretrain_method == 'EGRAPHCL':
+            feature_prompt_layers, structure_prompt_layers = self.pick_prompt_banks()
+            use_soft_proto_prompt = bool(self.use_prototype_soft_prompt)
+
+            self.egraphcl_core.configure(
+                temperature=self.egraphcl_temperature,
+                mask_tau=self.egraphcl_mask_tau,
+                mask_strategy=self.egraphcl_mask_strategy,
+                mask_quantile=self.egraphcl_mask_quantile,
+                mask_min_tau=self.egraphcl_mask_min_tau,
+                mask_max_tau=self.egraphcl_mask_max_tau,
+                negative_pair_mode=self.egraphcl_negative_pair_mode,
+                negative_topk=self.egraphcl_negative_topk,
+                negative_random_ratio=self.egraphcl_negative_random_ratio,
+                min_negatives_per_row=self.egraphcl_min_negatives_per_row,
+                log_every=self.egraphcl_log_every,
+                batched_chunk_graphs=self.egraphcl_batched_chunk_graphs,
+                prototype_assign_tau=self.prototype_assign_tau,
+                prototype_consistency_loss_weight=self.prototype_consistency_loss_weight,
+                prototype_balance_loss_weight=self.prototype_balance_loss_weight,
+                encoder_mode=self.egraphcl_encoder_mode,
+            )
+
+            total_loss, stats = self.egraphcl_core.run(
+                gcn=self.gcn,
+                read=self.read,
+                proj=self.egraphcl_proj,
+                feature_prompt_layers=feature_prompt_layers,
+                structure_prompt_layers=structure_prompt_layers,
+                seq_list=seq_list,
+                adj_list=adj_list,
+                sparse=sparse,
+                sample_dataset_ids=sample_dataset_ids,
+                sample_prototype_ids=sample_prototype_ids,
+                sample_prototype_weights=(sample_prototype_weights if use_soft_proto_prompt else None),
+                prompt_routing_mode=self.prompt_routing_mode,
+                prompt_id_split_base=self.prompt_id_split_base,
+                egraphcl_pair_soft_mask=egraphcl_pair_soft_mask,
+                combine_fn=self.ablation,
+            )
+            self.latest_egraphcl_stats = stats
+            return total_loss
+
+        # GRAPHCL 路径：samples==None
+        if samples is None:
+            feature_prompt_layers, structure_prompt_layers = self.pick_prompt_banks()
+            logits = list(
+                self.compute_prelogits_GRAPHCL(
+                    feature_prompt_layers,
+                    structure_prompt_layers,
+                    seq_list,
+                    adj_list,
+                    pretrain_method=pretrain_method,
+                    sparse=sparse,
+                    msk=msk,
+                    samp_bias1=samp_bias1,
+                    samp_bias2=samp_bias2,
+                    sample_dataset_ids=sample_dataset_ids,
+                    sample_prototype_ids=sample_prototype_ids,
+                )
+            )
+            for i in range(len(logits)):
+                mask_i = None if bce_mask is None else bce_mask[i]
+                loss = self.masked_bce_with_logits(logits[i], lbl[i], mask_i)
+                total_loss += loss
+
+        # LP / splitLP 路径
+        else:
+            feature_prompt_layers, structure_prompt_layers = self.pick_prompt_banks()
+            logits = list(
+                self.compute_prelogits_LP(
+                    feature_prompt_layers,
+                    structure_prompt_layers,
+                    seq_list,
+                    adj_list,
+                    sparse,
+                    sample_dataset_ids=sample_dataset_ids,
+                    sample_prototype_ids=sample_prototype_ids,
+                )
+            )
+
+            # splitLP：samples 是 list（每个数据集各自一份 tuples）
+            if isinstance(samples, list):
+                samples = [torch.tensor(sample, dtype=torch.int64).to(seq_list[0].device) for sample in samples]
+                for i in range(len(logits)):
+                    loss = compareloss(logits[i], samples[i], temperature=1)
+                    total_loss += loss
+
+            # LP：samples 是一个整体 tuples（来自合并图）
+            else:
+                samples = torch.tensor(samples, dtype=torch.int64).to(seq_list[0].device)
+                logits = torch.cat(logits, dim=0)
+                total_loss = compareloss(logits, samples, temperature=1)
+
+        return total_loss
+
+
+
+def pca_compression(seq, k):
+    """PCA 降维到 k 维，并打印累计解释方差比例."""
+    pca = PCA(n_components=k)
+    seq = pca.fit_transform(seq)
+
+    print(pca.explained_variance_ratio_.sum())
+    return seq
+
+
+def svd_compression(seq, k):
+    """SVD 压缩（保留前 k 个奇异值）。"""
+    res = np.zeros_like(seq)
+    U, Sigma, VT = np.linalg.svd(seq)
+    print(U[:, :k].shape)
+    print(VT[:k, :].shape)
+    res = U[:, :k].dot(np.diag(Sigma[:k]))
+
+    return res
+
+
+def mygather(feature, index):
+    """辅助函数：按 index 从 feature 中 gather，并保持 batch 结构。
+
+    Args:
+        feature: Tensor [N, F]
+        index: Tensor [B, K]（或可 reshape 成类似结构）
+
+    Returns:
+        Tensor [B, K, F]
+    """
+    input_size = index.size(0)
+    index = index.flatten()
+    index = index.reshape(len(index), 1)
+    index = torch.broadcast_to(index, (len(index), feature.size(1)))
+
+    res = torch.gather(feature, dim=0, index=index)
+    return res.reshape(input_size, -1, feature.size(1))
+
+
+def compareloss(feature, tuples, temperature):
+    """一个基于 cosine similarity 的对比损失（与 prompt_pretrain_sample 生成的 tuples 配套）。
+
+    tuples 的每行：
+        [pos, neg1, neg2, ...]
+    其中：
+        - h_i: anchor（按行号 i 取 feature[i]）
+        - h_tuples: 从 tuples 中 gather 的 pos/neg 表示
+    损失形式接近 InfoNCE：
+        -log( exp(sim(anchor,pos))/sum exp(sim(anchor,neg_j)) )
+
+    注意：实现里 exp(sim)/temperature 的写法与常见 exp(sim/temperature) 不同，保持原样不改。
+    """
+    h_tuples = mygather(feature, tuples)
+
+    temp = torch.arange(0, len(tuples)).to(feature.device)
+    temp = temp.reshape(-1, 1)
+    temp = torch.broadcast_to(temp, (temp.size(0), tuples.size(1)))
+    h_i = mygather(feature, temp)
+
+    sim = F.cosine_similarity(h_i, h_tuples, dim=2)
+    exp = torch.exp(sim) / temperature
+    exp = exp.permute(1, 0)
+
+    numerator = exp[0].reshape(-1, 1)
+    denominator = exp[1:exp.size(0)]
+    denominator = denominator.permute(1, 0)
+    denominator = denominator.sum(dim=1, keepdim=True)
+
+    res = -1 * torch.log(numerator / denominator)
+    return res.mean()
+
+
+def prompt_pretrain_sample(adj, n):
+    """为 LP/splitLP 生成负采样 tuples。
+
+    对每个节点 i：
+    - 从其非零邻居中随机取 1 个作为“正样本”(pos)
+      若无邻居则 pos=i
+    - 从其零邻居（非相连节点）中随机取 n 个作为负样本
+
+    Returns:
+        Tensor [N, 1+n]，每行 [pos, neg1..negn]
+
+    要求：adj 为 scipy.sparse.csr_matrix（使用 indices/indptr）。
+    """
+    nodenum = adj.shape[0]
+    indices = adj.indices
+    indptr = adj.indptr
+    res = np.zeros((nodenum, 1 + n))
+    whole = np.array(range(nodenum))
+
+    for i in range(nodenum):
+        nonzero_index_i_row = indices[indptr[i] : indptr[i + 1]]
+        zero_index_i_row = np.setdiff1d(whole, nonzero_index_i_row)
+        np.random.shuffle(nonzero_index_i_row)
+        np.random.shuffle(zero_index_i_row)
+        if np.size(nonzero_index_i_row) == 0:
+            res[i][0] = i
+        else:
+            res[i][0] = nonzero_index_i_row[0]
+        res[i][1 : 1 + n] = zero_index_i_row[0:n]
+
+    return torch.tensor(res.astype(int))

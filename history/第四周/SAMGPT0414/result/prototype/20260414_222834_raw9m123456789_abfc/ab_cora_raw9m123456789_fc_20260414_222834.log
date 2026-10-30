@@ -1,0 +1,56 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Photo', 'Computers'], downstream_task='node', gpu=0, pretrain_method='EGRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='fc', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', max_subgraph_nodes=64, stage2_top_ratio=0.3, context_outputs_root='./result/20260414_222834_raw9m123456789_abfc/stage_outputs', result_subdir='20260414_222834_raw9m123456789_abfc', force_rebuild_stage1=1, force_rebuild_stage2=1, stage1_num_clusters=8, stage1_subgraph_hop_n=2, stage1_encoding_mode='raw9', stage1_feature_k=0, stage1_feature_mask='123456789', stage1_use_log1p=1, stage1_remove_selfloops=1, stage2_top_m_per_cluster=5, stage2_alpha=1.0, stage2_beta=1.0, stage2_gamma=1.0, egraphcl_tau=0.85, global_subgraph_pool=1, force_rebuild_global_pool=1, pretrain_batch_size=128, rebuild_run_cache=1, pretrain_max_epochs=100, pretrain_patience=20, pretrain_min_delta=0.0001, egraphcl_negative_pair_mode='topk', egraphcl_negative_topk=32, egraphcl_negative_random_ratio=0.25, egraphcl_mask_strategy='quantile', egraphcl_mask_quantile=0.9, egraphcl_mask_min_tau=0.6, egraphcl_mask_max_tau=0.98, egraphcl_min_negatives_per_row=2, egraphcl_log_every=20, prompt_routing_mode='prototype', prompt_id_split_base=10000, downstream_prompt_bank_mode='auto', egraphcl_encoder_mode='batched', pretrain_preprocess_cache=1)
+----------------------------------------------------------------------------------------------------
+[context] flags: stage2_filter=on, struct_contrastive=on, global_subgraph_pool=1, skip_pretrain=0
+1067899
+CUDA Available: True
+gpu: 0
+['Photo', 'Computers']
+[result] run_subdir=20260414_222834_raw9m123456789_abfc
+[result] result_dir=/home/ustc1958/lxy/graph/1/SAMGPT0414/result/20260414_222834_raw9m123456789_abfc
+[cache] cache_dir=/home/ustc1958/lxy/graph/1/SAMGPT0414/result/20260414_222834_raw9m123456789_abfc/cache rebuild=1
+0
+[pretrain] checkpoint load skipped due to: try to use trained models
+[debug] subgraph build done: total_subgraphs=21402, per_dataset={'Photo': 7650, 'Computers': 13752}
+[debug] sample pool done: representative_pool=40, selected=6449
+[stage1-metrics] global_merged: /home/ustc1958/lxy/graph/1/SAMGPT0414/result/20260414_222834_raw9m123456789_abfc/stage_outputs/stage1/global_merged/stage1_metrics.json
+[stage2-metrics] global_merged: /home/ustc1958/lxy/graph/1/SAMGPT0414/result/20260414_222834_raw9m123456789_abfc/stage_outputs/stage2/global_merged/stage2_metrics.json
+[global_pool] saved cache: /home/ustc1958/lxy/graph/1/SAMGPT0414/result/20260414_222834_raw9m123456789_abfc/cache/global_pool/global_subgraph_pool.pt
+Using CUDA
+[egraphcl] mask/loss stats tau=0.9800 mask_ratio=0.1027 sim_p90=0.9809 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=1 batch=20 size=128 loss=6.609381 mask_ratio=0.102661 tau=0.9800 sim_p90=0.9809 neg_min_fea=32 neg_min_str=32 batch_sec=1.7665
+[egraphcl] mask/loss stats tau=0.8633 mask_ratio=0.0992 sim_p90=0.8633 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=1 batch=40 size=128 loss=5.615655 mask_ratio=0.099243 tau=0.8633 sim_p90=0.8633 neg_min_fea=32 neg_min_str=32 batch_sec=1.8047
+[pretrain] epoch=1 samples=6449 batch_size=128 batches=51
+Loss:[6.26930801]
+[pretrain] epoch_time_sec=90.968 sec_per_batch=1.7837
+[pretrain] timing_breakdown_sec forward=51.437 backward=39.499 other=0.032
+Current epoch: 1
+[egraphcl] mask/loss stats tau=0.8305 mask_ratio=0.0992 sim_p90=0.8305 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=2 batch=20 size=128 loss=5.103453 mask_ratio=0.099243 tau=0.7656 sim_p90=0.7656 neg_min_fea=32 neg_min_str=32 batch_sec=1.8242
+[egraphcl] mask/loss stats tau=0.7362 mask_ratio=0.0992 sim_p90=0.7362 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=2 batch=40 size=128 loss=4.762087 mask_ratio=0.099243 tau=0.6527 sim_p90=0.6527 neg_min_fea=32 neg_min_str=32 batch_sec=1.8161
+[egraphcl] mask/loss stats tau=0.6976 mask_ratio=0.0992 sim_p90=0.6976 neg_min(fea/str)=32/32
+[pretrain] epoch=2 samples=6449 batch_size=128 batches=51
+Loss:[5.09938423]
+[pretrain] epoch_time_sec=90.902 sec_per_batch=1.7824
+[pretrain] timing_breakdown_sec forward=50.864 backward=40.016 other=0.022
+Current epoch: 2
+[egraphcl] mask/loss stats tau=0.6573 mask_ratio=0.0992 sim_p90=0.6573 neg_min(fea/str)=32/32
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0414/./src/train/execute.py", line 593, in <module>
+    assert args.skip_pretrain == 1, 'try to use trained models'
+AssertionError: try to use trained models
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0414/./src/train/execute.py", line 876, in <module>
+    batch_loss.backward()
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/_tensor.py", line 630, in backward
+    torch.autograd.backward(
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/autograd/__init__.py", line 364, in backward
+    _engine_run_backward(
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/autograd/graph.py", line 865, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: parallel_for: failed to synchronize: cudaErrorIllegalAddress: an illegal memory access was encountered

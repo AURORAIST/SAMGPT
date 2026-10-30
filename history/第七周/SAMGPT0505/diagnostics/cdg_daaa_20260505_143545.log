@@ -1,0 +1,205 @@
+pid: 1091291
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', nb_epochs=10000, use_scp=0, struct_feat_dim=3, struct_prompt_residual=1, struct_prompt_scale=0.05, random_struct=0, use_daaa=1, daaa_n_shared=8, daaa_n_domain=4, daaa_lambda_vert=0.05, daaa_lambda_res=0.05, daaa_lambda_hsic=0.0, daaa_lambda_gc=0.1, daaa_max_k_domain=12, daaa_use_sparse_coeff=0, daaa_init_from_data=1, daaa_monitor_interval=10, daaa_vis_interval=50, daaa_expand_interval=20, daaa_prune_interval=50, lambda_vert_schedule=1, use_down_shared_proto=1, cdg_splits=20)
+----------------------------------------------------------------------------------------------------
+[DA-AA] enabled | K_s=8, K_d=4, lv=0.05, lr=0.05, lh=0.0, lg=0.1
+[DA-AA] 用数据边缘点初始化原型...
+[DA-AA] lambda_res set to 0.05
+[DA-AA] init done: K_s=8, K_d=[4, 4, 4, 4, 4, 4]
+[DA-AA] monitor tools ready, diag_dir: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics
+[Epoch 10] domain 0: DVP=1.1028 recon=0.243747 vert=0.124374 λ_vert=0.240
+[Epoch 10] domain 1: DVP=1.1263 recon=0.204521 vert=0.282164 λ_vert=0.240
+[Epoch 10] domain 2: DVP=1.3623 recon=0.477001 vert=0.079948 λ_vert=0.240
+[Epoch 10] domain 3: DVP=1.3267 recon=0.379696 vert=0.089405 λ_vert=0.240
+[Epoch 10] domain 4: DVP=1.8298 recon=0.603692 vert=0.153814 λ_vert=0.240
+[Epoch 10] domain 5: DVP=1.3532 recon=0.444239 vert=0.079535 λ_vert=0.240
+[Epoch 20] domain 0: DVP=1.1014 recon=0.245348 vert=0.125580 λ_vert=0.240
+[Epoch 20] domain 1: DVP=1.1237 recon=0.166106 vert=0.265792 λ_vert=0.240
+[Epoch 20] domain 2: DVP=1.3604 recon=0.509051 vert=0.080355 λ_vert=0.240
+[Epoch 20] domain 3: DVP=1.3250 recon=0.402726 vert=0.089940 λ_vert=0.240
+[Epoch 20] domain 4: DVP=1.8289 recon=0.628649 vert=0.122602 λ_vert=0.240
+[Epoch 20] domain 5: DVP=1.3518 recon=0.484228 vert=0.079848 λ_vert=0.240
+[Epoch 30] domain 0: DVP=1.1006 recon=0.236105 vert=0.126272 λ_vert=0.240
+[Epoch 30] domain 1: DVP=1.1218 recon=0.136071 vert=0.251471 λ_vert=0.240
+[Epoch 30] domain 2: DVP=1.3592 recon=0.511262 vert=0.080596 λ_vert=0.240
+[Epoch 30] domain 3: DVP=1.3241 recon=0.402963 vert=0.090235 λ_vert=0.240
+[Epoch 30] domain 4: DVP=1.8287 recon=0.623083 vert=0.112866 λ_vert=0.240
+[Epoch 30] domain 5: DVP=1.3510 recon=0.491405 vert=0.080024 λ_vert=0.240
+[Epoch 40] domain 0: DVP=1.1000 recon=0.222030 vert=0.126865 λ_vert=0.090
+[Epoch 40] domain 1: DVP=1.1204 recon=0.113174 vert=0.245866 λ_vert=0.090
+[Epoch 40] domain 2: DVP=1.3585 recon=0.505083 vert=0.080764 λ_vert=0.090
+[Epoch 40] domain 3: DVP=1.3235 recon=0.395761 vert=0.090421 λ_vert=0.090
+[Epoch 40] domain 4: DVP=1.8289 recon=0.607368 vert=0.108702 λ_vert=0.090
+[Epoch 40] domain 5: DVP=1.3504 recon=0.489519 vert=0.080159 λ_vert=0.090
+[Epoch 50] domain 0: DVP=1.0996 recon=0.207963 vert=0.127574 λ_vert=0.090
+[Epoch 50] domain 1: DVP=1.1192 recon=0.096219 vert=0.245020 λ_vert=0.090
+[Epoch 50] domain 2: DVP=1.3578 recon=0.499434 vert=0.080922 λ_vert=0.090
+[Epoch 50] domain 3: DVP=1.3230 recon=0.388179 vert=0.090609 λ_vert=0.090
+[Epoch 50] domain 4: DVP=1.8290 recon=0.591762 vert=0.106625 λ_vert=0.090
+[Epoch 50] domain 5: DVP=1.3498 recon=0.487103 vert=0.080309 λ_vert=0.090
+[Epoch 60] domain 0: DVP=1.0992 recon=0.194553 vert=0.128390 λ_vert=0.090
+[Epoch 60] domain 1: DVP=1.1182 recon=0.083606 vert=0.243376 λ_vert=0.090
+[Epoch 60] domain 2: DVP=1.3570 recon=0.496553 vert=0.081099 λ_vert=0.090
+[Epoch 60] domain 3: DVP=1.3224 recon=0.382351 vert=0.090844 λ_vert=0.090
+[Epoch 60] domain 4: DVP=1.8290 recon=0.578398 vert=0.105326 λ_vert=0.090
+[Epoch 60] domain 5: DVP=1.3491 recon=0.486689 vert=0.080488 λ_vert=0.090
+[Epoch 70] domain 0: DVP=1.0988 recon=0.182521 vert=0.129301 λ_vert=0.090
+[Epoch 70] domain 1: DVP=1.1172 recon=0.075630 vert=0.241378 λ_vert=0.090
+[Epoch 70] domain 2: DVP=1.3561 recon=0.495917 vert=0.081300 λ_vert=0.090
+[Epoch 70] domain 3: DVP=1.3218 recon=0.378330 vert=0.091129 λ_vert=0.090
+[Epoch 70] domain 4: DVP=1.8289 recon=0.567755 vert=0.104395 λ_vert=0.090
+[Epoch 70] domain 5: DVP=1.3483 recon=0.488289 vert=0.080688 λ_vert=0.090
+[Epoch 80] domain 0: DVP=1.0984 recon=0.172119 vert=0.130243 λ_vert=0.090
+[Epoch 80] domain 1: DVP=1.1162 recon=0.070078 vert=0.240026 λ_vert=0.090
+[Epoch 80] domain 2: DVP=1.3554 recon=0.495823 vert=0.081502 λ_vert=0.090
+[Epoch 80] domain 3: DVP=1.3213 recon=0.375113 vert=0.091426 λ_vert=0.090
+[Epoch 80] domain 4: DVP=1.8289 recon=0.558746 vert=0.103661 λ_vert=0.090
+[Epoch 80] domain 5: DVP=1.3475 recon=0.490441 vert=0.080887 λ_vert=0.090
+[Epoch 90] domain 0: DVP=1.0982 recon=0.162482 vert=0.131237 λ_vert=0.020
+[Epoch 90] domain 1: DVP=1.1153 recon=0.063788 vert=0.240506 λ_vert=0.020
+[Epoch 90] domain 2: DVP=1.3547 recon=0.495124 vert=0.081694 λ_vert=0.020
+[Epoch 90] domain 3: DVP=1.3210 recon=0.371868 vert=0.091722 λ_vert=0.020
+[Epoch 90] domain 4: DVP=1.8289 recon=0.550221 vert=0.103146 λ_vert=0.020
+[Epoch 90] domain 5: DVP=1.3469 recon=0.492676 vert=0.081083 λ_vert=0.020
+[Epoch 100] domain 0: DVP=1.0980 recon=0.153145 vert=0.132282 λ_vert=0.020
+[Epoch 100] domain 1: DVP=1.1143 recon=0.057546 vert=0.242163 λ_vert=0.020
+[Epoch 100] domain 2: DVP=1.3543 recon=0.494043 vert=0.081875 λ_vert=0.020
+[Epoch 100] domain 3: DVP=1.3208 recon=0.368565 vert=0.092015 λ_vert=0.020
+[Epoch 100] domain 4: DVP=1.8290 recon=0.541970 vert=0.102818 λ_vert=0.020
+[Epoch 100] domain 5: DVP=1.3463 recon=0.495189 vert=0.081276 λ_vert=0.020
+[Epoch 110] domain 0: DVP=1.0980 recon=0.144196 vert=0.133317 λ_vert=0.020
+[Epoch 110] domain 1: DVP=1.1135 recon=0.051788 vert=0.243605 λ_vert=0.020
+[Epoch 110] domain 2: DVP=1.3540 recon=0.492551 vert=0.082038 λ_vert=0.020
+[Epoch 110] domain 3: DVP=1.3208 recon=0.365222 vert=0.092291 λ_vert=0.020
+[Epoch 110] domain 4: DVP=1.8294 recon=0.534075 vert=0.102569 λ_vert=0.020
+[Epoch 110] domain 5: DVP=1.3459 recon=0.497963 vert=0.081460 λ_vert=0.020
+[Epoch 120] domain 0: DVP=1.0982 recon=0.135769 vert=0.134331 λ_vert=0.020
+[Epoch 120] domain 1: DVP=1.1127 recon=0.046702 vert=0.244697 λ_vert=0.020
+[Epoch 120] domain 2: DVP=1.3538 recon=0.490854 vert=0.082186 λ_vert=0.020
+[Epoch 120] domain 3: DVP=1.3209 recon=0.361990 vert=0.092542 λ_vert=0.020
+[Epoch 120] domain 4: DVP=1.8299 recon=0.526683 vert=0.102361 λ_vert=0.020
+[Epoch 120] domain 5: DVP=1.3457 recon=0.501070 vert=0.081633 λ_vert=0.020
+[Epoch 130] domain 0: DVP=1.0984 recon=0.127932 vert=0.135313 λ_vert=0.020
+[Epoch 130] domain 1: DVP=1.1121 recon=0.042364 vert=0.245350 λ_vert=0.020
+[Epoch 130] domain 2: DVP=1.3538 recon=0.489275 vert=0.082319 λ_vert=0.020
+[Epoch 130] domain 3: DVP=1.3211 recon=0.359044 vert=0.092764 λ_vert=0.020
+[Epoch 130] domain 4: DVP=1.8306 recon=0.519938 vert=0.102178 λ_vert=0.020
+[Epoch 130] domain 5: DVP=1.3456 recon=0.504661 vert=0.081794 λ_vert=0.020
+[Epoch 140] domain 0: DVP=1.0987 recon=0.120719 vert=0.136250 λ_vert=0.020
+[Epoch 140] domain 1: DVP=1.1115 recon=0.038660 vert=0.245502 λ_vert=0.020
+[Epoch 140] domain 2: DVP=1.3540 recon=0.488008 vert=0.082439 λ_vert=0.020
+[Epoch 140] domain 3: DVP=1.3216 recon=0.356493 vert=0.092954 λ_vert=0.020
+[Epoch 140] domain 4: DVP=1.8315 recon=0.513982 vert=0.102014 λ_vert=0.020
+[Epoch 140] domain 5: DVP=1.3457 recon=0.508909 vert=0.081943 λ_vert=0.020
+[Epoch 150] domain 0: DVP=1.0992 recon=0.114139 vert=0.137134 λ_vert=0.020
+[Epoch 150] domain 1: DVP=1.1111 recon=0.035467 vert=0.245121 λ_vert=0.020
+[Epoch 150] domain 2: DVP=1.3543 recon=0.487271 vert=0.082545 λ_vert=0.020
+[Epoch 150] domain 3: DVP=1.3222 recon=0.354467 vert=0.093114 λ_vert=0.020
+[Epoch 150] domain 4: DVP=1.8326 recon=0.508971 vert=0.101865 λ_vert=0.020
+[Epoch 150] domain 5: DVP=1.3459 recon=0.513969 vert=0.082079 λ_vert=0.020
+[Epoch 160] domain 0: DVP=1.0997 recon=0.108180 vert=0.138039 λ_vert=0.001
+[Epoch 160] domain 1: DVP=1.1108 recon=0.032641 vert=0.245460 λ_vert=0.001
+[Epoch 160] domain 2: DVP=1.3547 recon=0.487201 vert=0.082645 λ_vert=0.001
+[Epoch 160] domain 3: DVP=1.3229 recon=0.353053 vert=0.093256 λ_vert=0.001
+[Epoch 160] domain 4: DVP=1.8338 recon=0.504984 vert=0.101769 λ_vert=0.001
+[Epoch 160] domain 5: DVP=1.3463 recon=0.519909 vert=0.082210 λ_vert=0.001
+[Epoch 170] domain 0: DVP=1.1003 recon=0.102826 vert=0.138970 λ_vert=0.001
+[Epoch 170] domain 1: DVP=1.1105 recon=0.030137 vert=0.246635 λ_vert=0.001
+[Epoch 170] domain 2: DVP=1.3553 recon=0.487784 vert=0.082741 λ_vert=0.001
+[Epoch 170] domain 3: DVP=1.3238 recon=0.352228 vert=0.093382 λ_vert=0.001
+[Epoch 170] domain 4: DVP=1.8353 recon=0.502001 vert=0.101729 λ_vert=0.001
+[Epoch 170] domain 5: DVP=1.3469 recon=0.526711 vert=0.082337 λ_vert=0.001
+[Epoch 180] domain 0: DVP=1.1011 recon=0.098061 vert=0.139845 λ_vert=0.001
+[Epoch 180] domain 1: DVP=1.1103 recon=0.027929 vert=0.247575 λ_vert=0.001
+[Epoch 180] domain 2: DVP=1.3560 recon=0.488946 vert=0.082825 λ_vert=0.001
+[Epoch 180] domain 3: DVP=1.3249 recon=0.351938 vert=0.093483 λ_vert=0.001
+[Epoch 180] domain 4: DVP=1.8369 recon=0.499940 vert=0.101708 λ_vert=0.001
+[Epoch 180] domain 5: DVP=1.3476 recon=0.534274 vert=0.082452 λ_vert=0.001
+[Epoch 190] domain 0: DVP=1.1019 recon=0.093837 vert=0.140635 λ_vert=0.001
+[Epoch 190] domain 1: DVP=1.1103 recon=0.025967 vert=0.248005 λ_vert=0.001
+[Epoch 190] domain 2: DVP=1.3570 recon=0.490582 vert=0.082896 λ_vert=0.001
+[Epoch 190] domain 3: DVP=1.3261 recon=0.352087 vert=0.093553 λ_vert=0.001
+[Epoch 190] domain 4: DVP=1.8388 recon=0.498651 vert=0.101691 λ_vert=0.001
+[Epoch 190] domain 5: DVP=1.3485 recon=0.542399 vert=0.082555 λ_vert=0.001
+[Epoch 200] domain 0: DVP=1.1028 recon=0.090105 vert=0.141330 λ_vert=0.001
+[Epoch 200] domain 1: DVP=1.1104 recon=0.024214 vert=0.247854 λ_vert=0.001
+[Epoch 200] domain 2: DVP=1.3581 recon=0.492620 vert=0.082952 λ_vert=0.001
+[Epoch 200] domain 3: DVP=1.3275 recon=0.352591 vert=0.093593 λ_vert=0.001
+[Epoch 200] domain 4: DVP=1.8408 recon=0.498006 vert=0.101674 λ_vert=0.001
+[Epoch 200] domain 5: DVP=1.3496 recon=0.550920 vert=0.082644 λ_vert=0.001
+[Epoch 210] domain 0: DVP=1.1039 recon=0.086817 vert=0.141924 λ_vert=0.001
+[Epoch 210] domain 1: DVP=1.1106 recon=0.022640 vert=0.247126 λ_vert=0.001
+[Epoch 210] domain 2: DVP=1.3593 recon=0.494966 vert=0.082992 λ_vert=0.001
+[Epoch 210] domain 3: DVP=1.3291 recon=0.353391 vert=0.093604 λ_vert=0.001
+[Epoch 210] domain 4: DVP=1.8431 recon=0.497912 vert=0.101652 λ_vert=0.001
+[Epoch 210] domain 5: DVP=1.3508 recon=0.559726 vert=0.082718 λ_vert=0.001
+[Epoch 220] domain 0: DVP=1.1051 recon=0.083924 vert=0.142414 λ_vert=0.001
+[Epoch 220] domain 1: DVP=1.1109 recon=0.021223 vert=0.245865 λ_vert=0.001
+[Epoch 220] domain 2: DVP=1.3608 recon=0.497513 vert=0.083016 λ_vert=0.001
+[Epoch 220] domain 3: DVP=1.3308 recon=0.354383 vert=0.093589 λ_vert=0.001
+[Epoch 220] domain 4: DVP=1.8455 recon=0.498268 vert=0.101625 λ_vert=0.001
+[Epoch 220] domain 5: DVP=1.3522 recon=0.568702 vert=0.082777 λ_vert=0.001
+[Epoch 230] domain 0: DVP=1.1064 recon=0.081376 vert=0.142800 λ_vert=0.001
+[Epoch 230] domain 1: DVP=1.1114 recon=0.019943 vert=0.244130 λ_vert=0.001
+[Epoch 230] domain 2: DVP=1.3624 recon=0.500149 vert=0.083023 λ_vert=0.001
+[Epoch 230] domain 3: DVP=1.3327 recon=0.355475 vert=0.093549 λ_vert=0.001
+[Epoch 230] domain 4: DVP=1.8482 recon=0.498954 vert=0.101591 λ_vert=0.001
+[Epoch 230] domain 5: DVP=1.3538 recon=0.577717 vert=0.082823 λ_vert=0.001
+[Epoch 240] domain 0: DVP=1.1078 recon=0.079127 vert=0.143082 λ_vert=0.001
+[Epoch 240] domain 1: DVP=1.1120 recon=0.018786 vert=0.241990 λ_vert=0.001
+[Epoch 240] domain 2: DVP=1.3642 recon=0.502816 vert=0.083013 λ_vert=0.001
+[Epoch 240] domain 3: DVP=1.3349 recon=0.356641 vert=0.093486 λ_vert=0.001
+[Epoch 240] domain 4: DVP=1.8510 recon=0.499897 vert=0.101549 λ_vert=0.001
+[Epoch 240] domain 5: DVP=1.3555 recon=0.586699 vert=0.082853 λ_vert=0.001
+[Epoch 250] domain 0: DVP=1.1094 recon=0.077140 vert=0.143264 λ_vert=0.001
+[Epoch 250] domain 1: DVP=1.1128 recon=0.017741 vert=0.239518 λ_vert=0.001
+[Epoch 250] domain 2: DVP=1.3662 recon=0.505499 vert=0.082986 λ_vert=0.001
+[Epoch 250] domain 3: DVP=1.3371 recon=0.357939 vert=0.093402 λ_vert=0.001
+[Epoch 250] domain 4: DVP=1.8541 recon=0.501050 vert=0.101499 λ_vert=0.001
+[Epoch 250] domain 5: DVP=1.3575 recon=0.595591 vert=0.082869 λ_vert=0.001
+[Epoch 260] domain 0: DVP=1.1110 recon=0.075385 vert=0.143348 λ_vert=0.001
+[Epoch 260] domain 1: DVP=1.1136 recon=0.016797 vert=0.236787 λ_vert=0.001
+[Epoch 260] domain 2: DVP=1.3683 recon=0.508172 vert=0.082941 λ_vert=0.001
+[Epoch 260] domain 3: DVP=1.3396 recon=0.359333 vert=0.093298 λ_vert=0.001
+[Epoch 260] domain 4: DVP=1.8573 recon=0.502370 vert=0.101440 λ_vert=0.001
+[Epoch 260] domain 5: DVP=1.3596 recon=0.604363 vert=0.082870 λ_vert=0.001
+[Epoch 270] domain 0: DVP=1.1128 recon=0.073835 vert=0.143340 λ_vert=0.001
+[Epoch 270] domain 1: DVP=1.1146 recon=0.015945 vert=0.233856 λ_vert=0.001
+[Epoch 270] domain 2: DVP=1.3707 recon=0.511135 vert=0.082878 λ_vert=0.001
+[Epoch 270] domain 3: DVP=1.3422 recon=0.360715 vert=0.093176 λ_vert=0.001
+[Epoch 270] domain 4: DVP=1.8608 recon=0.503831 vert=0.101371 λ_vert=0.001
+[Epoch 270] domain 5: DVP=1.3618 recon=0.612962 vert=0.082856 λ_vert=0.001
+[Epoch 280] domain 0: DVP=1.1147 recon=0.072464 vert=0.143248 λ_vert=0.001
+[Epoch 280] domain 1: DVP=1.1157 recon=0.015179 vert=0.230776 λ_vert=0.001
+[Epoch 280] domain 2: DVP=1.3732 recon=0.514328 vert=0.082798 λ_vert=0.001
+[Epoch 280] domain 3: DVP=1.3450 recon=0.362073 vert=0.093037 λ_vert=0.001
+[Epoch 280] domain 4: DVP=1.8644 recon=0.505453 vert=0.101291 λ_vert=0.001
+[Epoch 280] domain 5: DVP=1.3642 recon=0.621371 vert=0.082826 λ_vert=0.001
+Early stopping! best_epoch=232 best_loss=0.547656
+##################################################
+PreTrain datasets are  ['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+Downstream dataset is  Cora
+0.3031178182672808
+loading model from /home/ustc1958/lxy/graph/1/SAMGPT0505/checkpoints/model_node_GRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.001_gcn.pkl
+[EMBED] embeds shape: torch.Size([1, 2708, 256])
+
+===== 实验A: 标准下游 (full) =====
+  0%|          | 0/100 [00:00<?, ?it/s]  1%|          | 1/100 [00:10<17:47, 10.78s/it]  2%|▏         | 2/100 [00:21<17:50, 10.93s/it]  3%|▎         | 3/100 [00:32<17:42, 10.96s/it]  4%|▍         | 4/100 [00:43<17:24, 10.88s/it]  5%|▌         | 5/100 [00:54<17:09, 10.83s/it]  6%|▌         | 6/100 [01:04<16:52, 10.77s/it]  7%|▋         | 7/100 [01:15<16:39, 10.75s/it]  8%|▊         | 8/100 [01:26<16:28, 10.75s/it]  9%|▉         | 9/100 [01:37<16:21, 10.78s/it] 10%|█         | 10/100 [01:48<16:18, 10.87s/it] 11%|█         | 11/100 [01:58<15:57, 10.76s/it] 12%|█▏        | 12/100 [02:07<14:39,  9.99s/it] 13%|█▎        | 13/100 [02:15<13:47,  9.51s/it] 14%|█▍        | 14/100 [02:23<13:05,  9.14s/it] 15%|█▌        | 15/100 [02:32<12:37,  8.91s/it] 16%|█▌        | 16/100 [02:40<12:11,  8.71s/it] 17%|█▋        | 17/100 [02:48<11:51,  8.57s/it] 18%|█▊        | 18/100 [02:57<11:37,  8.51s/it] 19%|█▉        | 19/100 [03:05<11:22,  8.42s/it] 20%|██        | 20/100 [03:13<11:10,  8.38s/it] 21%|██        | 21/100 [03:21<10:59,  8.34s/it] 22%|██▏       | 22/100 [03:30<10:52,  8.36s/it] 23%|██▎       | 23/100 [03:38<10:41,  8.33s/it] 24%|██▍       | 24/100 [03:46<10:31,  8.31s/it] 25%|██▌       | 25/100 [03:54<10:22,  8.30s/it] 26%|██▌       | 26/100 [04:03<10:13,  8.29s/it] 27%|██▋       | 27/100 [04:11<10:03,  8.27s/it] 28%|██▊       | 28/100 [04:19<09:58,  8.32s/it] 29%|██▉       | 29/100 [04:28<09:48,  8.29s/it] 30%|███       | 30/100 [04:36<09:39,  8.27s/it] 31%|███       | 31/100 [04:44<09:30,  8.27s/it] 32%|███▏      | 32/100 [04:52<09:21,  8.26s/it] 33%|███▎      | 33/100 [05:01<09:14,  8.27s/it] 34%|███▍      | 34/100 [05:09<09:05,  8.26s/it] 35%|███▌      | 35/100 [05:17<08:56,  8.26s/it] 36%|███▌      | 36/100 [05:25<08:48,  8.25s/it] 37%|███▋      | 37/100 [05:34<08:39,  8.25s/it] 38%|███▊      | 38/100 [05:42<08:31,  8.25s/it] 39%|███▉      | 39/100 [05:50<08:22,  8.24s/it] 40%|████      | 40/100 [05:58<08:15,  8.27s/it] 41%|████      | 41/100 [06:07<08:08,  8.28s/it] 42%|████▏     | 42/100 [06:15<08:00,  8.28s/it] 43%|████▎     | 43/100 [06:23<07:51,  8.27s/it] 44%|████▍     | 44/100 [06:32<07:42,  8.26s/it] 45%|████▌     | 45/100 [06:40<07:34,  8.26s/it] 46%|████▌     | 46/100 [06:48<07:25,  8.26s/it] 47%|████▋     | 47/100 [06:56<07:17,  8.25s/it] 48%|████▊     | 48/100 [07:05<07:09,  8.25s/it] 49%|████▉     | 49/100 [07:13<07:00,  8.25s/it] 50%|█████     | 50/100 [07:21<06:52,  8.25s/it] 51%|█████     | 51/100 [07:29<06:44,  8.25s/it] 52%|█████▏    | 52/100 [07:38<06:36,  8.25s/it] 53%|█████▎    | 53/100 [07:46<06:28,  8.26s/it] 54%|█████▍    | 54/100 [07:54<06:20,  8.26s/it] 55%|█████▌    | 55/100 [08:02<06:11,  8.25s/it] 56%|█████▌    | 56/100 [08:11<06:02,  8.24s/it] 57%|█████▋    | 57/100 [08:19<05:54,  8.25s/it] 58%|█████▊    | 58/100 [08:27<05:46,  8.26s/it] 59%|█████▉    | 59/100 [08:35<05:38,  8.26s/it] 60%|██████    | 60/100 [08:44<05:30,  8.26s/it] 61%|██████    | 61/100 [08:52<05:22,  8.26s/it] 62%|██████▏   | 62/100 [09:00<05:14,  8.27s/it] 63%|██████▎   | 63/100 [09:08<05:05,  8.25s/it] 64%|██████▍   | 64/100 [09:17<04:57,  8.27s/it] 65%|██████▌   | 65/100 [09:25<04:49,  8.27s/it] 66%|██████▌   | 66/100 [09:33<04:41,  8.28s/it] 67%|██████▋   | 67/100 [09:42<04:33,  8.28s/it] 68%|██████▊   | 68/100 [09:50<04:25,  8.29s/it] 69%|██████▉   | 69/100 [09:58<04:16,  8.28s/it] 70%|███████   | 70/100 [10:06<04:08,  8.28s/it] 71%|███████   | 71/100 [10:15<04:00,  8.29s/it] 72%|███████▏  | 72/100 [10:23<03:52,  8.29s/it] 73%|███████▎  | 73/100 [10:31<03:43,  8.27s/it] 74%|███████▍  | 74/100 [10:39<03:35,  8.27s/it] 75%|███████▌  | 75/100 [10:48<03:26,  8.27s/it] 76%|███████▌  | 76/100 [10:56<03:18,  8.29s/it] 77%|███████▋  | 77/100 [11:04<03:10,  8.29s/it] 78%|███████▊  | 78/100 [11:13<03:02,  8.29s/it] 79%|███████▉  | 79/100 [11:21<02:54,  8.29s/it] 80%|████████  | 80/100 [11:29<02:45,  8.28s/it] 81%|████████  | 81/100 [11:37<02:37,  8.28s/it] 82%|████████▏ | 82/100 [11:46<02:28,  8.27s/it] 83%|████████▎ | 83/100 [11:54<02:20,  8.27s/it] 84%|████████▍ | 84/100 [12:02<02:12,  8.27s/it] 85%|████████▌ | 85/100 [12:11<02:03,  8.27s/it] 86%|████████▌ | 86/100 [12:19<01:56,  8.31s/it] 87%|████████▋ | 87/100 [12:27<01:47,  8.29s/it] 88%|████████▊ | 88/100 [12:35<01:39,  8.28s/it] 89%|████████▉ | 89/100 [12:44<01:31,  8.29s/it] 90%|█████████ | 90/100 [12:52<01:22,  8.29s/it] 91%|█████████ | 91/100 [13:00<01:14,  8.29s/it] 92%|█████████▏| 92/100 [13:09<01:06,  8.28s/it] 93%|█████████▎| 93/100 [13:17<00:57,  8.27s/it] 94%|█████████▍| 94/100 [13:25<00:49,  8.27s/it] 95%|█████████▌| 95/100 [13:33<00:41,  8.27s/it] 96%|█████████▌| 96/100 [13:42<00:33,  8.25s/it] 97%|█████████▋| 97/100 [13:50<00:24,  8.27s/it] 98%|█████████▊| 98/100 [13:58<00:16,  8.28s/it] 99%|█████████▉| 99/100 [14:06<00:08,  8.26s/it]100%|██████████| 100/100 [14:15<00:00,  8.27s/it]100%|██████████| 100/100 [14:15<00:00,  8.55s/it]
+
+===== 实验B: shared_only =====
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [00:08<02:37,  8.28s/it] 10%|█         | 2/20 [00:16<02:28,  8.26s/it] 15%|█▌        | 3/20 [00:24<02:19,  8.23s/it] 20%|██        | 4/20 [00:32<02:11,  8.23s/it] 25%|██▌       | 5/20 [00:41<02:03,  8.25s/it] 30%|███       | 6/20 [00:49<01:55,  8.26s/it] 35%|███▌      | 7/20 [00:57<01:47,  8.26s/it] 40%|████      | 8/20 [01:05<01:38,  8.24s/it] 45%|████▌     | 9/20 [01:14<01:30,  8.24s/it] 50%|█████     | 10/20 [01:21<01:20,  8.06s/it] 55%|█████▌    | 11/20 [01:27<01:07,  7.47s/it] 60%|██████    | 12/20 [01:34<00:57,  7.25s/it] 65%|██████▌   | 13/20 [01:42<00:52,  7.54s/it] 70%|███████   | 14/20 [01:51<00:46,  7.74s/it] 75%|███████▌  | 15/20 [01:59<00:39,  7.88s/it] 80%|████████  | 16/20 [02:07<00:31,  7.98s/it] 85%|████████▌ | 17/20 [02:15<00:24,  8.05s/it] 90%|█████████ | 18/20 [02:23<00:16,  8.09s/it] 95%|█████████▌| 19/20 [02:32<00:08,  8.12s/it]100%|██████████| 20/20 [02:40<00:00,  8.14s/it]100%|██████████| 20/20 [02:40<00:00,  8.02s/it]
+
+===== 实验C: frozen shared proto 增强 =====
+  0%|          | 0/100 [00:00<?, ?it/s]  0%|          | 0/100 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0505/src/execute.py", line 508, in <module>
+    logits = log(features, adj, sparse, model.gcn, idx_train, lbls_train, 1).float().cuda()
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0505/src/downprompt.py", line 205, in forward
+    a_s = self._compute_shared_coeff(embeds, z_s)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1965, in __getattr__
+    raise AttributeError(
+AttributeError: 'downprompt' object has no attribute '_compute_shared_coeff'

@@ -1,0 +1,48 @@
+{
+  "dataset": "Citeseer",
+  "num_samples": 3327,
+  "max_subgraph_nodes": 64,
+  "subgraph_hop_n": 2,
+  "cluster_method": "gmm",
+  "encoding_mode": "raw9",
+  "cluster_feature_names": [
+    "num_nodes",
+    "num_edges",
+    "avg_degree",
+    "max_degree",
+    "var_degree",
+    "density",
+    "avg_clustering",
+    "triangles",
+    "diameter"
+  ],
+  "use_log1p": true,
+  "log1p_feature_names": [
+    "num_nodes",
+    "num_edges",
+    "max_degree",
+    "var_degree",
+    "triangles",
+    "diameter"
+  ],
+  "requested_num_clusters": 8,
+  "effective_num_clusters": 8,
+  "remove_selfloops": false,
+  "feature_means": [
+    2.1818114818068493,
+    2.2491949263045705,
+    2.24515955107412,
+    1.8189052488373896,
+    1.1590611941027231,
+    0.45292774909286926,
+    0.19359825156999647,
+    1.0434464627763989,
+    1.2377305911731051
+  ],
+  "paths": {
+    "encodings_csv": "src/context_pipeline/outputs/citeseer/structural_encodings.csv",
+    "cluster_labels": "src/context_pipeline/outputs/citeseer/cluster_labels.npy",
+    "cluster_centers": "src/context_pipeline/outputs/citeseer/cluster_centers.npy",
+    "cluster_visualization": "src/context_pipeline/outputs/citeseer/stage1_cluster_visualization.png"
+  }
+}

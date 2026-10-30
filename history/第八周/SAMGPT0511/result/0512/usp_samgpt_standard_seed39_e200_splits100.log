@@ -1,0 +1,213 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed'], downstream_task='node', gpu=0, device='cuda', pretrain_method='USP', source_domains=['Citeseer', 'Pubmed'], target_domain='Cora', shots=[1, 3, 5], subgraph_hop=2, readout='prompt_weighted', query_mode='subgraph', prototype='attention', negative_sampling='domain_balanced', intra_neg_ratio=0.5, num_negatives=32, usp_lambda_ns=1.0, usp_lambda_ss=1.0, usp_lambda_align=1.0, usp_temperature=0.2, use_structure_token=True, usp_epochs=200, usp_down_epochs=200, usp_eval_protocol='samgpt_standard', epochs=10000, num_splits=100, split_start=0, align_type='none', structure_bucket='mixed', sanity_calibration=False, sanity_version='v2', sanity_epochs=[1, 10, 50], formal_batch1=False, query_objective_ablation=False, formal_seeds=[0, 1, 2], formal_epoch=50, overwrite_sanity_table=False, label_shuffle_seeds=[0, 1, 2], aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=1, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=5, lr=0.001, hid_units=128, layers_num=2, backbone='gcn', original_pretrain_method='USP')
+----------------------------------------------------------------------------------------------------
+2699128
+CUDA Available: True
+gpu: 0
+USP epoch 1/200 loss=14.101432 L_ns=1.086427 L_ss=6.507502
+USP epoch 2/200 loss=17.381502 L_ns=2.282068 L_ss=7.549717
+USP epoch 3/200 loss=17.440638 L_ns=2.358791 L_ss=7.540923
+USP epoch 4/200 loss=17.370296 L_ns=2.381141 L_ss=7.494577
+USP epoch 5/200 loss=17.287743 L_ns=2.386740 L_ss=7.450501
+USP epoch 6/200 loss=17.196953 L_ns=2.382347 L_ss=7.407303
+USP epoch 7/200 loss=17.106058 L_ns=2.374090 L_ss=7.365984
+USP epoch 8/200 loss=17.015129 L_ns=2.362935 L_ss=7.326096
+USP epoch 9/200 loss=16.911379 L_ns=2.352252 L_ss=7.279563
+USP epoch 10/200 loss=16.896870 L_ns=2.345155 L_ss=7.275857
+USP epoch 11/200 loss=16.854851 L_ns=2.338176 L_ss=7.258337
+USP epoch 12/200 loss=16.813097 L_ns=2.326794 L_ss=7.243151
+USP epoch 13/200 loss=16.739006 L_ns=2.309108 L_ss=7.214949
+USP epoch 14/200 loss=16.679562 L_ns=2.289545 L_ss=7.195009
+USP epoch 15/200 loss=16.598043 L_ns=2.267332 L_ss=7.165355
+USP epoch 16/200 loss=16.557854 L_ns=2.245119 L_ss=7.156368
+USP epoch 17/200 loss=16.473570 L_ns=2.221553 L_ss=7.126009
+USP epoch 18/200 loss=16.415628 L_ns=2.192541 L_ss=7.111543
+USP epoch 19/200 loss=16.293451 L_ns=2.154483 L_ss=7.069484
+USP epoch 20/200 loss=16.182190 L_ns=2.108644 L_ss=7.036773
+USP epoch 21/200 loss=16.081253 L_ns=2.058008 L_ss=7.011622
+USP epoch 22/200 loss=15.892251 L_ns=1.994580 L_ss=6.948836
+USP epoch 23/200 loss=15.714061 L_ns=1.921988 L_ss=6.896036
+USP epoch 24/200 loss=15.510900 L_ns=1.839549 L_ss=6.835675
+USP epoch 25/200 loss=15.265589 L_ns=1.738522 L_ss=6.763534
+USP epoch 26/200 loss=14.962545 L_ns=1.628960 L_ss=6.666793
+USP epoch 27/200 loss=14.703739 L_ns=1.539480 L_ss=6.582129
+USP epoch 28/200 loss=14.389675 L_ns=1.424696 L_ss=6.482490
+USP epoch 29/200 loss=14.019277 L_ns=1.305806 L_ss=6.356735
+USP epoch 30/200 loss=13.633883 L_ns=1.214806 L_ss=6.209539
+USP epoch 31/200 loss=13.308552 L_ns=1.126824 L_ss=6.090864
+USP epoch 32/200 loss=12.943588 L_ns=1.055698 L_ss=5.943945
+USP epoch 33/200 loss=12.686528 L_ns=1.008266 L_ss=5.839131
+USP epoch 34/200 loss=12.642931 L_ns=0.983418 L_ss=5.829757
+USP epoch 35/200 loss=12.643236 L_ns=0.968477 L_ss=5.837380
+USP epoch 36/200 loss=12.615498 L_ns=0.962913 L_ss=5.826292
+USP epoch 37/200 loss=12.640532 L_ns=0.964047 L_ss=5.838242
+USP epoch 38/200 loss=12.574992 L_ns=0.951514 L_ss=5.811739
+USP epoch 39/200 loss=12.472923 L_ns=0.930477 L_ss=5.771223
+USP epoch 40/200 loss=12.373041 L_ns=0.913574 L_ss=5.729734
+USP epoch 41/200 loss=12.296618 L_ns=0.900436 L_ss=5.698091
+USP epoch 42/200 loss=12.212417 L_ns=0.885626 L_ss=5.663395
+USP epoch 43/200 loss=12.153999 L_ns=0.875044 L_ss=5.639477
+USP epoch 44/200 loss=12.099749 L_ns=0.865856 L_ss=5.616946
+USP epoch 45/200 loss=12.057023 L_ns=0.852156 L_ss=5.602433
+USP epoch 46/200 loss=12.022848 L_ns=0.844510 L_ss=5.589170
+USP epoch 47/200 loss=12.003719 L_ns=0.833884 L_ss=5.584918
+USP epoch 48/200 loss=11.975054 L_ns=0.824457 L_ss=5.575299
+USP epoch 49/200 loss=11.941349 L_ns=0.818166 L_ss=5.561592
+USP epoch 50/200 loss=11.906350 L_ns=0.811698 L_ss=5.547326
+USP epoch 51/200 loss=11.875043 L_ns=0.810064 L_ss=5.532490
+USP epoch 52/200 loss=11.858790 L_ns=0.804199 L_ss=5.527296
+USP epoch 53/200 loss=11.822457 L_ns=0.798131 L_ss=5.512163
+USP epoch 54/200 loss=11.794529 L_ns=0.793396 L_ss=5.500567
+USP epoch 55/200 loss=11.762865 L_ns=0.789693 L_ss=5.486586
+USP epoch 56/200 loss=11.696155 L_ns=0.787677 L_ss=5.454239
+USP epoch 57/200 loss=11.672625 L_ns=0.780380 L_ss=5.446122
+USP epoch 58/200 loss=11.656333 L_ns=0.778963 L_ss=5.438685
+USP epoch 59/200 loss=11.633476 L_ns=0.774006 L_ss=5.429735
+USP epoch 60/200 loss=11.626841 L_ns=0.771486 L_ss=5.427678
+USP epoch 61/200 loss=11.599679 L_ns=0.769525 L_ss=5.415077
+USP epoch 62/200 loss=11.584343 L_ns=0.768626 L_ss=5.407859
+USP epoch 63/200 loss=11.552369 L_ns=0.767600 L_ss=5.392385
+USP epoch 64/200 loss=11.568617 L_ns=0.765071 L_ss=5.401773
+USP epoch 65/200 loss=11.539558 L_ns=0.763159 L_ss=5.388200
+USP epoch 66/200 loss=11.514866 L_ns=0.762492 L_ss=5.376188
+USP epoch 67/200 loss=11.482404 L_ns=0.761717 L_ss=5.360343
+USP epoch 68/200 loss=11.480750 L_ns=0.758006 L_ss=5.361372
+USP epoch 69/200 loss=11.475679 L_ns=0.758627 L_ss=5.358526
+USP epoch 70/200 loss=11.448120 L_ns=0.755110 L_ss=5.346505
+USP epoch 71/200 loss=11.433716 L_ns=0.755235 L_ss=5.339240
+USP epoch 72/200 loss=11.426252 L_ns=0.752401 L_ss=5.336926
+USP epoch 73/200 loss=11.397016 L_ns=0.751618 L_ss=5.322699
+USP epoch 74/200 loss=11.402979 L_ns=0.747360 L_ss=5.327810
+USP epoch 75/200 loss=11.383638 L_ns=0.749423 L_ss=5.317108
+USP epoch 76/200 loss=11.352445 L_ns=0.749849 L_ss=5.301298
+USP epoch 77/200 loss=11.351578 L_ns=0.745705 L_ss=5.302937
+USP epoch 78/200 loss=11.351673 L_ns=0.744232 L_ss=5.303721
+USP epoch 79/200 loss=11.344561 L_ns=0.744292 L_ss=5.300135
+USP epoch 80/200 loss=11.314865 L_ns=0.744517 L_ss=5.285174
+USP epoch 81/200 loss=11.324900 L_ns=0.743830 L_ss=5.290534
+USP epoch 82/200 loss=11.321995 L_ns=0.740931 L_ss=5.290532
+USP epoch 83/200 loss=11.324901 L_ns=0.743283 L_ss=5.290808
+USP epoch 84/200 loss=11.353647 L_ns=0.743433 L_ss=5.305107
+USP epoch 85/200 loss=11.304694 L_ns=0.743738 L_ss=5.280479
+USP epoch 86/200 loss=11.257082 L_ns=0.736378 L_ss=5.260352
+USP epoch 87/200 loss=11.266454 L_ns=0.735572 L_ss=5.265441
+USP epoch 88/200 loss=11.275853 L_ns=0.737195 L_ss=5.269329
+USP epoch 89/200 loss=11.270369 L_ns=0.735838 L_ss=5.267266
+USP epoch 90/200 loss=11.253070 L_ns=0.734109 L_ss=5.259480
+USP epoch 91/200 loss=11.258479 L_ns=0.735814 L_ss=5.261332
+USP epoch 92/200 loss=11.254137 L_ns=0.733251 L_ss=5.260442
+USP epoch 93/200 loss=11.225585 L_ns=0.731160 L_ss=5.247212
+USP epoch 94/200 loss=11.201774 L_ns=0.728755 L_ss=5.236509
+USP epoch 95/200 loss=11.232743 L_ns=0.729335 L_ss=5.251704
+USP epoch 96/200 loss=11.210508 L_ns=0.731734 L_ss=5.239388
+USP epoch 97/200 loss=11.176430 L_ns=0.724970 L_ss=5.225730
+USP epoch 98/200 loss=11.165188 L_ns=0.726663 L_ss=5.219263
+USP epoch 99/200 loss=11.190543 L_ns=0.726114 L_ss=5.232214
+USP epoch 100/200 loss=11.215074 L_ns=0.723937 L_ss=5.245568
+USP epoch 101/200 loss=11.149480 L_ns=0.721191 L_ss=5.214145
+USP epoch 102/200 loss=11.143664 L_ns=0.723172 L_ss=5.210247
+USP epoch 103/200 loss=11.156480 L_ns=0.721162 L_ss=5.217659
+USP epoch 104/200 loss=11.163158 L_ns=0.721291 L_ss=5.220934
+USP epoch 105/200 loss=11.144057 L_ns=0.720222 L_ss=5.211917
+USP epoch 106/200 loss=11.133552 L_ns=0.720594 L_ss=5.206479
+USP epoch 107/200 loss=11.132804 L_ns=0.718807 L_ss=5.206998
+USP epoch 108/200 loss=11.150631 L_ns=0.720505 L_ss=5.215063
+USP epoch 109/200 loss=11.142993 L_ns=0.717349 L_ss=5.212822
+USP epoch 110/200 loss=11.131107 L_ns=0.717761 L_ss=5.206673
+USP epoch 111/200 loss=11.123945 L_ns=0.715681 L_ss=5.204132
+USP epoch 112/200 loss=11.138220 L_ns=0.716601 L_ss=5.210810
+USP epoch 113/200 loss=11.127315 L_ns=0.716567 L_ss=5.205374
+USP epoch 114/200 loss=11.079504 L_ns=0.715787 L_ss=5.181859
+USP epoch 115/200 loss=11.120347 L_ns=0.715342 L_ss=5.202502
+USP epoch 116/200 loss=11.091902 L_ns=0.715728 L_ss=5.188087
+USP epoch 117/200 loss=11.081027 L_ns=0.712978 L_ss=5.184025
+USP epoch 118/200 loss=11.105509 L_ns=0.714437 L_ss=5.195535
+USP epoch 119/200 loss=11.082954 L_ns=0.712893 L_ss=5.185031
+USP epoch 120/200 loss=11.080772 L_ns=0.710550 L_ss=5.185111
+USP epoch 121/200 loss=11.052848 L_ns=0.710115 L_ss=5.171366
+USP epoch 122/200 loss=11.072055 L_ns=0.710164 L_ss=5.180945
+USP epoch 123/200 loss=11.056711 L_ns=0.710747 L_ss=5.172982
+USP epoch 124/200 loss=11.067952 L_ns=0.710005 L_ss=5.178974
+USP epoch 125/200 loss=11.057783 L_ns=0.708397 L_ss=5.174693
+USP epoch 126/200 loss=11.058650 L_ns=0.709316 L_ss=5.174667
+USP epoch 127/200 loss=11.060824 L_ns=0.709085 L_ss=5.175870
+USP epoch 128/200 loss=11.051433 L_ns=0.705377 L_ss=5.173028
+USP epoch 129/200 loss=11.041994 L_ns=0.709217 L_ss=5.166388
+USP epoch 130/200 loss=11.046103 L_ns=0.707560 L_ss=5.169271
+USP epoch 131/200 loss=11.054850 L_ns=0.706576 L_ss=5.174137
+USP epoch 132/200 loss=11.049973 L_ns=0.706484 L_ss=5.171745
+USP epoch 133/200 loss=11.043365 L_ns=0.706274 L_ss=5.168546
+USP epoch 134/200 loss=11.052402 L_ns=0.704466 L_ss=5.173969
+USP epoch 135/200 loss=11.042946 L_ns=0.705585 L_ss=5.168681
+USP epoch 136/200 loss=11.025167 L_ns=0.700480 L_ss=5.162344
+USP epoch 137/200 loss=11.030728 L_ns=0.705705 L_ss=5.162512
+USP epoch 138/200 loss=11.020262 L_ns=0.704996 L_ss=5.157633
+USP epoch 139/200 loss=11.009896 L_ns=0.701503 L_ss=5.154197
+USP epoch 140/200 loss=11.028708 L_ns=0.700412 L_ss=5.164148
+USP epoch 141/200 loss=11.032303 L_ns=0.700994 L_ss=5.165654
+USP epoch 142/200 loss=11.006200 L_ns=0.702860 L_ss=5.151670
+USP epoch 143/200 loss=10.999439 L_ns=0.701826 L_ss=5.148807
+USP epoch 144/200 loss=11.002401 L_ns=0.699513 L_ss=5.151444
+USP epoch 145/200 loss=11.017260 L_ns=0.700673 L_ss=5.158293
+USP epoch 146/200 loss=10.986196 L_ns=0.700954 L_ss=5.142621
+USP epoch 147/200 loss=10.986889 L_ns=0.699081 L_ss=5.143904
+USP epoch 148/200 loss=10.997252 L_ns=0.699646 L_ss=5.148803
+USP epoch 149/200 loss=11.018274 L_ns=0.697037 L_ss=5.160618
+USP epoch 150/200 loss=10.970396 L_ns=0.698011 L_ss=5.136192
+USP epoch 151/200 loss=11.013283 L_ns=0.697856 L_ss=5.157713
+USP epoch 152/200 loss=10.995722 L_ns=0.699434 L_ss=5.148144
+USP epoch 153/200 loss=10.996811 L_ns=0.698759 L_ss=5.149026
+USP epoch 154/200 loss=11.005956 L_ns=0.697946 L_ss=5.154005
+USP epoch 155/200 loss=11.011374 L_ns=0.698410 L_ss=5.156482
+USP epoch 156/200 loss=10.972025 L_ns=0.696373 L_ss=5.137826
+USP epoch 157/200 loss=10.971381 L_ns=0.694806 L_ss=5.138287
+USP epoch 158/200 loss=10.977908 L_ns=0.696541 L_ss=5.140684
+USP epoch 159/200 loss=10.977245 L_ns=0.696297 L_ss=5.140474
+USP epoch 160/200 loss=10.967449 L_ns=0.695095 L_ss=5.136177
+USP epoch 161/200 loss=10.983335 L_ns=0.694630 L_ss=5.144353
+USP epoch 162/200 loss=10.965219 L_ns=0.694828 L_ss=5.135195
+USP epoch 163/200 loss=10.957262 L_ns=0.694763 L_ss=5.131249
+USP epoch 164/200 loss=10.956704 L_ns=0.692942 L_ss=5.131881
+USP epoch 165/200 loss=10.954227 L_ns=0.692148 L_ss=5.131040
+USP epoch 166/200 loss=10.971211 L_ns=0.692836 L_ss=5.139188
+USP epoch 167/200 loss=10.952438 L_ns=0.692421 L_ss=5.130009
+USP epoch 168/200 loss=10.955854 L_ns=0.693056 L_ss=5.131399
+USP epoch 169/200 loss=10.957443 L_ns=0.692968 L_ss=5.132237
+USP epoch 170/200 loss=10.937304 L_ns=0.692199 L_ss=5.122552
+USP epoch 171/200 loss=10.963766 L_ns=0.690424 L_ss=5.136671
+USP epoch 172/200 loss=10.965077 L_ns=0.690519 L_ss=5.137279
+USP epoch 173/200 loss=10.966721 L_ns=0.691334 L_ss=5.137693
+USP epoch 174/200 loss=10.933706 L_ns=0.688068 L_ss=5.122819
+USP epoch 175/200 loss=10.929891 L_ns=0.688663 L_ss=5.120614
+USP epoch 176/200 loss=10.920144 L_ns=0.688075 L_ss=5.116035
+USP epoch 177/200 loss=10.953883 L_ns=0.688126 L_ss=5.132878
+USP epoch 178/200 loss=10.929219 L_ns=0.688625 L_ss=5.120298
+USP epoch 179/200 loss=10.931628 L_ns=0.688493 L_ss=5.121568
+USP epoch 180/200 loss=10.938555 L_ns=0.688664 L_ss=5.124945
+USP epoch 181/200 loss=10.948887 L_ns=0.688358 L_ss=5.130264
+USP epoch 182/200 loss=10.930063 L_ns=0.687805 L_ss=5.121129
+USP epoch 183/200 loss=10.914676 L_ns=0.686528 L_ss=5.114074
+USP epoch 184/200 loss=10.924658 L_ns=0.686141 L_ss=5.119258
+USP epoch 185/200 loss=10.946657 L_ns=0.685820 L_ss=5.130419
+USP epoch 186/200 loss=10.913397 L_ns=0.685423 L_ss=5.113987
+USP epoch 187/200 loss=10.892368 L_ns=0.682972 L_ss=5.104698
+USP epoch 188/200 loss=10.906020 L_ns=0.685810 L_ss=5.110105
+USP epoch 189/200 loss=10.899626 L_ns=0.684261 L_ss=5.107682
+USP epoch 190/200 loss=10.915875 L_ns=0.684264 L_ss=5.115806
+USP epoch 191/200 loss=10.904683 L_ns=0.683543 L_ss=5.110570
+USP epoch 192/200 loss=10.919003 L_ns=0.686187 L_ss=5.116408
+USP epoch 193/200 loss=10.924991 L_ns=0.681828 L_ss=5.121582
+USP epoch 194/200 loss=10.913542 L_ns=0.683315 L_ss=5.115113
+USP epoch 195/200 loss=10.902995 L_ns=0.681186 L_ss=5.110905
+USP epoch 196/200 loss=10.955284 L_ns=0.682581 L_ss=5.136351
+USP epoch 197/200 loss=10.904444 L_ns=0.682441 L_ss=5.111001
+USP epoch 198/200 loss=10.900664 L_ns=0.681201 L_ss=5.109732
+USP epoch 199/200 loss=10.909609 L_ns=0.684281 L_ss=5.112664
+USP epoch 200/200 loss=10.919897 L_ns=0.681719 L_ss=5.119089
+USP SAMGPT-standard 1-shot:   0%|          | 0/100 [00:00<?, ?it/s]USP SAMGPT-standard 1-shot:   1%|          | 1/100 [00:00<00:58,  1.68it/s]USP SAMGPT-standard 1-shot:   2%|▏         | 2/100 [00:01<01:00,  1.63it/s]USP SAMGPT-standard 1-shot:   3%|▎         | 3/100 [00:01<01:01,  1.58it/s]USP SAMGPT-standard 1-shot:   4%|▍         | 4/100 [00:02<01:01,  1.55it/s]USP SAMGPT-standard 1-shot:   5%|▌         | 5/100 [00:03<00:59,  1.60it/s]USP SAMGPT-standard 1-shot:   6%|▌         | 6/100 [00:03<00:59,  1.57it/s]USP SAMGPT-standard 1-shot:   7%|▋         | 7/100 [00:04<01:00,  1.54it/s]USP SAMGPT-standard 1-shot:   8%|▊         | 8/100 [00:05<01:00,  1.52it/s]USP SAMGPT-standard 1-shot:   9%|▉         | 9/100 [00:05<00:58,  1.55it/s]USP SAMGPT-standard 1-shot:  10%|█         | 10/100 [00:06<00:58,  1.54it/s]USP SAMGPT-standard 1-shot:  11%|█         | 11/100 [00:07<00:58,  1.53it/s]USP SAMGPT-standard 1-shot:  12%|█▏        | 12/100 [00:07<00:58,  1.52it/s]USP SAMGPT-standard 1-shot:  13%|█▎        | 13/100 [00:08<00:57,  1.51it/s]USP SAMGPT-standard 1-shot:  14%|█▍        | 14/100 [00:09<00:57,  1.51it/s]USP SAMGPT-standard 1-shot:  15%|█▌        | 15/100 [00:09<00:56,  1.50it/s]USP SAMGPT-standard 1-shot:  16%|█▌        | 16/100 [00:10<00:55,  1.51it/s]USP SAMGPT-standard 1-shot:  17%|█▋        | 17/100 [00:11<00:54,  1.54it/s]USP SAMGPT-standard 1-shot:  18%|█▊        | 18/100 [00:11<00:53,  1.52it/s]USP SAMGPT-standard 1-shot:  19%|█▉        | 19/100 [00:12<00:52,  1.53it/s]USP SAMGPT-standard 1-shot:  20%|██        | 20/100 [00:12<00:50,  1.59it/s]USP SAMGPT-standard 1-shot:  21%|██        | 21/100 [00:13<00:48,  1.64it/s]USP SAMGPT-standard 1-shot:  22%|██▏       | 22/100 [00:14<00:46,  1.67it/s]USP SAMGPT-standard 1-shot:  23%|██▎       | 23/100 [00:14<00:45,  1.69it/s]USP SAMGPT-standard 1-shot:  24%|██▍       | 24/100 [00:15<00:45,  1.65it/s]USP SAMGPT-standard 1-shot:  25%|██▌       | 25/100 [00:15<00:46,  1.60it/s]USP SAMGPT-standard 1-shot:  26%|██▌       | 26/100 [00:16<00:47,  1.57it/s]USP SAMGPT-standard 1-shot:  27%|██▋       | 27/100 [00:17<00:47,  1.54it/s]USP SAMGPT-standard 1-shot:  28%|██▊       | 28/100 [00:17<00:47,  1.53it/s]USP SAMGPT-standard 1-shot:  29%|██▉       | 29/100 [00:18<00:46,  1.52it/s]USP SAMGPT-standard 1-shot:  30%|███       | 30/100 [00:19<00:45,  1.53it/s]USP SAMGPT-standard 1-shot:  31%|███       | 31/100 [00:19<00:45,  1.52it/s]USP SAMGPT-standard 1-shot:  32%|███▏      | 32/100 [00:20<00:45,  1.51it/s]USP SAMGPT-standard 1-shot:  33%|███▎      | 33/100 [00:21<00:44,  1.50it/s]USP SAMGPT-standard 1-shot:  34%|███▍      | 34/100 [00:21<00:43,  1.53it/s]USP SAMGPT-standard 1-shot:  35%|███▌      | 35/100 [00:22<00:37,  1.73it/s]USP SAMGPT-standard 1-shot:  36%|███▌      | 36/100 [00:22<00:35,  1.78it/s]USP SAMGPT-standard 1-shot:  37%|███▋      | 37/100 [00:23<00:36,  1.73it/s]USP SAMGPT-standard 1-shot:  38%|███▊      | 38/100 [00:24<00:36,  1.69it/s]USP SAMGPT-standard 1-shot:  39%|███▉      | 39/100 [00:24<00:37,  1.64it/s]USP SAMGPT-standard 1-shot:  40%|████      | 40/100 [00:25<00:37,  1.60it/s]USP SAMGPT-standard 1-shot:  41%|████      | 41/100 [00:26<00:37,  1.57it/s]USP SAMGPT-standard 1-shot:  42%|████▏     | 42/100 [00:26<00:37,  1.55it/s]USP SAMGPT-standard 1-shot:  43%|████▎     | 43/100 [00:27<00:36,  1.55it/s]USP SAMGPT-standard 1-shot:  44%|████▍     | 44/100 [00:28<00:36,  1.54it/s]USP SAMGPT-standard 1-shot:  45%|████▌     | 45/100 [00:28<00:36,  1.53it/s]USP SAMGPT-standard 1-shot:  46%|████▌     | 46/100 [00:29<00:35,  1.52it/s]USP SAMGPT-standard 1-shot:  47%|████▋     | 47/100 [00:30<00:34,  1.52it/s]USP SAMGPT-standard 1-shot:  48%|████▊     | 48/100 [00:30<00:34,  1.51it/s]USP SAMGPT-standard 1-shot:  49%|████▉     | 49/100 [00:31<00:33,  1.52it/s]USP SAMGPT-standard 1-shot:  50%|█████     | 50/100 [00:31<00:32,  1.54it/s]USP SAMGPT-standard 1-shot:  51%|█████     | 51/100 [00:32<00:31,  1.56it/s]USP SAMGPT-standard 1-shot:  52%|█████▏    | 52/100 [00:33<00:30,  1.57it/s]USP SAMGPT-standard 1-shot:  53%|█████▎    | 53/100 [00:33<00:28,  1.63it/s]USP SAMGPT-standard 1-shot:  54%|█████▍    | 54/100 [00:34<00:28,  1.60it/s]USP SAMGPT-standard 1-shot:  55%|█████▌    | 55/100 [00:35<00:28,  1.57it/s]USP SAMGPT-standard 1-shot:  56%|█████▌    | 56/100 [00:35<00:28,  1.57it/s]USP SAMGPT-standard 1-shot:  57%|█████▋    | 57/100 [00:36<00:27,  1.55it/s]USP SAMGPT-standard 1-shot:  58%|█████▊    | 58/100 [00:37<00:27,  1.54it/s]USP SAMGPT-standard 1-shot:  59%|█████▉    | 59/100 [00:37<00:26,  1.53it/s]USP SAMGPT-standard 1-shot:  60%|██████    | 60/100 [00:38<00:26,  1.52it/s]USP SAMGPT-standard 1-shot:  61%|██████    | 61/100 [00:39<00:25,  1.52it/s]USP SAMGPT-standard 1-shot:  62%|██████▏   | 62/100 [00:39<00:25,  1.52it/s]USP SAMGPT-standard 1-shot:  63%|██████▎   | 63/100 [00:40<00:24,  1.52it/s]USP SAMGPT-standard 1-shot:  64%|██████▍   | 64/100 [00:41<00:23,  1.52it/s]USP SAMGPT-standard 1-shot:  65%|██████▌   | 65/100 [00:41<00:23,  1.51it/s]USP SAMGPT-standard 1-shot:  66%|██████▌   | 66/100 [00:42<00:22,  1.51it/s]USP SAMGPT-standard 1-shot:  67%|██████▋   | 67/100 [00:43<00:21,  1.51it/s]USP SAMGPT-standard 1-shot:  68%|██████▊   | 68/100 [00:43<00:21,  1.51it/s]USP SAMGPT-standard 1-shot:  69%|██████▉   | 69/100 [00:44<00:20,  1.52it/s]USP SAMGPT-standard 1-shot:  70%|███████   | 70/100 [00:44<00:19,  1.57it/s]USP SAMGPT-standard 1-shot:  71%|███████   | 71/100 [00:45<00:18,  1.56it/s]USP SAMGPT-standard 1-shot:  72%|███████▏  | 72/100 [00:46<00:18,  1.54it/s]USP SAMGPT-standard 1-shot:  73%|███████▎  | 73/100 [00:46<00:17,  1.53it/s]USP SAMGPT-standard 1-shot:  74%|███████▍  | 74/100 [00:47<00:17,  1.52it/s]USP SAMGPT-standard 1-shot:  75%|███████▌  | 75/100 [00:48<00:16,  1.51it/s]USP SAMGPT-standard 1-shot:  76%|███████▌  | 76/100 [00:48<00:15,  1.53it/s]USP SAMGPT-standard 1-shot:  77%|███████▋  | 77/100 [00:49<00:14,  1.59it/s]USP SAMGPT-standard 1-shot:  78%|███████▊  | 78/100 [00:50<00:13,  1.63it/s]USP SAMGPT-standard 1-shot:  79%|███████▉  | 79/100 [00:50<00:12,  1.67it/s]USP SAMGPT-standard 1-shot:  80%|████████  | 80/100 [00:51<00:11,  1.69it/s]USP SAMGPT-standard 1-shot:  81%|████████  | 81/100 [00:51<00:11,  1.71it/s]USP SAMGPT-standard 1-shot:  82%|████████▏ | 82/100 [00:52<00:10,  1.72it/s]USP SAMGPT-standard 1-shot:  83%|████████▎ | 83/100 [00:52<00:09,  1.73it/s]USP SAMGPT-standard 1-shot:  84%|████████▍ | 84/100 [00:53<00:09,  1.73it/s]USP SAMGPT-standard 1-shot:  85%|████████▌ | 85/100 [00:54<00:08,  1.74it/s]USP SAMGPT-standard 1-shot:  86%|████████▌ | 86/100 [00:54<00:08,  1.74it/s]USP SAMGPT-standard 1-shot:  87%|████████▋ | 87/100 [00:55<00:07,  1.75it/s]USP SAMGPT-standard 1-shot:  88%|████████▊ | 88/100 [00:55<00:06,  1.75it/s]USP SAMGPT-standard 1-shot:  89%|████████▉ | 89/100 [00:56<00:06,  1.75it/s]USP SAMGPT-standard 1-shot:  90%|█████████ | 90/100 [00:56<00:05,  1.75it/s]USP SAMGPT-standard 1-shot:  91%|█████████ | 91/100 [00:57<00:05,  1.75it/s]USP SAMGPT-standard 1-shot:  92%|█████████▏| 92/100 [00:58<00:04,  1.75it/s]USP SAMGPT-standard 1-shot:  93%|█████████▎| 93/100 [00:58<00:04,  1.75it/s]USP SAMGPT-standard 1-shot:  94%|█████████▍| 94/100 [00:59<00:03,  1.75it/s]USP SAMGPT-standard 1-shot:  95%|█████████▌| 95/100 [00:59<00:02,  1.71it/s]USP SAMGPT-standard 1-shot:  96%|█████████▌| 96/100 [01:00<00:02,  1.64it/s]USP SAMGPT-standard 1-shot:  97%|█████████▋| 97/100 [01:01<00:01,  1.60it/s]USP SAMGPT-standard 1-shot:  98%|█████████▊| 98/100 [01:01<00:01,  1.57it/s]USP SAMGPT-standard 1-shot:  99%|█████████▉| 99/100 [01:02<00:00,  1.55it/s]USP SAMGPT-standard 1-shot: 100%|██████████| 100/100 [01:03<00:00,  1.56it/s]USP SAMGPT-standard 1-shot: 100%|██████████| 100/100 [01:03<00:00,  1.59it/s]
+USP result: {"method": "USP", "internal_pretrain_path": "USP", "setting": "source_only", "eval_protocol": "samgpt_standard", "source_domains": ["Citeseer", "Pubmed"], "target_domain": "Cora", "shot": 1, "seed": 39, "split": "0-99", "num_splits": 100, "test_nodes": 100, "adaptation_setting": "transductive", "target_unlabeled_used": true, "target_edges_used": true, "label_shuffle": false, "feature_permuted": false, "subgraph_hop": 2, "readout": "prompt_weighted", "query_mode": "subgraph", "prototype": "attention", "negative_sampling": "domain_balanced", "num_intra_neg": 16, "num_inter_neg": 16, "num_negatives_requested": 32, "num_negatives_effective": 32, "intra_neg_ratio_requested": 0.5, "intra_neg_ratio_effective": 0.5, "negative_fallback_reason": null, "negative_sampling_effective": "domain_balanced", "use_structure_token": true, "align_type": "none", "L_ns_final_epoch_mean": 0.6817188262939453, "L_ss_final_epoch_mean": 5.119089365005493, "L_align_final_epoch_mean": 0.0, "loss_stat_type": "final_epoch_mean", "train_time": 1066.8316876888275, "acc": 49.629998937249184, "acc_std": 12.993902794186829, "macro_f1": 40.15195165315051, "macro_f1_std": 9.699546649157107, "micro_f1": 49.63, "micro_f1_std": 12.993902999157534, "margin": 0.05523440775927156, "margin_std": 0.29863265548206297, "compactness": 1.0813985973356922e-08, "compactness_std": 2.2442289371295863e-08, "separation": 0.5258860409259796, "separation_std": 0.06018838704104191}
+USP SAMGPT-standard 3-shot:   0%|          | 0/100 [00:00<?, ?it/s]USP SAMGPT-standard 3-shot:   1%|          | 1/100 [00:00<01:07,  1.46it/s]USP SAMGPT-standard 3-shot:   2%|▏         | 2/100 [00:01<01:06,  1.46it/s]USP SAMGPT-standard 3-shot:   3%|▎         | 3/100 [00:02<01:05,  1.48it/s]USP SAMGPT-standard 3-shot:   4%|▍         | 4/100 [00:02<01:01,  1.56it/s]USP SAMGPT-standard 3-shot:   5%|▌         | 5/100 [00:03<01:02,  1.52it/s]USP SAMGPT-standard 3-shot:   6%|▌         | 6/100 [00:03<01:02,  1.51it/s]USP SAMGPT-standard 3-shot:   7%|▋         | 7/100 [00:04<01:01,  1.51it/s]USP SAMGPT-standard 3-shot:   8%|▊         | 8/100 [00:05<01:01,  1.49it/s]USP SAMGPT-standard 3-shot:   9%|▉         | 9/100 [00:06<01:01,  1.49it/s]USP SAMGPT-standard 3-shot:  10%|█         | 10/100 [00:06<01:00,  1.48it/s]USP SAMGPT-standard 3-shot:  11%|█         | 11/100 [00:07<01:00,  1.48it/s]USP SAMGPT-standard 3-shot:  12%|█▏        | 12/100 [00:08<00:59,  1.47it/s]USP SAMGPT-standard 3-shot:  13%|█▎        | 13/100 [00:08<00:59,  1.47it/s]USP SAMGPT-standard 3-shot:  14%|█▍        | 14/100 [00:09<00:57,  1.48it/s]USP SAMGPT-standard 3-shot:  15%|█▌        | 15/100 [00:10<00:57,  1.49it/s]USP SAMGPT-standard 3-shot:  16%|█▌        | 16/100 [00:10<00:56,  1.48it/s]USP SAMGPT-standard 3-shot:  17%|█▋        | 17/100 [00:11<00:56,  1.48it/s]USP SAMGPT-standard 3-shot:  18%|█▊        | 18/100 [00:12<00:55,  1.48it/s]USP SAMGPT-standard 3-shot:  19%|█▉        | 19/100 [00:12<00:52,  1.55it/s]USP SAMGPT-standard 3-shot:  20%|██        | 20/100 [00:13<00:52,  1.52it/s]USP SAMGPT-standard 3-shot:  21%|██        | 21/100 [00:13<00:51,  1.54it/s]USP SAMGPT-standard 3-shot:  22%|██▏       | 22/100 [00:14<00:49,  1.59it/s]USP SAMGPT-standard 3-shot:  23%|██▎       | 23/100 [00:15<00:47,  1.62it/s]USP SAMGPT-standard 3-shot:  24%|██▍       | 24/100 [00:15<00:46,  1.65it/s]USP SAMGPT-standard 3-shot:  25%|██▌       | 25/100 [00:16<00:44,  1.67it/s]USP SAMGPT-standard 3-shot:  26%|██▌       | 26/100 [00:16<00:44,  1.68it/s]USP SAMGPT-standard 3-shot:  27%|██▋       | 27/100 [00:17<00:43,  1.69it/s]USP SAMGPT-standard 3-shot:  28%|██▊       | 28/100 [00:18<00:42,  1.69it/s]USP SAMGPT-standard 3-shot:  29%|██▉       | 29/100 [00:18<00:41,  1.70it/s]USP SAMGPT-standard 3-shot:  30%|███       | 30/100 [00:19<00:41,  1.70it/s]USP SAMGPT-standard 3-shot:  31%|███       | 31/100 [00:19<00:40,  1.71it/s]USP SAMGPT-standard 3-shot:  32%|███▏      | 32/100 [00:20<00:39,  1.71it/s]USP SAMGPT-standard 3-shot:  33%|███▎      | 33/100 [00:21<00:39,  1.71it/s]USP SAMGPT-standard 3-shot:  34%|███▍      | 34/100 [00:21<00:38,  1.71it/s]USP SAMGPT-standard 3-shot:  35%|███▌      | 35/100 [00:22<00:37,  1.71it/s]USP SAMGPT-standard 3-shot:  36%|███▌      | 36/100 [00:22<00:37,  1.71it/s]USP SAMGPT-standard 3-shot:  37%|███▋      | 37/100 [00:23<00:37,  1.67it/s]USP SAMGPT-standard 3-shot:  38%|███▊      | 38/100 [00:24<00:37,  1.65it/s]USP SAMGPT-standard 3-shot:  39%|███▉      | 39/100 [00:24<00:38,  1.59it/s]USP SAMGPT-standard 3-shot:  40%|████      | 40/100 [00:25<00:38,  1.56it/s]USP SAMGPT-standard 3-shot:  41%|████      | 41/100 [00:26<00:38,  1.53it/s]USP SAMGPT-standard 3-shot:  42%|████▏     | 42/100 [00:26<00:38,  1.52it/s]USP SAMGPT-standard 3-shot:  43%|████▎     | 43/100 [00:27<00:37,  1.51it/s]USP SAMGPT-standard 3-shot:  44%|████▍     | 44/100 [00:28<00:36,  1.52it/s]USP SAMGPT-standard 3-shot:  45%|████▌     | 45/100 [00:28<00:36,  1.51it/s]USP SAMGPT-standard 3-shot:  46%|████▌     | 46/100 [00:29<00:36,  1.50it/s]USP SAMGPT-standard 3-shot:  47%|████▋     | 47/100 [00:30<00:35,  1.49it/s]USP SAMGPT-standard 3-shot:  48%|████▊     | 48/100 [00:30<00:35,  1.48it/s]USP SAMGPT-standard 3-shot:  49%|████▉     | 49/100 [00:31<00:34,  1.48it/s]USP SAMGPT-standard 3-shot:  50%|█████     | 50/100 [00:32<00:33,  1.48it/s]USP SAMGPT-standard 3-shot:  51%|█████     | 51/100 [00:32<00:33,  1.48it/s]USP SAMGPT-standard 3-shot:  52%|█████▏    | 52/100 [00:33<00:29,  1.60it/s]USP SAMGPT-standard 3-shot:  53%|█████▎    | 53/100 [00:33<00:28,  1.65it/s]USP SAMGPT-standard 3-shot:  54%|█████▍    | 54/100 [00:34<00:28,  1.60it/s]USP SAMGPT-standard 3-shot:  55%|█████▌    | 55/100 [00:35<00:28,  1.56it/s]USP SAMGPT-standard 3-shot:  56%|█████▌    | 56/100 [00:35<00:28,  1.53it/s]USP SAMGPT-standard 3-shot:  57%|█████▋    | 57/100 [00:36<00:28,  1.52it/s]USP SAMGPT-standard 3-shot:  58%|█████▊    | 58/100 [00:37<00:27,  1.50it/s]USP SAMGPT-standard 3-shot:  59%|█████▉    | 59/100 [00:37<00:27,  1.51it/s]USP SAMGPT-standard 3-shot:  60%|██████    | 60/100 [00:38<00:25,  1.57it/s]USP SAMGPT-standard 3-shot:  61%|██████    | 61/100 [00:39<00:24,  1.61it/s]USP SAMGPT-standard 3-shot:  62%|██████▏   | 62/100 [00:39<00:23,  1.64it/s]USP SAMGPT-standard 3-shot:  63%|██████▎   | 63/100 [00:40<00:22,  1.66it/s]USP SAMGPT-standard 3-shot:  64%|██████▍   | 64/100 [00:40<00:21,  1.67it/s]USP SAMGPT-standard 3-shot:  65%|██████▌   | 65/100 [00:41<00:20,  1.68it/s]USP SAMGPT-standard 3-shot:  66%|██████▌   | 66/100 [00:41<00:20,  1.69it/s]USP SAMGPT-standard 3-shot:  67%|██████▋   | 67/100 [00:42<00:19,  1.69it/s]USP SAMGPT-standard 3-shot:  68%|██████▊   | 68/100 [00:43<00:18,  1.70it/s]USP SAMGPT-standard 3-shot:  69%|██████▉   | 69/100 [00:43<00:18,  1.70it/s]USP SAMGPT-standard 3-shot:  70%|███████   | 70/100 [00:44<00:17,  1.71it/s]USP SAMGPT-standard 3-shot:  71%|███████   | 71/100 [00:44<00:16,  1.71it/s]USP SAMGPT-standard 3-shot:  72%|███████▏  | 72/100 [00:45<00:16,  1.71it/s]USP SAMGPT-standard 3-shot:  73%|███████▎  | 73/100 [00:46<00:15,  1.71it/s]USP SAMGPT-standard 3-shot:  74%|███████▍  | 74/100 [00:46<00:15,  1.71it/s]USP SAMGPT-standard 3-shot:  75%|███████▌  | 75/100 [00:47<00:14,  1.71it/s]USP SAMGPT-standard 3-shot:  76%|███████▌  | 76/100 [00:47<00:14,  1.71it/s]USP SAMGPT-standard 3-shot:  77%|███████▋  | 77/100 [00:48<00:13,  1.71it/s]USP SAMGPT-standard 3-shot:  78%|███████▊  | 78/100 [00:48<00:12,  1.71it/s]USP SAMGPT-standard 3-shot:  79%|███████▉  | 79/100 [00:49<00:12,  1.71it/s]USP SAMGPT-standard 3-shot:  80%|████████  | 80/100 [00:50<00:11,  1.71it/s]USP SAMGPT-standard 3-shot:  81%|████████  | 81/100 [00:50<00:11,  1.71it/s]USP SAMGPT-standard 3-shot:  82%|████████▏ | 82/100 [00:51<00:10,  1.71it/s]USP SAMGPT-standard 3-shot:  83%|████████▎ | 83/100 [00:51<00:09,  1.71it/s]USP SAMGPT-standard 3-shot:  84%|████████▍ | 84/100 [00:52<00:09,  1.71it/s]USP SAMGPT-standard 3-shot:  85%|████████▌ | 85/100 [00:53<00:09,  1.64it/s]USP SAMGPT-standard 3-shot:  86%|████████▌ | 86/100 [00:53<00:08,  1.59it/s]USP SAMGPT-standard 3-shot:  87%|████████▋ | 87/100 [00:54<00:08,  1.61it/s]USP SAMGPT-standard 3-shot:  88%|████████▊ | 88/100 [00:54<00:06,  1.84it/s]USP SAMGPT-standard 3-shot:  89%|████████▉ | 89/100 [00:55<00:05,  2.03it/s]USP SAMGPT-standard 3-shot:  90%|█████████ | 90/100 [00:55<00:04,  2.21it/s]USP SAMGPT-standard 3-shot:  91%|█████████ | 91/100 [00:55<00:03,  2.35it/s]USP SAMGPT-standard 3-shot:  92%|█████████▏| 92/100 [00:56<00:03,  2.46it/s]USP SAMGPT-standard 3-shot:  93%|█████████▎| 93/100 [00:56<00:02,  2.54it/s]USP SAMGPT-standard 3-shot:  94%|█████████▍| 94/100 [00:56<00:02,  2.60it/s]USP SAMGPT-standard 3-shot:  95%|█████████▌| 95/100 [00:57<00:01,  2.64it/s]USP SAMGPT-standard 3-shot:  96%|█████████▌| 96/100 [00:57<00:01,  2.67it/s]USP SAMGPT-standard 3-shot:  97%|█████████▋| 97/100 [00:58<00:01,  2.69it/s]USP SAMGPT-standard 3-shot:  98%|█████████▊| 98/100 [00:58<00:00,  2.71it/s]USP SAMGPT-standard 3-shot:  99%|█████████▉| 99/100 [00:58<00:00,  2.72it/s]USP SAMGPT-standard 3-shot: 100%|██████████| 100/100 [00:59<00:00,  2.73it/s]USP SAMGPT-standard 3-shot: 100%|██████████| 100/100 [00:59<00:00,  1.69it/s]
+USP result: {"method": "USP", "internal_pretrain_path": "USP", "setting": "source_only", "eval_protocol": "samgpt_standard", "source_domains": ["Citeseer", "Pubmed"], "target_domain": "Cora", "shot": 3, "seed": 39, "split": "0-99", "num_splits": 100, "test_nodes": 100, "adaptation_setting": "transductive", "target_unlabeled_used": true, "target_edges_used": true, "label_shuffle": false, "feature_permuted": false, "subgraph_hop": 2, "readout": "prompt_weighted", "query_mode": "subgraph", "prototype": "attention", "negative_sampling": "domain_balanced", "num_intra_neg": 16, "num_inter_neg": 16, "num_negatives_requested": 32, "num_negatives_effective": 32, "intra_neg_ratio_requested": 0.5, "intra_neg_ratio_effective": 0.5, "negative_fallback_reason": null, "negative_sampling_effective": "domain_balanced", "use_structure_token": true, "align_type": "none", "L_ns_final_epoch_mean": 0.6817188262939453, "L_ss_final_epoch_mean": 5.119089365005493, "L_align_final_epoch_mean": 0.0, "loss_stat_type": "final_epoch_mean", "train_time": 1126.013833284378, "acc": 66.28999853134155, "acc_std": 8.289331986447898, "macro_f1": 54.48665677981668, "macro_f1_std": 7.271842437817782, "micro_f1": 66.29, "micro_f1_std": 8.28933231949536, "margin": 0.3719037562608719, "margin_std": 0.13353131484944053, "compactness": 0.13014379017055033, "compactness_std": 0.019073782390184764, "separation": 0.413379448056221, "separation_std": 0.03595684927554649}
+USP SAMGPT-standard 5-shot:   0%|          | 0/100 [00:00<?, ?it/s]USP SAMGPT-standard 5-shot:   1%|          | 1/100 [00:00<00:38,  2.57it/s]USP SAMGPT-standard 5-shot:   2%|▏         | 2/100 [00:00<00:47,  2.05it/s]USP SAMGPT-standard 5-shot:   3%|▎         | 3/100 [00:01<00:50,  1.93it/s]USP SAMGPT-standard 5-shot:   4%|▍         | 4/100 [00:02<00:52,  1.84it/s]USP SAMGPT-standard 5-shot:   5%|▌         | 5/100 [00:02<00:52,  1.79it/s]USP SAMGPT-standard 5-shot:   6%|▌         | 6/100 [00:03<00:53,  1.77it/s]USP SAMGPT-standard 5-shot:   7%|▋         | 7/100 [00:03<00:53,  1.75it/s]USP SAMGPT-standard 5-shot:   8%|▊         | 8/100 [00:04<00:52,  1.74it/s]USP SAMGPT-standard 5-shot:   9%|▉         | 9/100 [00:04<00:52,  1.73it/s]USP SAMGPT-standard 5-shot:  10%|█         | 10/100 [00:05<00:52,  1.73it/s]USP SAMGPT-standard 5-shot:  11%|█         | 11/100 [00:06<00:51,  1.72it/s]USP SAMGPT-standard 5-shot:  12%|█▏        | 12/100 [00:06<00:51,  1.72it/s]USP SAMGPT-standard 5-shot:  13%|█▎        | 13/100 [00:07<00:50,  1.72it/s]USP SAMGPT-standard 5-shot:  14%|█▍        | 14/100 [00:07<00:50,  1.72it/s]USP SAMGPT-standard 5-shot:  15%|█▌        | 15/100 [00:08<00:49,  1.72it/s]USP SAMGPT-standard 5-shot:  16%|█▌        | 16/100 [00:09<00:48,  1.72it/s]USP SAMGPT-standard 5-shot:  17%|█▋        | 17/100 [00:09<00:48,  1.72it/s]USP SAMGPT-standard 5-shot:  18%|█▊        | 18/100 [00:10<00:47,  1.72it/s]USP SAMGPT-standard 5-shot:  19%|█▉        | 19/100 [00:10<00:47,  1.72it/s]USP SAMGPT-standard 5-shot:  20%|██        | 20/100 [00:11<00:46,  1.72it/s]USP SAMGPT-standard 5-shot:  21%|██        | 21/100 [00:11<00:45,  1.72it/s]USP SAMGPT-standard 5-shot:  22%|██▏       | 22/100 [00:12<00:45,  1.72it/s]USP SAMGPT-standard 5-shot:  23%|██▎       | 23/100 [00:13<00:44,  1.72it/s]USP SAMGPT-standard 5-shot:  24%|██▍       | 24/100 [00:13<00:46,  1.64it/s]USP SAMGPT-standard 5-shot:  25%|██▌       | 25/100 [00:14<00:46,  1.63it/s]USP SAMGPT-standard 5-shot:  26%|██▌       | 26/100 [00:15<00:46,  1.58it/s]USP SAMGPT-standard 5-shot:  27%|██▋       | 27/100 [00:15<00:47,  1.54it/s]USP SAMGPT-standard 5-shot:  28%|██▊       | 28/100 [00:16<00:45,  1.57it/s]USP SAMGPT-standard 5-shot:  29%|██▉       | 29/100 [00:17<00:44,  1.61it/s]USP SAMGPT-standard 5-shot:  30%|███       | 30/100 [00:17<00:42,  1.64it/s]USP SAMGPT-standard 5-shot:  31%|███       | 31/100 [00:18<00:41,  1.66it/s]USP SAMGPT-standard 5-shot:  32%|███▏      | 32/100 [00:18<00:40,  1.68it/s]USP SAMGPT-standard 5-shot:  33%|███▎      | 33/100 [00:19<00:39,  1.69it/s]USP SAMGPT-standard 5-shot:  34%|███▍      | 34/100 [00:19<00:38,  1.70it/s]USP SAMGPT-standard 5-shot:  35%|███▌      | 35/100 [00:20<00:38,  1.70it/s]USP SAMGPT-standard 5-shot:  36%|███▌      | 36/100 [00:21<00:37,  1.71it/s]USP SAMGPT-standard 5-shot:  37%|███▋      | 37/100 [00:21<00:36,  1.71it/s]USP SAMGPT-standard 5-shot:  38%|███▊      | 38/100 [00:22<00:36,  1.71it/s]USP SAMGPT-standard 5-shot:  39%|███▉      | 39/100 [00:22<00:35,  1.71it/s]USP SAMGPT-standard 5-shot:  40%|████      | 40/100 [00:23<00:35,  1.71it/s]USP SAMGPT-standard 5-shot:  41%|████      | 41/100 [00:23<00:34,  1.72it/s]USP SAMGPT-standard 5-shot:  42%|████▏     | 42/100 [00:24<00:33,  1.72it/s]USP SAMGPT-standard 5-shot:  43%|████▎     | 43/100 [00:25<00:33,  1.72it/s]USP SAMGPT-standard 5-shot:  44%|████▍     | 44/100 [00:25<00:33,  1.69it/s]USP SAMGPT-standard 5-shot:  45%|████▌     | 45/100 [00:26<00:34,  1.62it/s]USP SAMGPT-standard 5-shot:  46%|████▌     | 46/100 [00:27<00:33,  1.60it/s]USP SAMGPT-standard 5-shot:  47%|████▋     | 47/100 [00:27<00:33,  1.58it/s]USP SAMGPT-standard 5-shot:  48%|████▊     | 48/100 [00:28<00:33,  1.54it/s]USP SAMGPT-standard 5-shot:  49%|████▉     | 49/100 [00:29<00:33,  1.52it/s]USP SAMGPT-standard 5-shot:  50%|█████     | 50/100 [00:29<00:33,  1.50it/s]USP SAMGPT-standard 5-shot:  51%|█████     | 51/100 [00:30<00:32,  1.49it/s]USP SAMGPT-standard 5-shot:  52%|█████▏    | 52/100 [00:31<00:31,  1.53it/s]USP SAMGPT-standard 5-shot:  53%|█████▎    | 53/100 [00:31<00:30,  1.52it/s]USP SAMGPT-standard 5-shot:  54%|█████▍    | 54/100 [00:32<00:30,  1.51it/s]USP SAMGPT-standard 5-shot:  55%|█████▌    | 55/100 [00:33<00:30,  1.49it/s]USP SAMGPT-standard 5-shot:  56%|█████▌    | 56/100 [00:33<00:29,  1.48it/s]USP SAMGPT-standard 5-shot:  57%|█████▋    | 57/100 [00:34<00:29,  1.48it/s]USP SAMGPT-standard 5-shot:  58%|█████▊    | 58/100 [00:35<00:27,  1.50it/s]USP SAMGPT-standard 5-shot:  59%|█████▉    | 59/100 [00:35<00:27,  1.50it/s]USP SAMGPT-standard 5-shot:  60%|██████    | 60/100 [00:36<00:26,  1.49it/s]USP SAMGPT-standard 5-shot:  61%|██████    | 61/100 [00:37<00:26,  1.49it/s]USP SAMGPT-standard 5-shot:  62%|██████▏   | 62/100 [00:37<00:25,  1.49it/s]USP SAMGPT-standard 5-shot:  63%|██████▎   | 63/100 [00:38<00:24,  1.48it/s]USP SAMGPT-standard 5-shot:  64%|██████▍   | 64/100 [00:39<00:24,  1.48it/s]USP SAMGPT-standard 5-shot:  65%|██████▌   | 65/100 [00:39<00:23,  1.50it/s]USP SAMGPT-standard 5-shot:  66%|██████▌   | 66/100 [00:40<00:22,  1.50it/s]USP SAMGPT-standard 5-shot:  67%|██████▋   | 67/100 [00:41<00:22,  1.49it/s]USP SAMGPT-standard 5-shot:  68%|██████▊   | 68/100 [00:41<00:21,  1.48it/s]USP SAMGPT-standard 5-shot:  69%|██████▉   | 69/100 [00:42<00:21,  1.47it/s]USP SAMGPT-standard 5-shot:  70%|███████   | 70/100 [00:43<00:20,  1.47it/s]USP SAMGPT-standard 5-shot:  71%|███████   | 71/100 [00:43<00:19,  1.47it/s]USP SAMGPT-standard 5-shot:  72%|███████▏  | 72/100 [00:44<00:17,  1.65it/s]USP SAMGPT-standard 5-shot:  73%|███████▎  | 73/100 [00:45<00:17,  1.58it/s]USP SAMGPT-standard 5-shot:  74%|███████▍  | 74/100 [00:45<00:16,  1.54it/s]USP SAMGPT-standard 5-shot:  75%|███████▌  | 75/100 [00:46<00:16,  1.52it/s]USP SAMGPT-standard 5-shot:  76%|███████▌  | 76/100 [00:47<00:16,  1.50it/s]USP SAMGPT-standard 5-shot:  77%|███████▋  | 77/100 [00:47<00:15,  1.49it/s]USP SAMGPT-standard 5-shot:  78%|███████▊  | 78/100 [00:48<00:14,  1.54it/s]USP SAMGPT-standard 5-shot:  79%|███████▉  | 79/100 [00:48<00:13,  1.59it/s]USP SAMGPT-standard 5-shot:  80%|████████  | 80/100 [00:49<00:12,  1.62it/s]USP SAMGPT-standard 5-shot:  81%|████████  | 81/100 [00:50<00:11,  1.65it/s]USP SAMGPT-standard 5-shot:  82%|████████▏ | 82/100 [00:50<00:10,  1.67it/s]USP SAMGPT-standard 5-shot:  83%|████████▎ | 83/100 [00:51<00:10,  1.68it/s]USP SAMGPT-standard 5-shot:  84%|████████▍ | 84/100 [00:51<00:09,  1.69it/s]USP SAMGPT-standard 5-shot:  85%|████████▌ | 85/100 [00:52<00:08,  1.70it/s]USP SAMGPT-standard 5-shot:  86%|████████▌ | 86/100 [00:53<00:08,  1.70it/s]USP SAMGPT-standard 5-shot:  87%|████████▋ | 87/100 [00:53<00:07,  1.71it/s]USP SAMGPT-standard 5-shot:  88%|████████▊ | 88/100 [00:54<00:07,  1.71it/s]USP SAMGPT-standard 5-shot:  89%|████████▉ | 89/100 [00:54<00:06,  1.71it/s]USP SAMGPT-standard 5-shot:  90%|█████████ | 90/100 [00:55<00:05,  1.71it/s]USP SAMGPT-standard 5-shot:  91%|█████████ | 91/100 [00:55<00:05,  1.71it/s]USP SAMGPT-standard 5-shot:  92%|█████████▏| 92/100 [00:56<00:04,  1.71it/s]USP SAMGPT-standard 5-shot:  93%|█████████▎| 93/100 [00:57<00:04,  1.71it/s]USP SAMGPT-standard 5-shot:  94%|█████████▍| 94/100 [00:57<00:03,  1.71it/s]USP SAMGPT-standard 5-shot:  95%|█████████▌| 95/100 [00:58<00:02,  1.71it/s]USP SAMGPT-standard 5-shot:  96%|█████████▌| 96/100 [00:58<00:02,  1.72it/s]USP SAMGPT-standard 5-shot:  97%|█████████▋| 97/100 [00:59<00:01,  1.71it/s]USP SAMGPT-standard 5-shot:  98%|█████████▊| 98/100 [01:00<00:01,  1.72it/s]USP SAMGPT-standard 5-shot:  99%|█████████▉| 99/100 [01:00<00:00,  1.72it/s]USP SAMGPT-standard 5-shot: 100%|██████████| 100/100 [01:01<00:00,  1.71it/s]USP SAMGPT-standard 5-shot: 100%|██████████| 100/100 [01:01<00:00,  1.63it/s]
+USP result: {"method": "USP", "internal_pretrain_path": "USP", "setting": "source_only", "eval_protocol": "samgpt_standard", "source_domains": ["Citeseer", "Pubmed"], "target_domain": "Cora", "shot": 5, "seed": 39, "split": "0-99", "num_splits": 100, "test_nodes": 100, "adaptation_setting": "transductive", "target_unlabeled_used": true, "target_edges_used": true, "label_shuffle": false, "feature_permuted": false, "subgraph_hop": 2, "readout": "prompt_weighted", "query_mode": "subgraph", "prototype": "attention", "negative_sampling": "domain_balanced", "num_intra_neg": 16, "num_inter_neg": 16, "num_negatives_requested": 32, "num_negatives_effective": 32, "intra_neg_ratio_requested": 0.5, "intra_neg_ratio_effective": 0.5, "negative_fallback_reason": null, "negative_sampling_effective": "domain_balanced", "use_structure_token": true, "align_type": "none", "L_ns_final_epoch_mean": 0.6817188262939453, "L_ss_final_epoch_mean": 5.119089365005493, "L_align_final_epoch_mean": 0.0, "loss_stat_type": "final_epoch_mean", "train_time": 1187.2394552230835, "acc": 70.51999846100807, "acc_std": 6.76515123198078, "macro_f1": 56.93082214638388, "macro_f1_std": 5.0273175392225555, "micro_f1": 70.52, "micro_f1_std": 6.76515134548169, "margin": 0.46181509874761106, "margin_std": 0.12114320194439569, "compactness": 0.16103150114417075, "compactness_std": 0.01635013255139487, "separation": 0.39437262833118436, "separation_std": 0.02653207689488782}
+USP minimal logs saved to /home/ustc1958/lxy/graph/1/SAMGPT0511/result/usp_minimal_runs.jsonl

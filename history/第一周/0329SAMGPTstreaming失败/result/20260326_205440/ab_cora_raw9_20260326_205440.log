@@ -1,0 +1,51 @@
+[run] log file: ./result/20260326_205440/ab_cora_raw9_20260326_205440.log
+[run] result dir: ./result/20260326_205440
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', stage2_top_ratio=0.3, stage2_max_subgraph_nodes=64, struct_max_subgraph_nodes=64, context_outputs_root='./result/20260326_205440/stage_outputs', result_subdir='20260326_205440', force_rebuild_stage1=0, force_rebuild_stage2=0, stage1_num_clusters=8, stage1_subgraph_hop_n=2, stage1_encoding_mode='raw9', stage1_use_log1p=1, stage1_remove_selfloops=1, stage2_top_m_per_cluster=5, stage2_alpha=1.0, stage2_beta=1.0, stage2_gamma=1.0, egraphcl_tau=0.85)
+----------------------------------------------------------------------------------------------------
+[context] flags: stage2_filter=on, struct_contrastive=on, skip_pretrain=0
+2837513
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+[result] run_subdir=20260326_205440
+[result] result_dir=/home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440
+[context] Building stage1 for Citeseer -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440/stage_outputs/stage1/citeseer
+[context] Building stage2 for Citeseer -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440/stage_outputs/stage2/citeseer
+[context] Building stage1 for Pubmed -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440/stage_outputs/stage1/pubmed
+[context] Building stage2 for Pubmed -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440/stage_outputs/stage2/pubmed
+[context] Building stage1 for Photo -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440/stage_outputs/stage1/photo
+[context] Building stage2 for Photo -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440/stage_outputs/stage2/photo
+[context] Building stage1 for Computers -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440/stage_outputs/stage1/computers
+[context] Building stage2 for Computers -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440/stage_outputs/stage2/computers
+[context] Building stage1 for FacebookPagePage -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440/stage_outputs/stage1/facebookpagepage
+[context] Building stage2 for FacebookPagePage -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440/stage_outputs/stage2/facebookpagepage
+[context] Building stage1 for LastFMAsia -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440/stage_outputs/stage1/lastfmasia
+[context] Building stage2 for LastFMAsia -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_205440/stage_outputs/stage2/lastfmasia
+0
+step 0
+[stage2-subgraph] Citeseer graph_id=0: pool_samples=40, rank_samples=999, sample_overlap=10, selected_subgraphs=1029, used_subgraphs=981, training_nodes_total=19760, training_nodes_unique=2137, dup_ratio=9.2466
+[stage2-subgraph] Pubmed graph_id=0: pool_samples=40, rank_samples=5916, sample_overlap=15, selected_subgraphs=5941, used_subgraphs=5941, training_nodes_total=200568, training_nodes_unique=18605, dup_ratio=10.7803
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/./src/train/execute.py", line 661, in <module>
+    assert args.skip_pretrain == 1, 'try to use trained models'
+AssertionError: try to use trained models
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/./src/train/execute.py", line 712, in <module>
+    aug_feature, aug_adj, lbl = aug.build_aug(adj, feature, sparse, drop_percent)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/src/utils/aug.py", line 253, in build_aug
+    aug_adj1edge = aug_random_edge(adj, drop_percent=drop_percent)  # random drop edges
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/src/utils/aug.py", line 77, in aug_random_edge
+    aug_adj = copy.deepcopy(input_adj.todense().tolist())
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/scipy/sparse/_matrix.py", line 146, in todense
+    return super().todense(order, out)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/scipy/sparse/_base.py", line 994, in todense
+    return self._ascontainer(self.toarray(order=order, out=out))
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/scipy/sparse/_compressed.py", line 1170, in toarray
+    out = self._process_toarray_args(order, out)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/scipy/sparse/_base.py", line 1367, in _process_toarray_args
+    return np.zeros(self.shape, dtype=self.dtype, order=order)
+numpy._core._exceptions._ArrayMemoryError: Unable to allocate 300. GiB for an array with shape (200568, 200568) and data type float64

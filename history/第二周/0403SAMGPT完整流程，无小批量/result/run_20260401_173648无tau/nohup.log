@@ -1,0 +1,380 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='EGRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.0003, grad_clip_norm=1.0, lr_scheduler_patience=20, lr_scheduler_factor=0.5, lr_scheduler_min_lr=1e-05, early_stop_min_delta=0.0001, hid_units=256, layers_num=3, backbone='gcn', max_subgraph_nodes=64, stage2_top_ratio=0.3, context_outputs_root='./result/run_20260401_173648/stage_outputs', result_subdir='run_20260401_173648', flow_check_only=0, flow_report_name='flow_check_report.json', force_rebuild_stage1=0, force_rebuild_stage2=0, stage1_num_clusters=12, stage1_subgraph_hop_n=2, stage1_encoding_mode='raw9', stage1_use_log1p=1, stage1_remove_selfloops=1, stage2_top_m_per_cluster=8, stage2_alpha=1.0, stage2_beta=1.0, stage2_gamma=1.0, egraphcl_tau=0.99, egraphcl_temperature=0.2, egraphcl_pair_chunk_size=256, egraphcl_candidate_pool=1024, egraphcl_soft_topk=10, egraphcl_max_negatives=512, egraphcl_batch_size=128, egraphcl_mask_source='structure', egraphcl_min_negatives_per_anchor=1, egraphcl_structure_min_negatives_per_anchor=8, egraphcl_max_mask_ratio=0.95, egraphcl_curve_log_every=0, egraphcl_curve_bins=200, egraphcl_curve_chunk_rows=512, egraphcl_curve_save_plot=0, global_subgraph_pool=1, force_rebuild_global_pool=0, sample_progress_every=1000, egraphcl_mask_log_every=5, epoch_log_every=5)
+----------------------------------------------------------------------------------------------------
+[context] flags: stage2_filter=on, struct_contrastive=on, global_subgraph_pool=1, skip_pretrain=0
+3645380
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+[result] run_subdir=run_20260401_173648
+[result] result_dir=/home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260401_173648
+0
+[trace] 2026-04-01 17:36:51 pretrain.prepare.start: pretrain_method=EGRAPHCL, global_subgraph_pool=1, target_graph_id=[1]
+[trace] 2026-04-01 17:36:51 global_pool.start: datasets=6, target_graph_ids=[0], force_rebuild_global_pool=0, stage1_num_clusters=12, stage2_top_ratio=0.3
+[trace] 2026-04-01 17:36:51 global_pool.cache_lookup.start: cache_paths=2
+[global_pool] loaded cache: /home/ustc1958/lxy/graph/1/SAMGPT/cache/global_pool/global_subgraph_pool.pt (selected=22430)
+[trace] 2026-04-01 17:36:58 global_pool.cache_hit: selected=22430, dataset_coverage=6, cluster_coverage=12, similarity_shape=(22430, 22430)
+[stage1-metrics] global_merged: /home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260401_173648/stage_outputs/stage1/global_merged/stage1_metrics.json
+[stage1-metrics] global_merged_selected: /home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260401_173648/stage_outputs/stage1/global_merged_selected/stage1_metrics_cluster_pca.png
+[stage2-metrics] global_merged: /home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260401_173648/stage_outputs/stage2/global_merged/stage2_metrics.json
+[trace] 2026-04-01 17:37:32 global_pool.cache_hit.done
+[trace] 2026-04-01 17:37:32 pretrain.prepare.global_pool.loaded: selected_samples=22430, similarity_shape=(22430, 22430)
+[egraphcl] online pair mode enabled: tau=0.9900, pair mask is built from prompt-conditioned sample embeddings in model forward (fixed tau; no scheduling).
+[trace] 2026-04-01 17:37:32 pretrain.prepare.sample_progress: current=1, total=22430, dataset=Citeseer, dataset_idx=0, graph_id=0, cluster_id=11, nodes=2
+[trace] 2026-04-01 17:37:54 pretrain.prepare.sample_progress: current=1000, total=22430, dataset=Citeseer, dataset_idx=0, graph_id=0, cluster_id=9, nodes=38
+[trace] 2026-04-01 17:38:11 pretrain.prepare.sample_progress: current=2000, total=22430, dataset=Citeseer, dataset_idx=0, graph_id=0, cluster_id=11, nodes=2
+[trace] 2026-04-01 17:38:28 pretrain.prepare.sample_progress: current=3000, total=22430, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=20
+[trace] 2026-04-01 17:39:42 pretrain.prepare.sample_progress: current=4000, total=22430, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=15
+[trace] 2026-04-01 17:41:20 pretrain.prepare.sample_progress: current=5000, total=22430, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=3, nodes=37
+[trace] 2026-04-01 17:42:53 pretrain.prepare.sample_progress: current=6000, total=22430, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=2, nodes=4
+[trace] 2026-04-01 17:44:37 pretrain.prepare.sample_progress: current=7000, total=22430, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=3, nodes=38
+[trace] 2026-04-01 17:46:18 pretrain.prepare.sample_progress: current=8000, total=22430, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=4, nodes=6
+[trace] 2026-04-01 17:48:04 pretrain.prepare.sample_progress: current=9000, total=22430, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=3, nodes=54
+[trace] 2026-04-01 17:49:39 pretrain.prepare.sample_progress: current=10000, total=22430, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=3, nodes=29
+[trace] 2026-04-01 17:51:19 pretrain.prepare.sample_progress: current=11000, total=22430, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=8, nodes=64
+[trace] 2026-04-01 17:52:59 pretrain.prepare.sample_progress: current=12000, total=22430, dataset=Pubmed, dataset_idx=1, graph_id=0, cluster_id=3, nodes=27
+[trace] 2026-04-01 17:55:13 pretrain.prepare.sample_progress: current=13000, total=22430, dataset=Photo, dataset_idx=2, graph_id=0, cluster_id=8, nodes=64
+[trace] 2026-04-01 17:57:52 pretrain.prepare.sample_progress: current=14000, total=22430, dataset=Computers, dataset_idx=3, graph_id=0, cluster_id=0, nodes=64
+[trace] 2026-04-01 17:59:28 pretrain.prepare.sample_progress: current=15000, total=22430, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=4, nodes=13
+[trace] 2026-04-01 18:00:30 pretrain.prepare.sample_progress: current=16000, total=22430, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=2, nodes=5
+[trace] 2026-04-01 18:01:35 pretrain.prepare.sample_progress: current=17000, total=22430, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=9, nodes=8
+[trace] 2026-04-01 18:02:42 pretrain.prepare.sample_progress: current=18000, total=22430, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=9, nodes=32
+[trace] 2026-04-01 18:03:50 pretrain.prepare.sample_progress: current=19000, total=22430, dataset=FacebookPagePage, dataset_idx=4, graph_id=0, cluster_id=4, nodes=18
+[trace] 2026-04-01 18:05:05 pretrain.prepare.sample_progress: current=20000, total=22430, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=3, nodes=59
+[trace] 2026-04-01 18:06:00 pretrain.prepare.sample_progress: current=21000, total=22430, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=8, nodes=64
+[trace] 2026-04-01 18:07:00 pretrain.prepare.sample_progress: current=22000, total=22430, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=8, nodes=64
+[trace] 2026-04-01 18:07:22 pretrain.prepare.sample_progress: current=22430, total=22430, dataset=LastFMAsia, dataset_idx=5, graph_id=0, cluster_id=9, nodes=31
+[trace] 2026-04-01 18:07:22 pretrain.prepare.global_pool.done: features=22430, adjs=22430, aug_features=22430, lbls=22430, bce_masks=22430
+[egraphcl] strict sample-level online mode: samples=22430, tau=0.9900
+[trace] 2026-04-01 18:07:22 flow_check.start: aug_features=22430, selected_samples=22430
+[flow-check] PASS non_empty_aug_views: aug_features=22430
+[flow-check] PASS aug_list_length_consistency: aug_features=22430, aug_adjs=22430, lbls=22430, bce_masks=22430
+[flow-check] PASS sample_dataset_ids_alignment: sample_dataset_ids=22430, aug_features=22430
+[flow-check] PASS stage1_metrics_exist: /home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260401_173648/stage_outputs/stage1/global_merged/stage1_metrics.json
+[flow-check] PASS stage2_metrics_exist: /home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260401_173648/stage_outputs/stage2/global_merged/stage2_metrics.json
+[flow-check] PASS dataset_coverage: unique_datasets=6, names=['Citeseer', 'Computers', 'FacebookPagePage', 'LastFMAsia', 'Photo', 'Pubmed']
+[flow-check] PASS cluster_coverage: unique_clusters=12, ids=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+[flow-check] PASS online_pair_mode_min_samples: aug_features=22430, online pair mask is built in model forward
+[flow-check] saved report: /home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260401_173648/flow_check_report.json
+[trace] 2026-04-01 18:07:22 flow_check.done: ok=True, report=/home/ustc1958/lxy/graph/1/SAMGPT/result/run_20260401_173648/flow_check_report.json
+Using CUDA
+[trace] 2026-04-01 18:07:26 train_loop.start: nb_epochs=10000, patience=50, lr=0.0003, pretrain_method=EGRAPHCL
+Start training...
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.9079 masked=2583582/2845670 active_neg=262088
+Loss:[2.40215588]
+Current epoch: 1
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.9041 masked=2572892/2845670 active_neg=272778
+Loss:[2.37699032]
+Current epoch: 2
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.8998 masked=2560458/2845670 active_neg=285212
+Loss:[2.36682653]
+Current epoch: 3
+Loss:[2.35799813]
+Current epoch: 4
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.8968 masked=2551884/2845670 active_neg=293786
+Loss:[2.34314275]
+Current epoch: 5
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.8959 masked=2549340/2845670 active_neg=296330
+Loss:[2.30295706]
+Current epoch: 10
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.8958 masked=2549148/2845670 active_neg=296522
+Loss:[2.29436755]
+Current epoch: 15
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.8958 masked=2549120/2845670 active_neg=296550
+Loss:[2.29054546]
+Current epoch: 20
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.8958 masked=2549108/2845670 active_neg=296562
+Loss:[2.27343798]
+Current epoch: 25
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.6462 masked=1838942/2845670 active_neg=1006728
+Loss:[3.57189679]
+Current epoch: 30
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.6455 masked=1836810/2845670 active_neg=1008860
+Loss:[2.99554062]
+Current epoch: 35
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.5056 masked=1438854/2845670 active_neg=1406816
+Loss:[2.39418387]
+Current epoch: 40
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.3421 masked=973570/2845670 active_neg=1872100
+Loss:[2.76508617]
+Current epoch: 45
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2813 masked=800592/2845670 active_neg=2045078
+Loss:[2.38103819]
+Current epoch: 50
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2816 masked=801430/2845670 active_neg=2044240
+Loss:[2.01391220]
+Current epoch: 55
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2811 masked=800032/2845670 active_neg=2045638
+Loss:[1.56600344]
+Current epoch: 60
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2815 masked=801184/2845670 active_neg=2044486
+Loss:[1.37163973]
+Current epoch: 65
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2810 masked=799758/2845670 active_neg=2045912
+Loss:[1.35015190]
+Current epoch: 70
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2812 masked=800310/2845670 active_neg=2045360
+Loss:[1.11484969]
+Current epoch: 75
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2808 masked=799076/2845670 active_neg=2046594
+Loss:[0.80522358]
+Current epoch: 80
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2811 masked=799960/2845670 active_neg=2045710
+Loss:[0.80728704]
+Current epoch: 85
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2817 masked=801638/2845670 active_neg=2044032
+Loss:[0.75514621]
+Current epoch: 90
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2815 masked=801100/2845670 active_neg=2044570
+Loss:[0.43155053]
+Current epoch: 95
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2812 masked=800294/2845670 active_neg=2045376
+Loss:[0.40453213]
+Current epoch: 100
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2809 masked=799292/2845670 active_neg=2046378
+Loss:[0.39032432]
+Current epoch: 105
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2812 masked=800214/2845670 active_neg=2045456
+Loss:[0.35534778]
+Current epoch: 110
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2816 masked=801408/2845670 active_neg=2044262
+Loss:[0.34995878]
+Current epoch: 115
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2818 masked=802018/2845670 active_neg=2043652
+Loss:[0.34406972]
+Current epoch: 120
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2812 masked=800202/2845670 active_neg=2045468
+Loss:[0.32417941]
+Current epoch: 125
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800696/2845670 active_neg=2044974
+Loss:[0.35599223]
+Current epoch: 130
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2813 masked=800496/2845670 active_neg=2045174
+Loss:[0.34274021]
+Current epoch: 135
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2820 masked=802462/2845670 active_neg=2043208
+Loss:[0.32476652]
+Current epoch: 140
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2815 masked=801140/2845670 active_neg=2044530
+Loss:[0.31836551]
+Current epoch: 145
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800744/2845670 active_neg=2044926
+Loss:[0.33936337]
+Current epoch: 150
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2810 masked=799656/2845670 active_neg=2046014
+Loss:[0.33132932]
+Current epoch: 155
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2808 masked=799138/2845670 active_neg=2046532
+Loss:[0.32009536]
+Current epoch: 160
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800866/2845670 active_neg=2044804
+Loss:[0.31243500]
+Current epoch: 165
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2819 masked=802228/2845670 active_neg=2043442
+Loss:[0.33565325]
+Current epoch: 170
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2816 masked=801212/2845670 active_neg=2044458
+Loss:[0.32756031]
+Current epoch: 175
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2817 masked=801734/2845670 active_neg=2043936
+Loss:[0.31345668]
+Current epoch: 180
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2812 masked=800084/2845670 active_neg=2045586
+Loss:[0.30742222]
+Current epoch: 185
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2819 masked=802336/2845670 active_neg=2043334
+Loss:[0.33000731]
+Current epoch: 190
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2818 masked=801918/2845670 active_neg=2043752
+Loss:[0.32249072]
+Current epoch: 195
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2810 masked=799748/2845670 active_neg=2045922
+Loss:[0.30832788]
+Current epoch: 200
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2813 masked=800540/2845670 active_neg=2045130
+Loss:[0.30244687]
+Current epoch: 205
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2813 masked=800412/2845670 active_neg=2045258
+Loss:[0.32433489]
+Current epoch: 210
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2813 masked=800510/2845670 active_neg=2045160
+Loss:[0.31783581]
+Current epoch: 215
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2811 masked=799804/2845670 active_neg=2045866
+Loss:[0.30207199]
+Current epoch: 220
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2815 masked=800968/2845670 active_neg=2044702
+Loss:[0.29719490]
+Current epoch: 225
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800668/2845670 active_neg=2045002
+Loss:[0.31806302]
+Current epoch: 230
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2810 masked=799684/2845670 active_neg=2045986
+Loss:[0.31204033]
+Current epoch: 235
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800780/2845670 active_neg=2044890
+Loss:[0.29592687]
+Current epoch: 240
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2823 masked=803340/2845670 active_neg=2042330
+Loss:[0.29063487]
+Current epoch: 245
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2817 masked=801704/2845670 active_neg=2043966
+Loss:[0.31240943]
+Current epoch: 250
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2816 masked=801260/2845670 active_neg=2044410
+Loss:[0.30588567]
+Current epoch: 255
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2812 masked=800196/2845670 active_neg=2045474
+Loss:[0.28911582]
+Current epoch: 260
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2813 masked=800388/2845670 active_neg=2045282
+Loss:[0.28449479]
+Current epoch: 265
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2808 masked=799182/2845670 active_neg=2046488
+Loss:[0.30521870]
+Current epoch: 270
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800670/2845670 active_neg=2045000
+Loss:[0.29854089]
+Current epoch: 275
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2812 masked=800158/2845670 active_neg=2045512
+Loss:[0.28159443]
+Current epoch: 280
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2812 masked=800274/2845670 active_neg=2045396
+Loss:[0.27664688]
+Current epoch: 285
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2808 masked=799098/2845670 active_neg=2046572
+Loss:[0.29628199]
+Current epoch: 290
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2818 masked=801936/2845670 active_neg=2043734
+Loss:[0.28951201]
+Current epoch: 295
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2822 masked=803016/2845670 active_neg=2042654
+Loss:[0.27231619]
+Current epoch: 300
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800790/2845670 active_neg=2044880
+Loss:[0.26751831]
+Current epoch: 305
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2813 masked=800564/2845670 active_neg=2045106
+Loss:[0.28482109]
+Current epoch: 310
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2816 masked=801444/2845670 active_neg=2044226
+Loss:[0.27780101]
+Current epoch: 315
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2810 masked=799496/2845670 active_neg=2046174
+Loss:[0.26046050]
+Current epoch: 320
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2810 masked=799672/2845670 active_neg=2045998
+Loss:[0.25516114]
+Current epoch: 325
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800718/2845670 active_neg=2044952
+Loss:[0.26967338]
+Current epoch: 330
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800742/2845670 active_neg=2044928
+Loss:[0.26143125]
+Current epoch: 335
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2819 masked=802196/2845670 active_neg=2043474
+Loss:[0.24397926]
+Current epoch: 340
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800912/2845670 active_neg=2044758
+Loss:[0.23752613]
+Current epoch: 345
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2810 masked=799710/2845670 active_neg=2045960
+Loss:[0.24697851]
+Current epoch: 350
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2808 masked=799174/2845670 active_neg=2046496
+Loss:[0.23679352]
+Current epoch: 355
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2821 masked=802760/2845670 active_neg=2042910
+Loss:[0.21958576]
+Current epoch: 360
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2817 masked=801656/2845670 active_neg=2044014
+Loss:[0.21071941]
+Current epoch: 365
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2813 masked=800394/2845670 active_neg=2045276
+Loss:[0.21070971]
+Current epoch: 370
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2812 masked=800286/2845670 active_neg=2045384
+Loss:[0.19852096]
+Current epoch: 375
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2811 masked=799884/2845670 active_neg=2045786
+Loss:[0.18684924]
+Current epoch: 380
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2817 masked=801494/2845670 active_neg=2044176
+Loss:[0.17635882]
+Current epoch: 385
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800754/2845670 active_neg=2044916
+Loss:[0.16794215]
+Current epoch: 390
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2809 masked=799466/2845670 active_neg=2046204
+Loss:[0.15835641]
+Current epoch: 395
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2817 masked=801548/2845670 active_neg=2044122
+Loss:[0.15995811]
+Current epoch: 400
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2820 masked=802430/2845670 active_neg=2043240
+Loss:[0.15517206]
+Current epoch: 405
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800636/2845670 active_neg=2045034
+Loss:[0.15694088]
+Current epoch: 410
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2817 masked=801534/2845670 active_neg=2044136
+Loss:[0.15482698]
+Current epoch: 415
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2811 masked=799962/2845670 active_neg=2045708
+Loss:[0.15523820]
+Current epoch: 420
+[train] lr reduced: 0.0003 -> 0.00015 (epoch=424)
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2819 masked=802058/2845670 active_neg=2043612
+Loss:[0.15375331]
+Current epoch: 425
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2817 masked=801722/2845670 active_neg=2043948
+Loss:[0.15406239]
+Current epoch: 430
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800822/2845670 active_neg=2044848
+Loss:[0.15378590]
+Current epoch: 435
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2809 masked=799338/2845670 active_neg=2046332
+Loss:[0.15189561]
+Current epoch: 440
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2813 masked=800574/2845670 active_neg=2045096
+Loss:[0.15177129]
+Current epoch: 445
+[train] lr reduced: 0.00015 -> 7.5e-05 (epoch=447)
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2811 masked=800016/2845670 active_neg=2045654
+Loss:[0.15114240]
+Current epoch: 450
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2815 masked=800996/2845670 active_neg=2044674
+Loss:[0.15085271]
+Current epoch: 455
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2817 masked=801486/2845670 active_neg=2044184
+Loss:[0.15045790]
+Current epoch: 460
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800690/2845670 active_neg=2044980
+Loss:[0.14994039]
+Current epoch: 465
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2810 masked=799636/2845670 active_neg=2046034
+Loss:[0.14997220]
+Current epoch: 470
+[egraphcl-mask] branch=single_with_dual_prompt source=encoded_similarity batch=128 mask_ratio=0.2814 masked=800764/2845670 active_neg=2044906
+Loss:[0.15001550]
+Current epoch: 475
+Early stopping!
+Patience: 50
+Best epoch: 426, Best loss: 0.14993209
+##################################################
+PreTrain datasets are  ['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+Downastream dataset is  Cora
+Cora()
+DataBatch(x=[2708, 1433], edge_index=[2, 10556], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], batch=[2708], ptr=[2])
+process done
+0.30301476717627557
+nb_classes 7
+loading model from /home/ustc1958/lxy/graph/1/SAMGPT/checkpoints/model_node_EGRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.0003_gcn_ctx_s2_0.30_s3.pkl
+----------------------------------------------------------------------------------------------------
+shotnum 1
+  0%|          | 0/100 [00:00<?, ?it/s]  1%|          | 1/100 [00:06<11:31,  6.99s/it]  2%|▏         | 2/100 [00:15<12:46,  7.82s/it]  3%|▎         | 3/100 [00:23<13:05,  8.10s/it]  4%|▍         | 4/100 [00:32<13:10,  8.23s/it]  5%|▌         | 5/100 [00:40<13:11,  8.33s/it]  6%|▌         | 6/100 [00:49<13:07,  8.38s/it]  7%|▋         | 7/100 [00:57<13:02,  8.41s/it]  8%|▊         | 8/100 [01:06<12:52,  8.40s/it]  9%|▉         | 9/100 [01:14<12:38,  8.33s/it] 10%|█         | 10/100 [01:22<12:26,  8.29s/it] 11%|█         | 11/100 [01:30<12:15,  8.26s/it] 12%|█▏        | 12/100 [01:38<12:05,  8.24s/it] 13%|█▎        | 13/100 [01:47<11:55,  8.23s/it] 14%|█▍        | 14/100 [01:55<11:47,  8.22s/it] 15%|█▌        | 15/100 [02:03<11:44,  8.29s/it] 16%|█▌        | 16/100 [02:12<11:41,  8.35s/it] 17%|█▋        | 17/100 [02:20<11:35,  8.39s/it] 18%|█▊        | 18/100 [02:29<11:29,  8.41s/it] 19%|█▉        | 19/100 [02:37<11:22,  8.43s/it] 20%|██        | 20/100 [02:46<11:15,  8.44s/it] 21%|██        | 21/100 [02:54<11:07,  8.45s/it] 22%|██▏       | 22/100 [03:02<10:58,  8.44s/it] 23%|██▎       | 23/100 [03:11<10:44,  8.37s/it] 24%|██▍       | 24/100 [03:19<10:31,  8.31s/it] 25%|██▌       | 25/100 [03:27<10:19,  8.27s/it] 26%|██▌       | 26/100 [03:35<10:09,  8.24s/it] 27%|██▋       | 27/100 [03:43<09:59,  8.22s/it] 28%|██▊       | 28/100 [03:52<09:51,  8.21s/it] 29%|██▉       | 29/100 [04:00<09:43,  8.22s/it] 30%|███       | 30/100 [04:08<09:35,  8.21s/it] 31%|███       | 31/100 [04:16<09:27,  8.22s/it] 32%|███▏      | 32/100 [04:24<09:19,  8.22s/it] 33%|███▎      | 33/100 [04:33<09:10,  8.22s/it] 34%|███▍      | 34/100 [04:41<09:02,  8.22s/it] 35%|███▌      | 35/100 [04:49<08:54,  8.22s/it] 36%|███▌      | 36/100 [04:57<08:45,  8.22s/it] 37%|███▋      | 37/100 [05:06<08:37,  8.22s/it] 38%|███▊      | 38/100 [05:14<08:29,  8.22s/it] 39%|███▉      | 39/100 [05:22<08:21,  8.22s/it] 40%|████      | 40/100 [05:30<08:13,  8.22s/it] 41%|████      | 41/100 [05:38<08:04,  8.22s/it] 42%|████▏     | 42/100 [05:47<07:56,  8.22s/it] 43%|████▎     | 43/100 [05:55<07:48,  8.22s/it] 44%|████▍     | 44/100 [06:03<07:40,  8.22s/it] 45%|████▌     | 45/100 [06:11<07:32,  8.22s/it] 46%|████▌     | 46/100 [06:20<07:24,  8.22s/it] 47%|████▋     | 47/100 [06:28<07:16,  8.24s/it] 48%|████▊     | 48/100 [06:36<07:12,  8.31s/it] 49%|████▉     | 49/100 [06:45<07:06,  8.37s/it] 50%|█████     | 50/100 [06:53<07:00,  8.40s/it] 51%|█████     | 51/100 [07:02<06:52,  8.43s/it] 52%|█████▏    | 52/100 [07:10<06:45,  8.45s/it] 53%|█████▎    | 53/100 [07:18<06:33,  8.38s/it] 54%|█████▍    | 54/100 [07:27<06:23,  8.33s/it] 55%|█████▌    | 55/100 [07:35<06:13,  8.29s/it] 56%|█████▌    | 56/100 [07:43<06:03,  8.27s/it] 57%|█████▋    | 57/100 [07:51<05:54,  8.25s/it] 58%|█████▊    | 58/100 [08:00<05:46,  8.25s/it] 59%|█████▉    | 59/100 [08:08<05:41,  8.32s/it] 60%|██████    | 60/100 [08:17<05:34,  8.37s/it] 61%|██████    | 61/100 [08:25<05:28,  8.41s/it] 62%|██████▏   | 62/100 [08:34<05:20,  8.44s/it] 63%|██████▎   | 63/100 [08:42<05:12,  8.45s/it] 64%|██████▍   | 64/100 [08:51<05:04,  8.47s/it] 65%|██████▌   | 65/100 [08:59<04:56,  8.48s/it] 66%|██████▌   | 66/100 [09:08<04:48,  8.48s/it] 67%|██████▋   | 67/100 [09:16<04:40,  8.49s/it] 68%|██████▊   | 68/100 [09:25<04:31,  8.49s/it] 69%|██████▉   | 69/100 [09:33<04:23,  8.49s/it] 70%|███████   | 70/100 [09:42<04:14,  8.50s/it] 71%|███████   | 71/100 [09:50<04:06,  8.50s/it] 72%|███████▏  | 72/100 [09:59<03:58,  8.50s/it] 73%|███████▎  | 73/100 [10:07<03:49,  8.51s/it] 74%|███████▍  | 74/100 [10:16<03:41,  8.51s/it] 75%|███████▌  | 75/100 [10:24<03:32,  8.51s/it] 76%|███████▌  | 76/100 [10:33<03:24,  8.52s/it] 77%|███████▋  | 77/100 [10:41<03:15,  8.52s/it] 78%|███████▊  | 78/100 [10:50<03:07,  8.52s/it] 79%|███████▉  | 79/100 [10:58<02:59,  8.53s/it] 80%|████████  | 80/100 [11:07<02:50,  8.53s/it] 81%|████████  | 81/100 [11:15<02:41,  8.53s/it] 82%|████████▏ | 82/100 [11:24<02:33,  8.53s/it] 83%|████████▎ | 83/100 [11:32<02:24,  8.53s/it] 84%|████████▍ | 84/100 [11:41<02:16,  8.53s/it] 85%|████████▌ | 85/100 [11:49<02:07,  8.52s/it] 86%|████████▌ | 86/100 [11:58<01:59,  8.52s/it] 87%|████████▋ | 87/100 [12:06<01:50,  8.53s/it] 88%|████████▊ | 88/100 [12:15<01:42,  8.53s/it] 89%|████████▉ | 89/100 [12:23<01:33,  8.53s/it] 90%|█████████ | 90/100 [12:32<01:25,  8.53s/it] 91%|█████████ | 91/100 [12:40<01:16,  8.53s/it] 92%|█████████▏| 92/100 [12:49<01:08,  8.53s/it] 93%|█████████▎| 93/100 [12:58<00:59,  8.53s/it] 94%|█████████▍| 94/100 [13:06<00:51,  8.53s/it] 95%|█████████▌| 95/100 [13:15<00:42,  8.53s/it] 96%|█████████▌| 96/100 [13:23<00:34,  8.53s/it] 97%|█████████▋| 97/100 [13:32<00:25,  8.53s/it] 98%|█████████▊| 98/100 [13:40<00:17,  8.53s/it] 99%|█████████▉| 99/100 [13:49<00:08,  8.53s/it]100%|██████████| 100/100 [13:57<00:00,  8.55s/it]100%|██████████| 100/100 [13:57<00:00,  8.38s/it]
+----------------------------------------------------------------------------------------------------
+Average accuracy:[0.4305]
+Mean:[43.0500]
+Std :[11.4012]
+----------------------------------------------------------------------------------------------------

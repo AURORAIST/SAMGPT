@@ -1,0 +1,64 @@
+[run] log file: ./result/20260326_210609/ab_cora_raw9_20260326_210609.log
+[run] result dir: ./result/20260326_210609
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', stage2_top_ratio=0.3, stage2_max_subgraph_nodes=64, struct_max_subgraph_nodes=64, context_outputs_root='./result/20260326_210609/stage_outputs', result_subdir='20260326_210609', force_rebuild_stage1=0, force_rebuild_stage2=0, stage1_num_clusters=8, stage1_subgraph_hop_n=2, stage1_encoding_mode='raw9', stage1_use_log1p=1, stage1_remove_selfloops=1, stage2_top_m_per_cluster=5, stage2_alpha=1.0, stage2_beta=1.0, stage2_gamma=1.0, egraphcl_tau=0.85)
+----------------------------------------------------------------------------------------------------
+[context] flags: stage2_filter=on, struct_contrastive=on, skip_pretrain=0
+2838416
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+[result] run_subdir=20260326_210609
+[result] result_dir=/home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609
+[context] Building stage1 for Citeseer -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609/stage_outputs/stage1/citeseer
+[context] Building stage2 for Citeseer -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609/stage_outputs/stage2/citeseer
+[context] Building stage1 for Pubmed -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609/stage_outputs/stage1/pubmed
+[context] Building stage2 for Pubmed -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609/stage_outputs/stage2/pubmed
+[context] Building stage1 for Photo -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609/stage_outputs/stage1/photo
+[context] Building stage2 for Photo -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609/stage_outputs/stage2/photo
+[context] Building stage1 for Computers -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609/stage_outputs/stage1/computers
+[context] Building stage2 for Computers -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609/stage_outputs/stage2/computers
+[context] Building stage1 for FacebookPagePage -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609/stage_outputs/stage1/facebookpagepage
+[context] Building stage2 for FacebookPagePage -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609/stage_outputs/stage2/facebookpagepage
+[context] Building stage1 for LastFMAsia -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609/stage_outputs/stage1/lastfmasia
+[context] Building stage2 for LastFMAsia -> /home/ustc1958/lxy/graph/1/SAMGPT/result/20260326_210609/stage_outputs/stage2/lastfmasia
+0
+step 0
+[stage2-subgraph] Citeseer graph_id=0: pool_samples=40, rank_samples=999, sample_overlap=10, selected_subgraphs=1029, used_subgraphs=981, training_nodes_total=19760, training_nodes_unique=2137, dup_ratio=9.2466
+[stage2-subgraph] Pubmed graph_id=0: pool_samples=40, rank_samples=5916, sample_overlap=15, selected_subgraphs=5941, used_subgraphs=5941, training_nodes_total=200568, training_nodes_unique=18605, dup_ratio=10.7803
+0.4772969863431251
+[stage2-subgraph] Photo graph_id=0: pool_samples=40, rank_samples=2295, sample_overlap=20, selected_subgraphs=2315, used_subgraphs=2200, training_nodes_total=122267, training_nodes_unique=6858, dup_ratio=17.8284
+0.46532959688876113
+[stage2-subgraph] Computers graph_id=0: pool_samples=40, rank_samples=4126, sample_overlap=20, selected_subgraphs=4146, used_subgraphs=3865, training_nodes_total=216728, training_nodes_unique=12369, dup_ratio=17.5219
+0.5713436769887664
+[stage2-subgraph] FacebookPagePage graph_id=0: pool_samples=40, rank_samples=6741, sample_overlap=0, selected_subgraphs=6781, used_subgraphs=6781, training_nodes_total=253791, training_nodes_unique=19235, dup_ratio=13.1942
+0.6984994213821206
+[stage2-subgraph] LastFMAsia graph_id=0: pool_samples=40, rank_samples=2288, sample_overlap=5, selected_subgraphs=2323, used_subgraphs=2323, training_nodes_total=75223, training_nodes_unique=6864, dup_ratio=10.9591
+Using CUDA
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/./src/train/execute.py", line 758, in <module>
+    assert args.skip_pretrain == 1, 'try to use trained models'
+AssertionError: try to use trained models
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/./src/train/execute.py", line 931, in <module>
+    loss = model(
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/src/train/preprompt.py", line 260, in forward
+    logits = list(
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/src/train/preprompt.py", line 195, in compute_prelogits_GRAPHCL
+    fea_prelogits = graphcl_runner(
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/src/models/graphcl.py", line 89, in forward
+    ret2 = _disc_logits(c_3, h_0, h_2, self.disc)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT/src/models/graphcl.py", line 78, in _disc_logits
+    sc_pos = (torch.matmul(h_pos, W) * c_expand).sum(dim=-1) + bias
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 212.00 MiB. GPU 0 has a total capacity of 31.35 GiB of which 206.56 MiB is free. Including non-PyTorch memory, this process has 30.77 GiB memory in use. Of the allocated memory 29.98 GiB is allocated by PyTorch, and 200.96 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

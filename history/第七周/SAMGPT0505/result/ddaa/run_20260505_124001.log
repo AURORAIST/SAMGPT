@@ -1,0 +1,5118 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', nb_epochs=10000, use_daaa=True, daaa_n_shared=8, daaa_n_domain=8, daaa_lambda_vert=0.01, daaa_lambda_res=0.1, max_k=24, daaa_lambda_hsic=0.001, daaa_lambda_gc=0.1, daaa_max_k_domain=12, daaa_use_sparse_coeff=False, lambda_geom=0.01, inner_steps=2, inner_lr=0.01, use_daaa_down=False, daaa_init_from_data=True, daaa_monitor_interval=10, daaa_vis_interval=200, daaa_expand_interval=200, daaa_prune_interval=500)
+----------------------------------------------------------------------------------------------------
+CUDA Available: True
+gpu: 0
+[DA-AA] adaptive n_domain per domain: [('Citeseer', 8), ('Pubmed', 12), ('Photo', 12), ('Computers', 12), ('FacebookPagePage', 12), ('LastFMAsia', 12)]
+[DA-AA] 用数据边缘点初始化原型...
+[DA-AA] init done: K_s=8, K_d=[8, 8, 8, 8, 8, 8]
+[DA-AA] domain 2 (Photo) HSIC enabled: lambda=0.001
+[DA-AA] domain 3 (Computers) HSIC enabled: lambda=0.001
+[DA-AA] domain 4 (FacebookPagePage) HSIC enabled: lambda=0.001
+[DA-AA] monitor tools ready, diag_dir: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics
+Loss:[11.26076794]
+Loading 0th epoch
+Loss:[28.01310730]
+Loading 0th epoch
+Loss:[26.52882767]
+Loading 0th epoch
+Loss:[19.21570206]
+Loading 0th epoch
+Loss:[12.65733719]
+Loading 0th epoch
+Loss:[15.78348160]
+Loading 0th epoch
+Loss:[15.18975353]
+Loading 0th epoch
+Loss:[11.75219250]
+Loading 0th epoch
+Loss:[11.79750824]
+Loading 0th epoch
+Loss:[12.63154125]
+
+============================================================
+[DA-AA] Epoch 10 monitor summary
+============================================================
+  domain 0: DVP=0.061[LOW]  entropy=2.766[OK]  dead=[OK]  recon=0.12176
+  domain 1: DVP=0.000[LOW]  entropy=2.762[OK]  dead=[OK]  recon=0.09147
+  domain 2: DVP=0.223[OK]  entropy=2.751[OK]  dead=[OK]  recon=0.30564
+  domain 3: DVP=0.192[OK]  entropy=2.748[OK]  dead=[OK]  recon=0.23896
+  domain 4: DVP=0.067[LOW]  entropy=2.762[OK]  dead=[OK]  recon=0.39310
+  domain 5: DVP=0.073[LOW]  entropy=2.762[OK]  dead=[OK]  recon=0.32336
+============================================================
+
+  block_diagonal_strength: 0.5038
+Loading 0th epoch
+Loss:[12.90327072]
+Loading 0th epoch
+Loss:[12.53986645]
+Loading 0th epoch
+Loss:[11.75411987]
+Loading 0th epoch
+Loss:[10.78697300]
+Loading 13th epoch
+Loss:[9.98670769]
+Loading 14th epoch
+Loss:[9.89129257]
+Loading 15th epoch
+Loss:[10.38076878]
+Loading 15th epoch
+Loss:[10.39713287]
+Loading 15th epoch
+Loss:[9.87292099]
+Loading 18th epoch
+Loss:[9.51475716]
+
+============================================================
+[DA-AA] Epoch 20 monitor summary
+============================================================
+  domain 0: DVP=0.060[LOW]  entropy=2.765[OK]  dead=[OK]  recon=0.12492
+  domain 1: DVP=0.000[LOW]  entropy=2.747[OK]  dead=[OK]  recon=0.06983
+  domain 2: DVP=0.219[OK]  entropy=2.749[OK]  dead=[OK]  recon=0.33465
+  domain 3: DVP=0.192[OK]  entropy=2.746[OK]  dead=[OK]  recon=0.25868
+  domain 4: DVP=0.066[LOW]  entropy=2.761[OK]  dead=[OK]  recon=0.41733
+  domain 5: DVP=0.072[LOW]  entropy=2.761[OK]  dead=[OK]  recon=0.35713
+============================================================
+
+  block_diagonal_strength: 0.5092
+Loading 19th epoch
+Loss:[9.55215168]
+Loading 19th epoch
+Loss:[9.69348907]
+Loading 19th epoch
+Loss:[9.70370674]
+Loading 19th epoch
+Loss:[9.52353477]
+Loading 19th epoch
+Loss:[9.23135185]
+Loading 24th epoch
+Loss:[9.00251579]
+Loading 25th epoch
+Loss:[8.97646904]
+Loading 26th epoch
+Loss:[9.05218697]
+Loading 26th epoch
+Loss:[9.03373718]
+Loading 26th epoch
+Loss:[8.88285923]
+
+============================================================
+[DA-AA] Epoch 30 monitor summary
+============================================================
+  domain 0: DVP=0.060[LOW]  entropy=2.763[OK]  dead=[OK]  recon=0.11986
+  domain 1: DVP=0.000[LOW]  entropy=2.730[OK]  dead=[OK]  recon=0.05462
+  domain 2: DVP=0.213[OK]  entropy=2.747[OK]  dead=[OK]  recon=0.34498
+  domain 3: DVP=0.189[OK]  entropy=2.744[OK]  dead=[OK]  recon=0.26453
+  domain 4: DVP=0.065[LOW]  entropy=2.759[OK]  dead=[OK]  recon=0.41879
+  domain 5: DVP=0.071[LOW]  entropy=2.760[OK]  dead=[OK]  recon=0.36665
+============================================================
+
+  block_diagonal_strength: 0.5145
+Loading 29th epoch
+Loss:[8.73407841]
+Loading 30th epoch
+Loss:[8.68111610]
+Loading 31th epoch
+Loss:[8.66500759]
+Loading 32th epoch
+Loss:[8.61938858]
+Loading 33th epoch
+Loss:[8.54342461]
+Loading 34th epoch
+Loss:[8.46991062]
+Loading 35th epoch
+Loss:[8.40904903]
+Loading 36th epoch
+Loss:[8.35433388]
+Loading 37th epoch
+Loss:[8.29745579]
+Loading 38th epoch
+Loss:[8.23009300]
+
+============================================================
+[DA-AA] Epoch 40 monitor summary
+============================================================
+  domain 0: DVP=0.060[LOW]  entropy=2.762[OK]  dead=[OK]  recon=0.11389
+  domain 1: DVP=0.000[LOW]  entropy=2.717[OK]  dead=[OK]  recon=0.04732
+  domain 2: DVP=0.208[OK]  entropy=2.746[OK]  dead=[OK]  recon=0.35059
+  domain 3: DVP=0.186[OK]  entropy=2.743[OK]  dead=[OK]  recon=0.26682
+  domain 4: DVP=0.064[LOW]  entropy=2.758[OK]  dead=[OK]  recon=0.41481
+  domain 5: DVP=0.070[LOW]  entropy=2.759[OK]  dead=[OK]  recon=0.37019
+============================================================
+
+  block_diagonal_strength: 0.5186
+Loading 39th epoch
+Loss:[8.16129112]
+Loading 40th epoch
+Loss:[8.10817528]
+Loading 41th epoch
+Loss:[8.06293201]
+Loading 42th epoch
+Loss:[8.00922775]
+Loading 43th epoch
+Loss:[7.95194674]
+Loading 44th epoch
+Loss:[7.89928627]
+Loading 45th epoch
+Loss:[7.84368324]
+Loading 46th epoch
+Loss:[7.78125048]
+Loading 47th epoch
+Loss:[7.71975613]
+Loading 48th epoch
+Loss:[7.66242552]
+
+============================================================
+[DA-AA] Epoch 50 monitor summary
+============================================================
+  domain 0: DVP=0.060[LOW]  entropy=2.762[OK]  dead=[OK]  recon=0.10830
+  domain 1: DVP=0.000[LOW]  entropy=2.708[OK]  dead=[OK]  recon=0.04403
+  domain 2: DVP=0.202[OK]  entropy=2.745[OK]  dead=[OK]  recon=0.35381
+  domain 3: DVP=0.182[OK]  entropy=2.742[OK]  dead=[OK]  recon=0.26733
+  domain 4: DVP=0.063[LOW]  entropy=2.757[OK]  dead=[OK]  recon=0.40942
+  domain 5: DVP=0.069[LOW]  entropy=2.758[OK]  dead=[OK]  recon=0.37173
+============================================================
+
+  block_diagonal_strength: 0.5215
+Loading 49th epoch
+Loss:[7.60585022]
+Loading 50th epoch
+Loss:[7.54990149]
+Loading 51th epoch
+Loss:[7.49535418]
+Loading 52th epoch
+Loss:[7.43914604]
+Loading 53th epoch
+Loss:[7.38003731]
+Loading 54th epoch
+Loss:[7.32090378]
+Loading 55th epoch
+Loss:[7.26344872]
+Loading 56th epoch
+Loss:[7.20699787]
+Loading 57th epoch
+Loss:[7.15116501]
+Loading 58th epoch
+Loss:[7.09576273]
+
+============================================================
+[DA-AA] Epoch 60 monitor summary
+============================================================
+  domain 0: DVP=0.060[LOW]  entropy=2.761[OK]  dead=[OK]  recon=0.10293
+  domain 1: DVP=0.000[LOW]  entropy=2.703[OK]  dead=[OK]  recon=0.04164
+  domain 2: DVP=0.193[OK]  entropy=2.744[OK]  dead=[OK]  recon=0.35569
+  domain 3: DVP=0.176[OK]  entropy=2.741[OK]  dead=[OK]  recon=0.26689
+  domain 4: DVP=0.061[LOW]  entropy=2.756[OK]  dead=[OK]  recon=0.40407
+  domain 5: DVP=0.067[LOW]  entropy=2.757[OK]  dead=[OK]  recon=0.37363
+============================================================
+
+  block_diagonal_strength: 0.5232
+Loading 59th epoch
+Loss:[7.04036903]
+Loading 60th epoch
+Loss:[6.98538685]
+Loading 61th epoch
+Loss:[6.93174267]
+Loading 62th epoch
+Loss:[6.87963104]
+Loading 63th epoch
+Loss:[6.82854176]
+Loading 64th epoch
+Loss:[6.77826023]
+Loading 65th epoch
+Loss:[6.72911358]
+Loading 66th epoch
+Loss:[6.68144846]
+Loading 67th epoch
+Loss:[6.63526154]
+Loading 68th epoch
+Loss:[6.59032154]
+
+============================================================
+[DA-AA] Epoch 70 monitor summary
+============================================================
+  domain 0: DVP=0.060[LOW]  entropy=2.760[OK]  dead=[OK]  recon=0.09751
+  domain 1: DVP=0.000[LOW]  entropy=2.701[OK]  dead=[OK]  recon=0.03962
+  domain 2: DVP=0.184[OK]  entropy=2.743[OK]  dead=[OK]  recon=0.35776
+  domain 3: DVP=0.168[OK]  entropy=2.740[OK]  dead=[OK]  recon=0.26646
+  domain 4: DVP=0.060[LOW]  entropy=2.756[OK]  dead=[OK]  recon=0.39980
+  domain 5: DVP=0.065[LOW]  entropy=2.756[OK]  dead=[OK]  recon=0.37772
+============================================================
+
+  block_diagonal_strength: 0.5241
+Loading 69th epoch
+Loss:[6.54661179]
+Loading 70th epoch
+Loss:[6.50433445]
+Loading 71th epoch
+Loss:[6.46360207]
+Loading 72th epoch
+Loss:[6.42438030]
+Loading 73th epoch
+Loss:[6.38651991]
+Loading 74th epoch
+Loss:[6.34984446]
+Loading 75th epoch
+Loss:[6.31420088]
+Loading 76th epoch
+Loss:[6.27946329]
+Loading 77th epoch
+Loss:[6.24559307]
+Loading 78th epoch
+Loss:[6.21268320]
+
+============================================================
+[DA-AA] Epoch 80 monitor summary
+============================================================
+  domain 0: DVP=0.060[LOW]  entropy=2.760[OK]  dead=[OK]  recon=0.09241
+  domain 1: DVP=0.000[LOW]  entropy=2.696[OK]  dead=[OK]  recon=0.03754
+  domain 2: DVP=0.177[OK]  entropy=2.742[OK]  dead=[OK]  recon=0.35829
+  domain 3: DVP=0.162[OK]  entropy=2.739[OK]  dead=[OK]  recon=0.26493
+  domain 4: DVP=0.058[LOW]  entropy=2.755[OK]  dead=[OK]  recon=0.39611
+  domain 5: DVP=0.063[LOW]  entropy=2.755[OK]  dead=[OK]  recon=0.38317
+============================================================
+
+  block_diagonal_strength: 0.5255
+Loading 79th epoch
+Loss:[6.18083572]
+Loading 80th epoch
+Loss:[6.15000486]
+Loading 81th epoch
+Loss:[6.12004519]
+Loading 82th epoch
+Loss:[6.09083843]
+Loading 83th epoch
+Loss:[6.06231594]
+Loading 84th epoch
+Loss:[6.03447914]
+Loading 85th epoch
+Loss:[6.00735569]
+Loading 86th epoch
+Loss:[5.98092842]
+Loading 87th epoch
+Loss:[5.95515108]
+Loading 88th epoch
+Loss:[5.92998171]
+
+============================================================
+[DA-AA] Epoch 90 monitor summary
+============================================================
+  domain 0: DVP=0.059[LOW]  entropy=2.759[OK]  dead=[OK]  recon=0.08808
+  domain 1: DVP=0.000[LOW]  entropy=2.688[OK]  dead=[OK]  recon=0.03588
+  domain 2: DVP=0.171[OK]  entropy=2.741[OK]  dead=[OK]  recon=0.35302
+  domain 3: DVP=0.157[OK]  entropy=2.738[OK]  dead=[OK]  recon=0.25947
+  domain 4: DVP=0.057[LOW]  entropy=2.754[OK]  dead=[OK]  recon=0.39093
+  domain 5: DVP=0.061[LOW]  entropy=2.755[OK]  dead=[OK]  recon=0.38661
+============================================================
+
+  block_diagonal_strength: 0.5274
+Loading 89th epoch
+Loss:[5.90536594]
+Loading 90th epoch
+Loss:[5.88125944]
+Loading 91th epoch
+Loss:[5.85763502]
+Loading 92th epoch
+Loss:[5.83445311]
+Loading 93th epoch
+Loss:[5.81169510]
+Loading 94th epoch
+Loss:[5.78932858]
+Loading 95th epoch
+Loss:[5.76733685]
+Loading 96th epoch
+Loss:[5.74569368]
+Loading 97th epoch
+Loss:[5.72436190]
+Loading 98th epoch
+Loss:[5.70329475]
+
+============================================================
+[DA-AA] Epoch 100 monitor summary
+============================================================
+  domain 0: DVP=0.058[LOW]  entropy=2.759[OK]  dead=[OK]  recon=0.08386
+  domain 1: DVP=0.000[LOW]  entropy=2.682[OK]  dead=[OK]  recon=0.03398
+  domain 2: DVP=0.168[OK]  entropy=2.740[OK]  dead=[OK]  recon=0.34405
+  domain 3: DVP=0.154[OK]  entropy=2.737[OK]  dead=[OK]  recon=0.25197
+  domain 4: DVP=0.055[LOW]  entropy=2.754[OK]  dead=[OK]  recon=0.38526
+  domain 5: DVP=0.059[LOW]  entropy=2.754[OK]  dead=[OK]  recon=0.39092
+============================================================
+
+  block_diagonal_strength: 0.5290
+Loading 99th epoch
+Loss:[5.68244362]
+Loading 100th epoch
+Loss:[5.66176796]
+Loading 101th epoch
+Loss:[5.64124250]
+Loading 102th epoch
+Loss:[5.62085581]
+Loading 103th epoch
+Loss:[5.60061598]
+Loading 104th epoch
+Loss:[5.58051920]
+Loading 105th epoch
+Loss:[5.56058788]
+Loading 106th epoch
+Loss:[5.54086065]
+Loading 107th epoch
+Loss:[5.52133942]
+Loading 108th epoch
+Loss:[5.50200367]
+
+============================================================
+[DA-AA] Epoch 110 monitor summary
+============================================================
+  domain 0: DVP=0.057[LOW]  entropy=2.758[OK]  dead=[OK]  recon=0.07987
+  domain 1: DVP=0.000[LOW]  entropy=2.678[OK]  dead=[OK]  recon=0.03238
+  domain 2: DVP=0.166[OK]  entropy=2.739[OK]  dead=[OK]  recon=0.33374
+  domain 3: DVP=0.152[OK]  entropy=2.737[OK]  dead=[OK]  recon=0.24399
+  domain 4: DVP=0.054[LOW]  entropy=2.753[OK]  dead=[OK]  recon=0.37944
+  domain 5: DVP=0.057[LOW]  entropy=2.754[OK]  dead=[OK]  recon=0.39570
+============================================================
+
+  block_diagonal_strength: 0.5303
+Loading 109th epoch
+Loss:[5.48287249]
+Loading 110th epoch
+Loss:[5.46392870]
+Loading 111th epoch
+Loss:[5.44513416]
+Loading 112th epoch
+Loss:[5.42648268]
+Loading 113th epoch
+Loss:[5.40796137]
+Loading 114th epoch
+Loss:[5.38954878]
+Loading 115th epoch
+Loss:[5.37119770]
+Loading 116th epoch
+Loss:[5.35282660]
+Loading 117th epoch
+Loss:[5.33437920]
+Loading 118th epoch
+Loss:[5.31581450]
+
+============================================================
+[DA-AA] Epoch 120 monitor summary
+============================================================
+  domain 0: DVP=0.056[LOW]  entropy=2.758[OK]  dead=[OK]  recon=0.07623
+  domain 1: DVP=0.000[LOW]  entropy=2.676[OK]  dead=[OK]  recon=0.03139
+  domain 2: DVP=0.165[OK]  entropy=2.738[OK]  dead=[OK]  recon=0.32415
+  domain 3: DVP=0.151[OK]  entropy=2.736[OK]  dead=[OK]  recon=0.23701
+  domain 4: DVP=0.053[LOW]  entropy=2.752[OK]  dead=[OK]  recon=0.37405
+  domain 5: DVP=0.055[LOW]  entropy=2.753[OK]  dead=[OK]  recon=0.40129
+============================================================
+
+  block_diagonal_strength: 0.5313
+Loading 119th epoch
+Loss:[5.29708481]
+Loading 120th epoch
+Loss:[5.27815819]
+Loading 121th epoch
+Loss:[5.25906849]
+Loading 122th epoch
+Loss:[5.23988199]
+Loading 123th epoch
+Loss:[5.22068644]
+Loading 124th epoch
+Loss:[5.20152378]
+Loading 125th epoch
+Loss:[5.18241501]
+Loading 126th epoch
+Loss:[5.16337013]
+Loading 127th epoch
+Loss:[5.14436817]
+Loading 128th epoch
+Loss:[5.12537193]
+
+============================================================
+[DA-AA] Epoch 130 monitor summary
+============================================================
+  domain 0: DVP=0.055[LOW]  entropy=2.757[OK]  dead=[OK]  recon=0.07301
+  domain 1: DVP=0.000[LOW]  entropy=2.673[OK]  dead=[OK]  recon=0.03083
+  domain 2: DVP=0.165[OK]  entropy=2.738[OK]  dead=[OK]  recon=0.31638
+  domain 3: DVP=0.151[OK]  entropy=2.736[OK]  dead=[OK]  recon=0.23153
+  domain 4: DVP=0.051[LOW]  entropy=2.752[OK]  dead=[OK]  recon=0.36934
+  domain 5: DVP=0.054[LOW]  entropy=2.752[OK]  dead=[OK]  recon=0.40781
+============================================================
+
+  block_diagonal_strength: 0.5322
+Loading 129th epoch
+Loss:[5.10634184]
+Loading 130th epoch
+Loss:[5.08726311]
+Loading 131th epoch
+Loss:[5.06812239]
+Loading 132th epoch
+Loss:[5.04889965]
+Loading 133th epoch
+Loss:[5.02955914]
+Loading 134th epoch
+Loss:[5.01009321]
+Loading 135th epoch
+Loss:[4.99051285]
+Loading 136th epoch
+Loss:[4.97084045]
+Loading 137th epoch
+Loss:[4.95110703]
+Loading 138th epoch
+Loss:[4.93134308]
+
+============================================================
+[DA-AA] Epoch 140 monitor summary
+============================================================
+  domain 0: DVP=0.054[LOW]  entropy=2.757[OK]  dead=[OK]  recon=0.06997
+  domain 1: DVP=0.000[LOW]  entropy=2.670[OK]  dead=[OK]  recon=0.02961
+  domain 2: DVP=0.164[OK]  entropy=2.737[OK]  dead=[OK]  recon=0.31186
+  domain 3: DVP=0.150[OK]  entropy=2.735[OK]  dead=[OK]  recon=0.22842
+  domain 4: DVP=0.050[LOW]  entropy=2.751[OK]  dead=[OK]  recon=0.36623
+  domain 5: DVP=0.052[LOW]  entropy=2.752[OK]  dead=[OK]  recon=0.41706
+============================================================
+
+  block_diagonal_strength: 0.5332
+Loading 139th epoch
+Loss:[4.91160011]
+Loading 140th epoch
+Loss:[4.89189386]
+Loading 141th epoch
+Loss:[4.87222576]
+Loading 142th epoch
+Loss:[4.85259438]
+Loading 143th epoch
+Loss:[4.83303261]
+Loading 144th epoch
+Loss:[4.81354475]
+Loading 145th epoch
+Loss:[4.79408455]
+Loading 146th epoch
+Loss:[4.77464581]
+Loading 147th epoch
+Loss:[4.75525570]
+Loading 148th epoch
+Loss:[4.73596764]
+
+============================================================
+[DA-AA] Epoch 150 monitor summary
+============================================================
+  domain 0: DVP=0.052[LOW]  entropy=2.756[OK]  dead=[OK]  recon=0.06725
+  domain 1: DVP=0.000[LOW]  entropy=2.669[OK]  dead=[OK]  recon=0.02869
+  domain 2: DVP=0.163[OK]  entropy=2.736[OK]  dead=[OK]  recon=0.31004
+  domain 3: DVP=0.149[OK]  entropy=2.734[OK]  dead=[OK]  recon=0.22726
+  domain 4: DVP=0.049[LOW]  entropy=2.750[OK]  dead=[OK]  recon=0.36449
+  domain 5: DVP=0.051[LOW]  entropy=2.751[OK]  dead=[OK]  recon=0.42811
+============================================================
+
+  block_diagonal_strength: 0.5340
+Loading 149th epoch
+Loss:[4.71683931]
+Loading 150th epoch
+Loss:[4.69792032]
+Loading 151th epoch
+Loss:[4.67919350]
+Loading 152th epoch
+Loss:[4.66067314]
+Loading 153th epoch
+Loss:[4.64235449]
+Loading 154th epoch
+Loss:[4.62419128]
+Loading 155th epoch
+Loss:[4.60615015]
+Loading 156th epoch
+Loss:[4.58822441]
+Loading 157th epoch
+Loss:[4.57038975]
+Loading 158th epoch
+Loss:[4.55265141]
+
+============================================================
+[DA-AA] Epoch 160 monitor summary
+============================================================
+  domain 0: DVP=0.051[LOW]  entropy=2.756[OK]  dead=[OK]  recon=0.06480
+  domain 1: DVP=0.000[LOW]  entropy=2.668[OK]  dead=[OK]  recon=0.02821
+  domain 2: DVP=0.161[OK]  entropy=2.735[OK]  dead=[OK]  recon=0.30919
+  domain 3: DVP=0.147[OK]  entropy=2.733[OK]  dead=[OK]  recon=0.22664
+  domain 4: DVP=0.048[LOW]  entropy=2.749[OK]  dead=[OK]  recon=0.36301
+  domain 5: DVP=0.050[LOW]  entropy=2.750[OK]  dead=[OK]  recon=0.43804
+============================================================
+
+  block_diagonal_strength: 0.5345
+Loading 159th epoch
+Loss:[4.53501129]
+Loading 160th epoch
+Loss:[4.51746368]
+Loading 161th epoch
+Loss:[4.49999619]
+Loading 162th epoch
+Loss:[4.48261023]
+Loading 163th epoch
+Loss:[4.46529198]
+Loading 164th epoch
+Loss:[4.44801235]
+Loading 165th epoch
+Loss:[4.43073845]
+Loading 166th epoch
+Loss:[4.41347408]
+Loading 167th epoch
+Loss:[4.39622688]
+Loading 168th epoch
+Loss:[4.37898111]
+
+============================================================
+[DA-AA] Epoch 170 monitor summary
+============================================================
+  domain 0: DVP=0.050[LOW]  entropy=2.756[OK]  dead=[OK]  recon=0.06252
+  domain 1: DVP=0.000[LOW]  entropy=2.666[OK]  dead=[OK]  recon=0.02749
+  domain 2: DVP=0.159[OK]  entropy=2.734[OK]  dead=[OK]  recon=0.30643
+  domain 3: DVP=0.146[OK]  entropy=2.733[OK]  dead=[OK]  recon=0.22460
+  domain 4: DVP=0.048[LOW]  entropy=2.749[OK]  dead=[OK]  recon=0.35939
+  domain 5: DVP=0.050[LOW]  entropy=2.750[OK]  dead=[OK]  recon=0.44190
+============================================================
+
+  block_diagonal_strength: 0.5354
+Loading 169th epoch
+Loss:[4.36181211]
+Loading 170th epoch
+Loss:[4.34468079]
+Loading 171th epoch
+Loss:[4.32749844]
+Loading 172th epoch
+Loss:[4.31029606]
+Loading 173th epoch
+Loss:[4.29307938]
+Loading 174th epoch
+Loss:[4.27584171]
+Loading 175th epoch
+Loss:[4.25859022]
+Loading 176th epoch
+Loss:[4.24142075]
+Loading 177th epoch
+Loss:[4.22435999]
+Loading 178th epoch
+Loss:[4.20740318]
+
+============================================================
+[DA-AA] Epoch 180 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.755[OK]  dead=[OK]  recon=0.06039
+  domain 1: DVP=0.000[LOW]  entropy=2.662[OK]  dead=[OK]  recon=0.02656
+  domain 2: DVP=0.158[OK]  entropy=2.733[OK]  dead=[OK]  recon=0.30045
+  domain 3: DVP=0.144[OK]  entropy=2.732[OK]  dead=[OK]  recon=0.22037
+  domain 4: DVP=0.047[LOW]  entropy=2.748[OK]  dead=[OK]  recon=0.35233
+  domain 5: DVP=0.049[LOW]  entropy=2.749[OK]  dead=[OK]  recon=0.43759
+============================================================
+
+  block_diagonal_strength: 0.5364
+Loading 179th epoch
+Loss:[4.19043970]
+Loading 180th epoch
+Loss:[4.17342758]
+Loading 181th epoch
+Loss:[4.15632439]
+Loading 182th epoch
+Loss:[4.13923836]
+Loading 183th epoch
+Loss:[4.12215137]
+Loading 184th epoch
+Loss:[4.10539627]
+Loading 185th epoch
+Loss:[4.08917856]
+Loading 186th epoch
+Loss:[4.07789803]
+Loading 187th epoch
+Loss:[4.07879114]
+Loading 187th epoch
+Loss:[4.08333015]
+
+============================================================
+[DA-AA] Epoch 190 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.755[OK]  dead=[OK]  recon=0.05851
+  domain 1: DVP=0.000[LOW]  entropy=2.658[OK]  dead=[OK]  recon=0.02584
+  domain 2: DVP=0.158[OK]  entropy=2.732[OK]  dead=[OK]  recon=0.29211
+  domain 3: DVP=0.144[OK]  entropy=2.731[OK]  dead=[OK]  recon=0.21463
+  domain 4: DVP=0.047[LOW]  entropy=2.748[OK]  dead=[OK]  recon=0.34296
+  domain 5: DVP=0.049[LOW]  entropy=2.749[OK]  dead=[OK]  recon=0.42794
+============================================================
+
+  block_diagonal_strength: 0.5375
+Loading 187th epoch
+Loss:[4.03291225]
+Loading 190th epoch
+Loss:[4.01092768]
+Loading 191th epoch
+Loss:[4.02041340]
+Loading 191th epoch
+Loss:[3.97903872]
+Loading 193th epoch
+Loss:[3.96516943]
+Loading 194th epoch
+Loss:[3.96453667]
+Loading 195th epoch
+Loss:[3.92694092]
+Loading 196th epoch
+Loss:[3.92147565]
+Loading 197th epoch
+Loss:[3.91025639]
+Loading 198th epoch
+Loss:[3.87955618]
+
+============================================================
+[DA-AA] Epoch 200 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.756[OK]  dead=[OK]  recon=0.05698
+  domain 1: DVP=0.000[LOW]  entropy=2.653[OK]  dead=[OK]  recon=0.02469
+  domain 2: DVP=0.160[OK]  entropy=2.730[OK]  dead=[OK]  recon=0.28195
+  domain 3: DVP=0.145[OK]  entropy=2.729[OK]  dead=[OK]  recon=0.20774
+  domain 4: DVP=0.047[LOW]  entropy=2.747[OK]  dead=[OK]  recon=0.33166
+  domain 5: DVP=0.049[LOW]  entropy=2.748[OK]  dead=[OK]  recon=0.41318
+============================================================
+
+  block_diagonal_strength: 0.5386
+[Visualizer] t-SNE: 6056 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep200.png  (6056 pts)
+[DA-AA] domain 0 expand: 8 -> 9
+[DA-AA] domain 1 expand: 8 -> 9
+[DA-AA] domain 2 expand: 8 -> 9
+[DA-AA] domain 3 expand: 8 -> 9
+[DA-AA] domain 4 expand: 8 -> 9
+[DA-AA] domain 5 expand: 8 -> 9
+Loading 199th epoch
+Loss:[3.85101676]
+Loading 200th epoch
+Loss:[3.83410978]
+Loading 201th epoch
+Loss:[3.81220579]
+Loading 202th epoch
+Loss:[3.80924129]
+Loading 203th epoch
+Loss:[3.79000950]
+Loading 204th epoch
+Loss:[3.77267361]
+Loading 205th epoch
+Loss:[3.76727772]
+Loading 206th epoch
+Loss:[3.74891448]
+Loading 207th epoch
+Loss:[3.73273325]
+Loading 208th epoch
+Loss:[3.72621417]
+
+============================================================
+[DA-AA] Epoch 210 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.05199
+  domain 1: DVP=0.000[LOW]  entropy=2.716[OK]  dead=[OK]  recon=0.01984
+  domain 2: DVP=0.161[OK]  entropy=2.792[OK]  dead=[OK]  recon=0.27320
+  domain 3: DVP=0.146[OK]  entropy=2.790[OK]  dead=[OK]  recon=0.19900
+  domain 4: DVP=0.048[LOW]  entropy=2.808[OK]  dead=[OK]  recon=0.32427
+  domain 5: DVP=0.050[LOW]  entropy=2.808[OK]  dead=[OK]  recon=0.39330
+============================================================
+
+  block_diagonal_strength: 0.5715
+Loading 209th epoch
+Loss:[3.71053839]
+Loading 210th epoch
+Loss:[3.69306564]
+Loading 211th epoch
+Loss:[3.68538857]
+Loading 212th epoch
+Loss:[3.67348647]
+Loading 213th epoch
+Loss:[3.65461636]
+Loading 214th epoch
+Loss:[3.64408636]
+Loading 215th epoch
+Loss:[3.63594532]
+Loading 216th epoch
+Loss:[3.61913753]
+Loading 217th epoch
+Loss:[3.60439301]
+Loading 218th epoch
+Loss:[3.59494591]
+
+============================================================
+[DA-AA] Epoch 220 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.05138
+  domain 1: DVP=0.001[LOW]  entropy=2.714[OK]  dead=[OK]  recon=0.01960
+  domain 2: DVP=0.162[OK]  entropy=2.791[OK]  dead=[OK]  recon=0.26595
+  domain 3: DVP=0.147[OK]  entropy=2.789[OK]  dead=[OK]  recon=0.19489
+  domain 4: DVP=0.048[LOW]  entropy=2.808[OK]  dead=[OK]  recon=0.31737
+  domain 5: DVP=0.050[LOW]  entropy=2.808[OK]  dead=[OK]  recon=0.38410
+============================================================
+
+  block_diagonal_strength: 0.5709
+Loading 219th epoch
+Loss:[3.58401442]
+Loading 220th epoch
+Loss:[3.57071996]
+Loading 221th epoch
+Loss:[3.55520582]
+Loading 222th epoch
+Loss:[3.54301548]
+Loading 223th epoch
+Loss:[3.53351116]
+Loading 224th epoch
+Loss:[3.52217984]
+Loading 225th epoch
+Loss:[3.51048398]
+Loading 226th epoch
+Loss:[3.49583173]
+Loading 227th epoch
+Loss:[3.48250389]
+Loading 228th epoch
+Loss:[3.46954203]
+
+============================================================
+[DA-AA] Epoch 230 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.05089
+  domain 1: DVP=0.004[LOW]  entropy=2.713[OK]  dead=[OK]  recon=0.01931
+  domain 2: DVP=0.164[OK]  entropy=2.790[OK]  dead=[OK]  recon=0.25892
+  domain 3: DVP=0.148[OK]  entropy=2.788[OK]  dead=[OK]  recon=0.19080
+  domain 4: DVP=0.049[LOW]  entropy=2.808[OK]  dead=[OK]  recon=0.31067
+  domain 5: DVP=0.051[LOW]  entropy=2.807[OK]  dead=[OK]  recon=0.37419
+============================================================
+
+  block_diagonal_strength: 0.5701
+Loading 229th epoch
+Loss:[3.45758009]
+Loading 230th epoch
+Loss:[3.44663024]
+Loading 231th epoch
+Loss:[3.43576384]
+Loading 232th epoch
+Loss:[3.42829037]
+Loading 233th epoch
+Loss:[3.42275596]
+Loading 234th epoch
+Loss:[3.42961812]
+Loading 234th epoch
+Loss:[3.43344522]
+Loading 234th epoch
+Loss:[3.43986654]
+Loading 234th epoch
+Loss:[3.38904524]
+Loading 238th epoch
+Loss:[3.35113811]
+
+============================================================
+[DA-AA] Epoch 240 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.05041
+  domain 1: DVP=0.007[LOW]  entropy=2.713[OK]  dead=[OK]  recon=0.01909
+  domain 2: DVP=0.166[OK]  entropy=2.790[OK]  dead=[OK]  recon=0.25226
+  domain 3: DVP=0.148[OK]  entropy=2.788[OK]  dead=[OK]  recon=0.18670
+  domain 4: DVP=0.049[LOW]  entropy=2.808[OK]  dead=[OK]  recon=0.30439
+  domain 5: DVP=0.052[LOW]  entropy=2.807[OK]  dead=[OK]  recon=0.36448
+============================================================
+
+  block_diagonal_strength: 0.5693
+Loading 239th epoch
+Loss:[3.35473466]
+Loading 239th epoch
+Loss:[3.36512089]
+Loading 239th epoch
+Loss:[3.36034393]
+Loading 239th epoch
+Loss:[3.31329203]
+Loading 243th epoch
+Loss:[3.30266237]
+Loading 244th epoch
+Loss:[3.32564378]
+Loading 244th epoch
+Loss:[3.30588818]
+Loading 244th epoch
+Loss:[3.26933765]
+Loading 247th epoch
+Loss:[3.25627613]
+Loading 248th epoch
+Loss:[3.27252960]
+
+============================================================
+[DA-AA] Epoch 250 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.05001
+  domain 1: DVP=0.010[LOW]  entropy=2.712[OK]  dead=[OK]  recon=0.01875
+  domain 2: DVP=0.166[OK]  entropy=2.789[OK]  dead=[OK]  recon=0.24586
+  domain 3: DVP=0.149[OK]  entropy=2.787[OK]  dead=[OK]  recon=0.18250
+  domain 4: DVP=0.049[LOW]  entropy=2.807[OK]  dead=[OK]  recon=0.29841
+  domain 5: DVP=0.052[LOW]  entropy=2.807[OK]  dead=[OK]  recon=0.35459
+============================================================
+
+  block_diagonal_strength: 0.5686
+Loading 248th epoch
+Loss:[3.27761364]
+Loading 248th epoch
+Loss:[3.23443317]
+Loading 251th epoch
+Loss:[3.21150994]
+Loading 252th epoch
+Loss:[3.23579669]
+Loading 252th epoch
+Loss:[3.21031213]
+Loading 254th epoch
+Loss:[3.18818140]
+Loading 255th epoch
+Loss:[3.17778468]
+Loading 256th epoch
+Loss:[3.17853117]
+Loading 256th epoch
+Loss:[3.17018032]
+Loading 258th epoch
+Loss:[3.13855076]
+
+============================================================
+[DA-AA] Epoch 260 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.04949
+  domain 1: DVP=0.013[LOW]  entropy=2.710[OK]  dead=[OK]  recon=0.01849
+  domain 2: DVP=0.169[OK]  entropy=2.788[OK]  dead=[OK]  recon=0.23998
+  domain 3: DVP=0.151[OK]  entropy=2.786[OK]  dead=[OK]  recon=0.17872
+  domain 4: DVP=0.050[LOW]  entropy=2.807[OK]  dead=[OK]  recon=0.29300
+  domain 5: DVP=0.053[LOW]  entropy=2.806[OK]  dead=[OK]  recon=0.34636
+============================================================
+
+  block_diagonal_strength: 0.5682
+Loading 259th epoch
+Loss:[3.12779331]
+Loading 260th epoch
+Loss:[3.13098168]
+Loading 260th epoch
+Loss:[3.12294817]
+Loading 262th epoch
+Loss:[3.10611129]
+Loading 263th epoch
+Loss:[3.08695030]
+Loading 264th epoch
+Loss:[3.07673502]
+Loading 265th epoch
+Loss:[3.07952070]
+Loading 265th epoch
+Loss:[3.06584072]
+Loading 267th epoch
+Loss:[3.05123591]
+Loading 268th epoch
+Loss:[3.03199339]
+
+============================================================
+[DA-AA] Epoch 270 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.04904
+  domain 1: DVP=0.016[LOW]  entropy=2.710[OK]  dead=[OK]  recon=0.01828
+  domain 2: DVP=0.172[OK]  entropy=2.788[OK]  dead=[OK]  recon=0.23479
+  domain 3: DVP=0.153[OK]  entropy=2.785[OK]  dead=[OK]  recon=0.17529
+  domain 4: DVP=0.051[LOW]  entropy=2.807[OK]  dead=[OK]  recon=0.28800
+  domain 5: DVP=0.054[LOW]  entropy=2.806[OK]  dead=[OK]  recon=0.33840
+============================================================
+
+  block_diagonal_strength: 0.5675
+Loading 269th epoch
+Loss:[3.02973366]
+Loading 270th epoch
+Loss:[3.03226137]
+Loading 270th epoch
+Loss:[3.02953053]
+Loading 272th epoch
+Loss:[3.01128650]
+Loading 273th epoch
+Loss:[2.99185324]
+Loading 274th epoch
+Loss:[2.97644806]
+Loading 275th epoch
+Loss:[2.96801424]
+Loading 276th epoch
+Loss:[2.95966744]
+Loading 277th epoch
+Loss:[2.95643282]
+Loading 278th epoch
+Loss:[2.95026970]
+
+============================================================
+[DA-AA] Epoch 280 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.04868
+  domain 1: DVP=0.017[LOW]  entropy=2.710[OK]  dead=[OK]  recon=0.01797
+  domain 2: DVP=0.175[OK]  entropy=2.787[OK]  dead=[OK]  recon=0.23027
+  domain 3: DVP=0.155[OK]  entropy=2.784[OK]  dead=[OK]  recon=0.17226
+  domain 4: DVP=0.051[LOW]  entropy=2.806[OK]  dead=[OK]  recon=0.28358
+  domain 5: DVP=0.055[LOW]  entropy=2.806[OK]  dead=[OK]  recon=0.33142
+============================================================
+
+  block_diagonal_strength: 0.5668
+Loading 279th epoch
+Loss:[2.94412661]
+Loading 280th epoch
+Loss:[2.92887759]
+Loading 281th epoch
+Loss:[2.91714311]
+Loading 282th epoch
+Loss:[2.90367079]
+Loading 283th epoch
+Loss:[2.89259291]
+Loading 284th epoch
+Loss:[2.88138080]
+Loading 285th epoch
+Loss:[2.87166166]
+Loading 286th epoch
+Loss:[2.86223316]
+Loading 287th epoch
+Loss:[2.85309482]
+Loading 288th epoch
+Loss:[2.84415030]
+
+============================================================
+[DA-AA] Epoch 290 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.04834
+  domain 1: DVP=0.018[LOW]  entropy=2.708[OK]  dead=[OK]  recon=0.01781
+  domain 2: DVP=0.178[OK]  entropy=2.786[OK]  dead=[OK]  recon=0.22623
+  domain 3: DVP=0.158[OK]  entropy=2.783[OK]  dead=[OK]  recon=0.16952
+  domain 4: DVP=0.052[LOW]  entropy=2.806[OK]  dead=[OK]  recon=0.27966
+  domain 5: DVP=0.056[LOW]  entropy=2.805[OK]  dead=[OK]  recon=0.32546
+============================================================
+
+  block_diagonal_strength: 0.5663
+Loading 289th epoch
+Loss:[2.83537769]
+Loading 290th epoch
+Loss:[2.82736731]
+Loading 291th epoch
+Loss:[2.82007074]
+Loading 292th epoch
+Loss:[2.81809807]
+Loading 293th epoch
+Loss:[2.82847953]
+Loading 293th epoch
+Loss:[2.88998747]
+Loading 293th epoch
+Loss:[2.97682452]
+Loading 293th epoch
+Loss:[3.07798576]
+Loading 293th epoch
+Loss:[2.82034254]
+Loading 293th epoch
+Loss:[2.83774161]
+
+============================================================
+[DA-AA] Epoch 300 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.04814
+  domain 1: DVP=0.019[LOW]  entropy=2.709[OK]  dead=[OK]  recon=0.01747
+  domain 2: DVP=0.180[OK]  entropy=2.786[OK]  dead=[OK]  recon=0.22218
+  domain 3: DVP=0.161[OK]  entropy=2.782[OK]  dead=[OK]  recon=0.16661
+  domain 4: DVP=0.053[LOW]  entropy=2.806[OK]  dead=[OK]  recon=0.27583
+  domain 5: DVP=0.057[LOW]  entropy=2.805[OK]  dead=[OK]  recon=0.31937
+============================================================
+
+  block_diagonal_strength: 0.5656
+Loading 293th epoch
+Loss:[3.04303551]
+Loading 293th epoch
+Loss:[2.78904176]
+Loading 301th epoch
+Loss:[2.86932492]
+Loading 301th epoch
+Loss:[2.96843767]
+Loading 301th epoch
+Loss:[2.73145342]
+Loading 304th epoch
+Loss:[2.92225385]
+Loading 304th epoch
+Loss:[2.86814976]
+Loading 304th epoch
+Loss:[2.76685572]
+Loading 304th epoch
+Loss:[2.91381192]
+Loading 304th epoch
+Loss:[2.72886395]
+
+============================================================
+[DA-AA] Epoch 310 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.04743
+  domain 1: DVP=0.020[LOW]  entropy=2.705[OK]  dead=[OK]  recon=0.01735
+  domain 2: DVP=0.183[OK]  entropy=2.785[OK]  dead=[OK]  recon=0.21771
+  domain 3: DVP=0.163[OK]  entropy=2.782[OK]  dead=[OK]  recon=0.16346
+  domain 4: DVP=0.053[LOW]  entropy=2.805[OK]  dead=[OK]  recon=0.27211
+  domain 5: DVP=0.058[LOW]  entropy=2.804[OK]  dead=[OK]  recon=0.31489
+============================================================
+
+  block_diagonal_strength: 0.5655
+Loading 309th epoch
+Loss:[2.78881931]
+Loading 309th epoch
+Loss:[2.75337601]
+Loading 309th epoch
+Loss:[2.69160438]
+Loading 312th epoch
+Loss:[2.77328539]
+Loading 312th epoch
+Loss:[2.65495539]
+Loading 314th epoch
+Loss:[2.74013472]
+Loading 314th epoch
+Loss:[2.67868614]
+Loading 314th epoch
+Loss:[2.66942382]
+Loading 314th epoch
+Loss:[2.71239614]
+Loading 314th epoch
+Loss:[2.65066218]
+
+============================================================
+[DA-AA] Epoch 320 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.04707
+  domain 1: DVP=0.021[LOW]  entropy=2.703[OK]  dead=[OK]  recon=0.01701
+  domain 2: DVP=0.185[OK]  entropy=2.784[OK]  dead=[OK]  recon=0.21371
+  domain 3: DVP=0.165[OK]  entropy=2.781[OK]  dead=[OK]  recon=0.16072
+  domain 4: DVP=0.054[LOW]  entropy=2.805[OK]  dead=[OK]  recon=0.26833
+  domain 5: DVP=0.059[LOW]  entropy=2.804[OK]  dead=[OK]  recon=0.30951
+============================================================
+
+  block_diagonal_strength: 0.5653
+Loading 319th epoch
+Loss:[2.69067502]
+Loading 319th epoch
+Loss:[2.62534571]
+Loading 321th epoch
+Loss:[2.64830875]
+Loading 321th epoch
+Loss:[2.65219092]
+Loading 321th epoch
+Loss:[2.59480810]
+Loading 324th epoch
+Loss:[2.64026713]
+Loading 324th epoch
+Loss:[2.57997894]
+Loading 326th epoch
+Loss:[2.59755564]
+Loading 326th epoch
+Loss:[2.58349204]
+Loading 326th epoch
+Loss:[2.57475209]
+
+============================================================
+[DA-AA] Epoch 330 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.04678
+  domain 1: DVP=0.022[LOW]  entropy=2.701[OK]  dead=[OK]  recon=0.01671
+  domain 2: DVP=0.187[OK]  entropy=2.784[OK]  dead=[OK]  recon=0.21024
+  domain 3: DVP=0.167[OK]  entropy=2.780[OK]  dead=[OK]  recon=0.15810
+  domain 4: DVP=0.054[LOW]  entropy=2.804[OK]  dead=[OK]  recon=0.26486
+  domain 5: DVP=0.060[LOW]  entropy=2.804[OK]  dead=[OK]  recon=0.30424
+============================================================
+
+  block_diagonal_strength: 0.5649
+Loading 329th epoch
+Loss:[2.57867479]
+Loading 329th epoch
+Loss:[2.54296446]
+Loading 331th epoch
+Loss:[2.55837488]
+Loading 331th epoch
+Loss:[2.55221748]
+Loading 331th epoch
+Loss:[2.54020810]
+Loading 334th epoch
+Loss:[2.53176761]
+Loading 335th epoch
+Loss:[2.51897264]
+Loading 336th epoch
+Loss:[2.51756954]
+Loading 337th epoch
+Loss:[2.49998045]
+Loading 338th epoch
+Loss:[2.50068593]
+
+============================================================
+[DA-AA] Epoch 340 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.04649
+  domain 1: DVP=0.022[LOW]  entropy=2.700[OK]  dead=[OK]  recon=0.01649
+  domain 2: DVP=0.189[OK]  entropy=2.783[OK]  dead=[OK]  recon=0.20629
+  domain 3: DVP=0.169[OK]  entropy=2.779[OK]  dead=[OK]  recon=0.15532
+  domain 4: DVP=0.055[LOW]  entropy=2.804[OK]  dead=[OK]  recon=0.26116
+  domain 5: DVP=0.060[LOW]  entropy=2.803[OK]  dead=[OK]  recon=0.29865
+============================================================
+
+  block_diagonal_strength: 0.5646
+Loading 338th epoch
+Loss:[2.49001932]
+Loading 340th epoch
+Loss:[2.48787761]
+Loading 341th epoch
+Loss:[2.46618390]
+Loading 342th epoch
+Loss:[2.46720004]
+Loading 342th epoch
+Loss:[2.45763779]
+Loading 344th epoch
+Loss:[2.44840097]
+Loading 345th epoch
+Loss:[2.44572830]
+Loading 346th epoch
+Loss:[2.43428993]
+Loading 347th epoch
+Loss:[2.43045688]
+Loading 348th epoch
+Loss:[2.42344975]
+
+============================================================
+[DA-AA] Epoch 350 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.815[OK]  dead=[OK]  recon=0.04615
+  domain 1: DVP=0.022[LOW]  entropy=2.698[OK]  dead=[OK]  recon=0.01630
+  domain 2: DVP=0.192[OK]  entropy=2.782[OK]  dead=[OK]  recon=0.20329
+  domain 3: DVP=0.172[OK]  entropy=2.778[OK]  dead=[OK]  recon=0.15316
+  domain 4: DVP=0.055[LOW]  entropy=2.803[OK]  dead=[OK]  recon=0.25804
+  domain 5: DVP=0.061[LOW]  entropy=2.803[OK]  dead=[OK]  recon=0.29419
+============================================================
+
+  block_diagonal_strength: 0.5643
+Loading 349th epoch
+Loss:[2.41759634]
+Loading 350th epoch
+Loss:[2.40792656]
+Loading 351th epoch
+Loss:[2.40510702]
+Loading 352th epoch
+Loss:[2.39687347]
+Loading 353th epoch
+Loss:[2.39108443]
+Loading 354th epoch
+Loss:[2.38588333]
+Loading 355th epoch
+Loss:[2.37902927]
+Loading 356th epoch
+Loss:[2.37192488]
+Loading 357th epoch
+Loss:[2.36678839]
+Loading 358th epoch
+Loss:[2.36078072]
+
+============================================================
+[DA-AA] Epoch 360 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.815[OK]  dead=[OK]  recon=0.04577
+  domain 1: DVP=0.023[LOW]  entropy=2.697[OK]  dead=[OK]  recon=0.01604
+  domain 2: DVP=0.194[OK]  entropy=2.781[OK]  dead=[OK]  recon=0.20087
+  domain 3: DVP=0.174[OK]  entropy=2.777[OK]  dead=[OK]  recon=0.15140
+  domain 4: DVP=0.056[LOW]  entropy=2.803[OK]  dead=[OK]  recon=0.25518
+  domain 5: DVP=0.062[LOW]  entropy=2.802[OK]  dead=[OK]  recon=0.29039
+============================================================
+
+  block_diagonal_strength: 0.5639
+Loading 359th epoch
+Loss:[2.35380387]
+Loading 360th epoch
+Loss:[2.34841394]
+Loading 361th epoch
+Loss:[2.34241748]
+Loading 362th epoch
+Loss:[2.33639240]
+Loading 363th epoch
+Loss:[2.32980037]
+Loading 364th epoch
+Loss:[2.32470965]
+Loading 365th epoch
+Loss:[2.31876707]
+Loading 366th epoch
+Loss:[2.31270480]
+Loading 367th epoch
+Loss:[2.30657840]
+Loading 368th epoch
+Loss:[2.30101466]
+
+============================================================
+[DA-AA] Epoch 370 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.815[OK]  dead=[OK]  recon=0.04536
+  domain 1: DVP=0.023[LOW]  entropy=2.696[OK]  dead=[OK]  recon=0.01584
+  domain 2: DVP=0.197[OK]  entropy=2.780[OK]  dead=[OK]  recon=0.19870
+  domain 3: DVP=0.176[OK]  entropy=2.776[OK]  dead=[OK]  recon=0.14984
+  domain 4: DVP=0.056[LOW]  entropy=2.802[OK]  dead=[OK]  recon=0.25244
+  domain 5: DVP=0.062[LOW]  entropy=2.802[OK]  dead=[OK]  recon=0.28701
+============================================================
+
+  block_diagonal_strength: 0.5635
+Loading 369th epoch
+Loss:[2.29510093]
+Loading 370th epoch
+Loss:[2.28917408]
+Loading 371th epoch
+Loss:[2.28322172]
+Loading 372th epoch
+Loss:[2.27753782]
+Loading 373th epoch
+Loss:[2.27197099]
+Loading 374th epoch
+Loss:[2.26613331]
+Loading 375th epoch
+Loss:[2.26048493]
+Loading 376th epoch
+Loss:[2.25459099]
+Loading 377th epoch
+Loss:[2.24911976]
+Loading 378th epoch
+Loss:[2.24342418]
+
+============================================================
+[DA-AA] Epoch 380 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.815[OK]  dead=[OK]  recon=0.04500
+  domain 1: DVP=0.023[LOW]  entropy=2.695[OK]  dead=[OK]  recon=0.01565
+  domain 2: DVP=0.199[OK]  entropy=2.780[OK]  dead=[OK]  recon=0.19653
+  domain 3: DVP=0.178[OK]  entropy=2.775[OK]  dead=[OK]  recon=0.14830
+  domain 4: DVP=0.056[LOW]  entropy=2.802[OK]  dead=[OK]  recon=0.24981
+  domain 5: DVP=0.063[LOW]  entropy=2.801[OK]  dead=[OK]  recon=0.28371
+============================================================
+
+  block_diagonal_strength: 0.5631
+Loading 379th epoch
+Loss:[2.23789716]
+Loading 380th epoch
+Loss:[2.23200631]
+Loading 381th epoch
+Loss:[2.22634077]
+Loading 382th epoch
+Loss:[2.22063756]
+Loading 383th epoch
+Loss:[2.21511078]
+Loading 384th epoch
+Loss:[2.20954180]
+Loading 385th epoch
+Loss:[2.20392513]
+Loading 386th epoch
+Loss:[2.19833207]
+Loading 387th epoch
+Loss:[2.19264364]
+Loading 388th epoch
+Loss:[2.18704200]
+
+============================================================
+[DA-AA] Epoch 390 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.815[OK]  dead=[OK]  recon=0.04464
+  domain 1: DVP=0.023[LOW]  entropy=2.694[OK]  dead=[OK]  recon=0.01545
+  domain 2: DVP=0.200[OK]  entropy=2.779[OK]  dead=[OK]  recon=0.19447
+  domain 3: DVP=0.180[OK]  entropy=2.774[OK]  dead=[OK]  recon=0.14680
+  domain 4: DVP=0.057[LOW]  entropy=2.801[OK]  dead=[OK]  recon=0.24722
+  domain 5: DVP=0.064[LOW]  entropy=2.801[OK]  dead=[OK]  recon=0.28051
+============================================================
+
+  block_diagonal_strength: 0.5628
+Loading 389th epoch
+Loss:[2.18137932]
+Loading 390th epoch
+Loss:[2.17576790]
+Loading 391th epoch
+Loss:[2.17015052]
+Loading 392th epoch
+Loss:[2.16458607]
+Loading 393th epoch
+Loss:[2.15910053]
+Loading 394th epoch
+Loss:[2.15360475]
+Loading 395th epoch
+Loss:[2.14817405]
+Loading 396th epoch
+Loss:[2.14279842]
+Loading 397th epoch
+Loss:[2.13748264]
+Loading 398th epoch
+Loss:[2.13235760]
+
+============================================================
+[DA-AA] Epoch 400 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.814[OK]  dead=[OK]  recon=0.04426
+  domain 1: DVP=0.023[LOW]  entropy=2.693[OK]  dead=[OK]  recon=0.01527
+  domain 2: DVP=0.201[OK]  entropy=2.778[OK]  dead=[OK]  recon=0.19242
+  domain 3: DVP=0.181[OK]  entropy=2.773[OK]  dead=[OK]  recon=0.14532
+  domain 4: DVP=0.057[LOW]  entropy=2.801[OK]  dead=[OK]  recon=0.24460
+  domain 5: DVP=0.064[LOW]  entropy=2.800[OK]  dead=[OK]  recon=0.27743
+============================================================
+
+  block_diagonal_strength: 0.5624
+[Visualizer] t-SNE: 6062 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep400.png  (6062 pts)
+[DA-AA] domain 0 expand: 9 -> 10
+[DA-AA] domain 1 expand: 9 -> 10
+[DA-AA] domain 2 expand: 9 -> 10
+[DA-AA] domain 3 expand: 9 -> 10
+[DA-AA] domain 4 expand: 9 -> 10
+[DA-AA] domain 5 expand: 9 -> 10
+Loading 399th epoch
+Loss:[2.13280153]
+Loading 399th epoch
+Loss:[2.12873006]
+Loading 401th epoch
+Loss:[2.12590909]
+Loading 402th epoch
+Loss:[2.12700129]
+Loading 402th epoch
+Loss:[2.13539505]
+Loading 402th epoch
+Loss:[2.16521239]
+Loading 402th epoch
+Loss:[2.21629477]
+Loading 402th epoch
+Loss:[2.32424784]
+Loading 402th epoch
+Loss:[2.28825712]
+Loading 402th epoch
+Loss:[2.15047860]
+
+============================================================
+[DA-AA] Epoch 410 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.871[OK]  dead=[OK]  recon=0.04128
+  domain 1: DVP=0.023[LOW]  entropy=2.751[OK]  dead=[OK]  recon=0.01247
+  domain 2: DVP=0.201[OK]  entropy=2.837[OK]  dead=[OK]  recon=0.19318
+  domain 3: DVP=0.181[OK]  entropy=2.832[OK]  dead=[OK]  recon=0.14416
+  domain 4: DVP=0.057[LOW]  entropy=2.859[OK]  dead=[OK]  recon=0.24809
+  domain 5: DVP=0.064[LOW]  entropy=2.857[OK]  dead=[OK]  recon=0.27731
+============================================================
+
+  block_diagonal_strength: 0.5912
+Loading 402th epoch
+Loss:[2.09808779]
+Loading 410th epoch
+Loss:[2.15682673]
+Loading 410th epoch
+Loss:[2.16966438]
+Loading 410th epoch
+Loss:[2.09497309]
+Loading 413th epoch
+Loss:[2.06548715]
+Loading 414th epoch
+Loss:[2.09536099]
+Loading 414th epoch
+Loss:[2.10500431]
+Loading 414th epoch
+Loss:[2.08365774]
+Loading 414th epoch
+Loss:[2.04735851]
+Loading 418th epoch
+Loss:[2.04912806]
+
+============================================================
+[DA-AA] Epoch 420 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.870[OK]  dead=[OK]  recon=0.04108
+  domain 1: DVP=0.023[LOW]  entropy=2.750[OK]  dead=[OK]  recon=0.01218
+  domain 2: DVP=0.200[OK]  entropy=2.836[OK]  dead=[OK]  recon=0.19130
+  domain 3: DVP=0.181[OK]  entropy=2.831[OK]  dead=[OK]  recon=0.14269
+  domain 4: DVP=0.057[LOW]  entropy=2.858[OK]  dead=[OK]  recon=0.24582
+  domain 5: DVP=0.064[LOW]  entropy=2.857[OK]  dead=[OK]  recon=0.27451
+============================================================
+
+  block_diagonal_strength: 0.5909
+Loading 418th epoch
+Loss:[2.07631636]
+Loading 418th epoch
+Loss:[2.07096815]
+Loading 418th epoch
+Loss:[2.03742290]
+Loading 422th epoch
+Loss:[2.02211261]
+Loading 423th epoch
+Loss:[2.03341889]
+Loading 423th epoch
+Loss:[2.04235363]
+Loading 423th epoch
+Loss:[2.01904631]
+Loading 426th epoch
+Loss:[2.00220275]
+Loading 427th epoch
+Loss:[2.00271535]
+Loading 427th epoch
+Loss:[2.00997949]
+
+============================================================
+[DA-AA] Epoch 430 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.870[OK]  dead=[OK]  recon=0.04084
+  domain 1: DVP=0.023[LOW]  entropy=2.748[OK]  dead=[OK]  recon=0.01199
+  domain 2: DVP=0.200[OK]  entropy=2.835[OK]  dead=[OK]  recon=0.18953
+  domain 3: DVP=0.181[OK]  entropy=2.830[OK]  dead=[OK]  recon=0.14149
+  domain 4: DVP=0.057[LOW]  entropy=2.858[OK]  dead=[OK]  recon=0.24348
+  domain 5: DVP=0.064[LOW]  entropy=2.856[OK]  dead=[OK]  recon=0.27189
+============================================================
+
+  block_diagonal_strength: 0.5907
+Loading 427th epoch
+Loss:[2.00207400]
+Loading 430th epoch
+Loss:[1.98628426]
+Loading 431th epoch
+Loss:[1.97798502]
+Loading 432th epoch
+Loss:[1.97948050]
+Loading 432th epoch
+Loss:[1.97943139]
+Loading 432th epoch
+Loss:[1.97373319]
+Loading 435th epoch
+Loss:[1.96217048]
+Loading 436th epoch
+Loss:[1.95515347]
+Loading 437th epoch
+Loss:[1.95510006]
+Loading 438th epoch
+Loss:[1.95509577]
+
+============================================================
+[DA-AA] Epoch 440 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.870[OK]  dead=[OK]  recon=0.04057
+  domain 1: DVP=0.023[LOW]  entropy=2.747[OK]  dead=[OK]  recon=0.01183
+  domain 2: DVP=0.199[OK]  entropy=2.835[OK]  dead=[OK]  recon=0.18773
+  domain 3: DVP=0.181[OK]  entropy=2.829[OK]  dead=[OK]  recon=0.14030
+  domain 4: DVP=0.056[LOW]  entropy=2.857[OK]  dead=[OK]  recon=0.24119
+  domain 5: DVP=0.064[LOW]  entropy=2.856[OK]  dead=[OK]  recon=0.26925
+============================================================
+
+  block_diagonal_strength: 0.5905
+Loading 439th epoch
+Loss:[1.94931579]
+Loading 440th epoch
+Loss:[1.93987846]
+Loading 441th epoch
+Loss:[1.93283248]
+Loading 442th epoch
+Loss:[1.92890739]
+Loading 443th epoch
+Loss:[1.92748833]
+Loading 444th epoch
+Loss:[1.92643344]
+Loading 445th epoch
+Loss:[1.92038202]
+Loading 446th epoch
+Loss:[1.91321850]
+Loading 447th epoch
+Loss:[1.90578222]
+Loading 448th epoch
+Loss:[1.90255618]
+
+============================================================
+[DA-AA] Epoch 450 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.870[OK]  dead=[OK]  recon=0.04025
+  domain 1: DVP=0.023[LOW]  entropy=2.746[OK]  dead=[OK]  recon=0.01169
+  domain 2: DVP=0.198[OK]  entropy=2.834[OK]  dead=[OK]  recon=0.18602
+  domain 3: DVP=0.182[OK]  entropy=2.828[OK]  dead=[OK]  recon=0.13916
+  domain 4: DVP=0.056[LOW]  entropy=2.857[OK]  dead=[OK]  recon=0.23898
+  domain 5: DVP=0.064[LOW]  entropy=2.855[OK]  dead=[OK]  recon=0.26695
+============================================================
+
+  block_diagonal_strength: 0.5902
+Loading 449th epoch
+Loss:[1.89904189]
+Loading 450th epoch
+Loss:[1.89694357]
+Loading 451th epoch
+Loss:[1.89560497]
+Loading 452th epoch
+Loss:[1.88800478]
+Loading 453th epoch
+Loss:[1.88285387]
+Loading 454th epoch
+Loss:[1.87534559]
+Loading 455th epoch
+Loss:[1.87226486]
+Loading 456th epoch
+Loss:[1.86891150]
+Loading 457th epoch
+Loss:[1.86596668]
+Loading 458th epoch
+Loss:[1.86520863]
+
+============================================================
+[DA-AA] Epoch 460 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.869[OK]  dead=[OK]  recon=0.03989
+  domain 1: DVP=0.023[LOW]  entropy=2.744[OK]  dead=[OK]  recon=0.01156
+  domain 2: DVP=0.200[OK]  entropy=2.833[OK]  dead=[OK]  recon=0.18435
+  domain 3: DVP=0.183[OK]  entropy=2.827[OK]  dead=[OK]  recon=0.13801
+  domain 4: DVP=0.056[LOW]  entropy=2.856[OK]  dead=[OK]  recon=0.23671
+  domain 5: DVP=0.065[LOW]  entropy=2.855[OK]  dead=[OK]  recon=0.26469
+============================================================
+
+  block_diagonal_strength: 0.5900
+Loading 459th epoch
+Loss:[1.85809278]
+Loading 460th epoch
+Loss:[1.85382640]
+Loading 461th epoch
+Loss:[1.84692764]
+Loading 462th epoch
+Loss:[1.84226525]
+Loading 463th epoch
+Loss:[1.83818150]
+Loading 464th epoch
+Loss:[1.83379340]
+Loading 465th epoch
+Loss:[1.83129394]
+Loading 466th epoch
+Loss:[1.82700086]
+Loading 467th epoch
+Loss:[1.82369852]
+Loading 468th epoch
+Loss:[1.82056952]
+
+============================================================
+[DA-AA] Epoch 470 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.869[OK]  dead=[OK]  recon=0.03967
+  domain 1: DVP=0.023[LOW]  entropy=2.744[OK]  dead=[OK]  recon=0.01137
+  domain 2: DVP=0.201[OK]  entropy=2.832[OK]  dead=[OK]  recon=0.18265
+  domain 3: DVP=0.185[OK]  entropy=2.826[OK]  dead=[OK]  recon=0.13684
+  domain 4: DVP=0.057[LOW]  entropy=2.856[OK]  dead=[OK]  recon=0.23459
+  domain 5: DVP=0.065[LOW]  entropy=2.854[OK]  dead=[OK]  recon=0.26228
+============================================================
+
+  block_diagonal_strength: 0.5897
+Loading 469th epoch
+Loss:[1.81680107]
+Loading 470th epoch
+Loss:[1.81345153]
+Loading 471th epoch
+Loss:[1.81151175]
+Loading 472th epoch
+Loss:[1.80817389]
+Loading 473th epoch
+Loss:[1.80668950]
+Loading 474th epoch
+Loss:[1.80497730]
+Loading 475th epoch
+Loss:[1.80488718]
+Loading 476th epoch
+Loss:[1.80179369]
+Loading 477th epoch
+Loss:[1.80277312]
+Loading 477th epoch
+Loss:[1.79874325]
+
+============================================================
+[DA-AA] Epoch 480 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.869[OK]  dead=[OK]  recon=0.03941
+  domain 1: DVP=0.023[LOW]  entropy=2.743[OK]  dead=[OK]  recon=0.01119
+  domain 2: DVP=0.203[OK]  entropy=2.831[OK]  dead=[OK]  recon=0.18091
+  domain 3: DVP=0.186[OK]  entropy=2.825[OK]  dead=[OK]  recon=0.13559
+  domain 4: DVP=0.057[LOW]  entropy=2.855[OK]  dead=[OK]  recon=0.23246
+  domain 5: DVP=0.066[LOW]  entropy=2.854[OK]  dead=[OK]  recon=0.25995
+============================================================
+
+  block_diagonal_strength: 0.5895
+Loading 479th epoch
+Loss:[1.79564381]
+Loading 480th epoch
+Loss:[1.78890586]
+Loading 481th epoch
+Loss:[1.78458214]
+Loading 482th epoch
+Loss:[1.77353454]
+Loading 483th epoch
+Loss:[1.76493120]
+Loading 484th epoch
+Loss:[1.75744247]
+Loading 485th epoch
+Loss:[1.75203753]
+Loading 486th epoch
+Loss:[1.74849093]
+Loading 487th epoch
+Loss:[1.74613154]
+Loading 488th epoch
+Loss:[1.74523318]
+
+============================================================
+[DA-AA] Epoch 490 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.868[OK]  dead=[OK]  recon=0.03902
+  domain 1: DVP=0.023[LOW]  entropy=2.740[OK]  dead=[OK]  recon=0.01109
+  domain 2: DVP=0.204[OK]  entropy=2.830[OK]  dead=[OK]  recon=0.17922
+  domain 3: DVP=0.188[OK]  entropy=2.823[OK]  dead=[OK]  recon=0.13437
+  domain 4: DVP=0.057[LOW]  entropy=2.854[OK]  dead=[OK]  recon=0.23024
+  domain 5: DVP=0.066[LOW]  entropy=2.853[OK]  dead=[OK]  recon=0.25785
+============================================================
+
+  block_diagonal_strength: 0.5894
+Loading 489th epoch
+Loss:[1.74357915]
+Loading 490th epoch
+Loss:[1.74378467]
+Loading 490th epoch
+Loss:[1.74313617]
+Loading 492th epoch
+Loss:[1.74370635]
+Loading 492th epoch
+Loss:[1.74237335]
+Loading 494th epoch
+Loss:[1.74600852]
+Loading 494th epoch
+Loss:[1.74036753]
+Loading 496th epoch
+Loss:[1.73720503]
+Loading 497th epoch
+Loss:[1.72814286]
+Loading 498th epoch
+Loss:[1.71896410]
+
+============================================================
+[DA-AA] Epoch 500 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.868[OK]  dead=[OK]  recon=0.03870
+  domain 1: DVP=0.022[LOW]  entropy=2.739[OK]  dead=[OK]  recon=0.01096
+  domain 2: DVP=0.206[OK]  entropy=2.829[OK]  dead=[OK]  recon=0.17746
+  domain 3: DVP=0.190[OK]  entropy=2.822[OK]  dead=[OK]  recon=0.13311
+  domain 4: DVP=0.057[LOW]  entropy=2.854[OK]  dead=[OK]  recon=0.22803
+  domain 5: DVP=0.067[LOW]  entropy=2.852[OK]  dead=[OK]  recon=0.25554
+============================================================
+
+  block_diagonal_strength: 0.5892
+Loading 499th epoch
+Loss:[1.70739603]
+Loading 500th epoch
+Loss:[1.69938624]
+Loading 501th epoch
+Loss:[1.69511652]
+Loading 502th epoch
+Loss:[1.69379604]
+Loading 503th epoch
+Loss:[1.69446015]
+Loading 503th epoch
+Loss:[1.69415188]
+Loading 503th epoch
+Loss:[1.69346762]
+Loading 506th epoch
+Loss:[1.68969941]
+Loading 507th epoch
+Loss:[1.68641007]
+Loading 508th epoch
+Loss:[1.67924190]
+
+============================================================
+[DA-AA] Epoch 510 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.868[OK]  dead=[OK]  recon=0.03848
+  domain 1: DVP=0.022[LOW]  entropy=2.738[OK]  dead=[OK]  recon=0.01073
+  domain 2: DVP=0.208[OK]  entropy=2.828[OK]  dead=[OK]  recon=0.17578
+  domain 3: DVP=0.192[OK]  entropy=2.821[OK]  dead=[OK]  recon=0.13188
+  domain 4: DVP=0.057[LOW]  entropy=2.853[OK]  dead=[OK]  recon=0.22588
+  domain 5: DVP=0.067[LOW]  entropy=2.851[OK]  dead=[OK]  recon=0.25311
+============================================================
+
+  block_diagonal_strength: 0.5888
+Loading 509th epoch
+Loss:[1.67288637]
+Loading 510th epoch
+Loss:[1.66670084]
+Loading 511th epoch
+Loss:[1.66172743]
+Loading 512th epoch
+Loss:[1.65801406]
+Loading 513th epoch
+Loss:[1.65536451]
+Loading 514th epoch
+Loss:[1.65337229]
+Loading 515th epoch
+Loss:[1.65137315]
+Loading 516th epoch
+Loss:[1.64985943]
+Loading 517th epoch
+Loss:[1.64755654]
+Loading 518th epoch
+Loss:[1.64536512]
+
+============================================================
+[DA-AA] Epoch 520 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.867[OK]  dead=[OK]  recon=0.03812
+  domain 1: DVP=0.022[LOW]  entropy=2.736[OK]  dead=[OK]  recon=0.01062
+  domain 2: DVP=0.210[OK]  entropy=2.827[OK]  dead=[OK]  recon=0.17414
+  domain 3: DVP=0.194[OK]  entropy=2.820[OK]  dead=[OK]  recon=0.13075
+  domain 4: DVP=0.058[LOW]  entropy=2.852[OK]  dead=[OK]  recon=0.22360
+  domain 5: DVP=0.068[LOW]  entropy=2.851[OK]  dead=[OK]  recon=0.25083
+============================================================
+
+  block_diagonal_strength: 0.5887
+Loading 519th epoch
+Loss:[1.64218819]
+Loading 520th epoch
+Loss:[1.63972175]
+Loading 521th epoch
+Loss:[1.63561022]
+Loading 522th epoch
+Loss:[1.63256299]
+Loading 523th epoch
+Loss:[1.62844932]
+Loading 524th epoch
+Loss:[1.62475097]
+Loading 525th epoch
+Loss:[1.62048388]
+Loading 526th epoch
+Loss:[1.61663139]
+Loading 527th epoch
+Loss:[1.61242223]
+Loading 528th epoch
+Loss:[1.60860431]
+
+============================================================
+[DA-AA] Epoch 530 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.867[OK]  dead=[OK]  recon=0.03782
+  domain 1: DVP=0.022[LOW]  entropy=2.735[OK]  dead=[OK]  recon=0.01045
+  domain 2: DVP=0.211[OK]  entropy=2.826[OK]  dead=[OK]  recon=0.17251
+  domain 3: DVP=0.196[OK]  entropy=2.818[OK]  dead=[OK]  recon=0.12956
+  domain 4: DVP=0.058[LOW]  entropy=2.851[OK]  dead=[OK]  recon=0.22139
+  domain 5: DVP=0.068[LOW]  entropy=2.850[OK]  dead=[OK]  recon=0.24842
+============================================================
+
+  block_diagonal_strength: 0.5885
+Loading 529th epoch
+Loss:[1.60497272]
+Loading 530th epoch
+Loss:[1.60151625]
+Loading 531th epoch
+Loss:[1.59828103]
+Loading 532th epoch
+Loss:[1.59526086]
+Loading 533th epoch
+Loss:[1.59234309]
+Loading 534th epoch
+Loss:[1.58952713]
+Loading 535th epoch
+Loss:[1.58683717]
+Loading 536th epoch
+Loss:[1.58422923]
+Loading 537th epoch
+Loss:[1.58194613]
+Loading 538th epoch
+Loss:[1.57986236]
+
+============================================================
+[DA-AA] Epoch 540 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.867[OK]  dead=[OK]  recon=0.03753
+  domain 1: DVP=0.022[LOW]  entropy=2.734[OK]  dead=[OK]  recon=0.01026
+  domain 2: DVP=0.213[OK]  entropy=2.825[OK]  dead=[OK]  recon=0.17085
+  domain 3: DVP=0.198[OK]  entropy=2.817[OK]  dead=[OK]  recon=0.12835
+  domain 4: DVP=0.058[LOW]  entropy=2.851[OK]  dead=[OK]  recon=0.21915
+  domain 5: DVP=0.069[LOW]  entropy=2.849[OK]  dead=[OK]  recon=0.24596
+============================================================
+
+  block_diagonal_strength: 0.5882
+Loading 539th epoch
+Loss:[1.57852042]
+Loading 540th epoch
+Loss:[1.57761478]
+Loading 541th epoch
+Loss:[1.57974160]
+Loading 541th epoch
+Loss:[1.58284593]
+Loading 541th epoch
+Loss:[1.59990335]
+Loading 541th epoch
+Loss:[1.61542726]
+Loading 541th epoch
+Loss:[1.68344545]
+Loading 541th epoch
+Loss:[1.70158839]
+Loading 541th epoch
+Loss:[1.72608972]
+Loading 541th epoch
+Loss:[1.68199015]
+
+============================================================
+[DA-AA] Epoch 550 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.866[OK]  dead=[OK]  recon=0.03732
+  domain 1: DVP=0.022[LOW]  entropy=2.732[OK]  dead=[OK]  recon=0.01001
+  domain 2: DVP=0.214[OK]  entropy=2.824[OK]  dead=[OK]  recon=0.16904
+  domain 3: DVP=0.200[OK]  entropy=2.816[OK]  dead=[OK]  recon=0.12697
+  domain 4: DVP=0.058[LOW]  entropy=2.850[OK]  dead=[OK]  recon=0.21691
+  domain 5: DVP=0.069[LOW]  entropy=2.849[OK]  dead=[OK]  recon=0.24331
+============================================================
+
+  block_diagonal_strength: 0.5882
+Loading 541th epoch
+Loss:[1.63909662]
+Loading 541th epoch
+Loss:[1.55442119]
+Loading 551th epoch
+Loss:[1.67038643]
+Loading 551th epoch
+Loss:[2.23014450]
+Loading 551th epoch
+Loss:[2.44162464]
+Loading 551th epoch
+Loss:[2.08563447]
+Loading 551th epoch
+Loss:[2.07543635]
+Loading 551th epoch
+Loss:[2.31180429]
+Loading 551th epoch
+Loss:[2.25595713]
+Loading 551th epoch
+Loss:[1.95849061]
+
+============================================================
+[DA-AA] Epoch 560 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.865[OK]  dead=[OK]  recon=0.03555
+  domain 1: DVP=0.021[LOW]  entropy=2.724[OK]  dead=[OK]  recon=0.00985
+  domain 2: DVP=0.216[OK]  entropy=2.825[OK]  dead=[OK]  recon=0.16596
+  domain 3: DVP=0.201[OK]  entropy=2.817[OK]  dead=[OK]  recon=0.12293
+  domain 4: DVP=0.058[LOW]  entropy=2.849[OK]  dead=[OK]  recon=0.21583
+  domain 5: DVP=0.069[LOW]  entropy=2.847[OK]  dead=[OK]  recon=0.24619
+============================================================
+
+  block_diagonal_strength: 0.5884
+Loading 551th epoch
+Loss:[2.05945802]
+Loading 551th epoch
+Loss:[1.95353723]
+Loading 551th epoch
+Loss:[1.68835628]
+Loading 551th epoch
+Loss:[1.92085838]
+Loading 551th epoch
+Loss:[1.69885361]
+Loading 551th epoch
+Loss:[1.78045082]
+Loading 551th epoch
+Loss:[1.89119291]
+Loading 551th epoch
+Loss:[1.72776103]
+Loading 551th epoch
+Loss:[1.88675117]
+Loading 551th epoch
+Loss:[1.85679126]
+
+============================================================
+[DA-AA] Epoch 570 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.865[OK]  dead=[OK]  recon=0.03586
+  domain 1: DVP=0.022[LOW]  entropy=2.722[OK]  dead=[OK]  recon=0.00975
+  domain 2: DVP=0.216[OK]  entropy=2.824[OK]  dead=[OK]  recon=0.16398
+  domain 3: DVP=0.202[OK]  entropy=2.816[OK]  dead=[OK]  recon=0.12286
+  domain 4: DVP=0.058[LOW]  entropy=2.848[OK]  dead=[OK]  recon=0.21446
+  domain 5: DVP=0.069[LOW]  entropy=2.847[OK]  dead=[OK]  recon=0.24482
+============================================================
+
+  block_diagonal_strength: 0.5898
+Loading 551th epoch
+Loss:[1.75588083]
+Loading 551th epoch
+Loss:[1.74278915]
+Loading 551th epoch
+Loss:[1.74460030]
+Loading 551th epoch
+Loss:[1.72058046]
+Loading 551th epoch
+Loss:[1.68525207]
+Loading 551th epoch
+Loss:[1.67103422]
+Loading 551th epoch
+Loss:[1.61605632]
+Loading 551th epoch
+Loss:[1.62570548]
+Loading 551th epoch
+Loss:[1.66323268]
+Loading 551th epoch
+Loss:[1.59387636]
+
+============================================================
+[DA-AA] Epoch 580 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.865[OK]  dead=[OK]  recon=0.03589
+  domain 1: DVP=0.022[LOW]  entropy=2.722[OK]  dead=[OK]  recon=0.00952
+  domain 2: DVP=0.216[OK]  entropy=2.822[OK]  dead=[OK]  recon=0.16292
+  domain 3: DVP=0.201[OK]  entropy=2.815[OK]  dead=[OK]  recon=0.12298
+  domain 4: DVP=0.057[LOW]  entropy=2.848[OK]  dead=[OK]  recon=0.21465
+  domain 5: DVP=0.069[LOW]  entropy=2.846[OK]  dead=[OK]  recon=0.24467
+============================================================
+
+  block_diagonal_strength: 0.5876
+Loading 551th epoch
+Loss:[1.59896433]
+Loading 551th epoch
+Loss:[1.62258625]
+Loading 551th epoch
+Loss:[1.60147715]
+Loading 551th epoch
+Loss:[1.56645417]
+Loading 551th epoch
+Loss:[1.56455505]
+Loading 551th epoch
+Loss:[1.56083274]
+Loading 551th epoch
+Loss:[1.56288195]
+Loading 551th epoch
+Loss:[1.54784346]
+Loading 587th epoch
+Loss:[1.54419541]
+Loading 588th epoch
+Loss:[1.54176390]
+
+============================================================
+[DA-AA] Epoch 590 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.865[OK]  dead=[OK]  recon=0.03598
+  domain 1: DVP=0.022[LOW]  entropy=2.720[OK]  dead=[OK]  recon=0.00936
+  domain 2: DVP=0.216[OK]  entropy=2.821[OK]  dead=[OK]  recon=0.16000
+  domain 3: DVP=0.201[OK]  entropy=2.813[OK]  dead=[OK]  recon=0.12094
+  domain 4: DVP=0.057[LOW]  entropy=2.847[OK]  dead=[OK]  recon=0.21199
+  domain 5: DVP=0.069[LOW]  entropy=2.845[OK]  dead=[OK]  recon=0.24045
+============================================================
+
+  block_diagonal_strength: 0.5880
+Loading 589th epoch
+Loss:[1.54660404]
+Loading 589th epoch
+Loss:[1.53113401]
+Loading 591th epoch
+Loss:[1.52063787]
+Loading 592th epoch
+Loss:[1.52091718]
+Loading 592th epoch
+Loss:[1.52221584]
+Loading 592th epoch
+Loss:[1.51249743]
+Loading 595th epoch
+Loss:[1.50743711]
+Loading 596th epoch
+Loss:[1.50633979]
+Loading 597th epoch
+Loss:[1.50340533]
+Loading 598th epoch
+Loss:[1.50133562]
+
+============================================================
+[DA-AA] Epoch 600 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.865[OK]  dead=[OK]  recon=0.03573
+  domain 1: DVP=0.022[LOW]  entropy=2.718[OK]  dead=[OK]  recon=0.00911
+  domain 2: DVP=0.216[OK]  entropy=2.819[OK]  dead=[OK]  recon=0.15945
+  domain 3: DVP=0.201[OK]  entropy=2.812[OK]  dead=[OK]  recon=0.12017
+  domain 4: DVP=0.057[LOW]  entropy=2.846[OK]  dead=[OK]  recon=0.20962
+  domain 5: DVP=0.069[LOW]  entropy=2.844[OK]  dead=[OK]  recon=0.23792
+============================================================
+
+  block_diagonal_strength: 0.5873
+[Visualizer] t-SNE: 6068 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep600.png  (6068 pts)
+[DA-AA] domain 0 expand: 10 -> 11
+[DA-AA] domain 1 expand: 10 -> 11
+[DA-AA] domain 2 expand: 10 -> 11
+[DA-AA] domain 3 expand: 10 -> 11
+[DA-AA] domain 4 expand: 10 -> 11
+[DA-AA] domain 5 expand: 10 -> 11
+Loading 599th epoch
+Loss:[1.50994861]
+Loading 599th epoch
+Loss:[1.50640869]
+Loading 599th epoch
+Loss:[1.50507736]
+Loading 599th epoch
+Loss:[1.50326526]
+Loading 599th epoch
+Loss:[1.49614251]
+Loading 604th epoch
+Loss:[1.49398780]
+Loading 605th epoch
+Loss:[1.49211729]
+Loading 606th epoch
+Loss:[1.48926389]
+Loading 607th epoch
+Loss:[1.48594189]
+Loading 608th epoch
+Loss:[1.48344684]
+
+============================================================
+[DA-AA] Epoch 610 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.918[OK]  dead=[OK]  recon=0.03432
+  domain 1: DVP=0.023[LOW]  entropy=2.773[OK]  dead=[OK]  recon=0.00749
+  domain 2: DVP=0.215[OK]  entropy=2.875[OK]  dead=[OK]  recon=0.16219
+  domain 3: DVP=0.200[OK]  entropy=2.868[OK]  dead=[OK]  recon=0.12105
+  domain 4: DVP=0.056[LOW]  entropy=2.901[OK]  dead=[OK]  recon=0.21413
+  domain 5: DVP=0.069[LOW]  entropy=2.899[OK]  dead=[OK]  recon=0.23881
+============================================================
+
+  block_diagonal_strength: 0.6127
+Loading 609th epoch
+Loss:[1.48093021]
+Loading 610th epoch
+Loss:[1.47889793]
+Loading 611th epoch
+Loss:[1.47641611]
+Loading 612th epoch
+Loss:[1.47284627]
+Loading 613th epoch
+Loss:[1.47111082]
+Loading 614th epoch
+Loss:[1.46915722]
+Loading 615th epoch
+Loss:[1.46642804]
+Loading 616th epoch
+Loss:[1.46353447]
+Loading 617th epoch
+Loss:[1.46142328]
+Loading 618th epoch
+Loss:[1.45891404]
+
+============================================================
+[DA-AA] Epoch 620 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.917[OK]  dead=[OK]  recon=0.03409
+  domain 1: DVP=0.023[LOW]  entropy=2.771[OK]  dead=[OK]  recon=0.00737
+  domain 2: DVP=0.216[OK]  entropy=2.874[OK]  dead=[OK]  recon=0.16088
+  domain 3: DVP=0.200[OK]  entropy=2.866[OK]  dead=[OK]  recon=0.12017
+  domain 4: DVP=0.056[LOW]  entropy=2.901[OK]  dead=[OK]  recon=0.21183
+  domain 5: DVP=0.069[LOW]  entropy=2.898[OK]  dead=[OK]  recon=0.23606
+============================================================
+
+  block_diagonal_strength: 0.6126
+Loading 619th epoch
+Loss:[1.45667911]
+Loading 620th epoch
+Loss:[1.45421505]
+Loading 621th epoch
+Loss:[1.45166075]
+Loading 622th epoch
+Loss:[1.44979072]
+Loading 623th epoch
+Loss:[1.44774199]
+Loading 624th epoch
+Loss:[1.44539618]
+Loading 625th epoch
+Loss:[1.44321012]
+Loading 626th epoch
+Loss:[1.44139504]
+Loading 627th epoch
+Loss:[1.43920851]
+Loading 628th epoch
+Loss:[1.43711436]
+
+============================================================
+[DA-AA] Epoch 630 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.917[OK]  dead=[OK]  recon=0.03384
+  domain 1: DVP=0.023[LOW]  entropy=2.769[OK]  dead=[OK]  recon=0.00726
+  domain 2: DVP=0.216[OK]  entropy=2.873[OK]  dead=[OK]  recon=0.15951
+  domain 3: DVP=0.201[OK]  entropy=2.865[OK]  dead=[OK]  recon=0.11913
+  domain 4: DVP=0.056[LOW]  entropy=2.900[OK]  dead=[OK]  recon=0.20959
+  domain 5: DVP=0.069[LOW]  entropy=2.897[OK]  dead=[OK]  recon=0.23359
+============================================================
+
+  block_diagonal_strength: 0.6125
+Loading 629th epoch
+Loss:[1.43497276]
+Loading 630th epoch
+Loss:[1.43294394]
+Loading 631th epoch
+Loss:[1.43097532]
+Loading 632th epoch
+Loss:[1.42881000]
+Loading 633th epoch
+Loss:[1.42664623]
+Loading 634th epoch
+Loss:[1.42468905]
+Loading 635th epoch
+Loss:[1.42276037]
+Loading 636th epoch
+Loss:[1.42069602]
+Loading 637th epoch
+Loss:[1.41876423]
+Loading 638th epoch
+Loss:[1.41682029]
+
+============================================================
+[DA-AA] Epoch 640 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.917[OK]  dead=[OK]  recon=0.03360
+  domain 1: DVP=0.023[LOW]  entropy=2.766[OK]  dead=[OK]  recon=0.00716
+  domain 2: DVP=0.216[OK]  entropy=2.872[OK]  dead=[OK]  recon=0.15812
+  domain 3: DVP=0.202[OK]  entropy=2.864[OK]  dead=[OK]  recon=0.11807
+  domain 4: DVP=0.056[LOW]  entropy=2.899[OK]  dead=[OK]  recon=0.20734
+  domain 5: DVP=0.070[LOW]  entropy=2.896[OK]  dead=[OK]  recon=0.23112
+============================================================
+
+  block_diagonal_strength: 0.6123
+Loading 639th epoch
+Loss:[1.41489363]
+Loading 640th epoch
+Loss:[1.41296053]
+Loading 641th epoch
+Loss:[1.41103292]
+Loading 642th epoch
+Loss:[1.40918875]
+Loading 643th epoch
+Loss:[1.40736592]
+Loading 644th epoch
+Loss:[1.40546727]
+Loading 645th epoch
+Loss:[1.40354347]
+Loading 646th epoch
+Loss:[1.40168107]
+Loading 647th epoch
+Loss:[1.39980102]
+Loading 648th epoch
+Loss:[1.39795458]
+
+============================================================
+[DA-AA] Epoch 650 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.916[OK]  dead=[OK]  recon=0.03334
+  domain 1: DVP=0.023[LOW]  entropy=2.764[OK]  dead=[OK]  recon=0.00705
+  domain 2: DVP=0.216[OK]  entropy=2.871[OK]  dead=[OK]  recon=0.15677
+  domain 3: DVP=0.202[OK]  entropy=2.862[OK]  dead=[OK]  recon=0.11709
+  domain 4: DVP=0.056[LOW]  entropy=2.898[OK]  dead=[OK]  recon=0.20517
+  domain 5: DVP=0.070[LOW]  entropy=2.896[OK]  dead=[OK]  recon=0.22882
+============================================================
+
+  block_diagonal_strength: 0.6120
+Loading 649th epoch
+Loss:[1.39611888]
+Loading 650th epoch
+Loss:[1.39429176]
+Loading 651th epoch
+Loss:[1.39248943]
+Loading 652th epoch
+Loss:[1.39067423]
+Loading 653th epoch
+Loss:[1.38885665]
+Loading 654th epoch
+Loss:[1.38705850]
+Loading 655th epoch
+Loss:[1.38527226]
+Loading 656th epoch
+Loss:[1.38348377]
+Loading 657th epoch
+Loss:[1.38172436]
+Loading 658th epoch
+Loss:[1.37997627]
+
+============================================================
+[DA-AA] Epoch 660 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.916[OK]  dead=[OK]  recon=0.03309
+  domain 1: DVP=0.023[LOW]  entropy=2.762[OK]  dead=[OK]  recon=0.00694
+  domain 2: DVP=0.218[OK]  entropy=2.869[OK]  dead=[OK]  recon=0.15543
+  domain 3: DVP=0.204[OK]  entropy=2.861[OK]  dead=[OK]  recon=0.11610
+  domain 4: DVP=0.056[LOW]  entropy=2.897[OK]  dead=[OK]  recon=0.20304
+  domain 5: DVP=0.070[LOW]  entropy=2.895[OK]  dead=[OK]  recon=0.22657
+============================================================
+
+  block_diagonal_strength: 0.6117
+Loading 659th epoch
+Loss:[1.37823427]
+Loading 660th epoch
+Loss:[1.37648225]
+Loading 661th epoch
+Loss:[1.37470746]
+Loading 662th epoch
+Loss:[1.37294436]
+Loading 663th epoch
+Loss:[1.37119913]
+Loading 664th epoch
+Loss:[1.36947048]
+Loading 665th epoch
+Loss:[1.36775923]
+Loading 666th epoch
+Loss:[1.36606073]
+Loading 667th epoch
+Loss:[1.36435926]
+Loading 668th epoch
+Loss:[1.36265290]
+
+============================================================
+[DA-AA] Epoch 670 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.915[OK]  dead=[OK]  recon=0.03284
+  domain 1: DVP=0.022[LOW]  entropy=2.760[OK]  dead=[OK]  recon=0.00683
+  domain 2: DVP=0.219[OK]  entropy=2.868[OK]  dead=[OK]  recon=0.15406
+  domain 3: DVP=0.205[OK]  entropy=2.859[OK]  dead=[OK]  recon=0.11510
+  domain 4: DVP=0.056[LOW]  entropy=2.896[OK]  dead=[OK]  recon=0.20090
+  domain 5: DVP=0.071[LOW]  entropy=2.894[OK]  dead=[OK]  recon=0.22437
+============================================================
+
+  block_diagonal_strength: 0.6114
+Loading 669th epoch
+Loss:[1.36094844]
+Loading 670th epoch
+Loss:[1.35925531]
+Loading 671th epoch
+Loss:[1.35757709]
+Loading 672th epoch
+Loss:[1.35590458]
+Loading 673th epoch
+Loss:[1.35424423]
+Loading 674th epoch
+Loss:[1.35259402]
+Loading 675th epoch
+Loss:[1.35094500]
+Loading 676th epoch
+Loss:[1.34929800]
+Loading 677th epoch
+Loss:[1.34765410]
+Loading 678th epoch
+Loss:[1.34601760]
+
+============================================================
+[DA-AA] Epoch 680 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.915[OK]  dead=[OK]  recon=0.03259
+  domain 1: DVP=0.022[LOW]  entropy=2.757[OK]  dead=[OK]  recon=0.00672
+  domain 2: DVP=0.221[OK]  entropy=2.866[OK]  dead=[OK]  recon=0.15268
+  domain 3: DVP=0.207[OK]  entropy=2.858[OK]  dead=[OK]  recon=0.11409
+  domain 4: DVP=0.057[LOW]  entropy=2.895[OK]  dead=[OK]  recon=0.19880
+  domain 5: DVP=0.071[LOW]  entropy=2.893[OK]  dead=[OK]  recon=0.22225
+============================================================
+
+  block_diagonal_strength: 0.6110
+Loading 679th epoch
+Loss:[1.34439039]
+Loading 680th epoch
+Loss:[1.34277475]
+Loading 681th epoch
+Loss:[1.34116793]
+Loading 682th epoch
+Loss:[1.33956552]
+Loading 683th epoch
+Loss:[1.33796299]
+Loading 684th epoch
+Loss:[1.33636272]
+Loading 685th epoch
+Loss:[1.33477020]
+Loading 686th epoch
+Loss:[1.33318615]
+Loading 687th epoch
+Loss:[1.33161247]
+Loading 688th epoch
+Loss:[1.33004498]
+
+============================================================
+[DA-AA] Epoch 690 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.914[OK]  dead=[OK]  recon=0.03235
+  domain 1: DVP=0.022[LOW]  entropy=2.755[OK]  dead=[OK]  recon=0.00662
+  domain 2: DVP=0.222[OK]  entropy=2.865[OK]  dead=[OK]  recon=0.15133
+  domain 3: DVP=0.209[OK]  entropy=2.856[OK]  dead=[OK]  recon=0.11309
+  domain 4: DVP=0.057[LOW]  entropy=2.894[OK]  dead=[OK]  recon=0.19671
+  domain 5: DVP=0.072[LOW]  entropy=2.891[OK]  dead=[OK]  recon=0.22017
+============================================================
+
+  block_diagonal_strength: 0.6107
+Loading 689th epoch
+Loss:[1.32848155]
+Loading 690th epoch
+Loss:[1.32692218]
+Loading 691th epoch
+Loss:[1.32536781]
+Loading 692th epoch
+Loss:[1.32381833]
+Loading 693th epoch
+Loss:[1.32227421]
+Loading 694th epoch
+Loss:[1.32073557]
+Loading 695th epoch
+Loss:[1.31920314]
+Loading 696th epoch
+Loss:[1.31767654]
+Loading 697th epoch
+Loss:[1.31615496]
+Loading 698th epoch
+Loss:[1.31463742]
+
+============================================================
+[DA-AA] Epoch 700 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.914[OK]  dead=[OK]  recon=0.03211
+  domain 1: DVP=0.022[LOW]  entropy=2.752[OK]  dead=[OK]  recon=0.00651
+  domain 2: DVP=0.224[OK]  entropy=2.864[OK]  dead=[OK]  recon=0.14998
+  domain 3: DVP=0.210[OK]  entropy=2.855[OK]  dead=[OK]  recon=0.11210
+  domain 4: DVP=0.057[LOW]  entropy=2.893[OK]  dead=[OK]  recon=0.19466
+  domain 5: DVP=0.073[LOW]  entropy=2.890[OK]  dead=[OK]  recon=0.21813
+============================================================
+
+  block_diagonal_strength: 0.6103
+Loading 699th epoch
+Loss:[1.31312335]
+Loading 700th epoch
+Loss:[1.31161320]
+Loading 701th epoch
+Loss:[1.31010890]
+Loading 702th epoch
+Loss:[1.30861068]
+Loading 703th epoch
+Loss:[1.30711842]
+Loading 704th epoch
+Loss:[1.30563068]
+Loading 705th epoch
+Loss:[1.30414641]
+Loading 706th epoch
+Loss:[1.30266511]
+Loading 707th epoch
+Loss:[1.30118728]
+Loading 708th epoch
+Loss:[1.29971409]
+
+============================================================
+[DA-AA] Epoch 710 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.913[OK]  dead=[OK]  recon=0.03187
+  domain 1: DVP=0.022[LOW]  entropy=2.749[OK]  dead=[OK]  recon=0.00641
+  domain 2: DVP=0.225[OK]  entropy=2.862[OK]  dead=[OK]  recon=0.14864
+  domain 3: DVP=0.211[OK]  entropy=2.853[OK]  dead=[OK]  recon=0.11112
+  domain 4: DVP=0.057[LOW]  entropy=2.891[OK]  dead=[OK]  recon=0.19262
+  domain 5: DVP=0.073[LOW]  entropy=2.889[OK]  dead=[OK]  recon=0.21610
+============================================================
+
+  block_diagonal_strength: 0.6099
+Loading 709th epoch
+Loss:[1.29824579]
+Loading 710th epoch
+Loss:[1.29678178]
+Loading 711th epoch
+Loss:[1.29532146]
+Loading 712th epoch
+Loss:[1.29386485]
+Loading 713th epoch
+Loss:[1.29241204]
+Loading 714th epoch
+Loss:[1.29096305]
+Loading 715th epoch
+Loss:[1.28951836]
+Loading 716th epoch
+Loss:[1.28807759]
+Loading 717th epoch
+Loss:[1.28664064]
+Loading 718th epoch
+Loss:[1.28520763]
+
+============================================================
+[DA-AA] Epoch 720 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.913[OK]  dead=[OK]  recon=0.03164
+  domain 1: DVP=0.021[LOW]  entropy=2.747[OK]  dead=[OK]  recon=0.00631
+  domain 2: DVP=0.226[OK]  entropy=2.860[OK]  dead=[OK]  recon=0.14729
+  domain 3: DVP=0.213[OK]  entropy=2.851[OK]  dead=[OK]  recon=0.11013
+  domain 4: DVP=0.057[LOW]  entropy=2.890[OK]  dead=[OK]  recon=0.19058
+  domain 5: DVP=0.074[LOW]  entropy=2.888[OK]  dead=[OK]  recon=0.21410
+============================================================
+
+  block_diagonal_strength: 0.6095
+Loading 719th epoch
+Loss:[1.28377867]
+Loading 720th epoch
+Loss:[1.28235292]
+Loading 721th epoch
+Loss:[1.28092957]
+Loading 722th epoch
+Loss:[1.27950919]
+Loading 723th epoch
+Loss:[1.27809227]
+Loading 724th epoch
+Loss:[1.27667880]
+Loading 725th epoch
+Loss:[1.27526963]
+Loading 726th epoch
+Loss:[1.27386463]
+Loading 727th epoch
+Loss:[1.27246332]
+Loading 728th epoch
+Loss:[1.27106512]
+
+============================================================
+[DA-AA] Epoch 730 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.912[OK]  dead=[OK]  recon=0.03141
+  domain 1: DVP=0.021[LOW]  entropy=2.744[OK]  dead=[OK]  recon=0.00621
+  domain 2: DVP=0.228[OK]  entropy=2.859[OK]  dead=[OK]  recon=0.14594
+  domain 3: DVP=0.214[OK]  entropy=2.850[OK]  dead=[OK]  recon=0.10914
+  domain 4: DVP=0.058[LOW]  entropy=2.889[OK]  dead=[OK]  recon=0.18854
+  domain 5: DVP=0.074[LOW]  entropy=2.887[OK]  dead=[OK]  recon=0.21210
+============================================================
+
+  block_diagonal_strength: 0.6091
+Loading 729th epoch
+Loss:[1.26966977]
+Loading 730th epoch
+Loss:[1.26827765]
+Loading 731th epoch
+Loss:[1.26688886]
+Loading 732th epoch
+Loss:[1.26550341]
+Loading 733th epoch
+Loss:[1.26412129]
+Loading 734th epoch
+Loss:[1.26274252]
+Loading 735th epoch
+Loss:[1.26136649]
+Loading 736th epoch
+Loss:[1.25999331]
+Loading 737th epoch
+Loss:[1.25862288]
+Loading 738th epoch
+Loss:[1.25725579]
+
+============================================================
+[DA-AA] Epoch 740 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.912[OK]  dead=[OK]  recon=0.03117
+  domain 1: DVP=0.021[LOW]  entropy=2.741[OK]  dead=[OK]  recon=0.00612
+  domain 2: DVP=0.229[OK]  entropy=2.857[OK]  dead=[OK]  recon=0.14459
+  domain 3: DVP=0.216[OK]  entropy=2.848[OK]  dead=[OK]  recon=0.10814
+  domain 4: DVP=0.058[LOW]  entropy=2.888[OK]  dead=[OK]  recon=0.18649
+  domain 5: DVP=0.075[LOW]  entropy=2.885[OK]  dead=[OK]  recon=0.21013
+============================================================
+
+  block_diagonal_strength: 0.6086
+Loading 739th epoch
+Loss:[1.25589192]
+Loading 740th epoch
+Loss:[1.25453150]
+Loading 741th epoch
+Loss:[1.25317430]
+Loading 742th epoch
+Loss:[1.25181997]
+Loading 743th epoch
+Loss:[1.25046897]
+Loading 744th epoch
+Loss:[1.24912143]
+Loading 745th epoch
+Loss:[1.24777746]
+Loading 746th epoch
+Loss:[1.24643683]
+Loading 747th epoch
+Loss:[1.24509943]
+Loading 748th epoch
+Loss:[1.24376512]
+
+============================================================
+[DA-AA] Epoch 750 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.911[OK]  dead=[OK]  recon=0.03094
+  domain 1: DVP=0.021[LOW]  entropy=2.738[OK]  dead=[OK]  recon=0.00602
+  domain 2: DVP=0.230[OK]  entropy=2.856[OK]  dead=[OK]  recon=0.14325
+  domain 3: DVP=0.217[OK]  entropy=2.846[OK]  dead=[OK]  recon=0.10714
+  domain 4: DVP=0.058[LOW]  entropy=2.886[OK]  dead=[OK]  recon=0.18445
+  domain 5: DVP=0.076[LOW]  entropy=2.884[OK]  dead=[OK]  recon=0.20817
+============================================================
+
+  block_diagonal_strength: 0.6081
+Loading 749th epoch
+Loss:[1.24243414]
+Loading 750th epoch
+Loss:[1.24110627]
+Loading 751th epoch
+Loss:[1.23978114]
+Loading 752th epoch
+Loss:[1.23845911]
+Loading 753th epoch
+Loss:[1.23713982]
+Loading 754th epoch
+Loss:[1.23582315]
+Loading 755th epoch
+Loss:[1.23450911]
+Loading 756th epoch
+Loss:[1.23319793]
+Loading 757th epoch
+Loss:[1.23188972]
+Loading 758th epoch
+Loss:[1.23058438]
+
+============================================================
+[DA-AA] Epoch 760 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.911[OK]  dead=[OK]  recon=0.03072
+  domain 1: DVP=0.021[LOW]  entropy=2.735[OK]  dead=[OK]  recon=0.00593
+  domain 2: DVP=0.231[OK]  entropy=2.854[OK]  dead=[OK]  recon=0.14191
+  domain 3: DVP=0.218[OK]  entropy=2.844[OK]  dead=[OK]  recon=0.10615
+  domain 4: DVP=0.058[LOW]  entropy=2.885[OK]  dead=[OK]  recon=0.18241
+  domain 5: DVP=0.076[LOW]  entropy=2.883[OK]  dead=[OK]  recon=0.20622
+============================================================
+
+  block_diagonal_strength: 0.6076
+Loading 759th epoch
+Loss:[1.22928202]
+Loading 760th epoch
+Loss:[1.22798276]
+Loading 761th epoch
+Loss:[1.22668648]
+Loading 762th epoch
+Loss:[1.22539282]
+Loading 763th epoch
+Loss:[1.22410142]
+Loading 764th epoch
+Loss:[1.22281253]
+Loading 765th epoch
+Loss:[1.22152615]
+Loading 766th epoch
+Loss:[1.22024143]
+Loading 767th epoch
+Loss:[1.21895862]
+Loading 768th epoch
+Loss:[1.21767771]
+
+============================================================
+[DA-AA] Epoch 770 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.910[OK]  dead=[OK]  recon=0.03049
+  domain 1: DVP=0.021[LOW]  entropy=2.732[OK]  dead=[OK]  recon=0.00584
+  domain 2: DVP=0.232[OK]  entropy=2.852[OK]  dead=[OK]  recon=0.14057
+  domain 3: DVP=0.220[OK]  entropy=2.843[OK]  dead=[OK]  recon=0.10515
+  domain 4: DVP=0.058[LOW]  entropy=2.883[OK]  dead=[OK]  recon=0.18036
+  domain 5: DVP=0.077[LOW]  entropy=2.881[OK]  dead=[OK]  recon=0.20429
+============================================================
+
+  block_diagonal_strength: 0.6071
+Loading 769th epoch
+Loss:[1.21639895]
+Loading 770th epoch
+Loss:[1.21512270]
+Loading 771th epoch
+Loss:[1.21384871]
+Loading 772th epoch
+Loss:[1.21257710]
+Loading 773th epoch
+Loss:[1.21130717]
+Loading 774th epoch
+Loss:[1.21003890]
+Loading 775th epoch
+Loss:[1.20877278]
+Loading 776th epoch
+Loss:[1.20750856]
+Loading 777th epoch
+Loss:[1.20624661]
+Loading 778th epoch
+Loss:[1.20498705]
+
+============================================================
+[DA-AA] Epoch 780 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.910[OK]  dead=[OK]  recon=0.03027
+  domain 1: DVP=0.021[LOW]  entropy=2.729[OK]  dead=[OK]  recon=0.00575
+  domain 2: DVP=0.233[OK]  entropy=2.850[OK]  dead=[OK]  recon=0.13922
+  domain 3: DVP=0.221[OK]  entropy=2.841[OK]  dead=[OK]  recon=0.10416
+  domain 4: DVP=0.059[LOW]  entropy=2.882[OK]  dead=[OK]  recon=0.17831
+  domain 5: DVP=0.077[LOW]  entropy=2.880[OK]  dead=[OK]  recon=0.20237
+============================================================
+
+  block_diagonal_strength: 0.6065
+Loading 779th epoch
+Loss:[1.20372975]
+Loading 780th epoch
+Loss:[1.20247483]
+Loading 781th epoch
+Loss:[1.20122218]
+Loading 782th epoch
+Loss:[1.19997144]
+Loading 783th epoch
+Loss:[1.19872248]
+Loading 784th epoch
+Loss:[1.19747591]
+Loading 785th epoch
+Loss:[1.19623172]
+Loading 786th epoch
+Loss:[1.19498992]
+Loading 787th epoch
+Loss:[1.19374990]
+Loading 788th epoch
+Loss:[1.19251156]
+
+============================================================
+[DA-AA] Epoch 790 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.909[OK]  dead=[OK]  recon=0.03005
+  domain 1: DVP=0.021[LOW]  entropy=2.725[OK]  dead=[OK]  recon=0.00566
+  domain 2: DVP=0.234[OK]  entropy=2.849[OK]  dead=[OK]  recon=0.13786
+  domain 3: DVP=0.222[OK]  entropy=2.839[OK]  dead=[OK]  recon=0.10316
+  domain 4: DVP=0.059[LOW]  entropy=2.880[OK]  dead=[OK]  recon=0.17626
+  domain 5: DVP=0.078[LOW]  entropy=2.878[OK]  dead=[OK]  recon=0.20045
+============================================================
+
+  block_diagonal_strength: 0.6059
+Loading 789th epoch
+Loss:[1.19127500]
+Loading 790th epoch
+Loss:[1.19004011]
+Loading 791th epoch
+Loss:[1.18880761]
+Loading 792th epoch
+Loss:[1.18757856]
+Loading 793th epoch
+Loss:[1.18635213]
+Loading 794th epoch
+Loss:[1.18512797]
+Loading 795th epoch
+Loss:[1.18390572]
+Loading 796th epoch
+Loss:[1.18268490]
+Loading 797th epoch
+Loss:[1.18146622]
+Loading 798th epoch
+Loss:[1.18024993]
+
+============================================================
+[DA-AA] Epoch 800 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.908[OK]  dead=[OK]  recon=0.02983
+  domain 1: DVP=0.021[LOW]  entropy=2.722[OK]  dead=[OK]  recon=0.00558
+  domain 2: DVP=0.235[OK]  entropy=2.847[OK]  dead=[OK]  recon=0.13649
+  domain 3: DVP=0.223[OK]  entropy=2.837[OK]  dead=[OK]  recon=0.10216
+  domain 4: DVP=0.059[LOW]  entropy=2.879[OK]  dead=[OK]  recon=0.17422
+  domain 5: DVP=0.079[LOW]  entropy=2.877[OK]  dead=[OK]  recon=0.19853
+============================================================
+
+  block_diagonal_strength: 0.6053
+[Visualizer] t-SNE: 6074 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep800.png  (6074 pts)
+[DA-AA] domain 0 expand: 11 -> 12
+[DA-AA] domain 1 expand: 11 -> 12
+[DA-AA] domain 2 expand: 11 -> 12
+[DA-AA] domain 3 expand: 11 -> 12
+[DA-AA] domain 4 expand: 11 -> 12
+[DA-AA] domain 5 expand: 11 -> 12
+Loading 799th epoch
+Loss:[1.19848883]
+Loading 799th epoch
+Loss:[1.19729733]
+Loading 799th epoch
+Loss:[1.19610906]
+Loading 799th epoch
+Loss:[1.19492316]
+Loading 799th epoch
+Loss:[1.19373989]
+Loading 799th epoch
+Loss:[1.19255900]
+Loading 799th epoch
+Loss:[1.19138050]
+Loading 799th epoch
+Loss:[1.19020462]
+Loading 799th epoch
+Loss:[1.18903112]
+Loading 799th epoch
+Loss:[1.18786001]
+
+============================================================
+[DA-AA] Epoch 810 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.959[OK]  dead=[OK]  recon=0.02885
+  domain 1: DVP=0.021[LOW]  entropy=2.776[OK]  dead=[OK]  recon=0.00471
+  domain 2: DVP=0.235[OK]  entropy=2.901[OK]  dead=[OK]  recon=0.13939
+  domain 3: DVP=0.223[OK]  entropy=2.892[OK]  dead=[OK]  recon=0.10350
+  domain 4: DVP=0.059[LOW]  entropy=2.931[OK]  dead=[OK]  recon=0.17915
+  domain 5: DVP=0.079[LOW]  entropy=2.929[OK]  dead=[OK]  recon=0.20183
+============================================================
+
+  block_diagonal_strength: 0.6269
+Loading 799th epoch
+Loss:[1.18669069]
+Loading 799th epoch
+Loss:[1.18552303]
+Loading 799th epoch
+Loss:[1.18435717]
+Loading 799th epoch
+Loss:[1.18319321]
+Loading 799th epoch
+Loss:[1.18203127]
+Loading 799th epoch
+Loss:[1.18087125]
+Loading 799th epoch
+Loss:[1.17971265]
+Loading 816th epoch
+Loss:[1.17855537]
+Loading 817th epoch
+Loss:[1.17739880]
+Loading 818th epoch
+Loss:[1.17624331]
+
+============================================================
+[DA-AA] Epoch 820 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.958[OK]  dead=[OK]  recon=0.02866
+  domain 1: DVP=0.021[LOW]  entropy=2.773[OK]  dead=[OK]  recon=0.00464
+  domain 2: DVP=0.234[OK]  entropy=2.899[OK]  dead=[OK]  recon=0.13810
+  domain 3: DVP=0.223[OK]  entropy=2.890[OK]  dead=[OK]  recon=0.10260
+  domain 4: DVP=0.059[LOW]  entropy=2.929[OK]  dead=[OK]  recon=0.17710
+  domain 5: DVP=0.079[LOW]  entropy=2.927[OK]  dead=[OK]  recon=0.19996
+============================================================
+
+  block_diagonal_strength: 0.6260
+Loading 819th epoch
+Loss:[1.17508888]
+Loading 820th epoch
+Loss:[1.17393649]
+Loading 821th epoch
+Loss:[1.17278588]
+Loading 822th epoch
+Loss:[1.17163670]
+Loading 823th epoch
+Loss:[1.17048860]
+Loading 824th epoch
+Loss:[1.16934180]
+Loading 825th epoch
+Loss:[1.16819632]
+Loading 826th epoch
+Loss:[1.16705275]
+Loading 827th epoch
+Loss:[1.16591144]
+Loading 828th epoch
+Loss:[1.16477180]
+
+============================================================
+[DA-AA] Epoch 830 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.958[OK]  dead=[OK]  recon=0.02847
+  domain 1: DVP=0.021[LOW]  entropy=2.770[OK]  dead=[OK]  recon=0.00458
+  domain 2: DVP=0.234[OK]  entropy=2.897[OK]  dead=[OK]  recon=0.13677
+  domain 3: DVP=0.223[OK]  entropy=2.888[OK]  dead=[OK]  recon=0.10165
+  domain 4: DVP=0.059[LOW]  entropy=2.927[OK]  dead=[OK]  recon=0.17509
+  domain 5: DVP=0.079[LOW]  entropy=2.925[OK]  dead=[OK]  recon=0.19811
+============================================================
+
+  block_diagonal_strength: 0.6252
+Loading 829th epoch
+Loss:[1.16363358]
+Loading 830th epoch
+Loss:[1.16249728]
+Loading 831th epoch
+Loss:[1.16136241]
+Loading 832th epoch
+Loss:[1.16022909]
+Loading 833th epoch
+Loss:[1.15909660]
+Loading 834th epoch
+Loss:[1.15796554]
+Loading 835th epoch
+Loss:[1.15683627]
+Loading 836th epoch
+Loss:[1.15570855]
+Loading 837th epoch
+Loss:[1.15458214]
+Loading 838th epoch
+Loss:[1.15345728]
+
+============================================================
+[DA-AA] Epoch 840 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.957[OK]  dead=[OK]  recon=0.02829
+  domain 1: DVP=0.021[LOW]  entropy=2.767[OK]  dead=[OK]  recon=0.00453
+  domain 2: DVP=0.233[OK]  entropy=2.895[OK]  dead=[OK]  recon=0.13544
+  domain 3: DVP=0.223[OK]  entropy=2.886[OK]  dead=[OK]  recon=0.10071
+  domain 4: DVP=0.059[LOW]  entropy=2.926[OK]  dead=[OK]  recon=0.17308
+  domain 5: DVP=0.079[LOW]  entropy=2.924[OK]  dead=[OK]  recon=0.19626
+============================================================
+
+  block_diagonal_strength: 0.6244
+Loading 839th epoch
+Loss:[1.15233386]
+Loading 840th epoch
+Loss:[1.15121186]
+Loading 841th epoch
+Loss:[1.15009117]
+Loading 842th epoch
+Loss:[1.14897215]
+Loading 843th epoch
+Loss:[1.14785409]
+Loading 844th epoch
+Loss:[1.14673698]
+Loading 845th epoch
+Loss:[1.14562106]
+Loading 846th epoch
+Loss:[1.14450657]
+Loading 847th epoch
+Loss:[1.14339364]
+Loading 848th epoch
+Loss:[1.14228141]
+
+============================================================
+[DA-AA] Epoch 850 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.957[OK]  dead=[OK]  recon=0.02811
+  domain 1: DVP=0.021[LOW]  entropy=2.763[OK]  dead=[OK]  recon=0.00447
+  domain 2: DVP=0.233[OK]  entropy=2.893[OK]  dead=[OK]  recon=0.13412
+  domain 3: DVP=0.223[OK]  entropy=2.884[OK]  dead=[OK]  recon=0.09976
+  domain 4: DVP=0.059[LOW]  entropy=2.924[OK]  dead=[OK]  recon=0.17107
+  domain 5: DVP=0.079[LOW]  entropy=2.922[OK]  dead=[OK]  recon=0.19441
+============================================================
+
+  block_diagonal_strength: 0.6235
+Loading 849th epoch
+Loss:[1.14117014]
+Loading 850th epoch
+Loss:[1.14005971]
+Loading 851th epoch
+Loss:[1.13895059]
+Loading 852th epoch
+Loss:[1.13784266]
+Loading 853th epoch
+Loss:[1.13673639]
+Loading 854th epoch
+Loss:[1.13563120]
+Loading 855th epoch
+Loss:[1.13452721]
+Loading 856th epoch
+Loss:[1.13342428]
+Loading 857th epoch
+Loss:[1.13232279]
+Loading 858th epoch
+Loss:[1.13122356]
+
+============================================================
+[DA-AA] Epoch 860 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.956[OK]  dead=[OK]  recon=0.02793
+  domain 1: DVP=0.021[LOW]  entropy=2.760[OK]  dead=[OK]  recon=0.00441
+  domain 2: DVP=0.233[OK]  entropy=2.891[OK]  dead=[OK]  recon=0.13278
+  domain 3: DVP=0.224[OK]  entropy=2.882[OK]  dead=[OK]  recon=0.09882
+  domain 4: DVP=0.059[LOW]  entropy=2.922[OK]  dead=[OK]  recon=0.16906
+  domain 5: DVP=0.080[LOW]  entropy=2.920[OK]  dead=[OK]  recon=0.19256
+============================================================
+
+  block_diagonal_strength: 0.6225
+Loading 859th epoch
+Loss:[1.13012600]
+Loading 860th epoch
+Loss:[1.12902999]
+Loading 861th epoch
+Loss:[1.12793469]
+Loading 862th epoch
+Loss:[1.12683988]
+Loading 863th epoch
+Loss:[1.12574625]
+Loading 864th epoch
+Loss:[1.12465382]
+Loading 865th epoch
+Loss:[1.12356305]
+Loading 866th epoch
+Loss:[1.12247348]
+Loading 867th epoch
+Loss:[1.12138498]
+Loading 868th epoch
+Loss:[1.12029791]
+
+============================================================
+[DA-AA] Epoch 870 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.955[OK]  dead=[OK]  recon=0.02775
+  domain 1: DVP=0.021[LOW]  entropy=2.756[OK]  dead=[OK]  recon=0.00436
+  domain 2: DVP=0.234[OK]  entropy=2.889[OK]  dead=[OK]  recon=0.13144
+  domain 3: DVP=0.225[OK]  entropy=2.880[OK]  dead=[OK]  recon=0.09787
+  domain 4: DVP=0.059[LOW]  entropy=2.920[OK]  dead=[OK]  recon=0.16705
+  domain 5: DVP=0.080[LOW]  entropy=2.918[OK]  dead=[OK]  recon=0.19072
+============================================================
+
+  block_diagonal_strength: 0.6215
+Loading 869th epoch
+Loss:[1.11921179]
+Loading 870th epoch
+Loss:[1.11812663]
+Loading 871th epoch
+Loss:[1.11704230]
+Loading 872th epoch
+Loss:[1.11595917]
+Loading 873th epoch
+Loss:[1.11487710]
+Loading 874th epoch
+Loss:[1.11379611]
+Loading 875th epoch
+Loss:[1.11271560]
+Loading 876th epoch
+Loss:[1.11163557]
+Loading 877th epoch
+Loss:[1.11055601]
+Loading 878th epoch
+Loss:[1.10947764]
+
+============================================================
+[DA-AA] Epoch 880 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.955[OK]  dead=[OK]  recon=0.02758
+  domain 1: DVP=0.021[LOW]  entropy=2.753[OK]  dead=[OK]  recon=0.00430
+  domain 2: DVP=0.234[OK]  entropy=2.887[OK]  dead=[OK]  recon=0.13009
+  domain 3: DVP=0.226[OK]  entropy=2.878[OK]  dead=[OK]  recon=0.09693
+  domain 4: DVP=0.059[LOW]  entropy=2.918[OK]  dead=[OK]  recon=0.16505
+  domain 5: DVP=0.081[LOW]  entropy=2.916[OK]  dead=[OK]  recon=0.18889
+============================================================
+
+  block_diagonal_strength: 0.6205
+Loading 879th epoch
+Loss:[1.10840082]
+Loading 880th epoch
+Loss:[1.10732496]
+Loading 881th epoch
+Loss:[1.10624981]
+Loading 882th epoch
+Loss:[1.10517573]
+Loading 883th epoch
+Loss:[1.10410249]
+Loading 884th epoch
+Loss:[1.10303044]
+Loading 885th epoch
+Loss:[1.10195935]
+Loading 886th epoch
+Loss:[1.10088873]
+Loading 887th epoch
+Loss:[1.09981894]
+Loading 888th epoch
+Loss:[1.09874988]
+
+============================================================
+[DA-AA] Epoch 890 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.954[OK]  dead=[OK]  recon=0.02740
+  domain 1: DVP=0.021[LOW]  entropy=2.749[OK]  dead=[OK]  recon=0.00425
+  domain 2: DVP=0.235[OK]  entropy=2.885[OK]  dead=[OK]  recon=0.12873
+  domain 3: DVP=0.227[OK]  entropy=2.876[OK]  dead=[OK]  recon=0.09598
+  domain 4: DVP=0.059[LOW]  entropy=2.916[OK]  dead=[OK]  recon=0.16304
+  domain 5: DVP=0.082[LOW]  entropy=2.914[OK]  dead=[OK]  recon=0.18706
+============================================================
+
+  block_diagonal_strength: 0.6194
+Loading 889th epoch
+Loss:[1.09768248]
+Loading 890th epoch
+Loss:[1.09661639]
+Loading 891th epoch
+Loss:[1.09555089]
+Loading 892th epoch
+Loss:[1.09448600]
+Loading 893th epoch
+Loss:[1.09342194]
+Loading 894th epoch
+Loss:[1.09235871]
+Loading 895th epoch
+Loss:[1.09129620]
+Loading 896th epoch
+Loss:[1.09023488]
+Loading 897th epoch
+Loss:[1.08917475]
+Loading 898th epoch
+Loss:[1.08811593]
+
+============================================================
+[DA-AA] Epoch 900 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.954[OK]  dead=[OK]  recon=0.02723
+  domain 1: DVP=0.021[LOW]  entropy=2.745[OK]  dead=[OK]  recon=0.00420
+  domain 2: DVP=0.235[OK]  entropy=2.882[OK]  dead=[OK]  recon=0.12737
+  domain 3: DVP=0.228[OK]  entropy=2.874[OK]  dead=[OK]  recon=0.09503
+  domain 4: DVP=0.059[LOW]  entropy=2.914[OK]  dead=[OK]  recon=0.16103
+  domain 5: DVP=0.082[LOW]  entropy=2.912[OK]  dead=[OK]  recon=0.18522
+============================================================
+
+  block_diagonal_strength: 0.6183
+Loading 899th epoch
+Loss:[1.08705783]
+Loading 900th epoch
+Loss:[1.08600020]
+Loading 901th epoch
+Loss:[1.08494365]
+Loading 902th epoch
+Loss:[1.08388782]
+Loading 903th epoch
+Loss:[1.08283329]
+Loading 904th epoch
+Loss:[1.08177972]
+Loading 905th epoch
+Loss:[1.08072662]
+Loading 906th epoch
+Loss:[1.07967448]
+Loading 907th epoch
+Loss:[1.07862282]
+Loading 908th epoch
+Loss:[1.07757163]
+
+============================================================
+[DA-AA] Epoch 910 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.953[OK]  dead=[OK]  recon=0.02707
+  domain 1: DVP=0.021[LOW]  entropy=2.741[OK]  dead=[OK]  recon=0.00415
+  domain 2: DVP=0.235[OK]  entropy=2.880[OK]  dead=[OK]  recon=0.12600
+  domain 3: DVP=0.228[OK]  entropy=2.872[OK]  dead=[OK]  recon=0.09408
+  domain 4: DVP=0.059[LOW]  entropy=2.912[OK]  dead=[OK]  recon=0.15903
+  domain 5: DVP=0.083[LOW]  entropy=2.910[OK]  dead=[OK]  recon=0.18338
+============================================================
+
+  block_diagonal_strength: 0.6171
+Loading 909th epoch
+Loss:[1.07652164]
+Loading 910th epoch
+Loss:[1.07547235]
+Loading 911th epoch
+Loss:[1.07442379]
+Loading 912th epoch
+Loss:[1.07337582]
+Loading 913th epoch
+Loss:[1.07232809]
+Loading 914th epoch
+Loss:[1.07128096]
+Loading 915th epoch
+Loss:[1.07023442]
+Loading 916th epoch
+Loss:[1.06918859]
+Loading 917th epoch
+Loss:[1.06814384]
+Loading 918th epoch
+Loss:[1.06710017]
+
+============================================================
+[DA-AA] Epoch 920 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.952[OK]  dead=[OK]  recon=0.02690
+  domain 1: DVP=0.021[LOW]  entropy=2.738[OK]  dead=[OK]  recon=0.00410
+  domain 2: DVP=0.236[OK]  entropy=2.878[OK]  dead=[OK]  recon=0.12462
+  domain 3: DVP=0.229[OK]  entropy=2.870[OK]  dead=[OK]  recon=0.09312
+  domain 4: DVP=0.059[LOW]  entropy=2.909[OK]  dead=[OK]  recon=0.15702
+  domain 5: DVP=0.083[LOW]  entropy=2.908[OK]  dead=[OK]  recon=0.18154
+============================================================
+
+  block_diagonal_strength: 0.6159
+Loading 919th epoch
+Loss:[1.06605709]
+Loading 920th epoch
+Loss:[1.06501472]
+Loading 921th epoch
+Loss:[1.06397271]
+Loading 922th epoch
+Loss:[1.06293178]
+Loading 923th epoch
+Loss:[1.06189191]
+Loading 924th epoch
+Loss:[1.06085324]
+Loading 925th epoch
+Loss:[1.05981553]
+Loading 926th epoch
+Loss:[1.05877900]
+Loading 927th epoch
+Loss:[1.05774307]
+Loading 928th epoch
+Loss:[1.05670786]
+
+============================================================
+[DA-AA] Epoch 930 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.952[OK]  dead=[OK]  recon=0.02674
+  domain 1: DVP=0.021[LOW]  entropy=2.734[OK]  dead=[OK]  recon=0.00406
+  domain 2: DVP=0.236[OK]  entropy=2.875[OK]  dead=[OK]  recon=0.12323
+  domain 3: DVP=0.229[OK]  entropy=2.867[OK]  dead=[OK]  recon=0.09217
+  domain 4: DVP=0.060[LOW]  entropy=2.907[OK]  dead=[OK]  recon=0.15502
+  domain 5: DVP=0.084[LOW]  entropy=2.905[OK]  dead=[OK]  recon=0.17971
+============================================================
+
+  block_diagonal_strength: 0.6146
+Loading 929th epoch
+Loss:[1.05567336]
+Loading 930th epoch
+Loss:[1.05463958]
+Loading 931th epoch
+Loss:[1.05360699]
+Loading 932th epoch
+Loss:[1.05257559]
+Loading 933th epoch
+Loss:[1.05154490]
+Loading 934th epoch
+Loss:[1.05051422]
+Loading 935th epoch
+Loss:[1.04948342]
+Loading 936th epoch
+Loss:[1.04845285]
+Loading 937th epoch
+Loss:[1.04742229]
+Loading 938th epoch
+Loss:[1.04639220]
+
+============================================================
+[DA-AA] Epoch 940 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.951[OK]  dead=[OK]  recon=0.02658
+  domain 1: DVP=0.021[LOW]  entropy=2.730[OK]  dead=[OK]  recon=0.00401
+  domain 2: DVP=0.236[OK]  entropy=2.873[OK]  dead=[OK]  recon=0.12183
+  domain 3: DVP=0.230[OK]  entropy=2.865[OK]  dead=[OK]  recon=0.09122
+  domain 4: DVP=0.060[LOW]  entropy=2.904[OK]  dead=[OK]  recon=0.15301
+  domain 5: DVP=0.084[LOW]  entropy=2.903[OK]  dead=[OK]  recon=0.17788
+============================================================
+
+  block_diagonal_strength: 0.6133
+Loading 939th epoch
+Loss:[1.04536259]
+Loading 940th epoch
+Loss:[1.04433322]
+Loading 941th epoch
+Loss:[1.04330444]
+Loading 942th epoch
+Loss:[1.04227626]
+Loading 943th epoch
+Loss:[1.04124880]
+Loading 944th epoch
+Loss:[1.04022169]
+Loading 945th epoch
+Loss:[1.03919482]
+Loading 946th epoch
+Loss:[1.03816879]
+Loading 947th epoch
+Loss:[1.03714323]
+Loading 948th epoch
+Loss:[1.03611851]
+
+============================================================
+[DA-AA] Epoch 950 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.950[OK]  dead=[OK]  recon=0.02642
+  domain 1: DVP=0.021[LOW]  entropy=2.726[OK]  dead=[OK]  recon=0.00397
+  domain 2: DVP=0.236[OK]  entropy=2.870[OK]  dead=[OK]  recon=0.12041
+  domain 3: DVP=0.230[OK]  entropy=2.863[OK]  dead=[OK]  recon=0.09026
+  domain 4: DVP=0.060[LOW]  entropy=2.902[OK]  dead=[OK]  recon=0.15101
+  domain 5: DVP=0.085[LOW]  entropy=2.901[OK]  dead=[OK]  recon=0.17604
+============================================================
+
+  block_diagonal_strength: 0.6119
+Loading 949th epoch
+Loss:[1.03509498]
+Loading 950th epoch
+Loss:[1.03407240]
+Loading 951th epoch
+Loss:[1.03305066]
+Loading 952th epoch
+Loss:[1.03202963]
+Loading 953th epoch
+Loss:[1.03100920]
+Loading 954th epoch
+Loss:[1.02998888]
+Loading 955th epoch
+Loss:[1.02896929]
+Loading 956th epoch
+Loss:[1.02795053]
+Loading 957th epoch
+Loss:[1.02693272]
+Loading 958th epoch
+Loss:[1.02591562]
+
+============================================================
+[DA-AA] Epoch 960 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.950[OK]  dead=[OK]  recon=0.02627
+  domain 1: DVP=0.021[LOW]  entropy=2.722[OK]  dead=[OK]  recon=0.00393
+  domain 2: DVP=0.236[OK]  entropy=2.867[OK]  dead=[OK]  recon=0.11899
+  domain 3: DVP=0.231[OK]  entropy=2.860[OK]  dead=[OK]  recon=0.08930
+  domain 4: DVP=0.060[LOW]  entropy=2.899[OK]  dead=[OK]  recon=0.14901
+  domain 5: DVP=0.085[LOW]  entropy=2.898[OK]  dead=[OK]  recon=0.17420
+============================================================
+
+  block_diagonal_strength: 0.6104
+Loading 959th epoch
+Loss:[1.02489889]
+Loading 960th epoch
+Loss:[1.02388215]
+Loading 961th epoch
+Loss:[1.02286565]
+Loading 962th epoch
+Loss:[1.02184975]
+Loading 963th epoch
+Loss:[1.02083457]
+Loading 964th epoch
+Loss:[1.01981997]
+Loading 965th epoch
+Loss:[1.01880562]
+Loading 966th epoch
+Loss:[1.01779163]
+Loading 967th epoch
+Loss:[1.01677835]
+Loading 968th epoch
+Loss:[1.01576567]
+
+============================================================
+[DA-AA] Epoch 970 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.949[OK]  dead=[OK]  recon=0.02612
+  domain 1: DVP=0.021[LOW]  entropy=2.717[OK]  dead=[OK]  recon=0.00389
+  domain 2: DVP=0.235[OK]  entropy=2.864[OK]  dead=[OK]  recon=0.11755
+  domain 3: DVP=0.231[OK]  entropy=2.858[OK]  dead=[OK]  recon=0.08833
+  domain 4: DVP=0.060[LOW]  entropy=2.897[OK]  dead=[OK]  recon=0.14702
+  domain 5: DVP=0.086[LOW]  entropy=2.895[OK]  dead=[OK]  recon=0.17235
+============================================================
+
+  block_diagonal_strength: 0.6089
+Loading 969th epoch
+Loss:[1.01475370]
+Loading 970th epoch
+Loss:[1.01374245]
+Loading 971th epoch
+Loss:[1.01273131]
+Loading 972th epoch
+Loss:[1.01172018]
+Loading 973th epoch
+Loss:[1.01070905]
+Loading 974th epoch
+Loss:[1.00969779]
+Loading 975th epoch
+Loss:[1.00868702]
+Loading 976th epoch
+Loss:[1.00767612]
+Loading 977th epoch
+Loss:[1.00666511]
+Loading 978th epoch
+Loss:[1.00565434]
+
+============================================================
+[DA-AA] Epoch 980 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.948[OK]  dead=[OK]  recon=0.02597
+  domain 1: DVP=0.021[LOW]  entropy=2.713[OK]  dead=[OK]  recon=0.00385
+  domain 2: DVP=0.235[OK]  entropy=2.861[OK]  dead=[OK]  recon=0.11610
+  domain 3: DVP=0.232[OK]  entropy=2.855[OK]  dead=[OK]  recon=0.08736
+  domain 4: DVP=0.060[LOW]  entropy=2.894[OK]  dead=[OK]  recon=0.14502
+  domain 5: DVP=0.086[LOW]  entropy=2.893[OK]  dead=[OK]  recon=0.17051
+============================================================
+
+  block_diagonal_strength: 0.6073
+Loading 979th epoch
+Loss:[1.00464392]
+Loading 980th epoch
+Loss:[1.00363350]
+Loading 981th epoch
+Loss:[1.00262356]
+Loading 982th epoch
+Loss:[1.00161445]
+Loading 983th epoch
+Loss:[1.00060654]
+Loading 984th epoch
+Loss:[0.99959964]
+Loading 985th epoch
+Loss:[0.99859369]
+Loading 986th epoch
+Loss:[0.99758816]
+Loading 987th epoch
+Loss:[0.99658310]
+Loading 988th epoch
+Loss:[0.99557889]
+
+============================================================
+[DA-AA] Epoch 990 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.948[OK]  dead=[OK]  recon=0.02582
+  domain 1: DVP=0.021[LOW]  entropy=2.709[OK]  dead=[OK]  recon=0.00381
+  domain 2: DVP=0.235[OK]  entropy=2.858[OK]  dead=[OK]  recon=0.11463
+  domain 3: DVP=0.232[OK]  entropy=2.852[OK]  dead=[OK]  recon=0.08638
+  domain 4: DVP=0.060[LOW]  entropy=2.891[OK]  dead=[OK]  recon=0.14303
+  domain 5: DVP=0.087[LOW]  entropy=2.890[OK]  dead=[OK]  recon=0.16866
+============================================================
+
+  block_diagonal_strength: 0.6057
+Loading 989th epoch
+Loss:[0.99457574]
+Loading 990th epoch
+Loss:[0.99357331]
+Loading 991th epoch
+Loss:[0.99257183]
+Loading 992th epoch
+Loss:[0.99157059]
+Loading 993th epoch
+Loss:[0.99056965]
+Loading 994th epoch
+Loss:[0.98956954]
+Loading 995th epoch
+Loss:[0.98857033]
+Loading 996th epoch
+Loss:[0.98757219]
+Loading 997th epoch
+Loss:[0.98657489]
+Loading 998th epoch
+Loss:[0.98557818]
+
+============================================================
+[DA-AA] Epoch 1000 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.947[OK]  dead=[OK]  recon=0.02568
+  domain 1: DVP=0.021[LOW]  entropy=2.705[OK]  dead=[OK]  recon=0.00378
+  domain 2: DVP=0.235[OK]  entropy=2.855[OK]  dead=[OK]  recon=0.11315
+  domain 3: DVP=0.233[OK]  entropy=2.849[OK]  dead=[OK]  recon=0.08540
+  domain 4: DVP=0.060[LOW]  entropy=2.888[OK]  dead=[OK]  recon=0.14104
+  domain 5: DVP=0.087[LOW]  entropy=2.887[OK]  dead=[OK]  recon=0.16680
+============================================================
+
+  block_diagonal_strength: 0.6040
+[Visualizer] t-SNE: 6080 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep1000.png  (6080 pts)
+[DA-AA] domain 0 expand: 12 -> 13
+[DA-AA] domain 1 expand: 12 -> 13
+[DA-AA] domain 2 expand: 12 -> 13
+[DA-AA] domain 3 expand: 12 -> 13
+[DA-AA] domain 4 expand: 12 -> 13
+[DA-AA] domain 5 expand: 12 -> 13
+[DA-AA] domain 0 prune: 13 -> 12
+[DA-AA] domain 1 prune: 13 -> 12
+[DA-AA] domain 2 prune: 13 -> 12
+[DA-AA] domain 3 prune: 13 -> 12
+[DA-AA] domain 4 prune: 13 -> 12
+[DA-AA] domain 5 prune: 13 -> 12
+Loading 999th epoch
+Loss:[0.98458147]
+Loading 1000th epoch
+Loss:[0.98358476]
+Loading 1001th epoch
+Loss:[0.98258841]
+Loading 1002th epoch
+Loss:[0.98159283]
+Loading 1003th epoch
+Loss:[0.98059803]
+Loading 1004th epoch
+Loss:[0.97960359]
+Loading 1005th epoch
+Loss:[0.97860992]
+Loading 1006th epoch
+Loss:[0.97761661]
+Loading 1007th epoch
+Loss:[0.97662336]
+Loading 1008th epoch
+Loss:[0.97563028]
+
+============================================================
+[DA-AA] Epoch 1010 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.946[OK]  dead=[OK]  recon=0.02554
+  domain 1: DVP=0.021[LOW]  entropy=2.700[OK]  dead=[OK]  recon=0.00374
+  domain 2: DVP=0.235[OK]  entropy=2.852[OK]  dead=[OK]  recon=0.11167
+  domain 3: DVP=0.233[OK]  entropy=2.846[OK]  dead=[OK]  recon=0.08442
+  domain 4: DVP=0.060[LOW]  entropy=2.885[OK]  dead=[OK]  recon=0.13906
+  domain 5: DVP=0.088[LOW]  entropy=2.884[OK]  dead=[OK]  recon=0.16494
+============================================================
+
+  block_diagonal_strength: 0.6023
+Loading 1009th epoch
+Loss:[0.97463775]
+Loading 1010th epoch
+Loss:[0.97364557]
+Loading 1011th epoch
+Loss:[0.97265434]
+Loading 1012th epoch
+Loss:[0.97166324]
+Loading 1013th epoch
+Loss:[0.97067285]
+Loading 1014th epoch
+Loss:[0.96968263]
+Loading 1015th epoch
+Loss:[0.96869272]
+Loading 1016th epoch
+Loss:[0.96770352]
+Loading 1017th epoch
+Loss:[0.96671486]
+Loading 1018th epoch
+Loss:[0.96572661]
+
+============================================================
+[DA-AA] Epoch 1020 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.946[OK]  dead=[OK]  recon=0.02541
+  domain 1: DVP=0.021[LOW]  entropy=2.696[OK]  dead=[OK]  recon=0.00371
+  domain 2: DVP=0.235[OK]  entropy=2.848[OK]  dead=[OK]  recon=0.11018
+  domain 3: DVP=0.234[OK]  entropy=2.843[OK]  dead=[OK]  recon=0.08343
+  domain 4: DVP=0.060[LOW]  entropy=2.882[OK]  dead=[OK]  recon=0.13709
+  domain 5: DVP=0.088[LOW]  entropy=2.881[OK]  dead=[OK]  recon=0.16307
+============================================================
+
+  block_diagonal_strength: 0.6005
+Loading 1019th epoch
+Loss:[0.96473861]
+Loading 1020th epoch
+Loss:[0.96375054]
+Loading 1021th epoch
+Loss:[0.96276236]
+Loading 1022th epoch
+Loss:[0.96177471]
+Loading 1023th epoch
+Loss:[0.96078801]
+Loading 1024th epoch
+Loss:[0.95980257]
+Loading 1025th epoch
+Loss:[0.95881772]
+Loading 1026th epoch
+Loss:[0.95783305]
+Loading 1027th epoch
+Loss:[0.95684886]
+Loading 1028th epoch
+Loss:[0.95586514]
+
+============================================================
+[DA-AA] Epoch 1030 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.945[OK]  dead=[OK]  recon=0.02527
+  domain 1: DVP=0.021[LOW]  entropy=2.691[OK]  dead=[OK]  recon=0.00368
+  domain 2: DVP=0.235[OK]  entropy=2.845[OK]  dead=[OK]  recon=0.10867
+  domain 3: DVP=0.234[OK]  entropy=2.840[OK]  dead=[OK]  recon=0.08244
+  domain 4: DVP=0.060[LOW]  entropy=2.879[OK]  dead=[OK]  recon=0.13512
+  domain 5: DVP=0.089[LOW]  entropy=2.877[OK]  dead=[OK]  recon=0.16120
+============================================================
+
+  block_diagonal_strength: 0.5987
+Loading 1029th epoch
+Loss:[0.95488232]
+Loading 1030th epoch
+Loss:[0.95390064]
+Loading 1031th epoch
+Loss:[0.95291930]
+Loading 1032th epoch
+Loss:[0.95193851]
+Loading 1033th epoch
+Loss:[0.95095766]
+Loading 1034th epoch
+Loss:[0.94997680]
+Loading 1035th epoch
+Loss:[0.94899654]
+Loading 1036th epoch
+Loss:[0.94801694]
+Loading 1037th epoch
+Loss:[0.94703805]
+Loading 1038th epoch
+Loss:[0.94605929]
+
+============================================================
+[DA-AA] Epoch 1040 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.944[OK]  dead=[OK]  recon=0.02514
+  domain 1: DVP=0.021[LOW]  entropy=2.687[OK]  dead=[OK]  recon=0.00365
+  domain 2: DVP=0.236[OK]  entropy=2.841[OK]  dead=[OK]  recon=0.10716
+  domain 3: DVP=0.234[OK]  entropy=2.837[OK]  dead=[OK]  recon=0.08144
+  domain 4: DVP=0.060[LOW]  entropy=2.875[OK]  dead=[OK]  recon=0.13317
+  domain 5: DVP=0.089[LOW]  entropy=2.874[OK]  dead=[OK]  recon=0.15933
+============================================================
+
+  block_diagonal_strength: 0.5968
+Loading 1039th epoch
+Loss:[0.94508010]
+Loading 1040th epoch
+Loss:[0.94410074]
+Loading 1041th epoch
+Loss:[0.94312221]
+Loading 1042th epoch
+Loss:[0.94214463]
+Loading 1043th epoch
+Loss:[0.94116783]
+Loading 1044th epoch
+Loss:[0.94019115]
+Loading 1045th epoch
+Loss:[0.93921494]
+Loading 1046th epoch
+Loss:[0.93823898]
+Loading 1047th epoch
+Loss:[0.93726337]
+Loading 1048th epoch
+Loss:[0.93628865]
+
+============================================================
+[DA-AA] Epoch 1050 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.944[OK]  dead=[OK]  recon=0.02501
+  domain 1: DVP=0.021[LOW]  entropy=2.683[OK]  dead=[OK]  recon=0.00361
+  domain 2: DVP=0.236[OK]  entropy=2.838[OK]  dead=[OK]  recon=0.10563
+  domain 3: DVP=0.235[OK]  entropy=2.834[OK]  dead=[OK]  recon=0.08044
+  domain 4: DVP=0.060[LOW]  entropy=2.872[OK]  dead=[OK]  recon=0.13123
+  domain 5: DVP=0.089[LOW]  entropy=2.871[OK]  dead=[OK]  recon=0.15745
+============================================================
+
+  block_diagonal_strength: 0.5949
+Loading 1049th epoch
+Loss:[0.93531442]
+Loading 1050th epoch
+Loss:[0.93434060]
+Loading 1051th epoch
+Loss:[0.93336701]
+Loading 1052th epoch
+Loss:[0.93239427]
+Loading 1053th epoch
+Loss:[0.93142265]
+Loading 1054th epoch
+Loss:[0.93045157]
+Loading 1055th epoch
+Loss:[0.92948103]
+Loading 1056th epoch
+Loss:[0.92851084]
+Loading 1057th epoch
+Loss:[0.92754114]
+Loading 1058th epoch
+Loss:[0.92657208]
+
+============================================================
+[DA-AA] Epoch 1060 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.943[OK]  dead=[OK]  recon=0.02488
+  domain 1: DVP=0.021[LOW]  entropy=2.678[OK]  dead=[OK]  recon=0.00358
+  domain 2: DVP=0.236[OK]  entropy=2.834[OK]  dead=[OK]  recon=0.10410
+  domain 3: DVP=0.235[OK]  entropy=2.831[OK]  dead=[OK]  recon=0.07943
+  domain 4: DVP=0.060[LOW]  entropy=2.868[OK]  dead=[OK]  recon=0.12930
+  domain 5: DVP=0.090[LOW]  entropy=2.867[OK]  dead=[OK]  recon=0.15558
+============================================================
+
+  block_diagonal_strength: 0.5929
+Loading 1059th epoch
+Loss:[0.92560363]
+Loading 1060th epoch
+Loss:[0.92463577]
+Loading 1061th epoch
+Loss:[0.92366844]
+Loading 1062th epoch
+Loss:[0.92270195]
+Loading 1063th epoch
+Loss:[0.92173564]
+Loading 1064th epoch
+Loss:[0.92077017]
+Loading 1065th epoch
+Loss:[0.91980517]
+Loading 1066th epoch
+Loss:[0.91884089]
+Loading 1067th epoch
+Loss:[0.91787750]
+Loading 1068th epoch
+Loss:[0.91691494]
+
+============================================================
+[DA-AA] Epoch 1070 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.942[OK]  dead=[OK]  recon=0.02476
+  domain 1: DVP=0.021[LOW]  entropy=2.673[OK]  dead=[OK]  recon=0.00356
+  domain 2: DVP=0.236[OK]  entropy=2.830[OK]  dead=[OK]  recon=0.10257
+  domain 3: DVP=0.236[OK]  entropy=2.827[OK]  dead=[OK]  recon=0.07843
+  domain 4: DVP=0.059[LOW]  entropy=2.864[OK]  dead=[OK]  recon=0.12738
+  domain 5: DVP=0.090[LOW]  entropy=2.863[OK]  dead=[OK]  recon=0.15370
+============================================================
+
+  block_diagonal_strength: 0.5909
+Loading 1069th epoch
+Loss:[0.91595268]
+Loading 1070th epoch
+Loss:[0.91499037]
+Loading 1071th epoch
+Loss:[0.91402858]
+Loading 1072th epoch
+Loss:[0.91306740]
+Loading 1073th epoch
+Loss:[0.91210711]
+Loading 1074th epoch
+Loss:[0.91114730]
+Loading 1075th epoch
+Loss:[0.91018820]
+Loading 1076th epoch
+Loss:[0.90922982]
+Loading 1077th epoch
+Loss:[0.90827191]
+Loading 1078th epoch
+Loss:[0.90731448]
+
+============================================================
+[DA-AA] Epoch 1080 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.941[OK]  dead=[OK]  recon=0.02464
+  domain 1: DVP=0.021[LOW]  entropy=2.669[OK]  dead=[OK]  recon=0.00353
+  domain 2: DVP=0.236[OK]  entropy=2.826[OK]  dead=[OK]  recon=0.10103
+  domain 3: DVP=0.236[OK]  entropy=2.824[OK]  dead=[OK]  recon=0.07743
+  domain 4: DVP=0.059[LOW]  entropy=2.861[OK]  dead=[OK]  recon=0.12548
+  domain 5: DVP=0.091[LOW]  entropy=2.860[OK]  dead=[OK]  recon=0.15183
+============================================================
+
+  block_diagonal_strength: 0.5888
+Loading 1079th epoch
+Loss:[0.90635729]
+Loading 1080th epoch
+Loss:[0.90540099]
+Loading 1081th epoch
+Loss:[0.90444571]
+Loading 1082th epoch
+Loss:[0.90349168]
+Loading 1083th epoch
+Loss:[0.90253824]
+Loading 1084th epoch
+Loss:[0.90158516]
+Loading 1085th epoch
+Loss:[0.90063232]
+Loading 1086th epoch
+Loss:[0.89968002]
+Loading 1087th epoch
+Loss:[0.89872849]
+Loading 1088th epoch
+Loss:[0.89777750]
+
+============================================================
+[DA-AA] Epoch 1090 monitor summary
+============================================================
+  domain 0: DVP=0.050[LOW]  entropy=2.941[OK]  dead=[OK]  recon=0.02452
+  domain 1: DVP=0.021[LOW]  entropy=2.664[OK]  dead=[OK]  recon=0.00350
+  domain 2: DVP=0.236[OK]  entropy=2.821[OK]  dead=[OK]  recon=0.09949
+  domain 3: DVP=0.237[OK]  entropy=2.820[OK]  dead=[OK]  recon=0.07643
+  domain 4: DVP=0.059[LOW]  entropy=2.857[OK]  dead=[OK]  recon=0.12360
+  domain 5: DVP=0.091[LOW]  entropy=2.856[OK]  dead=[OK]  recon=0.14995
+============================================================
+
+  block_diagonal_strength: 0.5867
+Loading 1089th epoch
+Loss:[0.89682686]
+Loading 1090th epoch
+Loss:[0.89587688]
+Loading 1091th epoch
+Loss:[0.89492774]
+Loading 1092th epoch
+Loss:[0.89397949]
+Loading 1093th epoch
+Loss:[0.89303166]
+Loading 1094th epoch
+Loss:[0.89208448]
+Loading 1095th epoch
+Loss:[0.89113808]
+Loading 1096th epoch
+Loss:[0.89019269]
+Loading 1097th epoch
+Loss:[0.88924831]
+Loading 1098th epoch
+Loss:[0.88830459]
+
+============================================================
+[DA-AA] Epoch 1100 monitor summary
+============================================================
+  domain 0: DVP=0.050[LOW]  entropy=2.940[OK]  dead=[OK]  recon=0.02441
+  domain 1: DVP=0.021[LOW]  entropy=2.660[OK]  dead=[OK]  recon=0.00348
+  domain 2: DVP=0.237[OK]  entropy=2.817[OK]  dead=[OK]  recon=0.09796
+  domain 3: DVP=0.237[OK]  entropy=2.816[OK]  dead=[OK]  recon=0.07543
+  domain 4: DVP=0.059[LOW]  entropy=2.853[OK]  dead=[OK]  recon=0.12174
+  domain 5: DVP=0.091[LOW]  entropy=2.852[OK]  dead=[OK]  recon=0.14807
+============================================================
+
+  block_diagonal_strength: 0.5845
+Loading 1099th epoch
+Loss:[0.88736099]
+Loading 1100th epoch
+Loss:[0.88641798]
+Loading 1101th epoch
+Loss:[0.88547564]
+Loading 1102th epoch
+Loss:[0.88453364]
+Loading 1103th epoch
+Loss:[0.88359207]
+Loading 1104th epoch
+Loss:[0.88265097]
+Loading 1105th epoch
+Loss:[0.88171035]
+Loading 1106th epoch
+Loss:[0.88076979]
+Loading 1107th epoch
+Loss:[0.87982953]
+Loading 1108th epoch
+Loss:[0.87889016]
+
+============================================================
+[DA-AA] Epoch 1110 monitor summary
+============================================================
+  domain 0: DVP=0.050[LOW]  entropy=2.939[OK]  dead=[OK]  recon=0.02430
+  domain 1: DVP=0.021[LOW]  entropy=2.655[OK]  dead=[OK]  recon=0.00345
+  domain 2: DVP=0.237[OK]  entropy=2.812[OK]  dead=[OK]  recon=0.09642
+  domain 3: DVP=0.237[OK]  entropy=2.813[OK]  dead=[OK]  recon=0.07443
+  domain 4: DVP=0.059[LOW]  entropy=2.849[OK]  dead=[OK]  recon=0.11990
+  domain 5: DVP=0.092[LOW]  entropy=2.847[OK]  dead=[OK]  recon=0.14619
+============================================================
+
+  block_diagonal_strength: 0.5823
+Loading 1109th epoch
+Loss:[0.87795174]
+Loading 1110th epoch
+Loss:[0.87701380]
+Loading 1111th epoch
+Loss:[0.87607628]
+Loading 1112th epoch
+Loss:[0.87513924]
+Loading 1113th epoch
+Loss:[0.87420297]
+Loading 1114th epoch
+Loss:[0.87326759]
+Loading 1115th epoch
+Loss:[0.87233305]
+Loading 1116th epoch
+Loss:[0.87139922]
+Loading 1117th epoch
+Loss:[0.87046671]
+Loading 1118th epoch
+Loss:[0.86953473]
+
+============================================================
+[DA-AA] Epoch 1120 monitor summary
+============================================================
+  domain 0: DVP=0.050[LOW]  entropy=2.938[OK]  dead=[OK]  recon=0.02419
+  domain 1: DVP=0.021[LOW]  entropy=2.651[OK]  dead=[OK]  recon=0.00343
+  domain 2: DVP=0.237[OK]  entropy=2.808[OK]  dead=[OK]  recon=0.09489
+  domain 3: DVP=0.238[OK]  entropy=2.809[OK]  dead=[OK]  recon=0.07343
+  domain 4: DVP=0.059[LOW]  entropy=2.844[OK]  dead=[OK]  recon=0.11807
+  domain 5: DVP=0.092[LOW]  entropy=2.843[OK]  dead=[OK]  recon=0.14431
+============================================================
+
+  block_diagonal_strength: 0.5800
+Loading 1119th epoch
+Loss:[0.86860323]
+Loading 1120th epoch
+Loss:[0.86767197]
+Loading 1121th epoch
+Loss:[0.86674148]
+Loading 1122th epoch
+Loss:[0.86581194]
+Loading 1123th epoch
+Loss:[0.86488360]
+Loading 1124th epoch
+Loss:[0.86395597]
+Loading 1125th epoch
+Loss:[0.86302888]
+Loading 1126th epoch
+Loss:[0.86210239]
+Loading 1127th epoch
+Loss:[0.86117613]
+Loading 1128th epoch
+Loss:[0.86025113]
+
+============================================================
+[DA-AA] Epoch 1130 monitor summary
+============================================================
+  domain 0: DVP=0.050[LOW]  entropy=2.938[OK]  dead=[OK]  recon=0.02408
+  domain 1: DVP=0.021[LOW]  entropy=2.646[OK]  dead=[OK]  recon=0.00340
+  domain 2: DVP=0.238[OK]  entropy=2.803[OK]  dead=[OK]  recon=0.09335
+  domain 3: DVP=0.238[OK]  entropy=2.805[OK]  dead=[OK]  recon=0.07244
+  domain 4: DVP=0.059[LOW]  entropy=2.840[OK]  dead=[OK]  recon=0.11628
+  domain 5: DVP=0.092[LOW]  entropy=2.839[OK]  dead=[OK]  recon=0.14244
+============================================================
+
+  block_diagonal_strength: 0.5776
+Loading 1129th epoch
+Loss:[0.85932732]
+Loading 1130th epoch
+Loss:[0.85840428]
+Loading 1131th epoch
+Loss:[0.85748184]
+Loading 1132th epoch
+Loss:[0.85655928]
+Loading 1133th epoch
+Loss:[0.85563731]
+Loading 1134th epoch
+Loss:[0.85471654]
+Loading 1135th epoch
+Loss:[0.85379654]
+Loading 1136th epoch
+Loss:[0.85287738]
+Loading 1137th epoch
+Loss:[0.85195792]
+Loading 1138th epoch
+Loss:[0.85103881]
+
+============================================================
+[DA-AA] Epoch 1140 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.937[OK]  dead=[OK]  recon=0.02397
+  domain 1: DVP=0.021[LOW]  entropy=2.641[OK]  dead=[OK]  recon=0.00338
+  domain 2: DVP=0.238[OK]  entropy=2.798[OK]  dead=[OK]  recon=0.09183
+  domain 3: DVP=0.238[OK]  entropy=2.800[OK]  dead=[OK]  recon=0.07144
+  domain 4: DVP=0.059[LOW]  entropy=2.835[OK]  dead=[OK]  recon=0.11450
+  domain 5: DVP=0.093[LOW]  entropy=2.834[OK]  dead=[OK]  recon=0.14057
+============================================================
+
+  block_diagonal_strength: 0.5752
+Loading 1139th epoch
+Loss:[0.85012090]
+Loading 1140th epoch
+Loss:[0.84920424]
+Loading 1141th epoch
+Loss:[0.84828842]
+Loading 1142th epoch
+Loss:[0.84737301]
+Loading 1143th epoch
+Loss:[0.84645838]
+Loading 1144th epoch
+Loss:[0.84554476]
+Loading 1145th epoch
+Loss:[0.84463209]
+Loading 1146th epoch
+Loss:[0.84372056]
+Loading 1147th epoch
+Loss:[0.84281027]
+Loading 1148th epoch
+Loss:[0.84190047]
+
+============================================================
+[DA-AA] Epoch 1150 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.936[OK]  dead=[OK]  recon=0.02386
+  domain 1: DVP=0.021[LOW]  entropy=2.637[OK]  dead=[OK]  recon=0.00336
+  domain 2: DVP=0.238[OK]  entropy=2.793[OK]  dead=[OK]  recon=0.09031
+  domain 3: DVP=0.239[OK]  entropy=2.796[OK]  dead=[OK]  recon=0.07045
+  domain 4: DVP=0.059[LOW]  entropy=2.831[OK]  dead=[OK]  recon=0.11275
+  domain 5: DVP=0.093[LOW]  entropy=2.829[OK]  dead=[OK]  recon=0.13871
+============================================================
+
+  block_diagonal_strength: 0.5728
+Loading 1149th epoch
+Loss:[0.84099162]
+Loading 1150th epoch
+Loss:[0.84008360]
+Loading 1151th epoch
+Loss:[0.83917606]
+Loading 1152th epoch
+Loss:[0.83826905]
+Loading 1153th epoch
+Loss:[0.83736247]
+Loading 1154th epoch
+Loss:[0.83645648]
+Loading 1155th epoch
+Loss:[0.83555108]
+Loading 1156th epoch
+Loss:[0.83464617]
+Loading 1157th epoch
+Loss:[0.83374178]
+Loading 1158th epoch
+Loss:[0.83283776]
+
+============================================================
+[DA-AA] Epoch 1160 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.935[OK]  dead=[OK]  recon=0.02376
+  domain 1: DVP=0.021[LOW]  entropy=2.632[OK]  dead=[OK]  recon=0.00333
+  domain 2: DVP=0.239[OK]  entropy=2.787[OK]  dead=[OK]  recon=0.08879
+  domain 3: DVP=0.239[OK]  entropy=2.791[OK]  dead=[OK]  recon=0.06947
+  domain 4: DVP=0.059[LOW]  entropy=2.826[OK]  dead=[OK]  recon=0.11102
+  domain 5: DVP=0.093[LOW]  entropy=2.825[OK]  dead=[OK]  recon=0.13686
+============================================================
+
+  block_diagonal_strength: 0.5703
+Loading 1159th epoch
+Loss:[0.83193439]
+Loading 1160th epoch
+Loss:[0.83103174]
+Loading 1161th epoch
+Loss:[0.83012986]
+Loading 1162th epoch
+Loss:[0.82922912]
+Loading 1163th epoch
+Loss:[0.82832944]
+Loading 1164th epoch
+Loss:[0.82743037]
+Loading 1165th epoch
+Loss:[0.82653183]
+Loading 1166th epoch
+Loss:[0.82563365]
+Loading 1167th epoch
+Loss:[0.82473648]
+Loading 1168th epoch
+Loss:[0.82384056]
+
+============================================================
+[DA-AA] Epoch 1170 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.935[OK]  dead=[OK]  recon=0.02366
+  domain 1: DVP=0.022[LOW]  entropy=2.628[OK]  dead=[OK]  recon=0.00331
+  domain 2: DVP=0.239[OK]  entropy=2.782[OK]  dead=[OK]  recon=0.08728
+  domain 3: DVP=0.240[OK]  entropy=2.787[OK]  dead=[OK]  recon=0.06849
+  domain 4: DVP=0.058[LOW]  entropy=2.821[OK]  dead=[OK]  recon=0.10932
+  domain 5: DVP=0.094[LOW]  entropy=2.820[OK]  dead=[OK]  recon=0.13501
+============================================================
+
+  block_diagonal_strength: 0.5678
+Loading 1169th epoch
+Loss:[0.82294559]
+Loading 1170th epoch
+Loss:[0.82205153]
+Loading 1171th epoch
+Loss:[0.82115805]
+Loading 1172th epoch
+Loss:[0.82026541]
+Loading 1173th epoch
+Loss:[0.81937397]
+Loading 1174th epoch
+Loss:[0.81848347]
+Loading 1175th epoch
+Loss:[0.81759447]
+Loading 1176th epoch
+Loss:[0.81670678]
+Loading 1177th epoch
+Loss:[0.81581998]
+Loading 1178th epoch
+Loss:[0.81493419]
+
+============================================================
+[DA-AA] Epoch 1180 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.934[OK]  dead=[OK]  recon=0.02356
+  domain 1: DVP=0.022[LOW]  entropy=2.623[OK]  dead=[OK]  recon=0.00329
+  domain 2: DVP=0.240[OK]  entropy=2.776[OK]  dead=[OK]  recon=0.08578
+  domain 3: DVP=0.240[OK]  entropy=2.782[OK]  dead=[OK]  recon=0.06752
+  domain 4: DVP=0.058[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.10765
+  domain 5: DVP=0.094[LOW]  entropy=2.815[OK]  dead=[OK]  recon=0.13318
+============================================================
+
+  block_diagonal_strength: 0.5652
+Loading 1179th epoch
+Loss:[0.81404984]
+Loading 1180th epoch
+Loss:[0.81316590]
+Loading 1181th epoch
+Loss:[0.81228316]
+Loading 1182th epoch
+Loss:[0.81140083]
+Loading 1183th epoch
+Loss:[0.81051981]
+Loading 1184th epoch
+Loss:[0.80963993]
+Loading 1185th epoch
+Loss:[0.80876040]
+Loading 1186th epoch
+Loss:[0.80788159]
+Loading 1187th epoch
+Loss:[0.80700356]
+Loading 1188th epoch
+Loss:[0.80612612]
+
+============================================================
+[DA-AA] Epoch 1190 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.933[OK]  dead=[OK]  recon=0.02346
+  domain 1: DVP=0.022[LOW]  entropy=2.619[OK]  dead=[OK]  recon=0.00327
+  domain 2: DVP=0.240[OK]  entropy=2.771[OK]  dead=[OK]  recon=0.08430
+  domain 3: DVP=0.240[OK]  entropy=2.777[OK]  dead=[OK]  recon=0.06656
+  domain 4: DVP=0.058[LOW]  entropy=2.811[OK]  dead=[OK]  recon=0.10601
+  domain 5: DVP=0.094[LOW]  entropy=2.809[OK]  dead=[OK]  recon=0.13136
+============================================================
+
+  block_diagonal_strength: 0.5626
+Loading 1189th epoch
+Loss:[0.80524909]
+Loading 1190th epoch
+Loss:[0.80437273]
+Loading 1191th epoch
+Loss:[0.80349755]
+Loading 1192th epoch
+Loss:[0.80262315]
+Loading 1193th epoch
+Loss:[0.80174971]
+Loading 1194th epoch
+Loss:[0.80087721]
+Loading 1195th epoch
+Loss:[0.80000532]
+Loading 1196th epoch
+Loss:[0.79913443]
+Loading 1197th epoch
+Loss:[0.79826367]
+Loading 1198th epoch
+Loss:[0.79739356]
+
+============================================================
+[DA-AA] Epoch 1200 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.932[OK]  dead=[OK]  recon=0.02335
+  domain 1: DVP=0.022[LOW]  entropy=2.614[OK]  dead=[OK]  recon=0.00325
+  domain 2: DVP=0.241[OK]  entropy=2.765[OK]  dead=[OK]  recon=0.08283
+  domain 3: DVP=0.241[OK]  entropy=2.772[OK]  dead=[OK]  recon=0.06561
+  domain 4: DVP=0.058[LOW]  entropy=2.806[OK]  dead=[OK]  recon=0.10440
+  domain 5: DVP=0.094[LOW]  entropy=2.804[OK]  dead=[OK]  recon=0.12955
+============================================================
+
+  block_diagonal_strength: 0.5600
+[Visualizer] t-SNE: 6080 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep1200.png  (6080 pts)
+[DA-AA] domain 0 expand: 12 -> 13
+[DA-AA] domain 1 expand: 12 -> 13
+[DA-AA] domain 2 expand: 12 -> 13
+[DA-AA] domain 3 expand: 12 -> 13
+[DA-AA] domain 4 expand: 12 -> 13
+[DA-AA] domain 5 expand: 12 -> 13
+Loading 1199th epoch
+Loss:[0.81338465]
+Loading 1199th epoch
+Loss:[0.81249982]
+Loading 1199th epoch
+Loss:[0.81161535]
+Loading 1199th epoch
+Loss:[0.81073081]
+Loading 1199th epoch
+Loss:[0.80984706]
+Loading 1199th epoch
+Loss:[0.80896360]
+Loading 1199th epoch
+Loss:[0.80808049]
+Loading 1199th epoch
+Loss:[0.80719775]
+Loading 1199th epoch
+Loss:[0.80631483]
+Loading 1199th epoch
+Loss:[0.80543256]
+
+============================================================
+[DA-AA] Epoch 1210 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.981[OK]  dead=[OK]  recon=0.02282
+  domain 1: DVP=0.022[LOW]  entropy=2.675[OK]  dead=[OK]  recon=0.00291
+  domain 2: DVP=0.241[OK]  entropy=2.812[OK]  dead=[OK]  recon=0.08481
+  domain 3: DVP=0.241[OK]  entropy=2.825[OK]  dead=[OK]  recon=0.06688
+  domain 4: DVP=0.057[LOW]  entropy=2.849[OK]  dead=[OK]  recon=0.10714
+  domain 5: DVP=0.094[LOW]  entropy=2.852[OK]  dead=[OK]  recon=0.13245
+============================================================
+
+  block_diagonal_strength: 0.5756
+Loading 1199th epoch
+Loss:[0.80455047]
+Loading 1199th epoch
+Loss:[0.80366904]
+Loading 1199th epoch
+Loss:[0.80278742]
+Loading 1199th epoch
+Loss:[0.80190545]
+Loading 1199th epoch
+Loss:[0.80102384]
+Loading 1199th epoch
+Loss:[0.80014187]
+Loading 1199th epoch
+Loss:[0.79926026]
+Loading 1199th epoch
+Loss:[0.79837847]
+Loading 1199th epoch
+Loss:[0.79749763]
+Loading 1199th epoch
+Loss:[0.79661739]
+
+============================================================
+[DA-AA] Epoch 1220 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.980[OK]  dead=[OK]  recon=0.02274
+  domain 1: DVP=0.023[LOW]  entropy=2.671[OK]  dead=[OK]  recon=0.00290
+  domain 2: DVP=0.240[OK]  entropy=2.806[OK]  dead=[OK]  recon=0.08332
+  domain 3: DVP=0.241[OK]  entropy=2.819[OK]  dead=[OK]  recon=0.06596
+  domain 4: DVP=0.056[LOW]  entropy=2.844[OK]  dead=[OK]  recon=0.10545
+  domain 5: DVP=0.093[LOW]  entropy=2.846[OK]  dead=[OK]  recon=0.13056
+============================================================
+
+  block_diagonal_strength: 0.5727
+Loading 1219th epoch
+Loss:[0.79573774]
+Loading 1220th epoch
+Loss:[0.79485810]
+Loading 1221th epoch
+Loss:[0.79397923]
+Loading 1222th epoch
+Loss:[0.79310119]
+Loading 1223th epoch
+Loss:[0.79222423]
+Loading 1224th epoch
+Loss:[0.79134822]
+Loading 1225th epoch
+Loss:[0.79047298]
+Loading 1226th epoch
+Loss:[0.78959805]
+Loading 1227th epoch
+Loss:[0.78872359]
+Loading 1228th epoch
+Loss:[0.78785002]
+
+============================================================
+[DA-AA] Epoch 1230 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.979[OK]  dead=[OK]  recon=0.02266
+  domain 1: DVP=0.024[LOW]  entropy=2.667[OK]  dead=[OK]  recon=0.00288
+  domain 2: DVP=0.240[OK]  entropy=2.799[OK]  dead=[OK]  recon=0.08183
+  domain 3: DVP=0.242[OK]  entropy=2.814[OK]  dead=[OK]  recon=0.06501
+  domain 4: DVP=0.055[LOW]  entropy=2.838[OK]  dead=[OK]  recon=0.10381
+  domain 5: DVP=0.093[LOW]  entropy=2.841[OK]  dead=[OK]  recon=0.12871
+============================================================
+
+  block_diagonal_strength: 0.5697
+Loading 1229th epoch
+Loss:[0.78697783]
+Loading 1230th epoch
+Loss:[0.78610682]
+Loading 1231th epoch
+Loss:[0.78523618]
+Loading 1232th epoch
+Loss:[0.78436625]
+Loading 1233th epoch
+Loss:[0.78349698]
+Loading 1234th epoch
+Loss:[0.78262860]
+Loading 1235th epoch
+Loss:[0.78176069]
+Loading 1236th epoch
+Loss:[0.78089356]
+Loading 1237th epoch
+Loss:[0.78002715]
+Loading 1238th epoch
+Loss:[0.77916139]
+
+============================================================
+[DA-AA] Epoch 1240 monitor summary
+============================================================
+  domain 0: DVP=0.050[LOW]  entropy=2.978[OK]  dead=[OK]  recon=0.02257
+  domain 1: DVP=0.024[LOW]  entropy=2.663[OK]  dead=[OK]  recon=0.00287
+  domain 2: DVP=0.240[OK]  entropy=2.793[OK]  dead=[OK]  recon=0.08033
+  domain 3: DVP=0.242[OK]  entropy=2.808[OK]  dead=[OK]  recon=0.06405
+  domain 4: DVP=0.054[LOW]  entropy=2.832[OK]  dead=[OK]  recon=0.10220
+  domain 5: DVP=0.093[LOW]  entropy=2.835[OK]  dead=[OK]  recon=0.12687
+============================================================
+
+  block_diagonal_strength: 0.5668
+Loading 1239th epoch
+Loss:[0.77829659]
+Loading 1240th epoch
+Loss:[0.77743244]
+Loading 1241th epoch
+Loss:[0.77656931]
+Loading 1242th epoch
+Loss:[0.77570701]
+Loading 1243th epoch
+Loss:[0.77484512]
+Loading 1244th epoch
+Loss:[0.77398396]
+Loading 1245th epoch
+Loss:[0.77312303]
+Loading 1246th epoch
+Loss:[0.77226353]
+Loading 1247th epoch
+Loss:[0.77140486]
+Loading 1248th epoch
+Loss:[0.77054739]
+
+============================================================
+[DA-AA] Epoch 1250 monitor summary
+============================================================
+  domain 0: DVP=0.050[LOW]  entropy=2.977[OK]  dead=[OK]  recon=0.02248
+  domain 1: DVP=0.025[LOW]  entropy=2.659[OK]  dead=[OK]  recon=0.00285
+  domain 2: DVP=0.240[OK]  entropy=2.786[OK]  dead=[OK]  recon=0.07885
+  domain 3: DVP=0.242[OK]  entropy=2.802[OK]  dead=[OK]  recon=0.06310
+  domain 4: DVP=0.053[LOW]  entropy=2.826[OK]  dead=[OK]  recon=0.10062
+  domain 5: DVP=0.092[LOW]  entropy=2.828[OK]  dead=[OK]  recon=0.12504
+============================================================
+
+  block_diagonal_strength: 0.5638
+Loading 1249th epoch
+Loss:[0.76969099]
+Loading 1250th epoch
+Loss:[0.76883507]
+Loading 1251th epoch
+Loss:[0.76798046]
+Loading 1252th epoch
+Loss:[0.76712632]
+Loading 1253th epoch
+Loss:[0.76627374]
+Loading 1254th epoch
+Loss:[0.76542163]
+Loading 1255th epoch
+Loss:[0.76457018]
+Loading 1256th epoch
+Loss:[0.76371872]
+Loading 1257th epoch
+Loss:[0.76286811]
+Loading 1258th epoch
+Loss:[0.76201928]
+
+============================================================
+[DA-AA] Epoch 1260 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.976[OK]  dead=[OK]  recon=0.02239
+  domain 1: DVP=0.025[LOW]  entropy=2.655[OK]  dead=[OK]  recon=0.00284
+  domain 2: DVP=0.240[OK]  entropy=2.778[OK]  dead=[OK]  recon=0.07738
+  domain 3: DVP=0.242[OK]  entropy=2.796[OK]  dead=[OK]  recon=0.06216
+  domain 4: DVP=0.052[LOW]  entropy=2.819[OK]  dead=[OK]  recon=0.09907
+  domain 5: DVP=0.092[LOW]  entropy=2.822[OK]  dead=[OK]  recon=0.12323
+============================================================
+
+  block_diagonal_strength: 0.5607
+Loading 1259th epoch
+Loss:[0.76117104]
+Loading 1260th epoch
+Loss:[0.76032400]
+Loading 1261th epoch
+Loss:[0.75947738]
+Loading 1262th epoch
+Loss:[0.75863218]
+Loading 1263th epoch
+Loss:[0.75778794]
+Loading 1264th epoch
+Loss:[0.75694513]
+Loading 1265th epoch
+Loss:[0.75610381]
+Loading 1266th epoch
+Loss:[0.75526369]
+Loading 1267th epoch
+Loss:[0.75442559]
+Loading 1268th epoch
+Loss:[0.75358862]
+
+============================================================
+[DA-AA] Epoch 1270 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.975[OK]  dead=[OK]  recon=0.02230
+  domain 1: DVP=0.025[LOW]  entropy=2.651[OK]  dead=[OK]  recon=0.00282
+  domain 2: DVP=0.241[OK]  entropy=2.771[OK]  dead=[OK]  recon=0.07593
+  domain 3: DVP=0.243[OK]  entropy=2.790[OK]  dead=[OK]  recon=0.06122
+  domain 4: DVP=0.052[LOW]  entropy=2.813[OK]  dead=[OK]  recon=0.09755
+  domain 5: DVP=0.092[LOW]  entropy=2.816[OK]  dead=[OK]  recon=0.12145
+============================================================
+
+  block_diagonal_strength: 0.5576
+Loading 1269th epoch
+Loss:[0.75275254]
+Loading 1270th epoch
+Loss:[0.75191724]
+Loading 1271th epoch
+Loss:[0.75108337]
+Loading 1272th epoch
+Loss:[0.75025123]
+Loading 1273th epoch
+Loss:[0.74941981]
+Loading 1274th epoch
+Loss:[0.74858963]
+Loading 1275th epoch
+Loss:[0.74776006]
+Loading 1276th epoch
+Loss:[0.74693245]
+Loading 1277th epoch
+Loss:[0.74610591]
+Loading 1278th epoch
+Loss:[0.74528039]
+
+============================================================
+[DA-AA] Epoch 1280 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.974[OK]  dead=[OK]  recon=0.02220
+  domain 1: DVP=0.025[LOW]  entropy=2.647[OK]  dead=[OK]  recon=0.00280
+  domain 2: DVP=0.241[OK]  entropy=2.764[OK]  dead=[OK]  recon=0.07450
+  domain 3: DVP=0.243[OK]  entropy=2.783[OK]  dead=[OK]  recon=0.06030
+  domain 4: DVP=0.051[LOW]  entropy=2.807[OK]  dead=[OK]  recon=0.09607
+  domain 5: DVP=0.092[LOW]  entropy=2.809[OK]  dead=[OK]  recon=0.11969
+============================================================
+
+  block_diagonal_strength: 0.5546
+Loading 1279th epoch
+Loss:[0.74445605]
+Loading 1280th epoch
+Loss:[0.74363273]
+Loading 1281th epoch
+Loss:[0.74281144]
+Loading 1282th epoch
+Loss:[0.74199092]
+Loading 1283th epoch
+Loss:[0.74117208]
+Loading 1284th epoch
+Loss:[0.74035400]
+Loading 1285th epoch
+Loss:[0.73953795]
+Loading 1286th epoch
+Loss:[0.73872346]
+Loading 1287th epoch
+Loss:[0.73791099]
+Loading 1288th epoch
+Loss:[0.73709995]
+
+============================================================
+[DA-AA] Epoch 1290 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.973[OK]  dead=[OK]  recon=0.02211
+  domain 1: DVP=0.026[LOW]  entropy=2.644[OK]  dead=[OK]  recon=0.00279
+  domain 2: DVP=0.242[OK]  entropy=2.756[OK]  dead=[OK]  recon=0.07310
+  domain 3: DVP=0.243[OK]  entropy=2.777[OK]  dead=[OK]  recon=0.05939
+  domain 4: DVP=0.050[LOW]  entropy=2.800[OK]  dead=[OK]  recon=0.09463
+  domain 5: DVP=0.091[LOW]  entropy=2.803[OK]  dead=[OK]  recon=0.11795
+============================================================
+
+  block_diagonal_strength: 0.5515
+Loading 1289th epoch
+Loss:[0.73629010]
+Loading 1290th epoch
+Loss:[0.73548174]
+Loading 1291th epoch
+Loss:[0.73467427]
+Loading 1292th epoch
+Loss:[0.73386806]
+Loading 1293th epoch
+Loss:[0.73306286]
+Loading 1294th epoch
+Loss:[0.73225933]
+Loading 1295th epoch
+Loss:[0.73145676]
+Loading 1296th epoch
+Loss:[0.73065490]
+Loading 1297th epoch
+Loss:[0.72985435]
+Loading 1298th epoch
+Loss:[0.72905481]
+
+============================================================
+[DA-AA] Epoch 1300 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.972[OK]  dead=[OK]  recon=0.02201
+  domain 1: DVP=0.026[LOW]  entropy=2.640[OK]  dead=[OK]  recon=0.00277
+  domain 2: DVP=0.243[OK]  entropy=2.748[OK]  dead=[OK]  recon=0.07173
+  domain 3: DVP=0.243[OK]  entropy=2.770[OK]  dead=[OK]  recon=0.05850
+  domain 4: DVP=0.049[LOW]  entropy=2.793[OK]  dead=[OK]  recon=0.09324
+  domain 5: DVP=0.091[LOW]  entropy=2.796[OK]  dead=[OK]  recon=0.11625
+============================================================
+
+  block_diagonal_strength: 0.5484
+Loading 1299th epoch
+Loss:[0.72825700]
+Loading 1300th epoch
+Loss:[0.72746080]
+Loading 1301th epoch
+Loss:[0.72666633]
+Loading 1302th epoch
+Loss:[0.72587329]
+Loading 1303th epoch
+Loss:[0.72508180]
+Loading 1304th epoch
+Loss:[0.72429204]
+Loading 1305th epoch
+Loss:[0.72350365]
+Loading 1306th epoch
+Loss:[0.72271669]
+Loading 1307th epoch
+Loss:[0.72193033]
+Loading 1308th epoch
+Loss:[0.72114515]
+
+============================================================
+[DA-AA] Epoch 1310 monitor summary
+============================================================
+  domain 0: DVP=0.046[LOW]  entropy=2.971[OK]  dead=[OK]  recon=0.02191
+  domain 1: DVP=0.026[LOW]  entropy=2.636[OK]  dead=[OK]  recon=0.00276
+  domain 2: DVP=0.243[OK]  entropy=2.740[OK]  dead=[OK]  recon=0.07039
+  domain 3: DVP=0.244[OK]  entropy=2.763[OK]  dead=[OK]  recon=0.05761
+  domain 4: DVP=0.048[LOW]  entropy=2.787[OK]  dead=[OK]  recon=0.09188
+  domain 5: DVP=0.091[LOW]  entropy=2.789[OK]  dead=[OK]  recon=0.11457
+============================================================
+
+  block_diagonal_strength: 0.5453
+Loading 1309th epoch
+Loss:[0.72036117]
+Loading 1310th epoch
+Loss:[0.71957892]
+Loading 1311th epoch
+Loss:[0.71879834]
+Loading 1312th epoch
+Loss:[0.71801937]
+Loading 1313th epoch
+Loss:[0.71724218]
+Loading 1314th epoch
+Loss:[0.71646661]
+Loading 1315th epoch
+Loss:[0.71569246]
+Loading 1316th epoch
+Loss:[0.71491933]
+Loading 1317th epoch
+Loss:[0.71414793]
+Loading 1318th epoch
+Loss:[0.71337789]
+
+============================================================
+[DA-AA] Epoch 1320 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.970[OK]  dead=[OK]  recon=0.02181
+  domain 1: DVP=0.026[LOW]  entropy=2.633[OK]  dead=[OK]  recon=0.00274
+  domain 2: DVP=0.244[OK]  entropy=2.732[OK]  dead=[OK]  recon=0.06908
+  domain 3: DVP=0.244[OK]  entropy=2.756[OK]  dead=[OK]  recon=0.05675
+  domain 4: DVP=0.047[LOW]  entropy=2.780[OK]  dead=[OK]  recon=0.09058
+  domain 5: DVP=0.091[LOW]  entropy=2.782[OK]  dead=[OK]  recon=0.11293
+============================================================
+
+  block_diagonal_strength: 0.5422
+Loading 1319th epoch
+Loss:[0.71260983]
+Loading 1320th epoch
+Loss:[0.71184242]
+Loading 1321th epoch
+Loss:[0.71107626]
+Loading 1322th epoch
+Loss:[0.71031100]
+Loading 1323th epoch
+Loss:[0.70954734]
+Loading 1324th epoch
+Loss:[0.70878482]
+Loading 1325th epoch
+Loss:[0.70802367]
+Loading 1326th epoch
+Loss:[0.70726413]
+Loading 1327th epoch
+Loss:[0.70650566]
+Loading 1328th epoch
+Loss:[0.70574880]
+
+============================================================
+[DA-AA] Epoch 1330 monitor summary
+============================================================
+  domain 0: DVP=0.044[LOW]  entropy=2.969[OK]  dead=[OK]  recon=0.02170
+  domain 1: DVP=0.026[LOW]  entropy=2.629[OK]  dead=[OK]  recon=0.00273
+  domain 2: DVP=0.245[OK]  entropy=2.724[OK]  dead=[OK]  recon=0.06780
+  domain 3: DVP=0.244[OK]  entropy=2.748[OK]  dead=[OK]  recon=0.05590
+  domain 4: DVP=0.046[LOW]  entropy=2.773[OK]  dead=[OK]  recon=0.08931
+  domain 5: DVP=0.090[LOW]  entropy=2.775[OK]  dead=[OK]  recon=0.11132
+============================================================
+
+  block_diagonal_strength: 0.5392
+Loading 1329th epoch
+Loss:[0.70499265]
+Loading 1330th epoch
+Loss:[0.70423776]
+Loading 1331th epoch
+Loss:[0.70348358]
+Loading 1332th epoch
+Loss:[0.70273143]
+Loading 1333th epoch
+Loss:[0.70198029]
+Loading 1334th epoch
+Loss:[0.70123053]
+Loading 1335th epoch
+Loss:[0.70048141]
+Loading 1336th epoch
+Loss:[0.69973433]
+Loading 1337th epoch
+Loss:[0.69898814]
+Loading 1338th epoch
+Loss:[0.69824445]
+
+============================================================
+[DA-AA] Epoch 1340 monitor summary
+============================================================
+  domain 0: DVP=0.042[LOW]  entropy=2.967[OK]  dead=[OK]  recon=0.02159
+  domain 1: DVP=0.027[LOW]  entropy=2.626[OK]  dead=[OK]  recon=0.00271
+  domain 2: DVP=0.246[OK]  entropy=2.715[OK]  dead=[OK]  recon=0.06655
+  domain 3: DVP=0.244[OK]  entropy=2.741[OK]  dead=[OK]  recon=0.05506
+  domain 4: DVP=0.044[LOW]  entropy=2.767[OK]  dead=[OK]  recon=0.08808
+  domain 5: DVP=0.090[LOW]  entropy=2.768[OK]  dead=[OK]  recon=0.10973
+============================================================
+
+  block_diagonal_strength: 0.5362
+Loading 1339th epoch
+Loss:[0.69750106]
+Loading 1340th epoch
+Loss:[0.69675994]
+Loading 1341th epoch
+Loss:[0.69601858]
+Loading 1342th epoch
+Loss:[0.69527978]
+Loading 1343th epoch
+Loss:[0.69454110]
+Loading 1344th epoch
+Loss:[0.69380552]
+Loading 1345th epoch
+Loss:[0.69306934]
+Loading 1346th epoch
+Loss:[0.69233608]
+Loading 1347th epoch
+Loss:[0.69160080]
+Loading 1348th epoch
+Loss:[0.69087017]
+
+============================================================
+[DA-AA] Epoch 1350 monitor summary
+============================================================
+  domain 0: DVP=0.041[LOW]  entropy=2.966[OK]  dead=[OK]  recon=0.02147
+  domain 1: DVP=0.027[LOW]  entropy=2.623[OK]  dead=[OK]  recon=0.00269
+  domain 2: DVP=0.246[OK]  entropy=2.707[OK]  dead=[OK]  recon=0.06532
+  domain 3: DVP=0.245[OK]  entropy=2.733[OK]  dead=[OK]  recon=0.05424
+  domain 4: DVP=0.043[LOW]  entropy=2.760[OK]  dead=[OK]  recon=0.08689
+  domain 5: DVP=0.089[LOW]  entropy=2.762[OK]  dead=[OK]  recon=0.10818
+============================================================
+
+  block_diagonal_strength: 0.5333
+Loading 1349th epoch
+Loss:[0.69013757]
+Loading 1350th epoch
+Loss:[0.68941140]
+Loading 1351th epoch
+Loss:[0.68868119]
+Loading 1352th epoch
+Loss:[0.68795884]
+Loading 1353th epoch
+Loss:[0.68723094]
+Loading 1354th epoch
+Loss:[0.68651462]
+Loading 1355th epoch
+Loss:[0.68579054]
+Loading 1356th epoch
+Loss:[0.68508267]
+Loading 1357th epoch
+Loss:[0.68436480]
+Loading 1358th epoch
+Loss:[0.68367136]
+
+============================================================
+[DA-AA] Epoch 1360 monitor summary
+============================================================
+  domain 0: DVP=0.040[LOW]  entropy=2.965[OK]  dead=[OK]  recon=0.02136
+  domain 1: DVP=0.027[LOW]  entropy=2.620[OK]  dead=[OK]  recon=0.00268
+  domain 2: DVP=0.247[OK]  entropy=2.698[OK]  dead=[OK]  recon=0.06413
+  domain 3: DVP=0.245[OK]  entropy=2.726[OK]  dead=[OK]  recon=0.05343
+  domain 4: DVP=0.042[LOW]  entropy=2.753[OK]  dead=[OK]  recon=0.08573
+  domain 5: DVP=0.089[LOW]  entropy=2.755[OK]  dead=[OK]  recon=0.10666
+============================================================
+
+  block_diagonal_strength: 0.5303
+Loading 1359th epoch
+Loss:[0.68296528]
+Loading 1360th epoch
+Loss:[0.68229568]
+Loading 1361th epoch
+Loss:[0.68161052]
+Loading 1362th epoch
+Loss:[0.68098420]
+Loading 1363th epoch
+Loss:[0.68034661]
+Loading 1364th epoch
+Loss:[0.67980814]
+Loading 1365th epoch
+Loss:[0.67927670]
+Loading 1366th epoch
+Loss:[0.67891991]
+Loading 1367th epoch
+Loss:[0.67863971]
+Loading 1368th epoch
+Loss:[0.67870992]
+
+============================================================
+[DA-AA] Epoch 1370 monitor summary
+============================================================
+  domain 0: DVP=0.038[LOW]  entropy=2.963[OK]  dead=[OK]  recon=0.02124
+  domain 1: DVP=0.027[LOW]  entropy=2.617[OK]  dead=[OK]  recon=0.00265
+  domain 2: DVP=0.248[OK]  entropy=2.689[OK]  dead=[OK]  recon=0.06298
+  domain 3: DVP=0.245[OK]  entropy=2.718[OK]  dead=[OK]  recon=0.05266
+  domain 4: DVP=0.040[LOW]  entropy=2.747[OK]  dead=[OK]  recon=0.08463
+  domain 5: DVP=0.088[LOW]  entropy=2.748[OK]  dead=[OK]  recon=0.10518
+============================================================
+
+  block_diagonal_strength: 0.5275
+Loading 1368th epoch
+Loss:[0.67910206]
+Loading 1368th epoch
+Loss:[0.68031955]
+Loading 1368th epoch
+Loss:[0.68281353]
+Loading 1368th epoch
+Loss:[0.68799692]
+Loading 1368th epoch
+Loss:[0.70001775]
+Loading 1368th epoch
+Loss:[0.73171175]
+Loading 1368th epoch
+Loss:[0.88535923]
+Loading 1368th epoch
+Loss:[3.77640390]
+Loading 1368th epoch
+Loss:[68.73049164]
+Loading 1368th epoch
+Loss:[9.61533737]
+
+============================================================
+[DA-AA] Epoch 1380 monitor summary
+============================================================
+  domain 0: DVP=0.038[LOW]  entropy=2.963[OK]  dead=[OK]  recon=0.02137
+  domain 1: DVP=0.027[LOW]  entropy=2.609[OK]  dead=[OK]  recon=0.00227
+  domain 2: DVP=0.245[OK]  entropy=2.668[OK]  dead=[OK]  recon=0.06508
+  domain 3: DVP=0.244[OK]  entropy=2.700[OK]  dead=[OK]  recon=0.05452
+  domain 4: DVP=0.040[LOW]  entropy=2.721[OK]  dead=[OK]  recon=0.08243
+  domain 5: DVP=0.088[LOW]  entropy=2.720[OK]  dead=[OK]  recon=0.10417
+============================================================
+
+  block_diagonal_strength: 0.5138
+Loading 1368th epoch
+Loss:[35.16891479]
+Loading 1368th epoch
+Loss:[16.13274765]
+Loading 1368th epoch
+Loss:[11.07921219]
+Loading 1368th epoch
+Loss:[20.26855469]
+Loading 1368th epoch
+Loss:[17.25555992]
+Loading 1368th epoch
+Loss:[8.08554268]
+Loading 1368th epoch
+Loss:[3.90794969]
+Loading 1368th epoch
+Loss:[9.08975315]
+Loading 1368th epoch
+Loss:[9.73212242]
+Loading 1368th epoch
+Loss:[3.94799757]
+
+============================================================
+[DA-AA] Epoch 1390 monitor summary
+============================================================
+  domain 0: DVP=0.036[LOW]  entropy=2.951[OK]  dead=[OK]  recon=0.02452
+  domain 1: DVP=0.030[LOW]  entropy=2.608[OK]  dead=[OK]  recon=0.00127
+  domain 2: DVP=0.228[OK]  entropy=2.708[OK]  dead=[OK]  recon=0.09006
+  domain 3: DVP=0.232[OK]  entropy=2.739[OK]  dead=[OK]  recon=0.06887
+  domain 4: DVP=0.040[LOW]  entropy=2.732[OK]  dead=[OK]  recon=0.10622
+  domain 5: DVP=0.087[LOW]  entropy=2.739[OK]  dead=[OK]  recon=0.14321
+============================================================
+
+  block_diagonal_strength: 0.4997
+Loading 1368th epoch
+Loss:[3.43032002]
+Loading 1368th epoch
+Loss:[5.05682278]
+Loading 1368th epoch
+Loss:[5.82744169]
+Loading 1368th epoch
+Loss:[5.47777653]
+Loading 1368th epoch
+Loss:[4.18516684]
+Loading 1368th epoch
+Loss:[2.68362331]
+Loading 1368th epoch
+Loss:[2.96540594]
+Loading 1368th epoch
+Loss:[4.21249962]
+Loading 1368th epoch
+Loss:[4.10582924]
+Loading 1368th epoch
+Loss:[2.83577490]
+
+============================================================
+[DA-AA] Epoch 1400 monitor summary
+============================================================
+  domain 0: DVP=0.033[LOW]  entropy=2.909[OK]  dead=[OK]  recon=0.02480
+  domain 1: DVP=0.036[LOW]  entropy=2.603[OK]  dead=[OK]  recon=0.00108
+  domain 2: DVP=0.203[OK]  entropy=2.663[OK]  dead=[OK]  recon=0.11028
+  domain 3: DVP=0.212[OK]  entropy=2.706[OK]  dead=[OK]  recon=0.08149
+  domain 4: DVP=0.040[LOW]  entropy=2.675[OK]  dead=[OK]  recon=0.12168
+  domain 5: DVP=0.083[LOW]  entropy=2.677[OK]  dead=[OK]  recon=0.17009
+============================================================
+
+  block_diagonal_strength: 0.4703
+[Visualizer] t-SNE: 6086 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep1400.png  (6086 pts)
+[DA-AA] domain 0 expand: 13 -> 14
+[DA-AA] domain 1 expand: 13 -> 14
+[DA-AA] domain 2 expand: 13 -> 14
+[DA-AA] domain 3 expand: 13 -> 14
+[DA-AA] domain 4 expand: 13 -> 14
+[DA-AA] domain 5 expand: 13 -> 14
+Loading 1368th epoch
+Loss:[2.10572720]
+Loading 1368th epoch
+Loss:[2.41918802]
+Loading 1368th epoch
+Loss:[2.89122224]
+Loading 1368th epoch
+Loss:[2.93668723]
+Loading 1368th epoch
+Loss:[2.51079726]
+Loading 1368th epoch
+Loss:[1.95369911]
+Loading 1368th epoch
+Loss:[1.85743237]
+Loading 1368th epoch
+Loss:[2.16174793]
+Loading 1368th epoch
+Loss:[2.35736990]
+Loading 1368th epoch
+Loss:[2.16631913]
+
+============================================================
+[DA-AA] Epoch 1410 monitor summary
+============================================================
+  domain 0: DVP=0.030[LOW]  entropy=2.948[OK]  dead=[OK]  recon=0.02462
+  domain 1: DVP=0.042[LOW]  entropy=2.667[OK]  dead=[OK]  recon=0.00109
+  domain 2: DVP=0.177[OK]  entropy=2.681[OK]  dead=[OK]  recon=0.10687
+  domain 3: DVP=0.190[OK]  entropy=2.733[OK]  dead=[OK]  recon=0.08017
+  domain 4: DVP=0.039[LOW]  entropy=2.683[OK]  dead=[OK]  recon=0.11967
+  domain 5: DVP=0.078[LOW]  entropy=2.686[OK]  dead=[OK]  recon=0.16706
+============================================================
+
+  block_diagonal_strength: 0.4773
+Loading 1368th epoch
+Loss:[1.84275532]
+Loading 1368th epoch
+Loss:[1.71748841]
+Loading 1368th epoch
+Loss:[1.82559299]
+Loading 1368th epoch
+Loss:[1.96820545]
+Loading 1368th epoch
+Loss:[1.95516312]
+Loading 1368th epoch
+Loss:[1.79521430]
+Loading 1368th epoch
+Loss:[1.64333928]
+Loading 1368th epoch
+Loss:[1.61800790]
+Loading 1368th epoch
+Loss:[1.68587160]
+Loading 1368th epoch
+Loss:[1.73252869]
+
+============================================================
+[DA-AA] Epoch 1420 monitor summary
+============================================================
+  domain 0: DVP=0.025[LOW]  entropy=2.952[OK]  dead=[OK]  recon=0.02485
+  domain 1: DVP=0.049[LOW]  entropy=2.663[OK]  dead=[OK]  recon=0.00113
+  domain 2: DVP=0.152[OK]  entropy=2.672[OK]  dead=[OK]  recon=0.09860
+  domain 3: DVP=0.169[OK]  entropy=2.725[OK]  dead=[OK]  recon=0.07544
+  domain 4: DVP=0.038[LOW]  entropy=2.673[OK]  dead=[OK]  recon=0.11217
+  domain 5: DVP=0.075[LOW]  entropy=2.674[OK]  dead=[OK]  recon=0.15514
+============================================================
+
+  block_diagonal_strength: 0.4742
+Loading 1368th epoch
+Loss:[1.68713307]
+Loading 1368th epoch
+Loss:[1.58752537]
+Loading 1368th epoch
+Loss:[1.51721656]
+Loading 1368th epoch
+Loss:[1.51358736]
+Loading 1368th epoch
+Loss:[1.54783380]
+Loading 1368th epoch
+Loss:[1.56410277]
+Loading 1368th epoch
+Loss:[1.53486061]
+Loading 1368th epoch
+Loss:[1.48149836]
+Loading 1368th epoch
+Loss:[1.44382000]
+Loading 1368th epoch
+Loss:[1.43994904]
+
+============================================================
+[DA-AA] Epoch 1430 monitor summary
+============================================================
+  domain 0: DVP=0.018[LOW]  entropy=2.954[OK]  dead=[OK]  recon=0.02485
+  domain 1: DVP=0.055[LOW]  entropy=2.660[OK]  dead=[OK]  recon=0.00116
+  domain 2: DVP=0.130[OK]  entropy=2.668[OK]  dead=[OK]  recon=0.09439
+  domain 3: DVP=0.148[OK]  entropy=2.721[OK]  dead=[OK]  recon=0.07320
+  domain 4: DVP=0.036[LOW]  entropy=2.667[OK]  dead=[OK]  recon=0.10737
+  domain 5: DVP=0.070[LOW]  entropy=2.668[OK]  dead=[OK]  recon=0.14807
+============================================================
+
+  block_diagonal_strength: 0.4723
+Loading 1368th epoch
+Loss:[1.45519447]
+Loading 1368th epoch
+Loss:[1.46037102]
+Loading 1368th epoch
+Loss:[1.44085479]
+Loading 1368th epoch
+Loss:[1.40792966]
+Loading 1368th epoch
+Loss:[1.38289022]
+Loading 1368th epoch
+Loss:[1.37550330]
+Loading 1368th epoch
+Loss:[1.37836349]
+Loading 1368th epoch
+Loss:[1.37711215]
+Loading 1368th epoch
+Loss:[1.36419702]
+Loading 1368th epoch
+Loss:[1.34408975]
+
+============================================================
+[DA-AA] Epoch 1440 monitor summary
+============================================================
+  domain 0: DVP=0.012[LOW]  entropy=2.958[OK]  dead=[OK]  recon=0.02494
+  domain 1: DVP=0.058[LOW]  entropy=2.657[OK]  dead=[OK]  recon=0.00118
+  domain 2: DVP=0.123[OK]  entropy=2.663[OK]  dead=[OK]  recon=0.08989
+  domain 3: DVP=0.139[OK]  entropy=2.717[OK]  dead=[OK]  recon=0.07060
+  domain 4: DVP=0.034[LOW]  entropy=2.664[OK]  dead=[OK]  recon=0.10330
+  domain 5: DVP=0.069[LOW]  entropy=2.664[OK]  dead=[OK]  recon=0.14149
+============================================================
+
+  block_diagonal_strength: 0.4718
+Loading 1368th epoch
+Loss:[1.32703137]
+Loading 1368th epoch
+Loss:[1.31909001]
+Loading 1368th epoch
+Loss:[1.31762111]
+Loading 1368th epoch
+Loss:[1.31516051]
+Loading 1368th epoch
+Loss:[1.30667830]
+Loading 1368th epoch
+Loss:[1.29367948]
+Loading 1368th epoch
+Loss:[1.28161097]
+Loading 1368th epoch
+Loss:[1.27415860]
+Loading 1368th epoch
+Loss:[1.27041662]
+Loading 1368th epoch
+Loss:[1.26664424]
+
+============================================================
+[DA-AA] Epoch 1450 monitor summary
+============================================================
+  domain 0: DVP=0.007[LOW]  entropy=2.961[OK]  dead=[OK]  recon=0.02504
+  domain 1: DVP=0.059[LOW]  entropy=2.654[OK]  dead=[OK]  recon=0.00116
+  domain 2: DVP=0.125[OK]  entropy=2.658[OK]  dead=[OK]  recon=0.08636
+  domain 3: DVP=0.138[OK]  entropy=2.713[OK]  dead=[OK]  recon=0.06864
+  domain 4: DVP=0.032[LOW]  entropy=2.662[OK]  dead=[OK]  recon=0.10024
+  domain 5: DVP=0.069[LOW]  entropy=2.660[OK]  dead=[OK]  recon=0.13617
+============================================================
+
+  block_diagonal_strength: 0.4712
+Loading 1368th epoch
+Loss:[1.26005030]
+Loading 1368th epoch
+Loss:[1.25099397]
+Loading 1368th epoch
+Loss:[1.24206555]
+Loading 1368th epoch
+Loss:[1.23545015]
+Loading 1368th epoch
+Loss:[1.23108947]
+Loading 1368th epoch
+Loss:[1.22712660]
+Loading 1368th epoch
+Loss:[1.22181499]
+Loading 1368th epoch
+Loss:[1.21503913]
+Loading 1368th epoch
+Loss:[1.20809221]
+Loading 1368th epoch
+Loss:[1.20225096]
+
+============================================================
+[DA-AA] Epoch 1460 monitor summary
+============================================================
+  domain 0: DVP=0.003[LOW]  entropy=2.962[OK]  dead=[OK]  recon=0.02505
+  domain 1: DVP=0.059[LOW]  entropy=2.651[OK]  dead=[OK]  recon=0.00113
+  domain 2: DVP=0.128[OK]  entropy=2.653[OK]  dead=[OK]  recon=0.08379
+  domain 3: DVP=0.139[OK]  entropy=2.709[OK]  dead=[OK]  recon=0.06720
+  domain 4: DVP=0.031[LOW]  entropy=2.658[OK]  dead=[OK]  recon=0.09793
+  domain 5: DVP=0.071[LOW]  entropy=2.655[OK]  dead=[OK]  recon=0.13236
+============================================================
+
+  block_diagonal_strength: 0.4700
+Loading 1368th epoch
+Loss:[1.19765866]
+Loading 1368th epoch
+Loss:[1.19341779]
+Loading 1368th epoch
+Loss:[1.18858874]
+Loading 1368th epoch
+Loss:[1.18298650]
+Loading 1368th epoch
+Loss:[1.17719245]
+Loading 1368th epoch
+Loss:[1.17191792]
+Loading 1368th epoch
+Loss:[1.16736341]
+Loading 1368th epoch
+Loss:[1.16314006]
+Loading 1368th epoch
+Loss:[1.15869737]
+Early stopping! best_epoch=1368 best_loss=0.678640
+##################################################
+PreTrain datasets are  ['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+Downstream dataset is  Cora
+shotnum 1
+
+  0%|          | 0/100 [00:00<?, ?it/s][DA-AA] init done: K_s=8, K_d=[8]
+
+  1%|          | 1/100 [00:03<05:22,  3.26s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+  2%|▏         | 2/100 [00:06<04:51,  2.97s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+  3%|▎         | 3/100 [00:08<04:41,  2.90s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+  4%|▍         | 4/100 [00:11<04:39,  2.91s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+  5%|▌         | 5/100 [00:14<04:35,  2.90s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+  6%|▌         | 6/100 [00:17<04:33,  2.91s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+  7%|▋         | 7/100 [00:20<04:28,  2.89s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+  8%|▊         | 8/100 [00:23<04:22,  2.85s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+  9%|▉         | 9/100 [00:25<04:17,  2.83s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 10%|█         | 10/100 [00:28<04:12,  2.81s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 11%|█         | 11/100 [00:31<04:09,  2.80s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 12%|█▏        | 12/100 [00:34<04:05,  2.79s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 13%|█▎        | 13/100 [00:37<04:02,  2.79s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 14%|█▍        | 14/100 [00:39<03:59,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 15%|█▌        | 15/100 [00:42<03:55,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 16%|█▌        | 16/100 [00:45<03:53,  2.77s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 17%|█▋        | 17/100 [00:48<03:50,  2.77s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 18%|█▊        | 18/100 [00:50<03:47,  2.77s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 19%|█▉        | 19/100 [00:53<03:44,  2.77s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 20%|██        | 20/100 [00:56<03:33,  2.67s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 21%|██        | 21/100 [00:58<03:21,  2.55s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 22%|██▏       | 22/100 [01:00<03:12,  2.46s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 23%|██▎       | 23/100 [01:02<03:05,  2.40s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 24%|██▍       | 24/100 [01:05<02:59,  2.36s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 25%|██▌       | 25/100 [01:07<02:54,  2.33s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 26%|██▌       | 26/100 [01:09<02:51,  2.31s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 27%|██▋       | 27/100 [01:11<02:47,  2.30s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 28%|██▊       | 28/100 [01:14<02:44,  2.29s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 29%|██▉       | 29/100 [01:16<02:41,  2.28s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 30%|███       | 30/100 [01:18<02:39,  2.28s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 31%|███       | 31/100 [01:21<02:36,  2.27s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 32%|███▏      | 32/100 [01:23<02:34,  2.27s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 33%|███▎      | 33/100 [01:25<02:32,  2.27s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 34%|███▍      | 34/100 [01:27<02:29,  2.27s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 35%|███▌      | 35/100 [01:30<02:27,  2.27s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 36%|███▌      | 36/100 [01:32<02:24,  2.27s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 37%|███▋      | 37/100 [01:34<02:22,  2.26s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 38%|███▊      | 38/100 [01:36<02:20,  2.26s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 39%|███▉      | 39/100 [01:39<02:18,  2.26s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 40%|████      | 40/100 [01:41<02:16,  2.27s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 41%|████      | 41/100 [01:44<02:23,  2.42s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 42%|████▏     | 42/100 [01:46<02:26,  2.53s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 43%|████▎     | 43/100 [01:49<02:28,  2.60s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 44%|████▍     | 44/100 [01:52<02:28,  2.66s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 45%|████▌     | 45/100 [01:55<02:28,  2.69s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 46%|████▌     | 46/100 [01:58<02:27,  2.74s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 47%|████▋     | 47/100 [02:01<02:27,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 48%|████▊     | 48/100 [02:03<02:26,  2.82s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 49%|████▉     | 49/100 [02:06<02:25,  2.86s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 50%|█████     | 50/100 [02:09<02:24,  2.88s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 51%|█████     | 51/100 [02:12<02:21,  2.90s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 52%|█████▏    | 52/100 [02:15<02:19,  2.91s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 53%|█████▎    | 53/100 [02:18<02:17,  2.92s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 54%|█████▍    | 54/100 [02:21<02:14,  2.92s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 55%|█████▌    | 55/100 [02:24<02:11,  2.93s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 56%|█████▌    | 56/100 [02:27<02:08,  2.93s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 57%|█████▋    | 57/100 [02:30<02:06,  2.93s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 58%|█████▊    | 58/100 [02:33<02:03,  2.93s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 59%|█████▉    | 59/100 [02:36<02:00,  2.94s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 60%|██████    | 60/100 [02:39<01:57,  2.94s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 61%|██████    | 61/100 [02:42<01:54,  2.94s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 62%|██████▏   | 62/100 [02:45<01:51,  2.94s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 63%|██████▎   | 63/100 [02:48<01:48,  2.94s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 64%|██████▍   | 64/100 [02:50<01:45,  2.94s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 65%|██████▌   | 65/100 [02:53<01:42,  2.94s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 66%|██████▌   | 66/100 [02:56<01:39,  2.92s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 67%|██████▋   | 67/100 [02:59<01:35,  2.88s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 68%|██████▊   | 68/100 [03:02<01:31,  2.85s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 69%|██████▉   | 69/100 [03:05<01:27,  2.83s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 70%|███████   | 70/100 [03:07<01:24,  2.81s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 71%|███████   | 71/100 [03:10<01:21,  2.80s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 72%|███████▏  | 72/100 [03:13<01:18,  2.79s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 73%|███████▎  | 73/100 [03:16<01:15,  2.79s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 74%|███████▍  | 74/100 [03:19<01:12,  2.79s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 75%|███████▌  | 75/100 [03:21<01:09,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 76%|███████▌  | 76/100 [03:24<01:06,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 77%|███████▋  | 77/100 [03:27<01:03,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 78%|███████▊  | 78/100 [03:30<01:01,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 79%|███████▉  | 79/100 [03:32<00:58,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 80%|████████  | 80/100 [03:35<00:55,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 81%|████████  | 81/100 [03:38<00:52,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 82%|████████▏ | 82/100 [03:41<00:49,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 83%|████████▎ | 83/100 [03:44<00:47,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 84%|████████▍ | 84/100 [03:46<00:44,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 85%|████████▌ | 85/100 [03:49<00:41,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 86%|████████▌ | 86/100 [03:52<00:38,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 87%|████████▋ | 87/100 [03:55<00:36,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 88%|████████▊ | 88/100 [03:57<00:33,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 89%|████████▉ | 89/100 [04:00<00:30,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 90%|█████████ | 90/100 [04:03<00:27,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 91%|█████████ | 91/100 [04:06<00:24,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 92%|█████████▏| 92/100 [04:08<00:22,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 93%|█████████▎| 93/100 [04:11<00:19,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 94%|█████████▍| 94/100 [04:14<00:16,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 95%|█████████▌| 95/100 [04:17<00:13,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 96%|█████████▌| 96/100 [04:20<00:11,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 97%|█████████▋| 97/100 [04:22<00:08,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 98%|█████████▊| 98/100 [04:25<00:05,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+ 99%|█████████▉| 99/100 [04:28<00:02,  2.78s/it][DA-AA] init done: K_s=8, K_d=[8]
+
+100%|██████████| 100/100 [04:31<00:00,  2.78s/it]
+100%|██████████| 100/100 [04:31<00:00,  2.71s/it]
+Mean:[30.9800] Std:[11.7072]

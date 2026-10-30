@@ -1,0 +1,124 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=1, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', use_structure_conditioned_prompt=1, struct_feat_dim=3, struct_prompt_residual=1, struct_prompt_scale=0.05, random_struct=0, use_prompt_routing=1, num_structure_prompts=8, routing_tau=1.0, freeze_generators=0, entropy_weight=0.0)
+----------------------------------------------------------------------------------------------------
+872221
+CUDA Available: True
+gpu: 0
+nb_epochs: 10000
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+Skip pretraining, loading model from /home/ustc1958/lxy/graph/1/SAMGPT0429/checkpoints/model_node_GRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.001_gcn_scp1_sfd3_res1_scale0.05_rand0_routing1_K8_tau1.0.pkl
+##################################################
+PreTrain datasets are  ['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+Downastream dataset is  Cora
+Cora()
+DataBatch(x=[2708, 1433], edge_index=[2, 10556], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], batch=[2708], ptr=[2])
+process done
+0.303117818267281
+nb_classes 7
+----------------------------------------------------------------------------------------------------
+shotnum 1
+  0%|          | 0/100 [00:00<?, ?it/s]start nodedown
+  1%|          | 1/100 [00:10<17:57, 10.88s/it]start nodedown
+  2%|▏         | 2/100 [00:26<22:22, 13.70s/it]start nodedown
+  3%|▎         | 3/100 [00:41<23:16, 14.39s/it]start nodedown
+  4%|▍         | 4/100 [00:57<23:47, 14.86s/it]start nodedown
+  5%|▌         | 5/100 [01:12<23:45, 15.01s/it]start nodedown
+  6%|▌         | 6/100 [01:28<23:42, 15.14s/it]start nodedown
+  7%|▋         | 7/100 [01:43<23:32, 15.19s/it]start nodedown
+  8%|▊         | 8/100 [01:58<23:21, 15.23s/it]start nodedown
+  9%|▉         | 9/100 [02:13<23:08, 15.26s/it]start nodedown
+ 10%|█         | 10/100 [02:29<23:00, 15.34s/it]start nodedown
+ 11%|█         | 11/100 [02:45<22:58, 15.49s/it]start nodedown
+ 12%|█▏        | 12/100 [03:01<22:55, 15.63s/it]start nodedown
+ 13%|█▎        | 13/100 [03:17<22:47, 15.72s/it]start nodedown
+ 14%|█▍        | 14/100 [03:33<22:36, 15.77s/it]start nodedown
+ 15%|█▌        | 15/100 [03:48<22:24, 15.81s/it]start nodedown
+ 16%|█▌        | 16/100 [04:02<21:12, 15.14s/it]start nodedown
+ 17%|█▋        | 17/100 [04:13<19:22, 14.00s/it]start nodedown
+ 18%|█▊        | 18/100 [04:29<19:43, 14.44s/it]start nodedown
+ 19%|█▉        | 19/100 [04:44<19:55, 14.76s/it]start nodedown
+ 20%|██        | 20/100 [05:00<19:58, 14.98s/it]start nodedown
+ 21%|██        | 21/100 [05:15<19:56, 15.14s/it]start nodedown
+ 22%|██▏       | 22/100 [05:29<19:07, 14.71s/it]start nodedown
+ 23%|██▎       | 23/100 [05:45<19:09, 14.93s/it]start nodedown
+ 24%|██▍       | 24/100 [06:00<19:06, 15.09s/it]start nodedown
+ 25%|██▌       | 25/100 [06:15<18:59, 15.20s/it]start nodedown
+ 26%|██▌       | 26/100 [06:31<19:01, 15.42s/it]start nodedown
+ 27%|██▋       | 27/100 [06:47<18:57, 15.58s/it]start nodedown
+ 28%|██▊       | 28/100 [07:03<18:44, 15.62s/it]start nodedown
+ 29%|██▉       | 29/100 [07:19<18:35, 15.71s/it]start nodedown
+ 30%|███       | 30/100 [07:35<18:23, 15.77s/it]start nodedown
+ 31%|███       | 31/100 [07:51<18:10, 15.80s/it]start nodedown
+ 32%|███▏      | 32/100 [08:02<16:24, 14.48s/it]start nodedown
+ 33%|███▎      | 33/100 [08:19<16:57, 15.18s/it]start nodedown
+ 34%|███▍      | 34/100 [08:39<18:19, 16.65s/it]start nodedown
+ 35%|███▌      | 35/100 [08:59<19:09, 17.69s/it]start nodedown
+ 36%|███▌      | 36/100 [09:20<19:45, 18.52s/it]start nodedown
+ 37%|███▋      | 37/100 [09:40<19:55, 18.98s/it]start nodedown
+ 38%|███▊      | 38/100 [10:00<20:00, 19.36s/it]start nodedown
+ 39%|███▉      | 39/100 [10:20<19:56, 19.62s/it]start nodedown
+ 40%|████      | 40/100 [10:40<19:49, 19.82s/it]start nodedown
+ 41%|████      | 41/100 [11:01<19:38, 19.97s/it]start nodedown
+ 42%|████▏     | 42/100 [11:21<19:20, 20.01s/it]start nodedown
+ 43%|████▎     | 43/100 [11:41<19:05, 20.10s/it]start nodedown
+ 44%|████▍     | 44/100 [12:02<18:53, 20.24s/it]start nodedown
+ 45%|████▌     | 45/100 [12:22<18:29, 20.17s/it]start nodedown
+ 46%|████▌     | 46/100 [12:42<18:06, 20.12s/it]start nodedown
+ 47%|████▋     | 47/100 [13:02<17:46, 20.11s/it]start nodedown
+ 48%|████▊     | 48/100 [13:22<17:28, 20.17s/it]start nodedown
+ 49%|████▉     | 49/100 [13:42<17:08, 20.16s/it]start nodedown
+ 50%|█████     | 50/100 [14:03<16:51, 20.22s/it]start nodedown
+ 51%|█████     | 51/100 [14:23<16:33, 20.28s/it]start nodedown
+ 52%|█████▏    | 52/100 [14:43<16:13, 20.27s/it]start nodedown
+ 53%|█████▎    | 53/100 [15:04<15:56, 20.35s/it]start nodedown
+ 54%|█████▍    | 54/100 [15:24<15:31, 20.26s/it]start nodedown
+ 55%|█████▌    | 55/100 [15:44<15:09, 20.22s/it]start nodedown
+ 56%|█████▌    | 56/100 [16:04<14:46, 20.15s/it]start nodedown
+ 57%|█████▋    | 57/100 [16:24<14:25, 20.12s/it]start nodedown
+ 58%|█████▊    | 58/100 [16:44<14:04, 20.10s/it]start nodedown
+ 59%|█████▉    | 59/100 [17:04<13:43, 20.10s/it]start nodedown
+ 60%|██████    | 60/100 [17:24<13:24, 20.10s/it]start nodedown
+ 61%|██████    | 61/100 [17:45<13:05, 20.14s/it]start nodedown
+ 62%|██████▏   | 62/100 [18:05<12:46, 20.18s/it]start nodedown
+ 63%|██████▎   | 63/100 [18:25<12:27, 20.20s/it]start nodedown
+ 64%|██████▍   | 64/100 [18:45<12:07, 20.22s/it]start nodedown
+ 65%|██████▌   | 65/100 [19:05<11:46, 20.18s/it]start nodedown
+ 66%|██████▌   | 66/100 [19:26<11:25, 20.18s/it]start nodedown
+ 67%|██████▋   | 67/100 [19:46<11:04, 20.14s/it]start nodedown
+ 68%|██████▊   | 68/100 [20:06<10:44, 20.13s/it]start nodedown
+ 69%|██████▉   | 69/100 [20:26<10:23, 20.12s/it]start nodedown
+ 70%|███████   | 70/100 [20:46<10:05, 20.17s/it]start nodedown
+ 71%|███████   | 71/100 [21:06<09:44, 20.14s/it]start nodedown
+ 72%|███████▏  | 72/100 [21:26<09:24, 20.15s/it]start nodedown
+ 73%|███████▎  | 73/100 [21:46<09:03, 20.13s/it]start nodedown
+ 74%|███████▍  | 74/100 [22:07<08:43, 20.13s/it]start nodedown
+ 75%|███████▌  | 75/100 [22:27<08:22, 20.11s/it]start nodedown
+ 76%|███████▌  | 76/100 [22:47<08:02, 20.10s/it]start nodedown
+ 77%|███████▋  | 77/100 [23:16<08:44, 22.79s/it]start nodedown
+ 78%|███████▊  | 78/100 [23:48<09:23, 25.62s/it]start nodedown
+ 79%|███████▉  | 79/100 [24:20<09:40, 27.64s/it]start nodedown
+ 80%|████████  | 80/100 [24:53<09:40, 29.04s/it]start nodedown
+ 81%|████████  | 81/100 [25:25<09:30, 30.02s/it]start nodedown
+ 82%|████████▏ | 82/100 [25:57<09:12, 30.71s/it]start nodedown
+ 83%|████████▎ | 83/100 [26:29<08:49, 31.15s/it]start nodedown
+ 84%|████████▍ | 84/100 [27:02<08:24, 31.51s/it]start nodedown
+ 85%|████████▌ | 85/100 [27:34<07:56, 31.77s/it]start nodedown
+ 86%|████████▌ | 86/100 [28:06<07:27, 31.93s/it]start nodedown
+ 87%|████████▋ | 87/100 [28:39<06:56, 32.04s/it]start nodedown
+ 88%|████████▊ | 88/100 [29:11<06:25, 32.14s/it]start nodedown
+ 89%|████████▉ | 89/100 [29:43<05:53, 32.17s/it]start nodedown
+ 90%|█████████ | 90/100 [30:16<05:21, 32.19s/it]start nodedown
+ 91%|█████████ | 91/100 [30:48<04:49, 32.19s/it]start nodedown
+ 92%|█████████▏| 92/100 [31:20<04:17, 32.20s/it]start nodedown
+ 93%|█████████▎| 93/100 [31:52<03:45, 32.21s/it]start nodedown
+ 94%|█████████▍| 94/100 [32:24<03:13, 32.21s/it]start nodedown
+ 95%|█████████▌| 95/100 [32:57<02:41, 32.22s/it]start nodedown
+ 96%|█████████▌| 96/100 [33:29<02:08, 32.23s/it]start nodedown
+ 97%|█████████▋| 97/100 [34:01<01:36, 32.24s/it]start nodedown
+ 98%|█████████▊| 98/100 [34:34<01:04, 32.34s/it]start nodedown
+ 99%|█████████▉| 99/100 [35:06<00:32, 32.42s/it]start nodedown
+100%|██████████| 100/100 [35:39<00:00, 32.48s/it]100%|██████████| 100/100 [35:39<00:00, 21.40s/it]
+----------------------------------------------------------------------------------------------------
+Average accuracy:[0.4576]
+Mean:[45.7600]
+Std :[12.7779]

@@ -1,0 +1,121 @@
+{
+  "signature": {
+    "filter_visualization_schema": 2,
+    "seed": 39,
+    "pretrain_datasets": [
+      "Citeseer",
+      "Pubmed",
+      "Photo",
+      "Computers",
+      "FacebookPagePage",
+      "LastFMAsia"
+    ],
+    "graphId": [
+      1
+    ],
+    "feature_align_method": "pca",
+    "unify_dim": 50,
+    "drop_percent": 0.1,
+    "method": "gmm",
+    "clusters": 8,
+    "top_m_per_cluster": 8,
+    "top_ratio": 0.3,
+    "score_alpha": 1.0,
+    "score_beta": 1.0,
+    "score_gamma": 1.0,
+    "sample_count": 74096,
+    "ablation_pre": "st",
+    "hop": 2,
+    "max_subgraph_nodes": 64
+  },
+  "selected_count": 22274,
+  "total_count": 74096,
+  "stage1_selected_count": 64,
+  "stage2_selected_count": 22210,
+  "cluster_count_selected": {
+    "0": 1195,
+    "1": 2017,
+    "2": 1806,
+    "3": 5881,
+    "4": 8,
+    "5": 2640,
+    "6": 5448,
+    "7": 3279
+  },
+  "stage2_score_weights": {
+    "alpha": 1.0,
+    "beta": 1.0,
+    "gamma": 1.0
+  },
+  "cluster_quality_all": {
+    "valid": true,
+    "n_samples": 12000,
+    "n_clusters": 8,
+    "silhouette": 0.6845464955094105,
+    "davies_bouldin": 0.7115419792044413,
+    "calinski_harabasz": 25939.0891941394,
+    "pc1_explained_ratio": 0.49215184314321697,
+    "pc2_explained_ratio": 0.2871581646451583,
+    "pc1_over_pc2_ratio": 1.7138702768607312
+  },
+  "cluster_quality_selected": {
+    "valid": true,
+    "n_samples": 12000,
+    "n_clusters": 8,
+    "silhouette": 0.5402037545999966,
+    "davies_bouldin": 0.663929873034051,
+    "calinski_harabasz": 18204.246140063093,
+    "pc1_explained_ratio": 0.48192507673692025,
+    "pc2_explained_ratio": 0.31371737466109334,
+    "pc1_over_pc2_ratio": 1.536175920308974
+  },
+  "cluster_quality_assessment": {
+    "status": "fail",
+    "summary": "cluster quality is problematic",
+    "checks": [
+      {
+        "name": "silhouette_all",
+        "status": "pass",
+        "value": 0.6845464955094105,
+        "message": "good global cluster separation"
+      },
+      {
+        "name": "silhouette_selected",
+        "status": "pass",
+        "value": 0.5402037545999966,
+        "message": "selected set remains separable"
+      },
+      {
+        "name": "dbi_all",
+        "status": "pass",
+        "value": 0.7115419792044413,
+        "message": "global compactness and separation are acceptable"
+      },
+      {
+        "name": "dbi_selected",
+        "status": "pass",
+        "value": 0.663929873034051,
+        "message": "selected compactness is acceptable"
+      },
+      {
+        "name": "selection_silhouette_delta",
+        "status": "fail",
+        "value": -0.1443427409094139,
+        "message": "selection causes large separation drop"
+      },
+      {
+        "name": "selection_dbi_delta",
+        "status": "pass",
+        "value": -0.047612106170390245,
+        "message": "selection keeps compactness quality"
+      },
+      {
+        "name": "projection_anisotropy",
+        "status": "pass",
+        "value_all": 1.7138702768607312,
+        "value_selected": 1.536175920308974,
+        "message": "projection anisotropy is normal"
+      }
+    ]
+  }
+}

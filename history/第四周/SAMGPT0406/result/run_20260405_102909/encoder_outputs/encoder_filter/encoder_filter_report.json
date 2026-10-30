@@ -1,0 +1,107 @@
+{
+  "signature": {
+    "filter_visualization_schema": 2,
+    "seed": 39,
+    "method": "gmm",
+    "clusters": 8,
+    "top_m_per_cluster": 8,
+    "top_ratio": 0.3,
+    "score_alpha": 1.0,
+    "score_beta": 1.0,
+    "score_gamma": 1.0,
+    "sample_count": 74096,
+    "ablation_pre": "st",
+    "hop": 2,
+    "max_subgraph_nodes": 64
+  },
+  "selected_count": 22274,
+  "total_count": 74096,
+  "stage1_selected_count": 64,
+  "stage2_selected_count": 22210,
+  "cluster_count_selected": {
+    "0": 3565,
+    "1": 3287,
+    "2": 3093,
+    "3": 4837,
+    "4": 8,
+    "5": 5160,
+    "6": 10,
+    "7": 2314
+  },
+  "stage2_score_weights": {
+    "alpha": 1.0,
+    "beta": 1.0,
+    "gamma": 1.0
+  },
+  "cluster_quality_all": {
+    "valid": true,
+    "n_samples": 12000,
+    "n_clusters": 8,
+    "silhouette": 0.4144949125710124,
+    "davies_bouldin": 1.328369891528001,
+    "calinski_harabasz": 3098.539407893718,
+    "pc1_explained_ratio": 0.2596740390580123,
+    "pc2_explained_ratio": 0.1548766941918694,
+    "pc1_over_pc2_ratio": 1.6766501920315686
+  },
+  "cluster_quality_selected": {
+    "valid": true,
+    "n_samples": 12000,
+    "n_clusters": 8,
+    "silhouette": 0.3398029325538609,
+    "davies_bouldin": 1.2277018071339865,
+    "calinski_harabasz": 2760.0609821808857,
+    "pc1_explained_ratio": 0.23511886871824425,
+    "pc2_explained_ratio": 0.1692248910977317,
+    "pc1_over_pc2_ratio": 1.3893870292547987
+  },
+  "cluster_quality_assessment": {
+    "status": "warn",
+    "summary": "cluster quality is usable but has risks",
+    "checks": [
+      {
+        "name": "silhouette_all",
+        "status": "pass",
+        "value": 0.4144949125710124,
+        "message": "good global cluster separation"
+      },
+      {
+        "name": "silhouette_selected",
+        "status": "pass",
+        "value": 0.3398029325538609,
+        "message": "selected set remains separable"
+      },
+      {
+        "name": "dbi_all",
+        "status": "pass",
+        "value": 1.328369891528001,
+        "message": "global compactness and separation are acceptable"
+      },
+      {
+        "name": "dbi_selected",
+        "status": "pass",
+        "value": 1.2277018071339865,
+        "message": "selected compactness is acceptable"
+      },
+      {
+        "name": "selection_silhouette_delta",
+        "status": "warn",
+        "value": -0.0746919800171515,
+        "message": "selection causes moderate separation drop"
+      },
+      {
+        "name": "selection_dbi_delta",
+        "status": "pass",
+        "value": -0.10066808439401442,
+        "message": "selection keeps compactness quality"
+      },
+      {
+        "name": "projection_anisotropy",
+        "status": "pass",
+        "value_all": 1.6766501920315686,
+        "value_selected": 1.3893870292547987,
+        "message": "projection anisotropy is normal"
+      }
+    ]
+  }
+}

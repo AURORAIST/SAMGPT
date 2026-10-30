@@ -1,0 +1,1498 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', stage2_top_ratio=0.3, stage2_max_subgraph_nodes=64, struct_max_subgraph_nodes=64, context_outputs_root='./src/context_pipeline/outputs', force_rebuild_stage1=1, force_rebuild_stage2=1, stage1_num_clusters=8, stage1_subgraph_hop_n=2, stage1_encoding_mode='decorrelated7', stage1_use_log1p=1, stage1_remove_selfloops=1, stage2_top_m_per_cluster=5, stage2_alpha=1.0, stage2_beta=1.0, stage2_gamma=1.0)
+----------------------------------------------------------------------------------------------------
+[context] flags: stage2_filter=on, struct_contrastive=on, skip_pretrain=0
+2379736
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+[context] Building stage1 for Citeseer -> /home/ustc1958/lxy/graph/1/SAMGPT/src/context_pipeline/outputs/citeseer
+[context] Building stage2 for Citeseer -> /home/ustc1958/lxy/graph/1/SAMGPT/src/context_pipeline/outputs/citeseer/stage2
+[context] Building stage1 for Pubmed -> /home/ustc1958/lxy/graph/1/SAMGPT/src/context_pipeline/outputs/pubmed
+[context] Building stage2 for Pubmed -> /home/ustc1958/lxy/graph/1/SAMGPT/src/context_pipeline/outputs/pubmed/stage2
+[context] Building stage1 for Photo -> /home/ustc1958/lxy/graph/1/SAMGPT/src/context_pipeline/outputs/photo
+[context] Building stage2 for Photo -> /home/ustc1958/lxy/graph/1/SAMGPT/src/context_pipeline/outputs/photo/stage2
+[context] Building stage1 for Computers -> /home/ustc1958/lxy/graph/1/SAMGPT/src/context_pipeline/outputs/computers
+[context] Building stage2 for Computers -> /home/ustc1958/lxy/graph/1/SAMGPT/src/context_pipeline/outputs/computers/stage2
+[context] Building stage1 for FacebookPagePage -> /home/ustc1958/lxy/graph/1/SAMGPT/src/context_pipeline/outputs/facebookpagepage
+[context] Building stage2 for FacebookPagePage -> /home/ustc1958/lxy/graph/1/SAMGPT/src/context_pipeline/outputs/facebookpagepage/stage2
+[context] Building stage1 for LastFMAsia -> /home/ustc1958/lxy/graph/1/SAMGPT/src/context_pipeline/outputs/lastfmasia
+[context] Building stage2 for LastFMAsia -> /home/ustc1958/lxy/graph/1/SAMGPT/src/context_pipeline/outputs/lastfmasia/stage2
+0
+step 0
+[stage2] Citeseer graph_id=0: selected_subgraphs=1033, selected_nodes=2017
+[stage2] Pubmed graph_id=0: selected_subgraphs=5951, selected_nodes=17993
+[stage2] Photo graph_id=0: selected_subgraphs=2320, selected_nodes=6091
+[stage2] Computers graph_id=0: selected_subgraphs=4156, selected_nodes=11148
+[stage2] FacebookPagePage graph_id=0: selected_subgraphs=6776, selected_nodes=17664
+[stage2] LastFMAsia graph_id=0: selected_subgraphs=2328, selected_nodes=6325
+Using CUDA
+Loss:[5.56122923]
+Loading 0th epoch
+Loss:[21.42061615]
+Loading 0th epoch
+Loss:[22.75261307]
+Loading 0th epoch
+Loss:[18.05731773]
+Loading 0th epoch
+Loss:[11.65154362]
+Loading 0th epoch
+Loss:[6.66603136]
+Loading 0th epoch
+Loss:[9.28463173]
+Loading 0th epoch
+Loss:[8.54487419]
+Loading 0th epoch
+Loss:[6.04581785]
+Loading 0th epoch
+Loss:[6.19681358]
+Loading 0th epoch
+Loss:[6.68872213]
+Loading 0th epoch
+Loss:[6.72824049]
+Loading 0th epoch
+Loss:[6.38787222]
+Loading 0th epoch
+Loss:[5.72374964]
+Loading 0th epoch
+Loss:[4.89636374]
+Loading 14th epoch
+Loss:[4.14488697]
+Loading 15th epoch
+Loss:[3.86189175]
+Loading 16th epoch
+Loss:[4.09257603]
+Loading 16th epoch
+Loss:[4.28684235]
+Loading 16th epoch
+Loss:[3.84782314]
+Loading 19th epoch
+Loss:[3.50200629]
+Loading 20th epoch
+Loss:[3.51351452]
+Loading 20th epoch
+Loss:[3.66485500]
+Loading 20th epoch
+Loss:[3.63687325]
+Loading 20th epoch
+Loss:[3.49679089]
+Loading 24th epoch
+Loss:[3.30382872]
+Loading 25th epoch
+Loss:[3.17516375]
+Loading 26th epoch
+Loss:[3.04004312]
+Loading 27th epoch
+Loss:[3.01652741]
+Loading 28th epoch
+Loss:[3.03318882]
+Loading 28th epoch
+Loss:[2.99055266]
+Loading 30th epoch
+Loss:[2.89763498]
+Loading 31th epoch
+Loss:[2.80900192]
+Loading 32th epoch
+Loss:[2.77054906]
+Loading 33th epoch
+Loss:[2.72925019]
+Loading 34th epoch
+Loss:[2.69194198]
+Loading 35th epoch
+Loss:[2.62512445]
+Loading 36th epoch
+Loss:[2.57135391]
+Loading 37th epoch
+Loss:[2.55880857]
+Loading 38th epoch
+Loss:[2.49932718]
+Loading 39th epoch
+Loss:[2.43555927]
+Loading 40th epoch
+Loss:[2.41368151]
+Loading 41th epoch
+Loss:[2.33905578]
+Loading 42th epoch
+Loss:[2.29213333]
+Loading 43th epoch
+Loss:[2.26363063]
+Loading 44th epoch
+Loss:[2.21359468]
+Loading 45th epoch
+Loss:[2.17408204]
+Loading 46th epoch
+Loss:[2.11045504]
+Loading 47th epoch
+Loss:[2.09056783]
+Loading 48th epoch
+Loss:[2.04793620]
+Loading 49th epoch
+Loss:[1.99227285]
+Loading 50th epoch
+Loss:[1.92442513]
+Loading 51th epoch
+Loss:[1.90132284]
+Loading 52th epoch
+Loss:[1.85248852]
+Loading 53th epoch
+Loss:[1.81781650]
+Loading 54th epoch
+Loss:[1.75902414]
+Loading 55th epoch
+Loss:[1.72877061]
+Loading 56th epoch
+Loss:[1.67293191]
+Loading 57th epoch
+Loss:[1.62597585]
+Loading 58th epoch
+Loss:[1.59014690]
+Loading 59th epoch
+Loss:[1.53057218]
+Loading 60th epoch
+Loss:[1.46731019]
+Loading 61th epoch
+Loss:[1.43733442]
+Loading 62th epoch
+Loss:[1.38441896]
+Loading 63th epoch
+Loss:[1.34780598]
+Loading 64th epoch
+Loss:[1.31054044]
+Loading 65th epoch
+Loss:[1.25628781]
+Loading 66th epoch
+Loss:[1.21300781]
+Loading 67th epoch
+Loss:[1.16299343]
+Loading 68th epoch
+Loss:[1.11616647]
+Loading 69th epoch
+Loss:[1.07874346]
+Loading 70th epoch
+Loss:[1.06047010]
+Loading 71th epoch
+Loss:[1.00106001]
+Loading 72th epoch
+Loss:[0.96607220]
+Loading 73th epoch
+Loss:[0.91672152]
+Loading 74th epoch
+Loss:[0.89031380]
+Loading 75th epoch
+Loss:[0.84067148]
+Loading 76th epoch
+Loss:[0.81375498]
+Loading 77th epoch
+Loss:[0.78147769]
+Loading 78th epoch
+Loss:[0.74138951]
+Loading 79th epoch
+Loss:[0.72463048]
+Loading 80th epoch
+Loss:[0.68395567]
+Loading 81th epoch
+Loss:[0.65880847]
+Loading 82th epoch
+Loss:[0.63242054]
+Loading 83th epoch
+Loss:[0.59297717]
+Loading 84th epoch
+Loss:[0.56087977]
+Loading 85th epoch
+Loss:[0.53823900]
+Loading 86th epoch
+Loss:[0.52109718]
+Loading 87th epoch
+Loss:[0.50505072]
+Loading 88th epoch
+Loss:[0.46336645]
+Loading 89th epoch
+Loss:[0.44451851]
+Loading 90th epoch
+Loss:[0.43694937]
+Loading 91th epoch
+Loss:[0.40922508]
+Loading 92th epoch
+Loss:[0.40011352]
+Loading 93th epoch
+Loss:[0.37543824]
+Loading 94th epoch
+Loss:[0.37610501]
+Loading 94th epoch
+Loss:[0.34980467]
+Loading 96th epoch
+Loss:[0.32233542]
+Loading 97th epoch
+Loss:[0.32517806]
+Loading 97th epoch
+Loss:[0.30640697]
+Loading 99th epoch
+Loss:[0.29681632]
+Loading 100th epoch
+Loss:[0.28826290]
+Loading 101th epoch
+Loss:[0.27516189]
+Loading 102th epoch
+Loss:[0.25923496]
+Loading 103th epoch
+Loss:[0.24644205]
+Loading 104th epoch
+Loss:[0.23855680]
+Loading 105th epoch
+Loss:[0.23153672]
+Loading 106th epoch
+Loss:[0.22784680]
+Loading 107th epoch
+Loss:[0.22930472]
+Loading 107th epoch
+Loss:[0.21717595]
+Loading 109th epoch
+Loss:[0.20222403]
+Loading 110th epoch
+Loss:[0.19638099]
+Loading 111th epoch
+Loss:[0.19199100]
+Loading 112th epoch
+Loss:[0.17529595]
+Loading 113th epoch
+Loss:[0.16728459]
+Loading 114th epoch
+Loss:[0.16812131]
+Loading 114th epoch
+Loss:[0.16498142]
+Loading 116th epoch
+Loss:[0.16175848]
+Loading 117th epoch
+Loss:[0.16561323]
+Loading 117th epoch
+Loss:[0.14850020]
+Loading 119th epoch
+Loss:[0.14114895]
+Loading 120th epoch
+Loss:[0.15196577]
+Loading 120th epoch
+Loss:[0.13046983]
+Loading 122th epoch
+Loss:[0.13158421]
+Loading 122th epoch
+Loss:[0.13419907]
+Loading 122th epoch
+Loss:[0.12318883]
+Loading 125th epoch
+Loss:[0.12285935]
+Loading 126th epoch
+Loss:[0.12252915]
+Loading 127th epoch
+Loss:[0.11249307]
+Loading 128th epoch
+Loss:[0.11599691]
+Loading 128th epoch
+Loss:[0.11225751]
+Loading 130th epoch
+Loss:[0.10550356]
+Loading 131th epoch
+Loss:[0.10927877]
+Loading 131th epoch
+Loss:[0.10478141]
+Loading 133th epoch
+Loss:[0.10034608]
+Loading 134th epoch
+Loss:[0.10053255]
+Loading 134th epoch
+Loss:[0.10651138]
+Loading 134th epoch
+Loss:[0.10162034]
+Loading 134th epoch
+Loss:[0.09006275]
+Loading 138th epoch
+Loss:[0.09801068]
+Loading 138th epoch
+Loss:[0.09346250]
+Loading 138th epoch
+Loss:[0.09236345]
+Loading 138th epoch
+Loss:[0.08776049]
+Loading 142th epoch
+Loss:[0.08128740]
+Loading 143th epoch
+Loss:[0.08124007]
+Loading 144th epoch
+Loss:[0.07502896]
+Loading 145th epoch
+Loss:[0.08433925]
+Loading 145th epoch
+Loss:[0.07634939]
+Loading 145th epoch
+Loss:[0.07163353]
+Loading 148th epoch
+Loss:[0.07538884]
+Loading 148th epoch
+Loss:[0.07343801]
+Loading 148th epoch
+Loss:[0.06889183]
+Loading 151th epoch
+Loss:[0.07091372]
+Loading 151th epoch
+Loss:[0.06865194]
+Loading 153th epoch
+Loss:[0.06765622]
+Loading 154th epoch
+Loss:[0.06554812]
+Loading 155th epoch
+Loss:[0.06540558]
+Loading 156th epoch
+Loss:[0.06296330]
+Loading 157th epoch
+Loss:[0.05827474]
+Loading 158th epoch
+Loss:[0.05871492]
+Loading 158th epoch
+Loss:[0.06354549]
+Loading 158th epoch
+Loss:[0.06527606]
+Loading 158th epoch
+Loss:[0.05920225]
+Loading 158th epoch
+Loss:[0.05425232]
+Loading 163th epoch
+Loss:[0.05985162]
+Loading 163th epoch
+Loss:[0.05832346]
+Loading 163th epoch
+Loss:[0.05450774]
+Loading 163th epoch
+Loss:[0.05848873]
+Loading 163th epoch
+Loss:[0.04944544]
+Loading 168th epoch
+Loss:[0.05018590]
+Loading 168th epoch
+Loss:[0.05390475]
+Loading 168th epoch
+Loss:[0.05496288]
+Loading 168th epoch
+Loss:[0.04530935]
+Loading 172th epoch
+Loss:[0.04876556]
+Loading 172th epoch
+Loss:[0.04777114]
+Loading 172th epoch
+Loss:[0.04793531]
+Loading 172th epoch
+Loss:[0.04902943]
+Loading 172th epoch
+Loss:[0.04218014]
+Loading 177th epoch
+Loss:[0.04905551]
+Loading 177th epoch
+Loss:[0.04084427]
+Loading 179th epoch
+Loss:[0.04890539]
+Loading 179th epoch
+Loss:[0.04343672]
+Loading 179th epoch
+Loss:[0.04704477]
+Loading 179th epoch
+Loss:[0.04186347]
+Loading 179th epoch
+Loss:[0.04089834]
+Loading 179th epoch
+Loss:[0.04021871]
+Loading 185th epoch
+Loss:[0.04037629]
+Loading 185th epoch
+Loss:[0.04374564]
+Loading 185th epoch
+Loss:[0.04400700]
+Loading 185th epoch
+Loss:[0.03997100]
+Loading 189th epoch
+Loss:[0.04470897]
+Loading 189th epoch
+Loss:[0.03882067]
+Loading 191th epoch
+Loss:[0.03958574]
+Loading 191th epoch
+Loss:[0.03900003]
+Loading 191th epoch
+Loss:[0.03579134]
+Loading 194th epoch
+Loss:[0.03494546]
+Loading 195th epoch
+Loss:[0.03551569]
+Loading 195th epoch
+Loss:[0.04335919]
+Loading 195th epoch
+Loss:[0.03909501]
+Loading 195th epoch
+Loss:[0.03646610]
+Loading 195th epoch
+Loss:[0.03477879]
+Loading 200th epoch
+Loss:[0.03169759]
+Loading 201th epoch
+Loss:[0.03785073]
+Loading 201th epoch
+Loss:[0.03373423]
+Loading 201th epoch
+Loss:[0.03725482]
+Loading 201th epoch
+Loss:[0.03220877]
+Loading 201th epoch
+Loss:[0.03260824]
+Loading 201th epoch
+Loss:[0.03291291]
+Loading 201th epoch
+Loss:[0.03379085]
+Loading 201th epoch
+Loss:[0.02858958]
+Loading 209th epoch
+Loss:[0.02929960]
+Loading 209th epoch
+Loss:[0.03538120]
+Loading 209th epoch
+Loss:[0.03074688]
+Loading 209th epoch
+Loss:[0.02448350]
+Loading 213th epoch
+Loss:[0.03104339]
+Loading 213th epoch
+Loss:[0.03016539]
+Loading 213th epoch
+Loss:[0.02604557]
+Loading 213th epoch
+Loss:[0.03083524]
+Loading 213th epoch
+Loss:[0.02644245]
+Loading 213th epoch
+Loss:[0.03323082]
+Loading 213th epoch
+Loss:[0.02331530]
+Loading 220th epoch
+Loss:[0.02716428]
+Loading 220th epoch
+Loss:[0.02774302]
+Loading 220th epoch
+Loss:[0.02605462]
+Loading 220th epoch
+Loss:[0.02877693]
+Loading 220th epoch
+Loss:[0.02416750]
+Loading 220th epoch
+Loss:[0.02559292]
+Loading 220th epoch
+Loss:[0.02989664]
+Loading 220th epoch
+Loss:[0.02411825]
+Loading 220th epoch
+Loss:[0.02353682]
+Loading 220th epoch
+Loss:[0.02341769]
+Loading 220th epoch
+Loss:[0.02309575]
+Loading 231th epoch
+Loss:[0.02320391]
+Loading 231th epoch
+Loss:[0.02340329]
+Loading 231th epoch
+Loss:[0.02387960]
+Loading 231th epoch
+Loss:[0.02226526]
+Loading 235th epoch
+Loss:[0.02445561]
+Loading 235th epoch
+Loss:[0.02179001]
+Loading 237th epoch
+Loss:[0.02309195]
+Loading 237th epoch
+Loss:[0.02056386]
+Loading 239th epoch
+Loss:[0.02214669]
+Loading 239th epoch
+Loss:[0.02161287]
+Loading 239th epoch
+Loss:[0.02121511]
+Loading 239th epoch
+Loss:[0.02641441]
+Loading 239th epoch
+Loss:[0.01851833]
+Loading 244th epoch
+Loss:[0.02068805]
+Loading 244th epoch
+Loss:[0.02580881]
+Loading 244th epoch
+Loss:[0.02001828]
+Loading 244th epoch
+Loss:[0.02014654]
+Loading 244th epoch
+Loss:[0.01857547]
+Loading 244th epoch
+Loss:[0.01940073]
+Loading 244th epoch
+Loss:[0.01915373]
+Loading 244th epoch
+Loss:[0.01695236]
+Loading 252th epoch
+Loss:[0.02292313]
+Loading 252th epoch
+Loss:[0.01950387]
+Loading 252th epoch
+Loss:[0.01994569]
+Loading 252th epoch
+Loss:[0.01860063]
+Loading 252th epoch
+Loss:[0.01622943]
+Loading 257th epoch
+Loss:[0.02404798]
+Loading 257th epoch
+Loss:[0.02019594]
+Loading 257th epoch
+Loss:[0.01809531]
+Loading 257th epoch
+Loss:[0.02389787]
+Loading 257th epoch
+Loss:[0.01699931]
+Loading 257th epoch
+Loss:[0.02079276]
+Loading 257th epoch
+Loss:[0.01765167]
+Loading 257th epoch
+Loss:[0.02358351]
+Loading 257th epoch
+Loss:[0.01583588]
+Loading 266th epoch
+Loss:[0.01890872]
+Loading 266th epoch
+Loss:[0.01410993]
+Loading 268th epoch
+Loss:[0.01753881]
+Loading 268th epoch
+Loss:[0.01765125]
+Loading 268th epoch
+Loss:[0.01734138]
+Loading 268th epoch
+Loss:[0.01601430]
+Loading 268th epoch
+Loss:[0.01595151]
+Loading 268th epoch
+Loss:[0.01736029]
+Loading 268th epoch
+Loss:[0.01603760]
+Loading 268th epoch
+Loss:[0.01707909]
+Loading 268th epoch
+Loss:[0.01796766]
+Loading 268th epoch
+Loss:[0.01649379]
+Loading 268th epoch
+Loss:[0.01490628]
+Loading 268th epoch
+Loss:[0.01943204]
+Loading 268th epoch
+Loss:[0.01903084]
+Loading 268th epoch
+Loss:[0.01766766]
+Loading 268th epoch
+Loss:[0.01590068]
+Loading 268th epoch
+Loss:[0.01550531]
+Loading 268th epoch
+Loss:[0.01618524]
+Loading 268th epoch
+Loss:[0.01469106]
+Loading 268th epoch
+Loss:[0.01482849]
+Loading 268th epoch
+Loss:[0.01654958]
+Loading 268th epoch
+Loss:[0.01575515]
+Loading 268th epoch
+Loss:[0.01481542]
+Loading 268th epoch
+Loss:[0.01569434]
+Loading 268th epoch
+Loss:[0.01219282]
+Loading 292th epoch
+Loss:[0.01544689]
+Loading 292th epoch
+Loss:[0.01504106]
+Loading 292th epoch
+Loss:[0.01579636]
+Loading 292th epoch
+Loss:[0.01404231]
+Loading 292th epoch
+Loss:[0.01461867]
+Loading 292th epoch
+Loss:[0.01456323]
+Loading 292th epoch
+Loss:[0.01434898]
+Loading 292th epoch
+Loss:[0.01301840]
+Loading 292th epoch
+Loss:[0.01365600]
+Loading 292th epoch
+Loss:[0.01341289]
+Loading 292th epoch
+Loss:[0.01175902]
+Loading 303th epoch
+Loss:[0.01029558]
+Loading 304th epoch
+Loss:[0.01228474]
+Loading 304th epoch
+Loss:[0.01304203]
+Loading 304th epoch
+Loss:[0.01376441]
+Loading 304th epoch
+Loss:[0.01623672]
+Loading 304th epoch
+Loss:[0.01327557]
+Loading 304th epoch
+Loss:[0.01195653]
+Loading 304th epoch
+Loss:[0.01406212]
+Loading 304th epoch
+Loss:[0.01117623]
+Loading 304th epoch
+Loss:[0.01281985]
+Loading 304th epoch
+Loss:[0.01182415]
+Loading 304th epoch
+Loss:[0.01189885]
+Loading 304th epoch
+Loss:[0.01128959]
+Loading 304th epoch
+Loss:[0.01242359]
+Loading 304th epoch
+Loss:[0.01047101]
+Loading 304th epoch
+Loss:[0.01176229]
+Loading 304th epoch
+Loss:[0.01557759]
+Loading 304th epoch
+Loss:[0.01419734]
+Loading 304th epoch
+Loss:[0.01099366]
+Loading 304th epoch
+Loss:[0.00960288]
+Loading 323th epoch
+Loss:[0.01458634]
+Loading 323th epoch
+Loss:[0.01216064]
+Loading 323th epoch
+Loss:[0.01184253]
+Loading 323th epoch
+Loss:[0.01196271]
+Loading 323th epoch
+Loss:[0.01069534]
+Loading 323th epoch
+Loss:[0.01081911]
+Loading 323th epoch
+Loss:[0.01044140]
+Loading 323th epoch
+Loss:[0.01182911]
+Loading 323th epoch
+Loss:[0.01180212]
+Loading 323th epoch
+Loss:[0.01078959]
+Loading 323th epoch
+Loss:[0.01037393]
+Loading 323th epoch
+Loss:[0.01130235]
+Loading 323th epoch
+Loss:[0.00909226]
+Loading 336th epoch
+Loss:[0.01148540]
+Loading 336th epoch
+Loss:[0.00954932]
+Loading 336th epoch
+Loss:[0.00979605]
+Loading 336th epoch
+Loss:[0.00948777]
+Loading 336th epoch
+Loss:[0.01220338]
+Loading 336th epoch
+Loss:[0.00848978]
+Loading 342th epoch
+Loss:[0.01003337]
+Loading 342th epoch
+Loss:[0.01033807]
+Loading 342th epoch
+Loss:[0.00870639]
+Loading 342th epoch
+Loss:[0.01145485]
+Loading 342th epoch
+Loss:[0.01198108]
+Loading 342th epoch
+Loss:[0.01025482]
+Loading 342th epoch
+Loss:[0.00931997]
+Loading 342th epoch
+Loss:[0.01096947]
+Loading 342th epoch
+Loss:[0.01295421]
+Loading 342th epoch
+Loss:[0.00977612]
+Loading 342th epoch
+Loss:[0.01041446]
+Loading 342th epoch
+Loss:[0.01029152]
+Loading 342th epoch
+Loss:[0.00873929]
+Loading 342th epoch
+Loss:[0.00997961]
+Loading 342th epoch
+Loss:[0.01161619]
+Loading 342th epoch
+Loss:[0.00823377]
+Loading 358th epoch
+Loss:[0.00916675]
+Loading 358th epoch
+Loss:[0.00770213]
+Loading 360th epoch
+Loss:[0.01141502]
+Loading 360th epoch
+Loss:[0.01128372]
+Loading 360th epoch
+Loss:[0.00892597]
+Loading 360th epoch
+Loss:[0.01221021]
+Loading 360th epoch
+Loss:[0.00832667]
+Loading 360th epoch
+Loss:[0.00948381]
+Loading 360th epoch
+Loss:[0.00810904]
+Loading 360th epoch
+Loss:[0.00907970]
+Loading 360th epoch
+Loss:[0.00712985]
+Loading 369th epoch
+Loss:[0.00814177]
+Loading 369th epoch
+Loss:[0.01045628]
+Loading 369th epoch
+Loss:[0.00927569]
+Loading 369th epoch
+Loss:[0.00771857]
+Loading 369th epoch
+Loss:[0.00965924]
+Loading 369th epoch
+Loss:[0.00767337]
+Loading 369th epoch
+Loss:[0.00846593]
+Loading 369th epoch
+Loss:[0.00957011]
+Loading 369th epoch
+Loss:[0.00934551]
+Loading 369th epoch
+Loss:[0.00914916]
+Loading 369th epoch
+Loss:[0.00629610]
+Loading 380th epoch
+Loss:[0.00722987]
+Loading 380th epoch
+Loss:[0.00777477]
+Loading 380th epoch
+Loss:[0.00579419]
+Loading 383th epoch
+Loss:[0.00930957]
+Loading 383th epoch
+Loss:[0.00903908]
+Loading 383th epoch
+Loss:[0.01043163]
+Loading 383th epoch
+Loss:[0.00736461]
+Loading 383th epoch
+Loss:[0.00980623]
+Loading 383th epoch
+Loss:[0.00671747]
+Loading 383th epoch
+Loss:[0.00901204]
+Loading 383th epoch
+Loss:[0.00712403]
+Loading 383th epoch
+Loss:[0.00723730]
+Loading 383th epoch
+Loss:[0.00787548]
+Loading 383th epoch
+Loss:[0.00893864]
+Loading 383th epoch
+Loss:[0.00958663]
+Loading 383th epoch
+Loss:[0.00657389]
+Loading 383th epoch
+Loss:[0.00768331]
+Loading 383th epoch
+Loss:[0.00779229]
+Loading 383th epoch
+Loss:[0.00677829]
+Loading 383th epoch
+Loss:[0.00856062]
+Loading 383th epoch
+Loss:[0.00694218]
+Loading 383th epoch
+Loss:[0.00617279]
+Loading 383th epoch
+Loss:[0.01113831]
+Loading 383th epoch
+Loss:[0.00781944]
+Loading 383th epoch
+Loss:[0.00579403]
+Loading 405th epoch
+Loss:[0.00749908]
+Loading 405th epoch
+Loss:[0.00704428]
+Loading 405th epoch
+Loss:[0.00600827]
+Loading 405th epoch
+Loss:[0.00771110]
+Loading 405th epoch
+Loss:[0.00573775]
+Loading 410th epoch
+Loss:[0.00769139]
+Loading 410th epoch
+Loss:[0.00679058]
+Loading 410th epoch
+Loss:[0.00571519]
+Loading 413th epoch
+Loss:[0.00572359]
+Loading 413th epoch
+Loss:[0.00644341]
+Loading 413th epoch
+Loss:[0.00726158]
+Loading 413th epoch
+Loss:[0.00687902]
+Loading 413th epoch
+Loss:[0.00718589]
+Loading 413th epoch
+Loss:[0.00759528]
+Loading 413th epoch
+Loss:[0.00662303]
+Loading 413th epoch
+Loss:[0.00773930]
+Loading 413th epoch
+Loss:[0.00777869]
+Loading 413th epoch
+Loss:[0.00734170]
+Loading 413th epoch
+Loss:[0.00599510]
+Loading 413th epoch
+Loss:[0.00586608]
+Loading 413th epoch
+Loss:[0.00562427]
+Loading 426th epoch
+Loss:[0.01104829]
+Loading 426th epoch
+Loss:[0.00810926]
+Loading 426th epoch
+Loss:[0.00786623]
+Loading 426th epoch
+Loss:[0.00579086]
+Loading 426th epoch
+Loss:[0.00558618]
+Loading 431th epoch
+Loss:[0.00806421]
+Loading 431th epoch
+Loss:[0.00499541]
+Loading 433th epoch
+Loss:[0.00848035]
+Loading 433th epoch
+Loss:[0.00627138]
+Loading 433th epoch
+Loss:[0.00780269]
+Loading 433th epoch
+Loss:[0.00496707]
+Loading 437th epoch
+Loss:[0.00489569]
+Loading 438th epoch
+Loss:[0.00501556]
+Loading 438th epoch
+Loss:[0.00588760]
+Loading 438th epoch
+Loss:[0.00727211]
+Loading 438th epoch
+Loss:[0.00515513]
+Loading 438th epoch
+Loss:[0.00775645]
+Loading 438th epoch
+Loss:[0.00629473]
+Loading 438th epoch
+Loss:[0.00609994]
+Loading 438th epoch
+Loss:[0.00535018]
+Loading 438th epoch
+Loss:[0.00640405]
+Loading 438th epoch
+Loss:[0.00432791]
+Loading 448th epoch
+Loss:[0.00567290]
+Loading 448th epoch
+Loss:[0.00528475]
+Loading 448th epoch
+Loss:[0.00497209]
+Loading 448th epoch
+Loss:[0.00512678]
+Loading 448th epoch
+Loss:[0.00631617]
+Loading 448th epoch
+Loss:[0.00558770]
+Loading 448th epoch
+Loss:[0.00572178]
+Loading 448th epoch
+Loss:[0.00751101]
+Loading 448th epoch
+Loss:[0.00722867]
+Loading 448th epoch
+Loss:[0.00632981]
+Loading 448th epoch
+Loss:[0.00594652]
+Loading 448th epoch
+Loss:[0.00611469]
+Loading 448th epoch
+Loss:[0.00704824]
+Loading 448th epoch
+Loss:[0.00535655]
+Loading 448th epoch
+Loss:[0.00453067]
+Loading 448th epoch
+Loss:[0.00543842]
+Loading 448th epoch
+Loss:[0.00459045]
+Loading 448th epoch
+Loss:[0.00546338]
+Loading 448th epoch
+Loss:[0.00618492]
+Loading 448th epoch
+Loss:[0.00651560]
+Loading 448th epoch
+Loss:[0.00580378]
+Loading 448th epoch
+Loss:[0.00498354]
+Loading 448th epoch
+Loss:[0.00438830]
+Loading 448th epoch
+Loss:[0.00391644]
+Loading 472th epoch
+Loss:[0.00451381]
+Loading 472th epoch
+Loss:[0.00629840]
+Loading 472th epoch
+Loss:[0.00956718]
+Loading 472th epoch
+Loss:[0.00426975]
+Loading 472th epoch
+Loss:[0.00554528]
+Loading 472th epoch
+Loss:[0.00563046]
+Loading 472th epoch
+Loss:[0.00470727]
+Loading 472th epoch
+Loss:[0.00500643]
+Loading 472th epoch
+Loss:[0.00432309]
+Loading 472th epoch
+Loss:[0.00522748]
+Loading 472th epoch
+Loss:[0.00494861]
+Loading 472th epoch
+Loss:[0.00543192]
+Loading 472th epoch
+Loss:[0.00508150]
+Loading 472th epoch
+Loss:[0.00563626]
+Loading 472th epoch
+Loss:[0.00720534]
+Loading 472th epoch
+Loss:[0.00397110]
+Loading 472th epoch
+Loss:[0.00438952]
+Loading 472th epoch
+Loss:[0.00373225]
+Loading 490th epoch
+Loss:[0.00485130]
+Loading 490th epoch
+Loss:[0.00429363]
+Loading 490th epoch
+Loss:[0.00473488]
+Loading 490th epoch
+Loss:[0.00506470]
+Loading 490th epoch
+Loss:[0.00592673]
+Loading 490th epoch
+Loss:[0.00528623]
+Loading 490th epoch
+Loss:[0.00490754]
+Loading 490th epoch
+Loss:[0.00488183]
+Loading 490th epoch
+Loss:[0.00489943]
+Loading 490th epoch
+Loss:[0.00503702]
+Loading 490th epoch
+Loss:[0.00438284]
+Loading 490th epoch
+Loss:[0.00417301]
+Loading 490th epoch
+Loss:[0.00555639]
+Loading 490th epoch
+Loss:[0.00497361]
+Loading 490th epoch
+Loss:[0.00399627]
+Loading 490th epoch
+Loss:[0.00427402]
+Loading 490th epoch
+Loss:[0.00423230]
+Loading 490th epoch
+Loss:[0.00452193]
+Loading 490th epoch
+Loss:[0.00495897]
+Loading 490th epoch
+Loss:[0.00334019]
+Loading 510th epoch
+Loss:[0.00389347]
+Loading 510th epoch
+Loss:[0.00376676]
+Loading 510th epoch
+Loss:[0.00376283]
+Loading 510th epoch
+Loss:[0.00381492]
+Loading 510th epoch
+Loss:[0.00552534]
+Loading 510th epoch
+Loss:[0.00521819]
+Loading 510th epoch
+Loss:[0.00482325]
+Loading 510th epoch
+Loss:[0.00521485]
+Loading 510th epoch
+Loss:[0.00356655]
+Loading 510th epoch
+Loss:[0.00712974]
+Loading 510th epoch
+Loss:[0.00375398]
+Loading 510th epoch
+Loss:[0.00418888]
+Loading 510th epoch
+Loss:[0.00861503]
+Loading 510th epoch
+Loss:[0.00568143]
+Loading 510th epoch
+Loss:[0.00322872]
+Loading 525th epoch
+Loss:[0.00389984]
+Loading 525th epoch
+Loss:[0.00391056]
+Loading 525th epoch
+Loss:[0.00363690]
+Loading 525th epoch
+Loss:[0.00355909]
+Loading 525th epoch
+Loss:[0.00380683]
+Loading 525th epoch
+Loss:[0.00401725]
+Loading 525th epoch
+Loss:[0.00441686]
+Loading 525th epoch
+Loss:[0.00382632]
+Loading 525th epoch
+Loss:[0.00404026]
+Loading 525th epoch
+Loss:[0.00393774]
+Loading 525th epoch
+Loss:[0.00559619]
+Loading 525th epoch
+Loss:[0.00452965]
+Loading 525th epoch
+Loss:[0.00406515]
+Loading 525th epoch
+Loss:[0.00432130]
+Loading 525th epoch
+Loss:[0.00449626]
+Loading 525th epoch
+Loss:[0.00295069]
+Loading 541th epoch
+Loss:[0.00437907]
+Loading 541th epoch
+Loss:[0.00375119]
+Loading 541th epoch
+Loss:[0.00462277]
+Loading 541th epoch
+Loss:[0.00574109]
+Loading 541th epoch
+Loss:[0.00355815]
+Loading 541th epoch
+Loss:[0.00395892]
+Loading 541th epoch
+Loss:[0.00474968]
+Loading 541th epoch
+Loss:[0.00397788]
+Loading 541th epoch
+Loss:[0.00388816]
+Loading 541th epoch
+Loss:[0.00292822]
+Loading 551th epoch
+Loss:[0.00348081]
+Loading 551th epoch
+Loss:[0.00300614]
+Loading 551th epoch
+Loss:[0.00303755]
+Loading 551th epoch
+Loss:[0.00393091]
+Loading 551th epoch
+Loss:[0.00371979]
+Loading 551th epoch
+Loss:[0.00469961]
+Loading 551th epoch
+Loss:[0.00387910]
+Loading 551th epoch
+Loss:[0.00352748]
+Loading 551th epoch
+Loss:[0.00364377]
+Loading 551th epoch
+Loss:[0.00459938]
+Loading 551th epoch
+Loss:[0.00394642]
+Loading 551th epoch
+Loss:[0.00430497]
+Loading 551th epoch
+Loss:[0.00288201]
+Loading 564th epoch
+Loss:[0.00404999]
+Loading 564th epoch
+Loss:[0.00397403]
+Loading 564th epoch
+Loss:[0.00323664]
+Loading 564th epoch
+Loss:[0.00351569]
+Loading 564th epoch
+Loss:[0.00403221]
+Loading 564th epoch
+Loss:[0.00555434]
+Loading 564th epoch
+Loss:[0.00339154]
+Loading 564th epoch
+Loss:[0.00317846]
+Loading 564th epoch
+Loss:[0.00343350]
+Loading 564th epoch
+Loss:[0.00327462]
+Loading 564th epoch
+Loss:[0.00373570]
+Loading 564th epoch
+Loss:[0.00339059]
+Loading 564th epoch
+Loss:[0.00350413]
+Loading 564th epoch
+Loss:[0.00343345]
+Loading 564th epoch
+Loss:[0.00502755]
+Loading 564th epoch
+Loss:[0.00395623]
+Loading 564th epoch
+Loss:[0.00345411]
+Loading 564th epoch
+Loss:[0.00331409]
+Loading 564th epoch
+Loss:[0.00343457]
+Loading 564th epoch
+Loss:[0.00317698]
+Loading 564th epoch
+Loss:[0.00242586]
+Loading 585th epoch
+Loss:[0.00317638]
+Loading 585th epoch
+Loss:[0.00423804]
+Loading 585th epoch
+Loss:[0.00289610]
+Loading 585th epoch
+Loss:[0.00315077]
+Loading 585th epoch
+Loss:[0.00333516]
+Loading 585th epoch
+Loss:[0.00333011]
+Loading 585th epoch
+Loss:[0.00239867]
+Loading 592th epoch
+Loss:[0.00341853]
+Loading 592th epoch
+Loss:[0.00470967]
+Loading 592th epoch
+Loss:[0.00349544]
+Loading 592th epoch
+Loss:[0.00381583]
+Loading 592th epoch
+Loss:[0.00429105]
+Loading 592th epoch
+Loss:[0.00375331]
+Loading 592th epoch
+Loss:[0.00289792]
+Loading 592th epoch
+Loss:[0.00268200]
+Loading 592th epoch
+Loss:[0.00275916]
+Loading 592th epoch
+Loss:[0.00282132]
+Loading 592th epoch
+Loss:[0.00454217]
+Loading 592th epoch
+Loss:[0.00423368]
+Loading 592th epoch
+Loss:[0.00378852]
+Loading 592th epoch
+Loss:[0.00332128]
+Loading 592th epoch
+Loss:[0.00389054]
+Loading 592th epoch
+Loss:[0.00403768]
+Loading 592th epoch
+Loss:[0.00298965]
+Loading 592th epoch
+Loss:[0.00307521]
+Loading 592th epoch
+Loss:[0.00381238]
+Loading 592th epoch
+Loss:[0.00250270]
+Loading 592th epoch
+Loss:[0.00322127]
+Loading 592th epoch
+Loss:[0.00334978]
+Loading 592th epoch
+Loss:[0.00389933]
+Loading 592th epoch
+Loss:[0.00525524]
+Loading 592th epoch
+Loss:[0.00355338]
+Loading 592th epoch
+Loss:[0.00245725]
+Loading 592th epoch
+Loss:[0.00382040]
+Loading 592th epoch
+Loss:[0.00290264]
+Loading 592th epoch
+Loss:[0.00269381]
+Loading 592th epoch
+Loss:[0.00262949]
+Loading 592th epoch
+Loss:[0.00269200]
+Loading 592th epoch
+Loss:[0.00439133]
+Loading 592th epoch
+Loss:[0.00318267]
+Loading 592th epoch
+Loss:[0.00228366]
+Loading 626th epoch
+Loss:[0.00246039]
+Loading 626th epoch
+Loss:[0.00293494]
+Loading 626th epoch
+Loss:[0.00422175]
+Loading 626th epoch
+Loss:[0.00221671]
+Loading 630th epoch
+Loss:[0.00366289]
+Loading 630th epoch
+Loss:[0.00307778]
+Loading 630th epoch
+Loss:[0.00313274]
+Loading 630th epoch
+Loss:[0.00428119]
+Loading 630th epoch
+Loss:[0.00351425]
+Loading 630th epoch
+Loss:[0.00303872]
+Loading 630th epoch
+Loss:[0.00254777]
+Loading 630th epoch
+Loss:[0.00260257]
+Loading 630th epoch
+Loss:[0.00422679]
+Loading 630th epoch
+Loss:[0.00200084]
+Loading 640th epoch
+Loss:[0.00520315]
+Loading 640th epoch
+Loss:[0.00390589]
+Loading 640th epoch
+Loss:[0.00235709]
+Loading 640th epoch
+Loss:[0.00317812]
+Loading 640th epoch
+Loss:[0.00211924]
+Loading 640th epoch
+Loss:[0.00215816]
+Loading 640th epoch
+Loss:[0.00344077]
+Loading 640th epoch
+Loss:[0.00230788]
+Loading 640th epoch
+Loss:[0.00275668]
+Loading 640th epoch
+Loss:[0.00269800]
+Loading 640th epoch
+Loss:[0.00278481]
+Loading 640th epoch
+Loss:[0.00261238]
+Loading 640th epoch
+Loss:[0.00284024]
+Loading 640th epoch
+Loss:[0.00390525]
+Loading 640th epoch
+Loss:[0.00352685]
+Loading 640th epoch
+Loss:[0.00421049]
+Loading 640th epoch
+Loss:[0.00248854]
+Loading 640th epoch
+Loss:[0.00396035]
+Loading 640th epoch
+Loss:[0.00246044]
+Loading 640th epoch
+Loss:[0.00265418]
+Loading 640th epoch
+Loss:[0.00170808]
+Loading 661th epoch
+Loss:[0.00541911]
+Loading 661th epoch
+Loss:[0.00250514]
+Loading 661th epoch
+Loss:[0.00263804]
+Loading 661th epoch
+Loss:[0.00242732]
+Loading 661th epoch
+Loss:[0.00269412]
+Loading 661th epoch
+Loss:[0.00379305]
+Loading 661th epoch
+Loss:[0.00175482]
+Loading 661th epoch
+Loss:[0.00242855]
+Loading 661th epoch
+Loss:[0.00250467]
+Loading 661th epoch
+Loss:[0.00285207]
+Loading 661th epoch
+Loss:[0.00307596]
+Loading 661th epoch
+Loss:[0.00282943]
+Loading 661th epoch
+Loss:[0.00311926]
+Loading 661th epoch
+Loss:[0.00146949]
+Loading 675th epoch
+Loss:[0.00253661]
+Loading 675th epoch
+Loss:[0.00314492]
+Loading 675th epoch
+Loss:[0.00281527]
+Loading 675th epoch
+Loss:[0.00208746]
+Loading 675th epoch
+Loss:[0.00346561]
+Loading 675th epoch
+Loss:[0.00276088]
+Loading 675th epoch
+Loss:[0.00162249]
+Loading 675th epoch
+Loss:[0.00266000]
+Loading 675th epoch
+Loss:[0.00184530]
+Loading 675th epoch
+Loss:[0.00190969]
+Loading 675th epoch
+Loss:[0.00250385]
+Loading 675th epoch
+Loss:[0.00176588]
+Loading 675th epoch
+Loss:[0.00173165]
+Loading 675th epoch
+Loss:[0.00273512]
+Loading 675th epoch
+Loss:[0.00220217]
+Loading 675th epoch
+Loss:[0.00194952]
+Loading 675th epoch
+Loss:[0.00182985]
+Loading 675th epoch
+Loss:[0.00269660]
+Loading 675th epoch
+Loss:[0.00319987]
+Loading 675th epoch
+Loss:[0.00273793]
+Loading 675th epoch
+Loss:[0.00211028]
+Loading 675th epoch
+Loss:[0.00171543]
+Loading 675th epoch
+Loss:[0.00285197]
+Loading 675th epoch
+Loss:[0.00181763]
+Loading 675th epoch
+Loss:[0.00237066]
+Loading 675th epoch
+Loss:[0.00464351]
+Loading 675th epoch
+Loss:[0.00197387]
+Loading 675th epoch
+Loss:[0.00261088]
+Loading 675th epoch
+Loss:[0.00332935]
+Loading 675th epoch
+Loss:[0.00234151]
+Loading 675th epoch
+Loss:[0.00329717]
+Loading 675th epoch
+Loss:[0.00189149]
+Loading 675th epoch
+Loss:[0.00355147]
+Loading 675th epoch
+Loss:[0.00187036]
+Loading 675th epoch
+Loss:[0.00258031]
+Loading 675th epoch
+Loss:[0.00320588]
+Loading 675th epoch
+Loss:[0.00291758]
+Loading 675th epoch
+Loss:[0.00185314]
+Loading 675th epoch
+Loss:[0.00267697]
+Loading 675th epoch
+Loss:[0.00196626]
+Loading 675th epoch
+Loss:[0.00266208]
+Loading 675th epoch
+Loss:[0.00216325]
+Loading 675th epoch
+Loss:[0.00190197]
+Loading 675th epoch
+Loss:[0.00159980]
+Loading 675th epoch
+Loss:[0.00276833]
+Loading 675th epoch
+Loss:[0.00256498]
+Loading 675th epoch
+Loss:[0.00275391]
+Loading 675th epoch
+Loss:[0.00153245]
+Loading 675th epoch
+Loss:[0.00184460]
+Loading 675th epoch
+Loss:[0.00182621]
+Early stopping!
+##################################################
+PreTrain datasets are  ['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+Downastream dataset is  Cora
+Cora()
+DataBatch(x=[2708, 1433], edge_index=[2, 10556], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], batch=[2708], ptr=[2])
+process done
+0.30304789416514166
+nb_classes 7
+loading model from /home/ustc1958/lxy/graph/1/SAMGPT/checkpoints/model_node_GRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.001_gcn_ctx_s2_0.30_s3.pkl
+----------------------------------------------------------------------------------------------------
+shotnum 1
+  0%|          | 0/100 [00:00<?, ?it/s]  1%|          | 1/100 [00:07<12:36,  7.64s/it]  2%|▏         | 2/100 [00:15<12:56,  7.93s/it]  3%|▎         | 3/100 [00:23<12:57,  8.02s/it]  4%|▍         | 4/100 [00:32<12:53,  8.06s/it]  5%|▌         | 5/100 [00:40<12:47,  8.08s/it]  6%|▌         | 6/100 [00:48<12:40,  8.09s/it]  7%|▋         | 7/100 [00:56<12:33,  8.11s/it]  8%|▊         | 8/100 [01:04<12:26,  8.11s/it]  9%|▉         | 9/100 [01:12<12:18,  8.12s/it] 10%|█         | 10/100 [01:20<12:11,  8.12s/it] 11%|█         | 11/100 [01:28<12:03,  8.13s/it] 12%|█▏        | 12/100 [01:37<11:55,  8.13s/it] 13%|█▎        | 13/100 [01:45<11:47,  8.13s/it] 14%|█▍        | 14/100 [01:53<11:38,  8.13s/it] 15%|█▌        | 15/100 [02:01<11:31,  8.13s/it] 16%|█▌        | 16/100 [02:09<11:22,  8.12s/it] 17%|█▋        | 17/100 [02:17<11:14,  8.12s/it] 18%|█▊        | 18/100 [02:25<11:05,  8.11s/it] 19%|█▉        | 19/100 [02:33<10:57,  8.12s/it] 20%|██        | 20/100 [02:41<10:49,  8.11s/it] 21%|██        | 21/100 [02:50<10:41,  8.12s/it] 22%|██▏       | 22/100 [02:58<10:33,  8.12s/it] 23%|██▎       | 23/100 [03:06<10:24,  8.11s/it] 24%|██▍       | 24/100 [03:14<10:16,  8.11s/it] 25%|██▌       | 25/100 [03:22<10:08,  8.11s/it] 26%|██▌       | 26/100 [03:30<09:59,  8.11s/it] 27%|██▋       | 27/100 [03:38<09:51,  8.10s/it] 28%|██▊       | 28/100 [03:46<09:43,  8.11s/it] 29%|██▉       | 29/100 [03:54<09:35,  8.11s/it] 30%|███       | 30/100 [04:03<09:27,  8.11s/it] 31%|███       | 31/100 [04:11<09:19,  8.11s/it] 32%|███▏      | 32/100 [04:19<09:11,  8.12s/it] 33%|███▎      | 33/100 [04:27<09:04,  8.12s/it] 34%|███▍      | 34/100 [04:35<08:55,  8.12s/it] 35%|███▌      | 35/100 [04:43<08:47,  8.12s/it] 36%|███▌      | 36/100 [04:51<08:39,  8.12s/it] 37%|███▋      | 37/100 [04:59<08:31,  8.12s/it] 38%|███▊      | 38/100 [05:08<08:23,  8.12s/it] 39%|███▉      | 39/100 [05:16<08:15,  8.13s/it] 40%|████      | 40/100 [05:24<08:07,  8.13s/it] 41%|████      | 41/100 [05:32<07:59,  8.13s/it] 42%|████▏     | 42/100 [05:40<07:51,  8.13s/it] 43%|████▎     | 43/100 [05:48<07:43,  8.13s/it] 44%|████▍     | 44/100 [05:56<07:34,  8.12s/it] 45%|████▌     | 45/100 [06:04<07:26,  8.11s/it] 46%|████▌     | 46/100 [06:13<07:18,  8.11s/it] 47%|████▋     | 47/100 [06:21<07:10,  8.11s/it] 48%|████▊     | 48/100 [06:29<07:02,  8.12s/it] 49%|████▉     | 49/100 [06:37<06:53,  8.12s/it] 50%|█████     | 50/100 [06:45<06:45,  8.12s/it] 51%|█████     | 51/100 [06:53<06:34,  8.04s/it] 52%|█████▏    | 52/100 [07:01<06:22,  7.96s/it] 53%|█████▎    | 53/100 [07:08<06:11,  7.91s/it] 54%|█████▍    | 54/100 [07:16<06:01,  7.86s/it] 55%|█████▌    | 55/100 [07:24<05:52,  7.84s/it] 56%|█████▌    | 56/100 [07:32<05:44,  7.82s/it] 57%|█████▋    | 57/100 [07:40<05:36,  7.83s/it] 58%|█████▊    | 58/100 [07:47<05:28,  7.83s/it] 59%|█████▉    | 59/100 [07:55<05:21,  7.84s/it] 60%|██████    | 60/100 [08:03<05:14,  7.86s/it] 61%|██████    | 61/100 [08:11<05:06,  7.86s/it] 62%|██████▏   | 62/100 [08:19<04:59,  7.87s/it] 63%|██████▎   | 63/100 [08:27<04:51,  7.87s/it] 64%|██████▍   | 64/100 [08:35<04:43,  7.87s/it] 65%|██████▌   | 65/100 [08:43<04:35,  7.87s/it] 66%|██████▌   | 66/100 [08:50<04:27,  7.87s/it] 67%|██████▋   | 67/100 [08:58<04:19,  7.88s/it] 68%|██████▊   | 68/100 [09:06<04:12,  7.88s/it] 69%|██████▉   | 69/100 [09:14<04:04,  7.87s/it] 70%|███████   | 70/100 [09:22<03:56,  7.87s/it] 71%|███████   | 71/100 [09:30<03:48,  7.87s/it] 72%|███████▏  | 72/100 [09:38<03:40,  7.87s/it] 73%|███████▎  | 73/100 [09:45<03:31,  7.84s/it] 74%|███████▍  | 74/100 [09:53<03:23,  7.83s/it] 75%|███████▌  | 75/100 [10:01<03:15,  7.83s/it] 76%|███████▌  | 76/100 [10:09<03:08,  7.83s/it] 77%|███████▋  | 77/100 [10:17<03:00,  7.84s/it] 78%|███████▊  | 78/100 [10:25<02:52,  7.85s/it] 79%|███████▉  | 79/100 [10:32<02:44,  7.85s/it] 80%|████████  | 80/100 [10:40<02:37,  7.85s/it] 81%|████████  | 81/100 [10:48<02:29,  7.86s/it] 82%|████████▏ | 82/100 [10:56<02:21,  7.86s/it] 83%|████████▎ | 83/100 [11:04<02:13,  7.86s/it] 84%|████████▍ | 84/100 [11:12<02:06,  7.89s/it] 85%|████████▌ | 85/100 [11:20<01:59,  7.96s/it] 86%|████████▌ | 86/100 [11:28<01:52,  8.01s/it] 87%|████████▋ | 87/100 [11:36<01:44,  8.05s/it] 88%|████████▊ | 88/100 [11:44<01:36,  8.07s/it] 89%|████████▉ | 89/100 [11:53<01:28,  8.09s/it] 90%|█████████ | 90/100 [12:01<01:20,  8.10s/it] 91%|█████████ | 91/100 [12:09<01:12,  8.11s/it] 92%|█████████▏| 92/100 [12:17<01:04,  8.11s/it] 93%|█████████▎| 93/100 [12:25<00:56,  8.12s/it] 94%|█████████▍| 94/100 [12:33<00:48,  8.12s/it] 95%|█████████▌| 95/100 [12:41<00:40,  8.12s/it] 96%|█████████▌| 96/100 [12:49<00:32,  8.12s/it] 97%|█████████▋| 97/100 [12:58<00:24,  8.12s/it] 98%|█████████▊| 98/100 [13:06<00:16,  8.12s/it] 99%|█████████▉| 99/100 [13:14<00:08,  8.13s/it]100%|██████████| 100/100 [13:22<00:00,  8.13s/it]100%|██████████| 100/100 [13:22<00:00,  8.02s/it]
+----------------------------------------------------------------------------------------------------
+Average accuracy:[0.4757]
+Mean:[47.5700]
+Std :[12.7186]
+----------------------------------------------------------------------------------------------------

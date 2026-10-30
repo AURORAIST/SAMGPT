@@ -1,0 +1,1012 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed'], downstream_task='node', gpu=0, pretrain_method='EGRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', max_subgraph_nodes=64, stage2_top_ratio=0.3, context_outputs_root='./result/20260413_235955_raw9m1267/stage_outputs', result_subdir='20260413_235955_raw9m1267', force_rebuild_stage1=1, force_rebuild_stage2=1, stage1_num_clusters=8, stage1_subgraph_hop_n=2, stage1_encoding_mode='raw9', stage1_feature_k=0, stage1_feature_mask='1267', stage1_use_log1p=1, stage1_remove_selfloops=1, stage2_top_m_per_cluster=5, stage2_alpha=1.0, stage2_beta=1.0, stage2_gamma=1.0, egraphcl_tau=0.85, global_subgraph_pool=1, force_rebuild_global_pool=1, pretrain_batch_size=128, rebuild_run_cache=1, pretrain_max_epochs=100, pretrain_patience=20, pretrain_min_delta=0.0001, egraphcl_negative_pair_mode='topk', egraphcl_negative_topk=32, egraphcl_negative_random_ratio=0.25, egraphcl_mask_strategy='quantile', egraphcl_mask_quantile=0.9, egraphcl_mask_min_tau=0.6, egraphcl_mask_max_tau=0.98, egraphcl_min_negatives_per_row=2, egraphcl_log_every=20, prompt_routing_mode='dataset', egraphcl_encoder_mode='batched', pretrain_preprocess_cache=1)
+----------------------------------------------------------------------------------------------------
+[context] flags: stage2_filter=on, struct_contrastive=on, global_subgraph_pool=1, skip_pretrain=0
+984652
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed']
+[result] run_subdir=20260413_235955_raw9m1267
+[result] result_dir=/home/ustc1958/lxy/graph/1/SAMGPT0413/result/20260413_235955_raw9m1267
+[cache] cache_dir=/home/ustc1958/lxy/graph/1/SAMGPT0413/result/20260413_235955_raw9m1267/cache rebuild=1
+0
+[pretrain] checkpoint load skipped due to: try to use trained models
+[debug] subgraph build done: total_subgraphs=23044, per_dataset={'Citeseer': 3327, 'Pubmed': 19717}
+[debug] sample pool done: representative_pool=40, selected=6942
+[stage1-metrics] global_merged: /home/ustc1958/lxy/graph/1/SAMGPT0413/result/20260413_235955_raw9m1267/stage_outputs/stage1/global_merged/stage1_metrics.json
+[stage2-metrics] warn global_merged(build): no field of name in_representative_pool
+[global_pool] saved cache: /home/ustc1958/lxy/graph/1/SAMGPT0413/result/20260413_235955_raw9m1267/cache/global_pool/global_subgraph_pool.pt
+Using CUDA
+[egraphcl] mask/loss stats tau=0.9800 mask_ratio=0.1409 sim_p90=0.9951 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=1 batch=20 size=128 loss=6.173905 mask_ratio=0.140869 tau=0.9800 sim_p90=0.9951 neg_min_fea=32 neg_min_str=32 batch_sec=0.6200
+[egraphcl] mask/loss stats tau=0.9800 mask_ratio=0.1398 sim_p90=0.9967 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=1 batch=40 size=128 loss=5.649468 mask_ratio=0.139771 tau=0.9800 sim_p90=0.9967 neg_min_fea=32 neg_min_str=32 batch_sec=0.7718
+[pretrain] epoch=1 samples=6942 batch_size=128 batches=55
+Loss:[5.58241193]
+[pretrain] epoch_time_sec=39.994 sec_per_batch=0.7272
+[pretrain] timing_breakdown_sec forward=34.685 backward=5.267 other=0.042
+Current epoch: 1
+[egraphcl] mask/loss stats tau=0.9800 mask_ratio=0.1179 sim_p90=0.9887 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=2 batch=20 size=128 loss=5.620945 mask_ratio=0.117798 tau=0.9800 sim_p90=0.9910 neg_min_fea=32 neg_min_str=32 batch_sec=0.5708
+[egraphcl] mask/loss stats tau=0.9780 mask_ratio=0.0992 sim_p90=0.9780 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=2 batch=40 size=128 loss=5.706017 mask_ratio=0.099731 tau=0.9800 sim_p90=0.9804 neg_min_fea=32 neg_min_str=32 batch_sec=0.8912
+[egraphcl] mask/loss stats tau=0.9800 mask_ratio=0.1263 sim_p90=0.9940 neg_min(fea/str)=32/32
+[pretrain] epoch=2 samples=6942 batch_size=128 batches=55
+Loss:[5.48224941]
+[pretrain] epoch_time_sec=40.488 sec_per_batch=0.7361
+[pretrain] timing_breakdown_sec forward=35.129 backward=5.313 other=0.046
+Current epoch: 2
+[egraphcl] mask/loss stats tau=0.9800 mask_ratio=0.1152 sim_p90=0.9914 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=3 batch=20 size=128 loss=4.667562 mask_ratio=0.099243 tau=0.9748 sim_p90=0.9748 neg_min_fea=32 neg_min_str=32 batch_sec=0.7094
+[egraphcl] mask/loss stats tau=0.9800 mask_ratio=0.1096 sim_p90=0.9887 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=3 batch=40 size=128 loss=4.537416 mask_ratio=0.106323 tau=0.9800 sim_p90=0.9870 neg_min_fea=32 neg_min_str=32 batch_sec=0.5708
+[egraphcl] mask/loss stats tau=0.9800 mask_ratio=0.1195 sim_p90=0.9968 neg_min(fea/str)=32/32
+[pretrain] epoch=3 samples=6942 batch_size=128 batches=55
+Loss:[4.43605028]
+[pretrain] epoch_time_sec=44.924 sec_per_batch=0.8168
+[pretrain] timing_breakdown_sec forward=40.796 backward=4.104 other=0.024
+Current epoch: 3
+[egraphcl] mask/loss stats tau=0.9800 mask_ratio=0.1101 sim_p90=0.9881 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=4 batch=20 size=128 loss=4.340183 mask_ratio=0.099243 tau=0.9738 sim_p90=0.9738 neg_min_fea=32 neg_min_str=32 batch_sec=0.9621
+[egraphcl] mask/loss stats tau=0.9800 mask_ratio=0.1151 sim_p90=0.9921 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=4 batch=40 size=128 loss=3.783832 mask_ratio=0.107910 tau=0.9800 sim_p90=0.9887 neg_min_fea=32 neg_min_str=32 batch_sec=0.9983
+[egraphcl] mask/loss stats tau=0.9800 mask_ratio=0.0978 sim_p90=0.9850 neg_min(fea/str)=21/21
+[pretrain] epoch=4 samples=6942 batch_size=128 batches=55
+Loss:[4.16772268]
+[pretrain] epoch_time_sec=53.695 sec_per_batch=0.9763
+[pretrain] timing_breakdown_sec forward=51.238 backward=2.417 other=0.040
+Current epoch: 4
+[egraphcl] mask/loss stats tau=0.9122 mask_ratio=0.0992 sim_p90=0.9122 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=5 batch=20 size=128 loss=4.222638 mask_ratio=0.099243 tau=0.9122 sim_p90=0.9122 neg_min_fea=32 neg_min_str=32 batch_sec=1.0603
+[egraphcl] mask/loss stats tau=0.9421 mask_ratio=0.0992 sim_p90=0.9421 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=5 batch=40 size=128 loss=4.048701 mask_ratio=0.099243 tau=0.9421 sim_p90=0.9421 neg_min_fea=32 neg_min_str=32 batch_sec=1.0376
+[pretrain] epoch=5 samples=6942 batch_size=128 batches=55
+Loss:[4.02085523]
+[pretrain] epoch_time_sec=57.004 sec_per_batch=1.0364
+[pretrain] timing_breakdown_sec forward=54.559 backward=2.425 other=0.020
+Current epoch: 5
+[egraphcl] mask/loss stats tau=0.8642 mask_ratio=0.0992 sim_p90=0.8642 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=6 batch=20 size=128 loss=3.702674 mask_ratio=0.099243 tau=0.9642 sim_p90=0.9642 neg_min_fea=32 neg_min_str=32 batch_sec=1.0562
+[egraphcl] mask/loss stats tau=0.9693 mask_ratio=0.0992 sim_p90=0.9693 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=6 batch=40 size=128 loss=3.517612 mask_ratio=0.099243 tau=0.8267 sim_p90=0.8267 neg_min_fea=32 neg_min_str=32 batch_sec=1.0451
+[egraphcl] mask/loss stats tau=0.8804 mask_ratio=0.0992 sim_p90=0.8804 neg_min(fea/str)=32/32
+[pretrain] epoch=6 samples=6942 batch_size=128 batches=55
+Loss:[3.50428978]
+[pretrain] epoch_time_sec=56.669 sec_per_batch=1.0303
+[pretrain] timing_breakdown_sec forward=54.411 backward=2.218 other=0.040
+Current epoch: 6
+[egraphcl] mask/loss stats tau=0.7721 mask_ratio=0.0992 sim_p90=0.7721 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=7 batch=20 size=128 loss=3.134548 mask_ratio=0.099243 tau=0.7839 sim_p90=0.7839 neg_min_fea=32 neg_min_str=32 batch_sec=1.0302
+[egraphcl] mask/loss stats tau=0.8253 mask_ratio=0.0992 sim_p90=0.8253 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=7 batch=40 size=128 loss=3.251302 mask_ratio=0.099243 tau=0.8448 sim_p90=0.8448 neg_min_fea=32 neg_min_str=32 batch_sec=1.0371
+[egraphcl] mask/loss stats tau=0.7929 mask_ratio=0.0992 sim_p90=0.7929 neg_min(fea/str)=32/32
+[pretrain] epoch=7 samples=6942 batch_size=128 batches=55
+Loss:[3.32084245]
+[pretrain] epoch_time_sec=56.359 sec_per_batch=1.0247
+[pretrain] timing_breakdown_sec forward=53.960 backward=2.378 other=0.022
+Current epoch: 7
+[egraphcl] mask/loss stats tau=0.6776 mask_ratio=0.0992 sim_p90=0.6776 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=8 batch=20 size=128 loss=3.228549 mask_ratio=0.099243 tau=0.6076 sim_p90=0.6076 neg_min_fea=32 neg_min_str=32 batch_sec=1.0259
+[egraphcl] mask/loss stats tau=0.6770 mask_ratio=0.0992 sim_p90=0.6770 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=8 batch=40 size=128 loss=3.352314 mask_ratio=0.099243 tau=0.6539 sim_p90=0.6539 neg_min_fea=32 neg_min_str=32 batch_sec=1.0387
+[egraphcl] mask/loss stats tau=0.8797 mask_ratio=0.0978 sim_p90=0.8797 neg_min(fea/str)=21/21
+[pretrain] epoch=8 samples=6942 batch_size=128 batches=55
+Loss:[3.26195274]
+[pretrain] epoch_time_sec=56.267 sec_per_batch=1.0230
+[pretrain] timing_breakdown_sec forward=54.170 backward=2.056 other=0.041
+Current epoch: 8
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0958 sim_p90=0.5727 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=9 batch=20 size=128 loss=2.958635 mask_ratio=0.095825 tau=0.6000 sim_p90=0.5727 neg_min_fea=32 neg_min_str=32 batch_sec=1.0225
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0946 sim_p90=0.5704 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=9 batch=40 size=128 loss=3.163942 mask_ratio=0.094604 tau=0.6000 sim_p90=0.5704 neg_min_fea=32 neg_min_str=32 batch_sec=1.0463
+[pretrain] epoch=9 samples=6942 batch_size=128 batches=55
+Loss:[3.03331416]
+[pretrain] epoch_time_sec=56.370 sec_per_batch=1.0249
+[pretrain] timing_breakdown_sec forward=54.056 backward=2.292 other=0.021
+Current epoch: 9
+[egraphcl] mask/loss stats tau=0.6645 mask_ratio=0.0992 sim_p90=0.6645 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=10 batch=20 size=128 loss=3.042558 mask_ratio=0.099243 tau=0.6085 sim_p90=0.6085 neg_min_fea=32 neg_min_str=32 batch_sec=1.0401
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0972 sim_p90=0.5834 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=10 batch=40 size=128 loss=2.929562 mask_ratio=0.088379 tau=0.6000 sim_p90=0.4904 neg_min_fea=32 neg_min_str=32 batch_sec=1.0427
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0852 sim_p90=0.4760 neg_min(fea/str)=32/32
+[pretrain] epoch=10 samples=6942 batch_size=128 batches=55
+Loss:[2.97706967]
+[pretrain] epoch_time_sec=56.766 sec_per_batch=1.0321
+[pretrain] timing_breakdown_sec forward=54.679 backward=2.048 other=0.040
+Current epoch: 10
+[egraphcl] mask/loss stats tau=0.6193 mask_ratio=0.0992 sim_p90=0.6193 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=11 batch=20 size=128 loss=3.251209 mask_ratio=0.092041 tau=0.6000 sim_p90=0.5670 neg_min_fea=32 neg_min_str=32 batch_sec=1.0542
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0968 sim_p90=0.5762 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=11 batch=40 size=128 loss=3.136065 mask_ratio=0.085327 tau=0.6000 sim_p90=0.4812 neg_min_fea=32 neg_min_str=32 batch_sec=1.0367
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0844 sim_p90=0.5023 neg_min(fea/str)=32/32
+[pretrain] epoch=11 samples=6942 batch_size=128 batches=55
+Loss:[2.98178139]
+[pretrain] epoch_time_sec=56.778 sec_per_batch=1.0323
+[pretrain] timing_breakdown_sec forward=54.458 backward=2.300 other=0.020
+Current epoch: 11
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0818 sim_p90=0.4587 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=12 batch=20 size=128 loss=2.652654 mask_ratio=0.082275 tau=0.6000 sim_p90=0.4235 neg_min_fea=32 neg_min_str=32 batch_sec=1.0276
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0732 sim_p90=0.4046 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=12 batch=40 size=128 loss=2.837617 mask_ratio=0.086304 tau=0.6000 sim_p90=0.5074 neg_min_fea=32 neg_min_str=32 batch_sec=1.0175
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0600 sim_p90=0.3994 neg_min(fea/str)=25/25
+[pretrain] epoch=12 samples=6942 batch_size=128 batches=55
+Loss:[2.93535549]
+[pretrain] epoch_time_sec=56.235 sec_per_batch=1.0225
+[pretrain] timing_breakdown_sec forward=53.538 backward=2.654 other=0.042
+Current epoch: 12
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0798 sim_p90=0.4203 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=13 batch=20 size=128 loss=2.874900 mask_ratio=0.079834 tau=0.6000 sim_p90=0.4203 neg_min_fea=32 neg_min_str=32 batch_sec=1.0426
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0715 sim_p90=0.3411 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=13 batch=40 size=128 loss=2.701404 mask_ratio=0.071533 tau=0.6000 sim_p90=0.3411 neg_min_fea=32 neg_min_str=32 batch_sec=1.0367
+[pretrain] epoch=13 samples=6942 batch_size=128 batches=55
+Loss:[2.91705664]
+[pretrain] epoch_time_sec=56.611 sec_per_batch=1.0293
+[pretrain] timing_breakdown_sec forward=54.542 backward=2.049 other=0.021
+Current epoch: 13
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0735 sim_p90=0.3832 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=14 batch=20 size=128 loss=2.805372 mask_ratio=0.074219 tau=0.6000 sim_p90=0.3067 neg_min_fea=32 neg_min_str=32 batch_sec=1.0559
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0768 sim_p90=0.3732 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=14 batch=40 size=128 loss=2.784040 mask_ratio=0.070312 tau=0.6000 sim_p90=0.2398 neg_min_fea=32 neg_min_str=32 batch_sec=1.0310
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0692 sim_p90=0.3124 neg_min(fea/str)=32/32
+[pretrain] epoch=14 samples=6942 batch_size=128 batches=55
+Loss:[2.87770316]
+[pretrain] epoch_time_sec=56.669 sec_per_batch=1.0304
+[pretrain] timing_breakdown_sec forward=54.259 backward=2.370 other=0.041
+Current epoch: 14
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0809 sim_p90=0.3725 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=15 batch=20 size=128 loss=2.728450 mask_ratio=0.072754 tau=0.6000 sim_p90=0.3063 neg_min_fea=32 neg_min_str=32 batch_sec=1.0246
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0726 sim_p90=0.3450 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=15 batch=40 size=128 loss=3.254700 mask_ratio=0.069580 tau=0.6000 sim_p90=0.3496 neg_min_fea=32 neg_min_str=32 batch_sec=1.0442
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0771 sim_p90=0.3496 neg_min(fea/str)=32/32
+[pretrain] epoch=15 samples=6942 batch_size=128 batches=55
+Loss:[2.88099156]
+[pretrain] epoch_time_sec=56.460 sec_per_batch=1.0265
+[pretrain] timing_breakdown_sec forward=53.854 backward=2.584 other=0.022
+Current epoch: 15
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0677 sim_p90=0.2945 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=16 batch=20 size=128 loss=2.807392 mask_ratio=0.071045 tau=0.6000 sim_p90=0.2903 neg_min_fea=32 neg_min_str=32 batch_sec=1.0723
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0669 sim_p90=0.2424 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=16 batch=40 size=128 loss=2.331374 mask_ratio=0.071899 tau=0.6000 sim_p90=0.2305 neg_min_fea=32 neg_min_str=32 batch_sec=1.0669
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0467 sim_p90=0.0948 neg_min(fea/str)=26/26
+[pretrain] epoch=16 samples=6942 batch_size=128 batches=55
+Loss:[2.71642938]
+[pretrain] epoch_time_sec=56.991 sec_per_batch=1.0362
+[pretrain] timing_breakdown_sec forward=54.555 backward=2.394 other=0.041
+Current epoch: 16
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0643 sim_p90=0.2534 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=17 batch=20 size=128 loss=2.487076 mask_ratio=0.064331 tau=0.6000 sim_p90=0.2534 neg_min_fea=32 neg_min_str=32 batch_sec=1.0384
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0658 sim_p90=0.2445 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=17 batch=40 size=128 loss=2.185436 mask_ratio=0.065796 tau=0.6000 sim_p90=0.2445 neg_min_fea=32 neg_min_str=32 batch_sec=1.0707
+[pretrain] epoch=17 samples=6942 batch_size=128 batches=55
+Loss:[2.36947288]
+[pretrain] epoch_time_sec=57.379 sec_per_batch=1.0432
+[pretrain] timing_breakdown_sec forward=55.075 backward=2.284 other=0.020
+Current epoch: 17
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0713 sim_p90=0.2781 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=18 batch=20 size=128 loss=1.881816 mask_ratio=0.065552 tau=0.6000 sim_p90=0.1538 neg_min_fea=32 neg_min_str=32 batch_sec=1.0426
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0635 sim_p90=0.2068 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=18 batch=40 size=128 loss=2.025740 mask_ratio=0.061401 tau=0.6000 sim_p90=0.1603 neg_min_fea=32 neg_min_str=32 batch_sec=1.0372
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0645 sim_p90=0.2291 neg_min(fea/str)=32/32
+[pretrain] epoch=18 samples=6942 batch_size=128 batches=55
+Loss:[2.16702584]
+[pretrain] epoch_time_sec=57.434 sec_per_batch=1.0443
+[pretrain] timing_breakdown_sec forward=55.113 backward=2.280 other=0.041
+Current epoch: 18
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0647 sim_p90=0.1825 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=19 batch=20 size=128 loss=2.012854 mask_ratio=0.071289 tau=0.6000 sim_p90=0.2598 neg_min_fea=32 neg_min_str=32 batch_sec=1.0530
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0762 sim_p90=0.2986 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=19 batch=40 size=128 loss=2.286853 mask_ratio=0.053711 tau=0.6000 sim_p90=0.2072 neg_min_fea=32 neg_min_str=32 batch_sec=1.0501
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0590 sim_p90=0.1456 neg_min(fea/str)=32/32
+[pretrain] epoch=19 samples=6942 batch_size=128 batches=55
+Loss:[2.12145822]
+[pretrain] epoch_time_sec=57.582 sec_per_batch=1.0469
+[pretrain] timing_breakdown_sec forward=55.382 backward=2.180 other=0.020
+Current epoch: 19
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0643 sim_p90=0.1906 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=20 batch=20 size=128 loss=1.784163 mask_ratio=0.052246 tau=0.6000 sim_p90=0.1647 neg_min_fea=32 neg_min_str=32 batch_sec=1.0600
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0571 sim_p90=0.1749 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=20 batch=40 size=128 loss=1.646443 mask_ratio=0.061890 tau=0.6000 sim_p90=0.1948 neg_min_fea=32 neg_min_str=32 batch_sec=1.0596
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0533 sim_p90=0.2818 neg_min(fea/str)=24/24
+[pretrain] epoch=20 samples=6942 batch_size=128 batches=55
+Loss:[1.77405281]
+[pretrain] epoch_time_sec=57.532 sec_per_batch=1.0460
+[pretrain] timing_breakdown_sec forward=54.824 backward=2.666 other=0.041
+Current epoch: 20
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0624 sim_p90=0.1744 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=21 batch=20 size=128 loss=1.527658 mask_ratio=0.062378 tau=0.6000 sim_p90=0.1744 neg_min_fea=32 neg_min_str=32 batch_sec=1.1082
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0543 sim_p90=0.1329 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=21 batch=40 size=128 loss=1.513096 mask_ratio=0.054321 tau=0.6000 sim_p90=0.1329 neg_min_fea=32 neg_min_str=32 batch_sec=1.0960
+[pretrain] epoch=21 samples=6942 batch_size=128 batches=55
+Loss:[1.54600412]
+[pretrain] epoch_time_sec=59.525 sec_per_batch=1.0823
+[pretrain] timing_breakdown_sec forward=56.642 backward=2.863 other=0.020
+Current epoch: 21
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0552 sim_p90=0.1646 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=22 batch=20 size=128 loss=1.546237 mask_ratio=0.066162 tau=0.6000 sim_p90=0.2279 neg_min_fea=32 neg_min_str=32 batch_sec=1.0889
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0619 sim_p90=0.2388 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=22 batch=40 size=128 loss=1.388512 mask_ratio=0.056519 tau=0.6000 sim_p90=0.1501 neg_min_fea=32 neg_min_str=32 batch_sec=1.0720
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0612 sim_p90=0.1970 neg_min(fea/str)=32/32
+[pretrain] epoch=22 samples=6942 batch_size=128 batches=55
+Loss:[1.47857993]
+[pretrain] epoch_time_sec=58.534 sec_per_batch=1.0643
+[pretrain] timing_breakdown_sec forward=56.256 backward=2.237 other=0.041
+Current epoch: 22
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0620 sim_p90=0.1752 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=23 batch=20 size=128 loss=1.393592 mask_ratio=0.053833 tau=0.6000 sim_p90=0.1435 neg_min_fea=32 neg_min_str=32 batch_sec=1.1006
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0637 sim_p90=0.1667 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=23 batch=40 size=128 loss=1.691841 mask_ratio=0.051025 tau=0.6000 sim_p90=0.1925 neg_min_fea=32 neg_min_str=32 batch_sec=1.1001
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0542 sim_p90=0.1452 neg_min(fea/str)=32/32
+[pretrain] epoch=23 samples=6942 batch_size=128 batches=55
+Loss:[1.37984495]
+[pretrain] epoch_time_sec=59.333 sec_per_batch=1.0788
+[pretrain] timing_breakdown_sec forward=56.459 backward=2.854 other=0.021
+Current epoch: 23
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0558 sim_p90=0.1248 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=24 batch=20 size=128 loss=1.087564 mask_ratio=0.063843 tau=0.6000 sim_p90=0.1574 neg_min_fea=32 neg_min_str=32 batch_sec=1.0674
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0416 sim_p90=0.1647 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=24 batch=40 size=128 loss=1.284423 mask_ratio=0.055054 tau=0.6000 sim_p90=0.1306 neg_min_fea=32 neg_min_str=32 batch_sec=1.0848
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0778 sim_p90=0.1253 neg_min(fea/str)=24/24
+[pretrain] epoch=24 samples=6942 batch_size=128 batches=55
+Loss:[1.28784718]
+[pretrain] epoch_time_sec=58.529 sec_per_batch=1.0642
+[pretrain] timing_breakdown_sec forward=56.089 backward=2.399 other=0.041
+Current epoch: 24
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0625 sim_p90=0.1401 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=25 batch=20 size=128 loss=1.202484 mask_ratio=0.062500 tau=0.6000 sim_p90=0.1401 neg_min_fea=32 neg_min_str=32 batch_sec=1.0844
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0453 sim_p90=0.1432 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=25 batch=40 size=128 loss=1.398916 mask_ratio=0.045288 tau=0.6000 sim_p90=0.1432 neg_min_fea=32 neg_min_str=32 batch_sec=1.0868
+[pretrain] epoch=25 samples=6942 batch_size=128 batches=55
+Loss:[1.21540973]
+[pretrain] epoch_time_sec=58.756 sec_per_batch=1.0683
+[pretrain] timing_breakdown_sec forward=56.642 backward=2.094 other=0.020
+Current epoch: 25
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0516 sim_p90=0.1433 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=26 batch=20 size=128 loss=1.146202 mask_ratio=0.058472 tau=0.6000 sim_p90=0.1476 neg_min_fea=32 neg_min_str=32 batch_sec=1.0600
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0583 sim_p90=0.1496 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=26 batch=40 size=128 loss=1.084970 mask_ratio=0.057373 tau=0.6000 sim_p90=0.1344 neg_min_fea=32 neg_min_str=32 batch_sec=1.0919
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0490 sim_p90=0.1383 neg_min(fea/str)=32/32
+[pretrain] epoch=26 samples=6942 batch_size=128 batches=55
+Loss:[1.14035018]
+[pretrain] epoch_time_sec=58.766 sec_per_batch=1.0685
+[pretrain] timing_breakdown_sec forward=56.239 backward=2.485 other=0.041
+Current epoch: 26
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0453 sim_p90=0.1170 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=27 batch=20 size=128 loss=1.239418 mask_ratio=0.046143 tau=0.6000 sim_p90=0.1550 neg_min_fea=32 neg_min_str=32 batch_sec=1.0818
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0569 sim_p90=0.1433 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=27 batch=40 size=128 loss=1.024557 mask_ratio=0.052246 tau=0.6000 sim_p90=0.1314 neg_min_fea=32 neg_min_str=32 batch_sec=1.0875
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0476 sim_p90=0.1422 neg_min(fea/str)=32/32
+[pretrain] epoch=27 samples=6942 batch_size=128 batches=55
+Loss:[1.09775861]
+[pretrain] epoch_time_sec=58.830 sec_per_batch=1.0696
+[pretrain] timing_breakdown_sec forward=56.767 backward=2.043 other=0.020
+Current epoch: 27
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0480 sim_p90=0.1422 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=28 batch=20 size=128 loss=1.098190 mask_ratio=0.046631 tau=0.6000 sim_p90=0.1358 neg_min_fea=32 neg_min_str=32 batch_sec=1.0754
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0548 sim_p90=0.1090 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=28 batch=40 size=128 loss=1.231426 mask_ratio=0.052856 tau=0.6000 sim_p90=0.1515 neg_min_fea=32 neg_min_str=32 batch_sec=1.0732
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0444 sim_p90=0.1743 neg_min(fea/str)=25/25
+[pretrain] epoch=28 samples=6942 batch_size=128 batches=55
+Loss:[1.04104084]
+[pretrain] epoch_time_sec=58.679 sec_per_batch=1.0669
+[pretrain] timing_breakdown_sec forward=56.628 backward=2.011 other=0.040
+Current epoch: 28
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0583 sim_p90=0.1426 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=29 batch=20 size=128 loss=0.974511 mask_ratio=0.058350 tau=0.6000 sim_p90=0.1426 neg_min_fea=32 neg_min_str=32 batch_sec=1.1034
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0441 sim_p90=0.1149 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=29 batch=40 size=128 loss=1.053532 mask_ratio=0.044067 tau=0.6000 sim_p90=0.1149 neg_min_fea=32 neg_min_str=32 batch_sec=1.0836
+[pretrain] epoch=29 samples=6942 batch_size=128 batches=55
+Loss:[1.04015058]
+[pretrain] epoch_time_sec=59.343 sec_per_batch=1.0790
+[pretrain] timing_breakdown_sec forward=56.807 backward=2.515 other=0.020
+Current epoch: 29
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0475 sim_p90=0.1384 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=30 batch=20 size=128 loss=1.080796 mask_ratio=0.049438 tau=0.6000 sim_p90=0.1241 neg_min_fea=32 neg_min_str=32 batch_sec=0.9706
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0470 sim_p90=0.1053 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=30 batch=40 size=128 loss=1.056065 mask_ratio=0.046509 tau=0.6000 sim_p90=0.1244 neg_min_fea=32 neg_min_str=32 batch_sec=0.9860
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0415 sim_p90=0.1195 neg_min(fea/str)=32/32
+[pretrain] epoch=30 samples=6942 batch_size=128 batches=55
+Loss:[1.02002608]
+[pretrain] epoch_time_sec=55.389 sec_per_batch=1.0071
+[pretrain] timing_breakdown_sec forward=52.887 backward=2.469 other=0.032
+Current epoch: 30
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0459 sim_p90=0.1233 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=31 batch=20 size=128 loss=1.053847 mask_ratio=0.053223 tau=0.6000 sim_p90=0.1386 neg_min_fea=32 neg_min_str=32 batch_sec=0.9924
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0479 sim_p90=0.1242 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=31 batch=40 size=128 loss=1.081398 mask_ratio=0.045044 tau=0.6000 sim_p90=0.1253 neg_min_fea=32 neg_min_str=32 batch_sec=0.9820
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0555 sim_p90=0.1448 neg_min(fea/str)=32/32
+[pretrain] epoch=31 samples=6942 batch_size=128 batches=55
+Loss:[1.00850423]
+[pretrain] epoch_time_sec=53.424 sec_per_batch=0.9714
+[pretrain] timing_breakdown_sec forward=50.647 backward=2.759 other=0.018
+Current epoch: 31
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0450 sim_p90=0.1341 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=32 batch=20 size=128 loss=1.045559 mask_ratio=0.041626 tau=0.6000 sim_p90=0.1401 neg_min_fea=32 neg_min_str=32 batch_sec=0.9675
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0461 sim_p90=0.0866 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=32 batch=40 size=128 loss=0.984943 mask_ratio=0.048950 tau=0.6000 sim_p90=0.1168 neg_min_fea=32 neg_min_str=32 batch_sec=0.9646
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0267 sim_p90=0.1088 neg_min(fea/str)=27/27
+[pretrain] epoch=32 samples=6942 batch_size=128 batches=55
+Loss:[0.98134147]
+[pretrain] epoch_time_sec=52.505 sec_per_batch=0.9546
+[pretrain] timing_breakdown_sec forward=50.409 backward=2.069 other=0.027
+Current epoch: 32
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0428 sim_p90=0.1106 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=33 batch=20 size=128 loss=1.026196 mask_ratio=0.042847 tau=0.6000 sim_p90=0.1106 neg_min_fea=32 neg_min_str=32 batch_sec=0.9794
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0531 sim_p90=0.1011 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=33 batch=40 size=128 loss=0.850757 mask_ratio=0.053101 tau=0.6000 sim_p90=0.1011 neg_min_fea=32 neg_min_str=32 batch_sec=0.9740
+[pretrain] epoch=33 samples=6942 batch_size=128 batches=55
+Loss:[0.97488439]
+[pretrain] epoch_time_sec=52.436 sec_per_batch=0.9534
+[pretrain] timing_breakdown_sec forward=50.597 backward=1.821 other=0.018
+Current epoch: 33
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0502 sim_p90=0.1347 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=34 batch=20 size=128 loss=0.895245 mask_ratio=0.055420 tau=0.6000 sim_p90=0.1251 neg_min_fea=32 neg_min_str=32 batch_sec=0.9662
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0487 sim_p90=0.0991 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=34 batch=40 size=128 loss=0.951907 mask_ratio=0.047363 tau=0.6000 sim_p90=0.0934 neg_min_fea=32 neg_min_str=32 batch_sec=0.9623
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0555 sim_p90=0.0873 neg_min(fea/str)=32/32
+[pretrain] epoch=34 samples=6942 batch_size=128 batches=55
+Loss:[0.95830530]
+[pretrain] epoch_time_sec=52.080 sec_per_batch=0.9469
+[pretrain] timing_breakdown_sec forward=50.167 backward=1.887 other=0.027
+Current epoch: 34
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0504 sim_p90=0.1263 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=35 batch=20 size=128 loss=0.963511 mask_ratio=0.039795 tau=0.6000 sim_p90=0.1115 neg_min_fea=32 neg_min_str=32 batch_sec=0.9624
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0592 sim_p90=0.1434 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=35 batch=40 size=128 loss=0.934935 mask_ratio=0.051758 tau=0.6000 sim_p90=0.1181 neg_min_fea=32 neg_min_str=32 batch_sec=0.9771
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0568 sim_p90=0.1231 neg_min(fea/str)=32/32
+[pretrain] epoch=35 samples=6942 batch_size=128 batches=55
+Loss:[0.95709622]
+[pretrain] epoch_time_sec=52.270 sec_per_batch=0.9504
+[pretrain] timing_breakdown_sec forward=50.419 backward=1.833 other=0.018
+Current epoch: 35
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0430 sim_p90=0.1152 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=36 batch=20 size=128 loss=1.024964 mask_ratio=0.041260 tau=0.6000 sim_p90=0.1109 neg_min_fea=32 neg_min_str=32 batch_sec=0.9587
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0500 sim_p90=0.1440 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=36 batch=40 size=128 loss=0.782118 mask_ratio=0.059692 tau=0.6000 sim_p90=0.1047 neg_min_fea=32 neg_min_str=32 batch_sec=0.9627
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0467 sim_p90=0.0781 neg_min(fea/str)=25/25
+[pretrain] epoch=36 samples=6942 batch_size=128 batches=55
+Loss:[0.94300999]
+[pretrain] epoch_time_sec=52.271 sec_per_batch=0.9504
+[pretrain] timing_breakdown_sec forward=50.438 backward=1.808 other=0.026
+Current epoch: 36
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0509 sim_p90=0.1005 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=37 batch=20 size=128 loss=0.867619 mask_ratio=0.050903 tau=0.6000 sim_p90=0.1005 neg_min_fea=32 neg_min_str=32 batch_sec=0.9586
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0485 sim_p90=0.1021 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=37 batch=40 size=128 loss=0.841724 mask_ratio=0.048462 tau=0.6000 sim_p90=0.1021 neg_min_fea=32 neg_min_str=32 batch_sec=0.9628
+[pretrain] epoch=37 samples=6942 batch_size=128 batches=55
+Loss:[0.92438611]
+[pretrain] epoch_time_sec=52.274 sec_per_batch=0.9504
+[pretrain] timing_breakdown_sec forward=50.430 backward=1.826 other=0.018
+Current epoch: 37
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0419 sim_p90=0.1157 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=38 batch=20 size=128 loss=0.918570 mask_ratio=0.042847 tau=0.6000 sim_p90=0.0998 neg_min_fea=32 neg_min_str=32 batch_sec=0.9609
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0409 sim_p90=0.0951 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=38 batch=40 size=128 loss=0.890769 mask_ratio=0.051270 tau=0.6000 sim_p90=0.1440 neg_min_fea=32 neg_min_str=32 batch_sec=0.9481
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0491 sim_p90=0.1088 neg_min(fea/str)=32/32
+[pretrain] epoch=38 samples=6942 batch_size=128 batches=55
+Loss:[0.90584145]
+[pretrain] epoch_time_sec=52.282 sec_per_batch=0.9506
+[pretrain] timing_breakdown_sec forward=50.443 backward=1.812 other=0.026
+Current epoch: 38
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0454 sim_p90=0.1249 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=39 batch=20 size=128 loss=0.867102 mask_ratio=0.047974 tau=0.6000 sim_p90=0.1195 neg_min_fea=32 neg_min_str=32 batch_sec=0.9719
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0419 sim_p90=0.1010 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=39 batch=40 size=128 loss=0.893319 mask_ratio=0.042847 tau=0.6000 sim_p90=0.1005 neg_min_fea=32 neg_min_str=32 batch_sec=0.9655
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0382 sim_p90=0.1128 neg_min(fea/str)=32/32
+[pretrain] epoch=39 samples=6942 batch_size=128 batches=55
+Loss:[0.91071832]
+[pretrain] epoch_time_sec=52.488 sec_per_batch=0.9543
+[pretrain] timing_breakdown_sec forward=50.659 backward=1.811 other=0.018
+Current epoch: 39
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0437 sim_p90=0.0896 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=40 batch=20 size=128 loss=0.930133 mask_ratio=0.037964 tau=0.6000 sim_p90=0.0916 neg_min_fea=32 neg_min_str=32 batch_sec=0.9689
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0408 sim_p90=0.1099 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=40 batch=40 size=128 loss=0.829096 mask_ratio=0.040527 tau=0.6000 sim_p90=0.0975 neg_min_fea=32 neg_min_str=32 batch_sec=0.9617
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0511 sim_p90=0.1168 neg_min(fea/str)=25/25
+[pretrain] epoch=40 samples=6942 batch_size=128 batches=55
+Loss:[0.88692601]
+[pretrain] epoch_time_sec=52.298 sec_per_batch=0.9509
+[pretrain] timing_breakdown_sec forward=50.462 backward=1.810 other=0.026
+Current epoch: 40
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0386 sim_p90=0.1053 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=41 batch=20 size=128 loss=0.922359 mask_ratio=0.038574 tau=0.6000 sim_p90=0.1053 neg_min_fea=32 neg_min_str=32 batch_sec=0.9615
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0507 sim_p90=0.1399 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=41 batch=40 size=128 loss=0.903329 mask_ratio=0.050659 tau=0.6000 sim_p90=0.1399 neg_min_fea=32 neg_min_str=32 batch_sec=0.9663
+[pretrain] epoch=41 samples=6942 batch_size=128 batches=55
+Loss:[0.87439730]
+[pretrain] epoch_time_sec=52.281 sec_per_batch=0.9506
+[pretrain] timing_breakdown_sec forward=50.432 backward=1.831 other=0.018
+Current epoch: 41
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0464 sim_p90=0.1303 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=42 batch=20 size=128 loss=0.935990 mask_ratio=0.043945 tau=0.6000 sim_p90=0.1187 neg_min_fea=32 neg_min_str=32 batch_sec=0.9414
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0477 sim_p90=0.0976 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=42 batch=40 size=128 loss=0.868860 mask_ratio=0.036743 tau=0.6000 sim_p90=0.1244 neg_min_fea=32 neg_min_str=32 batch_sec=0.9798
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0553 sim_p90=0.0837 neg_min(fea/str)=32/32
+[pretrain] epoch=42 samples=6942 batch_size=128 batches=55
+Loss:[0.86387600]
+[pretrain] epoch_time_sec=52.420 sec_per_batch=0.9531
+[pretrain] timing_breakdown_sec forward=50.133 backward=2.259 other=0.028
+Current epoch: 42
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0457 sim_p90=0.1157 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=43 batch=20 size=128 loss=0.713929 mask_ratio=0.047729 tau=0.6000 sim_p90=0.0876 neg_min_fea=32 neg_min_str=32 batch_sec=0.9752
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0372 sim_p90=0.0780 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=43 batch=40 size=128 loss=0.791589 mask_ratio=0.046143 tau=0.6000 sim_p90=0.0972 neg_min_fea=32 neg_min_str=32 batch_sec=0.9851
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0414 sim_p90=0.0894 neg_min(fea/str)=32/32
+[pretrain] epoch=43 samples=6942 batch_size=128 batches=55
+Loss:[0.84276664]
+[pretrain] epoch_time_sec=53.374 sec_per_batch=0.9704
+[pretrain] timing_breakdown_sec forward=50.620 backward=2.736 other=0.019
+Current epoch: 43
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0363 sim_p90=0.1276 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=44 batch=20 size=128 loss=0.854638 mask_ratio=0.040283 tau=0.6000 sim_p90=0.0850 neg_min_fea=32 neg_min_str=32 batch_sec=0.9779
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0533 sim_p90=0.1081 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=44 batch=40 size=128 loss=0.859287 mask_ratio=0.035767 tau=0.6000 sim_p90=0.1163 neg_min_fea=32 neg_min_str=32 batch_sec=0.9521
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0911 sim_p90=0.4953 neg_min(fea/str)=22/22
+[pretrain] epoch=44 samples=6942 batch_size=128 batches=55
+Loss:[0.86122464]
+[pretrain] epoch_time_sec=52.943 sec_per_batch=0.9626
+[pretrain] timing_breakdown_sec forward=50.199 backward=2.716 other=0.028
+Current epoch: 44
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0424 sim_p90=0.0862 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=45 batch=20 size=128 loss=0.788754 mask_ratio=0.042358 tau=0.6000 sim_p90=0.0862 neg_min_fea=32 neg_min_str=32 batch_sec=0.9592
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0439 sim_p90=0.0811 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=45 batch=40 size=128 loss=0.750674 mask_ratio=0.043945 tau=0.6000 sim_p90=0.0811 neg_min_fea=32 neg_min_str=32 batch_sec=0.9785
+[pretrain] epoch=45 samples=6942 batch_size=128 batches=55
+Loss:[0.82202776]
+[pretrain] epoch_time_sec=53.145 sec_per_batch=0.9663
+[pretrain] timing_breakdown_sec forward=50.482 backward=2.645 other=0.019
+Current epoch: 45
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0330 sim_p90=0.1104 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=46 batch=20 size=128 loss=0.907560 mask_ratio=0.033691 tau=0.6000 sim_p90=0.0943 neg_min_fea=32 neg_min_str=32 batch_sec=0.9801
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0428 sim_p90=0.1028 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=46 batch=40 size=128 loss=0.769200 mask_ratio=0.039062 tau=0.6000 sim_p90=0.0826 neg_min_fea=32 neg_min_str=32 batch_sec=0.9893
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0337 sim_p90=0.0981 neg_min(fea/str)=32/32
+[pretrain] epoch=46 samples=6942 batch_size=128 batches=55
+Loss:[0.82047351]
+[pretrain] epoch_time_sec=53.344 sec_per_batch=0.9699
+[pretrain] timing_breakdown_sec forward=50.621 backward=2.696 other=0.028
+Current epoch: 46
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0455 sim_p90=0.0787 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=47 batch=20 size=128 loss=0.848545 mask_ratio=0.039795 tau=0.6000 sim_p90=0.1132 neg_min_fea=32 neg_min_str=32 batch_sec=0.9533
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0372 sim_p90=0.0979 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=47 batch=40 size=128 loss=0.811963 mask_ratio=0.040527 tau=0.6000 sim_p90=0.0853 neg_min_fea=32 neg_min_str=32 batch_sec=0.9393
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0416 sim_p90=0.1060 neg_min(fea/str)=32/32
+[pretrain] epoch=47 samples=6942 batch_size=128 batches=55
+Loss:[0.80632810]
+[pretrain] epoch_time_sec=52.321 sec_per_batch=0.9513
+[pretrain] timing_breakdown_sec forward=49.626 backward=2.676 other=0.020
+Current epoch: 47
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0421 sim_p90=0.0759 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=48 batch=20 size=128 loss=0.812226 mask_ratio=0.036133 tau=0.6000 sim_p90=0.0891 neg_min_fea=32 neg_min_str=32 batch_sec=0.9620
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0326 sim_p90=0.0759 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=48 batch=40 size=128 loss=0.843261 mask_ratio=0.036499 tau=0.6000 sim_p90=0.0930 neg_min_fea=32 neg_min_str=32 batch_sec=0.9646
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0533 sim_p90=0.0903 neg_min(fea/str)=24/24
+[pretrain] epoch=48 samples=6942 batch_size=128 batches=55
+Loss:[0.80212638]
+[pretrain] epoch_time_sec=52.426 sec_per_batch=0.9532
+[pretrain] timing_breakdown_sec forward=49.633 backward=2.765 other=0.028
+Current epoch: 48
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0449 sim_p90=0.0888 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=49 batch=20 size=128 loss=0.727192 mask_ratio=0.044922 tau=0.6000 sim_p90=0.0888 neg_min_fea=32 neg_min_str=32 batch_sec=0.9715
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0349 sim_p90=0.0919 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=49 batch=40 size=128 loss=0.844228 mask_ratio=0.034912 tau=0.6000 sim_p90=0.0919 neg_min_fea=32 neg_min_str=32 batch_sec=0.9443
+[pretrain] epoch=49 samples=6942 batch_size=128 batches=55
+Loss:[0.80559554]
+[pretrain] epoch_time_sec=52.452 sec_per_batch=0.9537
+[pretrain] timing_breakdown_sec forward=49.626 backward=2.807 other=0.019
+Current epoch: 49
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0448 sim_p90=0.1045 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=50 batch=20 size=128 loss=0.847156 mask_ratio=0.036255 tau=0.6000 sim_p90=0.0921 neg_min_fea=32 neg_min_str=32 batch_sec=0.9819
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0405 sim_p90=0.0913 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=50 batch=40 size=128 loss=0.847168 mask_ratio=0.042603 tau=0.6000 sim_p90=0.0987 neg_min_fea=32 neg_min_str=32 batch_sec=0.9752
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0334 sim_p90=0.0732 neg_min(fea/str)=32/32
+[pretrain] epoch=50 samples=6942 batch_size=128 batches=55
+Loss:[0.80116020]
+[pretrain] epoch_time_sec=53.326 sec_per_batch=0.9696
+[pretrain] timing_breakdown_sec forward=50.573 backward=2.726 other=0.028
+Current epoch: 50
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0410 sim_p90=0.0827 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=51 batch=20 size=128 loss=0.817156 mask_ratio=0.033081 tau=0.6000 sim_p90=0.0872 neg_min_fea=32 neg_min_str=32 batch_sec=0.9773
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0381 sim_p90=0.0860 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=51 batch=40 size=128 loss=0.783537 mask_ratio=0.036255 tau=0.6000 sim_p90=0.0889 neg_min_fea=32 neg_min_str=32 batch_sec=0.9712
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0397 sim_p90=0.0869 neg_min(fea/str)=32/32
+[pretrain] epoch=51 samples=6942 batch_size=128 batches=55
+Loss:[0.80139217]
+[pretrain] epoch_time_sec=53.293 sec_per_batch=0.9690
+[pretrain] timing_breakdown_sec forward=50.648 backward=2.627 other=0.019
+Current epoch: 51
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0280 sim_p90=0.1037 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=52 batch=20 size=128 loss=0.895728 mask_ratio=0.027954 tau=0.6000 sim_p90=0.0937 neg_min_fea=32 neg_min_str=32 batch_sec=0.9736
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0358 sim_p90=0.0851 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=52 batch=40 size=128 loss=0.795642 mask_ratio=0.034058 tau=0.6000 sim_p90=0.0829 neg_min_fea=32 neg_min_str=32 batch_sec=0.9497
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0378 sim_p90=0.0990 neg_min(fea/str)=26/26
+[pretrain] epoch=52 samples=6942 batch_size=128 batches=55
+Loss:[0.79517074]
+[pretrain] epoch_time_sec=52.670 sec_per_batch=0.9576
+[pretrain] timing_breakdown_sec forward=50.110 backward=2.533 other=0.027
+Current epoch: 52
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0416 sim_p90=0.0884 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=53 batch=20 size=128 loss=0.765164 mask_ratio=0.041626 tau=0.6000 sim_p90=0.0884 neg_min_fea=32 neg_min_str=32 batch_sec=0.9732
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0393 sim_p90=0.0907 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=53 batch=40 size=128 loss=0.787461 mask_ratio=0.039307 tau=0.6000 sim_p90=0.0907 neg_min_fea=32 neg_min_str=32 batch_sec=0.9893
+[pretrain] epoch=53 samples=6942 batch_size=128 batches=55
+Loss:[0.76738954]
+[pretrain] epoch_time_sec=53.301 sec_per_batch=0.9691
+[pretrain] timing_breakdown_sec forward=50.563 backward=2.720 other=0.018
+Current epoch: 53
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0405 sim_p90=0.0759 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=54 batch=20 size=128 loss=0.809524 mask_ratio=0.039917 tau=0.6000 sim_p90=0.1106 neg_min_fea=32 neg_min_str=32 batch_sec=0.9873
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0363 sim_p90=0.1059 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=54 batch=40 size=128 loss=0.780108 mask_ratio=0.035034 tau=0.6000 sim_p90=0.0840 neg_min_fea=32 neg_min_str=32 batch_sec=0.9744
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0359 sim_p90=0.0846 neg_min(fea/str)=32/32
+[pretrain] epoch=54 samples=6942 batch_size=128 batches=55
+Loss:[0.78398087]
+[pretrain] epoch_time_sec=53.266 sec_per_batch=0.9685
+[pretrain] timing_breakdown_sec forward=50.525 backward=2.713 other=0.028
+Current epoch: 54
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0298 sim_p90=0.0750 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=55 batch=20 size=128 loss=0.724520 mask_ratio=0.046509 tau=0.6000 sim_p90=0.0828 neg_min_fea=32 neg_min_str=32 batch_sec=0.9623
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0337 sim_p90=0.0804 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=55 batch=40 size=128 loss=0.798095 mask_ratio=0.033691 tau=0.6000 sim_p90=0.0910 neg_min_fea=32 neg_min_str=32 batch_sec=0.9625
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0439 sim_p90=0.0780 neg_min(fea/str)=32/32
+[pretrain] epoch=55 samples=6942 batch_size=128 batches=55
+Loss:[0.77173876]
+[pretrain] epoch_time_sec=52.246 sec_per_batch=0.9499
+[pretrain] timing_breakdown_sec forward=49.486 backward=2.741 other=0.019
+Current epoch: 55
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0376 sim_p90=0.0850 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=56 batch=20 size=128 loss=0.836429 mask_ratio=0.024780 tau=0.6000 sim_p90=0.0809 neg_min_fea=32 neg_min_str=32 batch_sec=0.9765
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0359 sim_p90=0.0840 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=56 batch=40 size=128 loss=0.826395 mask_ratio=0.031738 tau=0.6000 sim_p90=0.0908 neg_min_fea=32 neg_min_str=32 batch_sec=0.9703
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0267 sim_p90=0.0925 neg_min(fea/str)=27/27
+[pretrain] epoch=56 samples=6942 batch_size=128 batches=55
+Loss:[0.76381859]
+[pretrain] epoch_time_sec=53.105 sec_per_batch=0.9655
+[pretrain] timing_breakdown_sec forward=50.462 backward=2.616 other=0.028
+Current epoch: 56
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0309 sim_p90=0.0738 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=57 batch=20 size=128 loss=0.721011 mask_ratio=0.030884 tau=0.6000 sim_p90=0.0738 neg_min_fea=32 neg_min_str=32 batch_sec=0.9848
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0299 sim_p90=0.0771 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=57 batch=40 size=128 loss=0.751565 mask_ratio=0.029907 tau=0.6000 sim_p90=0.0771 neg_min_fea=32 neg_min_str=32 batch_sec=0.9757
+[pretrain] epoch=57 samples=6942 batch_size=128 batches=55
+Loss:[0.74678365]
+[pretrain] epoch_time_sec=53.029 sec_per_batch=0.9642
+[pretrain] timing_breakdown_sec forward=50.525 backward=2.485 other=0.019
+Current epoch: 57
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0255 sim_p90=0.0805 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=58 batch=20 size=128 loss=0.763835 mask_ratio=0.028076 tau=0.6000 sim_p90=0.0883 neg_min_fea=32 neg_min_str=32 batch_sec=0.9901
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0337 sim_p90=0.0899 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=58 batch=40 size=128 loss=0.687328 mask_ratio=0.037231 tau=0.6000 sim_p90=0.0805 neg_min_fea=32 neg_min_str=32 batch_sec=0.9542
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0413 sim_p90=0.0823 neg_min(fea/str)=32/32
+[pretrain] epoch=58 samples=6942 batch_size=128 batches=55
+Loss:[0.76252253]
+[pretrain] epoch_time_sec=53.026 sec_per_batch=0.9641
+[pretrain] timing_breakdown_sec forward=50.516 backward=2.483 other=0.027
+Current epoch: 58
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0391 sim_p90=0.0849 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=59 batch=20 size=128 loss=0.803058 mask_ratio=0.029419 tau=0.6000 sim_p90=0.0834 neg_min_fea=32 neg_min_str=32 batch_sec=0.9930
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0463 sim_p90=0.0900 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=59 batch=40 size=128 loss=0.646472 mask_ratio=0.054443 tau=0.6000 sim_p90=0.0821 neg_min_fea=32 neg_min_str=32 batch_sec=0.9810
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0387 sim_p90=0.0875 neg_min(fea/str)=32/32
+[pretrain] epoch=59 samples=6942 batch_size=128 batches=55
+Loss:[0.75282051]
+[pretrain] epoch_time_sec=53.331 sec_per_batch=0.9697
+[pretrain] timing_breakdown_sec forward=50.613 backward=2.700 other=0.019
+Current epoch: 59
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0291 sim_p90=0.0737 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=60 batch=20 size=128 loss=0.714414 mask_ratio=0.049927 tau=0.6000 sim_p90=0.0806 neg_min_fea=32 neg_min_str=32 batch_sec=0.9885
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0253 sim_p90=0.0641 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=60 batch=40 size=128 loss=0.727923 mask_ratio=0.035278 tau=0.6000 sim_p90=0.0813 neg_min_fea=32 neg_min_str=32 batch_sec=0.9715
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0533 sim_p90=0.0818 neg_min(fea/str)=24/24
+[pretrain] epoch=60 samples=6942 batch_size=128 batches=55
+Loss:[0.74541702]
+[pretrain] epoch_time_sec=53.065 sec_per_batch=0.9648
+[pretrain] timing_breakdown_sec forward=50.546 backward=2.492 other=0.027
+Current epoch: 60
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0372 sim_p90=0.0706 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=61 batch=20 size=128 loss=0.697915 mask_ratio=0.037231 tau=0.6000 sim_p90=0.0706 neg_min_fea=32 neg_min_str=32 batch_sec=0.9884
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0364 sim_p90=0.0730 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=61 batch=40 size=128 loss=0.713733 mask_ratio=0.036377 tau=0.6000 sim_p90=0.0730 neg_min_fea=32 neg_min_str=32 batch_sec=0.9728
+[pretrain] epoch=61 samples=6942 batch_size=128 batches=55
+Loss:[0.73169299]
+[pretrain] epoch_time_sec=53.285 sec_per_batch=0.9688
+[pretrain] timing_breakdown_sec forward=50.569 backward=2.698 other=0.018
+Current epoch: 61
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0370 sim_p90=0.0747 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=62 batch=20 size=128 loss=0.715645 mask_ratio=0.035522 tau=0.6000 sim_p90=0.0694 neg_min_fea=32 neg_min_str=32 batch_sec=0.9933
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0352 sim_p90=0.0751 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=62 batch=40 size=128 loss=0.736028 mask_ratio=0.036377 tau=0.6000 sim_p90=0.0794 neg_min_fea=32 neg_min_str=32 batch_sec=0.9803
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0320 sim_p90=0.0682 neg_min(fea/str)=32/32
+[pretrain] epoch=62 samples=6942 batch_size=128 batches=55
+Loss:[0.72340300]
+[pretrain] epoch_time_sec=53.394 sec_per_batch=0.9708
+[pretrain] timing_breakdown_sec forward=50.667 backward=2.699 other=0.028
+Current epoch: 62
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0485 sim_p90=0.0855 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=63 batch=20 size=128 loss=0.670829 mask_ratio=0.054321 tau=0.6000 sim_p90=0.0822 neg_min_fea=32 neg_min_str=32 batch_sec=0.9911
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0414 sim_p90=0.0831 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=63 batch=40 size=128 loss=0.699622 mask_ratio=0.044067 tau=0.6000 sim_p90=0.0879 neg_min_fea=32 neg_min_str=32 batch_sec=0.9633
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0409 sim_p90=0.0936 neg_min(fea/str)=32/32
+[pretrain] epoch=63 samples=6942 batch_size=128 batches=55
+Loss:[0.73461802]
+[pretrain] epoch_time_sec=53.150 sec_per_batch=0.9664
+[pretrain] timing_breakdown_sec forward=50.615 backward=2.507 other=0.028
+Current epoch: 63
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0327 sim_p90=0.0630 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=64 batch=20 size=128 loss=0.662111 mask_ratio=0.039307 tau=0.6000 sim_p90=0.0670 neg_min_fea=32 neg_min_str=32 batch_sec=0.9621
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0341 sim_p90=0.0779 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=64 batch=40 size=128 loss=0.798794 mask_ratio=0.034302 tau=0.6000 sim_p90=0.0738 neg_min_fea=32 neg_min_str=32 batch_sec=0.9789
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0289 sim_p90=0.0778 neg_min(fea/str)=26/26
+[pretrain] epoch=64 samples=6942 batch_size=128 batches=55
+Loss:[0.71896891]
+[pretrain] epoch_time_sec=53.062 sec_per_batch=0.9648
+[pretrain] timing_breakdown_sec forward=50.412 backward=2.623 other=0.027
+Current epoch: 64
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0339 sim_p90=0.0864 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=65 batch=20 size=128 loss=0.767627 mask_ratio=0.033936 tau=0.6000 sim_p90=0.0864 neg_min_fea=32 neg_min_str=32 batch_sec=0.9545
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0417 sim_p90=0.0685 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=65 batch=40 size=128 loss=0.705591 mask_ratio=0.041748 tau=0.6000 sim_p90=0.0685 neg_min_fea=32 neg_min_str=32 batch_sec=0.9918
+[pretrain] epoch=65 samples=6942 batch_size=128 batches=55
+Loss:[0.71208834]
+[pretrain] epoch_time_sec=52.576 sec_per_batch=0.9559
+[pretrain] timing_breakdown_sec forward=50.133 backward=2.424 other=0.019
+Current epoch: 65
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0344 sim_p90=0.0787 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=66 batch=20 size=128 loss=0.707903 mask_ratio=0.032959 tau=0.6000 sim_p90=0.0723 neg_min_fea=32 neg_min_str=32 batch_sec=0.9804
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0345 sim_p90=0.0750 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=66 batch=40 size=128 loss=0.854165 mask_ratio=0.027222 tau=0.6000 sim_p90=0.0894 neg_min_fea=32 neg_min_str=32 batch_sec=0.9755
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0380 sim_p90=0.0645 neg_min(fea/str)=32/32
+[pretrain] epoch=66 samples=6942 batch_size=128 batches=55
+Loss:[0.71418244]
+[pretrain] epoch_time_sec=52.793 sec_per_batch=0.9599
+[pretrain] timing_breakdown_sec forward=50.148 backward=2.618 other=0.027
+Current epoch: 66
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0360 sim_p90=0.0661 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=67 batch=20 size=128 loss=0.684362 mask_ratio=0.043091 tau=0.6000 sim_p90=0.0727 neg_min_fea=32 neg_min_str=32 batch_sec=0.9540
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0466 sim_p90=0.0759 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=67 batch=40 size=128 loss=0.664041 mask_ratio=0.039307 tau=0.6000 sim_p90=0.0656 neg_min_fea=32 neg_min_str=32 batch_sec=0.9729
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0441 sim_p90=0.0753 neg_min(fea/str)=32/32
+[pretrain] epoch=67 samples=6942 batch_size=128 batches=55
+Loss:[0.71035207]
+[pretrain] epoch_time_sec=52.053 sec_per_batch=0.9464
+[pretrain] timing_breakdown_sec forward=49.612 backward=2.413 other=0.027
+Current epoch: 67
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0365 sim_p90=0.0782 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=68 batch=20 size=128 loss=0.739468 mask_ratio=0.033936 tau=0.6000 sim_p90=0.0737 neg_min_fea=32 neg_min_str=32 batch_sec=0.8510
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0441 sim_p90=0.0767 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=68 batch=40 size=128 loss=0.718500 mask_ratio=0.041870 tau=0.6000 sim_p90=0.0704 neg_min_fea=32 neg_min_str=32 batch_sec=0.8553
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0200 sim_p90=0.0911 neg_min(fea/str)=26/26
+[pretrain] epoch=68 samples=6942 batch_size=128 batches=55
+Loss:[0.71181745]
+[pretrain] epoch_time_sec=46.674 sec_per_batch=0.8486
+[pretrain] timing_breakdown_sec forward=43.914 backward=2.737 other=0.023
+Current epoch: 68
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0391 sim_p90=0.0796 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=69 batch=20 size=128 loss=0.706612 mask_ratio=0.039062 tau=0.6000 sim_p90=0.0796 neg_min_fea=32 neg_min_str=32 batch_sec=0.8240
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0343 sim_p90=0.0706 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=69 batch=40 size=128 loss=0.736853 mask_ratio=0.034302 tau=0.6000 sim_p90=0.0706 neg_min_fea=32 neg_min_str=32 batch_sec=0.8153
+[pretrain] epoch=69 samples=6942 batch_size=128 batches=55
+Loss:[0.68789777]
+[pretrain] epoch_time_sec=45.505 sec_per_batch=0.8274
+[pretrain] timing_breakdown_sec forward=42.559 backward=2.910 other=0.036
+Current epoch: 69
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0421 sim_p90=0.0672 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=70 batch=20 size=128 loss=0.683958 mask_ratio=0.042603 tau=0.6000 sim_p90=0.0721 neg_min_fea=32 neg_min_str=32 batch_sec=0.7456
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0408 sim_p90=0.0620 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=70 batch=40 size=128 loss=0.741586 mask_ratio=0.033936 tau=0.6000 sim_p90=0.0730 neg_min_fea=32 neg_min_str=32 batch_sec=0.7925
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0322 sim_p90=0.0581 neg_min(fea/str)=32/32
+[pretrain] epoch=70 samples=6942 batch_size=128 batches=55
+Loss:[0.68084431]
+[pretrain] epoch_time_sec=46.514 sec_per_batch=0.8457
+[pretrain] timing_breakdown_sec forward=43.216 backward=3.258 other=0.041
+Current epoch: 70
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0326 sim_p90=0.0832 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=71 batch=20 size=128 loss=0.671482 mask_ratio=0.039917 tau=0.6000 sim_p90=0.0722 neg_min_fea=32 neg_min_str=32 batch_sec=0.8521
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0355 sim_p90=0.0645 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=71 batch=40 size=128 loss=0.659395 mask_ratio=0.031982 tau=0.6000 sim_p90=0.0666 neg_min_fea=32 neg_min_str=32 batch_sec=0.6542
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0260 sim_p90=0.0673 neg_min(fea/str)=32/32
+[pretrain] epoch=71 samples=6942 batch_size=128 batches=55
+Loss:[0.68543217]
+[pretrain] epoch_time_sec=42.695 sec_per_batch=0.7763
+[pretrain] timing_breakdown_sec forward=39.380 backward=3.289 other=0.025
+Current epoch: 71
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0502 sim_p90=0.0766 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=72 batch=20 size=128 loss=0.724661 mask_ratio=0.030029 tau=0.6000 sim_p90=0.0644 neg_min_fea=32 neg_min_str=32 batch_sec=0.6722
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0323 sim_p90=0.0584 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=72 batch=40 size=128 loss=0.725650 mask_ratio=0.029297 tau=0.6000 sim_p90=0.0697 neg_min_fea=32 neg_min_str=32 batch_sec=0.7868
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0200 sim_p90=0.0453 neg_min(fea/str)=27/27
+[pretrain] epoch=72 samples=6942 batch_size=128 batches=55
+Loss:[0.68482440]
+[pretrain] epoch_time_sec=39.798 sec_per_batch=0.7236
+[pretrain] timing_breakdown_sec forward=37.474 backward=2.291 other=0.033
+Current epoch: 72
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0353 sim_p90=0.0638 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=73 batch=20 size=128 loss=0.657880 mask_ratio=0.035278 tau=0.6000 sim_p90=0.0638 neg_min_fea=32 neg_min_str=32 batch_sec=0.7743
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0402 sim_p90=0.0909 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=73 batch=40 size=128 loss=0.689666 mask_ratio=0.040161 tau=0.6000 sim_p90=0.0909 neg_min_fea=32 neg_min_str=32 batch_sec=0.8382
+[pretrain] epoch=73 samples=6942 batch_size=128 batches=55
+Loss:[0.68113425]
+[pretrain] epoch_time_sec=43.556 sec_per_batch=0.7919
+[pretrain] timing_breakdown_sec forward=41.087 backward=2.441 other=0.028
+Current epoch: 73
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0358 sim_p90=0.0753 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=74 batch=20 size=128 loss=0.723609 mask_ratio=0.031616 tau=0.6000 sim_p90=0.0684 neg_min_fea=32 neg_min_str=32 batch_sec=0.8453
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0306 sim_p90=0.0728 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=74 batch=40 size=128 loss=0.683998 mask_ratio=0.032715 tau=0.6000 sim_p90=0.0712 neg_min_fea=32 neg_min_str=32 batch_sec=0.8281
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0426 sim_p90=0.0820 neg_min(fea/str)=32/32
+[pretrain] epoch=74 samples=6942 batch_size=128 batches=55
+Loss:[0.68742040]
+[pretrain] epoch_time_sec=44.964 sec_per_batch=0.8175
+[pretrain] timing_breakdown_sec forward=42.416 backward=2.528 other=0.019
+Current epoch: 74
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0349 sim_p90=0.0699 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=75 batch=20 size=128 loss=0.654881 mask_ratio=0.047729 tau=0.6000 sim_p90=0.0698 neg_min_fea=32 neg_min_str=32 batch_sec=0.8341
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0294 sim_p90=0.0764 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=75 batch=40 size=128 loss=0.697556 mask_ratio=0.031372 tau=0.6000 sim_p90=0.0550 neg_min_fea=32 neg_min_str=32 batch_sec=0.8225
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0416 sim_p90=0.0620 neg_min(fea/str)=32/32
+[pretrain] epoch=75 samples=6942 batch_size=128 batches=55
+Loss:[0.68654183]
+[pretrain] epoch_time_sec=45.074 sec_per_batch=0.8195
+[pretrain] timing_breakdown_sec forward=42.322 backward=2.723 other=0.029
+Current epoch: 75
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0337 sim_p90=0.0709 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=76 batch=20 size=128 loss=0.729477 mask_ratio=0.023193 tau=0.6000 sim_p90=0.0652 neg_min_fea=32 neg_min_str=32 batch_sec=0.8272
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0345 sim_p90=0.0616 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=76 batch=40 size=128 loss=0.585981 mask_ratio=0.040894 tau=0.6000 sim_p90=0.0509 neg_min_fea=32 neg_min_str=32 batch_sec=0.8303
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0311 sim_p90=0.0891 neg_min(fea/str)=25/25
+[pretrain] epoch=76 samples=6942 batch_size=128 batches=55
+Loss:[0.67641531]
+[pretrain] epoch_time_sec=45.032 sec_per_batch=0.8188
+[pretrain] timing_breakdown_sec forward=42.438 backward=2.566 other=0.028
+Current epoch: 76
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0322 sim_p90=0.0585 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=77 batch=20 size=128 loss=0.667074 mask_ratio=0.032227 tau=0.6000 sim_p90=0.0585 neg_min_fea=32 neg_min_str=32 batch_sec=0.8115
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0375 sim_p90=0.0651 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=77 batch=40 size=128 loss=0.670201 mask_ratio=0.037476 tau=0.6000 sim_p90=0.0651 neg_min_fea=32 neg_min_str=32 batch_sec=0.8219
+[pretrain] epoch=77 samples=6942 batch_size=128 batches=55
+Loss:[0.68320442]
+[pretrain] epoch_time_sec=44.963 sec_per_batch=0.8175
+[pretrain] timing_breakdown_sec forward=42.235 backward=2.709 other=0.019
+Current epoch: 77
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0286 sim_p90=0.0750 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=78 batch=20 size=128 loss=0.637000 mask_ratio=0.033203 tau=0.6000 sim_p90=0.0602 neg_min_fea=32 neg_min_str=32 batch_sec=0.8151
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0385 sim_p90=0.0673 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=78 batch=40 size=128 loss=0.656033 mask_ratio=0.044556 tau=0.6000 sim_p90=0.0700 neg_min_fea=32 neg_min_str=32 batch_sec=0.8461
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0347 sim_p90=0.0819 neg_min(fea/str)=32/32
+[pretrain] epoch=78 samples=6942 batch_size=128 batches=55
+Loss:[0.68980827]
+[pretrain] epoch_time_sec=44.380 sec_per_batch=0.8069
+[pretrain] timing_breakdown_sec forward=41.737 backward=2.612 other=0.031
+Current epoch: 78
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0338 sim_p90=0.0579 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=79 batch=20 size=128 loss=0.689398 mask_ratio=0.037720 tau=0.6000 sim_p90=0.0737 neg_min_fea=32 neg_min_str=32 batch_sec=0.8374
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0330 sim_p90=0.0685 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=79 batch=40 size=128 loss=0.704123 mask_ratio=0.034180 tau=0.6000 sim_p90=0.0708 neg_min_fea=32 neg_min_str=32 batch_sec=0.8207
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0408 sim_p90=0.0774 neg_min(fea/str)=32/32
+[pretrain] epoch=79 samples=6942 batch_size=128 batches=55
+Loss:[0.68333371]
+[pretrain] epoch_time_sec=45.113 sec_per_batch=0.8202
+[pretrain] timing_breakdown_sec forward=42.403 backward=2.681 other=0.029
+Current epoch: 79
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0261 sim_p90=0.0799 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=80 batch=20 size=128 loss=0.663251 mask_ratio=0.036743 tau=0.6000 sim_p90=0.0582 neg_min_fea=32 neg_min_str=32 batch_sec=0.7009
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0259 sim_p90=0.0716 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=80 batch=40 size=128 loss=0.645145 mask_ratio=0.038208 tau=0.6000 sim_p90=0.0646 neg_min_fea=32 neg_min_str=32 batch_sec=0.6888
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0156 sim_p90=0.0594 neg_min(fea/str)=27/27
+[pretrain] epoch=80 samples=6942 batch_size=128 batches=55
+Loss:[0.69703348]
+[pretrain] epoch_time_sec=38.154 sec_per_batch=0.6937
+[pretrain] timing_breakdown_sec forward=35.484 backward=2.651 other=0.020
+Current epoch: 80
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0356 sim_p90=0.0706 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=81 batch=20 size=128 loss=0.698955 mask_ratio=0.035645 tau=0.6000 sim_p90=0.0706 neg_min_fea=32 neg_min_str=32 batch_sec=0.6818
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0454 sim_p90=0.0698 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=81 batch=40 size=128 loss=0.640925 mask_ratio=0.045410 tau=0.6000 sim_p90=0.0698 neg_min_fea=32 neg_min_str=32 batch_sec=0.6896
+[pretrain] epoch=81 samples=6942 batch_size=128 batches=55
+Loss:[0.69143900]
+[pretrain] epoch_time_sec=37.729 sec_per_batch=0.6860
+[pretrain] timing_breakdown_sec forward=35.115 backward=2.580 other=0.034
+Current epoch: 81
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0281 sim_p90=0.0539 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=82 batch=20 size=128 loss=0.619827 mask_ratio=0.040405 tau=0.6000 sim_p90=0.0563 neg_min_fea=32 neg_min_str=32 batch_sec=0.6827
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0326 sim_p90=0.0544 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=82 batch=40 size=128 loss=0.700616 mask_ratio=0.027222 tau=0.6000 sim_p90=0.0595 neg_min_fea=32 neg_min_str=32 batch_sec=0.7074
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0320 sim_p90=0.0627 neg_min(fea/str)=32/32
+[pretrain] epoch=82 samples=6942 batch_size=128 batches=55
+Loss:[0.67111645]
+[pretrain] epoch_time_sec=37.864 sec_per_batch=0.6884
+[pretrain] timing_breakdown_sec forward=35.128 backward=2.707 other=0.028
+Current epoch: 82
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0420 sim_p90=0.0699 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=83 batch=20 size=128 loss=0.669341 mask_ratio=0.039307 tau=0.6000 sim_p90=0.0831 neg_min_fea=32 neg_min_str=32 batch_sec=0.7008
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0282 sim_p90=0.0784 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=83 batch=40 size=128 loss=0.682663 mask_ratio=0.035522 tau=0.6000 sim_p90=0.0671 neg_min_fea=32 neg_min_str=32 batch_sec=0.6940
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0212 sim_p90=0.0685 neg_min(fea/str)=32/32
+[pretrain] epoch=83 samples=6942 batch_size=128 batches=55
+Loss:[0.68081336]
+[pretrain] epoch_time_sec=37.651 sec_per_batch=0.6846
+[pretrain] timing_breakdown_sec forward=34.930 backward=2.703 other=0.019
+Current epoch: 83
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0416 sim_p90=0.0616 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=84 batch=20 size=128 loss=0.712050 mask_ratio=0.021240 tau=0.6000 sim_p90=0.0584 neg_min_fea=32 neg_min_str=32 batch_sec=0.6940
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0251 sim_p90=0.0715 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=84 batch=40 size=128 loss=0.713863 mask_ratio=0.034058 tau=0.6000 sim_p90=0.0744 neg_min_fea=32 neg_min_str=32 batch_sec=0.6915
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0289 sim_p90=0.0612 neg_min(fea/str)=27/27
+[pretrain] epoch=84 samples=6942 batch_size=128 batches=55
+Loss:[0.67149030]
+[pretrain] epoch_time_sec=37.905 sec_per_batch=0.6892
+[pretrain] timing_breakdown_sec forward=35.178 backward=2.699 other=0.028
+Current epoch: 84
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0382 sim_p90=0.0752 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=85 batch=20 size=128 loss=0.665447 mask_ratio=0.038208 tau=0.6000 sim_p90=0.0752 neg_min_fea=32 neg_min_str=32 batch_sec=0.6836
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0288 sim_p90=0.0667 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=85 batch=40 size=128 loss=0.664865 mask_ratio=0.028809 tau=0.6000 sim_p90=0.0667 neg_min_fea=32 neg_min_str=32 batch_sec=0.6974
+[pretrain] epoch=85 samples=6942 batch_size=128 batches=55
+Loss:[0.67331765]
+[pretrain] epoch_time_sec=37.501 sec_per_batch=0.6818
+[pretrain] timing_breakdown_sec forward=34.767 backward=2.705 other=0.028
+Current epoch: 85
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0299 sim_p90=0.0633 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=86 batch=20 size=128 loss=0.675884 mask_ratio=0.026245 tau=0.6000 sim_p90=0.0669 neg_min_fea=32 neg_min_str=32 batch_sec=0.6806
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0312 sim_p90=0.0624 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=86 batch=40 size=128 loss=0.683302 mask_ratio=0.024414 tau=0.6000 sim_p90=0.0620 neg_min_fea=32 neg_min_str=32 batch_sec=0.7089
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0265 sim_p90=0.0694 neg_min(fea/str)=32/32
+[pretrain] epoch=86 samples=6942 batch_size=128 batches=55
+Loss:[0.65972766]
+[pretrain] epoch_time_sec=37.472 sec_per_batch=0.6813
+[pretrain] timing_breakdown_sec forward=34.742 backward=2.711 other=0.019
+Current epoch: 86
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0414 sim_p90=0.0677 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=87 batch=20 size=128 loss=0.700332 mask_ratio=0.026855 tau=0.6000 sim_p90=0.0609 neg_min_fea=32 neg_min_str=32 batch_sec=0.6889
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0221 sim_p90=0.0593 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=87 batch=40 size=128 loss=0.716081 mask_ratio=0.021118 tau=0.6000 sim_p90=0.0700 neg_min_fea=32 neg_min_str=32 batch_sec=0.6704
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0265 sim_p90=0.0577 neg_min(fea/str)=32/32
+[pretrain] epoch=87 samples=6942 batch_size=128 batches=55
+Loss:[0.66336902]
+[pretrain] epoch_time_sec=37.353 sec_per_batch=0.6791
+[pretrain] timing_breakdown_sec forward=34.829 backward=2.496 other=0.028
+Current epoch: 87
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0377 sim_p90=0.0657 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=88 batch=20 size=128 loss=0.663059 mask_ratio=0.037354 tau=0.6000 sim_p90=0.0611 neg_min_fea=32 neg_min_str=32 batch_sec=0.6970
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0492 sim_p90=0.0697 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=88 batch=40 size=128 loss=0.688792 mask_ratio=0.035034 tau=0.6000 sim_p90=0.0822 neg_min_fea=32 neg_min_str=32 batch_sec=0.6845
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0511 sim_p90=0.0690 neg_min(fea/str)=24/24
+[pretrain] epoch=88 samples=6942 batch_size=128 batches=55
+Loss:[0.66978855]
+[pretrain] epoch_time_sec=37.792 sec_per_batch=0.6871
+[pretrain] timing_breakdown_sec forward=35.050 backward=2.713 other=0.028
+Current epoch: 88
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0256 sim_p90=0.0664 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=89 batch=20 size=128 loss=0.685284 mask_ratio=0.025635 tau=0.6000 sim_p90=0.0664 neg_min_fea=32 neg_min_str=32 batch_sec=0.7048
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0328 sim_p90=0.0606 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=89 batch=40 size=128 loss=0.649024 mask_ratio=0.032837 tau=0.6000 sim_p90=0.0606 neg_min_fea=32 neg_min_str=32 batch_sec=0.6918
+[pretrain] epoch=89 samples=6942 batch_size=128 batches=55
+Loss:[0.66175808]
+[pretrain] epoch_time_sec=37.556 sec_per_batch=0.6828
+[pretrain] timing_breakdown_sec forward=34.823 backward=2.713 other=0.019
+Current epoch: 89
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0381 sim_p90=0.0638 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=90 batch=20 size=128 loss=0.653666 mask_ratio=0.025757 tau=0.6000 sim_p90=0.0692 neg_min_fea=32 neg_min_str=32 batch_sec=0.6908
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0294 sim_p90=0.0655 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=90 batch=40 size=128 loss=0.648716 mask_ratio=0.024170 tau=0.6000 sim_p90=0.0630 neg_min_fea=32 neg_min_str=32 batch_sec=0.6935
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0519 sim_p90=0.0695 neg_min(fea/str)=32/32
+[pretrain] epoch=90 samples=6942 batch_size=128 batches=55
+Loss:[0.64959094]
+[pretrain] epoch_time_sec=37.694 sec_per_batch=0.6853
+[pretrain] timing_breakdown_sec forward=34.989 backward=2.676 other=0.028
+Current epoch: 90
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0363 sim_p90=0.0735 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=91 batch=20 size=128 loss=0.690879 mask_ratio=0.023682 tau=0.6000 sim_p90=0.0623 neg_min_fea=32 neg_min_str=32 batch_sec=0.6940
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0310 sim_p90=0.0566 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=91 batch=40 size=128 loss=0.668850 mask_ratio=0.030884 tau=0.6000 sim_p90=0.0616 neg_min_fea=32 neg_min_str=32 batch_sec=0.7097
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0253 sim_p90=0.0599 neg_min(fea/str)=32/32
+[pretrain] epoch=91 samples=6942 batch_size=128 batches=55
+Loss:[0.65164762]
+[pretrain] epoch_time_sec=37.948 sec_per_batch=0.6900
+[pretrain] timing_breakdown_sec forward=35.251 backward=2.669 other=0.028
+Current epoch: 91
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0297 sim_p90=0.0497 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=92 batch=20 size=128 loss=0.641690 mask_ratio=0.037109 tau=0.6000 sim_p90=0.0648 neg_min_fea=32 neg_min_str=32 batch_sec=0.6883
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0298 sim_p90=0.0728 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=92 batch=40 size=128 loss=0.658283 mask_ratio=0.029175 tau=0.6000 sim_p90=0.0574 neg_min_fea=32 neg_min_str=32 batch_sec=0.6738
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0289 sim_p90=0.0316 neg_min(fea/str)=26/26
+[pretrain] epoch=92 samples=6942 batch_size=128 batches=55
+Loss:[0.64656314]
+[pretrain] epoch_time_sec=37.145 sec_per_batch=0.6754
+[pretrain] timing_breakdown_sec forward=34.381 backward=2.744 other=0.020
+Current epoch: 92
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0284 sim_p90=0.0592 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=93 batch=20 size=128 loss=0.687192 mask_ratio=0.028442 tau=0.6000 sim_p90=0.0592 neg_min_fea=32 neg_min_str=32 batch_sec=0.7004
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0254 sim_p90=0.0578 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=93 batch=40 size=128 loss=0.663676 mask_ratio=0.025391 tau=0.6000 sim_p90=0.0578 neg_min_fea=32 neg_min_str=32 batch_sec=0.6696
+[pretrain] epoch=93 samples=6942 batch_size=128 batches=55
+Loss:[0.64991509]
+[pretrain] epoch_time_sec=36.953 sec_per_batch=0.6719
+[pretrain] timing_breakdown_sec forward=34.148 backward=2.773 other=0.031
+Current epoch: 93
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0333 sim_p90=0.0544 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=94 batch=20 size=128 loss=0.627534 mask_ratio=0.037109 tau=0.6000 sim_p90=0.0708 neg_min_fea=32 neg_min_str=32 batch_sec=0.6720
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0242 sim_p90=0.0628 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=94 batch=40 size=128 loss=0.653745 mask_ratio=0.025269 tau=0.6000 sim_p90=0.0576 neg_min_fea=32 neg_min_str=32 batch_sec=0.6820
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0336 sim_p90=0.0440 neg_min(fea/str)=32/32
+[pretrain] epoch=94 samples=6942 batch_size=128 batches=55
+Loss:[0.64368370]
+[pretrain] epoch_time_sec=37.340 sec_per_batch=0.6789
+[pretrain] timing_breakdown_sec forward=34.607 backward=2.704 other=0.029
+Current epoch: 94
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0298 sim_p90=0.0640 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=95 batch=20 size=128 loss=0.595636 mask_ratio=0.034546 tau=0.6000 sim_p90=0.0542 neg_min_fea=32 neg_min_str=32 batch_sec=0.7052
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0195 sim_p90=0.0608 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=95 batch=40 size=128 loss=0.604360 mask_ratio=0.036377 tau=0.6000 sim_p90=0.0590 neg_min_fea=32 neg_min_str=32 batch_sec=0.6764
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0494 sim_p90=0.0590 neg_min(fea/str)=32/32
+[pretrain] epoch=95 samples=6942 batch_size=128 batches=55
+Loss:[0.64371269]
+[pretrain] epoch_time_sec=37.455 sec_per_batch=0.6810
+[pretrain] timing_breakdown_sec forward=35.020 backward=2.415 other=0.019
+Current epoch: 95
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0369 sim_p90=0.0637 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=96 batch=20 size=128 loss=0.670071 mask_ratio=0.025879 tau=0.6000 sim_p90=0.0573 neg_min_fea=32 neg_min_str=32 batch_sec=0.6991
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0237 sim_p90=0.0704 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=96 batch=40 size=128 loss=0.632749 mask_ratio=0.044556 tau=0.6000 sim_p90=0.0730 neg_min_fea=32 neg_min_str=32 batch_sec=0.6776
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0533 sim_p90=0.0439 neg_min(fea/str)=25/25
+[pretrain] epoch=96 samples=6942 batch_size=128 batches=55
+Loss:[0.65161253]
+[pretrain] epoch_time_sec=37.801 sec_per_batch=0.6873
+[pretrain] timing_breakdown_sec forward=35.172 backward=2.587 other=0.043
+Current epoch: 96
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0405 sim_p90=0.0601 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=97 batch=20 size=128 loss=0.593834 mask_ratio=0.040527 tau=0.6000 sim_p90=0.0601 neg_min_fea=32 neg_min_str=32 batch_sec=0.6918
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0331 sim_p90=0.0798 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=97 batch=40 size=128 loss=0.671892 mask_ratio=0.033081 tau=0.6000 sim_p90=0.0798 neg_min_fea=32 neg_min_str=32 batch_sec=0.6829
+[pretrain] epoch=97 samples=6942 batch_size=128 batches=55
+Loss:[0.63411873]
+[pretrain] epoch_time_sec=37.186 sec_per_batch=0.6761
+[pretrain] timing_breakdown_sec forward=34.948 backward=2.196 other=0.042
+Current epoch: 97
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0256 sim_p90=0.0617 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=98 batch=20 size=128 loss=0.625717 mask_ratio=0.030518 tau=0.6000 sim_p90=0.0548 neg_min_fea=32 neg_min_str=32 batch_sec=0.6945
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0267 sim_p90=0.0566 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=98 batch=40 size=128 loss=0.615952 mask_ratio=0.036377 tau=0.6000 sim_p90=0.0588 neg_min_fea=32 neg_min_str=32 batch_sec=0.7125
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0261 sim_p90=0.0644 neg_min(fea/str)=32/32
+[pretrain] epoch=98 samples=6942 batch_size=128 batches=55
+Loss:[0.64380368]
+[pretrain] epoch_time_sec=37.830 sec_per_batch=0.6878
+[pretrain] timing_breakdown_sec forward=35.184 backward=2.625 other=0.020
+Current epoch: 98
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0299 sim_p90=0.0579 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=99 batch=20 size=128 loss=0.557075 mask_ratio=0.040527 tau=0.6000 sim_p90=0.0539 neg_min_fea=32 neg_min_str=32 batch_sec=0.6925
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0295 sim_p90=0.0596 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=99 batch=40 size=128 loss=0.686461 mask_ratio=0.025024 tau=0.6000 sim_p90=0.0572 neg_min_fea=32 neg_min_str=32 batch_sec=0.6936
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0231 sim_p90=0.0627 neg_min(fea/str)=32/32
+[pretrain] epoch=99 samples=6942 batch_size=128 batches=55
+Loss:[0.64051642]
+[pretrain] epoch_time_sec=37.191 sec_per_batch=0.6762
+[pretrain] timing_breakdown_sec forward=34.555 backward=2.593 other=0.044
+Current epoch: 99
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0369 sim_p90=0.0556 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=100 batch=20 size=128 loss=0.671997 mask_ratio=0.021240 tau=0.6000 sim_p90=0.0661 neg_min_fea=32 neg_min_str=32 batch_sec=0.6888
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0330 sim_p90=0.0674 neg_min(fea/str)=32/32
+[pretrain][batch] epoch=100 batch=40 size=128 loss=0.623963 mask_ratio=0.040649 tau=0.6000 sim_p90=0.0633 neg_min_fea=32 neg_min_str=32 batch_sec=0.6651
+[egraphcl] mask/loss stats tau=0.6000 mask_ratio=0.0178 sim_p90=0.0710 neg_min(fea/str)=27/27
+[pretrain] epoch=100 samples=6942 batch_size=128 batches=55
+Loss:[0.64075732]
+[pretrain] epoch_time_sec=36.537 sec_per_batch=0.6643
+[pretrain] timing_breakdown_sec forward=34.122 backward=2.372 other=0.043
+Current epoch: 100
+Best epoch: 97, Best loss: 0.63411873
+##################################################
+PreTrain datasets are  ['Citeseer', 'Pubmed']
+Downastream dataset is  Cora
+Cora()
+DataBatch(x=[2708, 1433], edge_index=[2, 10556], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], batch=[2708], ptr=[2])
+process done
+0.303006321139597
+nb_classes 7
+loading model from /home/ustc1958/lxy/graph/1/SAMGPT0413/checkpoints/model_node_EGRAPHCL__Citeseer_Pubmed_1.0_1.0_all_all_50_256_0.001_gcn_ctx_s2_0.30_s3.pkl
+----------------------------------------------------------------------------------------------------
+shotnum 1
+  0%|          | 0/100 [00:00<?, ?it/s]  1%|          | 1/100 [00:19<32:04, 19.44s/it]  2%|▏         | 2/100 [00:38<31:42, 19.41s/it]  3%|▎         | 3/100 [00:58<31:18, 19.37s/it]  4%|▍         | 4/100 [01:17<30:56, 19.34s/it]  5%|▌         | 5/100 [01:36<30:41, 19.39s/it]  6%|▌         | 6/100 [01:56<30:31, 19.48s/it]  7%|▋         | 7/100 [02:16<30:18, 19.56s/it]  8%|▊         | 8/100 [02:36<30:07, 19.65s/it]  9%|▉         | 9/100 [02:56<30:21, 20.01s/it] 10%|█         | 10/100 [03:17<30:22, 20.25s/it] 11%|█         | 11/100 [03:38<30:15, 20.40s/it] 12%|█▏        | 12/100 [03:59<30:05, 20.52s/it] 13%|█▎        | 13/100 [04:20<29:50, 20.59s/it] 14%|█▍        | 14/100 [04:40<29:35, 20.65s/it] 15%|█▌        | 15/100 [05:01<29:18, 20.69s/it] 16%|█▌        | 16/100 [05:22<29:00, 20.72s/it] 17%|█▋        | 17/100 [05:43<28:39, 20.72s/it] 18%|█▊        | 18/100 [06:03<28:21, 20.75s/it] 19%|█▉        | 19/100 [06:24<28:00, 20.75s/it] 20%|██        | 20/100 [06:45<27:40, 20.76s/it] 21%|██        | 21/100 [07:06<27:20, 20.76s/it] 22%|██▏       | 22/100 [07:26<26:57, 20.74s/it] 23%|██▎       | 23/100 [07:47<26:36, 20.73s/it] 24%|██▍       | 24/100 [08:08<26:14, 20.72s/it] 25%|██▌       | 25/100 [08:29<25:54, 20.73s/it] 26%|██▌       | 26/100 [08:49<25:35, 20.75s/it] 27%|██▋       | 27/100 [09:10<25:14, 20.75s/it] 28%|██▊       | 28/100 [09:31<24:54, 20.75s/it] 29%|██▉       | 29/100 [09:52<24:34, 20.77s/it] 30%|███       | 30/100 [10:13<24:16, 20.80s/it] 31%|███       | 31/100 [10:33<23:55, 20.80s/it] 32%|███▏      | 32/100 [10:54<23:33, 20.79s/it] 33%|███▎      | 33/100 [11:15<23:12, 20.78s/it] 34%|███▍      | 34/100 [11:36<22:50, 20.77s/it] 35%|███▌      | 35/100 [11:56<22:31, 20.79s/it] 36%|███▌      | 36/100 [12:17<22:11, 20.80s/it] 37%|███▋      | 37/100 [12:38<21:50, 20.81s/it] 38%|███▊      | 38/100 [12:59<21:29, 20.81s/it] 39%|███▉      | 39/100 [13:20<21:09, 20.81s/it] 40%|████      | 40/100 [13:40<20:47, 20.80s/it] 41%|████      | 41/100 [14:01<20:25, 20.77s/it] 42%|████▏     | 42/100 [14:22<20:05, 20.78s/it] 43%|████▎     | 43/100 [14:43<19:42, 20.75s/it] 44%|████▍     | 44/100 [15:03<19:22, 20.77s/it] 45%|████▌     | 45/100 [15:24<19:01, 20.75s/it] 46%|████▌     | 46/100 [15:45<18:39, 20.73s/it] 47%|████▋     | 47/100 [16:06<18:18, 20.73s/it] 48%|████▊     | 48/100 [16:26<17:57, 20.72s/it] 49%|████▉     | 49/100 [16:47<17:36, 20.71s/it] 50%|█████     | 50/100 [17:08<17:15, 20.71s/it] 51%|█████     | 51/100 [17:28<16:54, 20.71s/it] 52%|█████▏    | 52/100 [17:49<16:34, 20.71s/it] 53%|█████▎    | 53/100 [18:10<16:15, 20.74s/it] 54%|█████▍    | 54/100 [18:31<15:55, 20.76s/it] 55%|█████▌    | 55/100 [18:51<15:34, 20.76s/it] 56%|█████▌    | 56/100 [19:12<15:13, 20.77s/it] 57%|█████▋    | 57/100 [19:33<14:51, 20.74s/it] 58%|█████▊    | 58/100 [19:54<14:31, 20.75s/it] 59%|█████▉    | 59/100 [20:14<14:10, 20.75s/it] 60%|██████    | 60/100 [20:35<13:50, 20.77s/it] 61%|██████    | 61/100 [20:56<13:30, 20.78s/it] 62%|██████▏   | 62/100 [21:17<13:10, 20.79s/it] 63%|██████▎   | 63/100 [21:38<12:49, 20.80s/it] 64%|██████▍   | 64/100 [21:59<12:28, 20.80s/it] 65%|██████▌   | 65/100 [22:19<12:07, 20.79s/it] 66%|██████▌   | 66/100 [22:40<11:46, 20.78s/it] 67%|██████▋   | 67/100 [23:01<11:25, 20.76s/it] 68%|██████▊   | 68/100 [23:22<11:05, 20.79s/it] 69%|██████▉   | 69/100 [23:42<10:45, 20.81s/it] 70%|███████   | 70/100 [24:03<10:24, 20.83s/it] 71%|███████   | 71/100 [24:24<10:04, 20.85s/it] 72%|███████▏  | 72/100 [24:45<09:43, 20.84s/it] 73%|███████▎  | 73/100 [25:06<09:22, 20.82s/it] 74%|███████▍  | 74/100 [25:27<09:00, 20.80s/it] 75%|███████▌  | 75/100 [25:47<08:39, 20.79s/it] 76%|███████▌  | 76/100 [26:08<08:18, 20.79s/it] 77%|███████▋  | 77/100 [26:29<07:58, 20.79s/it] 78%|███████▊  | 78/100 [26:50<07:37, 20.79s/it] 79%|███████▉  | 79/100 [27:11<07:16, 20.79s/it] 80%|████████  | 80/100 [27:31<06:55, 20.79s/it] 81%|████████  | 81/100 [27:52<06:35, 20.80s/it] 82%|████████▏ | 82/100 [28:13<06:14, 20.80s/it] 83%|████████▎ | 83/100 [28:34<05:53, 20.80s/it] 84%|████████▍ | 84/100 [28:55<05:32, 20.81s/it] 85%|████████▌ | 85/100 [29:15<05:11, 20.79s/it] 86%|████████▌ | 86/100 [29:36<04:51, 20.80s/it] 87%|████████▋ | 87/100 [29:57<04:30, 20.80s/it] 88%|████████▊ | 88/100 [30:18<04:09, 20.81s/it] 89%|████████▉ | 89/100 [30:39<03:48, 20.81s/it] 90%|█████████ | 90/100 [30:59<03:28, 20.81s/it] 91%|█████████ | 91/100 [31:20<03:07, 20.82s/it] 92%|█████████▏| 92/100 [31:41<02:46, 20.82s/it] 93%|█████████▎| 93/100 [32:02<02:25, 20.82s/it] 94%|█████████▍| 94/100 [32:23<02:04, 20.81s/it] 95%|█████████▌| 95/100 [32:43<01:43, 20.80s/it] 96%|█████████▌| 96/100 [33:04<01:23, 20.78s/it] 97%|█████████▋| 97/100 [33:25<01:02, 20.78s/it] 98%|█████████▊| 98/100 [33:46<00:41, 20.79s/it] 99%|█████████▉| 99/100 [34:07<00:20, 20.80s/it]100%|██████████| 100/100 [34:27<00:00, 20.79s/it]100%|██████████| 100/100 [34:27<00:00, 20.68s/it]
+----------------------------------------------------------------------------------------------------
+Average accuracy:[0.2311]
+Mean:[23.1100]
+Std :[8.5350]
+----------------------------------------------------------------------------------------------------

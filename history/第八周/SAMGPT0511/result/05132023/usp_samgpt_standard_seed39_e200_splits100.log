@@ -1,0 +1,209 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, device='cuda', pretrain_method='USP', source_domains=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], target_domain='Cora', shots=[1], subgraph_hop=2, readout='prompt_weighted', query_mode='subgraph', prototype='attention', negative_sampling='domain_balanced', intra_neg_ratio=0.5, num_negatives=32, usp_lambda_ns=1.0, usp_lambda_ss=1.0, usp_lambda_align=1.0, usp_temperature=0.2, use_structure_token=True, usp_epochs=200, usp_down_epochs=200, usp_eval_protocol='samgpt_standard', epochs=10000, num_splits=100, split_start=0, align_type='none', structure_bucket='mixed', sanity_calibration=False, sanity_version='v2', sanity_epochs=[1, 10, 50], formal_batch1=False, query_objective_ablation=False, formal_seeds=[0, 1, 2], formal_epoch=50, overwrite_sanity_table=False, label_shuffle_seeds=[0, 1, 2], aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=1, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=128, layers_num=2, backbone='gcn', original_pretrain_method='USP')
+----------------------------------------------------------------------------------------------------
+2864524
+CUDA Available: True
+gpu: 0
+USP epoch 1/200 loss=45.296013 L_ns=1.510287 L_ss=7.297621
+USP epoch 2/200 loss=47.089943 L_ns=1.831039 L_ss=7.543150
+USP epoch 3/200 loss=46.770931 L_ns=1.834689 L_ss=7.489373
+USP epoch 4/200 loss=46.428715 L_ns=1.827207 L_ss=7.433585
+USP epoch 5/200 loss=46.114086 L_ns=1.816044 L_ss=7.383008
+USP epoch 6/200 loss=45.901031 L_ns=1.802173 L_ss=7.349810
+USP epoch 7/200 loss=45.639446 L_ns=1.788053 L_ss=7.308565
+USP epoch 8/200 loss=45.404110 L_ns=1.776844 L_ss=7.271211
+USP epoch 9/200 loss=45.209442 L_ns=1.766625 L_ss=7.240470
+USP epoch 10/200 loss=45.008232 L_ns=1.755767 L_ss=7.208744
+USP epoch 11/200 loss=44.805935 L_ns=1.742797 L_ss=7.177190
+USP epoch 12/200 loss=44.661118 L_ns=1.733092 L_ss=7.154671
+USP epoch 13/200 loss=44.473942 L_ns=1.722026 L_ss=7.125319
+USP epoch 14/200 loss=44.278969 L_ns=1.713150 L_ss=7.094303
+USP epoch 15/200 loss=44.131588 L_ns=1.704894 L_ss=7.071115
+USP epoch 16/200 loss=43.958252 L_ns=1.695732 L_ss=7.043753
+USP epoch 17/200 loss=43.806759 L_ns=1.685892 L_ss=7.020145
+USP epoch 18/200 loss=43.640987 L_ns=1.675973 L_ss=6.994169
+USP epoch 19/200 loss=43.515644 L_ns=1.665113 L_ss=6.975089
+USP epoch 20/200 loss=43.395199 L_ns=1.654590 L_ss=6.956768
+USP epoch 21/200 loss=43.235085 L_ns=1.644774 L_ss=6.931718
+USP epoch 22/200 loss=43.116600 L_ns=1.631657 L_ss=6.914158
+USP epoch 23/200 loss=42.946526 L_ns=1.621305 L_ss=6.887537
+USP epoch 24/200 loss=42.812923 L_ns=1.610110 L_ss=6.867135
+USP epoch 25/200 loss=42.706451 L_ns=1.597158 L_ss=6.851549
+USP epoch 26/200 loss=42.572636 L_ns=1.584011 L_ss=6.831437
+USP epoch 27/200 loss=42.425350 L_ns=1.570133 L_ss=6.809203
+USP epoch 28/200 loss=42.276333 L_ns=1.553719 L_ss=6.787102
+USP epoch 29/200 loss=42.103565 L_ns=1.536231 L_ss=6.761222
+USP epoch 30/200 loss=41.955570 L_ns=1.517777 L_ss=6.739633
+USP epoch 31/200 loss=41.789669 L_ns=1.499103 L_ss=6.715094
+USP epoch 32/200 loss=41.596069 L_ns=1.476633 L_ss=6.686573
+USP epoch 33/200 loss=41.377548 L_ns=1.449863 L_ss=6.654614
+USP epoch 34/200 loss=41.168854 L_ns=1.425046 L_ss=6.623968
+USP epoch 35/200 loss=40.903278 L_ns=1.396481 L_ss=6.584467
+USP epoch 36/200 loss=40.644138 L_ns=1.366127 L_ss=6.546335
+USP epoch 37/200 loss=40.348194 L_ns=1.340304 L_ss=6.501314
+USP epoch 38/200 loss=40.071587 L_ns=1.314537 L_ss=6.459508
+USP epoch 39/200 loss=39.796188 L_ns=1.287537 L_ss=6.418108
+USP epoch 40/200 loss=39.509216 L_ns=1.269345 L_ss=6.373312
+USP epoch 41/200 loss=39.212292 L_ns=1.249650 L_ss=6.327107
+USP epoch 42/200 loss=38.911633 L_ns=1.235120 L_ss=6.279419
+USP epoch 43/200 loss=38.759792 L_ns=1.224739 L_ss=6.255842
+USP epoch 44/200 loss=38.553070 L_ns=1.213385 L_ss=6.223280
+USP epoch 45/200 loss=38.381218 L_ns=1.209435 L_ss=6.195298
+USP epoch 46/200 loss=38.268822 L_ns=1.200070 L_ss=6.178125
+USP epoch 47/200 loss=38.156994 L_ns=1.194342 L_ss=6.160442
+USP epoch 48/200 loss=38.071083 L_ns=1.184087 L_ss=6.147833
+USP epoch 49/200 loss=37.939022 L_ns=1.179522 L_ss=6.126583
+USP epoch 50/200 loss=37.823284 L_ns=1.175607 L_ss=6.107946
+USP epoch 51/200 loss=37.656631 L_ns=1.167818 L_ss=6.081470
+USP epoch 52/200 loss=37.570709 L_ns=1.159229 L_ss=6.068580
+USP epoch 53/200 loss=37.442192 L_ns=1.155928 L_ss=6.047711
+USP epoch 54/200 loss=37.292332 L_ns=1.149818 L_ss=6.023752
+USP epoch 55/200 loss=37.228130 L_ns=1.145023 L_ss=6.013851
+USP epoch 56/200 loss=37.161045 L_ns=1.136817 L_ss=6.004038
+USP epoch 57/200 loss=37.056622 L_ns=1.129640 L_ss=5.987831
+USP epoch 58/200 loss=36.999386 L_ns=1.125810 L_ss=5.978930
+USP epoch 59/200 loss=36.935032 L_ns=1.118762 L_ss=5.969378
+USP epoch 60/200 loss=36.819881 L_ns=1.116708 L_ss=5.950529
+USP epoch 61/200 loss=36.806206 L_ns=1.111940 L_ss=5.949044
+USP epoch 62/200 loss=36.732895 L_ns=1.111227 L_ss=5.936944
+USP epoch 63/200 loss=36.672600 L_ns=1.107904 L_ss=5.927449
+USP epoch 64/200 loss=36.557796 L_ns=1.103503 L_ss=5.909049
+USP epoch 65/200 loss=36.546623 L_ns=1.098423 L_ss=5.908034
+USP epoch 66/200 loss=36.418156 L_ns=1.097721 L_ss=5.886740
+USP epoch 67/200 loss=36.398304 L_ns=1.094705 L_ss=5.883933
+USP epoch 68/200 loss=36.337090 L_ns=1.092313 L_ss=5.874130
+USP epoch 69/200 loss=36.294590 L_ns=1.091219 L_ss=5.867227
+USP epoch 70/200 loss=36.249878 L_ns=1.086784 L_ss=5.860516
+USP epoch 71/200 loss=36.202015 L_ns=1.085533 L_ss=5.852747
+USP epoch 72/200 loss=36.177971 L_ns=1.082347 L_ss=5.849270
+USP epoch 73/200 loss=36.132755 L_ns=1.080767 L_ss=5.841998
+USP epoch 74/200 loss=36.047005 L_ns=1.080217 L_ss=5.827797
+USP epoch 75/200 loss=36.054207 L_ns=1.083448 L_ss=5.828460
+USP epoch 76/200 loss=35.965668 L_ns=1.083372 L_ss=5.813716
+USP epoch 77/200 loss=35.893265 L_ns=1.079632 L_ss=5.802272
+USP epoch 78/200 loss=35.958286 L_ns=1.076315 L_ss=5.813661
+USP epoch 79/200 loss=35.867916 L_ns=1.077121 L_ss=5.798466
+USP epoch 80/200 loss=35.779049 L_ns=1.078910 L_ss=5.783356
+USP epoch 81/200 loss=35.799194 L_ns=1.080344 L_ss=5.786475
+USP epoch 82/200 loss=35.753197 L_ns=1.077793 L_ss=5.779234
+USP epoch 83/200 loss=35.765858 L_ns=1.073228 L_ss=5.782105
+USP epoch 84/200 loss=35.747303 L_ns=1.073302 L_ss=5.779000
+USP epoch 85/200 loss=35.640522 L_ns=1.069540 L_ss=5.761831
+USP epoch 86/200 loss=35.660408 L_ns=1.071714 L_ss=5.764783
+USP epoch 87/200 loss=35.621777 L_ns=1.072946 L_ss=5.758139
+USP epoch 88/200 loss=35.528740 L_ns=1.072376 L_ss=5.742727
+USP epoch 89/200 loss=35.522854 L_ns=1.070683 L_ss=5.742029
+USP epoch 90/200 loss=35.518452 L_ns=1.069851 L_ss=5.741434
+USP epoch 91/200 loss=35.534458 L_ns=1.069293 L_ss=5.744194
+USP epoch 92/200 loss=35.464764 L_ns=1.070404 L_ss=5.732393
+USP epoch 93/200 loss=35.486107 L_ns=1.067441 L_ss=5.736444
+USP epoch 94/200 loss=35.415619 L_ns=1.068364 L_ss=5.724543
+USP epoch 95/200 loss=35.435108 L_ns=1.070776 L_ss=5.727389
+USP epoch 96/200 loss=35.384495 L_ns=1.068310 L_ss=5.719364
+USP epoch 97/200 loss=35.425945 L_ns=1.066801 L_ss=5.726524
+USP epoch 98/200 loss=35.349827 L_ns=1.067227 L_ss=5.713767
+USP epoch 99/200 loss=35.337791 L_ns=1.069445 L_ss=5.711391
+USP epoch 100/200 loss=35.282486 L_ns=1.068678 L_ss=5.702301
+USP epoch 101/200 loss=35.310913 L_ns=1.069440 L_ss=5.706912
+USP epoch 102/200 loss=35.297470 L_ns=1.068210 L_ss=5.704877
+USP epoch 103/200 loss=35.256908 L_ns=1.067280 L_ss=5.698272
+USP epoch 104/200 loss=35.241497 L_ns=1.066806 L_ss=5.695782
+USP epoch 105/200 loss=35.191174 L_ns=1.062188 L_ss=5.688165
+USP epoch 106/200 loss=35.208984 L_ns=1.066271 L_ss=5.690452
+USP epoch 107/200 loss=35.187641 L_ns=1.066283 L_ss=5.686892
+USP epoch 108/200 loss=35.184372 L_ns=1.068811 L_ss=5.685927
+USP epoch 109/200 loss=35.126915 L_ns=1.070669 L_ss=5.676041
+USP epoch 110/200 loss=35.151649 L_ns=1.072296 L_ss=5.679892
+USP epoch 111/200 loss=35.084473 L_ns=1.069481 L_ss=5.669165
+USP epoch 112/200 loss=35.060463 L_ns=1.066736 L_ss=5.665621
+USP epoch 113/200 loss=35.042732 L_ns=1.065301 L_ss=5.662905
+USP epoch 114/200 loss=35.018265 L_ns=1.069440 L_ss=5.658138
+USP epoch 115/200 loss=34.990654 L_ns=1.068448 L_ss=5.653702
+USP epoch 116/200 loss=34.989471 L_ns=1.071070 L_ss=5.653067
+USP epoch 117/200 loss=35.017807 L_ns=1.068016 L_ss=5.658299
+USP epoch 118/200 loss=34.995510 L_ns=1.067431 L_ss=5.654680
+USP epoch 119/200 loss=34.944710 L_ns=1.064879 L_ss=5.646638
+USP epoch 120/200 loss=34.939728 L_ns=1.064560 L_ss=5.645861
+USP epoch 121/200 loss=34.925900 L_ns=1.068246 L_ss=5.642942
+USP epoch 122/200 loss=34.959229 L_ns=1.069847 L_ss=5.648230
+USP epoch 123/200 loss=34.861332 L_ns=1.069613 L_ss=5.631953
+USP epoch 124/200 loss=34.885815 L_ns=1.070781 L_ss=5.635838
+USP epoch 125/200 loss=34.897728 L_ns=1.069936 L_ss=5.637966
+USP epoch 126/200 loss=34.848431 L_ns=1.069301 L_ss=5.629855
+USP epoch 127/200 loss=34.828934 L_ns=1.068645 L_ss=5.626715
+USP epoch 128/200 loss=34.816502 L_ns=1.069553 L_ss=5.624491
+USP epoch 129/200 loss=34.822674 L_ns=1.071200 L_ss=5.625245
+USP epoch 130/200 loss=34.830353 L_ns=1.072142 L_ss=5.626369
+USP epoch 131/200 loss=34.794781 L_ns=1.070106 L_ss=5.620779
+USP epoch 132/200 loss=34.778484 L_ns=1.069490 L_ss=5.618166
+USP epoch 133/200 loss=34.745411 L_ns=1.069455 L_ss=5.612659
+USP epoch 134/200 loss=34.783829 L_ns=1.070350 L_ss=5.618913
+USP epoch 135/200 loss=34.770481 L_ns=1.072421 L_ss=5.616343
+USP epoch 136/200 loss=34.732567 L_ns=1.071366 L_ss=5.610200
+USP epoch 137/200 loss=34.686657 L_ns=1.071157 L_ss=5.602583
+USP epoch 138/200 loss=34.721684 L_ns=1.071343 L_ss=5.608390
+USP epoch 139/200 loss=34.737526 L_ns=1.070828 L_ss=5.611116
+USP epoch 140/200 loss=34.660133 L_ns=1.070805 L_ss=5.598222
+USP epoch 141/200 loss=34.687134 L_ns=1.073156 L_ss=5.602330
+USP epoch 142/200 loss=34.690941 L_ns=1.074111 L_ss=5.602805
+USP epoch 143/200 loss=34.645985 L_ns=1.073699 L_ss=5.595381
+USP epoch 144/200 loss=34.625214 L_ns=1.074102 L_ss=5.591852
+USP epoch 145/200 loss=34.670662 L_ns=1.070629 L_ss=5.600005
+USP epoch 146/200 loss=34.627254 L_ns=1.069020 L_ss=5.593039
+USP epoch 147/200 loss=34.625065 L_ns=1.071482 L_ss=5.592264
+USP epoch 148/200 loss=34.662170 L_ns=1.072680 L_ss=5.598248
+USP epoch 149/200 loss=34.532970 L_ns=1.073292 L_ss=5.576614
+USP epoch 150/200 loss=34.599297 L_ns=1.073836 L_ss=5.587576
+USP epoch 151/200 loss=34.530437 L_ns=1.071000 L_ss=5.576573
+USP epoch 152/200 loss=34.547691 L_ns=1.072392 L_ss=5.579217
+USP epoch 153/200 loss=34.564438 L_ns=1.075395 L_ss=5.581507
+USP epoch 154/200 loss=34.500748 L_ns=1.074678 L_ss=5.571012
+USP epoch 155/200 loss=34.545685 L_ns=1.073754 L_ss=5.578656
+USP epoch 156/200 loss=34.494293 L_ns=1.073193 L_ss=5.570183
+USP epoch 157/200 loss=34.498493 L_ns=1.074083 L_ss=5.570735
+USP epoch 158/200 loss=34.462761 L_ns=1.070241 L_ss=5.565420
+USP epoch 159/200 loss=34.470757 L_ns=1.073216 L_ss=5.566257
+USP epoch 160/200 loss=34.485710 L_ns=1.075672 L_ss=5.568340
+USP epoch 161/200 loss=34.451454 L_ns=1.074210 L_ss=5.562874
+USP epoch 162/200 loss=34.424450 L_ns=1.073743 L_ss=5.558451
+USP epoch 163/200 loss=34.451012 L_ns=1.073423 L_ss=5.562932
+USP epoch 164/200 loss=34.412495 L_ns=1.073789 L_ss=5.556451
+USP epoch 165/200 loss=34.408798 L_ns=1.075896 L_ss=5.555484
+USP epoch 166/200 loss=34.393246 L_ns=1.078369 L_ss=5.552479
+USP epoch 167/200 loss=34.392780 L_ns=1.078115 L_ss=5.552444
+USP epoch 168/200 loss=34.439079 L_ns=1.077093 L_ss=5.560331
+USP epoch 169/200 loss=34.395920 L_ns=1.074488 L_ss=5.553572
+USP epoch 170/200 loss=34.444492 L_ns=1.073155 L_ss=5.561890
+USP epoch 171/200 loss=34.388882 L_ns=1.073231 L_ss=5.552608
+USP epoch 172/200 loss=34.379513 L_ns=1.074847 L_ss=5.550778
+USP epoch 173/200 loss=34.373852 L_ns=1.077338 L_ss=5.549419
+USP epoch 174/200 loss=34.382198 L_ns=1.079898 L_ss=5.550383
+USP epoch 175/200 loss=34.370888 L_ns=1.079795 L_ss=5.548515
+USP epoch 176/200 loss=34.369595 L_ns=1.076656 L_ss=5.548823
+USP epoch 177/200 loss=34.363014 L_ns=1.074678 L_ss=5.548056
+USP epoch 178/200 loss=34.322041 L_ns=1.077503 L_ss=5.540756
+USP epoch 179/200 loss=34.318275 L_ns=1.079182 L_ss=5.539849
+USP epoch 180/200 loss=34.315914 L_ns=1.077518 L_ss=5.539733
+USP epoch 181/200 loss=34.360439 L_ns=1.077091 L_ss=5.547225
+USP epoch 182/200 loss=34.362877 L_ns=1.080286 L_ss=5.547099
+USP epoch 183/200 loss=34.316311 L_ns=1.082057 L_ss=5.539042
+USP epoch 184/200 loss=34.296780 L_ns=1.079273 L_ss=5.536251
+USP epoch 185/200 loss=34.296280 L_ns=1.077277 L_ss=5.536500
+USP epoch 186/200 loss=34.292454 L_ns=1.076026 L_ss=5.536071
+USP epoch 187/200 loss=34.301796 L_ns=1.075505 L_ss=5.537715
+USP epoch 188/200 loss=34.244053 L_ns=1.078427 L_ss=5.527605
+USP epoch 189/200 loss=34.250248 L_ns=1.081095 L_ss=5.528192
+USP epoch 190/200 loss=34.234711 L_ns=1.079708 L_ss=5.525834
+USP epoch 191/200 loss=34.297188 L_ns=1.080588 L_ss=5.536100
+USP epoch 192/200 loss=34.243359 L_ns=1.078429 L_ss=5.527488
+USP epoch 193/200 loss=34.250893 L_ns=1.079507 L_ss=5.528564
+USP epoch 194/200 loss=34.254971 L_ns=1.080929 L_ss=5.529007
+USP epoch 195/200 loss=34.260994 L_ns=1.081605 L_ss=5.529898
+USP epoch 196/200 loss=34.263126 L_ns=1.080620 L_ss=5.530418
+USP epoch 197/200 loss=34.154663 L_ns=1.078648 L_ss=5.512669
+USP epoch 198/200 loss=34.176540 L_ns=1.080812 L_ss=5.515955
+USP epoch 199/200 loss=34.238079 L_ns=1.078616 L_ss=5.526577
+USP epoch 200/200 loss=34.165142 L_ns=1.076477 L_ss=5.514778
+USP SAMGPT-standard 1-shot:   0%|          | 0/100 [00:00<?, ?it/s]USP SAMGPT-standard 1-shot:   1%|          | 1/100 [00:00<01:03,  1.56it/s]USP SAMGPT-standard 1-shot:   2%|▏         | 2/100 [00:01<01:06,  1.48it/s]USP SAMGPT-standard 1-shot:   3%|▎         | 3/100 [00:01<01:03,  1.52it/s]USP SAMGPT-standard 1-shot:   4%|▍         | 4/100 [00:02<01:03,  1.51it/s]USP SAMGPT-standard 1-shot:   5%|▌         | 5/100 [00:03<01:03,  1.50it/s]USP SAMGPT-standard 1-shot:   6%|▌         | 6/100 [00:03<01:02,  1.50it/s]USP SAMGPT-standard 1-shot:   7%|▋         | 7/100 [00:04<01:02,  1.50it/s]USP SAMGPT-standard 1-shot:   8%|▊         | 8/100 [00:05<01:01,  1.49it/s]USP SAMGPT-standard 1-shot:   9%|▉         | 9/100 [00:05<00:58,  1.56it/s]USP SAMGPT-standard 1-shot:  10%|█         | 10/100 [00:06<00:54,  1.66it/s]USP SAMGPT-standard 1-shot:  11%|█         | 11/100 [00:06<00:51,  1.73it/s]USP SAMGPT-standard 1-shot:  12%|█▏        | 12/100 [00:07<00:49,  1.79it/s]USP SAMGPT-standard 1-shot:  13%|█▎        | 13/100 [00:07<00:47,  1.83it/s]USP SAMGPT-standard 1-shot:  14%|█▍        | 14/100 [00:08<00:46,  1.86it/s]USP SAMGPT-standard 1-shot:  15%|█▌        | 15/100 [00:09<00:45,  1.88it/s]USP SAMGPT-standard 1-shot:  16%|█▌        | 16/100 [00:09<00:44,  1.90it/s]USP SAMGPT-standard 1-shot:  17%|█▋        | 17/100 [00:10<00:43,  1.91it/s]USP SAMGPT-standard 1-shot:  18%|█▊        | 18/100 [00:10<00:41,  1.99it/s]USP SAMGPT-standard 1-shot:  19%|█▉        | 19/100 [00:11<00:40,  1.99it/s]USP SAMGPT-standard 1-shot:  20%|██        | 20/100 [00:11<00:39,  2.04it/s]USP SAMGPT-standard 1-shot:  21%|██        | 21/100 [00:11<00:38,  2.05it/s]USP SAMGPT-standard 1-shot:  22%|██▏       | 22/100 [00:12<00:37,  2.06it/s]USP SAMGPT-standard 1-shot:  23%|██▎       | 23/100 [00:12<00:37,  2.08it/s]USP SAMGPT-standard 1-shot:  24%|██▍       | 24/100 [00:13<00:36,  2.06it/s]USP SAMGPT-standard 1-shot:  25%|██▌       | 25/100 [00:13<00:35,  2.10it/s]USP SAMGPT-standard 1-shot:  26%|██▌       | 26/100 [00:14<00:36,  2.05it/s]USP SAMGPT-standard 1-shot:  27%|██▋       | 27/100 [00:14<00:34,  2.11it/s]USP SAMGPT-standard 1-shot:  28%|██▊       | 28/100 [00:15<00:35,  2.05it/s]USP SAMGPT-standard 1-shot:  29%|██▉       | 29/100 [00:15<00:33,  2.12it/s]USP SAMGPT-standard 1-shot:  30%|███       | 30/100 [00:16<00:33,  2.07it/s]USP SAMGPT-standard 1-shot:  31%|███       | 31/100 [00:16<00:32,  2.13it/s]USP SAMGPT-standard 1-shot:  32%|███▏      | 32/100 [00:17<00:32,  2.07it/s]USP SAMGPT-standard 1-shot:  33%|███▎      | 33/100 [00:17<00:31,  2.15it/s]USP SAMGPT-standard 1-shot:  34%|███▍      | 34/100 [00:18<00:31,  2.08it/s]USP SAMGPT-standard 1-shot:  35%|███▌      | 35/100 [00:18<00:30,  2.15it/s]USP SAMGPT-standard 1-shot:  36%|███▌      | 36/100 [00:19<00:30,  2.08it/s]USP SAMGPT-standard 1-shot:  37%|███▋      | 37/100 [00:19<00:29,  2.14it/s]USP SAMGPT-standard 1-shot:  38%|███▊      | 38/100 [00:20<00:29,  2.07it/s]USP SAMGPT-standard 1-shot:  39%|███▉      | 39/100 [00:20<00:28,  2.12it/s]USP SAMGPT-standard 1-shot:  40%|████      | 40/100 [00:21<00:28,  2.07it/s]USP SAMGPT-standard 1-shot:  41%|████      | 41/100 [00:21<00:28,  2.09it/s]USP SAMGPT-standard 1-shot:  42%|████▏     | 42/100 [00:21<00:27,  2.08it/s]USP SAMGPT-standard 1-shot:  43%|████▎     | 43/100 [00:22<00:27,  2.08it/s]USP SAMGPT-standard 1-shot:  44%|████▍     | 44/100 [00:22<00:26,  2.09it/s]USP SAMGPT-standard 1-shot:  45%|████▌     | 45/100 [00:23<00:26,  2.08it/s]USP SAMGPT-standard 1-shot:  46%|████▌     | 46/100 [00:23<00:25,  2.10it/s]USP SAMGPT-standard 1-shot:  47%|████▋     | 47/100 [00:24<00:25,  2.06it/s]USP SAMGPT-standard 1-shot:  48%|████▊     | 48/100 [00:24<00:24,  2.11it/s]USP SAMGPT-standard 1-shot:  49%|████▉     | 49/100 [00:25<00:24,  2.05it/s]USP SAMGPT-standard 1-shot:  50%|█████     | 50/100 [00:25<00:23,  2.12it/s]USP SAMGPT-standard 1-shot:  51%|█████     | 51/100 [00:26<00:23,  2.06it/s]USP SAMGPT-standard 1-shot:  52%|█████▏    | 52/100 [00:26<00:22,  2.13it/s]USP SAMGPT-standard 1-shot:  53%|█████▎    | 53/100 [00:27<00:22,  2.07it/s]USP SAMGPT-standard 1-shot:  54%|█████▍    | 54/100 [00:27<00:21,  2.14it/s]USP SAMGPT-standard 1-shot:  55%|█████▌    | 55/100 [00:28<00:21,  2.07it/s]USP SAMGPT-standard 1-shot:  56%|█████▌    | 56/100 [00:28<00:20,  2.14it/s]USP SAMGPT-standard 1-shot:  57%|█████▋    | 57/100 [00:29<00:20,  2.07it/s]USP SAMGPT-standard 1-shot:  58%|█████▊    | 58/100 [00:29<00:19,  2.14it/s]USP SAMGPT-standard 1-shot:  59%|█████▉    | 59/100 [00:30<00:19,  2.07it/s]USP SAMGPT-standard 1-shot:  60%|██████    | 60/100 [00:30<00:18,  2.13it/s]USP SAMGPT-standard 1-shot:  61%|██████    | 61/100 [00:31<00:18,  2.07it/s]USP SAMGPT-standard 1-shot:  62%|██████▏   | 62/100 [00:31<00:17,  2.11it/s]USP SAMGPT-standard 1-shot:  63%|██████▎   | 63/100 [00:32<00:17,  2.08it/s]USP SAMGPT-standard 1-shot:  64%|██████▍   | 64/100 [00:32<00:17,  2.10it/s]USP SAMGPT-standard 1-shot:  65%|██████▌   | 65/100 [00:32<00:16,  2.09it/s]USP SAMGPT-standard 1-shot:  66%|██████▌   | 66/100 [00:33<00:16,  2.09it/s]USP SAMGPT-standard 1-shot:  67%|██████▋   | 67/100 [00:33<00:15,  2.10it/s]USP SAMGPT-standard 1-shot:  68%|██████▊   | 68/100 [00:34<00:15,  2.07it/s]USP SAMGPT-standard 1-shot:  69%|██████▉   | 69/100 [00:34<00:15,  2.06it/s]USP SAMGPT-standard 1-shot:  70%|███████   | 70/100 [00:35<00:14,  2.04it/s]USP SAMGPT-standard 1-shot:  71%|███████   | 71/100 [00:35<00:13,  2.09it/s]USP SAMGPT-standard 1-shot:  72%|███████▏  | 72/100 [00:36<00:13,  2.05it/s]USP SAMGPT-standard 1-shot:  73%|███████▎  | 73/100 [00:36<00:12,  2.12it/s]USP SAMGPT-standard 1-shot:  74%|███████▍  | 74/100 [00:37<00:12,  2.06it/s]USP SAMGPT-standard 1-shot:  75%|███████▌  | 75/100 [00:37<00:11,  2.13it/s]USP SAMGPT-standard 1-shot:  76%|███████▌  | 76/100 [00:38<00:11,  2.07it/s]USP SAMGPT-standard 1-shot:  77%|███████▋  | 77/100 [00:38<00:10,  2.14it/s]USP SAMGPT-standard 1-shot:  78%|███████▊  | 78/100 [00:39<00:10,  2.08it/s]USP SAMGPT-standard 1-shot:  79%|███████▉  | 79/100 [00:39<00:09,  2.15it/s]USP SAMGPT-standard 1-shot:  80%|████████  | 80/100 [00:40<00:09,  2.08it/s]USP SAMGPT-standard 1-shot:  81%|████████  | 81/100 [00:40<00:08,  2.16it/s]USP SAMGPT-standard 1-shot:  82%|████████▏ | 82/100 [00:41<00:08,  2.09it/s]USP SAMGPT-standard 1-shot:  83%|████████▎ | 83/100 [00:41<00:07,  2.14it/s]USP SAMGPT-standard 1-shot:  84%|████████▍ | 84/100 [00:42<00:07,  2.07it/s]USP SAMGPT-standard 1-shot:  85%|████████▌ | 85/100 [00:42<00:07,  2.11it/s]USP SAMGPT-standard 1-shot:  86%|████████▌ | 86/100 [00:43<00:06,  2.05it/s]USP SAMGPT-standard 1-shot:  87%|████████▋ | 87/100 [00:43<00:06,  2.08it/s]USP SAMGPT-standard 1-shot:  88%|████████▊ | 88/100 [00:44<00:05,  2.03it/s]USP SAMGPT-standard 1-shot:  89%|████████▉ | 89/100 [00:44<00:05,  2.06it/s]USP SAMGPT-standard 1-shot:  90%|█████████ | 90/100 [00:44<00:04,  2.02it/s]USP SAMGPT-standard 1-shot:  91%|█████████ | 91/100 [00:45<00:04,  2.05it/s]USP SAMGPT-standard 1-shot:  92%|█████████▏| 92/100 [00:45<00:03,  2.01it/s]USP SAMGPT-standard 1-shot:  93%|█████████▎| 93/100 [00:46<00:03,  2.04it/s]USP SAMGPT-standard 1-shot:  94%|█████████▍| 94/100 [00:46<00:02,  2.00it/s]USP SAMGPT-standard 1-shot:  95%|█████████▌| 95/100 [00:47<00:02,  2.03it/s]USP SAMGPT-standard 1-shot:  96%|█████████▌| 96/100 [00:47<00:02,  2.00it/s]USP SAMGPT-standard 1-shot:  97%|█████████▋| 97/100 [00:48<00:01,  2.03it/s]USP SAMGPT-standard 1-shot:  98%|█████████▊| 98/100 [00:48<00:01,  2.00it/s]USP SAMGPT-standard 1-shot:  99%|█████████▉| 99/100 [00:49<00:00,  2.02it/s]USP SAMGPT-standard 1-shot: 100%|██████████| 100/100 [00:49<00:00,  1.99it/s]USP SAMGPT-standard 1-shot: 100%|██████████| 100/100 [00:49<00:00,  2.00it/s]
+USP result: {"method": "USP", "internal_pretrain_path": "USP", "setting": "source_only", "eval_protocol": "samgpt_standard", "source_domains": ["Citeseer", "Pubmed", "Photo", "Computers", "FacebookPagePage", "LastFMAsia"], "target_domain": "Cora", "shot": 1, "seed": 39, "split": "0-99", "num_splits": 100, "test_nodes": 100, "adaptation_setting": "transductive", "target_unlabeled_used": true, "target_edges_used": true, "label_shuffle": false, "feature_permuted": false, "subgraph_hop": 2, "readout": "prompt_weighted", "query_mode": "subgraph", "prototype": "attention", "negative_sampling": "domain_balanced", "num_intra_neg": 16, "num_inter_neg": 16, "num_negatives_requested": 32, "num_negatives_effective": 32, "intra_neg_ratio_requested": 0.5, "intra_neg_ratio_effective": 0.5, "negative_fallback_reason": null, "negative_sampling_effective": "domain_balanced", "use_structure_token": true, "align_type": "none", "L_ns_final_epoch_mean": 1.0764766931533813, "L_ss_final_epoch_mean": 5.514777819315593, "L_align_final_epoch_mean": 0.0, "loss_stat_type": "final_epoch_mean", "train_time": 39183.688925504684, "acc": 47.3999989181757, "acc_std": 13.331817829455964, "macro_f1": 36.65934045960649, "macro_f1_std": 9.758203565922996, "micro_f1": 47.4, "micro_f1_std": 13.331818095720243, "margin": 0.004819826669991017, "margin_std": 0.28787465188796857, "compactness": 1.4390264908570316e-08, "compactness_std": 3.120259323400309e-08, "separation": 0.4837911885976791, "separation_std": 0.05827051962491924}
+USP minimal logs saved to /home/ustc1958/lxy/graph/1/SAMGPT0511/result/usp_minimal_runs.jsonl

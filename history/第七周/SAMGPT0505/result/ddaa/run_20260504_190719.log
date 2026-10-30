@@ -1,0 +1,3036 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', nb_epochs=10000, use_scp=0, struct_feat_dim=3, struct_prompt_residual=1, struct_prompt_scale=0.05, random_struct=0, use_daaa=1, daaa_n_shared=8, daaa_n_domain=8, daaa_lambda_vert=0.01, daaa_lambda_res=0.1, daaa_lambda_hsic=0.0, daaa_lambda_gc=0.1, daaa_max_k_domain=24, daaa_use_sparse_coeff=0, daaa_init_from_data=1, daaa_monitor_interval=10, daaa_vis_interval=50, daaa_expand_interval=200, daaa_prune_interval=500)
+----------------------------------------------------------------------------------------------------
+988665
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+[DA-AA] adaptive n_domain per domain: [('Citeseer', 8), ('Pubmed', 19), ('Photo', 12), ('Computers', 16), ('FacebookPagePage', 20), ('LastFMAsia', 12)]
+[DA-AA] enabled | K_s=8, K_d=[8, 19, 12, 16, 20, 12], lv=0.01, lr=0.1, lh=0.0, lg=0.1
+0
+step 0
+Using CUDA
+[DA-AA] 用数据边缘点初始化原型...
+[DA-AA] init done: K_s=8, K_d=[8, 19, 12, 16, 20, 12]
+[DA-AA] monitor tools ready, diag_dir: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics
+Loss:[5.71253395]
+Loading 0th epoch
+Loss:[23.47034645]
+Loading 0th epoch
+Loss:[23.01251984]
+Loading 0th epoch
+Loss:[16.31756210]
+Loading 0th epoch
+Loss:[8.90798664]
+Loading 0th epoch
+Loss:[8.42775249]
+Loading 0th epoch
+Loss:[10.70313644]
+Loading 0th epoch
+Loss:[7.10476208]
+Loading 0th epoch
+Loss:[6.49587011]
+Loading 0th epoch
+Loss:[7.13019466]
+
+============================================================
+[DA-AA] Epoch 10 monitor summary
+============================================================
+  domain 0: DVP=0.058[LOW]  entropy=2.766  dead_protos=0  recon=0.22595
+  domain 1: DVP=0.000[LOW]  entropy=3.286  dead_protos=0  recon=0.05865
+  domain 2: DVP=0.238[LOW]  entropy=2.971  dead_protos=0  recon=0.31482
+  domain 3: DVP=0.205[LOW]  entropy=3.153  dead_protos=0  recon=0.26392
+  domain 4: DVP=0.086[LOW]  entropy=3.322  dead_protos=0  recon=0.38133
+  domain 5: DVP=0.074[LOW]  entropy=2.986  dead_protos=0  recon=0.35317
+============================================================
+
+  block_diagonal_strength: 0.5028
+Loading 0th epoch
+Loss:[7.39429045]
+Loading 0th epoch
+Loss:[7.09517193]
+Loading 0th epoch
+Loss:[6.40853548]
+Loading 0th epoch
+Loss:[5.50864220]
+Loading 13th epoch
+Loss:[4.68954563]
+Loading 14th epoch
+Loss:[4.49315310]
+Loading 15th epoch
+Loss:[4.90591240]
+Loading 15th epoch
+Loss:[4.90777874]
+Loading 15th epoch
+Loss:[4.34801579]
+Loading 18th epoch
+Loss:[4.05265999]
+
+============================================================
+[DA-AA] Epoch 20 monitor summary
+============================================================
+  domain 0: DVP=0.058[LOW]  entropy=2.765  dead_protos=0  recon=0.23071
+  domain 1: DVP=0.000[LOW]  entropy=3.274  dead_protos=0  recon=0.04352
+  domain 2: DVP=0.240[LOW]  entropy=2.968  dead_protos=0  recon=0.34590
+  domain 3: DVP=0.209[LOW]  entropy=3.150  dead_protos=0  recon=0.28804
+  domain 4: DVP=0.087[LOW]  entropy=3.320  dead_protos=0  recon=0.41532
+  domain 5: DVP=0.074[LOW]  entropy=2.984  dead_protos=0  recon=0.39239
+============================================================
+
+  block_diagonal_strength: 0.5091
+Loading 19th epoch
+Loss:[4.10002995]
+Loading 19th epoch
+Loss:[4.25292635]
+Loading 19th epoch
+Loss:[4.25053310]
+Loading 19th epoch
+Loss:[4.09899330]
+Loading 19th epoch
+Loss:[3.83296919]
+Loading 24th epoch
+Loss:[3.59121895]
+Loading 25th epoch
+Loss:[3.51197672]
+Loading 26th epoch
+Loss:[3.57439590]
+Loading 26th epoch
+Loss:[3.59045696]
+Loading 26th epoch
+Loss:[3.49254370]
+
+============================================================
+[DA-AA] Epoch 30 monitor summary
+============================================================
+  domain 0: DVP=0.058[LOW]  entropy=2.764  dead_protos=0  recon=0.22458
+  domain 1: DVP=0.000[LOW]  entropy=3.261  dead_protos=0  recon=0.03271
+  domain 2: DVP=0.238[LOW]  entropy=2.966  dead_protos=0  recon=0.35523
+  domain 3: DVP=0.210[LOW]  entropy=3.148  dead_protos=0  recon=0.29335
+  domain 4: DVP=0.087[LOW]  entropy=3.319  dead_protos=0  recon=0.42117
+  domain 5: DVP=0.074[LOW]  entropy=2.984  dead_protos=0  recon=0.40202
+============================================================
+
+  block_diagonal_strength: 0.5156
+Loading 29th epoch
+Loss:[3.33823991]
+Loading 30th epoch
+Loss:[3.27499557]
+Loading 31th epoch
+Loss:[3.25098681]
+Loading 32th epoch
+Loss:[3.20844245]
+Loading 33th epoch
+Loss:[3.13557959]
+Loading 34th epoch
+Loss:[3.06928325]
+Loading 35th epoch
+Loss:[3.02683926]
+Loading 36th epoch
+Loss:[2.97205973]
+Loading 37th epoch
+Loss:[2.91483498]
+Loading 38th epoch
+Loss:[2.84696507]
+
+============================================================
+[DA-AA] Epoch 40 monitor summary
+============================================================
+  domain 0: DVP=0.059[LOW]  entropy=2.763  dead_protos=0  recon=0.21430
+  domain 1: DVP=0.000[LOW]  entropy=3.251  dead_protos=0  recon=0.02611
+  domain 2: DVP=0.235[LOW]  entropy=2.964  dead_protos=0  recon=0.35831
+  domain 3: DVP=0.208[LOW]  entropy=3.147  dead_protos=0  recon=0.29277
+  domain 4: DVP=0.086[LOW]  entropy=3.318  dead_protos=0  recon=0.41805
+  domain 5: DVP=0.073[LOW]  entropy=2.983  dead_protos=0  recon=0.40312
+============================================================
+
+  block_diagonal_strength: 0.5206
+Loading 39th epoch
+Loss:[2.78312945]
+Loading 40th epoch
+Loss:[2.73387027]
+Loading 41th epoch
+Loss:[2.69157648]
+Loading 42th epoch
+Loss:[2.64544225]
+Loading 43th epoch
+Loss:[2.58564830]
+Loading 44th epoch
+Loss:[2.53403878]
+Loading 45th epoch
+Loss:[2.48747206]
+Loading 46th epoch
+Loss:[2.43127584]
+Loading 47th epoch
+Loss:[2.37130475]
+Loading 48th epoch
+Loss:[2.31396055]
+
+============================================================
+[DA-AA] Epoch 50 monitor summary
+============================================================
+  domain 0: DVP=0.059[LOW]  entropy=2.762  dead_protos=0  recon=0.20380
+  domain 1: DVP=0.000[LOW]  entropy=3.245  dead_protos=0  recon=0.02206
+  domain 2: DVP=0.231[LOW]  entropy=2.963  dead_protos=0  recon=0.36046
+  domain 3: DVP=0.205[LOW]  entropy=3.145  dead_protos=0  recon=0.29125
+  domain 4: DVP=0.086[LOW]  entropy=3.317  dead_protos=0  recon=0.41318
+  domain 5: DVP=0.072[LOW]  entropy=2.982  dead_protos=0  recon=0.40270
+============================================================
+
+  block_diagonal_strength: 0.5242
+[Visualizer] t-SNE: 6095 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep50.png  (6095 pts)
+Loading 49th epoch
+Loss:[2.26425195]
+Loading 50th epoch
+Loss:[2.21362948]
+Loading 51th epoch
+Loss:[2.16221094]
+Loading 52th epoch
+Loss:[2.10880494]
+Loading 53th epoch
+Loss:[2.05345511]
+Loading 54th epoch
+Loss:[1.99944913]
+Loading 55th epoch
+Loss:[1.94697523]
+Loading 56th epoch
+Loss:[1.89619017]
+Loading 57th epoch
+Loss:[1.84333742]
+Loading 58th epoch
+Loss:[1.79066467]
+
+============================================================
+[DA-AA] Epoch 60 monitor summary
+============================================================
+  domain 0: DVP=0.059[LOW]  entropy=2.762  dead_protos=0  recon=0.19327
+  domain 1: DVP=0.000[LOW]  entropy=3.239  dead_protos=0  recon=0.01888
+  domain 2: DVP=0.225[LOW]  entropy=2.962  dead_protos=0  recon=0.36375
+  domain 3: DVP=0.201[LOW]  entropy=3.144  dead_protos=0  recon=0.29042
+  domain 4: DVP=0.085[LOW]  entropy=3.316  dead_protos=0  recon=0.40844
+  domain 5: DVP=0.071[LOW]  entropy=2.981  dead_protos=0  recon=0.40288
+============================================================
+
+  block_diagonal_strength: 0.5274
+Loading 59th epoch
+Loss:[1.73836565]
+Loading 60th epoch
+Loss:[1.68783379]
+Loading 61th epoch
+Loss:[1.63706350]
+Loading 62th epoch
+Loss:[1.58666098]
+Loading 63th epoch
+Loss:[1.53634930]
+Loading 64th epoch
+Loss:[1.48712778]
+Loading 65th epoch
+Loss:[1.43832123]
+Loading 66th epoch
+Loss:[1.39070046]
+Loading 67th epoch
+Loss:[1.34396315]
+Loading 68th epoch
+Loss:[1.29847062]
+
+============================================================
+[DA-AA] Epoch 70 monitor summary
+============================================================
+  domain 0: DVP=0.060[LOW]  entropy=2.761  dead_protos=0  recon=0.18356
+  domain 1: DVP=0.000[LOW]  entropy=3.237  dead_protos=0  recon=0.01686
+  domain 2: DVP=0.218[LOW]  entropy=2.960  dead_protos=0  recon=0.36777
+  domain 3: DVP=0.195[LOW]  entropy=3.143  dead_protos=0  recon=0.29024
+  domain 4: DVP=0.083[LOW]  entropy=3.315  dead_protos=0  recon=0.40447
+  domain 5: DVP=0.070[LOW]  entropy=2.980  dead_protos=0  recon=0.40374
+============================================================
+
+  block_diagonal_strength: 0.5296
+Loading 69th epoch
+Loss:[1.25363255]
+Loading 70th epoch
+Loss:[1.21001196]
+Loading 71th epoch
+Loss:[1.16774392]
+Loading 72th epoch
+Loss:[1.12695336]
+Loading 73th epoch
+Loss:[1.08741260]
+Loading 74th epoch
+Loss:[1.04900765]
+Loading 75th epoch
+Loss:[1.01202333]
+Loading 76th epoch
+Loss:[0.97642279]
+Loading 77th epoch
+Loss:[0.94232476]
+Loading 78th epoch
+Loss:[0.90966779]
+
+============================================================
+[DA-AA] Epoch 80 monitor summary
+============================================================
+  domain 0: DVP=0.060[LOW]  entropy=2.760  dead_protos=0  recon=0.17512
+  domain 1: DVP=0.000[LOW]  entropy=3.237  dead_protos=0  recon=0.01569
+  domain 2: DVP=0.211[LOW]  entropy=2.958  dead_protos=0  recon=0.37096
+  domain 3: DVP=0.190[LOW]  entropy=3.141  dead_protos=0  recon=0.28997
+  domain 4: DVP=0.082[LOW]  entropy=3.314  dead_protos=0  recon=0.40072
+  domain 5: DVP=0.068[LOW]  entropy=2.979  dead_protos=0  recon=0.40423
+============================================================
+
+  block_diagonal_strength: 0.5314
+Loading 79th epoch
+Loss:[0.87846321]
+Loading 80th epoch
+Loss:[0.84878838]
+Loading 81th epoch
+Loss:[0.82052416]
+Loading 82th epoch
+Loss:[0.79364860]
+Loading 83th epoch
+Loss:[0.76810575]
+Loading 84th epoch
+Loss:[0.74385631]
+Loading 85th epoch
+Loss:[0.72093999]
+Loading 86th epoch
+Loss:[0.69929564]
+Loading 87th epoch
+Loss:[0.67884070]
+Loading 88th epoch
+Loss:[0.65953356]
+
+============================================================
+[DA-AA] Epoch 90 monitor summary
+============================================================
+  domain 0: DVP=0.061[LOW]  entropy=2.759  dead_protos=0  recon=0.16730
+  domain 1: DVP=0.000[LOW]  entropy=3.234  dead_protos=0  recon=0.01429
+  domain 2: DVP=0.206[LOW]  entropy=2.956  dead_protos=0  recon=0.37246
+  domain 3: DVP=0.186[LOW]  entropy=3.139  dead_protos=0  recon=0.28895
+  domain 4: DVP=0.081[LOW]  entropy=3.313  dead_protos=0  recon=0.39662
+  domain 5: DVP=0.067[LOW]  entropy=2.978  dead_protos=0  recon=0.40395
+============================================================
+
+  block_diagonal_strength: 0.5338
+Loading 89th epoch
+Loss:[0.64131546]
+Loading 90th epoch
+Loss:[0.62413573]
+Loading 91th epoch
+Loss:[0.60797113]
+Loading 92th epoch
+Loss:[0.59276980]
+Loading 93th epoch
+Loss:[0.57845259]
+Loading 94th epoch
+Loss:[0.56497586]
+Loading 95th epoch
+Loss:[0.55228984]
+Loading 96th epoch
+Loss:[0.54034084]
+Loading 97th epoch
+Loss:[0.52907908]
+Loading 98th epoch
+Loss:[0.51847148]
+
+============================================================
+[DA-AA] Epoch 100 monitor summary
+============================================================
+  domain 0: DVP=0.061[LOW]  entropy=2.758  dead_protos=0  recon=0.15960
+  domain 1: DVP=0.000[LOW]  entropy=3.230  dead_protos=0  recon=0.01285
+  domain 2: DVP=0.203[LOW]  entropy=2.954  dead_protos=0  recon=0.37245
+  domain 3: DVP=0.184[LOW]  entropy=3.137  dead_protos=0  recon=0.28718
+  domain 4: DVP=0.080[LOW]  entropy=3.312  dead_protos=0  recon=0.39212
+  domain 5: DVP=0.067[LOW]  entropy=2.977  dead_protos=0  recon=0.40315
+============================================================
+
+  block_diagonal_strength: 0.5365
+[Visualizer] t-SNE: 6095 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep100.png  (6095 pts)
+Loading 99th epoch
+Loss:[0.50847512]
+Loading 100th epoch
+Loss:[0.49904290]
+Loading 101th epoch
+Loss:[0.49013919]
+Loading 102th epoch
+Loss:[0.48173776]
+Loading 103th epoch
+Loss:[0.47381124]
+Loading 104th epoch
+Loss:[0.46632916]
+Loading 105th epoch
+Loss:[0.45925671]
+Loading 106th epoch
+Loss:[0.45256615]
+Loading 107th epoch
+Loss:[0.44623005]
+Loading 108th epoch
+Loss:[0.44022387]
+
+============================================================
+[DA-AA] Epoch 110 monitor summary
+============================================================
+  domain 0: DVP=0.061[LOW]  entropy=2.756  dead_protos=0  recon=0.15204
+  domain 1: DVP=0.000[LOW]  entropy=3.227  dead_protos=0  recon=0.01161
+  domain 2: DVP=0.202[LOW]  entropy=2.952  dead_protos=0  recon=0.37122
+  domain 3: DVP=0.183[LOW]  entropy=3.135  dead_protos=0  recon=0.28473
+  domain 4: DVP=0.080[LOW]  entropy=3.311  dead_protos=0  recon=0.38723
+  domain 5: DVP=0.067[LOW]  entropy=2.976  dead_protos=0  recon=0.40179
+============================================================
+
+  block_diagonal_strength: 0.5390
+Loading 109th epoch
+Loss:[0.43452644]
+Loading 110th epoch
+Loss:[0.42911798]
+Loading 111th epoch
+Loss:[0.42397842]
+Loading 112th epoch
+Loss:[0.41909158]
+Loading 113th epoch
+Loss:[0.41443878]
+Loading 114th epoch
+Loss:[0.41000605]
+Loading 115th epoch
+Loss:[0.40577874]
+Loading 116th epoch
+Loss:[0.40174413]
+Loading 117th epoch
+Loss:[0.39788926]
+Loading 118th epoch
+Loss:[0.39420196]
+
+============================================================
+[DA-AA] Epoch 120 monitor summary
+============================================================
+  domain 0: DVP=0.062[LOW]  entropy=2.755  dead_protos=0  recon=0.14474
+  domain 1: DVP=0.000[LOW]  entropy=3.224  dead_protos=0  recon=0.01060
+  domain 2: DVP=0.203[LOW]  entropy=2.950  dead_protos=0  recon=0.36912
+  domain 3: DVP=0.184[LOW]  entropy=3.133  dead_protos=0  recon=0.28184
+  domain 4: DVP=0.080[LOW]  entropy=3.310  dead_protos=0  recon=0.38208
+  domain 5: DVP=0.067[LOW]  entropy=2.975  dead_protos=0  recon=0.39998
+============================================================
+
+  block_diagonal_strength: 0.5414
+Loading 119th epoch
+Loss:[0.39067507]
+Loading 120th epoch
+Loss:[0.38729954]
+Loading 121th epoch
+Loss:[0.38406351]
+Loading 122th epoch
+Loss:[0.38095862]
+Loading 123th epoch
+Loss:[0.37797686]
+Loading 124th epoch
+Loss:[0.37511092]
+Loading 125th epoch
+Loss:[0.37235415]
+Loading 126th epoch
+Loss:[0.36970010]
+Loading 127th epoch
+Loss:[0.36714432]
+Loading 128th epoch
+Loss:[0.36468098]
+
+============================================================
+[DA-AA] Epoch 130 monitor summary
+============================================================
+  domain 0: DVP=0.062[LOW]  entropy=2.754  dead_protos=0  recon=0.13772
+  domain 1: DVP=0.000[LOW]  entropy=3.222  dead_protos=0  recon=0.00974
+  domain 2: DVP=0.204[LOW]  entropy=2.947  dead_protos=0  recon=0.36635
+  domain 3: DVP=0.185[LOW]  entropy=3.131  dead_protos=0  recon=0.27863
+  domain 4: DVP=0.081[LOW]  entropy=3.308  dead_protos=0  recon=0.37678
+  domain 5: DVP=0.067[LOW]  entropy=2.973  dead_protos=0  recon=0.39789
+============================================================
+
+  block_diagonal_strength: 0.5437
+Loading 129th epoch
+Loss:[0.36230510]
+Loading 130th epoch
+Loss:[0.36001122]
+Loading 131th epoch
+Loss:[0.35779482]
+Loading 132th epoch
+Loss:[0.35565227]
+Loading 133th epoch
+Loss:[0.35358000]
+Loading 134th epoch
+Loss:[0.35157347]
+Loading 135th epoch
+Loss:[0.34962973]
+Loading 136th epoch
+Loss:[0.34774613]
+Loading 137th epoch
+Loss:[0.34591973]
+Loading 138th epoch
+Loss:[0.34414753]
+
+============================================================
+[DA-AA] Epoch 140 monitor summary
+============================================================
+  domain 0: DVP=0.062[LOW]  entropy=2.752  dead_protos=0  recon=0.13099
+  domain 1: DVP=0.000[LOW]  entropy=3.220  dead_protos=0  recon=0.00899
+  domain 2: DVP=0.206[LOW]  entropy=2.945  dead_protos=0  recon=0.36313
+  domain 3: DVP=0.187[LOW]  entropy=3.129  dead_protos=0  recon=0.27525
+  domain 4: DVP=0.081[LOW]  entropy=3.307  dead_protos=0  recon=0.37148
+  domain 5: DVP=0.067[LOW]  entropy=2.972  dead_protos=0  recon=0.39571
+============================================================
+
+  block_diagonal_strength: 0.5459
+Loading 139th epoch
+Loss:[0.34242761]
+Loading 140th epoch
+Loss:[0.34075844]
+Loading 141th epoch
+Loss:[0.33913657]
+Loading 142th epoch
+Loss:[0.33756080]
+Loading 143th epoch
+Loss:[0.33602959]
+Loading 144th epoch
+Loss:[0.33454111]
+Loading 145th epoch
+Loss:[0.33309376]
+Loading 146th epoch
+Loss:[0.33168536]
+Loading 147th epoch
+Loss:[0.33031401]
+Loading 148th epoch
+Loss:[0.32897809]
+
+============================================================
+[DA-AA] Epoch 150 monitor summary
+============================================================
+  domain 0: DVP=0.063[LOW]  entropy=2.750  dead_protos=0  recon=0.12456
+  domain 1: DVP=0.000[LOW]  entropy=3.218  dead_protos=0  recon=0.00833
+  domain 2: DVP=0.209[LOW]  entropy=2.942  dead_protos=0  recon=0.35970
+  domain 3: DVP=0.189[LOW]  entropy=3.126  dead_protos=0  recon=0.27184
+  domain 4: DVP=0.081[LOW]  entropy=3.305  dead_protos=0  recon=0.36626
+  domain 5: DVP=0.067[LOW]  entropy=2.971  dead_protos=0  recon=0.39356
+============================================================
+
+  block_diagonal_strength: 0.5481
+[Visualizer] t-SNE: 6095 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep150.png  (6095 pts)
+Loading 149th epoch
+Loss:[0.32767576]
+Loading 150th epoch
+Loss:[0.32640547]
+Loading 151th epoch
+Loss:[0.32516578]
+Loading 152th epoch
+Loss:[0.32395536]
+Loading 153th epoch
+Loss:[0.32277319]
+Loading 154th epoch
+Loss:[0.32161808]
+Loading 155th epoch
+Loss:[0.32048938]
+Loading 156th epoch
+Loss:[0.31938577]
+Loading 157th epoch
+Loss:[0.31830618]
+Loading 158th epoch
+Loss:[0.31725004]
+
+============================================================
+[DA-AA] Epoch 160 monitor summary
+============================================================
+  domain 0: DVP=0.063[LOW]  entropy=2.748  dead_protos=0  recon=0.11844
+  domain 1: DVP=0.000[LOW]  entropy=3.216  dead_protos=0  recon=0.00773
+  domain 2: DVP=0.212[LOW]  entropy=2.940  dead_protos=0  recon=0.35634
+  domain 3: DVP=0.192[LOW]  entropy=3.124  dead_protos=0  recon=0.26852
+  domain 4: DVP=0.082[LOW]  entropy=3.304  dead_protos=0  recon=0.36123
+  domain 5: DVP=0.068[LOW]  entropy=2.970  dead_protos=0  recon=0.39156
+============================================================
+
+  block_diagonal_strength: 0.5502
+Loading 159th epoch
+Loss:[0.31621629]
+Loading 160th epoch
+Loss:[0.31520414]
+Loading 161th epoch
+Loss:[0.31421283]
+Loading 162th epoch
+Loss:[0.31324148]
+Loading 163th epoch
+Loss:[0.31228903]
+Loading 164th epoch
+Loss:[0.31135511]
+Loading 165th epoch
+Loss:[0.31043932]
+Loading 166th epoch
+Loss:[0.30954078]
+Loading 167th epoch
+Loss:[0.30865923]
+Loading 168th epoch
+Loss:[0.30779418]
+
+============================================================
+[DA-AA] Epoch 170 monitor summary
+============================================================
+  domain 0: DVP=0.063[LOW]  entropy=2.746  dead_protos=0  recon=0.11261
+  domain 1: DVP=0.000[LOW]  entropy=3.215  dead_protos=0  recon=0.00718
+  domain 2: DVP=0.215[LOW]  entropy=2.937  dead_protos=0  recon=0.35310
+  domain 3: DVP=0.195[LOW]  entropy=3.122  dead_protos=0  recon=0.26536
+  domain 4: DVP=0.083[LOW]  entropy=3.302  dead_protos=0  recon=0.35640
+  domain 5: DVP=0.068[LOW]  entropy=2.968  dead_protos=0  recon=0.38975
+============================================================
+
+  block_diagonal_strength: 0.5523
+Loading 169th epoch
+Loss:[0.30694520]
+Loading 170th epoch
+Loss:[0.30611151]
+Loading 171th epoch
+Loss:[0.30529311]
+Loading 172th epoch
+Loss:[0.30448949]
+Loading 173th epoch
+Loss:[0.30369994]
+Loading 174th epoch
+Loss:[0.30292419]
+Loading 175th epoch
+Loss:[0.30216202]
+Loading 176th epoch
+Loss:[0.30141264]
+Loading 177th epoch
+Loss:[0.30067581]
+Loading 178th epoch
+Loss:[0.29995117]
+
+============================================================
+[DA-AA] Epoch 180 monitor summary
+============================================================
+  domain 0: DVP=0.064[LOW]  entropy=2.744  dead_protos=0  recon=0.10706
+  domain 1: DVP=0.000[LOW]  entropy=3.213  dead_protos=0  recon=0.00667
+  domain 2: DVP=0.218[LOW]  entropy=2.934  dead_protos=0  recon=0.34995
+  domain 3: DVP=0.198[LOW]  entropy=3.119  dead_protos=0  recon=0.26233
+  domain 4: DVP=0.083[LOW]  entropy=3.300  dead_protos=0  recon=0.35179
+  domain 5: DVP=0.069[LOW]  entropy=2.967  dead_protos=0  recon=0.38813
+============================================================
+
+  block_diagonal_strength: 0.5544
+Loading 179th epoch
+Loss:[0.29923835]
+Loading 180th epoch
+Loss:[0.29853705]
+Loading 181th epoch
+Loss:[0.29784709]
+Loading 182th epoch
+Loss:[0.29716825]
+Loading 183th epoch
+Loss:[0.29650044]
+Loading 184th epoch
+Loss:[0.29584321]
+Loading 185th epoch
+Loss:[0.29519641]
+Loading 186th epoch
+Loss:[0.29455990]
+Loading 187th epoch
+Loss:[0.29393366]
+Loading 188th epoch
+Loss:[0.29331759]
+
+============================================================
+[DA-AA] Epoch 190 monitor summary
+============================================================
+  domain 0: DVP=0.064[LOW]  entropy=2.742  dead_protos=0  recon=0.10180
+  domain 1: DVP=0.000[LOW]  entropy=3.212  dead_protos=0  recon=0.00620
+  domain 2: DVP=0.222[LOW]  entropy=2.931  dead_protos=0  recon=0.34688
+  domain 3: DVP=0.201[LOW]  entropy=3.116  dead_protos=0  recon=0.25944
+  domain 4: DVP=0.084[LOW]  entropy=3.298  dead_protos=0  recon=0.34739
+  domain 5: DVP=0.069[LOW]  entropy=2.965  dead_protos=0  recon=0.38673
+============================================================
+
+  block_diagonal_strength: 0.5564
+Loading 189th epoch
+Loss:[0.29271135]
+Loading 190th epoch
+Loss:[0.29211468]
+Loading 191th epoch
+Loss:[0.29152748]
+Loading 192th epoch
+Loss:[0.29094958]
+Loading 193th epoch
+Loss:[0.29038072]
+Loading 194th epoch
+Loss:[0.28982061]
+Loading 195th epoch
+Loss:[0.28926894]
+Loading 196th epoch
+Loss:[0.28872547]
+Loading 197th epoch
+Loss:[0.28818995]
+Loading 198th epoch
+Loss:[0.28766206]
+
+============================================================
+[DA-AA] Epoch 200 monitor summary
+============================================================
+  domain 0: DVP=0.064[LOW]  entropy=2.739  dead_protos=0  recon=0.09682
+  domain 1: DVP=0.000[LOW]  entropy=3.210  dead_protos=0  recon=0.00576
+  domain 2: DVP=0.225[LOW]  entropy=2.928  dead_protos=0  recon=0.34396
+  domain 3: DVP=0.205[LOW]  entropy=3.114  dead_protos=0  recon=0.25671
+  domain 4: DVP=0.084[LOW]  entropy=3.296  dead_protos=0  recon=0.34323
+  domain 5: DVP=0.069[LOW]  entropy=2.963  dead_protos=0  recon=0.38555
+============================================================
+
+  block_diagonal_strength: 0.5585
+[Visualizer] t-SNE: 6095 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep200.png  (6095 pts)
+[DA-AA] domain 0 expand: 8 -> 9
+[DA-AA] domain 1 expand: 19 -> 20
+[DA-AA] domain 2 expand: 12 -> 13
+[DA-AA] domain 3 expand: 16 -> 17
+[DA-AA] domain 4 expand: 20 -> 21
+[DA-AA] domain 5 expand: 12 -> 13
+Loading 199th epoch
+Loss:[0.28166130]
+Loading 200th epoch
+Loss:[0.28151637]
+Loading 201th epoch
+Loss:[0.28137782]
+Loading 202th epoch
+Loss:[0.28124550]
+Loading 203th epoch
+Loss:[0.28111920]
+Loading 204th epoch
+Loss:[0.28099883]
+Loading 205th epoch
+Loss:[0.28088406]
+Loading 206th epoch
+Loss:[0.28077489]
+Loading 207th epoch
+Loss:[0.28067100]
+Loading 208th epoch
+Loss:[0.28057230]
+
+============================================================
+[DA-AA] Epoch 210 monitor summary
+============================================================
+  domain 0: DVP=0.064[LOW]  entropy=2.797  dead_protos=0  recon=0.08444
+  domain 1: DVP=0.000[LOW]  entropy=3.248  dead_protos=0  recon=0.00498
+  domain 2: DVP=0.228[LOW]  entropy=2.973  dead_protos=0  recon=0.33891
+  domain 3: DVP=0.207[LOW]  entropy=3.152  dead_protos=0  recon=0.25503
+  domain 4: DVP=0.084[LOW]  entropy=3.330  dead_protos=0  recon=0.34178
+  domain 5: DVP=0.069[LOW]  entropy=3.010  dead_protos=0  recon=0.37945
+============================================================
+
+  block_diagonal_strength: 0.5624
+Loading 209th epoch
+Loss:[0.28047863]
+Loading 210th epoch
+Loss:[0.28038990]
+Loading 211th epoch
+Loss:[0.28030598]
+Loading 212th epoch
+Loss:[0.28022677]
+Loading 213th epoch
+Loss:[0.28015202]
+Loading 214th epoch
+Loss:[0.28008175]
+Loading 215th epoch
+Loss:[0.28001589]
+Loading 216th epoch
+Loss:[0.27995446]
+Loading 217th epoch
+Loss:[0.27989730]
+Loading 218th epoch
+Loss:[0.27984425]
+
+============================================================
+[DA-AA] Epoch 220 monitor summary
+============================================================
+  domain 0: DVP=0.064[LOW]  entropy=2.795  dead_protos=0  recon=0.08233
+  domain 1: DVP=0.000[LOW]  entropy=3.247  dead_protos=0  recon=0.00476
+  domain 2: DVP=0.230[LOW]  entropy=2.971  dead_protos=0  recon=0.34047
+  domain 3: DVP=0.210[LOW]  entropy=3.150  dead_protos=0  recon=0.25637
+  domain 4: DVP=0.084[LOW]  entropy=3.328  dead_protos=0  recon=0.34313
+  domain 5: DVP=0.069[LOW]  entropy=3.008  dead_protos=0  recon=0.38286
+============================================================
+
+  block_diagonal_strength: 0.5630
+Loading 219th epoch
+Loss:[0.27979535]
+Loading 220th epoch
+Loss:[0.27975053]
+Loading 221th epoch
+Loss:[0.27970991]
+Loading 222th epoch
+Loss:[0.27967319]
+Loading 223th epoch
+Loss:[0.27964032]
+Loading 224th epoch
+Loss:[0.27961126]
+Loading 225th epoch
+Loss:[0.27958590]
+Loading 226th epoch
+Loss:[0.27956426]
+Loading 227th epoch
+Loss:[0.27954614]
+Loading 228th epoch
+Loss:[0.27953151]
+
+============================================================
+[DA-AA] Epoch 230 monitor summary
+============================================================
+  domain 0: DVP=0.064[LOW]  entropy=2.793  dead_protos=0  recon=0.08036
+  domain 1: DVP=0.000[LOW]  entropy=3.245  dead_protos=0  recon=0.00457
+  domain 2: DVP=0.232[LOW]  entropy=2.968  dead_protos=0  recon=0.34205
+  domain 3: DVP=0.211[LOW]  entropy=3.148  dead_protos=0  recon=0.25775
+  domain 4: DVP=0.084[LOW]  entropy=3.327  dead_protos=0  recon=0.34461
+  domain 5: DVP=0.069[LOW]  entropy=3.006  dead_protos=0  recon=0.38640
+============================================================
+
+  block_diagonal_strength: 0.5635
+Loading 229th epoch
+Loss:[0.27952024]
+Loading 230th epoch
+Loss:[0.27951223]
+Loading 231th epoch
+Loss:[0.27950746]
+Loading 232th epoch
+Loss:[0.27950579]
+Loading 233th epoch
+Loss:[0.27950731]
+Loading 233th epoch
+Loss:[0.27951178]
+Loading 233th epoch
+Loss:[0.27951926]
+Loading 233th epoch
+Loss:[0.27952957]
+Loading 233th epoch
+Loss:[0.27954262]
+Loading 233th epoch
+Loss:[0.27955851]
+
+============================================================
+[DA-AA] Epoch 240 monitor summary
+============================================================
+  domain 0: DVP=0.065[LOW]  entropy=2.790  dead_protos=0  recon=0.07851
+  domain 1: DVP=0.001[LOW]  entropy=3.244  dead_protos=0  recon=0.00439
+  domain 2: DVP=0.233[LOW]  entropy=2.966  dead_protos=0  recon=0.34368
+  domain 3: DVP=0.213[LOW]  entropy=3.146  dead_protos=0  recon=0.25919
+  domain 4: DVP=0.084[LOW]  entropy=3.325  dead_protos=0  recon=0.34621
+  domain 5: DVP=0.069[LOW]  entropy=3.005  dead_protos=0  recon=0.39009
+============================================================
+
+  block_diagonal_strength: 0.5639
+Loading 233th epoch
+Loss:[0.27957705]
+Loading 233th epoch
+Loss:[0.27959833]
+Loading 233th epoch
+Loss:[0.27962223]
+Loading 233th epoch
+Loss:[0.27964872]
+Loading 233th epoch
+Loss:[0.27967775]
+Loading 233th epoch
+Loss:[0.27970925]
+Loading 233th epoch
+Loss:[0.27974322]
+Loading 233th epoch
+Loss:[0.27977955]
+Loading 233th epoch
+Loss:[0.27981824]
+Loading 233th epoch
+Loss:[0.27985927]
+
+============================================================
+[DA-AA] Epoch 250 monitor summary
+============================================================
+  domain 0: DVP=0.065[LOW]  entropy=2.788  dead_protos=0  recon=0.07677
+  domain 1: DVP=0.004[LOW]  entropy=3.243  dead_protos=0  recon=0.00424
+  domain 2: DVP=0.234[LOW]  entropy=2.963  dead_protos=0  recon=0.34536
+  domain 3: DVP=0.213[LOW]  entropy=3.144  dead_protos=0  recon=0.26068
+  domain 4: DVP=0.083[LOW]  entropy=3.323  dead_protos=0  recon=0.34794
+  domain 5: DVP=0.068[LOW]  entropy=3.002  dead_protos=0  recon=0.39394
+============================================================
+
+  block_diagonal_strength: 0.5641
+[Visualizer] t-SNE: 6101 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep250.png  (6101 pts)
+Loading 233th epoch
+Loss:[0.27990264]
+Loading 233th epoch
+Loss:[0.27994829]
+Loading 233th epoch
+Loss:[0.27999628]
+Loading 233th epoch
+Loss:[0.28004646]
+Loading 233th epoch
+Loss:[0.28009892]
+Loading 233th epoch
+Loss:[0.28015360]
+Loading 233th epoch
+Loss:[0.28021055]
+Loading 233th epoch
+Loss:[0.28026965]
+Loading 233th epoch
+Loss:[0.28033090]
+Loading 233th epoch
+Loss:[0.28039429]
+
+============================================================
+[DA-AA] Epoch 260 monitor summary
+============================================================
+  domain 0: DVP=0.065[LOW]  entropy=2.786  dead_protos=0  recon=0.07514
+  domain 1: DVP=0.009[LOW]  entropy=3.242  dead_protos=0  recon=0.00410
+  domain 2: DVP=0.235[LOW]  entropy=2.961  dead_protos=0  recon=0.34708
+  domain 3: DVP=0.214[LOW]  entropy=3.142  dead_protos=0  recon=0.26223
+  domain 4: DVP=0.083[LOW]  entropy=3.320  dead_protos=0  recon=0.34981
+  domain 5: DVP=0.069[LOW]  entropy=3.000  dead_protos=0  recon=0.39797
+============================================================
+
+  block_diagonal_strength: 0.5642
+Loading 233th epoch
+Loss:[0.28045970]
+Loading 233th epoch
+Loss:[0.28052723]
+Loading 233th epoch
+Loss:[0.28059682]
+Loading 233th epoch
+Loss:[0.28066841]
+Loading 233th epoch
+Loss:[0.28074196]
+Loading 233th epoch
+Loss:[0.28081748]
+Loading 233th epoch
+Loss:[0.28089491]
+Loading 233th epoch
+Loss:[0.28097421]
+Loading 233th epoch
+Loss:[0.28105548]
+Loading 233th epoch
+Loss:[0.28113854]
+
+============================================================
+[DA-AA] Epoch 270 monitor summary
+============================================================
+  domain 0: DVP=0.066[LOW]  entropy=2.783  dead_protos=0  recon=0.07361
+  domain 1: DVP=0.016[LOW]  entropy=3.241  dead_protos=0  recon=0.00398
+  domain 2: DVP=0.235[LOW]  entropy=2.958  dead_protos=0  recon=0.34886
+  domain 3: DVP=0.214[LOW]  entropy=3.139  dead_protos=0  recon=0.26385
+  domain 4: DVP=0.083[LOW]  entropy=3.318  dead_protos=0  recon=0.35183
+  domain 5: DVP=0.069[LOW]  entropy=2.998  dead_protos=0  recon=0.40219
+============================================================
+
+  block_diagonal_strength: 0.5642
+Loading 233th epoch
+Loss:[0.28122348]
+Loading 233th epoch
+Loss:[0.28131020]
+Loading 233th epoch
+Loss:[0.28139865]
+Loading 233th epoch
+Loss:[0.28148887]
+Loading 233th epoch
+Loss:[0.28158078]
+Loading 233th epoch
+Loss:[0.28167441]
+Loading 233th epoch
+Loss:[0.28176975]
+Loading 233th epoch
+Loss:[0.28186667]
+Loading 233th epoch
+Loss:[0.28196529]
+Loading 233th epoch
+Loss:[0.28206551]
+
+============================================================
+[DA-AA] Epoch 280 monitor summary
+============================================================
+  domain 0: DVP=0.066[LOW]  entropy=2.780  dead_protos=0  recon=0.07219
+  domain 1: DVP=0.023[LOW]  entropy=3.240  dead_protos=0  recon=0.00388
+  domain 2: DVP=0.236[LOW]  entropy=2.955  dead_protos=0  recon=0.35068
+  domain 3: DVP=0.215[LOW]  entropy=3.137  dead_protos=0  recon=0.26553
+  domain 4: DVP=0.083[LOW]  entropy=3.316  dead_protos=0  recon=0.35400
+  domain 5: DVP=0.069[LOW]  entropy=2.996  dead_protos=0  recon=0.40659
+============================================================
+
+  block_diagonal_strength: 0.5640
+Loading 233th epoch
+Loss:[0.28216735]
+Loading 233th epoch
+Loss:[0.28227085]
+Loading 233th epoch
+Loss:[0.28237590]
+Loading 233th epoch
+Loss:[0.28248256]
+Loading 233th epoch
+Loss:[0.28259075]
+Loading 233th epoch
+Loss:[0.28270048]
+Loading 233th epoch
+Loss:[0.28281170]
+Loading 233th epoch
+Loss:[0.28292435]
+Loading 233th epoch
+Loss:[0.28303853]
+Loading 233th epoch
+Loss:[0.28315416]
+
+============================================================
+[DA-AA] Epoch 290 monitor summary
+============================================================
+  domain 0: DVP=0.067[LOW]  entropy=2.778  dead_protos=0  recon=0.07087
+  domain 1: DVP=0.031[LOW]  entropy=3.239  dead_protos=0  recon=0.00378
+  domain 2: DVP=0.237[LOW]  entropy=2.952  dead_protos=0  recon=0.35254
+  domain 3: DVP=0.215[LOW]  entropy=3.135  dead_protos=0  recon=0.26726
+  domain 4: DVP=0.083[LOW]  entropy=3.313  dead_protos=0  recon=0.35630
+  domain 5: DVP=0.069[LOW]  entropy=2.993  dead_protos=0  recon=0.41117
+============================================================
+
+  block_diagonal_strength: 0.5636
+Loading 233th epoch
+Loss:[0.28327134]
+Loading 233th epoch
+Loss:[0.28338996]
+Loading 233th epoch
+Loss:[0.28351006]
+Loading 233th epoch
+Loss:[0.28363162]
+Loading 233th epoch
+Loss:[0.28375468]
+Loading 233th epoch
+Loss:[0.28387916]
+Loading 233th epoch
+Loss:[0.28400502]
+Loading 233th epoch
+Loss:[0.28413227]
+Loading 233th epoch
+Loss:[0.28426096]
+Loading 233th epoch
+Loss:[0.28439102]
+
+============================================================
+[DA-AA] Epoch 300 monitor summary
+============================================================
+  domain 0: DVP=0.067[LOW]  entropy=2.775  dead_protos=0  recon=0.06965
+  domain 1: DVP=0.038[LOW]  entropy=3.239  dead_protos=0  recon=0.00371
+  domain 2: DVP=0.238[LOW]  entropy=2.949  dead_protos=0  recon=0.35444
+  domain 3: DVP=0.216[LOW]  entropy=3.132  dead_protos=0  recon=0.26904
+  domain 4: DVP=0.083[LOW]  entropy=3.311  dead_protos=0  recon=0.35873
+  domain 5: DVP=0.069[LOW]  entropy=2.991  dead_protos=0  recon=0.41591
+============================================================
+
+  block_diagonal_strength: 0.5631
+[Visualizer] t-SNE: 6101 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep300.png  (6101 pts)
+Loading 233th epoch
+Loss:[0.28452241]
+Loading 233th epoch
+Loss:[0.28465518]
+Loading 233th epoch
+Loss:[0.28478923]
+Loading 233th epoch
+Loss:[0.28492457]
+Loading 233th epoch
+Loss:[0.28506124]
+Loading 233th epoch
+Loss:[0.28519914]
+Loading 233th epoch
+Loss:[0.28533831]
+Loading 233th epoch
+Loss:[0.28547871]
+Loading 233th epoch
+Loss:[0.28562036]
+Loading 233th epoch
+Loss:[0.28576317]
+
+============================================================
+[DA-AA] Epoch 310 monitor summary
+============================================================
+  domain 0: DVP=0.067[LOW]  entropy=2.772  dead_protos=0  recon=0.06853
+  domain 1: DVP=0.043[LOW]  entropy=3.238  dead_protos=0  recon=0.00364
+  domain 2: DVP=0.238[LOW]  entropy=2.946  dead_protos=0  recon=0.35638
+  domain 3: DVP=0.216[LOW]  entropy=3.129  dead_protos=0  recon=0.27088
+  domain 4: DVP=0.083[LOW]  entropy=3.308  dead_protos=0  recon=0.36130
+  domain 5: DVP=0.069[LOW]  entropy=2.988  dead_protos=0  recon=0.42081
+============================================================
+
+  block_diagonal_strength: 0.5625
+Loading 233th epoch
+Loss:[0.28590724]
+Loading 233th epoch
+Loss:[0.28605250]
+Loading 233th epoch
+Loss:[0.28619897]
+Loading 233th epoch
+Loss:[0.28634652]
+Loading 233th epoch
+Loss:[0.28649530]
+Loading 233th epoch
+Loss:[0.28664523]
+Loading 233th epoch
+Loss:[0.28679639]
+Loading 233th epoch
+Loss:[0.28694871]
+Loading 233th epoch
+Loss:[0.28710216]
+Loading 233th epoch
+Loss:[0.28725684]
+
+============================================================
+[DA-AA] Epoch 320 monitor summary
+============================================================
+  domain 0: DVP=0.068[LOW]  entropy=2.769  dead_protos=0  recon=0.06750
+  domain 1: DVP=0.047[LOW]  entropy=3.237  dead_protos=0  recon=0.00358
+  domain 2: DVP=0.239[LOW]  entropy=2.943  dead_protos=0  recon=0.35837
+  domain 3: DVP=0.216[LOW]  entropy=3.127  dead_protos=0  recon=0.27276
+  domain 4: DVP=0.082[LOW]  entropy=3.305  dead_protos=0  recon=0.36399
+  domain 5: DVP=0.069[LOW]  entropy=2.985  dead_protos=0  recon=0.42587
+============================================================
+
+  block_diagonal_strength: 0.5617
+Loading 233th epoch
+Loss:[0.28741261]
+Loading 233th epoch
+Loss:[0.28756946]
+Loading 233th epoch
+Loss:[0.28772742]
+Loading 233th epoch
+Loss:[0.28788638]
+Loading 233th epoch
+Loss:[0.28804648]
+Loading 233th epoch
+Loss:[0.28820762]
+Loading 233th epoch
+Loss:[0.28836980]
+Loading 233th epoch
+Loss:[0.28853312]
+Loading 233th epoch
+Loss:[0.28869742]
+Loading 233th epoch
+Loss:[0.28886279]
+
+============================================================
+[DA-AA] Epoch 330 monitor summary
+============================================================
+  domain 0: DVP=0.068[LOW]  entropy=2.766  dead_protos=0  recon=0.06656
+  domain 1: DVP=0.051[LOW]  entropy=3.237  dead_protos=0  recon=0.00353
+  domain 2: DVP=0.239[LOW]  entropy=2.940  dead_protos=0  recon=0.36039
+  domain 3: DVP=0.216[LOW]  entropy=3.124  dead_protos=0  recon=0.27468
+  domain 4: DVP=0.082[LOW]  entropy=3.302  dead_protos=0  recon=0.36681
+  domain 5: DVP=0.069[LOW]  entropy=2.982  dead_protos=0  recon=0.43106
+============================================================
+
+  block_diagonal_strength: 0.5607
+Loading 233th epoch
+Loss:[0.28902924]
+Loading 233th epoch
+Loss:[0.28919670]
+Loading 233th epoch
+Loss:[0.28936517]
+Loading 233th epoch
+Loss:[0.28953466]
+Loading 233th epoch
+Loss:[0.28970513]
+Loading 233th epoch
+Loss:[0.28987658]
+Loading 233th epoch
+Loss:[0.29004902]
+Loading 233th epoch
+Loss:[0.29022238]
+Loading 233th epoch
+Loss:[0.29039675]
+Loading 233th epoch
+Loss:[0.29057202]
+
+============================================================
+[DA-AA] Epoch 340 monitor summary
+============================================================
+  domain 0: DVP=0.068[LOW]  entropy=2.764  dead_protos=0  recon=0.06570
+  domain 1: DVP=0.054[LOW]  entropy=3.236  dead_protos=0  recon=0.00349
+  domain 2: DVP=0.239[LOW]  entropy=2.936  dead_protos=0  recon=0.36245
+  domain 3: DVP=0.216[LOW]  entropy=3.121  dead_protos=0  recon=0.27663
+  domain 4: DVP=0.082[LOW]  entropy=3.299  dead_protos=0  recon=0.36974
+  domain 5: DVP=0.069[LOW]  entropy=2.979  dead_protos=0  recon=0.43638
+============================================================
+
+  block_diagonal_strength: 0.5596
+Loading 233th epoch
+Loss:[0.29074830]
+Loading 233th epoch
+Loss:[0.29092544]
+Loading 233th epoch
+Loss:[0.29110354]
+Loading 233th epoch
+Loss:[0.29128256]
+Loading 233th epoch
+Loss:[0.29146245]
+Loading 233th epoch
+Loss:[0.29164326]
+Loading 233th epoch
+Loss:[0.29182497]
+Loading 233th epoch
+Loss:[0.29200760]
+Loading 233th epoch
+Loss:[0.29219109]
+Loading 233th epoch
+Loss:[0.29237545]
+
+============================================================
+[DA-AA] Epoch 350 monitor summary
+============================================================
+  domain 0: DVP=0.067[LOW]  entropy=2.761  dead_protos=0  recon=0.06492
+  domain 1: DVP=0.057[LOW]  entropy=3.235  dead_protos=0  recon=0.00346
+  domain 2: DVP=0.240[LOW]  entropy=2.933  dead_protos=0  recon=0.36455
+  domain 3: DVP=0.216[LOW]  entropy=3.118  dead_protos=0  recon=0.27862
+  domain 4: DVP=0.082[LOW]  entropy=3.295  dead_protos=0  recon=0.37279
+  domain 5: DVP=0.069[LOW]  entropy=2.975  dead_protos=0  recon=0.44183
+============================================================
+
+  block_diagonal_strength: 0.5583
+[Visualizer] t-SNE: 6101 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep350.png  (6101 pts)
+Loading 233th epoch
+Loss:[0.29256067]
+Loading 233th epoch
+Loss:[0.29274672]
+Loading 233th epoch
+Loss:[0.29293364]
+Loading 233th epoch
+Loss:[0.29312140]
+Loading 233th epoch
+Loss:[0.29330996]
+Loading 233th epoch
+Loss:[0.29349932]
+Loading 233th epoch
+Loss:[0.29368958]
+Loading 233th epoch
+Loss:[0.29388055]
+Loading 233th epoch
+Loss:[0.29407230]
+Loading 233th epoch
+Loss:[0.29426491]
+
+============================================================
+[DA-AA] Epoch 360 monitor summary
+============================================================
+  domain 0: DVP=0.067[LOW]  entropy=2.758  dead_protos=0  recon=0.06422
+  domain 1: DVP=0.060[LOW]  entropy=3.235  dead_protos=0  recon=0.00344
+  domain 2: DVP=0.239[LOW]  entropy=2.929  dead_protos=0  recon=0.36669
+  domain 3: DVP=0.215[LOW]  entropy=3.114  dead_protos=0  recon=0.28062
+  domain 4: DVP=0.081[LOW]  entropy=3.292  dead_protos=0  recon=0.37594
+  domain 5: DVP=0.069[LOW]  entropy=2.971  dead_protos=0  recon=0.44740
+============================================================
+
+  block_diagonal_strength: 0.5568
+Loading 233th epoch
+Loss:[0.29445827]
+Loading 233th epoch
+Loss:[0.29465240]
+Loading 233th epoch
+Loss:[0.29484734]
+Loading 233th epoch
+Loss:[0.29504305]
+Loading 233th epoch
+Loss:[0.29523954]
+Loading 233th epoch
+Loss:[0.29543674]
+Loading 233th epoch
+Loss:[0.29563472]
+Loading 233th epoch
+Loss:[0.29583338]
+Loading 233th epoch
+Loss:[0.29603273]
+Loading 233th epoch
+Loss:[0.29623279]
+
+============================================================
+[DA-AA] Epoch 370 monitor summary
+============================================================
+  domain 0: DVP=0.067[LOW]  entropy=2.755  dead_protos=0  recon=0.06359
+  domain 1: DVP=0.063[LOW]  entropy=3.234  dead_protos=0  recon=0.00342
+  domain 2: DVP=0.239[LOW]  entropy=2.925  dead_protos=0  recon=0.36885
+  domain 3: DVP=0.215[LOW]  entropy=3.111  dead_protos=0  recon=0.28265
+  domain 4: DVP=0.081[LOW]  entropy=3.288  dead_protos=0  recon=0.37919
+  domain 5: DVP=0.068[LOW]  entropy=2.968  dead_protos=0  recon=0.45307
+============================================================
+
+  block_diagonal_strength: 0.5552
+Loading 233th epoch
+Loss:[0.29643351]
+Loading 233th epoch
+Loss:[0.29663494]
+Loading 233th epoch
+Loss:[0.29683691]
+Loading 233th epoch
+Loss:[0.29703960]
+Loading 233th epoch
+Loss:[0.29724294]
+Loading 233th epoch
+Loss:[0.29744700]
+Loading 233th epoch
+Loss:[0.29765171]
+Loading 233th epoch
+Loss:[0.29785714]
+Loading 233th epoch
+Loss:[0.29806316]
+Loading 233th epoch
+Loss:[0.29826987]
+
+============================================================
+[DA-AA] Epoch 380 monitor summary
+============================================================
+  domain 0: DVP=0.067[LOW]  entropy=2.751  dead_protos=0  recon=0.06302
+  domain 1: DVP=0.065[LOW]  entropy=3.234  dead_protos=0  recon=0.00341
+  domain 2: DVP=0.239[LOW]  entropy=2.922  dead_protos=0  recon=0.37102
+  domain 3: DVP=0.214[LOW]  entropy=3.107  dead_protos=0  recon=0.28468
+  domain 4: DVP=0.080[LOW]  entropy=3.284  dead_protos=0  recon=0.38253
+  domain 5: DVP=0.068[LOW]  entropy=2.964  dead_protos=0  recon=0.45884
+============================================================
+
+  block_diagonal_strength: 0.5533
+Loading 233th epoch
+Loss:[0.29847729]
+Loading 233th epoch
+Loss:[0.29868537]
+Loading 233th epoch
+Loss:[0.29889417]
+Loading 233th epoch
+Loss:[0.29910365]
+Loading 233th epoch
+Loss:[0.29931378]
+Loading 233th epoch
+Loss:[0.29952455]
+Loading 233th epoch
+Loss:[0.29973593]
+Loading 233th epoch
+Loss:[0.29994795]
+Loading 233th epoch
+Loss:[0.30016062]
+Loading 233th epoch
+Loss:[0.30037385]
+
+============================================================
+[DA-AA] Epoch 390 monitor summary
+============================================================
+  domain 0: DVP=0.066[LOW]  entropy=2.748  dead_protos=0  recon=0.06251
+  domain 1: DVP=0.068[LOW]  entropy=3.233  dead_protos=0  recon=0.00341
+  domain 2: DVP=0.238[LOW]  entropy=2.917  dead_protos=0  recon=0.37321
+  domain 3: DVP=0.214[LOW]  entropy=3.104  dead_protos=0  recon=0.28673
+  domain 4: DVP=0.080[LOW]  entropy=3.280  dead_protos=0  recon=0.38597
+  domain 5: DVP=0.068[LOW]  entropy=2.959  dead_protos=0  recon=0.46471
+============================================================
+
+  block_diagonal_strength: 0.5514
+Loading 233th epoch
+Loss:[0.30058774]
+Loading 233th epoch
+Loss:[0.30080223]
+Loading 233th epoch
+Loss:[0.30101725]
+Loading 233th epoch
+Loss:[0.30123293]
+Loading 233th epoch
+Loss:[0.30144927]
+Loading 233th epoch
+Loss:[0.30166620]
+Loading 233th epoch
+Loss:[0.30188376]
+Loading 233th epoch
+Loss:[0.30210194]
+Loading 233th epoch
+Loss:[0.30232072]
+Loading 233th epoch
+Loss:[0.30254012]
+
+============================================================
+[DA-AA] Epoch 400 monitor summary
+============================================================
+  domain 0: DVP=0.066[LOW]  entropy=2.745  dead_protos=0  recon=0.06206
+  domain 1: DVP=0.071[LOW]  entropy=3.233  dead_protos=0  recon=0.00341
+  domain 2: DVP=0.237[LOW]  entropy=2.913  dead_protos=0  recon=0.37543
+  domain 3: DVP=0.213[LOW]  entropy=3.100  dead_protos=0  recon=0.28878
+  domain 4: DVP=0.079[LOW]  entropy=3.276  dead_protos=0  recon=0.38951
+  domain 5: DVP=0.068[LOW]  entropy=2.955  dead_protos=0  recon=0.47066
+============================================================
+
+  block_diagonal_strength: 0.5492
+[Visualizer] t-SNE: 6101 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep400.png  (6101 pts)
+[DA-AA] domain 0 expand: 9 -> 10
+[DA-AA] domain 1 expand: 20 -> 21
+[DA-AA] domain 2 expand: 13 -> 14
+[DA-AA] domain 3 expand: 17 -> 18
+[DA-AA] domain 4 expand: 21 -> 22
+[DA-AA] domain 5 expand: 13 -> 14
+Loading 233th epoch
+Loss:[0.29767323]
+Loading 233th epoch
+Loss:[0.29790676]
+Loading 233th epoch
+Loss:[0.29814011]
+Loading 233th epoch
+Loss:[0.29837319]
+Loading 233th epoch
+Loss:[0.29860616]
+Loading 233th epoch
+Loss:[0.29883909]
+Loading 233th epoch
+Loss:[0.29907194]
+Loading 233th epoch
+Loss:[0.29930487]
+Loading 233th epoch
+Loss:[0.29953784]
+Loading 233th epoch
+Loss:[0.29977095]
+
+============================================================
+[DA-AA] Epoch 410 monitor summary
+============================================================
+  domain 0: DVP=0.065[LOW]  entropy=2.801  dead_protos=0  recon=0.05787
+  domain 1: DVP=0.073[LOW]  entropy=3.270  dead_protos=0  recon=0.00314
+  domain 2: DVP=0.236[LOW]  entropy=2.955  dead_protos=0  recon=0.37343
+  domain 3: DVP=0.210[LOW]  entropy=3.137  dead_protos=0  recon=0.28629
+  domain 4: DVP=0.078[LOW]  entropy=3.307  dead_protos=0  recon=0.38967
+  domain 5: DVP=0.067[LOW]  entropy=2.998  dead_protos=0  recon=0.46493
+============================================================
+
+  block_diagonal_strength: 0.5525
+Loading 233th epoch
+Loss:[0.30000412]
+Loading 233th epoch
+Loss:[0.30023745]
+Loading 233th epoch
+Loss:[0.30047098]
+Loading 233th epoch
+Loss:[0.30070469]
+Loading 233th epoch
+Loss:[0.30093870]
+Loading 233th epoch
+Loss:[0.30117297]
+Loading 233th epoch
+Loss:[0.30140755]
+Loading 233th epoch
+Loss:[0.30164254]
+Loading 233th epoch
+Loss:[0.30187783]
+Loading 233th epoch
+Loss:[0.30211350]
+
+============================================================
+[DA-AA] Epoch 420 monitor summary
+============================================================
+  domain 0: DVP=0.063[LOW]  entropy=2.798  dead_protos=0  recon=0.05770
+  domain 1: DVP=0.076[LOW]  entropy=3.269  dead_protos=0  recon=0.00315
+  domain 2: DVP=0.235[LOW]  entropy=2.951  dead_protos=0  recon=0.37583
+  domain 3: DVP=0.207[LOW]  entropy=3.133  dead_protos=0  recon=0.28845
+  domain 4: DVP=0.077[LOW]  entropy=3.303  dead_protos=0  recon=0.39334
+  domain 5: DVP=0.066[LOW]  entropy=2.993  dead_protos=0  recon=0.47098
+============================================================
+
+  block_diagonal_strength: 0.5502
+Loading 233th epoch
+Loss:[0.30234957]
+Loading 233th epoch
+Loss:[0.30258599]
+Loading 233th epoch
+Loss:[0.30282289]
+Loading 233th epoch
+Loss:[0.30306014]
+Loading 233th epoch
+Loss:[0.30329791]
+Loading 233th epoch
+Loss:[0.30353600]
+Loading 233th epoch
+Loss:[0.30377451]
+Loading 233th epoch
+Loss:[0.30401349]
+Loading 233th epoch
+Loss:[0.30425295]
+Loading 233th epoch
+Loss:[0.30449286]
+
+============================================================
+[DA-AA] Epoch 430 monitor summary
+============================================================
+  domain 0: DVP=0.062[LOW]  entropy=2.795  dead_protos=0  recon=0.05757
+  domain 1: DVP=0.079[LOW]  entropy=3.269  dead_protos=0  recon=0.00317
+  domain 2: DVP=0.234[LOW]  entropy=2.947  dead_protos=0  recon=0.37824
+  domain 3: DVP=0.204[LOW]  entropy=3.129  dead_protos=0  recon=0.29062
+  domain 4: DVP=0.076[LOW]  entropy=3.298  dead_protos=0  recon=0.39707
+  domain 5: DVP=0.065[LOW]  entropy=2.988  dead_protos=0  recon=0.47708
+============================================================
+
+  block_diagonal_strength: 0.5478
+Loading 233th epoch
+Loss:[0.30473319]
+Loading 233th epoch
+Loss:[0.30497396]
+Loading 233th epoch
+Loss:[0.30521524]
+Loading 233th epoch
+Loss:[0.30545700]
+Loading 233th epoch
+Loss:[0.30569920]
+Loading 233th epoch
+Loss:[0.30594188]
+Loading 233th epoch
+Loss:[0.30618501]
+Loading 233th epoch
+Loss:[0.30642867]
+Loading 233th epoch
+Loss:[0.30667287]
+Loading 233th epoch
+Loss:[0.30691743]
+
+============================================================
+[DA-AA] Epoch 440 monitor summary
+============================================================
+  domain 0: DVP=0.061[LOW]  entropy=2.792  dead_protos=0  recon=0.05748
+  domain 1: DVP=0.081[LOW]  entropy=3.268  dead_protos=0  recon=0.00319
+  domain 2: DVP=0.233[LOW]  entropy=2.942  dead_protos=0  recon=0.38066
+  domain 3: DVP=0.201[LOW]  entropy=3.124  dead_protos=0  recon=0.29279
+  domain 4: DVP=0.075[LOW]  entropy=3.294  dead_protos=0  recon=0.40086
+  domain 5: DVP=0.064[LOW]  entropy=2.984  dead_protos=0  recon=0.48325
+============================================================
+
+  block_diagonal_strength: 0.5453
+Loading 233th epoch
+Loss:[0.30716255]
+Loading 233th epoch
+Loss:[0.30740815]
+Loading 233th epoch
+Loss:[0.30765423]
+Loading 233th epoch
+Loss:[0.30790076]
+Loading 233th epoch
+Loss:[0.30814767]
+Loading 233th epoch
+Loss:[0.30839506]
+Loading 233th epoch
+Loss:[0.30864289]
+Loading 233th epoch
+Loss:[0.30889112]
+Loading 233th epoch
+Loss:[0.30913985]
+Loading 233th epoch
+Loss:[0.30938900]
+
+============================================================
+[DA-AA] Epoch 450 monitor summary
+============================================================
+  domain 0: DVP=0.059[LOW]  entropy=2.789  dead_protos=0  recon=0.05741
+  domain 1: DVP=0.084[LOW]  entropy=3.268  dead_protos=0  recon=0.00322
+  domain 2: DVP=0.232[LOW]  entropy=2.937  dead_protos=0  recon=0.38309
+  domain 3: DVP=0.198[LOW]  entropy=3.120  dead_protos=0  recon=0.29498
+  domain 4: DVP=0.073[LOW]  entropy=3.289  dead_protos=0  recon=0.40474
+  domain 5: DVP=0.063[LOW]  entropy=2.978  dead_protos=0  recon=0.48949
+============================================================
+
+  block_diagonal_strength: 0.5425
+[Visualizer] t-SNE: 6107 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep450.png  (6107 pts)
+Loading 233th epoch
+Loss:[0.30963862]
+Loading 233th epoch
+Loss:[0.30988869]
+Loading 233th epoch
+Loss:[0.31013918]
+Loading 233th epoch
+Loss:[0.31039014]
+Loading 233th epoch
+Loss:[0.31064156]
+Loading 233th epoch
+Loss:[0.31089345]
+Loading 233th epoch
+Loss:[0.31114584]
+Loading 233th epoch
+Loss:[0.31139880]
+Loading 233th epoch
+Loss:[0.31165227]
+Loading 233th epoch
+Loss:[0.31190625]
+
+============================================================
+[DA-AA] Epoch 460 monitor summary
+============================================================
+  domain 0: DVP=0.058[LOW]  entropy=2.785  dead_protos=0  recon=0.05738
+  domain 1: DVP=0.087[LOW]  entropy=3.267  dead_protos=0  recon=0.00325
+  domain 2: DVP=0.230[LOW]  entropy=2.932  dead_protos=0  recon=0.38553
+  domain 3: DVP=0.196[LOW]  entropy=3.115  dead_protos=0  recon=0.29717
+  domain 4: DVP=0.073[LOW]  entropy=3.283  dead_protos=0  recon=0.40869
+  domain 5: DVP=0.063[LOW]  entropy=2.973  dead_protos=0  recon=0.49583
+============================================================
+
+  block_diagonal_strength: 0.5396
+Loading 233th epoch
+Loss:[0.31216073]
+Loading 233th epoch
+Loss:[0.31241578]
+Loading 233th epoch
+Loss:[0.31267130]
+Loading 233th epoch
+Loss:[0.31292740]
+Loading 233th epoch
+Loss:[0.31318408]
+Loading 233th epoch
+Loss:[0.31344131]
+Loading 233th epoch
+Loss:[0.31369919]
+Loading 233th epoch
+Loss:[0.31395757]
+Loading 233th epoch
+Loss:[0.31421652]
+Loading 233th epoch
+Loss:[0.31447601]
+
+============================================================
+[DA-AA] Epoch 470 monitor summary
+============================================================
+  domain 0: DVP=0.058[LOW]  entropy=2.782  dead_protos=0  recon=0.05737
+  domain 1: DVP=0.089[LOW]  entropy=3.266  dead_protos=0  recon=0.00328
+  domain 2: DVP=0.228[LOW]  entropy=2.927  dead_protos=0  recon=0.38799
+  domain 3: DVP=0.195[LOW]  entropy=3.110  dead_protos=0  recon=0.29938
+  domain 4: DVP=0.072[LOW]  entropy=3.278  dead_protos=0  recon=0.41274
+  domain 5: DVP=0.063[LOW]  entropy=2.967  dead_protos=0  recon=0.50226
+============================================================
+
+  block_diagonal_strength: 0.5365
+Loading 233th epoch
+Loss:[0.31473610]
+Loading 233th epoch
+Loss:[0.31499669]
+Loading 233th epoch
+Loss:[0.31525794]
+Loading 233th epoch
+Loss:[0.31551972]
+Loading 233th epoch
+Loss:[0.31578201]
+Loading 233th epoch
+Loss:[0.31604478]
+Loading 233th epoch
+Loss:[0.31630811]
+Loading 233th epoch
+Loss:[0.31657192]
+Loading 233th epoch
+Loss:[0.31683630]
+Loading 233th epoch
+Loss:[0.31710121]
+
+============================================================
+[DA-AA] Epoch 480 monitor summary
+============================================================
+  domain 0: DVP=0.057[LOW]  entropy=2.779  dead_protos=0  recon=0.05739
+  domain 1: DVP=0.092[LOW]  entropy=3.266  dead_protos=0  recon=0.00332
+  domain 2: DVP=0.226[LOW]  entropy=2.921  dead_protos=0  recon=0.39048
+  domain 3: DVP=0.193[LOW]  entropy=3.104  dead_protos=0  recon=0.30161
+  domain 4: DVP=0.071[LOW]  entropy=3.272  dead_protos=0  recon=0.41688
+  domain 5: DVP=0.062[LOW]  entropy=2.961  dead_protos=0  recon=0.50878
+============================================================
+
+  block_diagonal_strength: 0.5331
+Loading 233th epoch
+Loss:[0.31736675]
+Loading 233th epoch
+Loss:[0.31763279]
+Loading 233th epoch
+Loss:[0.31789947]
+Loading 233th epoch
+Loss:[0.31816667]
+Loading 233th epoch
+Loss:[0.31843457]
+Loading 233th epoch
+Loss:[0.31870306]
+Loading 233th epoch
+Loss:[0.31897220]
+Loading 233th epoch
+Loss:[0.31924191]
+Loading 233th epoch
+Loss:[0.31951228]
+Loading 233th epoch
+Loss:[0.31978324]
+
+============================================================
+[DA-AA] Epoch 490 monitor summary
+============================================================
+  domain 0: DVP=0.056[LOW]  entropy=2.775  dead_protos=0  recon=0.05743
+  domain 1: DVP=0.095[LOW]  entropy=3.265  dead_protos=0  recon=0.00336
+  domain 2: DVP=0.224[LOW]  entropy=2.915  dead_protos=0  recon=0.39301
+  domain 3: DVP=0.190[LOW]  entropy=3.098  dead_protos=0  recon=0.30387
+  domain 4: DVP=0.070[LOW]  entropy=3.265  dead_protos=0  recon=0.42111
+  domain 5: DVP=0.062[LOW]  entropy=2.955  dead_protos=0  recon=0.51541
+============================================================
+
+  block_diagonal_strength: 0.5296
+Loading 233th epoch
+Loss:[0.32005486]
+Loading 233th epoch
+Loss:[0.32032704]
+Loading 233th epoch
+Loss:[0.32059994]
+Loading 233th epoch
+Loss:[0.32087347]
+Loading 233th epoch
+Loss:[0.32114771]
+Loading 233th epoch
+Loss:[0.32142261]
+Loading 233th epoch
+Loss:[0.32169822]
+Loading 233th epoch
+Loss:[0.32197446]
+Loading 233th epoch
+Loss:[0.32225144]
+Loading 233th epoch
+Loss:[0.32252917]
+
+============================================================
+[DA-AA] Epoch 500 monitor summary
+============================================================
+  domain 0: DVP=0.056[LOW]  entropy=2.772  dead_protos=0  recon=0.05750
+  domain 1: DVP=0.098[LOW]  entropy=3.265  dead_protos=0  recon=0.00340
+  domain 2: DVP=0.221[LOW]  entropy=2.909  dead_protos=0  recon=0.39558
+  domain 3: DVP=0.188[LOW]  entropy=3.092  dead_protos=0  recon=0.30616
+  domain 4: DVP=0.069[LOW]  entropy=3.259  dead_protos=0  recon=0.42545
+  domain 5: DVP=0.061[LOW]  entropy=2.948  dead_protos=0  recon=0.52216
+============================================================
+
+  block_diagonal_strength: 0.5258
+[Visualizer] t-SNE: 6107 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep500.png  (6107 pts)
+Loading 233th epoch
+Loss:[0.32280755]
+Loading 233th epoch
+Loss:[0.32308674]
+Loading 233th epoch
+Loss:[0.32336670]
+Loading 233th epoch
+Loss:[0.32364744]
+Loading 233th epoch
+Loss:[0.32392886]
+Loading 233th epoch
+Loss:[0.32421109]
+Loading 233th epoch
+Loss:[0.32449415]
+Loading 233th epoch
+Loss:[0.32477811]
+Loading 233th epoch
+Loss:[0.32506290]
+Loading 233th epoch
+Loss:[0.32534865]
+
+============================================================
+[DA-AA] Epoch 510 monitor summary
+============================================================
+  domain 0: DVP=0.055[LOW]  entropy=2.768  dead_protos=0  recon=0.05758
+  domain 1: DVP=0.101[LOW]  entropy=3.264  dead_protos=0  recon=0.00344
+  domain 2: DVP=0.218[LOW]  entropy=2.903  dead_protos=0  recon=0.39823
+  domain 3: DVP=0.185[LOW]  entropy=3.086  dead_protos=0  recon=0.30850
+  domain 4: DVP=0.068[LOW]  entropy=3.251  dead_protos=0  recon=0.42990
+  domain 5: DVP=0.060[LOW]  entropy=2.941  dead_protos=0  recon=0.52903
+============================================================
+
+  block_diagonal_strength: 0.5218
+Loading 233th epoch
+Loss:[0.32563531]
+Loading 233th epoch
+Loss:[0.32592294]
+Loading 233th epoch
+Loss:[0.32621154]
+Loading 233th epoch
+Loss:[0.32650113]
+Loading 233th epoch
+Loss:[0.32679170]
+Loading 233th epoch
+Loss:[0.32708329]
+Loading 233th epoch
+Loss:[0.32737592]
+Loading 233th epoch
+Loss:[0.32766959]
+Loading 233th epoch
+Loss:[0.32796431]
+Loading 233th epoch
+Loss:[0.32826015]
+
+============================================================
+[DA-AA] Epoch 520 monitor summary
+============================================================
+  domain 0: DVP=0.054[LOW]  entropy=2.764  dead_protos=0  recon=0.05770
+  domain 1: DVP=0.104[LOW]  entropy=3.263  dead_protos=0  recon=0.00349
+  domain 2: DVP=0.214[LOW]  entropy=2.896  dead_protos=0  recon=0.40097
+  domain 3: DVP=0.182[LOW]  entropy=3.079  dead_protos=0  recon=0.31090
+  domain 4: DVP=0.067[LOW]  entropy=3.244  dead_protos=0  recon=0.43449
+  domain 5: DVP=0.060[LOW]  entropy=2.933  dead_protos=0  recon=0.53607
+============================================================
+
+  block_diagonal_strength: 0.5175
+Loading 233th epoch
+Loss:[0.32855710]
+Loading 233th epoch
+Loss:[0.32885522]
+Loading 233th epoch
+Loss:[0.32915446]
+Loading 233th epoch
+Loss:[0.32945484]
+Loading 233th epoch
+Loss:[0.32975644]
+Loading 233th epoch
+Loss:[0.33005926]
+Loading 233th epoch
+Loss:[0.33036330]
+Loading 233th epoch
+Loss:[0.33066863]
+Loading 233th epoch
+Loss:[0.33097523]
+Loading 233th epoch
+Loss:[0.33128315]
+
+============================================================
+[DA-AA] Epoch 530 monitor summary
+============================================================
+  domain 0: DVP=0.053[LOW]  entropy=2.760  dead_protos=0  recon=0.05784
+  domain 1: DVP=0.107[LOW]  entropy=3.263  dead_protos=0  recon=0.00355
+  domain 2: DVP=0.210[LOW]  entropy=2.889  dead_protos=0  recon=0.40384
+  domain 3: DVP=0.179[LOW]  entropy=3.071  dead_protos=0  recon=0.31338
+  domain 4: DVP=0.066[LOW]  entropy=3.236  dead_protos=0  recon=0.43925
+  domain 5: DVP=0.059[LOW]  entropy=2.925  dead_protos=0  recon=0.54331
+============================================================
+
+  block_diagonal_strength: 0.5130
+Loading 233th epoch
+Loss:[0.33159238]
+Loading 233th epoch
+Loss:[0.33190298]
+Loading 233th epoch
+Loss:[0.33221498]
+Loading 233th epoch
+Loss:[0.33252838]
+Loading 233th epoch
+Loss:[0.33284315]
+Loading 233th epoch
+Loss:[0.33315939]
+Loading 233th epoch
+Loss:[0.33347711]
+Loading 233th epoch
+Loss:[0.33379626]
+Loading 233th epoch
+Loss:[0.33411700]
+Loading 233th epoch
+Loss:[0.33443919]
+
+============================================================
+[DA-AA] Epoch 540 monitor summary
+============================================================
+  domain 0: DVP=0.053[LOW]  entropy=2.755  dead_protos=0  recon=0.05802
+  domain 1: DVP=0.110[LOW]  entropy=3.262  dead_protos=0  recon=0.00361
+  domain 2: DVP=0.206[LOW]  entropy=2.881  dead_protos=0  recon=0.40687
+  domain 3: DVP=0.176[LOW]  entropy=3.063  dead_protos=0  recon=0.31596
+  domain 4: DVP=0.065[LOW]  entropy=3.227  dead_protos=0  recon=0.44421
+  domain 5: DVP=0.059[LOW]  entropy=2.916  dead_protos=0  recon=0.55080
+============================================================
+
+  block_diagonal_strength: 0.5082
+Loading 233th epoch
+Loss:[0.33476299]
+Loading 233th epoch
+Loss:[0.33508834]
+Loading 233th epoch
+Loss:[0.33541521]
+Loading 233th epoch
+Loss:[0.33574370]
+Loading 233th epoch
+Loss:[0.33607382]
+Loading 233th epoch
+Loss:[0.33640549]
+Loading 233th epoch
+Loss:[0.33673888]
+Loading 233th epoch
+Loss:[0.33707395]
+Loading 233th epoch
+Loss:[0.33741075]
+Loading 233th epoch
+Loss:[0.33774924]
+
+============================================================
+[DA-AA] Epoch 550 monitor summary
+============================================================
+  domain 0: DVP=0.052[LOW]  entropy=2.751  dead_protos=0  recon=0.05822
+  domain 1: DVP=0.113[LOW]  entropy=3.261  dead_protos=0  recon=0.00367
+  domain 2: DVP=0.201[LOW]  entropy=2.872  dead_protos=0  recon=0.41008
+  domain 3: DVP=0.172[LOW]  entropy=3.055  dead_protos=0  recon=0.31866
+  domain 4: DVP=0.064[LOW]  entropy=3.218  dead_protos=0  recon=0.44938
+  domain 5: DVP=0.058[LOW]  entropy=2.907  dead_protos=0  recon=0.55856
+============================================================
+
+  block_diagonal_strength: 0.5030
+[Visualizer] t-SNE: 6107 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep550.png  (6107 pts)
+Loading 233th epoch
+Loss:[0.33808956]
+Loading 233th epoch
+Loss:[0.33843169]
+Loading 233th epoch
+Loss:[0.33877578]
+Loading 233th epoch
+Loss:[0.33912176]
+Loading 233th epoch
+Loss:[0.33946961]
+Loading 233th epoch
+Loss:[0.33981943]
+Loading 233th epoch
+Loss:[0.34017134]
+Loading 233th epoch
+Loss:[0.34052527]
+Loading 233th epoch
+Loss:[0.34088135]
+Loading 233th epoch
+Loss:[0.34123954]
+
+============================================================
+[DA-AA] Epoch 560 monitor summary
+============================================================
+  domain 0: DVP=0.051[LOW]  entropy=2.746  dead_protos=0  recon=0.05847
+  domain 1: DVP=0.117[LOW]  entropy=3.261  dead_protos=0  recon=0.00374
+  domain 2: DVP=0.195[LOW]  entropy=2.864  dead_protos=0  recon=0.41353
+  domain 3: DVP=0.167[LOW]  entropy=3.045  dead_protos=0  recon=0.32152
+  domain 4: DVP=0.062[LOW]  entropy=3.207  dead_protos=0  recon=0.45482
+  domain 5: DVP=0.057[LOW]  entropy=2.897  dead_protos=0  recon=0.56665
+============================================================
+
+  block_diagonal_strength: 0.4976
+Loading 233th epoch
+Loss:[0.34159988]
+Loading 233th epoch
+Loss:[0.34196246]
+Loading 233th epoch
+Loss:[0.34232727]
+Loading 233th epoch
+Loss:[0.34269440]
+Loading 233th epoch
+Loss:[0.34306392]
+Loading 233th epoch
+Loss:[0.34343591]
+Loading 233th epoch
+Loss:[0.34381032]
+Loading 233th epoch
+Loss:[0.34418723]
+Loading 233th epoch
+Loss:[0.34456664]
+Loading 233th epoch
+Loss:[0.34494850]
+
+============================================================
+[DA-AA] Epoch 570 monitor summary
+============================================================
+  domain 0: DVP=0.050[LOW]  entropy=2.741  dead_protos=0  recon=0.05876
+  domain 1: DVP=0.120[LOW]  entropy=3.260  dead_protos=0  recon=0.00381
+  domain 2: DVP=0.189[LOW]  entropy=2.854  dead_protos=0  recon=0.41726
+  domain 3: DVP=0.163[LOW]  entropy=3.035  dead_protos=0  recon=0.32456
+  domain 4: DVP=0.061[LOW]  entropy=3.197  dead_protos=0  recon=0.46055
+  domain 5: DVP=0.056[LOW]  entropy=2.886  dead_protos=0  recon=0.57514
+============================================================
+
+  block_diagonal_strength: 0.4918
+Loading 233th epoch
+Loss:[0.34533295]
+Loading 233th epoch
+Loss:[0.34571999]
+Loading 233th epoch
+Loss:[0.34610969]
+Loading 233th epoch
+Loss:[0.34650204]
+Loading 233th epoch
+Loss:[0.34689704]
+Loading 233th epoch
+Loss:[0.34729481]
+Loading 233th epoch
+Loss:[0.34769526]
+Loading 233th epoch
+Loss:[0.34809846]
+Loading 233th epoch
+Loss:[0.34850445]
+Loading 233th epoch
+Loss:[0.34891322]
+
+============================================================
+[DA-AA] Epoch 580 monitor summary
+============================================================
+  domain 0: DVP=0.049[LOW]  entropy=2.735  dead_protos=0  recon=0.05910
+  domain 1: DVP=0.123[LOW]  entropy=3.259  dead_protos=0  recon=0.00390
+  domain 2: DVP=0.182[LOW]  entropy=2.844  dead_protos=0  recon=0.42136
+  domain 3: DVP=0.158[LOW]  entropy=3.025  dead_protos=0  recon=0.32782
+  domain 4: DVP=0.059[LOW]  entropy=3.185  dead_protos=0  recon=0.46664
+  domain 5: DVP=0.055[LOW]  entropy=2.874  dead_protos=0  recon=0.58408
+============================================================
+
+  block_diagonal_strength: 0.4856
+Loading 233th epoch
+Loss:[0.34932485]
+Loading 233th epoch
+Loss:[0.34973925]
+Loading 233th epoch
+Loss:[0.35015649]
+Loading 233th epoch
+Loss:[0.35057664]
+Loading 233th epoch
+Loss:[0.35099971]
+Loading 233th epoch
+Loss:[0.35142571]
+Loading 233th epoch
+Loss:[0.35185480]
+Loading 233th epoch
+Loss:[0.35228682]
+Loading 233th epoch
+Loss:[0.35272196]
+Loading 233th epoch
+Loss:[0.35316026]
+
+============================================================
+[DA-AA] Epoch 590 monitor summary
+============================================================
+  domain 0: DVP=0.048[LOW]  entropy=2.729  dead_protos=0  recon=0.05950
+  domain 1: DVP=0.126[LOW]  entropy=3.258  dead_protos=0  recon=0.00399
+  domain 2: DVP=0.175[LOW]  entropy=2.832  dead_protos=0  recon=0.42582
+  domain 3: DVP=0.152[LOW]  entropy=3.013  dead_protos=0  recon=0.33134
+  domain 4: DVP=0.058[LOW]  entropy=3.172  dead_protos=0  recon=0.47312
+  domain 5: DVP=0.054[LOW]  entropy=2.862  dead_protos=0  recon=0.59354
+============================================================
+
+  block_diagonal_strength: 0.4791
+Loading 233th epoch
+Loss:[0.35360169]
+Loading 233th epoch
+Loss:[0.35404634]
+Loading 233th epoch
+Loss:[0.35449424]
+Loading 233th epoch
+Loss:[0.35494551]
+Loading 233th epoch
+Loss:[0.35540015]
+Loading 233th epoch
+Loss:[0.35585821]
+Loading 233th epoch
+Loss:[0.35631976]
+Loading 233th epoch
+Loss:[0.35678488]
+Loading 233th epoch
+Loss:[0.35725349]
+Loading 233th epoch
+Loss:[0.35772574]
+
+============================================================
+[DA-AA] Epoch 600 monitor summary
+============================================================
+  domain 0: DVP=0.047[LOW]  entropy=2.723  dead_protos=0  recon=0.05997
+  domain 1: DVP=0.129[LOW]  entropy=3.258  dead_protos=0  recon=0.00410
+  domain 2: DVP=0.167[LOW]  entropy=2.820  dead_protos=0  recon=0.43068
+  domain 3: DVP=0.146[LOW]  entropy=3.000  dead_protos=0  recon=0.33515
+  domain 4: DVP=0.056[LOW]  entropy=3.158  dead_protos=0  recon=0.48005
+  domain 5: DVP=0.053[LOW]  entropy=2.848  dead_protos=0  recon=0.60359
+============================================================
+
+  block_diagonal_strength: 0.4721
+[Visualizer] t-SNE: 6107 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep600.png  (6107 pts)
+[DA-AA] domain 0 expand: 10 -> 11
+[DA-AA] domain 1 expand: 21 -> 22
+[DA-AA] domain 2 expand: 14 -> 15
+[DA-AA] domain 3 expand: 18 -> 19
+[DA-AA] domain 4 expand: 22 -> 23
+[DA-AA] domain 5 expand: 14 -> 15
+Loading 233th epoch
+Loss:[0.35358226]
+Loading 233th epoch
+Loss:[0.35410619]
+Loading 233th epoch
+Loss:[0.35463160]
+Loading 233th epoch
+Loss:[0.35515875]
+Loading 233th epoch
+Loss:[0.35568771]
+Loading 233th epoch
+Loss:[0.35621867]
+Loading 233th epoch
+Loss:[0.35675168]
+Loading 233th epoch
+Loss:[0.35728696]
+Loading 233th epoch
+Loss:[0.35782459]
+Loading 233th epoch
+Loss:[0.35836455]
+
+============================================================
+[DA-AA] Epoch 610 monitor summary
+============================================================
+  domain 0: DVP=0.045[LOW]  entropy=2.775  dead_protos=0  recon=0.05915
+  domain 1: DVP=0.131[LOW]  entropy=3.291  dead_protos=0  recon=0.00400
+  domain 2: DVP=0.157[LOW]  entropy=2.863  dead_protos=0  recon=0.43423
+  domain 3: DVP=0.139[LOW]  entropy=3.029  dead_protos=0  recon=0.33304
+  domain 4: DVP=0.054[LOW]  entropy=3.185  dead_protos=0  recon=0.48415
+  domain 5: DVP=0.051[LOW]  entropy=2.886  dead_protos=0  recon=0.60276
+============================================================
+
+  block_diagonal_strength: 0.4774
+Loading 233th epoch
+Loss:[0.35890704]
+Loading 233th epoch
+Loss:[0.35945213]
+Loading 233th epoch
+Loss:[0.35999995]
+Loading 233th epoch
+Loss:[0.36055049]
+Loading 233th epoch
+Loss:[0.36110401]
+Loading 233th epoch
+Loss:[0.36166054]
+Loading 233th epoch
+Loss:[0.36222011]
+Loading 233th epoch
+Loss:[0.36278287]
+Loading 233th epoch
+Loss:[0.36334875]
+Loading 233th epoch
+Loss:[0.36391798]
+
+============================================================
+[DA-AA] Epoch 620 monitor summary
+============================================================
+  domain 0: DVP=0.043[LOW]  entropy=2.768  dead_protos=0  recon=0.05992
+  domain 1: DVP=0.133[LOW]  entropy=3.290  dead_protos=0  recon=0.00413
+  domain 2: DVP=0.147[LOW]  entropy=2.850  dead_protos=0  recon=0.44031
+  domain 3: DVP=0.132[LOW]  entropy=3.015  dead_protos=0  recon=0.33779
+  domain 4: DVP=0.052[LOW]  entropy=3.171  dead_protos=0  recon=0.49228
+  domain 5: DVP=0.049[LOW]  entropy=2.872  dead_protos=0  recon=0.61471
+============================================================
+
+  block_diagonal_strength: 0.4703
+Loading 233th epoch
+Loss:[0.36449066]
+Loading 233th epoch
+Loss:[0.36506659]
+Loading 233th epoch
+Loss:[0.36564606]
+Loading 233th epoch
+Loss:[0.36622900]
+Loading 233th epoch
+Loss:[0.36681548]
+Loading 233th epoch
+Loss:[0.36740574]
+Loading 233th epoch
+Loss:[0.36799958]
+Loading 233th epoch
+Loss:[0.36859730]
+Loading 233th epoch
+Loss:[0.36919877]
+Loading 233th epoch
+Loss:[0.36980417]
+
+============================================================
+[DA-AA] Epoch 630 monitor summary
+============================================================
+  domain 0: DVP=0.041[LOW]  entropy=2.761  dead_protos=0  recon=0.06076
+  domain 1: DVP=0.134[LOW]  entropy=3.289  dead_protos=0  recon=0.00427
+  domain 2: DVP=0.137[LOW]  entropy=2.836  dead_protos=0  recon=0.44681
+  domain 3: DVP=0.124[LOW]  entropy=3.001  dead_protos=0  recon=0.34287
+  domain 4: DVP=0.050[LOW]  entropy=3.155  dead_protos=0  recon=0.50085
+  domain 5: DVP=0.048[LOW]  entropy=2.858  dead_protos=0  recon=0.62729
+============================================================
+
+  block_diagonal_strength: 0.4627
+Loading 233th epoch
+Loss:[0.37041357]
+Loading 233th epoch
+Loss:[0.37102693]
+Loading 233th epoch
+Loss:[0.37164438]
+Loading 233th epoch
+Loss:[0.37226602]
+Loading 233th epoch
+Loss:[0.37289175]
+Loading 233th epoch
+Loss:[0.37352172]
+Loading 233th epoch
+Loss:[0.37415591]
+Loading 233th epoch
+Loss:[0.37479439]
+Loading 233th epoch
+Loss:[0.37543708]
+Loading 233th epoch
+Loss:[0.37608418]
+
+============================================================
+[DA-AA] Epoch 640 monitor summary
+============================================================
+  domain 0: DVP=0.039[LOW]  entropy=2.754  dead_protos=0  recon=0.06168
+  domain 1: DVP=0.135[LOW]  entropy=3.288  dead_protos=0  recon=0.00442
+  domain 2: DVP=0.127[LOW]  entropy=2.821  dead_protos=0  recon=0.45382
+  domain 3: DVP=0.116[LOW]  entropy=2.985  dead_protos=0  recon=0.34835
+  domain 4: DVP=0.048[LOW]  entropy=3.138  dead_protos=0  recon=0.50993
+  domain 5: DVP=0.046[LOW]  entropy=2.842  dead_protos=0  recon=0.64060
+============================================================
+
+  block_diagonal_strength: 0.4547
+Loading 233th epoch
+Loss:[0.37673566]
+Loading 233th epoch
+Loss:[0.37739158]
+Loading 233th epoch
+Loss:[0.37805209]
+Loading 233th epoch
+Loss:[0.37871724]
+Loading 233th epoch
+Loss:[0.37938699]
+Loading 233th epoch
+Loss:[0.38006133]
+Loading 233th epoch
+Loss:[0.38074046]
+Loading 233th epoch
+Loss:[0.38142440]
+Loading 233th epoch
+Loss:[0.38211310]
+Loading 233th epoch
+Loss:[0.38280663]
+
+============================================================
+[DA-AA] Epoch 650 monitor summary
+============================================================
+  domain 0: DVP=0.037[LOW]  entropy=2.746  dead_protos=0  recon=0.06270
+  domain 1: DVP=0.136[LOW]  entropy=3.287  dead_protos=0  recon=0.00458
+  domain 2: DVP=0.117[LOW]  entropy=2.804  dead_protos=0  recon=0.46141
+  domain 3: DVP=0.109[LOW]  entropy=2.968  dead_protos=0  recon=0.35430
+  domain 4: DVP=0.046[LOW]  entropy=3.120  dead_protos=0  recon=0.51956
+  domain 5: DVP=0.044[LOW]  entropy=2.825  dead_protos=0  recon=0.65469
+============================================================
+
+  block_diagonal_strength: 0.4462
+[Visualizer] t-SNE: 6113 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep650.png  (6113 pts)
+Loading 233th epoch
+Loss:[0.38350525]
+Loading 233th epoch
+Loss:[0.38420883]
+Loading 233th epoch
+Loss:[0.38491750]
+Loading 233th epoch
+Loss:[0.38563126]
+Loading 233th epoch
+Loss:[0.38635018]
+Loading 233th epoch
+Loss:[0.38707429]
+Loading 233th epoch
+Loss:[0.38780361]
+Loading 233th epoch
+Loss:[0.38853833]
+Loading 233th epoch
+Loss:[0.38927847]
+Loading 233th epoch
+Loss:[0.39002407]
+
+============================================================
+[DA-AA] Epoch 660 monitor summary
+============================================================
+  domain 0: DVP=0.036[LOW]  entropy=2.736  dead_protos=0  recon=0.06382
+  domain 1: DVP=0.138[LOW]  entropy=3.285  dead_protos=0  recon=0.00476
+  domain 2: DVP=0.108[LOW]  entropy=2.786  dead_protos=0  recon=0.46970
+  domain 3: DVP=0.102[LOW]  entropy=2.950  dead_protos=0  recon=0.36081
+  domain 4: DVP=0.044[LOW]  entropy=3.100  dead_protos=0  recon=0.52980
+  domain 5: DVP=0.043[LOW]  entropy=2.806  dead_protos=0  recon=0.66964
+============================================================
+
+  block_diagonal_strength: 0.4371
+Loading 233th epoch
+Loss:[0.39077514]
+Loading 233th epoch
+Loss:[0.39153185]
+Loading 233th epoch
+Loss:[0.39229408]
+Loading 233th epoch
+Loss:[0.39306191]
+Loading 233th epoch
+Loss:[0.39383522]
+Loading 233th epoch
+Loss:[0.39461422]
+Loading 233th epoch
+Loss:[0.39539880]
+Loading 233th epoch
+Loss:[0.39618897]
+Loading 233th epoch
+Loss:[0.39698476]
+Loading 233th epoch
+Loss:[0.39778599]
+
+============================================================
+[DA-AA] Epoch 670 monitor summary
+============================================================
+  domain 0: DVP=0.035[LOW]  entropy=2.726  dead_protos=0  recon=0.06505
+  domain 1: DVP=0.140[LOW]  entropy=3.284  dead_protos=0  recon=0.00496
+  domain 2: DVP=0.099[LOW]  entropy=2.766  dead_protos=0  recon=0.47881
+  domain 3: DVP=0.095[LOW]  entropy=2.929  dead_protos=0  recon=0.36794
+  domain 4: DVP=0.042[LOW]  entropy=3.077  dead_protos=0  recon=0.54067
+  domain 5: DVP=0.041[LOW]  entropy=2.786  dead_protos=0  recon=0.68549
+============================================================
+
+  block_diagonal_strength: 0.4274
+Loading 233th epoch
+Loss:[0.39859283]
+Loading 233th epoch
+Loss:[0.39940506]
+Loading 233th epoch
+Loss:[0.40022290]
+Loading 233th epoch
+Loss:[0.40104616]
+Loading 233th epoch
+Loss:[0.40187490]
+Loading 233th epoch
+Loss:[0.40270913]
+Loading 233th epoch
+Loss:[0.40354863]
+Loading 233th epoch
+Loss:[0.40439352]
+Loading 233th epoch
+Loss:[0.40524361]
+Loading 233th epoch
+Loss:[0.40609890]
+
+============================================================
+[DA-AA] Epoch 680 monitor summary
+============================================================
+  domain 0: DVP=0.034[LOW]  entropy=2.715  dead_protos=0  recon=0.06640
+  domain 1: DVP=0.142[LOW]  entropy=3.282  dead_protos=0  recon=0.00518
+  domain 2: DVP=0.090[LOW]  entropy=2.744  dead_protos=0  recon=0.48885
+  domain 3: DVP=0.088[LOW]  entropy=2.907  dead_protos=0  recon=0.37574
+  domain 4: DVP=0.040[LOW]  entropy=3.053  dead_protos=0  recon=0.55214
+  domain 5: DVP=0.040[LOW]  entropy=2.764  dead_protos=0  recon=0.70219
+============================================================
+
+  block_diagonal_strength: 0.4172
+Loading 233th epoch
+Loss:[0.40695950]
+Loading 233th epoch
+Loss:[0.40782526]
+Loading 233th epoch
+Loss:[0.40869597]
+Loading 233th epoch
+Loss:[0.40957156]
+Loading 233th epoch
+Loss:[0.41045189]
+Loading 233th epoch
+Loss:[0.41133687]
+Loading 233th epoch
+Loss:[0.41222632]
+Loading 233th epoch
+Loss:[0.41312033]
+Loading 233th epoch
+Loss:[0.41401854]
+Loading 233th epoch
+Loss:[0.41492084]
+
+============================================================
+[DA-AA] Epoch 690 monitor summary
+============================================================
+  domain 0: DVP=0.032[LOW]  entropy=2.703  dead_protos=0  recon=0.06786
+  domain 1: DVP=0.143[LOW]  entropy=3.281  dead_protos=0  recon=0.00541
+  domain 2: DVP=0.081[LOW]  entropy=2.719  dead_protos=0  recon=0.49980
+  domain 3: DVP=0.081[LOW]  entropy=2.883  dead_protos=0  recon=0.38417
+  domain 4: DVP=0.039[LOW]  entropy=3.027  dead_protos=0  recon=0.56411
+  domain 5: DVP=0.038[LOW]  entropy=2.739  dead_protos=0  recon=0.71965
+============================================================
+
+  block_diagonal_strength: 0.4064
+Loading 233th epoch
+Loss:[0.41582713]
+Loading 233th epoch
+Loss:[0.41673702]
+Loading 233th epoch
+Loss:[0.41765049]
+Loading 233th epoch
+Loss:[0.41856730]
+Loading 233th epoch
+Loss:[0.41948739]
+Loading 233th epoch
+Loss:[0.42041054]
+Loading 233th epoch
+Loss:[0.42133662]
+Loading 233th epoch
+Loss:[0.42226541]
+Loading 233th epoch
+Loss:[0.42319703]
+Loading 233th epoch
+Loss:[0.42413130]
+
+============================================================
+[DA-AA] Epoch 700 monitor summary
+============================================================
+  domain 0: DVP=0.031[LOW]  entropy=2.690  dead_protos=0  recon=0.06942
+  domain 1: DVP=0.145[LOW]  entropy=3.279  dead_protos=0  recon=0.00567
+  domain 2: DVP=0.072[LOW]  entropy=2.693  dead_protos=0  recon=0.51144
+  domain 3: DVP=0.074[LOW]  entropy=2.857  dead_protos=0  recon=0.39312
+  domain 4: DVP=0.037[LOW]  entropy=2.998  dead_protos=0  recon=0.57644
+  domain 5: DVP=0.037[LOW]  entropy=2.713  dead_protos=0  recon=0.73768
+============================================================
+
+  block_diagonal_strength: 0.3950
+[Visualizer] t-SNE: 6113 points total (6 domains)
+[Visualizer] t-SNE saved: /home/ustc1958/lxy/graph/1/SAMGPT0505/diagnostics/tsne_ep700.png  (6113 pts)
+Loading 233th epoch
+Loss:[0.42506823]
+Loading 233th epoch
+Loss:[0.42600781]
+Loading 233th epoch
+Loss:[0.42694995]
+Loading 233th epoch
+Loss:[0.42789453]
+Loading 233th epoch
+Loss:[0.42884156]
+Loading 233th epoch
+Loss:[0.42979079]
+Loading 233th epoch
+Loss:[0.43074235]
+Loading 233th epoch
+Loss:[0.43169630]
+Loading 233th epoch
+Loss:[0.43265229]
+Loading 233th epoch
+Loss:[0.43361059]
+
+============================================================
+[DA-AA] Epoch 710 monitor summary
+============================================================
+  domain 0: DVP=0.030[LOW]  entropy=2.675  dead_protos=0  recon=0.07105
+  domain 1: DVP=0.147[LOW]  entropy=3.277  dead_protos=0  recon=0.00595
+  domain 2: DVP=0.064[LOW]  entropy=2.665  dead_protos=0  recon=0.52357
+  domain 3: DVP=0.067[LOW]  entropy=2.829  dead_protos=0  recon=0.40247
+  domain 4: DVP=0.035[LOW]  entropy=2.966  dead_protos=0  recon=0.58896
+  domain 5: DVP=0.035[LOW]  entropy=2.684  dead_protos=0  recon=0.75612
+============================================================
+
+  block_diagonal_strength: 0.3831
+Loading 233th epoch
+Loss:[0.43457112]
+Loading 233th epoch
+Loss:[0.43553382]
+Loading 233th epoch
+Loss:[0.43649858]
+Loading 233th epoch
+Loss:[0.43746546]
+Loading 233th epoch
+Loss:[0.43843427]
+Loading 233th epoch
+Loss:[0.43940493]
+Loading 233th epoch
+Loss:[0.44037724]
+Loading 233th epoch
+Loss:[0.44135132]
+Loading 233th epoch
+Loss:[0.44232687]
+Loading 233th epoch
+Loss:[0.44330367]
+
+============================================================
+[DA-AA] Epoch 720 monitor summary
+============================================================
+  domain 0: DVP=0.028[LOW]  entropy=2.659  dead_protos=0  recon=0.07273
+  domain 1: DVP=0.148[LOW]  entropy=3.275  dead_protos=0  recon=0.00624
+  domain 2: DVP=0.056[LOW]  entropy=2.634  dead_protos=0  recon=0.53627
+  domain 3: DVP=0.060[LOW]  entropy=2.798  dead_protos=0  recon=0.41218
+  domain 4: DVP=0.034[LOW]  entropy=2.931  dead_protos=0  recon=0.60152
+  domain 5: DVP=0.034[LOW]  entropy=2.653  dead_protos=0  recon=0.77479
+============================================================
+
+  block_diagonal_strength: 0.3708
+Loading 233th epoch
+Loss:[0.44428158]
+Loading 233th epoch
+Loss:[0.44526041]
+Loading 233th epoch
+Loss:[0.44624004]
+Loading 233th epoch
+Loss:[0.44722036]
+Loading 233th epoch
+Loss:[0.44820109]
+Loading 233th epoch
+Loss:[0.44918194]
+Loading 233th epoch
+Loss:[0.45016286]
+Loading 233th epoch
+Loss:[0.45114383]
+Loading 233th epoch
+Loss:[0.45212466]
+Loading 233th epoch
+Loss:[0.45310506]
+
+============================================================
+[DA-AA] Epoch 730 monitor summary
+============================================================
+  domain 0: DVP=0.027[LOW]  entropy=2.641  dead_protos=0  recon=0.07444
+  domain 1: DVP=0.150[LOW]  entropy=3.273  dead_protos=0  recon=0.00656
+  domain 2: DVP=0.050[LOW]  entropy=2.601  dead_protos=0  recon=0.54954
+  domain 3: DVP=0.054[LOW]  entropy=2.765  dead_protos=0  recon=0.42215
+  domain 4: DVP=0.033[LOW]  entropy=2.893  dead_protos=0  recon=0.61388
+  domain 5: DVP=0.032[LOW]  entropy=2.619  dead_protos=0  recon=0.79343
+============================================================
+
+  block_diagonal_strength: 0.3581
+Loading 233th epoch
+Loss:[0.45408478]
+Loading 233th epoch
+Loss:[0.45506364]
+Loading 233th epoch
+Loss:[0.45604131]
+Loading 233th epoch
+Loss:[0.45701769]
+Early stopping!
+##################################################
+PreTrain datasets are  ['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+Downastream dataset is  Cora
+Cora()
+DataBatch(x=[2708, 1433], edge_index=[2, 10556], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], batch=[2708], ptr=[2])
+process done
+0.3031178182672808
+nb_classes 7
+loading model from /home/ustc1958/lxy/graph/1/SAMGPT0505/checkpoints/model_node_GRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.001_gcn.pkl
+----------------------------------------------------------------------------------------------------
+shotnum 1
+
+  0%|          | 0/100 [00:00<?, ?it/s]
+  1%|          | 1/100 [00:10<18:03, 10.95s/it]
+  2%|▏         | 2/100 [00:21<17:51, 10.94s/it]
+  3%|▎         | 3/100 [00:32<17:43, 10.97s/it]
+  4%|▍         | 4/100 [00:43<17:36, 11.01s/it]
+  5%|▌         | 5/100 [00:54<17:24, 11.00s/it]
+  6%|▌         | 6/100 [01:06<17:28, 11.16s/it]
+  7%|▋         | 7/100 [01:17<17:16, 11.14s/it]
+  8%|▊         | 8/100 [01:28<17:04, 11.13s/it]
+  9%|▉         | 9/100 [01:39<16:53, 11.13s/it]
+ 10%|█         | 10/100 [01:50<16:42, 11.14s/it]
+ 11%|█         | 11/100 [01:57<14:22,  9.69s/it]
+ 12%|█▏        | 12/100 [02:03<12:30,  8.53s/it]
+ 13%|█▎        | 13/100 [02:08<11:04,  7.64s/it]
+ 14%|█▍        | 14/100 [02:14<10:04,  7.02s/it]
+ 15%|█▌        | 15/100 [02:19<09:19,  6.58s/it]
+ 16%|█▌        | 16/100 [02:25<08:41,  6.21s/it]
+ 17%|█▋        | 17/100 [02:30<08:17,  5.99s/it]
+ 18%|█▊        | 18/100 [02:35<07:50,  5.74s/it]
+ 19%|█▉        | 19/100 [02:41<07:35,  5.62s/it]
+ 20%|██        | 20/100 [02:46<07:27,  5.59s/it]
+ 21%|██        | 21/100 [02:52<07:27,  5.66s/it]
+ 22%|██▏       | 22/100 [02:59<07:38,  5.88s/it]
+ 23%|██▎       | 23/100 [03:05<07:54,  6.16s/it]
+ 24%|██▍       | 24/100 [03:11<07:25,  5.86s/it]
+ 25%|██▌       | 25/100 [03:15<06:48,  5.44s/it]
+ 26%|██▌       | 26/100 [03:20<06:30,  5.28s/it]
+ 27%|██▋       | 27/100 [03:25<06:19,  5.20s/it]
+ 28%|██▊       | 28/100 [03:30<06:11,  5.16s/it]
+ 29%|██▉       | 29/100 [03:35<05:54,  4.99s/it]
+ 30%|███       | 30/100 [03:39<05:47,  4.97s/it]
+ 31%|███       | 31/100 [03:45<05:51,  5.09s/it]
+ 32%|███▏      | 32/100 [03:51<06:06,  5.40s/it]
+ 33%|███▎      | 33/100 [03:56<06:03,  5.42s/it]
+ 34%|███▍      | 34/100 [04:02<05:54,  5.37s/it]
+ 35%|███▌      | 35/100 [04:07<05:56,  5.48s/it]
+ 36%|███▌      | 36/100 [04:13<05:57,  5.58s/it]
+ 37%|███▋      | 37/100 [04:19<05:49,  5.56s/it]
+ 38%|███▊      | 38/100 [04:24<05:44,  5.56s/it]
+ 39%|███▉      | 39/100 [04:31<05:56,  5.84s/it]
+ 40%|████      | 40/100 [04:36<05:46,  5.78s/it]
+ 41%|████      | 41/100 [04:41<05:27,  5.54s/it]
+ 42%|████▏     | 42/100 [04:47<05:16,  5.45s/it]
+ 43%|████▎     | 43/100 [04:52<05:08,  5.41s/it]
+ 44%|████▍     | 44/100 [04:57<05:02,  5.41s/it]
+ 45%|████▌     | 45/100 [05:03<04:58,  5.42s/it]
+ 46%|████▌     | 46/100 [05:08<04:46,  5.31s/it]
+ 47%|████▋     | 47/100 [05:13<04:41,  5.31s/it]
+ 48%|████▊     | 48/100 [05:18<04:32,  5.23s/it]
+ 49%|████▉     | 49/100 [05:23<04:14,  5.00s/it]
+ 50%|█████     | 50/100 [05:28<04:17,  5.15s/it]
+ 51%|█████     | 51/100 [05:34<04:23,  5.37s/it]
+ 52%|█████▏    | 52/100 [05:40<04:19,  5.42s/it]
+ 53%|█████▎    | 53/100 [05:46<04:32,  5.80s/it]
+ 54%|█████▍    | 54/100 [05:53<04:41,  6.11s/it]
+ 55%|█████▌    | 55/100 [06:00<04:44,  6.32s/it]
+ 56%|█████▌    | 56/100 [06:06<04:34,  6.23s/it]
+ 57%|█████▋    | 57/100 [06:12<04:22,  6.11s/it]
+ 58%|█████▊    | 58/100 [06:18<04:13,  6.03s/it]
+ 59%|█████▉    | 59/100 [06:24<04:07,  6.04s/it]
+ 60%|██████    | 60/100 [06:30<03:59,  5.98s/it]
+ 61%|██████    | 61/100 [06:35<03:48,  5.87s/it]
+ 62%|██████▏   | 62/100 [06:41<03:48,  6.00s/it]
+ 63%|██████▎   | 63/100 [06:48<03:43,  6.03s/it]
+ 64%|██████▍   | 64/100 [06:53<03:35,  5.98s/it]
+ 65%|██████▌   | 65/100 [07:00<03:35,  6.15s/it]
+ 66%|██████▌   | 66/100 [07:07<03:39,  6.46s/it]
+ 67%|██████▋   | 67/100 [07:13<03:23,  6.15s/it]
+ 68%|██████▊   | 68/100 [07:18<03:09,  5.92s/it]
+ 69%|██████▉   | 69/100 [07:23<02:59,  5.78s/it]
+ 70%|███████   | 70/100 [07:29<02:50,  5.68s/it]
+ 71%|███████   | 71/100 [07:34<02:41,  5.57s/it]
+ 72%|███████▏  | 72/100 [07:39<02:30,  5.39s/it]
+ 73%|███████▎  | 73/100 [07:45<02:26,  5.43s/it]
+ 74%|███████▍  | 74/100 [07:50<02:19,  5.37s/it]
+ 75%|███████▌  | 75/100 [07:55<02:14,  5.37s/it]
+ 76%|███████▌  | 76/100 [08:01<02:09,  5.41s/it]
+ 77%|███████▋  | 77/100 [08:06<02:06,  5.51s/it]
+ 78%|███████▊  | 78/100 [08:12<01:58,  5.40s/it]
+ 79%|███████▉  | 79/100 [08:17<01:54,  5.44s/it]
+ 80%|████████  | 80/100 [08:22<01:47,  5.39s/it]
+ 81%|████████  | 81/100 [08:28<01:42,  5.37s/it]
+ 82%|████████▏ | 82/100 [08:33<01:35,  5.28s/it]
+ 83%|████████▎ | 83/100 [08:37<01:25,  5.03s/it]
+ 84%|████████▍ | 84/100 [08:44<01:28,  5.53s/it]
+ 85%|████████▌ | 85/100 [08:50<01:24,  5.61s/it]
+ 86%|████████▌ | 86/100 [08:56<01:19,  5.69s/it]
+ 87%|████████▋ | 87/100 [09:01<01:12,  5.58s/it]
+ 88%|████████▊ | 88/100 [09:06<01:05,  5.44s/it]
+ 89%|████████▉ | 89/100 [09:11<00:56,  5.17s/it]
+ 90%|█████████ | 90/100 [09:16<00:52,  5.24s/it]
+ 91%|█████████ | 91/100 [09:22<00:47,  5.31s/it]
+ 92%|█████████▏| 92/100 [09:27<00:41,  5.24s/it]
+ 93%|█████████▎| 93/100 [09:32<00:36,  5.25s/it]
+ 94%|█████████▍| 94/100 [09:37<00:31,  5.18s/it]
+ 95%|█████████▌| 95/100 [09:42<00:26,  5.23s/it]
+ 96%|█████████▌| 96/100 [09:47<00:20,  5.24s/it]
+ 97%|█████████▋| 97/100 [09:53<00:15,  5.26s/it]
+ 98%|█████████▊| 98/100 [09:57<00:10,  5.08s/it]
+ 99%|█████████▉| 99/100 [10:03<00:05,  5.30s/it]
+100%|██████████| 100/100 [10:08<00:00,  5.27s/it]
+100%|██████████| 100/100 [10:08<00:00,  6.09s/it]
+----------------------------------------------------------------------------------------------------
+Average accuracy:[0.4804]
+Mean:[48.0400]
+Std :[12.6482]
+----------------------------------------------------------------------------------------------------
+epoch,domain,dvp,recon_loss,vert_loss,res_loss,hsic_loss,entropy,dead_protos,vertex_dev,block_strength,res_ratio,grad_cos
+10,0,0.0575,0.225954,0.130438,0.393333,0.000000,2.7665,0,0.2418,0.0000,0.9704,-1.0000
+10,1,0.0000,0.058646,1.368321,0.200624,0.000000,3.2861,0,0.3245,0.0000,5.2019,-1.0000
+10,2,0.2383,0.314821,0.086259,0.465223,0.000000,2.9711,0,0.2025,0.0000,0.4224,-1.0000
+10,3,0.2054,0.263920,0.102376,0.421946,0.000000,3.1533,0,0.1806,0.0000,0.4473,-1.0000
+10,4,0.0861,0.381325,0.092500,0.512909,0.000000,3.3218,0,0.1357,0.0000,0.4862,-1.0000
+10,5,0.0745,0.353171,0.079571,0.491943,0.000000,2.9856,0,0.1733,0.0000,0.4071,-1.0000
+20,0,0.0576,0.230712,0.131991,0.398834,0.000000,2.7654,0,0.3089,0.0000,1.0141,-1.0000
+20,1,0.0000,0.043523,0.000000,0.172629,0.000000,3.2736,0,0.3587,0.0000,4.0170,-1.0000
+20,2,0.2397,0.345901,0.086629,0.489818,0.000000,2.9678,0,0.2643,0.0000,0.4531,-1.0000
+20,3,0.2092,0.288044,0.102840,0.442597,0.000000,3.1500,0,0.2353,0.0000,0.4787,-1.0000
+20,4,0.0866,0.415322,0.088563,0.537662,0.000000,3.3203,0,0.1945,0.0000,0.5240,-1.0000
+20,5,0.0741,0.392386,0.079794,0.520629,0.000000,2.9845,0,0.2321,0.0000,0.4416,-1.0000
+30,0,0.0583,0.224577,0.133089,0.392663,0.000000,2.7644,0,0.3248,0.0000,0.9897,-1.0000
+30,1,0.0000,0.032710,0.000000,0.148396,0.000000,3.2606,0,0.3301,0.0000,3.3698,-1.0000
+30,2,0.2382,0.355232,0.086907,0.493874,0.000000,2.9658,0,0.2826,0.0000,0.4435,-1.0000
+30,3,0.2095,0.293347,0.103144,0.444976,0.000000,3.1480,0,0.2512,0.0000,0.4680,-1.0000
+30,4,0.0866,0.421167,0.085229,0.540341,0.000000,3.3192,0,0.2140,0.0000,0.5185,-1.0000
+30,5,0.0738,0.402019,0.079972,0.526059,0.000000,2.9835,0,0.2497,0.0000,0.4390,-1.0000
+40,0,0.0588,0.214304,0.133990,0.382299,0.000000,2.7634,0,0.3244,0.0000,0.9376,-1.0000
+40,1,0.0000,0.026109,0.000000,0.131132,0.000000,3.2515,0,0.3015,0.0000,2.9777,-1.0000
+40,2,0.2350,0.358310,0.087133,0.491844,0.000000,2.9644,0,0.2868,0.0000,0.4215,-1.0000
+40,3,0.2077,0.292774,0.103381,0.441612,0.000000,3.1466,0,0.2554,0.0000,0.4439,-1.0000
+40,4,0.0862,0.418052,0.083490,0.536422,0.000000,3.3182,0,0.2210,0.0000,0.4975,-1.0000
+40,5,0.0731,0.403118,0.080131,0.524968,0.000000,2.9826,0,0.2553,0.0000,0.4229,-1.0000
+50,0,0.0590,0.203800,0.134832,0.371323,0.000000,2.7625,0,0.3185,0.0000,0.8853,-1.0000
+50,1,0.0000,0.022058,0.000000,0.119175,0.000000,3.2449,0,0.2892,0.0000,2.7222,-1.0000
+50,2,0.2312,0.360464,0.087333,0.488305,0.000000,2.9630,0,0.2869,0.0000,0.4000,-1.0000
+50,3,0.2050,0.291252,0.103592,0.436848,0.000000,3.1454,0,0.2549,0.0000,0.4202,-1.0000
+50,4,0.0856,0.413178,0.082332,0.530910,0.000000,3.3172,0,0.2250,0.0000,0.4754,-1.0000
+50,5,0.0724,0.402697,0.080276,0.522280,0.000000,2.9816,0,0.2568,0.0000,0.4060,-1.0000
+60,0,0.0595,0.193271,0.135674,0.360237,0.000000,2.7615,0,0.3108,0.0000,0.8325,-1.0000
+60,1,0.0000,0.018882,0.000000,0.109303,0.000000,3.2391,0,0.2666,0.0000,2.4236,-1.0000
+60,2,0.2252,0.363748,0.087519,0.485123,0.000000,2.9616,0,0.2846,0.0000,0.3806,-1.0000
+60,3,0.2014,0.290417,0.103794,0.432283,0.000000,3.1441,0,0.2526,0.0000,0.3985,-1.0000
+60,4,0.0846,0.408444,0.081604,0.525354,0.000000,3.3162,0,0.2268,0.0000,0.4539,-1.0000
+60,5,0.0711,0.402877,0.080411,0.519685,0.000000,2.9806,0,0.2569,0.0000,0.3899,-1.0000
+70,0,0.0600,0.183560,0.136564,0.349876,0.000000,2.7606,0,0.3037,0.0000,0.7857,-1.0000
+70,1,0.0000,0.016865,0.000000,0.102846,0.000000,3.2370,0,0.2530,0.0000,2.1141,-1.0000
+70,2,0.2176,0.367768,0.087699,0.482445,0.000000,2.9599,0,0.2815,0.0000,0.3645,-1.0000
+70,3,0.1955,0.290238,0.103995,0.428300,0.000000,3.1426,0,0.2496,0.0000,0.3804,-1.0000
+70,4,0.0833,0.404466,0.081041,0.520394,0.000000,3.3152,0,0.2281,0.0000,0.4358,-1.0000
+70,5,0.0697,0.403735,0.080542,0.517574,0.000000,2.9797,0,0.2562,0.0000,0.3765,-1.0000
+80,0,0.0603,0.175121,0.137521,0.340596,0.000000,2.7597,0,0.2980,0.0000,0.7495,-1.0000
+80,1,0.0000,0.015692,0.000000,0.099004,0.000000,3.2366,0,0.2547,0.0000,1.8169,-1.0000
+80,2,0.2109,0.370961,0.087877,0.479957,0.000000,2.9580,0,0.2784,0.0000,0.3528,-1.0000
+80,3,0.1898,0.289975,0.104193,0.424730,0.000000,3.1410,0,0.2467,0.0000,0.3672,-1.0000
+80,4,0.0819,0.400716,0.080613,0.515873,0.000000,3.3142,0,0.2286,0.0000,0.4223,-1.0000
+80,5,0.0684,0.404234,0.080669,0.515632,0.000000,2.9788,0,0.2552,0.0000,0.3668,-1.0000
+90,0,0.0606,0.167305,0.138533,0.331839,0.000000,2.7587,0,0.2939,0.0000,0.7190,-1.0000
+90,1,0.0000,0.014289,0.000000,0.094230,0.000000,3.2339,0,0.2498,0.0000,1.5596,-1.0000
+90,2,0.2061,0.372462,0.088045,0.477295,0.000000,2.9561,0,0.2756,0.0000,0.3440,-1.0000
+90,3,0.1858,0.288950,0.104382,0.421171,0.000000,3.1392,0,0.2440,0.0000,0.3572,-1.0000
+90,4,0.0809,0.396617,0.080301,0.511414,0.000000,3.3132,0,0.2285,0.0000,0.4118,-1.0000
+90,5,0.0674,0.403950,0.080790,0.513575,0.000000,2.9778,0,0.2542,0.0000,0.3592,-1.0000
+100,0,0.0610,0.159598,0.139586,0.323166,0.000000,2.7576,0,0.2907,0.0000,0.6904,-1.0000
+100,1,0.0000,0.012847,0.000000,0.089080,0.000000,3.2303,0,0.2409,0.0000,1.3642,-1.0000
+100,2,0.2033,0.372447,0.088199,0.474192,0.000000,2.9540,0,0.2729,0.0000,0.3367,-1.0000
+100,3,0.1835,0.287180,0.104556,0.417408,0.000000,3.1374,0,0.2413,0.0000,0.3489,-1.0000
+100,4,0.0804,0.392120,0.080048,0.506869,0.000000,3.3121,0,0.2280,0.0000,0.4025,-1.0000
+100,5,0.0669,0.403153,0.080904,0.511378,0.000000,2.9768,0,0.2530,0.0000,0.3526,-1.0000
+110,0,0.0614,0.152040,0.140672,0.314606,0.000000,2.7564,0,0.2883,0.0000,0.6634,-1.0000
+110,1,0.0000,0.011614,0.000000,0.084448,0.000000,3.2270,0,0.2327,0.0000,1.2205,-1.0000
+110,2,0.2024,0.371223,0.088338,0.470573,0.000000,2.9519,0,0.2699,0.0000,0.3302,-1.0000
+110,3,0.1830,0.284733,0.104716,0.413301,0.000000,3.1354,0,0.2383,0.0000,0.3414,-1.0000
+110,4,0.0802,0.387227,0.079831,0.502172,0.000000,3.3109,0,0.2272,0.0000,0.3940,-1.0000
+110,5,0.0666,0.401791,0.081010,0.508920,0.000000,2.9758,0,0.2515,0.0000,0.3466,-1.0000
+120,0,0.0618,0.144743,0.141786,0.306237,0.000000,2.7550,0,0.2865,0.0000,0.6381,-1.0000
+120,1,0.0000,0.010597,0.000000,0.080437,0.000000,3.2242,0,0.2273,0.0000,1.1114,-1.0000
+120,2,0.2030,0.369116,0.088461,0.466553,0.000000,2.9496,0,0.2670,0.0000,0.3244,-1.0000
+120,3,0.1836,0.281836,0.104861,0.408945,0.000000,3.1333,0,0.2352,0.0000,0.3348,-1.0000
+120,4,0.0803,0.382077,0.079669,0.497372,0.000000,3.3097,0,0.2261,0.0000,0.3863,-1.0000
+120,5,0.0666,0.399981,0.081108,0.506258,0.000000,2.9746,0,0.2500,0.0000,0.3411,-1.0000
+130,0,0.0621,0.137718,0.142924,0.298068,0.000000,2.7536,0,0.2852,0.0000,0.6143,-1.0000
+130,1,0.0000,0.009740,0.000000,0.076895,0.000000,3.2218,0,0.2236,0.0000,1.0225,-1.0000
+130,2,0.2044,0.366352,0.088568,0.462262,0.000000,2.9473,0,0.2642,0.0000,0.3192,-1.0000
+130,3,0.1851,0.278631,0.104989,0.404439,0.000000,3.1311,0,0.2324,0.0000,0.3288,-1.0000
+130,4,0.0805,0.376784,0.079530,0.492540,0.000000,3.3084,0,0.2251,0.0000,0.3791,-1.0000
+130,5,0.0668,0.397891,0.081199,0.503492,0.000000,2.9735,0,0.2485,0.0000,0.3362,-1.0000
+140,0,0.0624,0.130985,0.144081,0.290120,0.000000,2.7519,0,0.2845,0.0000,0.5916,-1.0000
+140,1,0.0000,0.008993,0.000000,0.073684,0.000000,3.2198,0,0.2212,0.0000,0.9452,-1.0000
+140,2,0.2065,0.363128,0.088660,0.457786,0.000000,2.9448,0,0.2617,0.0000,0.3145,-1.0000
+140,3,0.1871,0.275251,0.105101,0.399853,0.000000,3.1288,0,0.2298,0.0000,0.3233,-1.0000
+140,4,0.0809,0.371478,0.079421,0.487741,0.000000,3.3069,0,0.2240,0.0000,0.3724,-1.0000
+140,5,0.0670,0.395711,0.081281,0.500722,0.000000,2.9723,0,0.2473,0.0000,0.3315,-1.0000
+150,0,0.0627,0.124563,0.145247,0.282413,0.000000,2.7502,0,0.2842,0.0000,0.5700,-1.0000
+150,1,0.0000,0.008328,0.000000,0.070716,0.000000,3.2180,0,0.2200,0.0000,0.8768,-1.0000
+150,2,0.2090,0.359702,0.088735,0.453241,0.000000,2.9422,0,0.2594,0.0000,0.3101,-1.0000
+150,3,0.1895,0.271837,0.105194,0.395261,0.000000,3.1265,0,0.2274,0.0000,0.3183,-1.0000
+150,4,0.0814,0.366261,0.079324,0.483024,0.000000,3.3054,0,0.2231,0.0000,0.3660,-1.0000
+150,5,0.0673,0.393562,0.081354,0.498009,0.000000,2.9710,0,0.2461,0.0000,0.3272,-1.0000
+160,0,0.0630,0.118440,0.146413,0.274937,0.000000,2.7483,0,0.2841,0.0000,0.5491,-1.0000
+160,1,0.0000,0.007727,0.000000,0.067930,0.000000,3.2163,0,0.2196,0.0000,0.8154,-1.0000
+160,2,0.2119,0.356342,0.088793,0.448739,0.000000,2.9396,0,0.2573,0.0000,0.3059,-1.0000
+160,3,0.1922,0.268523,0.105267,0.390735,0.000000,3.1240,0,0.2252,0.0000,0.3134,-1.0000
+160,4,0.0819,0.361227,0.079234,0.478425,0.000000,3.3038,0,0.2222,0.0000,0.3599,-1.0000
+160,5,0.0677,0.391558,0.081418,0.495400,0.000000,2.9696,0,0.2451,0.0000,0.3230,-1.0000
+170,0,0.0634,0.112608,0.147569,0.267688,0.000000,2.7463,0,0.2842,0.0000,0.5291,-1.0000
+170,1,0.0000,0.007175,0.000000,0.065281,0.000000,3.2147,0,0.2199,0.0000,0.7595,-1.0000
+170,2,0.2150,0.353104,0.088833,0.444322,0.000000,2.9368,0,0.2555,0.0000,0.3019,-1.0000
+170,3,0.1951,0.265359,0.105320,0.386312,0.000000,3.1215,0,0.2234,0.0000,0.3088,-1.0000
+170,4,0.0825,0.356402,0.079166,0.473955,0.000000,3.3021,0,0.2216,0.0000,0.3541,-1.0000
+170,5,0.0681,0.389746,0.081472,0.492918,0.000000,2.9682,0,0.2443,0.0000,0.3191,-1.0000
+180,0,0.0637,0.107064,0.148707,0.260667,0.000000,2.7441,0,0.2845,0.0000,0.5097,-1.0000
+180,1,0.0000,0.006666,0.000000,0.062750,0.000000,3.2131,0,0.2209,0.0000,0.7081,-1.0000
+180,2,0.2183,0.349947,0.088854,0.439985,0.000000,2.9339,0,0.2540,0.0000,0.2981,-1.0000
+180,3,0.1982,0.262331,0.105349,0.381991,0.000000,3.1189,0,0.2219,0.0000,0.3045,-1.0000
+180,4,0.0831,0.351787,0.079099,0.469614,0.000000,3.3002,0,0.2211,0.0000,0.3484,-1.0000
+180,5,0.0685,0.388132,0.081515,0.490559,0.000000,2.9666,0,0.2436,0.0000,0.3152,-1.0000
+190,0,0.0641,0.101803,0.149815,0.253873,0.000000,2.7417,0,0.2850,0.0000,0.4910,-1.0000
+190,1,0.0000,0.006195,0.000000,0.060327,0.000000,3.2116,0,0.2221,0.0000,0.6607,-1.0000
+190,2,0.2216,0.346883,0.088856,0.435738,0.000000,2.9309,0,0.2527,0.0000,0.2945,-1.0000
+190,3,0.2014,0.259443,0.105355,0.377775,0.000000,3.1163,0,0.2206,0.0000,0.3003,-1.0000
+190,4,0.0837,0.347393,0.079030,0.465407,0.000000,3.2982,0,0.2208,0.0000,0.3429,-1.0000
+190,5,0.0690,0.386730,0.081549,0.488327,0.000000,2.9650,0,0.2431,0.0000,0.3116,-1.0000
+200,0,0.0645,0.096821,0.150887,0.247314,0.000000,2.7392,0,0.2856,0.0000,0.4730,-1.0000
+200,1,0.0000,0.005759,0.000000,0.058005,0.000000,3.2101,0,0.2234,0.0000,0.6166,-1.0000
+200,2,0.2250,0.343964,0.088837,0.431604,0.000000,2.9278,0,0.2516,0.0000,0.2911,-1.0000
+200,3,0.2046,0.256714,0.105337,0.373678,0.000000,3.1135,0,0.2195,0.0000,0.2964,-1.0000
+200,4,0.0843,0.343231,0.078964,0.461344,0.000000,3.2961,0,0.2207,0.0000,0.3377,-1.0000
+200,5,0.0694,0.385549,0.081572,0.486229,0.000000,2.9633,0,0.2426,0.0000,0.3080,-1.0000
+210,0,0.0644,0.084437,0.168472,0.230809,0.000000,2.7975,0,0.2807,0.0000,0.4368,-1.0000
+210,1,0.0000,0.004982,0.000000,0.053784,0.000000,3.2480,0,0.2176,0.0000,0.5563,-1.0000
+210,2,0.2277,0.338911,0.090372,0.426857,0.000000,2.9731,0,0.2465,0.0000,0.2870,-1.0000
+210,3,0.2074,0.255032,0.106289,0.370823,0.000000,3.1518,0,0.2147,0.0000,0.2933,-1.0000
+210,4,0.0843,0.341776,0.079921,0.460007,0.000000,3.3302,0,0.2242,0.0000,0.3341,-1.0000
+210,5,0.0693,0.379454,0.084459,0.481039,0.000000,3.0101,0,0.2451,0.0000,0.3028,-1.0000
+220,0,0.0644,0.082328,0.168608,0.227820,0.000000,2.7952,0,0.2804,0.0000,0.4262,-1.0000
+220,1,0.0000,0.004762,0.000000,0.052534,0.000000,3.2466,0,0.2182,0.0000,0.5275,-1.0000
+220,2,0.2299,0.340466,0.090403,0.426669,0.000000,2.9708,0,0.2475,0.0000,0.2857,-1.0000
+220,3,0.2096,0.256375,0.106337,0.370701,0.000000,3.1499,0,0.2155,0.0000,0.2919,-1.0000
+220,4,0.0843,0.343130,0.079893,0.460352,0.000000,3.3284,0,0.2271,0.0000,0.3317,-1.0000
+220,5,0.0692,0.382859,0.084478,0.482357,0.000000,3.0083,0,0.2469,0.0000,0.3013,-1.0000
+230,0,0.0645,0.080359,0.168734,0.224996,0.000000,2.7929,0,0.2803,0.0000,0.4161,-1.0000
+230,1,0.0000,0.004567,0.000000,0.051411,0.000000,3.2453,0,0.2190,0.0000,0.5011,-1.0000
+230,2,0.2316,0.342051,0.090429,0.426535,0.000000,2.9683,0,0.2485,0.0000,0.2844,-1.0000
+230,3,0.2114,0.257751,0.106377,0.370610,0.000000,3.1480,0,0.2165,0.0000,0.2906,-1.0000
+230,4,0.0841,0.344606,0.079834,0.460784,0.000000,3.3265,0,0.2302,0.0000,0.3294,-1.0000
+230,5,0.0690,0.386398,0.084492,0.483754,0.000000,3.0065,0,0.2488,0.0000,0.2999,-1.0000
+240,0,0.0646,0.078509,0.168856,0.222310,0.000000,2.7905,0,0.2802,0.0000,0.4063,-1.0000
+240,1,0.0009,0.004393,0.000000,0.050392,0.000000,3.2441,0,0.2199,0.0000,0.4769,-1.0000
+240,2,0.2328,0.343681,0.090451,0.426449,0.000000,2.9659,0,0.2497,0.0000,0.2831,-1.0000
+240,3,0.2126,0.259186,0.106412,0.370566,0.000000,3.1459,0,0.2175,0.0000,0.2893,-1.0000
+240,4,0.0838,0.346208,0.079740,0.461300,0.000000,3.3246,0,0.2335,0.0000,0.3272,-1.0000
+240,5,0.0688,0.390088,0.084504,0.485236,0.000000,3.0045,0,0.2509,0.0000,0.2985,-1.0000
+250,0,0.0647,0.076769,0.168976,0.219751,0.000000,2.7880,0,0.2804,0.0000,0.3969,-1.0000
+250,1,0.0041,0.004238,0.000000,0.049470,0.000000,3.2430,0,0.2210,0.0000,0.4544,-1.0000
+250,2,0.2335,0.345355,0.090469,0.426407,0.000000,2.9633,0,0.2509,0.0000,0.2819,-1.0000
+250,3,0.2133,0.260680,0.106440,0.370566,0.000000,3.1438,0,0.2186,0.0000,0.2880,-1.0000
+250,4,0.0833,0.347942,0.079626,0.461901,0.000000,3.3225,0,0.2369,0.0000,0.3250,-1.0000
+250,5,0.0685,0.393940,0.084512,0.486807,0.000000,3.0025,0,0.2531,0.0000,0.2971,-1.0000
+260,0,0.0654,0.075137,0.169092,0.217319,0.000000,2.7855,0,0.2806,0.0000,0.3878,-1.0000
+260,1,0.0091,0.004101,0.000000,0.048639,0.000000,3.2419,0,0.2225,0.0000,0.4338,-1.0000
+260,2,0.2345,0.347079,0.090484,0.426408,0.000000,2.9606,0,0.2520,0.0000,0.2808,-1.0000
+260,3,0.2139,0.262233,0.106461,0.370611,0.000000,3.1416,0,0.2198,0.0000,0.2868,-1.0000
+260,4,0.0833,0.349814,0.079501,0.462592,0.000000,3.3204,0,0.2404,0.0000,0.3228,-1.0000
+260,5,0.0686,0.397969,0.084517,0.488474,0.000000,3.0003,0,0.2553,0.0000,0.2958,-1.0000
+270,0,0.0659,0.073612,0.169206,0.215014,0.000000,2.7829,0,0.2810,0.0000,0.3791,-1.0000
+270,1,0.0157,0.003980,0.000000,0.047899,0.000000,3.2410,0,0.2243,0.0000,0.4148,-1.0000
+270,2,0.2355,0.348857,0.090495,0.426451,0.000000,2.9579,0,0.2532,0.0000,0.2797,-1.0000
+270,3,0.2145,0.263851,0.106477,0.370700,0.000000,3.1394,0,0.2211,0.0000,0.2857,-1.0000
+270,4,0.0833,0.351835,0.079373,0.463376,0.000000,3.3181,0,0.2440,0.0000,0.3208,-1.0000
+270,5,0.0687,0.402189,0.084518,0.490242,0.000000,2.9981,0,0.2576,0.0000,0.2945,-1.0000
+280,0,0.0664,0.072190,0.169317,0.212837,0.000000,2.7803,0,0.2816,0.0000,0.3706,-1.0000
+280,1,0.0234,0.003875,0.000000,0.047239,0.000000,3.2401,0,0.2261,0.0000,0.3972,-1.0000
+280,2,0.2363,0.350678,0.090502,0.426534,0.000000,2.9551,0,0.2544,0.0000,0.2786,-1.0000
+280,3,0.2149,0.265527,0.106486,0.370831,0.000000,3.1370,0,0.2225,0.0000,0.2846,-1.0000
+280,4,0.0832,0.353997,0.079240,0.464250,0.000000,3.3157,0,0.2478,0.0000,0.3187,-1.0000
+280,5,0.0688,0.406590,0.084516,0.492106,0.000000,2.9957,0,0.2600,0.0000,0.2932,-1.0000
+290,0,0.0668,0.070872,0.169426,0.210787,0.000000,2.7776,0,0.2823,0.0000,0.3625,-1.0000
+290,1,0.0313,0.003784,0.000000,0.046651,0.000000,3.2393,0,0.2278,0.0000,0.3810,-1.0000
+290,2,0.2371,0.352539,0.090506,0.426655,0.000000,2.9522,0,0.2557,0.0000,0.2776,-1.0000
+290,3,0.2153,0.267256,0.106489,0.371004,0.000000,3.1346,0,0.2240,0.0000,0.2835,-1.0000
+290,4,0.0831,0.356295,0.079113,0.465210,0.000000,3.3132,0,0.2518,0.0000,0.3167,-1.0000
+290,5,0.0689,0.411165,0.084510,0.494065,0.000000,2.9932,0,0.2625,0.0000,0.2920,-1.0000
+300,0,0.0671,0.069653,0.169532,0.208864,0.000000,2.7749,0,0.2832,0.0000,0.3547,-1.0000
+300,1,0.0377,0.003705,0.000000,0.046130,0.000000,3.2386,0,0.2295,0.0000,0.3661,-1.0000
+300,2,0.2379,0.354440,0.090506,0.426820,0.000000,2.9492,0,0.2572,0.0000,0.2766,-1.0000
+300,3,0.2157,0.269040,0.106485,0.371222,0.000000,3.1320,0,0.2256,0.0000,0.2825,-1.0000
+300,4,0.0829,0.358730,0.078987,0.466257,0.000000,3.3106,0,0.2558,0.0000,0.3147,-1.0000
+300,5,0.0690,0.415909,0.084501,0.496116,0.000000,2.9905,0,0.2651,0.0000,0.2907,-1.0000
+310,0,0.0674,0.068531,0.169636,0.207065,0.000000,2.7721,0,0.2842,0.0000,0.3473,-1.0000
+310,1,0.0430,0.003638,0.000000,0.045668,0.000000,3.2379,0,0.2312,0.0000,0.3523,-1.0000
+310,2,0.2385,0.356384,0.090502,0.427026,0.000000,2.9461,0,0.2588,0.0000,0.2756,-1.0000
+310,3,0.2159,0.270877,0.106475,0.371483,0.000000,3.1294,0,0.2272,0.0000,0.2815,-1.0000
+310,4,0.0827,0.361298,0.078867,0.467389,0.000000,3.3078,0,0.2600,0.0000,0.3128,-1.0000
+310,5,0.0690,0.420814,0.084487,0.498255,0.000000,2.9878,0,0.2677,0.0000,0.2896,-1.0000
+320,0,0.0675,0.067501,0.169738,0.205385,0.000000,2.7693,0,0.2854,0.0000,0.3401,-1.0000
+320,1,0.0473,0.003581,0.000000,0.045262,0.000000,3.2372,0,0.2331,0.0000,0.3396,-1.0000
+320,2,0.2389,0.358365,0.090494,0.427261,0.000000,2.9429,0,0.2605,0.0000,0.2747,-1.0000
+320,3,0.2160,0.272758,0.106459,0.371787,0.000000,3.1267,0,0.2289,0.0000,0.2805,-1.0000
+320,4,0.0825,0.363993,0.078752,0.468603,0.000000,3.3049,0,0.2643,0.0000,0.3109,-1.0000
+320,5,0.0690,0.425867,0.084470,0.500474,0.000000,2.9848,0,0.2704,0.0000,0.2884,-1.0000
+330,0,0.0676,0.066558,0.169839,0.203820,0.000000,2.7664,0,0.2866,0.0000,0.3333,-1.0000
+330,1,0.0510,0.003533,0.000000,0.044906,0.000000,3.2366,0,0.2349,0.0000,0.3278,-1.0000
+330,2,0.2393,0.360390,0.090483,0.427529,0.000000,2.9396,0,0.2623,0.0000,0.2738,-1.0000
+330,3,0.2160,0.274679,0.106436,0.372132,0.000000,3.1238,0,0.2307,0.0000,0.2795,-1.0000
+330,4,0.0822,0.366809,0.078642,0.469895,0.000000,3.3019,0,0.2687,0.0000,0.3091,-1.0000
+330,5,0.0689,0.431059,0.084448,0.502770,0.000000,2.9818,0,0.2732,0.0000,0.2872,-1.0000
+340,0,0.0676,0.065700,0.169940,0.202369,0.000000,2.7635,0,0.2878,0.0000,0.3267,-1.0000
+340,1,0.0543,0.003495,0.000000,0.044596,0.000000,3.2360,0,0.2365,0.0000,0.3169,-1.0000
+340,2,0.2395,0.362454,0.090467,0.427824,0.000000,2.9362,0,0.2642,0.0000,0.2729,-1.0000
+340,3,0.2159,0.276634,0.106408,0.372519,0.000000,3.1208,0,0.2327,0.0000,0.2786,-1.0000
+340,4,0.0819,0.369742,0.078534,0.471260,0.000000,3.2987,0,0.2733,0.0000,0.3073,-1.0000
+340,5,0.0689,0.436383,0.084422,0.505140,0.000000,2.9785,0,0.2761,0.0000,0.2861,-1.0000
+350,0,0.0675,0.064922,0.170039,0.201025,0.000000,2.7606,0,0.2892,0.0000,0.3205,-1.0000
+350,1,0.0572,0.003464,0.000000,0.044328,0.000000,3.2355,0,0.2382,0.0000,0.3068,-1.0000
+350,2,0.2395,0.364554,0.090448,0.428140,0.000000,2.9327,0,0.2660,0.0000,0.2720,-1.0000
+350,3,0.2157,0.278617,0.106374,0.372947,0.000000,3.1177,0,0.2348,0.0000,0.2777,-1.0000
+350,4,0.0815,0.372786,0.078432,0.472696,0.000000,3.2953,0,0.2780,0.0000,0.3055,-1.0000
+350,5,0.0688,0.441832,0.084391,0.507582,0.000000,2.9751,0,0.2792,0.0000,0.2850,-1.0000
+360,0,0.0673,0.064219,0.170139,0.199784,0.000000,2.7576,0,0.2908,0.0000,0.3145,-1.0000
+360,1,0.0600,0.003441,0.000000,0.044096,0.000000,3.2349,0,0.2397,0.0000,0.2974,-1.0000
+360,2,0.2394,0.366687,0.090425,0.428480,0.000000,2.9291,0,0.2678,0.0000,0.2712,-1.0000
+360,3,0.2154,0.280622,0.106334,0.373414,0.000000,3.1144,0,0.2370,0.0000,0.2768,-1.0000
+360,4,0.0811,0.375935,0.078332,0.474201,0.000000,3.2918,0,0.2828,0.0000,0.3038,-1.0000
+360,5,0.0686,0.447397,0.084357,0.510092,0.000000,2.9715,0,0.2824,0.0000,0.2839,-1.0000
+370,0,0.0671,0.063585,0.170239,0.198639,0.000000,2.7545,0,0.2925,0.0000,0.3087,-1.0000
+370,1,0.0626,0.003424,0.000000,0.043897,0.000000,3.2344,0,0.2413,0.0000,0.2887,-1.0000
+370,2,0.2391,0.368849,0.090399,0.428841,0.000000,2.9254,0,0.2698,0.0000,0.2703,-1.0000
+370,3,0.2150,0.282645,0.106289,0.373920,0.000000,3.1110,0,0.2393,0.0000,0.2759,-1.0000
+370,4,0.0807,0.379186,0.078235,0.475767,0.000000,3.2881,0,0.2876,0.0000,0.3021,-1.0000
+370,5,0.0685,0.453069,0.084317,0.512665,0.000000,2.9677,0,0.2858,0.0000,0.2828,-1.0000
+380,0,0.0668,0.063017,0.170340,0.197584,0.000000,2.7515,0,0.2943,0.0000,0.3032,-1.0000
+380,1,0.0653,0.003414,0.000000,0.043727,0.000000,3.2339,0,0.2428,0.0000,0.2806,-1.0000
+380,2,0.2387,0.371021,0.090368,0.429225,0.000000,2.9215,0,0.2717,0.0000,0.2695,-1.0000
+380,3,0.2144,0.284681,0.106239,0.374463,0.000000,3.1074,0,0.2417,0.0000,0.2750,-1.0000
+380,4,0.0802,0.382532,0.078140,0.477390,0.000000,3.2842,0,0.2926,0.0000,0.3004,-1.0000
+380,5,0.0683,0.458840,0.084273,0.515299,0.000000,2.9637,0,0.2894,0.0000,0.2817,-1.0000
+390,0,0.0664,0.062511,0.170443,0.196615,0.000000,2.7484,0,0.2963,0.0000,0.2979,-1.0000
+390,1,0.0679,0.003409,0.000000,0.043583,0.000000,3.2334,0,0.2443,0.0000,0.2730,-1.0000
+390,2,0.2380,0.373211,0.090334,0.429642,0.000000,2.9175,0,0.2738,0.0000,0.2687,-1.0000
+390,3,0.2138,0.286728,0.106183,0.375040,0.000000,3.1036,0,0.2442,0.0000,0.2742,-1.0000
+390,4,0.0797,0.385974,0.078046,0.479071,0.000000,3.2800,0,0.2976,0.0000,0.2988,-1.0000
+390,5,0.0681,0.464707,0.084224,0.517991,0.000000,2.9595,0,0.2931,0.0000,0.2806,-1.0000
+400,0,0.0660,0.062061,0.170548,0.195726,0.000000,2.7452,0,0.2985,0.0000,0.2928,-1.0000
+400,1,0.0706,0.003410,0.000000,0.043462,0.000000,3.2329,0,0.2459,0.0000,0.2659,-1.0000
+400,2,0.2371,0.375427,0.090296,0.430102,0.000000,2.9133,0,0.2760,0.0000,0.2679,-1.0000
+400,3,0.2129,0.288783,0.106123,0.375646,0.000000,3.0997,0,0.2467,0.0000,0.2733,-1.0000
+400,4,0.0791,0.389508,0.077953,0.480808,0.000000,3.2757,0,0.3028,0.0000,0.2971,-1.0000
+400,5,0.0678,0.470661,0.084170,0.520740,0.000000,2.9550,0,0.2969,0.0000,0.2795,-1.0000
+410,0,0.0647,0.057875,0.191829,0.188571,0.000000,2.8008,0,0.2911,0.0000,0.2791,-1.0000
+410,1,0.0733,0.003137,0.000000,0.041430,0.000000,3.2697,0,0.2399,0.0000,0.2487,-1.0000
+410,2,0.2362,0.373429,0.093730,0.429055,0.000000,2.9554,0,0.2709,0.0000,0.2656,-1.0000
+410,3,0.2102,0.286288,0.107743,0.372667,0.000000,3.1373,0,0.2482,0.0000,0.2703,-1.0000
+410,4,0.0780,0.389669,0.079655,0.480919,0.000000,3.3075,0,0.3058,0.0000,0.2943,-1.0000
+410,5,0.0670,0.464926,0.087990,0.516851,0.000000,2.9976,0,0.2974,0.0000,0.2750,-1.0000
+420,0,0.0633,0.057704,0.191932,0.188112,0.000000,2.7978,0,0.2933,0.0000,0.2751,-1.0000
+420,1,0.0760,0.003152,0.000000,0.041397,0.000000,3.2692,0,0.2413,0.0000,0.2432,-1.0000
+420,2,0.2353,0.375828,0.093678,0.429776,0.000000,2.9511,0,0.2732,0.0000,0.2649,-1.0000
+420,3,0.2073,0.288452,0.107677,0.373452,0.000000,3.1332,0,0.2509,0.0000,0.2695,-1.0000
+420,4,0.0769,0.393343,0.079570,0.482783,0.000000,3.3031,0,0.3108,0.0000,0.2928,-1.0000
+420,5,0.0662,0.470984,0.087933,0.519756,0.000000,2.9932,0,0.3011,0.0000,0.2741,-1.0000
+430,0,0.0619,0.057573,0.192036,0.187712,0.000000,2.7948,0,0.2956,0.0000,0.2712,-1.0000
+430,1,0.0787,0.003171,0.000000,0.041380,0.000000,3.2687,0,0.2427,0.0000,0.2380,-1.0000
+430,2,0.2342,0.378240,0.093622,0.430541,0.000000,2.9466,0,0.2757,0.0000,0.2642,-1.0000
+430,3,0.2043,0.290619,0.107606,0.374271,0.000000,3.1289,0,0.2537,0.0000,0.2688,-1.0000
+430,4,0.0758,0.397066,0.079484,0.484679,0.000000,3.2985,0,0.3160,0.0000,0.2913,-1.0000
+430,5,0.0653,0.477081,0.087872,0.522691,0.000000,2.9885,0,0.3049,0.0000,0.2731,-1.0000
+440,0,0.0605,0.057477,0.192140,0.187365,0.000000,2.7917,0,0.2980,0.0000,0.2675,-1.0000
+440,1,0.0814,0.003194,0.000000,0.041378,0.000000,3.2681,0,0.2443,0.0000,0.2332,-1.0000
+440,2,0.2331,0.380664,0.093561,0.431351,0.000000,2.9419,0,0.2784,0.0000,0.2635,-1.0000
+440,3,0.2012,0.292795,0.107530,0.375128,0.000000,3.1245,0,0.2566,0.0000,0.2680,-1.0000
+440,4,0.0746,0.400861,0.079398,0.486614,0.000000,3.2937,0,0.3214,0.0000,0.2899,-1.0000
+440,5,0.0644,0.483246,0.087805,0.525670,0.000000,2.9836,0,0.3089,0.0000,0.2722,-1.0000
+450,0,0.0591,0.057412,0.192244,0.187066,0.000000,2.7886,0,0.3006,0.0000,0.2639,-1.0000
+450,1,0.0840,0.003220,0.000000,0.041391,0.000000,3.2676,0,0.2461,0.0000,0.2286,-1.0000
+450,2,0.2318,0.383095,0.093497,0.432201,0.000000,2.9370,0,0.2814,0.0000,0.2628,-1.0000
+450,3,0.1980,0.294981,0.107448,0.376017,0.000000,3.1198,0,0.2598,0.0000,0.2672,-1.0000
+450,4,0.0734,0.404735,0.079310,0.488594,0.000000,3.2886,0,0.3268,0.0000,0.2885,-1.0000
+450,5,0.0634,0.489494,0.087733,0.528698,0.000000,2.9784,0,0.3131,0.0000,0.2712,-1.0000
+460,0,0.0584,0.057377,0.192347,0.186812,0.000000,2.7853,0,0.3035,0.0000,0.2603,-1.0000
+460,1,0.0866,0.003249,0.000000,0.041417,0.000000,3.2670,0,0.2479,0.0000,0.2243,-1.0000
+460,2,0.2302,0.385532,0.093427,0.433080,0.000000,2.9320,0,0.2846,0.0000,0.2620,-1.0000
+460,3,0.1964,0.297173,0.107362,0.376936,0.000000,3.1149,0,0.2630,0.0000,0.2664,-1.0000
+460,4,0.0727,0.408693,0.079221,0.490619,0.000000,3.2833,0,0.3324,0.0000,0.2870,-1.0000
+460,5,0.0630,0.495827,0.087656,0.531778,0.000000,2.9730,0,0.3176,0.0000,0.2703,-1.0000
+470,0,0.0578,0.057370,0.192445,0.186602,0.000000,2.7821,0,0.3065,0.0000,0.2569,-1.0000
+470,1,0.0892,0.003281,0.000000,0.041458,0.000000,3.2664,0,0.2496,0.0000,0.2202,-1.0000
+470,2,0.2283,0.387992,0.093352,0.433990,0.000000,2.9267,0,0.2881,0.0000,0.2613,-1.0000
+470,3,0.1946,0.299382,0.107270,0.377889,0.000000,3.1097,0,0.2665,0.0000,0.2655,-1.0000
+470,4,0.0718,0.412740,0.079129,0.492695,0.000000,3.2776,0,0.3380,0.0000,0.2856,-1.0000
+470,5,0.0626,0.502256,0.087573,0.534914,0.000000,2.9672,0,0.3223,0.0000,0.2693,-1.0000
+480,0,0.0571,0.057388,0.192537,0.186432,0.000000,2.7787,0,0.3098,0.0000,0.2535,-1.0000
+480,1,0.0920,0.003317,0.000000,0.041513,0.000000,3.2658,0,0.2512,0.0000,0.2162,-1.0000
+480,2,0.2260,0.390482,0.093271,0.434940,0.000000,2.9211,0,0.2917,0.0000,0.2605,-1.0000
+480,3,0.1926,0.301614,0.107172,0.378878,0.000000,3.1042,0,0.2702,0.0000,0.2647,-1.0000
+480,4,0.0710,0.416878,0.079035,0.494821,0.000000,3.2716,0,0.3436,0.0000,0.2842,-1.0000
+480,5,0.0621,0.508784,0.087484,0.538103,0.000000,2.9612,0,0.3272,0.0000,0.2683,-1.0000
+490,0,0.0564,0.057430,0.192620,0.186298,0.000000,2.7752,0,0.3132,0.0000,0.2503,-1.0000
+490,1,0.0948,0.003356,0.000000,0.041582,0.000000,3.2653,0,0.2529,0.0000,0.2125,-1.0000
+490,2,0.2235,0.393008,0.093184,0.435938,0.000000,2.9153,0,0.2956,0.0000,0.2597,-1.0000
+490,3,0.1904,0.303871,0.107068,0.379905,0.000000,3.0984,0,0.2741,0.0000,0.2638,-1.0000
+490,4,0.0701,0.421109,0.078939,0.496996,0.000000,3.2653,0,0.3494,0.0000,0.2827,-1.0000
+490,5,0.0616,0.515413,0.087389,0.541343,0.000000,2.9547,0,0.3324,0.0000,0.2673,-1.0000
+500,0,0.0557,0.057495,0.192687,0.186200,0.000000,2.7715,0,0.3168,0.0000,0.2470,-1.0000
+500,1,0.0977,0.003398,0.000000,0.041666,0.000000,3.2647,0,0.2546,0.0000,0.2089,-1.0000
+500,2,0.2207,0.395584,0.093090,0.436979,0.000000,2.9091,0,0.2999,0.0000,0.2589,-1.0000
+500,3,0.1880,0.306163,0.106957,0.380978,0.000000,3.0923,0,0.2782,0.0000,0.2629,-1.0000
+500,4,0.0691,0.425445,0.078840,0.499223,0.000000,3.2586,0,0.3556,0.0000,0.2813,-1.0000
+500,5,0.0611,0.522156,0.087287,0.544639,0.000000,2.9479,0,0.3380,0.0000,0.2662,-1.0000
+510,0,0.0549,0.057585,0.192734,0.186140,0.000000,2.7678,0,0.3208,0.0000,0.2438,-1.0000
+510,1,0.1007,0.003443,0.000000,0.041767,0.000000,3.2640,0,0.2565,0.0000,0.2055,-1.0000
+510,2,0.2175,0.398226,0.092989,0.438075,0.000000,2.9027,0,0.3045,0.0000,0.2581,-1.0000
+510,3,0.1853,0.308501,0.106839,0.382108,0.000000,3.0857,0,0.2825,0.0000,0.2620,-1.0000
+510,4,0.0681,0.429900,0.078738,0.501509,0.000000,3.2514,0,0.3620,0.0000,0.2798,-1.0000
+510,5,0.0605,0.529032,0.087178,0.547999,0.000000,2.9407,0,0.3438,0.0000,0.2652,-1.0000
+520,0,0.0542,0.057700,0.192754,0.186120,0.000000,2.7638,0,0.3250,0.0000,0.2407,-1.0000
+520,1,0.1038,0.003493,0.000000,0.041886,0.000000,3.2634,0,0.2585,0.0000,0.2022,-1.0000
+520,2,0.2139,0.400966,0.092879,0.439245,0.000000,2.8958,0,0.3095,0.0000,0.2573,-1.0000
+520,3,0.1824,0.310900,0.106713,0.383307,0.000000,3.0787,0,0.2873,0.0000,0.2610,-1.0000
+520,4,0.0671,0.434495,0.078632,0.503860,0.000000,3.2438,0,0.3687,0.0000,0.2783,-1.0000
+520,5,0.0599,0.536074,0.087062,0.551438,0.000000,2.9330,0,0.3501,0.0000,0.2641,-1.0000
+530,0,0.0534,0.057843,0.192738,0.186142,0.000000,2.7597,0,0.3295,0.0000,0.2376,-1.0000
+530,1,0.1069,0.003547,0.000000,0.042025,0.000000,3.2628,0,0.2607,0.0000,0.1990,-1.0000
+530,2,0.2100,0.403839,0.092760,0.440518,0.000000,2.8885,0,0.3148,0.0000,0.2564,-1.0000
+530,3,0.1791,0.313379,0.106578,0.384587,0.000000,3.0713,0,0.2926,0.0000,0.2600,-1.0000
+530,4,0.0660,0.439255,0.078523,0.506284,0.000000,3.2356,0,0.3756,0.0000,0.2768,-1.0000
+530,5,0.0592,0.543313,0.086938,0.554968,0.000000,2.9248,0,0.3566,0.0000,0.2630,-1.0000
+540,0,0.0526,0.058017,0.192679,0.186211,0.000000,2.7554,0,0.3344,0.0000,0.2346,-1.0000
+540,1,0.1101,0.003605,0.000000,0.042185,0.000000,3.2621,0,0.2631,0.0000,0.1960,-1.0000
+540,2,0.2055,0.406869,0.092631,0.441904,0.000000,2.8808,0,0.3206,0.0000,0.2555,-1.0000
+540,3,0.1756,0.315958,0.106434,0.385957,0.000000,3.0633,0,0.2983,0.0000,0.2590,-1.0000
+540,4,0.0648,0.444208,0.078409,0.508793,0.000000,3.2269,0,0.3830,0.0000,0.2753,-1.0000
+540,5,0.0585,0.550795,0.086806,0.558608,0.000000,2.9160,0,0.3633,0.0000,0.2618,-1.0000
+550,0,0.0517,0.058224,0.192567,0.186327,0.000000,2.7508,0,0.3396,0.0000,0.2315,-1.0000
+550,1,0.1133,0.003669,0.000000,0.042370,0.000000,3.2614,0,0.2656,0.0000,0.1931,-1.0000
+550,2,0.2005,0.410084,0.092491,0.443404,0.000000,2.8725,0,0.3270,0.0000,0.2546,-1.0000
+550,3,0.1717,0.318661,0.106281,0.387417,0.000000,3.0547,0,0.3044,0.0000,0.2579,-1.0000
+550,4,0.0635,0.449383,0.078291,0.511393,0.000000,3.2175,0,0.3907,0.0000,0.2738,-1.0000
+550,5,0.0578,0.558561,0.086665,0.562368,0.000000,2.9066,0,0.3704,0.0000,0.2606,-1.0000
+560,0,0.0508,0.058469,0.192393,0.186496,0.000000,2.7459,0,0.3452,0.0000,0.2285,-1.0000
+560,1,0.1165,0.003738,0.000000,0.042581,0.000000,3.2607,0,0.2683,0.0000,0.1903,-1.0000
+560,2,0.1950,0.413527,0.092339,0.445020,0.000000,2.8635,0,0.3338,0.0000,0.2536,-1.0000
+560,3,0.1675,0.321515,0.106116,0.388975,0.000000,3.0454,0,0.3108,0.0000,0.2568,-1.0000
+560,4,0.0622,0.454815,0.078168,0.514094,0.000000,3.2074,0,0.3989,0.0000,0.2722,-1.0000
+560,5,0.0570,0.566655,0.086515,0.566262,0.000000,2.8966,0,0.3779,0.0000,0.2594,-1.0000
+570,0,0.0499,0.058759,0.192147,0.186724,0.000000,2.7408,0,0.3512,0.0000,0.2255,-1.0000
+570,1,0.1198,0.003814,0.000000,0.042826,0.000000,3.2600,0,0.2713,0.0000,0.1877,-1.0000
+570,2,0.1889,0.417264,0.092173,0.446769,0.000000,2.8539,0,0.3413,0.0000,0.2526,-1.0000
+570,3,0.1628,0.324558,0.105940,0.390642,0.000000,3.0354,0,0.3176,0.0000,0.2556,-1.0000
+570,4,0.0609,0.460551,0.078040,0.516915,0.000000,3.1966,0,0.4075,0.0000,0.2706,-1.0000
+570,5,0.0561,0.575142,0.086356,0.570315,0.000000,2.8858,0,0.3860,0.0000,0.2582,-1.0000
+580,0,0.0489,0.059100,0.191823,0.187020,0.000000,2.7352,0,0.3576,0.0000,0.2226,-1.0000
+580,1,0.1230,0.003899,0.000000,0.043108,0.000000,3.2592,0,0.2744,0.0000,0.1851,-1.0000
+580,2,0.1822,0.421359,0.091994,0.448668,0.000000,2.8435,0,0.3494,0.0000,0.2516,-1.0000
+580,3,0.1578,0.327824,0.105752,0.392435,0.000000,3.0246,0,0.3249,0.0000,0.2543,-1.0000
+580,4,0.0594,0.466637,0.077907,0.519873,0.000000,3.1849,0,0.4165,0.0000,0.2689,-1.0000
+580,5,0.0551,0.584081,0.086186,0.574546,0.000000,2.8741,0,0.3946,0.0000,0.2569,-1.0000
+590,0,0.0478,0.059501,0.191415,0.187395,0.000000,2.7293,0,0.3645,0.0000,0.2196,-1.0000
+590,1,0.1262,0.003993,0.000000,0.043434,0.000000,3.2584,0,0.2778,0.0000,0.1827,-1.0000
+590,2,0.1749,0.425824,0.091800,0.450718,0.000000,2.8323,0,0.3583,0.0000,0.2505,-1.0000
+590,3,0.1523,0.331341,0.105550,0.394370,0.000000,3.0129,0,0.3329,0.0000,0.2530,-1.0000
+590,4,0.0579,0.473117,0.077769,0.522980,0.000000,3.1722,0,0.4260,0.0000,0.2672,-1.0000
+590,5,0.0541,0.593538,0.086005,0.578977,0.000000,2.8616,0,0.4037,0.0000,0.2556,-1.0000
+600,0,0.0467,0.059969,0.190919,0.187857,0.000000,2.7229,0,0.3719,0.0000,0.2167,-1.0000
+600,1,0.1293,0.004097,0.000000,0.043810,0.000000,3.2576,0,0.2814,0.0000,0.1805,-1.0000
+600,2,0.1670,0.430681,0.091590,0.452936,0.000000,2.8200,0,0.3680,0.0000,0.2493,-1.0000
+600,3,0.1463,0.335150,0.105335,0.396463,0.000000,3.0001,0,0.3417,0.0000,0.2516,-1.0000
+600,4,0.0562,0.480047,0.077624,0.526253,0.000000,3.1585,0,0.4362,0.0000,0.2655,-1.0000
+600,5,0.0530,0.603593,0.085813,0.583628,0.000000,2.8481,0,0.4133,0.0000,0.2543,-1.0000
+610,0,0.0449,0.059152,0.206022,0.186266,0.000000,2.7750,0,0.3658,0.0000,0.2116,-1.0000
+610,1,0.1312,0.004003,0.000000,0.042866,0.000000,3.2911,0,0.2766,0.0000,0.1739,-1.0000
+610,2,0.1574,0.434229,0.093602,0.455320,0.000000,2.8631,0,0.3736,0.0000,0.2477,-1.0000
+610,3,0.1390,0.333037,0.106852,0.394521,0.000000,3.0289,0,0.3432,0.0000,0.2479,-1.0000
+610,4,0.0542,0.484146,0.079174,0.528523,0.000000,3.1850,0,0.4404,0.0000,0.2629,-1.0000
+610,5,0.0513,0.602761,0.088803,0.582872,0.000000,2.8860,0,0.4134,0.0000,0.2506,-1.0000
+620,0,0.0431,0.059923,0.205444,0.187199,0.000000,2.7685,0,0.3736,0.0000,0.2093,-1.0000
+620,1,0.1328,0.004130,0.000000,0.043374,0.000000,3.2901,0,0.2805,0.0000,0.1723,-1.0000
+620,2,0.1474,0.440311,0.093368,0.458290,0.000000,2.8501,0,0.3841,0.0000,0.2466,-1.0000
+620,3,0.1315,0.337785,0.106621,0.397303,0.000000,3.0155,0,0.3523,0.0000,0.2467,-1.0000
+620,4,0.0521,0.492280,0.079027,0.532350,0.000000,3.1706,0,0.4511,0.0000,0.2613,-1.0000
+620,5,0.0495,0.614714,0.088602,0.588379,0.000000,2.8723,0,0.4234,0.0000,0.2495,-1.0000
+630,0,0.0412,0.060763,0.204799,0.188210,0.000000,2.7614,0,0.3821,0.0000,0.2070,-1.0000
+630,1,0.1342,0.004268,0.000000,0.043924,0.000000,3.2890,0,0.2846,0.0000,0.1708,-1.0000
+630,2,0.1373,0.446811,0.093122,0.461477,0.000000,2.8361,0,0.3953,0.0000,0.2455,-1.0000
+630,3,0.1239,0.342868,0.106377,0.400291,0.000000,3.0010,0,0.3621,0.0000,0.2454,-1.0000
+630,4,0.0499,0.500850,0.078875,0.536307,0.000000,3.1550,0,0.4624,0.0000,0.2597,-1.0000
+630,5,0.0477,0.627292,0.088389,0.594093,0.000000,2.8577,0,0.4340,0.0000,0.2484,-1.0000
+640,0,0.0393,0.061684,0.204088,0.189312,0.000000,2.7538,0,0.3914,0.0000,0.2048,-1.0000
+640,1,0.1353,0.004417,0.000000,0.044525,0.000000,3.2879,0,0.2889,0.0000,0.1694,-1.0000
+640,2,0.1270,0.453816,0.092861,0.464971,0.000000,2.8208,0,0.4075,0.0000,0.2443,-1.0000
+640,3,0.1162,0.348351,0.106121,0.403562,0.000000,2.9853,0,0.3728,0.0000,0.2440,-1.0000
+640,4,0.0478,0.509925,0.078718,0.540419,0.000000,3.1381,0,0.4744,0.0000,0.2581,-1.0000
+640,5,0.0458,0.640596,0.088164,0.600058,0.000000,2.8418,0,0.4453,0.0000,0.2473,-1.0000
+650,0,0.0374,0.062700,0.203315,0.190515,0.000000,2.7455,0,0.4014,0.0000,0.2026,-1.0000
+650,1,0.1362,0.004580,0.000000,0.045183,0.000000,3.2867,0,0.2935,0.0000,0.1681,-1.0000
+650,2,0.1168,0.461412,0.092586,0.468823,0.000000,2.8040,0,0.4207,0.0000,0.2431,-1.0000
+650,3,0.1085,0.354303,0.105850,0.407169,0.000000,2.9682,0,0.3845,0.0000,0.2426,-1.0000
+650,4,0.0456,0.519557,0.078555,0.544701,0.000000,3.1197,0,0.4872,0.0000,0.2564,-1.0000
+650,5,0.0439,0.654694,0.087927,0.606283,0.000000,2.8247,0,0.4575,0.0000,0.2461,-1.0000
+660,0,0.0362,0.063821,0.202485,0.191832,0.000000,2.7365,0,0.4122,0.0000,0.2005,-1.0000
+660,1,0.1382,0.004759,0.000000,0.045903,0.000000,3.2854,0,0.2983,0.0000,0.1669,-1.0000
+660,2,0.1077,0.469702,0.092297,0.473043,0.000000,2.7857,0,0.4350,0.0000,0.2418,-1.0000
+660,3,0.1017,0.360805,0.105566,0.411121,0.000000,2.9496,0,0.3972,0.0000,0.2412,-1.0000
+660,4,0.0439,0.529796,0.078385,0.549169,0.000000,3.0995,0,0.5006,0.0000,0.2547,-1.0000
+660,5,0.0425,0.669643,0.087676,0.612783,0.000000,2.8061,0,0.4706,0.0000,0.2450,-1.0000
+670,0,0.0349,0.065055,0.201604,0.193266,0.000000,2.7265,0,0.4239,0.0000,0.1985,-1.0000
+670,1,0.1400,0.004956,0.000000,0.046693,0.000000,3.2840,0,0.3033,0.0000,0.1658,-1.0000
+670,2,0.0986,0.478814,0.091994,0.477610,0.000000,2.7656,0,0.4503,0.0000,0.2405,-1.0000
+670,3,0.0948,0.367941,0.105268,0.415399,0.000000,2.9294,0,0.4110,0.0000,0.2397,-1.0000
+670,4,0.0421,0.540670,0.078208,0.553820,0.000000,3.0775,0,0.5149,0.0000,0.2530,-1.0000
+670,5,0.0411,0.685486,0.087412,0.619565,0.000000,2.7858,0,0.4846,0.0000,0.2438,-1.0000
+680,0,0.0336,0.066404,0.200676,0.194819,0.000000,2.7154,0,0.4364,0.0000,0.1965,-1.0000
+680,1,0.1418,0.005175,0.000000,0.047558,0.000000,3.2825,0,0.3086,0.0000,0.1649,-1.0000
+680,2,0.0895,0.488845,0.091677,0.482526,0.000000,2.7436,0,0.4666,0.0000,0.2391,-1.0000
+680,3,0.0877,0.375739,0.104956,0.419982,0.000000,2.9073,0,0.4258,0.0000,0.2382,-1.0000
+680,4,0.0404,0.552136,0.078025,0.558626,0.000000,3.0533,0,0.5301,0.0000,0.2513,-1.0000
+680,5,0.0397,0.702191,0.087134,0.626615,0.000000,2.7636,0,0.4993,0.0000,0.2426,-1.0000
+690,0,0.0322,0.067863,0.199708,0.196477,0.000000,2.7033,0,0.4497,0.0000,0.1946,-1.0000
+690,1,0.1434,0.005415,0.000000,0.048496,0.000000,3.2809,0,0.3141,0.0000,0.1641,-1.0000
+690,2,0.0806,0.499797,0.091347,0.487751,0.000000,2.7195,0,0.4842,0.0000,0.2377,-1.0000
+690,3,0.0807,0.384168,0.104632,0.424821,0.000000,2.8832,0,0.4418,0.0000,0.2366,-1.0000
+690,4,0.0387,0.564111,0.077835,0.563544,0.000000,3.0267,0,0.5459,0.0000,0.2495,-1.0000
+690,5,0.0382,0.719650,0.086843,0.633907,0.000000,2.7394,0,0.5150,0.0000,0.2414,-1.0000
+700,0,0.0309,0.069416,0.198707,0.198215,0.000000,2.6898,0,0.4640,0.0000,0.1927,-1.0000
+700,1,0.1450,0.005673,0.000000,0.049488,0.000000,3.2791,0,0.3199,0.0000,0.1634,-1.0000
+700,2,0.0720,0.511438,0.091004,0.493136,0.000000,2.6932,0,0.5028,0.0000,0.2362,-1.0000
+700,3,0.0737,0.393123,0.104295,0.429834,0.000000,2.8569,0,0.4583,0.0000,0.2350,-1.0000
+700,4,0.0371,0.576440,0.077638,0.568502,0.000000,2.9975,0,0.5624,0.0000,0.2477,-1.0000
+700,5,0.0367,0.737680,0.086539,0.641368,0.000000,2.7130,0,0.5315,0.0000,0.2401,-1.0000
+710,0,0.0295,0.071045,0.197682,0.200003,0.000000,2.6749,0,0.4790,0.0000,0.1909,-1.0000
+710,1,0.1466,0.005949,0.000000,0.050530,0.000000,3.2773,0,0.3258,0.0000,0.1627,-1.0000
+710,2,0.0638,0.523573,0.090649,0.498586,0.000000,2.6647,0,0.5221,0.0000,0.2346,-1.0000
+710,3,0.0669,0.402474,0.103946,0.434938,0.000000,2.8285,0,0.4754,0.0000,0.2333,-1.0000
+710,4,0.0355,0.588959,0.077434,0.573416,0.000000,2.9657,0,0.5796,0.0000,0.2458,-1.0000
+710,5,0.0353,0.756117,0.086223,0.648939,0.000000,2.6842,0,0.5490,0.0000,0.2388,-1.0000
+720,0,0.0282,0.072730,0.196639,0.201804,0.000000,2.6585,0,0.4946,0.0000,0.1892,-1.0000
+720,1,0.1481,0.006245,0.000000,0.051631,0.000000,3.2753,0,0.3318,0.0000,0.1622,-1.0000
+720,2,0.0563,0.536270,0.090284,0.504287,0.000000,2.6339,0,0.5422,0.0000,0.2330,-1.0000
+720,3,0.0605,0.412179,0.103587,0.440141,0.000000,2.7978,0,0.4932,0.0000,0.2316,-1.0000
+720,4,0.0340,0.601518,0.077224,0.578209,0.000000,2.9309,0,0.5971,0.0000,0.2438,-1.0000
+720,5,0.0338,0.774789,0.085896,0.656547,0.000000,2.6529,0,0.5674,0.0000,0.2375,-1.0000
+730,0,0.0269,0.074444,0.195587,0.203579,0.000000,2.6406,0,0.5105,0.0000,0.1874,-1.0000
+730,1,0.1496,0.006560,0.000000,0.052792,0.000000,3.2733,0,0.3377,0.0000,0.1619,-1.0000
+730,2,0.0495,0.549544,0.089910,0.510270,0.000000,2.6010,0,0.5630,0.0000,0.2314,-1.0000
+730,3,0.0544,0.422148,0.103220,0.445448,0.000000,2.7649,0,0.5117,0.0000,0.2298,-1.0000
+730,4,0.0326,0.613876,0.077007,0.582775,0.000000,2.8933,0,0.6151,0.0000,0.2417,-1.0000
+730,5,0.0324,0.793427,0.085559,0.664054,0.000000,2.6191,0,0.5865,0.0000,0.2360,-1.0000

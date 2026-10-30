@@ -1,0 +1,76 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=1, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', nb_epochs=1000, use_scp=0, struct_feat_dim=3, struct_prompt_residual=1, struct_prompt_scale=0.05, random_struct=0)
+----------------------------------------------------------------------------------------------------
+957428
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+1
+loading model from /home/ustc1958/lxy/graph/1/SAMGPT0504/checkpoints/model_node_GRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.001_gcn.pkl
+step 0
+0.2304188453114804
+0.3786603703078737
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0504/src/execute.py", line 270, in <module>
+    model.load_state_dict(load_state_dict_trusted(save_name))
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0504/src/execute.py", line 62, in load_state_dict_trusted
+    sd = torch_load_trusted(path, map_location=map_location)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0504/src/execute.py", line 56, in torch_load_trusted
+    return torch.load(path, map_location=map_location, weights_only=False)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/serialization.py", line 1500, in load
+    with _open_file_like(f, "rb") as opened_file:
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/serialization.py", line 768, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/serialization.py", line 749, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/ustc1958/lxy/graph/1/SAMGPT0504/checkpoints/model_node_GRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.001_gcn.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0504/src/execute.py", line 303, in <module>
+    aug_feature, aug_adj, lbl = aug.build_aug(adj, feature, sparse, drop_percent)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0504/src/utils/aug.py", line 245, in build_aug
+    aug_adj1edge = aug_random_edge(adj, drop_percent=drop_percent)  # random drop edges
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0504/src/utils/aug.py", line 77, in aug_random_edge
+    aug_adj = copy.deepcopy(input_adj.todense().tolist())
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/numpy/matrixlib/defmatrix.py", line 285, in tolist
+    return self.__array__().tolist()
+KeyboardInterrupt
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=1, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', nb_epochs=1000, use_scp=0, struct_feat_dim=3, struct_prompt_residual=1, struct_prompt_scale=0.05, random_struct=0)
+----------------------------------------------------------------------------------------------------
+957932
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+1
+loading model from /home/ustc1958/lxy/graph/1/SAMGPT0504/checkpoints/model_node_GRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.001_gcn.pkl
+step 0
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0504/src/execute.py", line 270, in <module>
+    model.load_state_dict(load_state_dict_trusted(save_name))
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0504/src/execute.py", line 62, in load_state_dict_trusted
+    sd = torch_load_trusted(path, map_location=map_location)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0504/src/execute.py", line 56, in torch_load_trusted
+    return torch.load(path, map_location=map_location, weights_only=False)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/serialization.py", line 1500, in load
+    with _open_file_like(f, "rb") as opened_file:
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/serialization.py", line 768, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/torch/serialization.py", line 749, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/ustc1958/lxy/graph/1/SAMGPT0504/checkpoints/model_node_GRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.001_gcn.pkl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0504/src/execute.py", line 303, in <module>
+    aug_feature, aug_adj, lbl = aug.build_aug(adj, feature, sparse, drop_percent)
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0504/src/utils/aug.py", line 245, in build_aug
+    aug_adj1edge = aug_random_edge(adj, drop_percent=drop_percent)  # random drop edges
+  File "/home/ustc1958/lxy/graph/1/SAMGPT0504/src/utils/aug.py", line 77, in aug_random_edge
+    aug_adj = copy.deepcopy(input_adj.todense().tolist())
+  File "/home/ustc1958/miniconda3/envs/graph/lib/python3.10/site-packages/numpy/matrixlib/defmatrix.py", line 285, in tolist
+    return self.__array__().tolist()
+KeyboardInterrupt

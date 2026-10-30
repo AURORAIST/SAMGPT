@@ -1,0 +1,804 @@
+----------------------------------------------------------------------------------------------------
+Namespace(dataset='Cora', pretrain_datasets=['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia'], downstream_task='node', gpu=0, pretrain_method='GRAPHCL', aug_type='edge', drop_percent=0.1, seed=39, combinetype='mul', graphId=[1], alpha=1.0, beta=1.0, negative_samples_num=40, skip_pretrain=0, ablation_pre='all', ablation_down='all', unify_dim=50, shot_num=1, lr=0.001, hid_units=256, layers_num=3, backbone='gcn', use_cgpc=True, lambda_context=0.05, lambda_code=0.05, ema_momentum=0.99, num_codes=256, mask_rate=0.5, mask_type='element', tau_teacher=0.07, tau_student=0.1, cgpc_sample_size=0)
+----------------------------------------------------------------------------------------------------
+945629
+CUDA Available: True
+gpu: 0
+['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+[CGPC] enabled | λ_ctx=0.05 λ_code=0.05 mask=element@0.5 ema_m=0.99 num_codes=256 τ_t=0.07 τ_s=0.1 sample_size=full
+0
+step 0
+Using CUDA
+Epoch:00000 | Loss:[6.222469] | CGPC ctx:2.010257 code:0.518655 cgpc_total:0.126446 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00001 | Loss:[23.910633] | CGPC ctx:1.961549 code:0.377213 cgpc_total:0.116938 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00002 | Loss:[23.413147] | CGPC ctx:1.901070 code:0.324392 cgpc_total:0.111273 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00003 | Loss:[16.687780] | CGPC ctx:1.839499 code:0.303213 cgpc_total:0.107136 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00004 | Loss:[9.253040] | CGPC ctx:1.787735 code:0.290424 cgpc_total:0.103908 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00005 | Loss:[8.735981] | CGPC ctx:1.749908 code:0.279803 cgpc_total:0.101486 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00006 | Loss:[10.988560] | CGPC ctx:1.720527 code:0.270690 cgpc_total:0.099561 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00007 | Loss:[7.391043] | CGPC ctx:1.697730 code:0.262375 cgpc_total:0.098005 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00008 | Loss:[6.780724] | CGPC ctx:1.680240 code:0.254730 cgpc_total:0.096748 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00009 | Loss:[7.399996] | CGPC ctx:1.666326 code:0.247646 cgpc_total:0.095699 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00010 | Loss:[7.648663] | CGPC ctx:1.654048 code:0.240672 cgpc_total:0.094736 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00011 | Loss:[7.337402] | CGPC ctx:1.642265 code:0.233432 cgpc_total:0.093785 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00012 | Loss:[6.642419] | CGPC ctx:1.630322 code:0.225884 cgpc_total:0.092810 | code_entropy:5.545 active:256 max_use:0.004
+Loading 0th epoch
+Epoch:00013 | Loss:[5.739113] | CGPC ctx:1.617746 code:0.218139 cgpc_total:0.091794 | code_entropy:5.545 active:256 max_use:0.004
+Loading 13th epoch
+Epoch:00014 | Loss:[4.918427] | CGPC ctx:1.604280 code:0.210310 cgpc_total:0.090730 | code_entropy:5.545 active:256 max_use:0.004
+Loading 14th epoch
+Epoch:00015 | Loss:[4.713320] | CGPC ctx:1.589829 code:0.202473 cgpc_total:0.089615 | code_entropy:5.545 active:256 max_use:0.004
+Loading 15th epoch
+Epoch:00016 | Loss:[5.107437] | CGPC ctx:1.574416 code:0.194668 cgpc_total:0.088454 | code_entropy:5.545 active:256 max_use:0.004
+Loading 15th epoch
+Epoch:00017 | Loss:[5.097751] | CGPC ctx:1.558160 code:0.186930 cgpc_total:0.087254 | code_entropy:5.545 active:256 max_use:0.004
+Loading 15th epoch
+Epoch:00018 | Loss:[4.538634] | CGPC ctx:1.541210 code:0.179314 cgpc_total:0.086026 | code_entropy:5.545 active:256 max_use:0.004
+Loading 18th epoch
+Epoch:00019 | Loss:[4.237131] | CGPC ctx:1.523738 code:0.171890 cgpc_total:0.084781 | code_entropy:5.545 active:256 max_use:0.004
+Loading 19th epoch
+Epoch:00020 | Loss:[4.276659] | CGPC ctx:1.505937 code:0.164717 cgpc_total:0.083533 | code_entropy:5.545 active:256 max_use:0.004
+Loading 19th epoch
+Epoch:00021 | Loss:[4.418480] | CGPC ctx:1.487990 code:0.157832 cgpc_total:0.082291 | code_entropy:5.545 active:256 max_use:0.004
+Loading 19th epoch
+Epoch:00022 | Loss:[4.406272] | CGPC ctx:1.470219 code:0.151242 cgpc_total:0.081073 | code_entropy:5.545 active:256 max_use:0.004
+Loading 19th epoch
+Epoch:00023 | Loss:[4.247130] | CGPC ctx:1.452887 code:0.144939 cgpc_total:0.079891 | code_entropy:5.545 active:256 max_use:0.004
+Loading 19th epoch
+Epoch:00024 | Loss:[3.975488] | CGPC ctx:1.435929 code:0.138914 cgpc_total:0.078742 | code_entropy:5.545 active:256 max_use:0.004
+Loading 24th epoch
+Epoch:00025 | Loss:[3.729187] | CGPC ctx:1.419454 code:0.133164 cgpc_total:0.077631 | code_entropy:5.545 active:256 max_use:0.004
+Loading 25th epoch
+Epoch:00026 | Loss:[3.641237] | CGPC ctx:1.403542 code:0.127693 cgpc_total:0.076562 | code_entropy:5.545 active:256 max_use:0.004
+Loading 26th epoch
+Epoch:00027 | Loss:[3.697068] | CGPC ctx:1.388327 code:0.122495 cgpc_total:0.075541 | code_entropy:5.545 active:256 max_use:0.004
+Loading 26th epoch
+Epoch:00028 | Loss:[3.709575] | CGPC ctx:1.373851 code:0.117564 cgpc_total:0.074571 | code_entropy:5.545 active:256 max_use:0.004
+Loading 26th epoch
+Epoch:00029 | Loss:[3.607314] | CGPC ctx:1.360177 code:0.112891 cgpc_total:0.073653 | code_entropy:5.545 active:256 max_use:0.004
+Loading 29th epoch
+Epoch:00030 | Loss:[3.447095] | CGPC ctx:1.347310 code:0.108467 cgpc_total:0.072789 | code_entropy:5.545 active:256 max_use:0.004
+Loading 30th epoch
+Epoch:00031 | Loss:[3.376776] | CGPC ctx:1.335315 code:0.104274 cgpc_total:0.071979 | code_entropy:5.545 active:256 max_use:0.004
+Loading 31th epoch
+Epoch:00032 | Loss:[3.348993] | CGPC ctx:1.324207 code:0.100285 cgpc_total:0.071225 | code_entropy:5.545 active:256 max_use:0.004
+Loading 32th epoch
+Epoch:00033 | Loss:[3.303792] | CGPC ctx:1.313968 code:0.096476 cgpc_total:0.070522 | code_entropy:5.545 active:256 max_use:0.004
+Loading 33th epoch
+Epoch:00034 | Loss:[3.229270] | CGPC ctx:1.304569 code:0.092834 cgpc_total:0.069870 | code_entropy:5.545 active:256 max_use:0.004
+Loading 34th epoch
+Epoch:00035 | Loss:[3.160083] | CGPC ctx:1.295994 code:0.089355 cgpc_total:0.069267 | code_entropy:5.545 active:256 max_use:0.004
+Loading 35th epoch
+Epoch:00036 | Loss:[3.112831] | CGPC ctx:1.288215 code:0.086041 cgpc_total:0.068713 | code_entropy:5.545 active:256 max_use:0.004
+Loading 36th epoch
+Epoch:00037 | Loss:[3.054024] | CGPC ctx:1.281172 code:0.082901 cgpc_total:0.068204 | code_entropy:5.545 active:256 max_use:0.004
+Loading 37th epoch
+Epoch:00038 | Loss:[2.994374] | CGPC ctx:1.274826 code:0.079938 cgpc_total:0.067738 | code_entropy:5.545 active:256 max_use:0.004
+Loading 38th epoch
+Epoch:00039 | Loss:[2.926022] | CGPC ctx:1.269127 code:0.077148 cgpc_total:0.067314 | code_entropy:5.545 active:256 max_use:0.004
+Loading 39th epoch
+Epoch:00040 | Loss:[2.860960] | CGPC ctx:1.264012 code:0.074525 cgpc_total:0.066927 | code_entropy:5.545 active:256 max_use:0.004
+Loading 40th epoch
+Epoch:00041 | Loss:[2.809105] | CGPC ctx:1.259452 code:0.072057 cgpc_total:0.066575 | code_entropy:5.545 active:256 max_use:0.004
+Loading 41th epoch
+Epoch:00042 | Loss:[2.764509] | CGPC ctx:1.255403 code:0.069729 cgpc_total:0.066257 | code_entropy:5.545 active:256 max_use:0.004
+Loading 42th epoch
+Epoch:00043 | Loss:[2.716847] | CGPC ctx:1.251805 code:0.067524 cgpc_total:0.065966 | code_entropy:5.545 active:256 max_use:0.004
+Loading 43th epoch
+Epoch:00044 | Loss:[2.656594] | CGPC ctx:1.248609 code:0.065429 cgpc_total:0.065702 | code_entropy:5.545 active:256 max_use:0.004
+Loading 44th epoch
+Epoch:00045 | Loss:[2.604268] | CGPC ctx:1.245763 code:0.063437 cgpc_total:0.065460 | code_entropy:5.545 active:256 max_use:0.004
+Loading 45th epoch
+Epoch:00046 | Loss:[2.556514] | CGPC ctx:1.243213 code:0.061546 cgpc_total:0.065238 | code_entropy:5.545 active:256 max_use:0.004
+Loading 46th epoch
+Epoch:00047 | Loss:[2.498991] | CGPC ctx:1.240937 code:0.059754 cgpc_total:0.065035 | code_entropy:5.545 active:256 max_use:0.004
+Loading 47th epoch
+Epoch:00048 | Loss:[2.437720] | CGPC ctx:1.238901 code:0.058058 cgpc_total:0.064848 | code_entropy:5.545 active:256 max_use:0.004
+Loading 48th epoch
+Epoch:00049 | Loss:[2.379690] | CGPC ctx:1.237089 code:0.056451 cgpc_total:0.064677 | code_entropy:5.545 active:256 max_use:0.004
+Loading 49th epoch
+Epoch:00050 | Loss:[2.329347] | CGPC ctx:1.235478 code:0.054925 cgpc_total:0.064520 | code_entropy:5.545 active:256 max_use:0.004
+Loading 50th epoch
+Epoch:00051 | Loss:[2.278043] | CGPC ctx:1.234028 code:0.053472 cgpc_total:0.064375 | code_entropy:5.545 active:256 max_use:0.004
+Loading 51th epoch
+Epoch:00052 | Loss:[2.225889] | CGPC ctx:1.232709 code:0.052084 cgpc_total:0.064240 | code_entropy:5.545 active:256 max_use:0.004
+Loading 52th epoch
+Epoch:00053 | Loss:[2.171873] | CGPC ctx:1.231488 code:0.050755 cgpc_total:0.064112 | code_entropy:5.545 active:256 max_use:0.004
+Loading 53th epoch
+Epoch:00054 | Loss:[2.115824] | CGPC ctx:1.230356 code:0.049478 cgpc_total:0.063992 | code_entropy:5.545 active:256 max_use:0.004
+Loading 54th epoch
+Epoch:00055 | Loss:[2.060809] | CGPC ctx:1.229298 code:0.048249 cgpc_total:0.063877 | code_entropy:5.545 active:256 max_use:0.004
+Loading 55th epoch
+Epoch:00056 | Loss:[2.007435] | CGPC ctx:1.228259 code:0.047070 cgpc_total:0.063766 | code_entropy:5.545 active:256 max_use:0.004
+Loading 56th epoch
+Epoch:00057 | Loss:[1.956025] | CGPC ctx:1.227230 code:0.045937 cgpc_total:0.063658 | code_entropy:5.545 active:256 max_use:0.004
+Loading 57th epoch
+Epoch:00058 | Loss:[1.902743] | CGPC ctx:1.226204 code:0.044851 cgpc_total:0.063553 | code_entropy:5.545 active:256 max_use:0.004
+Loading 58th epoch
+Epoch:00059 | Loss:[1.849482] | CGPC ctx:1.225156 code:0.043807 cgpc_total:0.063448 | code_entropy:5.545 active:256 max_use:0.004
+Loading 59th epoch
+Epoch:00060 | Loss:[1.796468] | CGPC ctx:1.224066 code:0.042803 cgpc_total:0.063343 | code_entropy:5.545 active:256 max_use:0.004
+Loading 60th epoch
+Epoch:00061 | Loss:[1.745008] | CGPC ctx:1.222878 code:0.041835 cgpc_total:0.063236 | code_entropy:5.545 active:256 max_use:0.004
+Loading 61th epoch
+Epoch:00062 | Loss:[1.693312] | CGPC ctx:1.221553 code:0.040900 cgpc_total:0.063123 | code_entropy:5.545 active:256 max_use:0.004
+Loading 62th epoch
+Epoch:00063 | Loss:[1.642167] | CGPC ctx:1.220046 code:0.039996 cgpc_total:0.063002 | code_entropy:5.545 active:256 max_use:0.004
+Loading 63th epoch
+Epoch:00064 | Loss:[1.591310] | CGPC ctx:1.218316 code:0.039120 cgpc_total:0.062872 | code_entropy:5.545 active:256 max_use:0.004
+Loading 64th epoch
+Epoch:00065 | Loss:[1.541427] | CGPC ctx:1.216315 code:0.038271 cgpc_total:0.062729 | code_entropy:5.545 active:256 max_use:0.004
+Loading 65th epoch
+Epoch:00066 | Loss:[1.491705] | CGPC ctx:1.213969 code:0.037450 cgpc_total:0.062571 | code_entropy:5.545 active:256 max_use:0.004
+Loading 66th epoch
+Epoch:00067 | Loss:[1.443031] | CGPC ctx:1.211219 code:0.036658 cgpc_total:0.062394 | code_entropy:5.545 active:256 max_use:0.004
+Loading 67th epoch
+Epoch:00068 | Loss:[1.395195] | CGPC ctx:1.207953 code:0.035899 cgpc_total:0.062193 | code_entropy:5.545 active:256 max_use:0.004
+Loading 68th epoch
+Epoch:00069 | Loss:[1.348536] | CGPC ctx:1.204047 code:0.035175 cgpc_total:0.061961 | code_entropy:5.545 active:256 max_use:0.004
+Loading 69th epoch
+Epoch:00070 | Loss:[1.302353] | CGPC ctx:1.199333 code:0.034492 cgpc_total:0.061691 | code_entropy:5.545 active:256 max_use:0.004
+Loading 70th epoch
+Epoch:00071 | Loss:[1.257108] | CGPC ctx:1.193577 code:0.033855 cgpc_total:0.061372 | code_entropy:5.545 active:256 max_use:0.004
+Loading 71th epoch
+Epoch:00072 | Loss:[1.212866] | CGPC ctx:1.186592 code:0.033274 cgpc_total:0.060993 | code_entropy:5.545 active:256 max_use:0.004
+Loading 72th epoch
+Epoch:00073 | Loss:[1.169625] | CGPC ctx:1.178046 code:0.032765 cgpc_total:0.060541 | code_entropy:5.545 active:256 max_use:0.004
+Loading 73th epoch
+Epoch:00074 | Loss:[1.127113] | CGPC ctx:1.167600 code:0.032348 cgpc_total:0.059997 | code_entropy:5.545 active:256 max_use:0.004
+Loading 74th epoch
+Epoch:00075 | Loss:[1.085057] | CGPC ctx:1.154796 code:0.032057 cgpc_total:0.059343 | code_entropy:5.545 active:256 max_use:0.004
+Loading 75th epoch
+Epoch:00076 | Loss:[1.043637] | CGPC ctx:1.139046 code:0.031938 cgpc_total:0.058549 | code_entropy:5.545 active:256 max_use:0.004
+Loading 76th epoch
+Epoch:00077 | Loss:[1.002511] | CGPC ctx:1.119352 code:0.032072 cgpc_total:0.057571 | code_entropy:5.545 active:256 max_use:0.004
+Loading 77th epoch
+Epoch:00078 | Loss:[0.961514] | CGPC ctx:1.094706 code:0.032557 cgpc_total:0.056363 | code_entropy:5.545 active:256 max_use:0.004
+Loading 78th epoch
+Epoch:00079 | Loss:[0.920183] | CGPC ctx:1.063659 code:0.033557 cgpc_total:0.054861 | code_entropy:5.545 active:256 max_use:0.004
+Loading 79th epoch
+Epoch:00080 | Loss:[0.878194] | CGPC ctx:1.024936 code:0.035273 cgpc_total:0.053010 | code_entropy:5.545 active:256 max_use:0.004
+Loading 80th epoch
+Epoch:00081 | Loss:[0.835260] | CGPC ctx:0.976961 code:0.038002 cgpc_total:0.050748 | code_entropy:5.545 active:256 max_use:0.004
+Loading 81th epoch
+Epoch:00082 | Loss:[0.790578] | CGPC ctx:0.916881 code:0.042249 cgpc_total:0.047957 | code_entropy:5.545 active:256 max_use:0.004
+Loading 82th epoch
+Epoch:00083 | Loss:[0.743927] | CGPC ctx:0.843613 code:0.048453 cgpc_total:0.044603 | code_entropy:5.545 active:256 max_use:0.004
+Loading 83th epoch
+Epoch:00084 | Loss:[0.695251] | CGPC ctx:0.756684 code:0.057062 cgpc_total:0.040687 | code_entropy:5.545 active:256 max_use:0.004
+Loading 84th epoch
+Epoch:00085 | Loss:[0.645965] | CGPC ctx:0.661302 code:0.067738 cgpc_total:0.036452 | code_entropy:5.545 active:256 max_use:0.004
+Loading 85th epoch
+Epoch:00086 | Loss:[0.599397] | CGPC ctx:0.570689 code:0.078265 cgpc_total:0.032448 | code_entropy:5.545 active:256 max_use:0.004
+Loading 86th epoch
+Epoch:00087 | Loss:[0.559448] | CGPC ctx:0.502436 code:0.084183 cgpc_total:0.029331 | code_entropy:5.545 active:256 max_use:0.004
+Loading 87th epoch
+Epoch:00088 | Loss:[0.526249] | CGPC ctx:0.459989 code:0.082769 cgpc_total:0.027138 | code_entropy:5.545 active:256 max_use:0.004
+Loading 88th epoch
+Epoch:00089 | Loss:[0.497165] | CGPC ctx:0.432647 code:0.076130 cgpc_total:0.025439 | code_entropy:5.545 active:256 max_use:0.004
+Loading 89th epoch
+Epoch:00090 | Loss:[0.469808] | CGPC ctx:0.408036 code:0.068905 cgpc_total:0.023847 | code_entropy:5.545 active:256 max_use:0.004
+Loading 90th epoch
+Epoch:00091 | Loss:[0.444076] | CGPC ctx:0.383334 code:0.063736 cgpc_total:0.022353 | code_entropy:5.545 active:256 max_use:0.004
+Loading 91th epoch
+Epoch:00092 | Loss:[0.420307] | CGPC ctx:0.359917 code:0.060430 cgpc_total:0.021017 | code_entropy:5.545 active:256 max_use:0.004
+Loading 92th epoch
+Epoch:00093 | Loss:[0.398088] | CGPC ctx:0.337849 code:0.057703 cgpc_total:0.019778 | code_entropy:5.545 active:256 max_use:0.004
+Loading 93th epoch
+Epoch:00094 | Loss:[0.376912] | CGPC ctx:0.316581 code:0.054694 cgpc_total:0.018564 | code_entropy:5.545 active:256 max_use:0.004
+Loading 94th epoch
+Epoch:00095 | Loss:[0.356695] | CGPC ctx:0.296222 code:0.051226 cgpc_total:0.017372 | code_entropy:5.545 active:256 max_use:0.004
+Loading 95th epoch
+Epoch:00096 | Loss:[0.337545] | CGPC ctx:0.276895 code:0.047667 cgpc_total:0.016228 | code_entropy:5.545 active:256 max_use:0.004
+Loading 96th epoch
+Epoch:00097 | Loss:[0.319542] | CGPC ctx:0.258730 code:0.044320 cgpc_total:0.015153 | code_entropy:5.545 active:256 max_use:0.004
+Loading 97th epoch
+Epoch:00098 | Loss:[0.302727] | CGPC ctx:0.241908 code:0.041295 cgpc_total:0.014160 | code_entropy:5.545 active:256 max_use:0.004
+Loading 98th epoch
+Epoch:00099 | Loss:[0.287006] | CGPC ctx:0.226232 code:0.038606 cgpc_total:0.013242 | code_entropy:5.545 active:256 max_use:0.004
+Loading 99th epoch
+Epoch:00100 | Loss:[0.272366] | CGPC ctx:0.211771 code:0.036278 cgpc_total:0.012402 | code_entropy:5.545 active:256 max_use:0.004
+Loading 100th epoch
+Epoch:00101 | Loss:[0.258795] | CGPC ctx:0.198629 code:0.034300 cgpc_total:0.011646 | code_entropy:5.545 active:256 max_use:0.004
+Loading 101th epoch
+Epoch:00102 | Loss:[0.246228] | CGPC ctx:0.186788 code:0.032596 cgpc_total:0.010969 | code_entropy:5.545 active:256 max_use:0.004
+Loading 102th epoch
+Epoch:00103 | Loss:[0.234517] | CGPC ctx:0.175966 code:0.031054 cgpc_total:0.010351 | code_entropy:5.545 active:256 max_use:0.004
+Loading 103th epoch
+Epoch:00104 | Loss:[0.223520] | CGPC ctx:0.165844 code:0.029611 cgpc_total:0.009773 | code_entropy:5.545 active:256 max_use:0.004
+Loading 104th epoch
+Epoch:00105 | Loss:[0.213161] | CGPC ctx:0.156277 code:0.028260 cgpc_total:0.009227 | code_entropy:5.545 active:256 max_use:0.004
+Loading 105th epoch
+Epoch:00106 | Loss:[0.203412] | CGPC ctx:0.147274 code:0.027012 cgpc_total:0.008714 | code_entropy:5.545 active:256 max_use:0.004
+Loading 106th epoch
+Epoch:00107 | Loss:[0.194228] | CGPC ctx:0.138804 code:0.025844 cgpc_total:0.008232 | code_entropy:5.545 active:256 max_use:0.004
+Loading 107th epoch
+Epoch:00108 | Loss:[0.185520] | CGPC ctx:0.130722 code:0.024702 cgpc_total:0.007771 | code_entropy:5.545 active:256 max_use:0.004
+Loading 108th epoch
+Epoch:00109 | Loss:[0.177194] | CGPC ctx:0.122835 code:0.023545 cgpc_total:0.007319 | code_entropy:5.545 active:256 max_use:0.004
+Loading 109th epoch
+Epoch:00110 | Loss:[0.169208] | CGPC ctx:0.115074 code:0.022369 cgpc_total:0.006872 | code_entropy:5.545 active:256 max_use:0.004
+Loading 110th epoch
+Epoch:00111 | Loss:[0.161560] | CGPC ctx:0.107475 code:0.021201 cgpc_total:0.006434 | code_entropy:5.545 active:256 max_use:0.004
+Loading 111th epoch
+Epoch:00112 | Loss:[0.154271] | CGPC ctx:0.100127 code:0.020077 cgpc_total:0.006010 | code_entropy:5.545 active:256 max_use:0.004
+Loading 112th epoch
+Epoch:00113 | Loss:[0.147350] | CGPC ctx:0.093098 code:0.019014 cgpc_total:0.005606 | code_entropy:5.545 active:256 max_use:0.004
+Loading 113th epoch
+Epoch:00114 | Loss:[0.140791] | CGPC ctx:0.086431 code:0.018019 cgpc_total:0.005223 | code_entropy:5.545 active:256 max_use:0.004
+Loading 114th epoch
+Epoch:00115 | Loss:[0.134586] | CGPC ctx:0.080133 code:0.017109 cgpc_total:0.004862 | code_entropy:5.545 active:256 max_use:0.004
+Loading 115th epoch
+Epoch:00116 | Loss:[0.128750] | CGPC ctx:0.074276 code:0.016300 cgpc_total:0.004529 | code_entropy:5.545 active:256 max_use:0.004
+Loading 116th epoch
+Epoch:00117 | Loss:[0.123293] | CGPC ctx:0.068926 code:0.015598 cgpc_total:0.004226 | code_entropy:5.545 active:256 max_use:0.004
+Loading 117th epoch
+Epoch:00118 | Loss:[0.118191] | CGPC ctx:0.064065 code:0.014985 cgpc_total:0.003952 | code_entropy:5.545 active:256 max_use:0.004
+Loading 118th epoch
+Epoch:00119 | Loss:[0.113407] | CGPC ctx:0.059632 code:0.014433 cgpc_total:0.003703 | code_entropy:5.545 active:256 max_use:0.004
+Loading 119th epoch
+Epoch:00120 | Loss:[0.108911] | CGPC ctx:0.055589 code:0.013920 cgpc_total:0.003475 | code_entropy:5.545 active:256 max_use:0.004
+Loading 120th epoch
+Epoch:00121 | Loss:[0.104673] | CGPC ctx:0.051886 code:0.013437 cgpc_total:0.003266 | code_entropy:5.545 active:256 max_use:0.004
+Loading 121th epoch
+Epoch:00122 | Loss:[0.100670] | CGPC ctx:0.048470 code:0.012982 cgpc_total:0.003073 | code_entropy:5.545 active:256 max_use:0.004
+Loading 122th epoch
+Epoch:00123 | Loss:[0.096876] | CGPC ctx:0.045292 code:0.012554 cgpc_total:0.002892 | code_entropy:5.545 active:256 max_use:0.004
+Loading 123th epoch
+Epoch:00124 | Loss:[0.093281] | CGPC ctx:0.042336 code:0.012155 cgpc_total:0.002725 | code_entropy:5.545 active:256 max_use:0.004
+Loading 124th epoch
+Epoch:00125 | Loss:[0.089879] | CGPC ctx:0.039611 code:0.011788 cgpc_total:0.002570 | code_entropy:5.545 active:256 max_use:0.004
+Loading 125th epoch
+Epoch:00126 | Loss:[0.086674] | CGPC ctx:0.037139 code:0.011459 cgpc_total:0.002430 | code_entropy:5.545 active:256 max_use:0.004
+Loading 126th epoch
+Epoch:00127 | Loss:[0.083660] | CGPC ctx:0.034926 code:0.011165 cgpc_total:0.002305 | code_entropy:5.545 active:256 max_use:0.004
+Loading 127th epoch
+Epoch:00128 | Loss:[0.080825] | CGPC ctx:0.032959 code:0.010900 cgpc_total:0.002193 | code_entropy:5.545 active:256 max_use:0.004
+Loading 128th epoch
+Epoch:00129 | Loss:[0.078159] | CGPC ctx:0.031221 code:0.010662 cgpc_total:0.002094 | code_entropy:5.545 active:256 max_use:0.004
+Loading 129th epoch
+Epoch:00130 | Loss:[0.075655] | CGPC ctx:0.029708 code:0.010446 cgpc_total:0.002008 | code_entropy:5.545 active:256 max_use:0.004
+Loading 130th epoch
+Epoch:00131 | Loss:[0.073303] | CGPC ctx:0.028406 code:0.010245 cgpc_total:0.001933 | code_entropy:5.545 active:256 max_use:0.004
+Loading 131th epoch
+Epoch:00132 | Loss:[0.071083] | CGPC ctx:0.027282 code:0.010049 cgpc_total:0.001867 | code_entropy:5.545 active:256 max_use:0.004
+Loading 132th epoch
+Epoch:00133 | Loss:[0.068980] | CGPC ctx:0.026300 code:0.009854 cgpc_total:0.001808 | code_entropy:5.545 active:256 max_use:0.004
+Loading 133th epoch
+Epoch:00134 | Loss:[0.066983] | CGPC ctx:0.025437 code:0.009659 cgpc_total:0.001755 | code_entropy:5.545 active:256 max_use:0.004
+Loading 134th epoch
+Epoch:00135 | Loss:[0.065084] | CGPC ctx:0.024677 code:0.009466 cgpc_total:0.001707 | code_entropy:5.545 active:256 max_use:0.004
+Loading 135th epoch
+Epoch:00136 | Loss:[0.063275] | CGPC ctx:0.024004 code:0.009273 cgpc_total:0.001664 | code_entropy:5.545 active:256 max_use:0.004
+Loading 136th epoch
+Epoch:00137 | Loss:[0.061547] | CGPC ctx:0.023401 code:0.009080 cgpc_total:0.001624 | code_entropy:5.545 active:256 max_use:0.004
+Loading 137th epoch
+Epoch:00138 | Loss:[0.059896] | CGPC ctx:0.022860 code:0.008891 cgpc_total:0.001588 | code_entropy:5.545 active:256 max_use:0.004
+Loading 138th epoch
+Epoch:00139 | Loss:[0.058320] | CGPC ctx:0.022382 code:0.008709 cgpc_total:0.001555 | code_entropy:5.545 active:256 max_use:0.004
+Loading 139th epoch
+Epoch:00140 | Loss:[0.056817] | CGPC ctx:0.021963 code:0.008538 cgpc_total:0.001525 | code_entropy:5.545 active:256 max_use:0.004
+Loading 140th epoch
+Epoch:00141 | Loss:[0.055381] | CGPC ctx:0.021594 code:0.008379 cgpc_total:0.001499 | code_entropy:5.545 active:256 max_use:0.004
+Loading 141th epoch
+Epoch:00142 | Loss:[0.054007] | CGPC ctx:0.021260 code:0.008230 cgpc_total:0.001474 | code_entropy:5.545 active:256 max_use:0.004
+Loading 142th epoch
+Epoch:00143 | Loss:[0.052689] | CGPC ctx:0.020954 code:0.008093 cgpc_total:0.001452 | code_entropy:5.545 active:256 max_use:0.004
+Loading 143th epoch
+Epoch:00144 | Loss:[0.051426] | CGPC ctx:0.020671 code:0.007970 cgpc_total:0.001432 | code_entropy:5.545 active:256 max_use:0.004
+Loading 144th epoch
+Epoch:00145 | Loss:[0.050212] | CGPC ctx:0.020404 code:0.007859 cgpc_total:0.001413 | code_entropy:5.545 active:256 max_use:0.004
+Loading 145th epoch
+Epoch:00146 | Loss:[0.049044] | CGPC ctx:0.020148 code:0.007759 cgpc_total:0.001395 | code_entropy:5.545 active:256 max_use:0.004
+Loading 146th epoch
+Epoch:00147 | Loss:[0.047919] | CGPC ctx:0.019900 code:0.007667 cgpc_total:0.001378 | code_entropy:5.545 active:256 max_use:0.004
+Loading 147th epoch
+Epoch:00148 | Loss:[0.046835] | CGPC ctx:0.019661 code:0.007582 cgpc_total:0.001362 | code_entropy:5.545 active:256 max_use:0.004
+Loading 148th epoch
+Epoch:00149 | Loss:[0.045791] | CGPC ctx:0.019434 code:0.007504 cgpc_total:0.001347 | code_entropy:5.545 active:256 max_use:0.004
+Loading 149th epoch
+Epoch:00150 | Loss:[0.044786] | CGPC ctx:0.019221 code:0.007431 cgpc_total:0.001333 | code_entropy:5.545 active:256 max_use:0.004
+Loading 150th epoch
+Epoch:00151 | Loss:[0.043819] | CGPC ctx:0.019026 code:0.007363 cgpc_total:0.001319 | code_entropy:5.545 active:256 max_use:0.004
+Loading 151th epoch
+Epoch:00152 | Loss:[0.042888] | CGPC ctx:0.018849 code:0.007298 cgpc_total:0.001307 | code_entropy:5.545 active:256 max_use:0.004
+Loading 152th epoch
+Epoch:00153 | Loss:[0.041992] | CGPC ctx:0.018691 code:0.007235 cgpc_total:0.001296 | code_entropy:5.545 active:256 max_use:0.004
+Loading 153th epoch
+Epoch:00154 | Loss:[0.041127] | CGPC ctx:0.018545 code:0.007174 cgpc_total:0.001286 | code_entropy:5.545 active:256 max_use:0.004
+Loading 154th epoch
+Epoch:00155 | Loss:[0.040291] | CGPC ctx:0.018409 code:0.007114 cgpc_total:0.001276 | code_entropy:5.545 active:256 max_use:0.004
+Loading 155th epoch
+Epoch:00156 | Loss:[0.039482] | CGPC ctx:0.018280 code:0.007056 cgpc_total:0.001267 | code_entropy:5.545 active:256 max_use:0.004
+Loading 156th epoch
+Epoch:00157 | Loss:[0.038698] | CGPC ctx:0.018156 code:0.007001 cgpc_total:0.001258 | code_entropy:5.545 active:256 max_use:0.004
+Loading 157th epoch
+Epoch:00158 | Loss:[0.037939] | CGPC ctx:0.018036 code:0.006948 cgpc_total:0.001249 | code_entropy:5.545 active:256 max_use:0.004
+Loading 158th epoch
+Epoch:00159 | Loss:[0.037203] | CGPC ctx:0.017918 code:0.006899 cgpc_total:0.001241 | code_entropy:5.545 active:256 max_use:0.004
+Loading 159th epoch
+Epoch:00160 | Loss:[0.036489] | CGPC ctx:0.017802 code:0.006853 cgpc_total:0.001233 | code_entropy:5.545 active:256 max_use:0.004
+Loading 160th epoch
+Epoch:00161 | Loss:[0.035797] | CGPC ctx:0.017690 code:0.006808 cgpc_total:0.001225 | code_entropy:5.545 active:256 max_use:0.004
+Loading 161th epoch
+Epoch:00162 | Loss:[0.035125] | CGPC ctx:0.017580 code:0.006766 cgpc_total:0.001217 | code_entropy:5.545 active:256 max_use:0.004
+Loading 162th epoch
+Epoch:00163 | Loss:[0.034472] | CGPC ctx:0.017472 code:0.006725 cgpc_total:0.001210 | code_entropy:5.545 active:256 max_use:0.004
+Loading 163th epoch
+Epoch:00164 | Loss:[0.033839] | CGPC ctx:0.017368 code:0.006685 cgpc_total:0.001203 | code_entropy:5.545 active:256 max_use:0.004
+Loading 164th epoch
+Epoch:00165 | Loss:[0.033224] | CGPC ctx:0.017267 code:0.006646 cgpc_total:0.001196 | code_entropy:5.545 active:256 max_use:0.004
+Loading 165th epoch
+Epoch:00166 | Loss:[0.032627] | CGPC ctx:0.017168 code:0.006608 cgpc_total:0.001189 | code_entropy:5.545 active:256 max_use:0.004
+Loading 166th epoch
+Epoch:00167 | Loss:[0.032047] | CGPC ctx:0.017071 code:0.006572 cgpc_total:0.001182 | code_entropy:5.545 active:256 max_use:0.004
+Loading 167th epoch
+Epoch:00168 | Loss:[0.031483] | CGPC ctx:0.016976 code:0.006536 cgpc_total:0.001176 | code_entropy:5.545 active:256 max_use:0.004
+Loading 168th epoch
+Epoch:00169 | Loss:[0.030934] | CGPC ctx:0.016882 code:0.006501 cgpc_total:0.001169 | code_entropy:5.545 active:256 max_use:0.004
+Loading 169th epoch
+Epoch:00170 | Loss:[0.030401] | CGPC ctx:0.016788 code:0.006466 cgpc_total:0.001163 | code_entropy:5.545 active:256 max_use:0.004
+Loading 170th epoch
+Epoch:00171 | Loss:[0.029881] | CGPC ctx:0.016694 code:0.006431 cgpc_total:0.001156 | code_entropy:5.545 active:256 max_use:0.004
+Loading 171th epoch
+Epoch:00172 | Loss:[0.029375] | CGPC ctx:0.016600 code:0.006396 cgpc_total:0.001150 | code_entropy:5.545 active:256 max_use:0.004
+Loading 172th epoch
+Epoch:00173 | Loss:[0.028882] | CGPC ctx:0.016506 code:0.006361 cgpc_total:0.001143 | code_entropy:5.545 active:256 max_use:0.004
+Loading 173th epoch
+Epoch:00174 | Loss:[0.028401] | CGPC ctx:0.016411 code:0.006326 cgpc_total:0.001137 | code_entropy:5.545 active:256 max_use:0.004
+Loading 174th epoch
+Epoch:00175 | Loss:[0.027933] | CGPC ctx:0.016316 code:0.006292 cgpc_total:0.001130 | code_entropy:5.545 active:256 max_use:0.004
+Loading 175th epoch
+Epoch:00176 | Loss:[0.027476] | CGPC ctx:0.016221 code:0.006257 cgpc_total:0.001124 | code_entropy:5.545 active:256 max_use:0.004
+Loading 176th epoch
+Epoch:00177 | Loss:[0.027030] | CGPC ctx:0.016125 code:0.006222 cgpc_total:0.001117 | code_entropy:5.545 active:256 max_use:0.004
+Loading 177th epoch
+Epoch:00178 | Loss:[0.026594] | CGPC ctx:0.016028 code:0.006187 cgpc_total:0.001111 | code_entropy:5.545 active:256 max_use:0.004
+Loading 178th epoch
+Epoch:00179 | Loss:[0.026168] | CGPC ctx:0.015931 code:0.006152 cgpc_total:0.001104 | code_entropy:5.545 active:256 max_use:0.004
+Loading 179th epoch
+Epoch:00180 | Loss:[0.025752] | CGPC ctx:0.015833 code:0.006116 cgpc_total:0.001097 | code_entropy:5.545 active:256 max_use:0.004
+Loading 180th epoch
+Epoch:00181 | Loss:[0.025346] | CGPC ctx:0.015733 code:0.006079 cgpc_total:0.001091 | code_entropy:5.545 active:256 max_use:0.004
+Loading 181th epoch
+Epoch:00182 | Loss:[0.024948] | CGPC ctx:0.015633 code:0.006042 cgpc_total:0.001084 | code_entropy:5.545 active:256 max_use:0.004
+Loading 182th epoch
+Epoch:00183 | Loss:[0.024560] | CGPC ctx:0.015531 code:0.006004 cgpc_total:0.001077 | code_entropy:5.545 active:256 max_use:0.004
+Loading 183th epoch
+Epoch:00184 | Loss:[0.024179] | CGPC ctx:0.015428 code:0.005966 cgpc_total:0.001070 | code_entropy:5.545 active:256 max_use:0.004
+Loading 184th epoch
+Epoch:00185 | Loss:[0.023808] | CGPC ctx:0.015326 code:0.005929 cgpc_total:0.001063 | code_entropy:5.545 active:256 max_use:0.004
+Loading 185th epoch
+Epoch:00186 | Loss:[0.023446] | CGPC ctx:0.015224 code:0.005891 cgpc_total:0.001056 | code_entropy:5.545 active:256 max_use:0.004
+Loading 186th epoch
+Epoch:00187 | Loss:[0.023092] | CGPC ctx:0.015122 code:0.005854 cgpc_total:0.001049 | code_entropy:5.545 active:256 max_use:0.004
+Loading 187th epoch
+Epoch:00188 | Loss:[0.022746] | CGPC ctx:0.015022 code:0.005817 cgpc_total:0.001042 | code_entropy:5.545 active:256 max_use:0.004
+Loading 188th epoch
+Epoch:00189 | Loss:[0.022410] | CGPC ctx:0.014923 code:0.005781 cgpc_total:0.001035 | code_entropy:5.545 active:256 max_use:0.004
+Loading 189th epoch
+Epoch:00190 | Loss:[0.022082] | CGPC ctx:0.014826 code:0.005746 cgpc_total:0.001029 | code_entropy:5.545 active:256 max_use:0.004
+Loading 190th epoch
+Epoch:00191 | Loss:[0.021764] | CGPC ctx:0.014731 code:0.005711 cgpc_total:0.001022 | code_entropy:5.545 active:256 max_use:0.004
+Loading 191th epoch
+Epoch:00192 | Loss:[0.021454] | CGPC ctx:0.014640 code:0.005678 cgpc_total:0.001016 | code_entropy:5.545 active:256 max_use:0.004
+Loading 192th epoch
+Epoch:00193 | Loss:[0.021153] | CGPC ctx:0.014552 code:0.005646 cgpc_total:0.001010 | code_entropy:5.545 active:256 max_use:0.004
+Loading 193th epoch
+Epoch:00194 | Loss:[0.020861] | CGPC ctx:0.014467 code:0.005617 cgpc_total:0.001004 | code_entropy:5.545 active:256 max_use:0.004
+Loading 194th epoch
+Epoch:00195 | Loss:[0.020577] | CGPC ctx:0.014387 code:0.005589 cgpc_total:0.000999 | code_entropy:5.545 active:256 max_use:0.004
+Loading 195th epoch
+Epoch:00196 | Loss:[0.020302] | CGPC ctx:0.014311 code:0.005565 cgpc_total:0.000994 | code_entropy:5.545 active:256 max_use:0.004
+Loading 196th epoch
+Epoch:00197 | Loss:[0.020035] | CGPC ctx:0.014240 code:0.005542 cgpc_total:0.000989 | code_entropy:5.545 active:256 max_use:0.004
+Loading 197th epoch
+Epoch:00198 | Loss:[0.019777] | CGPC ctx:0.014173 code:0.005523 cgpc_total:0.000985 | code_entropy:5.545 active:256 max_use:0.004
+Loading 198th epoch
+Epoch:00199 | Loss:[0.019526] | CGPC ctx:0.014111 code:0.005507 cgpc_total:0.000981 | code_entropy:5.545 active:256 max_use:0.004
+Loading 199th epoch
+Epoch:00200 | Loss:[0.019283] | CGPC ctx:0.014053 code:0.005493 cgpc_total:0.000977 | code_entropy:5.545 active:256 max_use:0.004
+Loading 200th epoch
+Epoch:00201 | Loss:[0.019048] | CGPC ctx:0.014000 code:0.005483 cgpc_total:0.000974 | code_entropy:5.545 active:256 max_use:0.004
+Loading 201th epoch
+Epoch:00202 | Loss:[0.018820] | CGPC ctx:0.013950 code:0.005477 cgpc_total:0.000971 | code_entropy:5.545 active:256 max_use:0.004
+Loading 202th epoch
+Epoch:00203 | Loss:[0.018599] | CGPC ctx:0.013904 code:0.005473 cgpc_total:0.000969 | code_entropy:5.545 active:256 max_use:0.004
+Loading 203th epoch
+Epoch:00204 | Loss:[0.018385] | CGPC ctx:0.013860 code:0.005473 cgpc_total:0.000967 | code_entropy:5.545 active:256 max_use:0.004
+Loading 204th epoch
+Epoch:00205 | Loss:[0.018178] | CGPC ctx:0.013820 code:0.005475 cgpc_total:0.000965 | code_entropy:5.545 active:256 max_use:0.004
+Loading 205th epoch
+Epoch:00206 | Loss:[0.017977] | CGPC ctx:0.013781 code:0.005481 cgpc_total:0.000963 | code_entropy:5.545 active:256 max_use:0.004
+Loading 206th epoch
+Epoch:00207 | Loss:[0.017782] | CGPC ctx:0.013744 code:0.005490 cgpc_total:0.000962 | code_entropy:5.545 active:256 max_use:0.004
+Loading 207th epoch
+Epoch:00208 | Loss:[0.017593] | CGPC ctx:0.013709 code:0.005502 cgpc_total:0.000961 | code_entropy:5.545 active:256 max_use:0.004
+Loading 208th epoch
+Epoch:00209 | Loss:[0.017410] | CGPC ctx:0.013675 code:0.005517 cgpc_total:0.000960 | code_entropy:5.545 active:256 max_use:0.004
+Loading 209th epoch
+Epoch:00210 | Loss:[0.017233] | CGPC ctx:0.013643 code:0.005535 cgpc_total:0.000959 | code_entropy:5.545 active:256 max_use:0.004
+Loading 210th epoch
+Epoch:00211 | Loss:[0.017061] | CGPC ctx:0.013612 code:0.005557 cgpc_total:0.000958 | code_entropy:5.545 active:256 max_use:0.004
+Loading 211th epoch
+Epoch:00212 | Loss:[0.016895] | CGPC ctx:0.013583 code:0.005581 cgpc_total:0.000958 | code_entropy:5.545 active:256 max_use:0.004
+Loading 212th epoch
+Epoch:00213 | Loss:[0.016734] | CGPC ctx:0.013556 code:0.005608 cgpc_total:0.000958 | code_entropy:5.545 active:256 max_use:0.004
+Loading 213th epoch
+Epoch:00214 | Loss:[0.016578] | CGPC ctx:0.013530 code:0.005638 cgpc_total:0.000958 | code_entropy:5.545 active:256 max_use:0.004
+Loading 214th epoch
+Epoch:00215 | Loss:[0.016428] | CGPC ctx:0.013507 code:0.005670 cgpc_total:0.000959 | code_entropy:5.545 active:256 max_use:0.004
+Loading 215th epoch
+Epoch:00216 | Loss:[0.016282] | CGPC ctx:0.013486 code:0.005705 cgpc_total:0.000960 | code_entropy:5.545 active:256 max_use:0.004
+Loading 216th epoch
+Epoch:00217 | Loss:[0.016142] | CGPC ctx:0.013467 code:0.005741 cgpc_total:0.000960 | code_entropy:5.545 active:256 max_use:0.004
+Loading 217th epoch
+Epoch:00218 | Loss:[0.016006] | CGPC ctx:0.013450 code:0.005780 cgpc_total:0.000962 | code_entropy:5.545 active:256 max_use:0.004
+Loading 218th epoch
+Epoch:00219 | Loss:[0.015874] | CGPC ctx:0.013436 code:0.005819 cgpc_total:0.000963 | code_entropy:5.545 active:256 max_use:0.004
+Loading 219th epoch
+Epoch:00220 | Loss:[0.015747] | CGPC ctx:0.013425 code:0.005860 cgpc_total:0.000964 | code_entropy:5.545 active:256 max_use:0.004
+Loading 220th epoch
+Epoch:00221 | Loss:[0.015624] | CGPC ctx:0.013417 code:0.005902 cgpc_total:0.000966 | code_entropy:5.545 active:256 max_use:0.004
+Loading 221th epoch
+Epoch:00222 | Loss:[0.015506] | CGPC ctx:0.013411 code:0.005945 cgpc_total:0.000968 | code_entropy:5.545 active:256 max_use:0.004
+Loading 222th epoch
+Epoch:00223 | Loss:[0.015391] | CGPC ctx:0.013409 code:0.005988 cgpc_total:0.000970 | code_entropy:5.545 active:256 max_use:0.004
+Loading 223th epoch
+Epoch:00224 | Loss:[0.015279] | CGPC ctx:0.013409 code:0.006031 cgpc_total:0.000972 | code_entropy:5.545 active:256 max_use:0.004
+Loading 224th epoch
+Epoch:00225 | Loss:[0.015172] | CGPC ctx:0.013411 code:0.006075 cgpc_total:0.000974 | code_entropy:5.545 active:256 max_use:0.004
+Loading 225th epoch
+Epoch:00226 | Loss:[0.015068] | CGPC ctx:0.013417 code:0.006119 cgpc_total:0.000977 | code_entropy:5.545 active:256 max_use:0.004
+Loading 226th epoch
+Epoch:00227 | Loss:[0.014967] | CGPC ctx:0.013424 code:0.006164 cgpc_total:0.000979 | code_entropy:5.545 active:256 max_use:0.004
+Loading 227th epoch
+Epoch:00228 | Loss:[0.014870] | CGPC ctx:0.013435 code:0.006209 cgpc_total:0.000982 | code_entropy:5.545 active:256 max_use:0.004
+Loading 228th epoch
+Epoch:00229 | Loss:[0.014776] | CGPC ctx:0.013447 code:0.006255 cgpc_total:0.000985 | code_entropy:5.545 active:256 max_use:0.004
+Loading 229th epoch
+Epoch:00230 | Loss:[0.014685] | CGPC ctx:0.013461 code:0.006301 cgpc_total:0.000988 | code_entropy:5.545 active:256 max_use:0.004
+Loading 230th epoch
+Epoch:00231 | Loss:[0.014597] | CGPC ctx:0.013477 code:0.006348 cgpc_total:0.000991 | code_entropy:5.545 active:256 max_use:0.004
+Loading 231th epoch
+Epoch:00232 | Loss:[0.014511] | CGPC ctx:0.013495 code:0.006396 cgpc_total:0.000995 | code_entropy:5.545 active:256 max_use:0.004
+Loading 232th epoch
+Epoch:00233 | Loss:[0.014429] | CGPC ctx:0.013513 code:0.006444 cgpc_total:0.000998 | code_entropy:5.545 active:256 max_use:0.004
+Loading 233th epoch
+Epoch:00234 | Loss:[0.014349] | CGPC ctx:0.013532 code:0.006494 cgpc_total:0.001001 | code_entropy:5.545 active:256 max_use:0.004
+Loading 234th epoch
+Epoch:00235 | Loss:[0.014272] | CGPC ctx:0.013552 code:0.006544 cgpc_total:0.001005 | code_entropy:5.545 active:256 max_use:0.004
+Loading 235th epoch
+Epoch:00236 | Loss:[0.014197] | CGPC ctx:0.013573 code:0.006596 cgpc_total:0.001008 | code_entropy:5.545 active:256 max_use:0.004
+Loading 236th epoch
+Epoch:00237 | Loss:[0.014124] | CGPC ctx:0.013594 code:0.006648 cgpc_total:0.001012 | code_entropy:5.545 active:256 max_use:0.004
+Loading 237th epoch
+Epoch:00238 | Loss:[0.014054] | CGPC ctx:0.013616 code:0.006701 cgpc_total:0.001016 | code_entropy:5.545 active:256 max_use:0.004
+Loading 238th epoch
+Epoch:00239 | Loss:[0.013985] | CGPC ctx:0.013637 code:0.006755 cgpc_total:0.001020 | code_entropy:5.545 active:256 max_use:0.004
+Loading 239th epoch
+Epoch:00240 | Loss:[0.013919] | CGPC ctx:0.013659 code:0.006810 cgpc_total:0.001023 | code_entropy:5.545 active:256 max_use:0.004
+Loading 240th epoch
+Epoch:00241 | Loss:[0.013855] | CGPC ctx:0.013681 code:0.006866 cgpc_total:0.001027 | code_entropy:5.545 active:256 max_use:0.004
+Loading 241th epoch
+Epoch:00242 | Loss:[0.013792] | CGPC ctx:0.013704 code:0.006922 cgpc_total:0.001031 | code_entropy:5.545 active:256 max_use:0.004
+Loading 242th epoch
+Epoch:00243 | Loss:[0.013732] | CGPC ctx:0.013726 code:0.006980 cgpc_total:0.001035 | code_entropy:5.545 active:256 max_use:0.004
+Loading 243th epoch
+Epoch:00244 | Loss:[0.013673] | CGPC ctx:0.013749 code:0.007037 cgpc_total:0.001039 | code_entropy:5.545 active:256 max_use:0.004
+Loading 244th epoch
+Epoch:00245 | Loss:[0.013616] | CGPC ctx:0.013773 code:0.007095 cgpc_total:0.001043 | code_entropy:5.545 active:256 max_use:0.004
+Loading 245th epoch
+Epoch:00246 | Loss:[0.013561] | CGPC ctx:0.013796 code:0.007153 cgpc_total:0.001047 | code_entropy:5.545 active:256 max_use:0.004
+Loading 246th epoch
+Epoch:00247 | Loss:[0.013507] | CGPC ctx:0.013821 code:0.007212 cgpc_total:0.001052 | code_entropy:5.545 active:256 max_use:0.004
+Loading 247th epoch
+Epoch:00248 | Loss:[0.013455] | CGPC ctx:0.013846 code:0.007270 cgpc_total:0.001056 | code_entropy:5.545 active:256 max_use:0.004
+Loading 248th epoch
+Epoch:00249 | Loss:[0.013405] | CGPC ctx:0.013871 code:0.007329 cgpc_total:0.001060 | code_entropy:5.545 active:256 max_use:0.004
+Loading 249th epoch
+Epoch:00250 | Loss:[0.013356] | CGPC ctx:0.013896 code:0.007388 cgpc_total:0.001064 | code_entropy:5.545 active:256 max_use:0.004
+Loading 250th epoch
+Epoch:00251 | Loss:[0.013308] | CGPC ctx:0.013922 code:0.007446 cgpc_total:0.001068 | code_entropy:5.545 active:256 max_use:0.004
+Loading 251th epoch
+Epoch:00252 | Loss:[0.013262] | CGPC ctx:0.013948 code:0.007505 cgpc_total:0.001073 | code_entropy:5.545 active:256 max_use:0.004
+Loading 252th epoch
+Epoch:00253 | Loss:[0.013217] | CGPC ctx:0.013975 code:0.007563 cgpc_total:0.001077 | code_entropy:5.545 active:256 max_use:0.004
+Loading 253th epoch
+Epoch:00254 | Loss:[0.013173] | CGPC ctx:0.014001 code:0.007622 cgpc_total:0.001081 | code_entropy:5.545 active:256 max_use:0.004
+Loading 254th epoch
+Epoch:00255 | Loss:[0.013130] | CGPC ctx:0.014027 code:0.007681 cgpc_total:0.001085 | code_entropy:5.545 active:256 max_use:0.004
+Loading 255th epoch
+Epoch:00256 | Loss:[0.013089] | CGPC ctx:0.014054 code:0.007740 cgpc_total:0.001090 | code_entropy:5.545 active:256 max_use:0.004
+Loading 256th epoch
+Epoch:00257 | Loss:[0.013048] | CGPC ctx:0.014080 code:0.007800 cgpc_total:0.001094 | code_entropy:5.545 active:256 max_use:0.004
+Loading 257th epoch
+Epoch:00258 | Loss:[0.013009] | CGPC ctx:0.014105 code:0.007860 cgpc_total:0.001098 | code_entropy:5.545 active:256 max_use:0.004
+Loading 258th epoch
+Epoch:00259 | Loss:[0.012971] | CGPC ctx:0.014131 code:0.007920 cgpc_total:0.001103 | code_entropy:5.545 active:256 max_use:0.004
+Loading 259th epoch
+Epoch:00260 | Loss:[0.012933] | CGPC ctx:0.014156 code:0.007980 cgpc_total:0.001107 | code_entropy:5.545 active:256 max_use:0.004
+Loading 260th epoch
+Epoch:00261 | Loss:[0.012897] | CGPC ctx:0.014180 code:0.008040 cgpc_total:0.001111 | code_entropy:5.545 active:256 max_use:0.004
+Loading 261th epoch
+Epoch:00262 | Loss:[0.012861] | CGPC ctx:0.014204 code:0.008101 cgpc_total:0.001115 | code_entropy:5.545 active:256 max_use:0.004
+Loading 262th epoch
+Epoch:00263 | Loss:[0.012827] | CGPC ctx:0.014228 code:0.008162 cgpc_total:0.001120 | code_entropy:5.545 active:256 max_use:0.004
+Loading 263th epoch
+Epoch:00264 | Loss:[0.012793] | CGPC ctx:0.014252 code:0.008223 cgpc_total:0.001124 | code_entropy:5.545 active:256 max_use:0.004
+Loading 264th epoch
+Epoch:00265 | Loss:[0.012761] | CGPC ctx:0.014275 code:0.008284 cgpc_total:0.001128 | code_entropy:5.545 active:256 max_use:0.004
+Loading 265th epoch
+Epoch:00266 | Loss:[0.012729] | CGPC ctx:0.014298 code:0.008345 cgpc_total:0.001132 | code_entropy:5.545 active:256 max_use:0.004
+Loading 266th epoch
+Epoch:00267 | Loss:[0.012697] | CGPC ctx:0.014321 code:0.008405 cgpc_total:0.001136 | code_entropy:5.545 active:256 max_use:0.004
+Loading 267th epoch
+Epoch:00268 | Loss:[0.012667] | CGPC ctx:0.014344 code:0.008466 cgpc_total:0.001140 | code_entropy:5.545 active:256 max_use:0.004
+Loading 268th epoch
+Epoch:00269 | Loss:[0.012637] | CGPC ctx:0.014366 code:0.008527 cgpc_total:0.001145 | code_entropy:5.545 active:256 max_use:0.004
+Loading 269th epoch
+Epoch:00270 | Loss:[0.012608] | CGPC ctx:0.014388 code:0.008587 cgpc_total:0.001149 | code_entropy:5.545 active:256 max_use:0.004
+Loading 270th epoch
+Epoch:00271 | Loss:[0.012580] | CGPC ctx:0.014410 code:0.008647 cgpc_total:0.001153 | code_entropy:5.545 active:256 max_use:0.004
+Loading 271th epoch
+Epoch:00272 | Loss:[0.012552] | CGPC ctx:0.014431 code:0.008708 cgpc_total:0.001157 | code_entropy:5.545 active:256 max_use:0.004
+Loading 272th epoch
+Epoch:00273 | Loss:[0.012525] | CGPC ctx:0.014453 code:0.008768 cgpc_total:0.001161 | code_entropy:5.545 active:256 max_use:0.004
+Loading 273th epoch
+Epoch:00274 | Loss:[0.012499] | CGPC ctx:0.014473 code:0.008828 cgpc_total:0.001165 | code_entropy:5.545 active:256 max_use:0.004
+Loading 274th epoch
+Epoch:00275 | Loss:[0.012473] | CGPC ctx:0.014494 code:0.008888 cgpc_total:0.001169 | code_entropy:5.545 active:256 max_use:0.004
+Loading 275th epoch
+Epoch:00276 | Loss:[0.012448] | CGPC ctx:0.014514 code:0.008947 cgpc_total:0.001173 | code_entropy:5.545 active:256 max_use:0.004
+Loading 276th epoch
+Epoch:00277 | Loss:[0.012423] | CGPC ctx:0.014533 code:0.009007 cgpc_total:0.001177 | code_entropy:5.545 active:256 max_use:0.004
+Loading 277th epoch
+Epoch:00278 | Loss:[0.012399] | CGPC ctx:0.014552 code:0.009067 cgpc_total:0.001181 | code_entropy:5.545 active:256 max_use:0.004
+Loading 278th epoch
+Epoch:00279 | Loss:[0.012376] | CGPC ctx:0.014571 code:0.009126 cgpc_total:0.001185 | code_entropy:5.545 active:256 max_use:0.004
+Loading 279th epoch
+Epoch:00280 | Loss:[0.012353] | CGPC ctx:0.014589 code:0.009185 cgpc_total:0.001189 | code_entropy:5.545 active:256 max_use:0.004
+Loading 280th epoch
+Epoch:00281 | Loss:[0.012330] | CGPC ctx:0.014607 code:0.009245 cgpc_total:0.001193 | code_entropy:5.545 active:256 max_use:0.004
+Loading 281th epoch
+Epoch:00282 | Loss:[0.012308] | CGPC ctx:0.014624 code:0.009303 cgpc_total:0.001196 | code_entropy:5.545 active:256 max_use:0.004
+Loading 282th epoch
+Epoch:00283 | Loss:[0.012286] | CGPC ctx:0.014641 code:0.009362 cgpc_total:0.001200 | code_entropy:5.545 active:256 max_use:0.004
+Loading 283th epoch
+Epoch:00284 | Loss:[0.012265] | CGPC ctx:0.014657 code:0.009420 cgpc_total:0.001204 | code_entropy:5.545 active:256 max_use:0.004
+Loading 284th epoch
+Epoch:00285 | Loss:[0.012244] | CGPC ctx:0.014673 code:0.009479 cgpc_total:0.001208 | code_entropy:5.545 active:256 max_use:0.004
+Loading 285th epoch
+Epoch:00286 | Loss:[0.012223] | CGPC ctx:0.014689 code:0.009537 cgpc_total:0.001211 | code_entropy:5.545 active:256 max_use:0.004
+Loading 286th epoch
+Epoch:00287 | Loss:[0.012203] | CGPC ctx:0.014704 code:0.009594 cgpc_total:0.001215 | code_entropy:5.545 active:256 max_use:0.004
+Loading 287th epoch
+Epoch:00288 | Loss:[0.012183] | CGPC ctx:0.014718 code:0.009651 cgpc_total:0.001218 | code_entropy:5.545 active:256 max_use:0.004
+Loading 288th epoch
+Epoch:00289 | Loss:[0.012163] | CGPC ctx:0.014732 code:0.009709 cgpc_total:0.001222 | code_entropy:5.545 active:256 max_use:0.004
+Loading 289th epoch
+Epoch:00290 | Loss:[0.012144] | CGPC ctx:0.014746 code:0.009765 cgpc_total:0.001226 | code_entropy:5.545 active:256 max_use:0.004
+Loading 290th epoch
+Epoch:00291 | Loss:[0.012125] | CGPC ctx:0.014759 code:0.009822 cgpc_total:0.001229 | code_entropy:5.545 active:256 max_use:0.004
+Loading 291th epoch
+Epoch:00292 | Loss:[0.012107] | CGPC ctx:0.014772 code:0.009878 cgpc_total:0.001232 | code_entropy:5.545 active:256 max_use:0.004
+Loading 292th epoch
+Epoch:00293 | Loss:[0.012089] | CGPC ctx:0.014785 code:0.009933 cgpc_total:0.001236 | code_entropy:5.545 active:256 max_use:0.004
+Loading 293th epoch
+Epoch:00294 | Loss:[0.012071] | CGPC ctx:0.014798 code:0.009988 cgpc_total:0.001239 | code_entropy:5.545 active:256 max_use:0.004
+Loading 294th epoch
+Epoch:00295 | Loss:[0.012053] | CGPC ctx:0.014810 code:0.010043 cgpc_total:0.001243 | code_entropy:5.545 active:256 max_use:0.004
+Loading 295th epoch
+Epoch:00296 | Loss:[0.012036] | CGPC ctx:0.014822 code:0.010098 cgpc_total:0.001246 | code_entropy:5.545 active:256 max_use:0.004
+Loading 296th epoch
+Epoch:00297 | Loss:[0.012019] | CGPC ctx:0.014834 code:0.010152 cgpc_total:0.001249 | code_entropy:5.545 active:256 max_use:0.004
+Loading 297th epoch
+Epoch:00298 | Loss:[0.012003] | CGPC ctx:0.014846 code:0.010206 cgpc_total:0.001253 | code_entropy:5.545 active:256 max_use:0.004
+Loading 298th epoch
+Epoch:00299 | Loss:[0.011986] | CGPC ctx:0.014857 code:0.010260 cgpc_total:0.001256 | code_entropy:5.545 active:256 max_use:0.004
+Loading 299th epoch
+Epoch:00300 | Loss:[0.011971] | CGPC ctx:0.014869 code:0.010313 cgpc_total:0.001259 | code_entropy:5.545 active:256 max_use:0.004
+Loading 300th epoch
+Epoch:00301 | Loss:[0.011955] | CGPC ctx:0.014881 code:0.010366 cgpc_total:0.001262 | code_entropy:5.545 active:256 max_use:0.004
+Loading 301th epoch
+Epoch:00302 | Loss:[0.011940] | CGPC ctx:0.014893 code:0.010419 cgpc_total:0.001266 | code_entropy:5.545 active:256 max_use:0.004
+Loading 302th epoch
+Epoch:00303 | Loss:[0.011925] | CGPC ctx:0.014905 code:0.010471 cgpc_total:0.001269 | code_entropy:5.545 active:256 max_use:0.004
+Loading 303th epoch
+Epoch:00304 | Loss:[0.011911] | CGPC ctx:0.014917 code:0.010523 cgpc_total:0.001272 | code_entropy:5.545 active:256 max_use:0.004
+Loading 304th epoch
+Epoch:00305 | Loss:[0.011897] | CGPC ctx:0.014930 code:0.010575 cgpc_total:0.001275 | code_entropy:5.545 active:256 max_use:0.004
+Loading 305th epoch
+Epoch:00306 | Loss:[0.011884] | CGPC ctx:0.014944 code:0.010626 cgpc_total:0.001278 | code_entropy:5.545 active:256 max_use:0.004
+Loading 306th epoch
+Epoch:00307 | Loss:[0.011871] | CGPC ctx:0.014957 code:0.010677 cgpc_total:0.001282 | code_entropy:5.545 active:256 max_use:0.004
+Loading 307th epoch
+Epoch:00308 | Loss:[0.011859] | CGPC ctx:0.014971 code:0.010728 cgpc_total:0.001285 | code_entropy:5.545 active:256 max_use:0.004
+Loading 308th epoch
+Epoch:00309 | Loss:[0.011847] | CGPC ctx:0.014986 code:0.010779 cgpc_total:0.001288 | code_entropy:5.545 active:256 max_use:0.004
+Loading 309th epoch
+Epoch:00310 | Loss:[0.011835] | CGPC ctx:0.015001 code:0.010830 cgpc_total:0.001292 | code_entropy:5.545 active:256 max_use:0.004
+Loading 310th epoch
+Epoch:00311 | Loss:[0.011824] | CGPC ctx:0.015017 code:0.010880 cgpc_total:0.001295 | code_entropy:5.545 active:256 max_use:0.004
+Loading 311th epoch
+Epoch:00312 | Loss:[0.011814] | CGPC ctx:0.015033 code:0.010930 cgpc_total:0.001298 | code_entropy:5.545 active:256 max_use:0.004
+Loading 312th epoch
+Epoch:00313 | Loss:[0.011804] | CGPC ctx:0.015049 code:0.010980 cgpc_total:0.001301 | code_entropy:5.545 active:256 max_use:0.004
+Loading 313th epoch
+Epoch:00314 | Loss:[0.011794] | CGPC ctx:0.015066 code:0.011030 cgpc_total:0.001305 | code_entropy:5.545 active:256 max_use:0.004
+Loading 314th epoch
+Epoch:00315 | Loss:[0.011785] | CGPC ctx:0.015084 code:0.011080 cgpc_total:0.001308 | code_entropy:5.545 active:256 max_use:0.004
+Loading 315th epoch
+Epoch:00316 | Loss:[0.011777] | CGPC ctx:0.015102 code:0.011130 cgpc_total:0.001312 | code_entropy:5.545 active:256 max_use:0.004
+Loading 316th epoch
+Epoch:00317 | Loss:[0.011769] | CGPC ctx:0.015121 code:0.011180 cgpc_total:0.001315 | code_entropy:5.545 active:256 max_use:0.004
+Loading 317th epoch
+Epoch:00318 | Loss:[0.011761] | CGPC ctx:0.015141 code:0.011230 cgpc_total:0.001319 | code_entropy:5.545 active:256 max_use:0.004
+Loading 318th epoch
+Epoch:00319 | Loss:[0.011754] | CGPC ctx:0.015161 code:0.011279 cgpc_total:0.001322 | code_entropy:5.545 active:256 max_use:0.004
+Loading 319th epoch
+Epoch:00320 | Loss:[0.011748] | CGPC ctx:0.015182 code:0.011329 cgpc_total:0.001326 | code_entropy:5.545 active:256 max_use:0.004
+Loading 320th epoch
+Epoch:00321 | Loss:[0.011742] | CGPC ctx:0.015203 code:0.011379 cgpc_total:0.001329 | code_entropy:5.545 active:256 max_use:0.004
+Loading 321th epoch
+Epoch:00322 | Loss:[0.011736] | CGPC ctx:0.015225 code:0.011428 cgpc_total:0.001333 | code_entropy:5.545 active:256 max_use:0.004
+Loading 322th epoch
+Epoch:00323 | Loss:[0.011731] | CGPC ctx:0.015248 code:0.011478 cgpc_total:0.001336 | code_entropy:5.545 active:256 max_use:0.004
+Loading 323th epoch
+Epoch:00324 | Loss:[0.011726] | CGPC ctx:0.015271 code:0.011527 cgpc_total:0.001340 | code_entropy:5.545 active:256 max_use:0.004
+Loading 324th epoch
+Epoch:00325 | Loss:[0.011722] | CGPC ctx:0.015294 code:0.011577 cgpc_total:0.001344 | code_entropy:5.545 active:256 max_use:0.004
+Loading 325th epoch
+Epoch:00326 | Loss:[0.011718] | CGPC ctx:0.015318 code:0.011626 cgpc_total:0.001347 | code_entropy:5.545 active:256 max_use:0.004
+Loading 326th epoch
+Epoch:00327 | Loss:[0.011715] | CGPC ctx:0.015342 code:0.011676 cgpc_total:0.001351 | code_entropy:5.545 active:256 max_use:0.004
+Loading 327th epoch
+Epoch:00328 | Loss:[0.011712] | CGPC ctx:0.015366 code:0.011725 cgpc_total:0.001355 | code_entropy:5.545 active:256 max_use:0.004
+Loading 328th epoch
+Epoch:00329 | Loss:[0.011709] | CGPC ctx:0.015391 code:0.011774 cgpc_total:0.001358 | code_entropy:5.545 active:256 max_use:0.004
+Loading 329th epoch
+Epoch:00330 | Loss:[0.011707] | CGPC ctx:0.015416 code:0.011823 cgpc_total:0.001362 | code_entropy:5.545 active:256 max_use:0.004
+Loading 330th epoch
+Epoch:00331 | Loss:[0.011705] | CGPC ctx:0.015442 code:0.011872 cgpc_total:0.001366 | code_entropy:5.545 active:256 max_use:0.004
+Loading 331th epoch
+Epoch:00332 | Loss:[0.011703] | CGPC ctx:0.015468 code:0.011922 cgpc_total:0.001369 | code_entropy:5.545 active:256 max_use:0.004
+Loading 332th epoch
+Epoch:00333 | Loss:[0.011702] | CGPC ctx:0.015494 code:0.011970 cgpc_total:0.001373 | code_entropy:5.545 active:256 max_use:0.004
+Loading 333th epoch
+Epoch:00334 | Loss:[0.011701] | CGPC ctx:0.015520 code:0.012019 cgpc_total:0.001377 | code_entropy:5.545 active:256 max_use:0.004
+Loading 334th epoch
+Epoch:00335 | Loss:[0.011700] | CGPC ctx:0.015546 code:0.012068 cgpc_total:0.001381 | code_entropy:5.545 active:256 max_use:0.004
+Loading 335th epoch
+Epoch:00336 | Loss:[0.011699] | CGPC ctx:0.015573 code:0.012117 cgpc_total:0.001384 | code_entropy:5.545 active:256 max_use:0.004
+Loading 336th epoch
+Epoch:00337 | Loss:[0.011699] | CGPC ctx:0.015600 code:0.012165 cgpc_total:0.001388 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00338 | Loss:[0.011699] | CGPC ctx:0.015626 code:0.012214 cgpc_total:0.001392 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00339 | Loss:[0.011700] | CGPC ctx:0.015653 code:0.012262 cgpc_total:0.001396 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00340 | Loss:[0.011700] | CGPC ctx:0.015681 code:0.012311 cgpc_total:0.001400 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00341 | Loss:[0.011701] | CGPC ctx:0.015709 code:0.012358 cgpc_total:0.001403 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00342 | Loss:[0.011702] | CGPC ctx:0.015737 code:0.012406 cgpc_total:0.001407 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00343 | Loss:[0.011704] | CGPC ctx:0.015765 code:0.012453 cgpc_total:0.001411 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00344 | Loss:[0.011705] | CGPC ctx:0.015794 code:0.012500 cgpc_total:0.001415 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00345 | Loss:[0.011707] | CGPC ctx:0.015823 code:0.012547 cgpc_total:0.001418 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00346 | Loss:[0.011709] | CGPC ctx:0.015852 code:0.012593 cgpc_total:0.001422 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00347 | Loss:[0.011711] | CGPC ctx:0.015881 code:0.012639 cgpc_total:0.001426 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00348 | Loss:[0.011713] | CGPC ctx:0.015911 code:0.012685 cgpc_total:0.001430 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00349 | Loss:[0.011716] | CGPC ctx:0.015940 code:0.012731 cgpc_total:0.001434 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00350 | Loss:[0.011719] | CGPC ctx:0.015970 code:0.012776 cgpc_total:0.001437 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00351 | Loss:[0.011722] | CGPC ctx:0.016001 code:0.012821 cgpc_total:0.001441 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00352 | Loss:[0.011725] | CGPC ctx:0.016031 code:0.012866 cgpc_total:0.001445 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00353 | Loss:[0.011728] | CGPC ctx:0.016061 code:0.012911 cgpc_total:0.001449 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00354 | Loss:[0.011731] | CGPC ctx:0.016091 code:0.012956 cgpc_total:0.001452 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00355 | Loss:[0.011735] | CGPC ctx:0.016122 code:0.013000 cgpc_total:0.001456 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00356 | Loss:[0.011739] | CGPC ctx:0.016152 code:0.013044 cgpc_total:0.001460 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00357 | Loss:[0.011742] | CGPC ctx:0.016183 code:0.013088 cgpc_total:0.001464 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00358 | Loss:[0.011746] | CGPC ctx:0.016213 code:0.013131 cgpc_total:0.001467 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00359 | Loss:[0.011750] | CGPC ctx:0.016244 code:0.013174 cgpc_total:0.001471 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00360 | Loss:[0.011754] | CGPC ctx:0.016274 code:0.013217 cgpc_total:0.001475 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00361 | Loss:[0.011758] | CGPC ctx:0.016305 code:0.013260 cgpc_total:0.001478 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00362 | Loss:[0.011762] | CGPC ctx:0.016335 code:0.013302 cgpc_total:0.001482 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00363 | Loss:[0.011767] | CGPC ctx:0.016365 code:0.013344 cgpc_total:0.001485 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00364 | Loss:[0.011771] | CGPC ctx:0.016396 code:0.013386 cgpc_total:0.001489 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00365 | Loss:[0.011775] | CGPC ctx:0.016425 code:0.013428 cgpc_total:0.001493 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00366 | Loss:[0.011780] | CGPC ctx:0.016456 code:0.013469 cgpc_total:0.001496 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00367 | Loss:[0.011784] | CGPC ctx:0.016484 code:0.013511 cgpc_total:0.001500 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00368 | Loss:[0.011789] | CGPC ctx:0.016516 code:0.013550 cgpc_total:0.001503 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00369 | Loss:[0.011794] | CGPC ctx:0.016542 code:0.013595 cgpc_total:0.001507 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00370 | Loss:[0.011798] | CGPC ctx:0.016579 code:0.013628 cgpc_total:0.001510 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00371 | Loss:[0.011804] | CGPC ctx:0.016593 code:0.013688 cgpc_total:0.001514 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00372 | Loss:[0.011815] | CGPC ctx:0.016661 code:0.013708 cgpc_total:0.001518 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00373 | Loss:[0.011842] | CGPC ctx:0.016640 code:0.013872 cgpc_total:0.001526 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00374 | Loss:[0.011923] | CGPC ctx:0.016876 code:0.013960 cgpc_total:0.001542 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00375 | Loss:[0.012076] | CGPC ctx:0.016809 code:0.014589 cgpc_total:0.001570 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00376 | Loss:[0.012156] | CGPC ctx:0.017209 code:0.014506 cgpc_total:0.001586 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00377 | Loss:[0.011947] | CGPC ctx:0.016779 code:0.014290 cgpc_total:0.001553 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00378 | Loss:[0.011849] | CGPC ctx:0.016781 code:0.014011 cgpc_total:0.001540 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00379 | Loss:[0.012015] | CGPC ctx:0.017103 code:0.014292 cgpc_total:0.001570 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00380 | Loss:[0.012014] | CGPC ctx:0.016902 code:0.014540 cgpc_total:0.001572 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00381 | Loss:[0.011870] | CGPC ctx:0.016935 code:0.014078 cgpc_total:0.001551 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00382 | Loss:[0.011932] | CGPC ctx:0.017063 code:0.014203 cgpc_total:0.001563 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00383 | Loss:[0.012009] | CGPC ctx:0.016984 code:0.014587 cgpc_total:0.001579 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00384 | Loss:[0.011914] | CGPC ctx:0.017071 code:0.014230 cgpc_total:0.001565 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00385 | Loss:[0.011908] | CGPC ctx:0.017078 code:0.014251 cgpc_total:0.001566 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00386 | Loss:[0.011994] | CGPC ctx:0.017055 code:0.014607 cgpc_total:0.001583 | code_entropy:5.545 active:256 max_use:0.004
+Loading 337th epoch
+Epoch:00387 | Loss:[0.011952] | CGPC ctx:0.017188 code:0.014382 cgpc_total:0.001578 | code_entropy:5.545 active:256 max_use:0.004
+Early stopping!
+##################################################
+PreTrain datasets are  ['Citeseer', 'Pubmed', 'Photo', 'Computers', 'FacebookPagePage', 'LastFMAsia']
+Downastream dataset is  Cora
+Cora()
+DataBatch(x=[2708, 1433], edge_index=[2, 10556], y=[2708], train_mask=[2708], val_mask=[2708], test_mask=[2708], batch=[2708], ptr=[2])
+process done
+0.303117818267281
+nb_classes 7
+loading model from /home/ustc1958/lxy/graph/1/SAMGPT0505/checkpoints/model_node_GRAPHCL__Citeseer_Pubmed_Photo_Computers_FacebookPagePage_LastFMAsia_1.0_1.0_all_all_50_256_0.001_gcn.pkl
+----------------------------------------------------------------------------------------------------
+shotnum 1
+  0%|          | 0/100 [00:00<?, ?it/s]  1%|          | 1/100 [00:08<13:37,  8.26s/it]  2%|▏         | 2/100 [00:16<13:28,  8.25s/it]  3%|▎         | 3/100 [00:24<13:22,  8.27s/it]  4%|▍         | 4/100 [00:33<13:12,  8.26s/it]  5%|▌         | 5/100 [00:41<13:04,  8.25s/it]  6%|▌         | 6/100 [00:49<12:55,  8.25s/it]  7%|▋         | 7/100 [00:57<12:48,  8.26s/it]  8%|▊         | 8/100 [01:06<12:41,  8.27s/it]  9%|▉         | 9/100 [01:14<12:31,  8.26s/it] 10%|█         | 10/100 [01:22<12:24,  8.27s/it] 11%|█         | 11/100 [01:31<12:19,  8.31s/it] 12%|█▏        | 12/100 [01:39<12:12,  8.33s/it] 13%|█▎        | 13/100 [01:47<12:03,  8.32s/it] 14%|█▍        | 14/100 [01:55<11:54,  8.31s/it] 15%|█▌        | 15/100 [02:04<11:45,  8.30s/it] 16%|█▌        | 16/100 [02:12<11:37,  8.30s/it] 17%|█▋        | 17/100 [02:20<11:28,  8.30s/it] 18%|█▊        | 18/100 [02:29<11:20,  8.30s/it] 19%|█▉        | 19/100 [02:37<11:12,  8.30s/it] 20%|██        | 20/100 [02:45<11:04,  8.30s/it] 21%|██        | 21/100 [02:54<10:55,  8.30s/it] 22%|██▏       | 22/100 [03:02<10:47,  8.30s/it] 23%|██▎       | 23/100 [03:10<10:38,  8.29s/it] 24%|██▍       | 24/100 [03:18<10:31,  8.30s/it] 25%|██▌       | 25/100 [03:27<10:22,  8.30s/it] 26%|██▌       | 26/100 [03:35<10:14,  8.31s/it] 27%|██▋       | 27/100 [03:43<10:07,  8.33s/it] 28%|██▊       | 28/100 [03:52<10:00,  8.34s/it] 29%|██▉       | 29/100 [04:00<09:51,  8.33s/it] 30%|███       | 30/100 [04:08<09:41,  8.31s/it] 31%|███       | 31/100 [04:17<09:32,  8.29s/it] 32%|███▏      | 32/100 [04:25<09:23,  8.28s/it] 33%|███▎      | 33/100 [04:33<09:14,  8.28s/it] 34%|███▍      | 34/100 [04:41<09:06,  8.28s/it] 35%|███▌      | 35/100 [04:50<08:57,  8.27s/it] 36%|███▌      | 36/100 [04:58<08:49,  8.28s/it] 37%|███▋      | 37/100 [05:06<08:42,  8.30s/it] 38%|███▊      | 38/100 [05:15<08:34,  8.30s/it] 39%|███▉      | 39/100 [05:23<08:26,  8.30s/it] 40%|████      | 40/100 [05:31<08:16,  8.28s/it] 41%|████      | 41/100 [05:39<08:08,  8.28s/it] 42%|████▏     | 42/100 [05:48<08:00,  8.29s/it] 43%|████▎     | 43/100 [05:55<07:34,  7.97s/it] 44%|████▍     | 44/100 [06:02<07:18,  7.83s/it] 45%|████▌     | 45/100 [06:11<07:16,  7.94s/it] 46%|████▌     | 46/100 [06:19<07:12,  8.00s/it] 47%|████▋     | 47/100 [06:27<07:07,  8.07s/it] 48%|████▊     | 48/100 [06:33<06:20,  7.32s/it] 49%|████▉     | 49/100 [06:45<07:31,  8.84s/it] 50%|█████     | 50/100 [06:57<08:09,  9.78s/it] 51%|█████     | 51/100 [07:08<08:23, 10.27s/it] 52%|█████▏    | 52/100 [07:20<08:28, 10.59s/it] 53%|█████▎    | 53/100 [07:31<08:33, 10.93s/it] 54%|█████▍    | 54/100 [07:43<08:33, 11.17s/it] 55%|█████▌    | 55/100 [07:51<07:42, 10.27s/it] 56%|█████▌    | 56/100 [07:59<07:03,  9.62s/it] 57%|█████▋    | 57/100 [08:08<06:34,  9.17s/it] 58%|█████▊    | 58/100 [08:16<06:11,  8.84s/it] 59%|█████▉    | 59/100 [08:24<05:53,  8.62s/it] 60%|██████    | 60/100 [08:32<05:38,  8.46s/it] 61%|██████    | 61/100 [08:40<05:25,  8.35s/it] 62%|██████▏   | 62/100 [08:48<05:14,  8.27s/it] 63%|██████▎   | 63/100 [08:56<05:04,  8.22s/it] 64%|██████▍   | 64/100 [09:04<04:54,  8.19s/it] 65%|██████▌   | 65/100 [09:12<04:45,  8.17s/it] 66%|██████▌   | 66/100 [09:20<04:37,  8.15s/it] 67%|██████▋   | 67/100 [09:29<04:28,  8.15s/it] 68%|██████▊   | 68/100 [09:37<04:20,  8.14s/it] 69%|██████▉   | 69/100 [09:45<04:12,  8.13s/it] 70%|███████   | 70/100 [09:53<04:03,  8.13s/it] 71%|███████   | 71/100 [10:01<03:55,  8.13s/it] 72%|███████▏  | 72/100 [10:09<03:47,  8.13s/it] 73%|███████▎  | 73/100 [10:17<03:39,  8.12s/it] 74%|███████▍  | 74/100 [10:25<03:31,  8.12s/it] 75%|███████▌  | 75/100 [10:34<03:23,  8.12s/it] 76%|███████▌  | 76/100 [10:42<03:14,  8.12s/it] 77%|███████▋  | 77/100 [10:50<03:07,  8.13s/it] 78%|███████▊  | 78/100 [10:58<02:58,  8.13s/it] 79%|███████▉  | 79/100 [11:06<02:50,  8.13s/it] 80%|████████  | 80/100 [11:14<02:42,  8.13s/it] 81%|████████  | 81/100 [11:22<02:34,  8.13s/it] 82%|████████▏ | 82/100 [11:31<02:26,  8.13s/it] 83%|████████▎ | 83/100 [11:39<02:18,  8.13s/it] 84%|████████▍ | 84/100 [11:47<02:09,  8.12s/it] 85%|████████▌ | 85/100 [11:55<02:01,  8.12s/it] 86%|████████▌ | 86/100 [12:03<01:53,  8.12s/it] 87%|████████▋ | 87/100 [12:11<01:45,  8.12s/it] 88%|████████▊ | 88/100 [12:19<01:37,  8.12s/it] 89%|████████▉ | 89/100 [12:27<01:29,  8.12s/it] 90%|█████████ | 90/100 [12:35<01:21,  8.12s/it] 91%|█████████ | 91/100 [12:44<01:13,  8.12s/it] 92%|█████████▏| 92/100 [12:52<01:05,  8.13s/it] 93%|█████████▎| 93/100 [13:00<00:56,  8.14s/it] 94%|█████████▍| 94/100 [13:08<00:48,  8.15s/it] 95%|█████████▌| 95/100 [13:16<00:40,  8.15s/it] 96%|█████████▌| 96/100 [13:24<00:32,  8.15s/it] 97%|█████████▋| 97/100 [13:33<00:24,  8.15s/it] 98%|█████████▊| 98/100 [13:41<00:16,  8.15s/it] 99%|█████████▉| 99/100 [13:49<00:08,  8.15s/it]100%|██████████| 100/100 [13:57<00:00,  8.15s/it]100%|██████████| 100/100 [13:57<00:00,  8.37s/it]
+----------------------------------------------------------------------------------------------------
+Average accuracy:[0.4688]
+Mean:[46.8800]
+Std :[11.4559]
+----------------------------------------------------------------------------------------------------
